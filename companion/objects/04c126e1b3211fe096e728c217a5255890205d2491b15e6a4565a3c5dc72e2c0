@@ -1,0 +1,158 @@
+# exact compression of two-prime discrepancy extrema
+
+This mathematical supplement is read with the two logical companion notes listed below; it is not a standalone proof of the complete theorem. References to the analytical-reduction and parameterized-balance notes mean those locators and their local equation labels. The manuscript counterpart is "Exact discrepancy parameters and admissible errors" (`ap:finite:parameters`, including `eq:finite:sigma` and `eq:finite:primitive-error`). Source labels are searchable in the distributed standalone LaTeX file.
+
+## 1. Sources and notation
+
+The paths below are logical companion locators resolved by `provenance.json`.
+The mathematical inputs are:
+
+* `reports/batch_34/ANALYTIC_REDUCTION.md`:
+  the exact floor count, periodicity, steps, nonunit formula, reflection and
+  uniform bounds `-u <= e(n) <= 2u`;
+* the same file, Section 2: exact parameter definitions `h`, `m`,
+  `K_delta=h-m+u`, `W=max(h,-m+2u)`, primitive-error pairs and deleted-totient
+  error;
+* the same file, Section 3, equation (R9): exact even-prime extrema;
+* `reports/batch_27/PARAMETERIZED_MEAN_BALANCE.md`:
+  definitions and purpose of the extrema in the original parameterized
+  analytical bound.
+
+Let `p<q` be distinct primes, `D=pq`, and
+\[
+u=\frac{(p-1)(q-1)}{pq},\qquad
+U(n)=n-\lfloor n/p\rfloor-\lfloor n/q\rfloor+\lfloor n/D\rfloor,
+\qquad e(n)=U(n)-un .
+\]
+All extrema here use the integer period `0 <= n < D`. To avoid a notation
+collision, define `sigma=max{e(n): 0<=n<D, gcd(n,D)>1}`. The analytical-reduction note symbol `m`
+is the minimum over the entire period; it is not this nonunit maximum.
+The interval constant is called `K_delta` here, distinct from a prime-power
+core called `K` elsewhere.
+
+## 2. Exact relation between the two full-period extrema
+
+The increment is `e(n)-e(n-1)=1_{gcd(n,D)=1}-u`. Thus unit steps increase
+strictly by `1-u`, and nonunit steps decrease strictly by `u`.
+Periodicity gives `e(D)=e(0)=0`. The analytical-reduction note reflection identity is
+\[
+e(D-n)=\mathbf1_{\gcd(n,D)=1}-e(n)\qquad(0<n<D).
+\]
+On nonunits it changes the sign. Hence the nonunit minimum is `-sigma`,
+including the fixed zero at `n=0`. Every minimum of the full period occurs
+at zero or at a nonunit, since a unit step increases from its predecessor.
+Consequently the full minimum is exactly
+\[
+m=-\sigma .                                                   \tag{C1}
+\]
+
+A full-period maximum occurs immediately before a nonunit step, including
+the step at `n=D`. Between such steps the discrepancy only increases.
+For a nonunit `n`, its predecessor has `e(n-1)=e(n)+u`. At `n=D` this
+predecessor has value `u`. Nonunit values are paired with their negatives,
+so `sigma>=0`; therefore the largest predecessor value is exactly
+\[
+h=u+\sigma .                                                 \tag{C2}
+\]
+There is no lost wraparound predecessor: `D-1` is explicitly included by
+`e(D-1)=u`. In fact `sigma>0`: `n=p` is a nonunit below `q`, and
+`e(p)=(p-1)/q>0`. The proved uniform bound gives `sigma<=u`.
+
+## 3. At most 2p-1 exact candidates
+
+All nonzero nonunits in the period are either `n=pi`, `1<=i<=q-1`, or
+`n=qj`, `1<=j<=p-1`. These two lists are disjoint because their first common
+positive multiple is `D`, outside the period. Direct substitution gives
+\[
+e(pi)=\frac{(pi\bmod q)-i}{q}
+     =\frac{(p-1)i-q\lfloor pi/q\rfloor}{q},\qquad
+e(qj)=\frac{(qj\bmod p)-j}{p}.                              \tag{C3}
+\]
+
+Partition the first list by `t=floor(pi/q)`, where `t=0,...,p-1`.
+Its block is exactly
+\[
+\max\{1,\lceil qt/p\rceil\}\le i\le
+i_t:=\min\{q-1,\lfloor(q(t+1)-1)/p\rfloor\}.              \tag{C4}
+\]
+The `-1` retains the strict upper inequality `pi<q(t+1)` using integer
+arithmetic. The lower endpoint is closed. Each block is nonempty: interior
+real blocks have length `q/p>1`, the zero block ends at
+`floor((q-1)/p)>=1`, and the final block includes `q-1` because `q>p`.
+The clipping in C4 is safe; at `t=p-1` it gives exactly `i_t=q-1`.
+
+Within a block the numerator `(p-1)i-qt` increases strictly in `i`.
+Therefore only its upper endpoint `i_t` can maximize that block. The other
+family has just `p-1` entries already. The complete formula is
+\[
+\boxed{\sigma=\max\left\{0,
+\max_{0\le t<p}\frac{(p-1)i_t-qt}{q},\quad
+\max_{1\le j<p}\frac{(qj\bmod p)-j}{p}\right\}.}           \tag{C5}
+\]
+This requires at most `p+(p-1)=2p-1` nonzero candidate evaluations, plus a
+fixed zero baseline. It does not scan `q-1` first-family indices or all `D`
+period entries. All comparisons may use the common integer denominator `D`:
+\[
+S=\max\left\{0,\ \max_t p[(p-1)i_t-qt],\
+                    \max_j q[(qj\bmod p)-j]\right\},
+\qquad \sigma=S/D .                                       \tag{C6}
+\]
+No rational division, floating point or prime-period enclosure is needed
+to select `S`. Integer divisibility/modulo and floor division must remain
+exact. This is `O(p)` integer arithmetic operations, not a claim of `O(p)`
+bit operations; the integers have `O(log D)` bits. A streaming maximum uses
+constant working storage apart from integer bit size. This proof is an
+algorithm specification only; no implementation or measured runtime occurs
+in this report.
+
+## 4. Closed symmetry consequences and equality characterization
+
+Combining C1–C2 with the definitions in the parameterized-balance and analytical-reduction notes gives exact parameters
+\[
+K_\delta=2u+2\sigma,\qquad W=2u+\sigma.                    \tag{C7}
+\]
+The two admissible primitive-error pairs can thus be obtained directly:
+\[
+(b_0,b_1)=(3u+\sigma,2u+\sigma),
+\quad\hbox{or}\quad
+(b_0,b_1)=((2u+\sigma)^2+u,\ u(2u+\sigma)).               \tag{C8}
+\]
+For the second pair the nonnegative difference is exactly
+\[
+b_0-b_1=(2u+\sigma)(u+\sigma)+u.
+\]
+The analytical-reduction note deleted-totient error becomes `E0=v(2u+sigma)+2c0`, `E1=vu`, with
+the original real-cutoff constant `2c0` retained. These are identities in
+the imported analytical parameter definitions, not new mean estimates.
+
+There is a useful exact equality test:
+\[
+\boxed{\sigma=u\ \Longleftrightarrow\ q\equiv1\pmod p.}    \tag{C9}
+\]
+For the second family, C3 gives `e(qj)<u`, because
+\[
+e(qj)\le(p-2)/p,\qquad u-(p-2)/p=(q-p+1)/(pq)>0.
+\]
+If a first-family value equals `u`, multiplying C3 by `pq` requires
+`p[(p-1)i-qt]=(p-1)(q-1)`, hence `p` divides `q-1`.
+Conversely, if `q=lp+1`, choose `i=l=(q-1)/p` in the zero block;
+its value is exactly `u`. The proved upper bound `sigma<=u` then pays C9.
+
+In particular for `p=2`, every distinct prime `q` is odd and satisfies C9:
+`sigma=u`, `m=-u`, `h=2u`, `K_delta=4u`, `W=3u`. The first-family extremum
+occurs at `i=(q-1)/2`, so its predecessor `n=q-2` attains `h`; reflection
+gives the minimum at `n=q+1`. This matches the analytical-reduction note
+even-prime formula, including the smallest permissible prime `q=3`.
+
+For completeness, if `r=q mod p` is different from one, a strictly positive
+rational gap follows without evaluating C5. In the first family the integer
+numerator of `u-e(pi)` is nonnegative and congruent to `1-r` modulo `p`,
+so it is at least `p+1-r`. In the second family its numerator is at least
+`q-p+1` by the displayed bound. Thus
+\[
+u-\sigma\ge\frac{\min(p+1-r,q-p+1)}{pq}>0
+                     \qquad(r\ne1).                       \tag{C10}
+\]
+This is a further symbolic refinement of the uniform extrema bound; the
+distributed analytical certificate uses the exact formula C5. The refinement C10
+is not needed for that certificate.

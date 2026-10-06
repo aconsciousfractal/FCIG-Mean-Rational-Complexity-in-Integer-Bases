@@ -1,0 +1,415 @@
+from pathlib import Path as _PortablePath
+import importlib.util as _portable_import_util
+_portable_original_file = _PortablePath(__file__).with_name('verify_retained.py')
+_portable_previous_spec = _portable_import_util.spec_from_file_location
+def _portable_spec(name, location, *args, **kwargs):
+    location = _PortablePath(location)
+    candidate = location.with_name("_portable_" + location.name)
+    if not location.name.startswith("_portable_") and candidate.is_file():
+        location = candidate
+    return _portable_previous_spec(name, location, *args, **kwargs)
+_portable_import_util.spec_from_file_location = _portable_spec
+"""E040 independent retained log/histogram and physical witness verifier.
+No producer import; only the fixed 19 controls receive defining-minimum vectors.
+"""
+from bisect import bisect_right
+import hashlib, json
+from fractions import Fraction
+from math import gcd, isqrt
+from pathlib import Path
+import sys
+OUT = Path(__file__).parent
+ROOT = OUT.parents[1]
+S = 2 ** 64
+W = 2 ** 192
+K = 32
+DOMAIN_PIN = '76a23043357af279bcd1a11c2721f7148392f19328d2d55a08aeb73051a098ee'
+SOURCE_PIN = '2d856a44489bc4c8b98940d9cac6b18284e6e36361bc771be0017df763f7ea29'
+SMALL = ((21, 3, 7), (63, 3, 7), (147, 3, 7), (189, 3, 7), (441, 3, 7), (22, 2, 11), (44, 2, 11), (88, 2, 11), (242, 2, 11), (484, 2, 11), (352, 2, 11), (26, 2, 13), (52, 2, 13), (104, 2, 13), (338, 2, 13), (676, 2, 13), (416, 2, 13), (18, 2, 3), (50, 2, 5))
+BAD_MODELS = ((0, 2, 7), (14, True, 7), (14, 2, 2), (14, 7, 2), (20, 4, 5), (30, 2, 7), (49, 2, 7), (14, 2.0, 7))
+
+def need(ok, why):
+    if not ok:
+        raise RuntimeError(why)
+
+def exactint(n):
+    return type(n) is int
+
+def typed(value):
+    if isinstance(value, list):
+        return all((typed(v) for v in value))
+    return exactint(value)
+
+def series32(a, b):
+    if a == 0:
+        return (0, 0)
+    lower = 0
+    an = a
+    bn = b
+    for i in range(K):
+        lower += 2 * an * W // ((2 * i + 1) * bn)
+        an *= a * a
+        bn *= b * b
+    numerator = 2 * an * b * b * W
+    denominator = (2 * K + 1) * bn * (b * b - a * a)
+    remainder = (numerator + denominator - 1) // denominator
+    return (lower, lower + K + remainder)
+LOG2 = series32(1, 3)
+
+def logs32(n):
+    need(exactint(n) and n > 0, 'exact positive log')
+    e = n.bit_length() - 1
+    p = 2 ** e
+    low, high = series32(n - p, n + p)
+    low += e * LOG2[0]
+    high += e * LOG2[1]
+    return (low * S // W, (high * S + W - 1) // W)
+
+def divisors(n):
+    result = []
+    for g in range(1, isqrt(n) + 1):
+        if n % g == 0:
+            result.append(g)
+            if g * g != n:
+                result.append(n // g)
+    return sorted(result)
+
+def phi(n, p, r):
+    value = n
+    for q in (p, r):
+        if n % q == 0:
+            value -= value // q
+    return value
+
+def classcap(M, g, p, r):
+    m = M // g
+    H = (m - 1) // 2
+    if m == 2:
+        delta = 1
+    elif m % p == 0 and m % r == 0:
+        delta = H
+    elif m % p == 0:
+        delta = max(H, m - r)
+    else:
+        delta = max(H, m - p)
+    return min(M // p, g * (m // 2), max(g, delta))
+
+def grid(M, p, r):
+    k = isqrt(M)
+    top = M // p
+    ts = set(range(1, k + 1))
+    t = k
+    while t < top:
+        t = min(top, -(-257 * t // 256))
+        ts.add(t)
+    start = isqrt(2 * M) + 1
+    if start <= top:
+        ts.add(start)
+    for g in divisors(M):
+        if g < M:
+            ts.update((g, classcap(M, g, p, r)))
+    ts.add(top)
+    return sorted(ts)
+
+def model(M, p, r):
+    need(all((exactint(x) for x in (M, p, r))) and 1 < p < r and (M > 1), 'typedmodel')
+    for q in (p, r):
+        need(all((q % d for d in range(2, isqrt(q) + 1))), 'modelprime')
+    n = M
+    a = b = 0
+    while n % p == 0:
+        a += 1
+        n //= p
+    while n % r == 0:
+        b += 1
+        n //= r
+    need(n == 1 and a > 0 and (b > 0), 'modulusprofile')
+    return (a, b)
+
+def definition(M):
+    result = []
+    for s in range(M):
+        best = max(1, min(s, M - s))
+        d = 1
+        while d < best:
+            if gcd(d, M) == 1:
+                v = s * d % M
+                best = min(best, max(d, min(v, M - v)))
+            d += 1
+        result.append(best)
+    return result
+
+def physical_heights(M, g, p, r):
+    """Construct actual signed witnesses on the ORIGINAL modulus, not W floors."""
+    model(M, p, r)
+    need(exactint(g) and 0 < g < M and (M % g == 0), 'physical class')
+    m = M // g
+    out = []
+    one = []
+    repairs = 0
+    representatives = (1,) if m == 2 else range(1, (m - 1) // 2 + 1)
+    for h in representatives:
+        if gcd(h, m) != 1:
+            continue
+        t = pow(h, -1, m)
+        signed_residues = (t,) if m == 2 else (t, m - t)
+        for t in signed_residues:
+            s = g * t
+            need(gcd(s, M) == g, 'physical gcd class')
+            inverse = pow(t, -1, m)
+            signed = inverse if 2 * inverse <= m else inverse - m
+            d = abs(signed)
+            A = g if signed > 0 else -g
+            if gcd(d, M) != 1:
+                d = m - d
+                A = -A
+                repairs += 1
+            need(d > 0 and gcd(d, M) == 1 and (abs(A) == g) and ((s * d - A) % M == 0), 'physical fullmark congruence')
+            out.append(max(abs(A), d))
+            Aone = s if 2 * s <= M else s - M
+            need((s - Aone) % M == 0 and gcd(1, M) == 1, 'physical denominator one')
+            one.append(max(1, abs(Aone)))
+    need(len(out) == phi(m, p, r), 'physical class mass')
+    return (out, one, repairs)
+
+def histogramCDF(hist, T):
+    return sum((c for h, c in hist if h <= T))
+
+def check_row(row, ledger):
+    M = row['M']
+    p = row['p']
+    r = row['r']
+    a, b = model(M, p, r)
+    k = isqrt(M)
+    need(all((exactint(row[key]) for key in ('a', 'b', 'terminal', 'threshold_count', 'upper_centered_numerator', 'upper_centered_denominator', 'central_k', 'exact_central_states', 'primitive_positive_pairs', 'ordered_collisions', 'candidate_pairs', 'actual_convolution_updates'))), 'row integer scalars')
+    need((row['a'], row['b']) == (a, b) and row['central_k'] == k and (row['terminal'] == M // p), 'row profile/terminal')
+    need(row['complete_true_minimum_vector'] is False, 'producer main definition flag')
+    hist = row['upper_histogram']
+    need(isinstance(hist, list) and hist and all((isinstance(v, list) and len(v) == 2 and typed(v) and (1 <= v[0] <= M // p) and (v[1] > 0) for v in hist)), 'histogram type/range')
+    need([v[0] for v in hist] == sorted(set((v[0] for v in hist))) and sum((v[1] for v in hist)) == M, 'histogram order/mass')
+    need(all((h in ledger for h, c in hist)) and M in ledger, 'ledger closure')
+    Q = 2 * sum((c * ledger[h][1] for h, c in hist)) - M * ledger[M][0]
+    need(Q == row['upper_centered_numerator'] and row['upper_centered_denominator'] == 2 * M * S, 'independent doubled Q')
+    need(histogramCDF(hist, k) == row['exact_central_states'], 'central aggregate mass')
+    need(row['exact_central_states'] == 1 + 2 * row['primitive_positive_pairs'] - row['ordered_collisions'], 'central identity summary')
+    need(0 <= row['ordered_collisions'] <= row['candidate_pairs'] and row['primitive_positive_pairs'] >= 0 and (row['actual_convolution_updates'] >= 0), 'summary ranges')
+    ts = grid(M, p, r)
+    need(len(ts) == row['threshold_count'] and all((h in ts for h, c in hist)), 'independent schedule')
+    gs = [g for g in divisors(M) if g < M]
+    need(typed(row['gcd_caps']) and row['gcd_caps'] == [[g, M // g, phi(M // g, p, r), classcap(M, g, p, r)] for g in gs], 'all class caps')
+    need(1 + sum((v[2] for v in row['gcd_caps'])) == M, 'disjoint classmass')
+    totals = row['central_stratum_totals']
+    need(typed(totals) and all((len(v) == 2 for v in totals)) and ([g for g, v in totals] == gs) and (len(gs) == (a + 1) * (b + 1) - 1), 'complete central headers')
+    need(all((0 <= v <= phi(M // g, p, r) for g, v in totals)) and 1 + sum((v for g, v in totals)) == row['exact_central_states'], 'central total ranges')
+    far = row['far_counts']
+    need(typed(far) and all((len(v) == 5 for v in far)), 'far headers')
+    need([v[0] for v in far] == [T for T in ts if T * T > 2 * M], 'complete far schedule')
+    for T, q, centres, ticks, upper in far:
+        need(q == (M - 1) // T and 0 <= centres <= M and (ticks >= 0) and (upper == centres + ticks // S), 'far integer accounting')
+        need(histogramCDF(hist, T) >= M - min(M, upper), 'consumed histogram binds far bound')
+    status = 'PAID' if Q < 0 else 'UNPAID'
+    need(row['status'] == status, 'row retained sign')
+    return status
+
+def check_validation(row, ledger):
+    check_row(row, ledger)
+    M, p, r = (row[k] for k in ('M', 'p', 'r'))
+    k = isqrt(M)
+    top = M // p
+    true = definition(M)
+    sorted_true = sorted(true)
+    strata = {}
+    for s, h in enumerate(true):
+        strata.setdefault(gcd(s, M), []).append(h)
+    for values in strata.values():
+        values.sort()
+    checks = 0
+    knots = row['CDF_knots']
+    need(typed(knots) and all((len(v) == 2 for v in knots)) and ([T for T, F in knots] == grid(M, p, r)), 'complete small knots')
+    for T, F in knots:
+        need(F == histogramCDF(row['upper_histogram'], T) and F <= bisect_right(sorted_true, T), 'small true CDF bound')
+        if T <= k:
+            need(F == bisect_right(sorted_true, T), 'small exact central CDF')
+        checks += 1
+    gs = [g for g in divisors(M) if g < M]
+    central = row['central_strata']
+    need(typed(central) and all((len(v) == 2 for v in central)) and ([g for g, c in central] == [g for g in gs if g <= k]), 'complete small central strata')
+    for g, cdf in central:
+        need(len(cdf) == k + 1, 'small central array length')
+        for T in range(k + 1):
+            need(cdf[T] == bisect_right(strata[g], T), 'small central stratum equality')
+            checks += 1
+    curves = row['witness_cdfs']
+    need(typed(curves) and all((len(v) == 3 for v in curves)) and ([v[0] for v in curves] == gs), 'complete small witness strata')
+    for g, cw, cb in curves:
+        need(len(cw) == len(cb) == top, 'small witness array lengths')
+        hw, hb, _ = physical_heights(M, g, p, r)
+        hw.sort()
+        hb.sort()
+        for T in range(1, top + 1):
+            need(cw[T - 1] == bisect_right(hw, T) and cb[T - 1] == bisect_right(hb, T), 'small physical witness CDF equality')
+            checks += 2
+    return (checks, sorted_true)
+
+def expected_local(marks):
+    local = []
+    for p, r in marks:
+        for u, v in ((p, r), (r, p)):
+            m = u
+            while m <= 2 * v:
+                m *= u
+            n = sum((gcd(h, m) == 1 for h in range(1, (m - 1) // 2 + 1)))
+            local.append(dict(kind='pure', p=p, r=r, M=v * m, g=v, child=m, present=u, missing=v, positive_types=n, step_tests_bound=4 * n + 3))
+        n = sum((gcd(h, p * r) == 1 for h in range(1, (p * r - 1) // 2 + 1)))
+        local.append(dict(kind='mixed', p=p, r=r, M=p * r, g=1, child=p * r, positive_types=n, step_tests_bound=4 * n + 3))
+    single = [dict(kind='m2', p=p, r=r, M=2 * r, g=r, child=2, tests=[0, r - 1, r]) for p, r in marks if p == 2]
+    return (local, single)
+
+def check_local(records, profiles, singleton=False):
+    need(len(records) == len(profiles), 'local records complete')
+    steps = types = repairprofiles = 0
+    keys = ('kind', 'p', 'r', 'M', 'g', 'child')
+    for row, v in zip(records, profiles):
+        need(set(row) == set(keys) | {'tests'} and all((row[k] == v[k] for k in keys)), 'local identity/shape')
+        need(all((exactint(row[k]) for k in keys if k != 'kind')), 'local integer model')
+        M, g, m, p, r = (v[k] for k in ('M', 'g', 'child', 'p', 'r'))
+        need(M // g == m, 'local child')
+        hw, hb, repairs = physical_heights(M, g, p, r)
+        if singleton:
+            need(m == 2 and len(hw) == 1 and (hw == hb == [g]), 'm2 physical atom')
+            ts = v['tests']
+        else:
+            knots = {g}
+            for h in range(1, (m - 1) // 2 + 1):
+                if gcd(h, m) != 1:
+                    continue
+                knots.add(max(g, h if gcd(h, M) == 1 else m - h))
+                knots.add(g * h)
+            need(set(hw) | set(hb) <= knots, 'all physical breakpoints in fixed knots')
+            ts = sorted({0} | knots | {h - 1 for h in knots})
+            need(len(ts) <= v['step_tests_bound'] and len(hw) == 2 * v['positive_types'], 'local pre-sign work bound')
+            if v['kind'] == 'pure':
+                need(m > 2 * v['missing'] and repairs >= 2, 'both signed missing-prime repairs active')
+                repairprofiles += 1
+            else:
+                need(repairs == 0, 'mixed child mark already complete')
+        tests = row['tests']
+        need(typed(tests) and all((len(t) == 3 for t in tests)) and ([t[0] for t in tests] == ts), 'complete unclipped local schedule')
+        hw.sort()
+        hb.sort()
+        for T, cw, cb in tests:
+            need(cw == bisect_right(hw, T) and cb == bisect_right(hb, T), 'physical local witness CDF equality')
+        steps += len(ts)
+        types += len(hw)
+    return dict(curves=len(records), signed_types=types, test_steps=steps, CDF_checks=2 * steps, active_repair_profiles=repairprofiles)
+
+def main():
+    domainraw = (OUT / 'LENGTH_TWO_DOMAIN.json').read_bytes()
+    need(hashlib.sha256(domainraw).hexdigest() == DOMAIN_PIN, 'domain byte pin')
+    domain = json.loads(domainraw)
+    sourcepath = ROOT / 'results/batch_34/ANALYTIC_N2.json'
+    sourceraw = sourcepath.read_bytes()
+    need(hashlib.sha256(sourceraw).hexdigest() == SOURCE_PIN, 'source byte pin')
+    source = json.loads(sourceraw)
+    wanted = []
+    bases = []
+    for profile in source['remaining_profiles']:
+        need(typed(profile) and len(profile) == 6, 'typed source profile')
+        B, M, p, r, a, b = profile
+        ba, bb = model(B, p, r)
+        need(M == B * B and (a, b) == (2 * ba, 2 * bb) and (model(M, p, r) == (a, b)), 'independent square valuations')
+        wanted.append([M, p, r, a, b])
+        bases.append(B)
+    need(len(wanted) == 99 and wanted == domain['rows'] and (bases == domain['bases']) and (len(set(bases)) == 99) and (bases == sorted(bases)), 'complete fixed N2 domain')
+    need(sum((v[0] for v in wanted)) == 2265336 and domain['moduli'] == 99, 'main domain mass/count')
+    need(domain['schema'] == 'p72-e040-length-two-domain-v1' and domain['source_sha256'] == SOURCE_PIN, 'domain headers')
+    need(domain['small_profiles'] == [list(v) for v in SMALL] and sum((v[0] for v in SMALL)) == 3773, 'fixed19 controls')
+    marks = sorted({(p, r) for M, p, r, a, b in wanted})
+    need(len(marks) == 68, 'marks68')
+    local, single = expected_local(marks)
+    need(local == domain['local_profiles'] and single == domain['local_m2_profiles'], 'independent physical local panel')
+    need(len(local) == 204 and sum((2 * v['positive_types'] for v in local)) == 16916 and (sum((v['step_tests_bound'] for v in local)) == 34444) and (len(single) == 23), 'local costs')
+    need(domain['scientific_means_evaluated'] is False and domain['scientific_CDFs_evaluated'] is False, 'work-only domain flags')
+    raw = (OUT / 'LENGTH_TWO_AGGREGATE.json').read_bytes()
+    data = json.loads(raw)
+    need(data['schema'] == 'p72-e040-length-two-mean-v1' and data['domain_sha256'] == DOMAIN_PIN, 'payload headers')
+    need(data['work'] == domain | dict(rows=None, details=None, small_profiles=None), 'retained work domain binding')
+    for key in ('floating_used', 'analytic_proof_replaced'):
+        need(data[key] is False, 'payload false flag ' + key)
+    for key, value in (('residues_swept', 0), ('centre_phases_swept', 0), ('full_minimum_vectors_main', 0), ('small_validation_residues', 3773), ('invalid_model_checks', 8), ('moduli', 99)):
+        need(exactint(data[key]) and data[key] == value, 'payload integer counter ' + key)
+    ledger = {}
+    used = set()
+    for entry in data['log_tick_ledger']:
+        need(isinstance(entry, list) and len(entry) == 3 and typed(entry), 'log ledger types')
+        n, l, u = entry
+        need(n not in ledger and l <= u, 'unique log ledger')
+        L, U = logs32(n)
+        need(l <= L and U <= u, 'independent K32 log enclosure')
+        ledger[n] = (l, u)
+    need(list(ledger) == sorted(ledger) and ledger.get(1) == (0, 0), 'ordered log ledger/log1')
+    need(len(data['rows']) == len(domain['details']) == 99, 'all main rows')
+    paid = []
+    unpaid = []
+    for profile, row, work in zip(wanted, data['rows'], domain['details']):
+        M, p, r, a, b = profile
+        need(typed([row[k] for k in ('M', 'p', 'r', 'a', 'b')]) and [row[k] for k in ('M', 'p', 'r', 'a', 'b')] == profile, 'main row identity')
+        status = check_row(row, ledger)
+        (paid if status == 'PAID' else unpaid).append(M)
+        need(work['thresholds'] == grid(M, p, r) and row['candidate_pairs'] == work['candidate_pairs_exact'] and (row['actual_convolution_updates'] <= work['convolution_updates_bound']), 'main retained budget')
+        used.add(M)
+        used.update((h for h, c in row['upper_histogram']))
+    need(typed(data['paid_moduli']) and typed(data['unpaid_moduli']) and (paid == data['paid_moduli']) and (unpaid == data['unpaid_moduli']), 'complete retained sign partition')
+    need(data['status'] == ('PARTIAL' if unpaid else 'ALL_PAID'), 'global retained status')
+    for field, rowfield in (('observed_candidate_pairs', 'candidate_pairs'), ('observed_convolution_updates', 'actual_convolution_updates')):
+        need(exactint(data[field]) and data[field] == sum((v[rowfield] for v in data['rows'])), 'observed budget sum')
+    need(data['observed_candidate_pairs'] == domain['candidate_pairs_exact'], 'candidate total domain')
+    need([(v['M'], v['p'], v['r']) for v in data['validation']] == list(SMALL), 'fixed validation identities')
+    mainrows = {v['M']: v for v in data['rows']}
+    checks = overlapchecks = 0
+    overlap = []
+    for row in data['validation']:
+        count, true_sorted = check_validation(row, ledger)
+        checks += count
+        M, p, r = (row[k] for k in ('M', 'p', 'r'))
+        used.add(M)
+        used.update((h for h, c in row['upper_histogram']))
+        if M in mainrows:
+            mainrow = mainrows[M]
+            overlap.append(M)
+            need(mainrow['upper_histogram'] == row['upper_histogram'], 'overlap main histogram binding')
+            for T in grid(M, p, r):
+                need(histogramCDF(mainrow['upper_histogram'], T) <= bisect_right(true_sorted, T), 'overlap every main knot true bound')
+                overlapchecks += 1
+            need(histogramCDF(mainrow['upper_histogram'], isqrt(M)) == bisect_right(true_sorted, isqrt(M)), 'overlap exact k binding')
+    need(overlap == [441, 484, 676] and sum(overlap) == 1601 and (domain['definition_main_overlap_moduli'] == overlap) and (domain['definition_main_overlap_states'] == 1601), 'explicit main control overlap')
+    need(set(ledger) == used, 'exact log ledger use')
+    localchecks = check_local(data['local_witness_curves'], local)
+    singletonchecks = check_local(data['local_m2_singletons'], single, True)
+    need(localchecks['signed_types'] == 16916 and localchecks['active_repair_profiles'] == 136 and (localchecks['test_steps'] <= 34444), 'local audit budgets')
+    need(singletonchecks['signed_types'] == 23 and singletonchecks['test_steps'] == 69, 'm2 audit budgets')
+    for bad in BAD_MODELS:
+        try:
+            model(*bad)
+        except RuntimeError:
+            pass
+        else:
+            raise RuntimeError('invalid model accepted independently')
+    for bad in (True, 0, -1, 1.0, Fraction(1)):
+        try:
+            logs32(bad)
+        except RuntimeError:
+            pass
+        else:
+            raise RuntimeError('invalid independent log accepted')
+    obj = dict(status='E040_INDEPENDENT_PASS', payload_sha256=hashlib.sha256(raw).hexdigest(), domain_sha256=DOMAIN_PIN, source_analytic_sha256=SOURCE_PIN, checker_sha256=hashlib.sha256(_portable_original_file.read_bytes()).hexdigest(), moduli_reconstructed=99, paid=len(paid), unpaid=unpaid, main_histogram_Q_checks=99, independent32_log_enclosures=len(ledger), small_definition_vectors=19, small_definition_residues=3773, small_CDF_witness_checks=checks, main_definition_overlap_moduli=overlap, main_definition_overlap_states=1601, main_overlap_knot_checks=overlapchecks, local_physical_witness_audit=localchecks, local_m2_physical_audit=singletonchecks, producer_imported=False, all_main_true_CDFs_recomputed=False, true_far_survival_recomputed=False, scientific_scope='Independent retained Q/log/model/calendar/cap checks; 19 defining vectors including 3 main overlaps; 204 complete physical witness curves and 23 m2 atoms. General coverage proof and other main defining CDFs are not independently recounted here.')
+    encoded = (json.dumps(obj, sort_keys=True, indent=2) + '\n').encode()
+    target = OUT / 'INDEPENDENT_AGGREGATE_CHECKS.json'
+    if target.exists():
+        need(target.read_bytes() == encoded, 'independent mode mismatch')
+    else:
+        with target.open('xb') as f:
+            f.write(encoded)
+    sys.stdout.buffer.write(encoded)
+if __name__ == '__main__':
+    main()

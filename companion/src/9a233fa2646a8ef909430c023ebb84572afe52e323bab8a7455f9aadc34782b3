@@ -1,0 +1,124 @@
+from pathlib import Path as _PortablePath
+import importlib.util as _portable_import_util
+_portable_original_file = _PortablePath(__file__).with_name('inventory_factor.py')
+_portable_previous_spec = _portable_import_util.spec_from_file_location
+def _portable_spec(name, location, *args, **kwargs):
+    location = _PortablePath(location)
+    candidate = location.with_name("_portable_" + location.name)
+    if not location.name.startswith("_portable_") and candidate.is_file():
+        location = candidate
+    return _portable_previous_spec(name, location, *args, **kwargs)
+_portable_import_util.spec_from_file_location = _portable_spec
+"""SOURCE_ONLY R36 inventory by integer traversal and smallest-prime factors."""
+from array import array
+from collections import Counter
+from math import gcd, isqrt
+import json
+import sys
+LIMIT_EXCLUSIVE = 360000
+CLOSED_RADICALS = frozenset((6, 10, 14, 15))
+REASON_ORDER = ('closed_radical', 'common_valuation_factor', 'squarefree', 'branch_cutoff')
+SUPPLEMENTAL_RATIO_CONSTANT = {'p2': 225, 'p3': 1300, 'p_ge5': 400}
+
+def require(condition, message):
+    if not condition:
+        raise RuntimeError(message)
+
+def smallest_prime_factors():
+    """Assign each composite its first (hence smallest) prime divisor."""
+    spf = array('I', [0]) * LIMIT_EXCLUSIVE
+    for candidate in range(2, LIMIT_EXCLUSIVE):
+        if spf[candidate] != 0:
+            continue
+        spf[candidate] = candidate
+        if candidate <= isqrt(LIMIT_EXCLUSIVE - 1):
+            for multiple in range(candidate * candidate, LIMIT_EXCLUSIVE, candidate):
+                if spf[multiple] == 0:
+                    spf[multiple] = candidate
+    return spf
+
+def factor_integer(M, spf):
+    remaining = M
+    factors = []
+    while remaining > 1:
+        prime = spf[remaining]
+        require(prime >= 2 and remaining % prime == 0, 'invalid SPF entry')
+        exponent = 0
+        while remaining % prime == 0:
+            remaining //= prime
+            exponent += 1
+        factors.append((prime, exponent))
+    return factors
+
+def classify(M, p, q, a, b):
+    if p == 2:
+        branch, cutoff = ('p2', 147456)
+    elif p == 3:
+        branch, cutoff = ('p3', 262144)
+    else:
+        branch, cutoff = ('p_ge5', 360000)
+    reasons = []
+    if p * q in CLOSED_RADICALS:
+        reasons.append('closed_radical')
+    if gcd(a, b) >= 2:
+        reasons.append('common_valuation_factor')
+    if (a, b) == (1, 1):
+        reasons.append('squarefree')
+    if M >= cutoff:
+        reasons.append('branch_cutoff')
+    return {'M': M, 'p': p, 'q': q, 'a': a, 'b': b, 'branch': branch, 'cutoff': cutoff, 'reasons': reasons}
+
+def basic_summary(rows):
+    return {'count': len(rows), 'sum_M': sum((row['M'] for row in rows)), 'min_M': min((row['M'] for row in rows), default=None), 'max_M': max((row['M'] for row in rows), default=None), 'radical_count': len({row['p'] * row['q'] for row in rows})}
+
+def summary(rows):
+    result = basic_summary(rows)
+    profiles = {}
+    branches = {name: [] for name in ('p2', 'p3', 'p_ge5')}
+    reason_counts = Counter()
+    reason_patterns = Counter()
+    for row in rows:
+        profiles.setdefault((row['a'], row['b']), []).append(row)
+        branches[row['branch']].append(row)
+        reason_counts.update(row['reasons'])
+        reason_patterns[tuple(row['reasons'])] += 1
+    result['profiles'] = [dict(a=a, b=b, **basic_summary(group)) for (a, b), group in sorted(profiles.items())]
+    result['branches'] = [dict(branch=name, **basic_summary(group)) for name, group in branches.items()]
+    result['reason_counts'] = [{'reason': reason, 'count': reason_counts[reason]} for reason in REASON_ORDER]
+    result['reason_patterns'] = [{'reasons': list(pattern), 'count': count} for pattern, count in sorted(reason_patterns.items())]
+    return result
+
+def build_inventory():
+    spf = smallest_prime_factors()
+    all_rows = []
+    omega_counts = Counter()
+    for M in range(2, LIMIT_EXCLUSIVE):
+        factors = factor_integer(M, spf)
+        omega_counts[len(factors)] += 1
+        if len(factors) != 2:
+            continue
+        (p, a), (q, b) = factors
+        require(p < q and a >= 1 and (b >= 1), 'noncanonical factor tuple')
+        require(p ** a * q ** b == M, 'factor reconstruction failed')
+        all_rows.append(classify(M, p, q, a, b))
+    retained = [row for row in all_rows if not row['reasons']]
+    conditional = [row for row in retained if row['b'] == 1 and row['M'] >= 19600 and (row['q'] >= 1500 * row['p'] ** row['a'])]
+    conditional_moduli = {row['M'] for row in conditional}
+    after_optional = [row for row in retained if row['M'] not in conditional_moduli]
+    supplemental = [row for row in retained if row['b'] == 1 and row['M'] >= 19600 and (row['q'] >= SUPPLEMENTAL_RATIO_CONSTANT[row['branch']] * row['p'] ** row['a'])]
+    supplemental_moduli = {row['M'] for row in supplemental}
+    active = [row for row in retained if row['M'] not in supplemental_moduli]
+    require(sum(omega_counts.values()) == LIMIT_EXCLUSIVE - 2, 'integer traversal did not exhaust the fixed domain')
+    require(len(all_rows) == omega_counts[2], 'omega-two row loss')
+    require(len(all_rows) == len({row['M'] for row in all_rows}), 'duplicate physical modulus')
+    require(len(retained) == len(conditional) + len(after_optional), 'optional-rule partition failed')
+    require(conditional_moduli <= supplemental_moduli, 'supplemental rule did not contain the old optional rule')
+    require(len(retained) == len(supplemental) + len(active), 'supplemental-rule partition failed')
+    return {'schema': 'p72-r36-source-only-frontier-v1', 'status': 'SOURCE_ONLY', 'algorithm': 'integer-traversal-smallest-prime-factor-sieve', 'domain': {'M_min_inclusive': 2, 'M_max_exclusive': LIMIT_EXCLUSIVE}, 'reason_order': list(REASON_ORDER), 'optional_r27': {'adoption_status': 'CONDITIONAL_NOT_ADOPTED_BY_THIS_PROGRAM', 'predicate': 'b=1 and M>=19600 and q>=1500*p^a', 'reversed_orientation_used': False}, 'supplemental_ratio': {'source': 'R27 A7-A12 with pre-enumeration R36 rational corollary', 'predicate': 'b=1 and M>=19600 and q>=c(p)*p^a', 'branch_constants': SUPPLEMENTAL_RATIO_CONSTANT, 'reversed_orientation_used': False}, 'integer_omega_counts': [{'omega': omega, 'count': count} for omega, count in sorted(omega_counts.items())], 'all_rows': all_rows, 'retained_rows': retained, 'optional_r27_qualifying_retained_rows': conditional, 'optional_r27_retained_rows': after_optional, 'supplemental_ratio_qualifying_retained_rows': supplemental, 'active_rows': active, 'summaries': {'all_rows': summary(all_rows), 'retained_rows': summary(retained), 'optional_r27_qualifying_retained_rows': summary(conditional), 'optional_r27_retained_rows': summary(after_optional), 'supplemental_ratio_qualifying_retained_rows': summary(supplemental), 'active_rows': summary(active)}}
+
+def main():
+    inventory = build_inventory()
+    json.dump(inventory, sys.stdout, sort_keys=True, separators=(',', ':'))
+    sys.stdout.write('\n')
+if __name__ == '__main__':
+    main()

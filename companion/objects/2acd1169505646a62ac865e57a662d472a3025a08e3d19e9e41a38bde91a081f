@@ -1,0 +1,313 @@
+"""E034 retained aggregate upper histogram, no residue arrays."""
+from bisect import bisect_left
+from collections import Counter
+from fractions import Fraction
+from functools import lru_cache
+import hashlib, json
+from math import gcd, isqrt
+from pathlib import Path
+import sys
+OUT = Path(__file__).parent
+ROOT = OUT.parents[1]
+S = 2 ** 64
+DOMAIN_PIN = '90df0ba69208516d817b4745a516c7c514e86bd49d964bdc6983a2f37d1f86f8'
+VALIDATION = (12, 18, 24, 48, 54, 72, 96, 108, 144, 216)
+
+def req(ok, msg):
+    if not ok:
+        raise ValueError(msg)
+
+def U(n, rad):
+    if rad == 6:
+        return (n + 5) // 6 + (n + 1) // 6
+    if rad == 2:
+        return (n + 1) // 2
+    if rad == 3:
+        return n - n // 3
+    if rad == 1:
+        return n
+    raise ValueError('rad')
+
+def rad6(m):
+    return (2 if m % 2 == 0 else 1) * (3 if m % 3 == 0 else 1)
+
+def phi6(m):
+    n = m
+    if m % 2 == 0:
+        n //= 2
+    if m % 3 == 0:
+        n = n // 3 * 2
+    return n
+
+def divisors(M):
+    n = M
+    a = b = 0
+    while n % 2 == 0:
+        n //= 2
+        a += 1
+    while n % 3 == 0:
+        n //= 3
+        b += 1
+    req(n == 1, 'rad6 only')
+    return sorted((2 ** i * 3 ** j for i in range(a + 1) for j in range(b + 1)))
+
+def cap(M, g):
+    m = M // g
+    D = m
+    if m % 2:
+        D *= 2
+    if m % 3:
+        D *= 3
+    return min(M // 2, g * (m // 2), max(g, D // 2))
+
+def thresholds(M):
+    k = isqrt(M)
+    V = M // 2
+    ts = set(range(1, k + 1))
+    t = k
+    while t < V:
+        t = min(V, (257 * t + 255) // 256)
+        ts.add(t)
+    z = isqrt(2 * M) + 1
+    if z <= V:
+        ts.add(z)
+    for g in divisors(M):
+        if g < M:
+            ts.add(g)
+            ts.add(cap(M, g))
+    ts.add(V)
+    req(min(ts) == 1 and max(ts) == V, 'threshold range')
+    return sorted(ts)
+
+def sieve(K):
+    mu = [1] * (K + 1)
+    mu[0] = 0
+    phi = list(range(K + 1))
+    prime = [True] * (K + 1)
+    if K >= 1:
+        prime[:2] = [False, False]
+    for p in range(2, K + 1):
+        if prime[p]:
+            for n in range(p, K + 1, p):
+                mu[n] *= -1
+                phi[n] -= phi[n] // p
+            for n in range(p * p, K + 1, p * p):
+                mu[n] = 0
+            for n in range(p * p, K + 1, p):
+                prime[n] = False
+    return (mu, phi)
+
+def central(M, mu):
+    k = isqrt(M)
+    gs = [g for g in divisors(M) if g < M]
+    dp = {}
+    updates = 0
+    for g in gs:
+        if g > k:
+            continue
+        rad = rad6(M // g)
+        delta = [0] * (k + 1)
+        prev = 0
+        for n in range(g, k + 1):
+            value = U(n // g, rad) * U(n, 6)
+            delta[n] = value - prev
+            prev = value
+        bins = [0] * (k + 1)
+        for e in range(1, k // g + 1):
+            if gcd(e, 6) > 1 or mu[e] == 0:
+                continue
+            c = mu[e]
+            for n in range(g, k // e + 1):
+                bins[e * n] += c * delta[n]
+                updates += 1
+        req(all((v >= 0 for v in bins)), 'primitive bin negative')
+        dp[g] = bins
+    unit = [n for n in range(1, k + 1) if gcd(n, 6) == 1]
+    js = {g: Counter() for g in dp}
+    pairs = 0
+    collisions = 0
+    c = (M + k - 1) // k
+    for d in unit:
+        start = bisect_left(unit, max(1, c - d))
+        for f in unit[start:]:
+            pairs += 1
+            if gcd(d, f) != 1:
+                continue
+            A0 = M * pow(f, -1, d) % d if d > 1 else 0
+            E0 = (M - f * A0) // d
+            lo = max(-((A0 - 1) // d), -((k - E0) // f))
+            hi = min((k - A0) // d, (E0 - 1) // f)
+            if lo > hi:
+                continue
+            req(lo == hi, 'multiple closed phases')
+            A = A0 + d * lo
+            E = E0 - f * lo
+            req(1 <= A <= k and 1 <= E <= k and (A * f + E * d == M), 'phase')
+            g = gcd(A, M)
+            req(g == gcd(E, M) and g in dp, 'collision class')
+            req(gcd(A, d) == gcd(E, f) == 1, 'collision primitive')
+            js[g][max(A, d, E, f)] += 1
+            collisions += 1
+    cdfs = {}
+    positive = 0
+    for g, bins in dp.items():
+        positive += sum(bins)
+        cdf = [0] * (k + 1)
+        v = 0
+        for t in range(1, k + 1):
+            h = 2 * bins[t] - js[g][t]
+            req(h >= 0, 'CDF bin negative')
+            v += h
+            cdf[t] = v
+        req(v <= phi6(M // g), 'central classmass')
+        cdfs[g] = cdf
+    req(1 + sum((v[-1] for v in cdfs.values())) == 1 + 2 * positive - collisions, 'central total')
+    return (cdfs, dict(central_k=k, candidate_pairs=pairs, actual_convolution_updates=updates, primitive_positive_pairs=positive, ordered_collisions=collisions, exact_central_states=1 + sum((v[-1] for v in cdfs.values()))))
+
+def witness(M, g, T):
+    if T < g:
+        return 0
+    m = M // g
+    if m == 2:
+        return 1
+    H = (m - 1) // 2
+    rad = rad6(m)
+    n = 2 * U(min(T, H), 6)
+    if rad == 6:
+        return n
+    x = max(0, m - T - 1)
+    if rad == 2:
+        V = lambda z: (z + 3) // 6
+    elif rad == 3:
+        V = lambda z: z // 2 - z // 6
+    else:
+        raise ValueError('proper class')
+    return n + 2 * max(0, V(H) - V(x))
+
+def denomone(M, g, T):
+    if T < g:
+        return 0
+    m = M // g
+    if m == 2:
+        return 1
+    return 2 * U(min(T // g, (m - 1) // 2), rad6(m))
+
+def far(M, T, phis):
+    Q = (M - 1) // T
+    req(T * T > 2 * M and T > 2 * Q, 'strict far')
+    ticks = centres = 0
+    for q in range(2, Q + 1):
+        if gcd(q, 6) == 1:
+            continue
+        j = 1 if q % 6 == 0 else 2
+        num = 2 * phis[q] * (M - T * q) * S
+        den = q * (T - j * q)
+        req(num > 0 and den > 0, 'far positive group')
+        ticks += (num + den - 1) // den
+        centres += phis[q]
+    return (min(M, ticks // S + centres), [T, Q, centres, ticks, ticks // S + centres])
+
+def rawlog(n, K):
+    z = Fraction(n - (1 << n.bit_length() - 1), n + (1 << n.bit_length() - 1))
+
+    def series(z):
+        p = z
+        v = Fraction(0)
+        for j in range(K):
+            v += p / (2 * j + 1)
+            p *= z * z
+        return (2 * v, 2 * p / ((2 * K + 1) * (1 - z * z)))
+    l, r = series(z)
+    b, br = series(Fraction(1, 3))
+    e = n.bit_length() - 1
+    return (e * b + l, e * (b + br) + l + r)
+
+@lru_cache(maxsize=None, typed=True)
+def logticks(n):
+    req(type(n) is int and n > 0, 'positive exact integer logarithm')
+    l, u = rawlog(n, 16)
+    return (l.numerator * S // l.denominator, (u.numerator * S + u.denominator - 1) // u.denominator)
+
+def row(M, mu, phis, validation=False):
+    cdfs, stats = central(M, mu)
+    k = isqrt(M)
+    gs = [g for g in divisors(M) if g < M]
+    classes = [(g, M // g, phi6(M // g), cap(M, g), cdfs.get(g)) for g in gs]
+    ts = thresholds(M)
+    last = 0
+    hist = []
+    farrows = []
+    knots = []
+    for T in ts:
+        F = 1
+        for g, m, mass, C, c in classes:
+            cw = c[min(T, k)] if c is not None else 0
+            w = witness(M, g, T)
+            b = denomone(M, g, T)
+            req(0 <= w <= mass and 0 <= b <= mass, 'witness classmass')
+            F += max(cw, w, b, mass if T >= C else 0)
+        req(1 <= F <= M, 'classCDF')
+        if T <= k:
+            req(F == 1 + sum((c[T] for c in cdfs.values())), 'central exactness after marginal merge')
+        if T * T > 2 * M:
+            surv, detail = far(M, T, phis)
+            farrows.append(detail)
+            F = max(F, M - surv)
+        F = max(last, F)
+        req(F <= M, 'monotoneCDF')
+        if F > last:
+            hist.append([T, F - last])
+        if validation:
+            knots.append([T, F])
+        last = F
+    req(last == M and sum((c for _, c in hist)) == M, 'complete uppermass')
+    Q = 2 * sum((c * logticks(h)[1] for h, c in hist)) - M * logticks(M)[0]
+    stats.update(M=M, status='PAID' if Q < 0 else 'UNPAID', upper_histogram=hist, upper_centered_numerator=Q, upper_centered_denominator=2 * M * S, gcd_caps=[[g, m, mass, C] for g, m, mass, C, c in classes], far_counts=farrows, threshold_count=len(ts), complete_true_minimum_vector=False)
+    if validation:
+        stats.update(central_strata=[[g, c] for g, c in sorted(cdfs.items())], CDF_knots=knots, witness_cdfs=[[g, [witness(M, g, T) for T in range(1, M // 2 + 1)], [denomone(M, g, T) for T in range(1, M // 2 + 1)]] for g in gs])
+    return stats
+
+def main():
+    raw = (OUT / 'RADICAL6_DOMAIN.json').read_bytes()
+    req(hashlib.sha256(raw).hexdigest() == DOMAIN_PIN, 'domain pin')
+    domain = json.loads(raw)
+    req(domain['moduli'] == 143, 'fixed count')
+    maxk = domain['maximum_k']
+    mu, phis = sieve(maxk)
+    req(logticks(1) == (0, 0), 'log1')
+    for bad in (True, 0, -1, 1.0, Fraction(1)):
+        try:
+            logticks(bad)
+        except ValueError:
+            pass
+        else:
+            raise ValueError('bad log accepted')
+    rows = []
+    for i, (profile, work) in enumerate(zip(domain['rows'], domain['details']), 1):
+        M, p, r, a, b = profile
+        req(profile == [M, 2, 3, a, b] and M == 2 ** a * 3 ** b, 'profile')
+        req(thresholds(M) == work['thresholds'], 'fixed schedule')
+        value = row(M, mu, phis)
+        value.update(a=a, b=b)
+        req(value['actual_convolution_updates'] <= work['central_convolution_updates_bound'], 'work budget')
+        rows.append(value)
+        if i % 10 == 0:
+            print('PROGRESS ' + str(i) + '/143', file=sys.stderr, flush=True)
+    validation = [row(M, mu, phis, True) for M in VALIDATION]
+    req(sum((x['candidate_pairs'] for x in rows)) < domain['candidate_pair_bound'], 'pair budget')
+    used = {x['M'] for x in rows + validation}
+    used.update((h for x in rows + validation for h, c in x['upper_histogram']))
+    logs = [[h, *logticks(h)] for h in sorted(used)]
+    paid = [x['M'] for x in rows if x['status'] == 'PAID']
+    unpaid = [x['M'] for x in rows if x['status'] == 'UNPAID']
+    obj = dict(schema='p72-e034-aggregate-mean-v1', status='ALL_PAID' if not unpaid else 'PARTIAL', domain_sha256=DOMAIN_PIN, rows=rows, validation=validation, log_tick_ledger=logs, paid_moduli=paid, unpaid_moduli=unpaid, moduli=143, residues_swept=0, centre_phases_swept=0, work=domain | dict(rows=None, details=None), observed_candidate_pairs=sum((x['candidate_pairs'] for x in rows)), observed_convolution_updates=sum((x['actual_convolution_updates'] for x in rows)), full_minimum_vectors_main=0, small_validation_residues=792, floating_used=False, analytic_proof_replaced=False)
+    raw = (json.dumps(obj, sort_keys=True, indent=2) + '\n').encode()
+    target = OUT / 'RADICAL6_AGGREGATE.json'
+    if target.exists():
+        req(target.read_bytes() == raw, 'preserved scientific payload differs')
+    else:
+        with target.open('xb') as f:
+            f.write(raw)
+    sys.stdout.buffer.write(raw)
+if __name__ == '__main__':
+    main()

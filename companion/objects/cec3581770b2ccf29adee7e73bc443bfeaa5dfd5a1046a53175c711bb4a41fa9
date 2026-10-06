@@ -1,0 +1,138 @@
+from pathlib import Path
+import hashlib, importlib.util, json, sys
+from math import gcd, isqrt
+from collections import Counter
+from fractions import Fraction as F
+from functools import lru_cache
+ROOT = Path(__file__).resolve().parents[2]
+OUT = Path(__file__).parent
+SOURCE = ROOT / 'results/batch_27/verify_sixth_length.py'
+PIN = '3d6f6bd42722068146ec7587547362f8342f05cef18150702c62437a6245a96a'
+
+def require(ok, message):
+    if not ok:
+        raise ValueError(message)
+
+def load_source():
+    require(hashlib.sha256(SOURCE.read_bytes()).hexdigest() == PIN, 'read-only R27 pin')
+    sys.dont_write_bytecode = True
+    spec = importlib.util.spec_from_file_location('frozen_r27', SOURCE)
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+def emit(name, data):
+    raw = (json.dumps(data, indent=2) + '\n').encode()
+    (OUT / name).write_bytes(raw)
+    sys.stdout.buffer.write(raw)
+
+def cd(a, b):
+    return -(-a // b)
+DOMAIN_PIN = '4ebe2d54855922280bb82631fa4f5137e735464d0573d00db820c9c422535797'
+VALIDATION = (6, 10, 14, 15, 21, 22, 33, 35, 77, 143, 221)
+
+def primes_up_to(limit):
+    sieve = [True] * (limit + 1)
+    sieve[0] = sieve[1] = False
+    for p in range(2, isqrt(limit) + 1):
+        if sieve[p]:
+            for k in range(p * p, limit + 1, p):
+                sieve[k] = False
+    return [p for p in range(2, limit + 1) if sieve[p]]
+
+def domain_rows():
+    primes = primes_up_to(6612)
+    rows = []
+    for p in primes:
+        if p * p >= 19600:
+            break
+        for r in primes:
+            if r <= p:
+                continue
+            if p == 2:
+                if r >= 6613:
+                    break
+            elif p * r >= 19600:
+                break
+            rows.append(dict(p=p, r=r, M=p * r))
+    return sorted(rows, key=lambda v: v['M'])
+
+def capped_envelope(mod, m, p, r):
+    t = isqrt(2 * m) + 1
+    if r <= t:
+        exact, eh, evidence = mod.central(m, m)
+        upper = [h or min(r, max(1, min(s, m - s))) for s, h in enumerate(exact)]
+        evidence.update(cap_only_tail=True, tail_witness_checks=0, nonempty_holes=0, integer_hole_incidences=0, distinct_in_holes=0, far_threshold=t, exact_minima_scope='central window only')
+    else:
+        upper, h, exact, evidence = mod.envelope(m, m)
+        upper = [min(v, r) for v in upper]
+        evidence['cap_only_tail'] = False
+    hist = Counter(upper)
+    require(max(upper) <= r and len(upper) == m, 'proved least-prime cap')
+    require({h: c for h, c in hist.items() if h <= isqrt(m)} == dict(Counter((h for h in exact if h))), 'cap preserves exact central window')
+    return (upper, hist, exact, evidence)
+
+def circle_witness(m, s, p):
+    points = sorted(((s * i % m, i) for i in range(p)))
+    choices = []
+    for k, (x, i) in enumerate(points):
+        y, j = points[(k + 1) % p]
+        gap = y - x + (m if k == p - 1 else 0)
+        b = j - i
+        A = gap
+        if b < 0:
+            b, A = (-b, -A)
+        choices.append((gap, A, b))
+    gap, A, b = min(choices)
+    require(1 <= b < p and gcd(b, m) == 1 and ((A - s * b) % m == 0) and (max(abs(A), b) <= m // p), 'actual circle-gap cap witness')
+    return (A, b)
+
+def main():
+    mod = load_source()
+    mod.log_ticks = lru_cache(maxsize=None, typed=True)(mod.log_ticks)
+    premises = mod.premise_tests()
+    require(F(1, 12) - F(843, 10120) - F(1, 52900) == F(1127, 80302200) > 0, 'paid115 margin premise')
+    raw = (OUT / 'SEMIPRIME_DOMAIN.json').read_bytes()
+    require(hashlib.sha256(raw).hexdigest() == DOMAIN_PIN, 'prospectively frozen complete domain')
+    domain = json.loads(raw)
+    rows = domain_rows()
+    require(rows == domain['rows'] and len(rows) == 4596 and (sum((v['M'] for v in rows)) == 41585055), 'complete semiprime domain independently regenerated')
+    validations = []
+    farey_checks = 0
+    for m in VALIDATION:
+        p = next((p for p in primes_up_to(m) if m % p == 0))
+        r = m // p
+        require(p < r and r in primes_up_to(r), 'small semiprime factorization')
+        upper, h, exact, evidence = capped_envelope(mod, m, p, r)
+        full = [mod.defining_minimum(m, s, m) for s in range(m)]
+        single = [mod.defining_minimum(m, s, p) for s in range(m)]
+        require(full == single, 'pointwise zero second-prime loss')
+        require(max(full) == r and full[r] == r, 'exact extremal height')
+        for s in range(m):
+            circle_witness(m, s, p)
+        require(all((u >= v for u, v in zip(upper, full))), 'upper domination')
+        require(all((x == (v if v <= isqrt(m) else 0) for x, v in zip(exact, full))), 'exact central minima')
+        for t in (1, isqrt(m), isqrt(2 * m) + 1, m // 2):
+            require(mod.farey_cdf(m, m, t) == sum((v <= t for v in full)), 'independent Farey CDF oracle')
+            farey_checks += 1
+        validations.append(dict(M=m, p=p, r=r, oracle_residues=m, **evidence))
+    require(sum((v['M'] for v in validations)) == 597 and farey_checks == 44, 'fixed validation contract')
+    certificates = []
+    max_q_ratio = None
+    for index, row in enumerate(rows, 1):
+        m, p, r = (row['M'], row['p'], row['r'])
+        upper, h, exact, evidence = capped_envelope(mod, m, p, r)
+        cert = mod.certify(h, m)
+        hist_raw = json.dumps(cert.pop('histogram'), separators=(',', ':')).encode()
+        cert['upper_histogram_sha256'] = hashlib.sha256(hist_raw).hexdigest()
+        cert['upper_histogram_mass'] = m
+        certificates.append(dict(**row, **evidence, **cert, certificate_kind='complete upper envelope; exact central'))
+        q = F(cert['upper_centered_log_numerator'], cert['upper_centered_log_denominator'])
+        if max_q_ratio is None or q > max_q_ratio:
+            max_q_ratio = q
+        if index % 250 == 0:
+            sys.stderr.write('PROGRESS ' + str(index) + '/' + str(len(rows)) + '\n')
+            sys.stderr.flush()
+    emit('SEMIPRIME_BRIDGE.json', dict(status='E032_PASS', domain_sha256=DOMAIN_PIN, rows=certificates, validation=validations, premises=premises, certified_semiprime_moduli=len(certificates), upper_envelope_entries=sum((v['M'] for v in certificates)), exact_central_minima=sum((v['central_residues'] for v in certificates)), central_thresholds=sum((v['central_thresholds'] for v in certificates)), primitive_positive_pairs=sum((v['primitive_positive_pairs'] for v in certificates)), worst_certified_natural_upper=str(max_q_ratio), small_paired_mark_residues=597, small_complete_minimum_vectors=22, small_model_entries=1194, large_complete_minimum_vectors=0, independent_Farey_checks=44, floating_used=False, analytic_proof_replaced_by_computation=False))
+if __name__ == '__main__':
+    main()

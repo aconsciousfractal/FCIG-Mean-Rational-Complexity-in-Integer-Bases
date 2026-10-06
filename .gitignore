@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+build/
+paper/build/
+replay_work/
+companion/replay_work/
+*.aux
+*.log
+*.out

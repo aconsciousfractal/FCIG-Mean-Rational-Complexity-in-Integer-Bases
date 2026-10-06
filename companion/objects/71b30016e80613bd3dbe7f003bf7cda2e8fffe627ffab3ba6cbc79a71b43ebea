@@ -1,0 +1,443 @@
+"""E045 distinct retained upper/calendar/log/central branch verification."""
+from fractions import Fraction
+from functools import lru_cache
+import hashlib
+import json
+from math import gcd, isqrt
+from pathlib import Path
+import sys
+OUT = Path(__file__).parent
+ROOT = OUT.parents[1]
+R38_PATH = 'results/batch_38/resolve_cost_normal1.json'
+R38_SHA = '86ce21b2bb7ea5c65aeab036ad14d89d6f221891ec9a299d088ab075eadb68fe'
+R37_PATH = 'results/batch_37/ANALYTIC_N1.json'
+R37_SHA = '46d41a4a21778b864b7d821117a4633db26cb6cbedd93faa623dcb4e266008c9'
+R39_PATH = 'results/batch_39/REMAINING_N1.json'
+R39_SHA = '9bab00d4b77ddbc51bf9e685eead0d7b0f6f6173b670baefad09c261882614bb'
+QUALIFIED_ORACLE_SHA = '4a7a4230f2a72f2ffeece15e8d1ad2a2ad3546bc40a5749d0e590022911ba06d'
+S = 2 ** 64
+W = 2 ** 192
+
+def need(ok, message):
+    if not ok:
+        raise RuntimeError(message)
+
+def exact(value):
+    if type(value) is list:
+        return all((exact(item) for item in value))
+    return type(value) is int
+
+def same(actual, expected, message):
+    need(type(actual) is type(expected), message + ': type')
+    if type(expected) is dict:
+        need(actual.keys() == expected.keys(), message + ': keys')
+        for key in expected:
+            same(actual[key], expected[key], message + '/' + str(key))
+    elif type(expected) is list:
+        need(len(actual) == len(expected), message + ': length')
+        for index in range(len(expected)):
+            same(actual[index], expected[index], message + '/' + str(index))
+    else:
+        need(actual == expected, message + ': value')
+
+def read_pinned(path, pin):
+    raw = path.read_bytes()
+    need(hashlib.sha256(raw).hexdigest() == pin, 'byte pin ' + path.name)
+    return json.loads(raw)
+
+@lru_cache(maxsize=None)
+def prime_factors(n):
+    need(type(n) is int and n > 0, 'positive exact factor input')
+    factors = []
+    divisor = 2
+    while divisor * divisor <= n:
+        if n % divisor == 0:
+            factors.append(divisor)
+            while n % divisor == 0:
+                n //= divisor
+        divisor = 3 if divisor == 2 else divisor + 2
+    if n > 1:
+        factors.append(n)
+    return tuple(factors)
+
+def model(profile):
+    need(type(profile) is list and len(profile) == 5 and exact(profile), 'profile shape/type')
+    M, p, q, a, b = profile
+    need(p == 3 and p < q and (a > 0) and (b > 0) and (M == p ** a * q ** b), 'original p=3 two-prime profile')
+    need(prime_factors(p) == (p,) and prime_factors(q) == (q,), 'prime premises')
+    need(gcd(a, b) == 1 and (a, b) != (1, 1), 'retained valuation domain')
+    return (M, p, q, a, b)
+
+def proper_divisors(profile):
+    M, p, q, a, b = profile
+    return sorted((p ** i * q ** j for i in range(a + 1) for j in range(b + 1)))[:-1]
+
+def unit_count(n, factors):
+    value = n
+    if len(factors) >= 1:
+        value -= n // factors[0]
+    if len(factors) == 2:
+        value -= n // factors[1]
+        value += n // (factors[0] * factors[1])
+    need(0 <= len(factors) <= 2, 'two-prime unit count')
+    return value
+
+def class_mass(M, g):
+    m = M // g
+    result = m
+    for prime in prime_factors(m):
+        result = result // prime * (prime - 1)
+    return result
+
+def cap(M, g, p, q):
+    child = M // g
+    half = (child - 1) // 2
+    factors = prime_factors(child)
+    if child == 2:
+        delta = 1
+    elif len(factors) == 2:
+        delta = half
+    else:
+        missing = q if factors == (p,) else p
+        delta = max(half, child - missing)
+    return min(M // p, g * (child // 2), max(g, delta))
+
+def calendar(profile, gs):
+    M, p, q, a, b = profile
+    k = isqrt(M)
+    terminal = M // p
+    values = set(range(1, k + 1))
+    value = k
+    while value < terminal:
+        value = min(terminal, -(-257 * value // 256))
+        values.add(value)
+    start = isqrt(2 * M) + 1
+    if start <= terminal:
+        values.add(start)
+    for g in gs:
+        values.add(g)
+        values.add(cap(M, g, p, q))
+    values.add(terminal)
+    result = sorted(values)
+    need(result[0] == 1 and result[-1] == terminal, 'calendar endpoints')
+    return result
+
+def witness_prefix(M, g, T, p, q):
+    if T < g:
+        return 0
+    child = M // g
+    if child == 2:
+        return 1
+    half = (child - 1) // 2
+    value = 2 * unit_count(min(T, half), (p, q))
+    factors = prime_factors(child)
+    if len(factors) == 2:
+        return value
+    present = factors[0]
+    missing = q if present == p else p
+    high = half // missing - half // (present * missing)
+    low_cut = max(0, child - T - 1)
+    low = low_cut // missing - low_cut // (present * missing)
+    return value + 2 * max(0, high - low)
+
+def denom_one_prefix(M, g, T):
+    if T < g:
+        return 0
+    child = M // g
+    if child == 2:
+        return 1
+    return 2 * unit_count(min(T // g, (child - 1) // 2), prime_factors(child))
+
+@lru_cache(maxsize=None)
+def totient(n):
+    value = n
+    for prime in prime_factors(n):
+        value = value // prime * (prime - 1)
+    return value
+
+def far_fraction(M, p, q, T):
+    need(T * T > 2 * M, 'strict far scope')
+    cutoff = (M - 1) // T
+    need(T > 2 * cutoff, 'positive far denominator')
+    centres = ticks = groups = 0
+    for denominator in range(2, cutoff + 1):
+        if gcd(denominator, M) == 1:
+            continue
+        mark = 1 if denominator % (p * q) == 0 else 2
+        length = Fraction(2 * totient(denominator) * (M - T * denominator), denominator * (T - mark * denominator))
+        need(length > 0, 'positive grouped rational length')
+        scaled = length * S
+        ticks += -(-scaled.numerator // scaled.denominator)
+        centres += totient(denominator)
+        groups += 1
+    return ([T, cutoff, centres, ticks, centres + ticks // S], groups, max(0, cutoff - 1))
+
+def local_primitive(M, T):
+    need(T >= 1 and 2 * T * T <= M, 'collision-free T0')
+    primitive = floor_terms = marked = 0
+    for denominator in range(1, T + 1):
+        if gcd(denominator, M) != 1:
+            continue
+        terms = [(1, 1)]
+        for prime in prime_factors(denominator):
+            terms += [(factor * prime, -sign) for factor, sign in terms]
+        count = sum((sign * (T // factor) for factor, sign in terms))
+        need(count >= 0, 'primitive denominator row')
+        primitive += count
+        floor_terms += len(terms)
+        marked += 1
+    return dict(T=T, primitive_pairs=primitive, cdf=1 + 2 * primitive, floor_terms=floor_terms, marked_denominators=marked)
+
+def series32(a, b):
+    if a == 0:
+        return (0, 0)
+    lower = 0
+    numerator, denominator = (a, b)
+    for index in range(32):
+        lower += 2 * numerator * W // ((2 * index + 1) * denominator)
+        numerator *= a * a
+        denominator *= b * b
+    remainder_numerator = 2 * numerator * b * b * W
+    remainder_denominator = 65 * denominator * (b * b - a * a)
+    remainder = -(-remainder_numerator // remainder_denominator)
+    return (lower, lower + 32 + remainder)
+
+def log32(n, log2):
+    need(type(n) is int and n > 0, 'positive exact natural log input')
+    exponent = n.bit_length() - 1
+    power = 2 ** exponent
+    lower, upper = series32(n - power, n + power)
+    lower += exponent * log2[0]
+    upper += exponent * log2[1]
+    return (lower * S // W, -(-upper * S // W))
+
+def histogram_prefix(histogram, T):
+    return sum((count for height, count in histogram if height <= T))
+
+def metadata_sum(rows, keys):
+    return {key: sum((row[key] for row in rows)) for key in keys}
+
+def verify_row(profile, row, work, ledger, central_counts):
+    M, p, q, a, b = model(profile)
+    same([row[key] for key in ('M', 'p', 'r', 'a', 'b')], profile, 'producer model')
+    k = isqrt(M)
+    gs = proper_divisors(profile)
+    ts = calendar(profile, gs)
+    calendar_sha = hashlib.sha256(json.dumps(ts, separators=(',', ':')).encode()).hexdigest()
+    same(work['thresholds'], ts, 'frozen complete calendar')
+    same(work['thresholds_sha256'], calendar_sha, 'frozen calendar hash')
+    same(row['calendar_thresholds'], ts, 'consumed calendar')
+    same(row['calendar_sha256'], calendar_sha, 'consumed calendar hash')
+    same(row['threshold_count'], len(ts), 'calendar cardinality')
+    same(row['terminal'], M // p, 'original terminal')
+    same(row['central_k'], k, 'central k')
+    same(row['complete_true_minimum_vector'], False, 'main minimum flag')
+    baseline = work['baseline']
+    same(len(ts), baseline['thresholds'], 'inherited threshold cardinality')
+    same(calendar_sha, baseline['thresholds_sha256'], 'inherited calendar hash')
+    caps = [[g, M // g, class_mass(M, g), cap(M, g, p, q)] for g in gs]
+    same(row['gcd_caps'], caps, 'complete caps and class masses')
+    need(1 + sum((value[2] for value in caps)) == M, 'disjoint original mass')
+    arrays = row['central_strata']
+    need(type(arrays) is list and len(arrays) == len([g for g in gs if g <= k]), 'complete central arrays')
+    need(exact(arrays) and all((len(entry) == 2 for entry in arrays)), 'central array shape/type')
+    same([g for g, values in arrays], [g for g in gs if g <= k], 'central array headers')
+    central = {}
+    for g, values in arrays:
+        need(type(values) is list and len(values) == k + 1 and (values[0] == 0), 'complete central array with zero threshold')
+        need(all((0 <= value <= class_mass(M, g) for value in values)) and all((left <= right for left, right in zip(values, values[1:]))), 'central array monotonicity/class mass')
+        central[g] = values
+    totals = [[g, central[g][k] if g in central else 0] for g in gs]
+    same(row['central_stratum_totals'], totals, 'all proper central totals')
+    central_mass = 1 + sum((value for g, value in totals))
+    same(row['exact_central_states'], central_mass, 'central mass summary')
+    for key in ('primitive_positive_pairs', 'ordered_collisions', 'candidate_pairs', 'actual_convolution_updates'):
+        need(type(row[key]) is int and row[key] >= 0, 'exact nonnegative core statistic ' + key)
+    need(row['ordered_collisions'] <= row['candidate_pairs'], 'collision candidate bound')
+    same(1 + 2 * row['primitive_positive_pairs'] - row['ordered_collisions'], central_mass, 'retained central signed identity')
+    same(row['candidate_pairs'], baseline['candidate_pairs_exact'], 'candidate work bound')
+    need(row['actual_convolution_updates'] <= baseline['convolution_updates_bound'], 'convolution bound')
+    knots = []
+    histogram = []
+    far_rows = []
+    last = 0
+    far_groups = far_iterations = 0
+    for T in ts:
+        value = 1
+        for g, child, mass, threshold in caps:
+            plateau = central[g][min(T, k)] if g in central else 0
+            witness = witness_prefix(M, g, T, p, q)
+            one = denom_one_prefix(M, g, T)
+            need(0 <= witness <= mass and 0 <= one <= mass, 'independent witness class bounds')
+            value += max(plateau, witness, one, mass if T >= threshold else 0)
+        need(1 <= value <= M, 'class upper CDF bounds')
+        if T <= k:
+            same(value, 1 + sum((values[T] for values in central.values())), 'central marginal merge')
+        if T * T > 2 * M:
+            rebuilt, groups, iterations = far_fraction(M, p, q, T)
+            far_rows.append(rebuilt)
+            far_groups += groups
+            far_iterations += iterations
+            value = max(value, M - min(M, rebuilt[4]))
+        value = max(value, last)
+        need(value <= M, 'monotone upper CDF')
+        knots.append([T, value])
+        if value > last:
+            histogram.append([T, value - last])
+        last = value
+    same(row['CDF_knots'], knots, 'every reconstructed CDF knot')
+    same(row['upper_histogram'], histogram, 'exact consumed histogram increments')
+    same(row['far_counts'], far_rows, 'every grouped Fraction far row')
+    same(len(far_rows), baseline['far_rows'], 'complete strict far calendar')
+    need(far_iterations <= baseline['far_q_iterations_bound'], 'far iteration bound')
+    need(last == M and sum((count for height, count in histogram)) == M, 'complete upper mass')
+    need(all((height in ledger for height, count in histogram)) and M in ledger, 'log ledger closure')
+    Q = 2 * sum((count * ledger[height][1] for height, count in histogram)) - M * ledger[M][0]
+    same(row['upper_centered_numerator'], Q, 'reconstructed outward mean numerator')
+    same(row['upper_centered_denominator'], 2 * M * S, 'original all-state mean denominator')
+    status = 'PAID' if Q < 0 else 'UNPAID'
+    same(row['status'], status, 'strict retained sign')
+    local = local_primitive(M, isqrt(M // 2))
+    same(local['floor_terms'], baseline['local_floor_terms_exact'], 'distinct T0 floor budget')
+    same(local['cdf'], histogram_prefix(histogram, local['T']), 'independent collision-free T0 CDF')
+    same(local['cdf'], 1 + sum((values[local['T']] for values in central.values())), 'independent T0 central linkage')
+    oracle = central_counts(M, p, q, a, b, k)
+    same(oracle['zero_count'], 1, 'oracle zero')
+    same(oracle['cdf'], central_mass, 'independent compressed k CDF')
+    same(oracle['cdf'], histogram_prefix(histogram, k), 'consumed histogram k linkage')
+    same(oracle['strata'], totals, 'every independent compressed proper k stratum')
+    counters = oracle['counters']
+    compression = work['compression']
+    need(type(counters) is dict and all((type(value) is int and value >= 0 for value in counters.values())), 'exact nonnegative oracle operation counters')
+    same(counters['half_Farey_emissions'], compression['half_Farey_emissions_exact'], 'complete half-order visits')
+    same(counters['supported_divisor_cells'], compression['supported_divisor_queries_per_component_exact'], 'compressed divisor support')
+    same(counters['proper_strata_output'], len(gs), 'all oracle strata')
+    same(counters['forced_zero_strata'], compression['forced_zero_strata_exact'], 'all forced-zero strata')
+    same(counters['proper_reconstruction_signed_references'], compression['reconstruction_signed_references_bound'], 'complete once-per-profile reference count')
+    same(counters['reconstruction_additions_subtractions'], compression['reconstruction_additions_subtractions_bound'], 'complete once-per-profile inversion arithmetic')
+    same(counters['class_floor_divisions'], 2 * counters['supported_divisor_cells'] * counters['merged_intervals'], 'observed component floor identity')
+    same(counters['endpoint_floor_divisions'], 2 * counters['full_unit_centres'], 'observed endpoint floor identity')
+    same(counters['unit_gcd_tests'], counters['half_Farey_emissions'], 'all emitted denominator marks')
+    same(counters['principal_floor_divisions'], counters['Farey_recurrence_floor_divisions'] + counters['endpoint_floor_divisions'] + counters['class_floor_divisions'], 'observed principal floor sum')
+    need(counters['merged_intervals'] <= counters['nonempty_integer_intervals'] <= counters['full_unit_centres'] <= counters['half_Farey_emissions'], 'streaming counter hierarchy')
+    bounds = {'stopping_probes': 'half_stopping_probe_bound', 'candidate_inspections': 'half_candidate_inspections_bound', 'unit_gcd_tests': 'half_mark_gcd_tests_bound', 'Farey_recurrence_floor_divisions': 'half_Farey_recurrence_floor_divisions_bound', 'endpoint_floor_divisions': 'half_endpoint_floor_divisions_bound', 'merged_intervals': 'half_merged_components_bound', 'nonempty_integer_intervals': 'half_nonempty_intervals_bound', 'divisor_queries': 'half_support_divisor_queries_bound', 'class_floor_divisions': 'half_support_class_floor_divisions_bound', 'principal_floor_divisions': 'half_principal_floor_divisions_bound', 'proper_reconstruction_signed_references': 'reconstruction_signed_references_bound', 'reconstruction_additions_subtractions': 'reconstruction_additions_subtractions_bound'}
+    for name, bound in bounds.items():
+        need(type(counters[name]) is int and 0 <= counters[name] <= compression[bound], 'prospective oracle bound ' + name)
+    return (dict(M=M, status=status, T0=local, central_k=oracle, reconstructed_calendar_knots=len(knots), far_arithmetic_rows=len(far_rows), far_rational_groups=far_groups, far_denominator_iterations=far_iterations, proper_strata_checked=len(gs), outward_centered_numerator=Q), set([M] + [h for h, c in histogram]))
+
+def main():
+    need(len(sys.argv) == 5, 'domain path/SHA and consumed certificate path/SHA required')
+    domain_path, domain_sha, payload_path, payload_sha = sys.argv[1:]
+    domain = read_pinned(Path(domain_path), domain_sha)
+    r38 = read_pinned(ROOT / R38_PATH, R38_SHA)
+    r37 = read_pinned(ROOT / R37_PATH, R37_SHA)
+    same(r38['remaining_profiles'], r37['remaining_profiles'], 'complete retained source chain')
+    del r37
+    r39 = read_pinned(ROOT / R39_PATH, R39_SHA)
+    same(r39['remaining_profiles'], [profile for profile in r38['remaining_profiles'] if profile[1] < 5], 'complete previously retained p2/p3 obligation set')
+    same(r39['status'], 'EXACT_RETAINED_OBLIGATION_SET_NOT_COUNTEREXAMPLES', 'prior obligation status')
+    same(r39['moduli'], 3323, 'prior complete remaining count')
+    same(r39['all_profiles_preserved'], True, 'prior original profiles preserved')
+    same(r39['favorable_subset_selection'], False, 'prior signs did not select obligations')
+    profiles = [profile for profile in r39['remaining_profiles'] if profile[1] == 3]
+    complement = [profile for profile in r39['remaining_profiles'] if profile[1] == 2]
+    del r39
+    same(domain['schema'], 'p72-e045-p3-domain-v1', 'frozen domain schema')
+    same(domain['status'], 'FROZEN_BRANCH_PLANNING_ONLY', 'work-only domain status')
+    same(domain['source_r38_sha256'], R38_SHA, 'frozen source cost digest')
+    same(domain['source_path'], R38_PATH, 'original source cost path')
+    same(domain['source_r39_remaining_sha256'], R39_SHA, 'frozen prior obligation digest')
+    same(domain['source_remaining_path'], R39_PATH, 'prior obligation source path')
+    same(domain['profiles'], profiles, 'complete original branch/order')
+    same(domain['complement_profiles'], complement, 'preserved complete complement')
+    need(len(profiles) == len(domain['details']) == 1422 and len(complement) == 1901, 'complete cardinalities before iteration')
+    need(len({profile[0] for profile in profiles}) == 1422, 'unique branch original moduli')
+    same(domain['moduli'], 1422, 'domain count')
+    same(domain['complement_moduli'], 1901, 'preserved complementary count')
+    same(domain['scientific_CDF_heights_witnesses_logs_means_or_signs_evaluated'], False, 'work-only domain flag')
+    same(domain['state_mass'], 38505918, 'domain all-state mass')
+    same(sum((profile[0] for profile in profiles)), domain['state_mass'], 'exact branch mass')
+    marks = [list(pair) for pair in sorted({(profile[1], profile[2]) for profile in profiles})]
+    same(domain['radicals'], marks, 'complete branch radical set')
+    same(domain['radicals_count'], 835, 'domain radical count')
+    same(domain['maximum_k'], max((isqrt(profile[0]) for profile in profiles)), 'maximum central order')
+    source_rows = [row for row in r38['details'] if row['profile'][1] == 3]
+    same([row['profile'] for row in source_rows], profiles, 'complete original cost detail order')
+    for index, (profile, work, source) in enumerate(zip(profiles, domain['details'], source_rows)):
+        same(work['profile'], profile, 'domain detail order ' + str(index))
+        same(work['baseline'], source['baseline'], 'original baseline ' + str(index))
+        same(work['compression'], source['compression'], 'original compression ' + str(index))
+    same(domain['totals'], metadata_sum([row['baseline'] for row in source_rows], r38['inherited_totals']), 'complete original branch inherited totals')
+    same(domain['compression_totals'], metadata_sum([row['compression'] for row in source_rows], r38['compression_totals']), 'complete original branch compression totals')
+    same(domain['local_profiles'], [row for row in r38['all_mark_local_policy']['profiles'] if row['p'] == 3], 'complete independent physical-control obligation list')
+    local = domain['local_profiles']
+    same(domain['local_policy_totals'], dict(curves=len(local), signed_types=sum((row['signed_types_exact'] for row in local)), step_tests_bound=sum((row['step_tests_bound'] for row in local)), marginal_comparisons_bound=2 * sum((row['step_tests_bound'] for row in local))), 'complete local-control policy metadata')
+    same(domain['calendar_thresholds_generated'], domain['totals']['thresholds'], 'complete planned calendar cardinality')
+    roles = {'producer_sha256': 'run_branch.py', 'core_sha256': 'aggregate_core.py', 'oracle_sha256': 'compressed_oracle.py'}
+    source_paths = {field: (OUT / name).relative_to(ROOT).as_posix() for field, name in roles.items()}
+    need(type(domain['source_pins']) is dict and set(domain['source_pins']) == set(source_paths.values()), 'all and only required producer/core/oracle source identities')
+    for relative_path, digest in domain['source_pins'].items():
+        need(hashlib.sha256((ROOT / relative_path).read_bytes()).hexdigest() == digest, 'frozen source ' + relative_path)
+    for field in roles:
+        same(domain[field], domain['source_pins'][source_paths[field]], 'domain source identity ' + field)
+    same(domain['oracle_sha256'], QUALIFIED_ORACLE_SHA, 'byte-identical previously qualified oracle')
+    del r38, source_rows
+    data = read_pinned(Path(payload_path), payload_sha)
+    need(type(data['rows']) is list and len(data['rows']) == 1422, 'complete consumed rows before iteration')
+    same(data['schema'], 'p72-e045-p3-mean-v1', 'consumed producer schema')
+    same(data['domain_sha256'], domain_sha, 'consumed exact domain')
+    same(data['r38_cost_sha256'], R38_SHA, 'consumed original source cost')
+    same(data['r39_remaining_sha256'], R39_SHA, 'consumed prior obligation set')
+    same(data['source_pins'], domain['source_pins'], 'consumed complete source pins')
+    same(data['moduli'], 1422, 'consumed complete count')
+    for field in ('producer_sha256', 'core_sha256', 'oracle_sha256'):
+        same(data[field], domain['source_pins'][source_paths[field]], 'consumed source identity ' + field)
+    same(data['floating_used'], False, 'exact arithmetic flag')
+    same(data['analytic_proof_replaced'], False, 'coverage proof remains a premise')
+    same(data['local_physical_controls_embedded'], False, 'separate physical-control job')
+    same(data['small_definition_residues'], 0, 'no old small defining rerun')
+    for field in ('residues_swept', 'centre_phases_swept', 'full_minimum_vectors_main'):
+        same(data[field], 0, 'no original-state arrays ' + field)
+    ledger = {}
+    need(type(data['log_tick_ledger']) is list, 'log ledger list')
+    log2 = series32(1, 3)
+    for entry in data['log_tick_ledger']:
+        need(type(entry) is list and len(entry) == 3 and exact(entry), 'log entry shape/type')
+        n, lower, upper = entry
+        need(n not in ledger and lower <= upper, 'unique log enclosure')
+        L, U = log32(n, log2)
+        need(lower <= L and U <= upper, 'independent32 enclosure contained')
+        ledger[n] = (lower, upper)
+    need(list(ledger) == sorted(ledger) and ledger.get(1) == (0, 0), 'ordered exact log ledger/log1')
+    sys.dont_write_bytecode = True
+    from compressed_oracle import central_counts
+    observations = []
+    used = set()
+    paid = []
+    unpaid = []
+    for index, profile in enumerate(profiles):
+        try:
+            observation, row_used = verify_row(profile, data['rows'][index], domain['details'][index], ledger, central_counts)
+        except Exception as error:
+            failure = dict(status='E045_DISTINCT_BRANCH_CHECK_ABORT_OR_MISMATCH', domain_sha256=domain_sha, payload_sha256=payload_sha, completed_rows=observations, failing_index=index, failing_profile=profile, unexecuted_profiles=len(profiles) - index - 1, error_type=type(error).__name__, error_message=str(error), branch_completion_or_payment_claimed=False)
+            sys.stdout.write(json.dumps(failure, sort_keys=True, separators=(',', ':')) + '\n')
+            raise
+        observations.append(observation)
+        used.update(row_used)
+        (paid if observation['status'] == 'PAID' else unpaid).append(profile[0])
+    need(set(ledger) == used, 'exact consumed log ledger set')
+    same(data['paid_moduli'], paid, 'complete strict paid partition')
+    same(data['unpaid_moduli'], unpaid, 'complete inconclusive partition')
+    same(data['status'], 'PARTIAL' if unpaid else 'ALL_PAID', 'global status from all rows')
+    same(data['observed_candidate_pairs'], sum((row['candidate_pairs'] for row in data['rows'])), 'observed candidate sum')
+    same(data['observed_convolution_updates'], sum((row['actual_convolution_updates'] for row in data['rows'])), 'observed convolution sum')
+    same(data['observed_candidate_pairs'], domain['totals']['candidate_pairs_exact'], 'complete candidate budget')
+    same(data['calendar_knots'], sum((row['reconstructed_calendar_knots'] for row in observations)), 'complete observed calendar total')
+    same(data['far_arithmetic_rows'], sum((row['far_arithmetic_rows'] for row in observations)), 'complete observed far total')
+    same(data['calendar_knots'], domain['totals']['thresholds'], 'complete calendar budget')
+    same(data['far_arithmetic_rows'], domain['totals']['far_rows'], 'complete far budget')
+    same(sum((row['T0']['floor_terms'] for row in observations)), domain['totals']['local_floor_terms_exact'], 'complete distinct T0 budget')
+    obj = dict(status='E045_DISTINCT_RETAINED_AND_COMPRESSED_CENTRAL_PASS', domain_sha256=domain_sha, payload_sha256=payload_sha, checker_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(), r38_cost_sha256=R38_SHA, r37_complement_sha256=R37_SHA, r39_remaining_sha256=R39_SHA, previously_qualified_oracle_sha256=QUALIFIED_ORACLE_SHA, profiles_checked=1422, radicals_checked=835, complement_profiles_preserved=1901, paid=len(paid), unpaid_moduli=unpaid, rows=observations, independent32_log_enclosures=len(ledger), reconstructed_calendar_knots=sum((row['reconstructed_calendar_knots'] for row in observations)), far_arithmetic_rows=sum((row['far_arithmetic_rows'] for row in observations)), far_rational_groups=sum((row['far_rational_groups'] for row in observations)), far_denominator_iterations=sum((row['far_denominator_iterations'] for row in observations)), local_T0_floor_terms=sum((row['T0']['floor_terms'] for row in observations)), exact_global_CDF_values_recomputed=2 * len(observations), exact_k_strata_recomputed=sum((row['proper_strata_checked'] for row in observations)), oracle_counters={key: sum((row['central_k']['counters'][key] for row in observations)) for key in observations[0]['central_k']['counters']}, producer_imported=False, generic_core_imported=False, original_residue_minimum_vectors=0, true_far_survival_recomputed=False, all_central_knots_independently_recounted=False, physical_local_controls_checked_in_this_job=False, physical_control_receipt_required_separately=True, scope='Complete source branch; retained log/mean/calendar/far arithmetic, exact independent T0/k globals and all k strata. Physical controls are a separate gate.')
+    sys.stdout.write(json.dumps(obj, sort_keys=True, separators=(',', ':')) + '\n')
+if __name__ == '__main__':
+    main()

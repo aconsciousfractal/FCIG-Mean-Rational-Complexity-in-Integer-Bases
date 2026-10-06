@@ -1,0 +1,2713 @@
+{
+  "all_large_CDF_knots_recomputed": false,
+  "domain_sha256": "d767ef2f2560427d3623d1dffefc4713a113544215e4e71cbeeed8dfc3dd237a",
+  "large_Farey_visits": 269503,
+  "large_far_arithmetic_checks": 3857,
+  "large_far_rational_groups": 136999,
+  "large_full_minimum_vectors": 0,
+  "large_gcd_stratum_values_recomputed": 72,
+  "large_global_CDF_values_recomputed": 6,
+  "large_interval_terms_observed": 5805680,
+  "large_local_floor_terms": 1821,
+  "main_moduli": 3,
+  "payload_sha256": "490cd32bdbf812e57dbb8ffc12cc30ab53329fa78738e152b15f93598dbe6bc3",
+  "producer_imported": false,
+  "retained_checker_imported": false,
+  "rows": [
+    {
+      "M": 194481,
+      "T0": {
+        "C": 77443,
+        "P": 38721,
+        "T": 311,
+        "local_floor_terms": 601
+      },
+      "central": {
+        "C": 139275,
+        "Farey_visits": 59227,
+        "T": 441,
+        "full_unit_centres": 38779,
+        "gcd_counts": [
+          [
+            1,
+            79350
+          ],
+          [
+            3,
+            26516
+          ],
+          [
+            7,
+            11404
+          ],
+          [
+            9,
+            8890
+          ],
+          [
+            21,
+            3778
+          ],
+          [
+            27,
+            2792
+          ],
+          [
+            49,
+            1612
+          ],
+          [
+            63,
+            1360
+          ],
+          [
+            81,
+            1652
+          ],
+          [
+            147,
+            756
+          ],
+          [
+            189,
+            588
+          ],
+          [
+            343,
+            324
+          ],
+          [
+            441,
+            252
+          ],
+          [
+            567,
+            0
+          ],
+          [
+            1029,
+            0
+          ],
+          [
+            1323,
+            0
+          ],
+          [
+            2401,
+            0
+          ],
+          [
+            3087,
+            0
+          ],
+          [
+            3969,
+            0
+          ],
+          [
+            7203,
+            0
+          ],
+          [
+            9261,
+            0
+          ],
+          [
+            21609,
+            0
+          ],
+          [
+            27783,
+            0
+          ],
+          [
+            64827,
+            0
+          ]
+        ],
+        "interval_sha256": "8e6ad42d57b26a4fff12f5330a74252fea8c6ab878769e8f9a497beb53bc192a",
+        "interval_terms": 1131920,
+        "merged_intervals": 14149,
+        "nonempty_integer_intervals": 38779
+      },
+      "far_arithmetic_checks": 1166,
+      "far_groups": 31100,
+      "p": 3,
+      "r": 7
+    },
+    {
+      "M": 234256,
+      "T0": {
+        "C": 86639,
+        "P": 43319,
+        "T": 342,
+        "local_floor_terms": 491
+      },
+      "central": {
+        "C": 159825,
+        "Farey_visits": 71277,
+        "T": 484,
+        "full_unit_centres": 43392,
+        "gcd_counts": [
+          [
+            1,
+            72374
+          ],
+          [
+            2,
+            36388
+          ],
+          [
+            4,
+            18174
+          ],
+          [
+            8,
+            8974
+          ],
+          [
+            11,
+            6650
+          ],
+          [
+            16,
+            9170
+          ],
+          [
+            22,
+            3232
+          ],
+          [
+            44,
+            1676
+          ],
+          [
+            88,
+            968
+          ],
+          [
+            121,
+            732
+          ],
+          [
+            176,
+            826
+          ],
+          [
+            242,
+            440
+          ],
+          [
+            484,
+            220
+          ],
+          [
+            968,
+            0
+          ],
+          [
+            1331,
+            0
+          ],
+          [
+            1936,
+            0
+          ],
+          [
+            2662,
+            0
+          ],
+          [
+            5324,
+            0
+          ],
+          [
+            10648,
+            0
+          ],
+          [
+            14641,
+            0
+          ],
+          [
+            21296,
+            0
+          ],
+          [
+            29282,
+            0
+          ],
+          [
+            58564,
+            0
+          ],
+          [
+            117128,
+            0
+          ]
+        ],
+        "interval_sha256": "9973ee888023f79a541ca268d4566840680ca399bd9d86247ec19a74b6c6d9b0",
+        "interval_terms": 1591040,
+        "merged_intervals": 19888,
+        "nonempty_integer_intervals": 43392
+      },
+      "far_arithmetic_checks": 1298,
+      "far_groups": 44027,
+      "p": 2,
+      "r": 11
+    },
+    {
+      "M": 456976,
+      "T0": {
+        "C": 172405,
+        "P": 86202,
+        "T": 478,
+        "local_floor_terms": 729
+      },
+      "central": {
+        "C": 315613,
+        "Farey_visits": 138999,
+        "T": 676,
+        "full_unit_centres": 85954,
+        "gcd_counts": [
+          [
+            1,
+            145326
+          ],
+          [
+            2,
+            72838
+          ],
+          [
+            4,
+            36414
+          ],
+          [
+            8,
+            18230
+          ],
+          [
+            13,
+            11174
+          ],
+          [
+            16,
+            18268
+          ],
+          [
+            26,
+            5548
+          ],
+          [
+            52,
+            2880
+          ],
+          [
+            104,
+            1476
+          ],
+          [
+            169,
+            1040
+          ],
+          [
+            208,
+            1482
+          ],
+          [
+            338,
+            624
+          ],
+          [
+            676,
+            312
+          ],
+          [
+            1352,
+            0
+          ],
+          [
+            2197,
+            0
+          ],
+          [
+            2704,
+            0
+          ],
+          [
+            4394,
+            0
+          ],
+          [
+            8788,
+            0
+          ],
+          [
+            17576,
+            0
+          ],
+          [
+            28561,
+            0
+          ],
+          [
+            35152,
+            0
+          ],
+          [
+            57122,
+            0
+          ],
+          [
+            114244,
+            0
+          ],
+          [
+            228488,
+            0
+          ]
+        ],
+        "interval_sha256": "4bb5f9cd261c907640d8f9ee8e3f6a4193ff4631b24bd9630d633a79c8d44079",
+        "interval_terms": 3082720,
+        "merged_intervals": 38534,
+        "nonempty_integer_intervals": 85954
+      },
+      "far_arithmetic_checks": 1393,
+      "far_groups": 61872,
+      "p": 2,
+      "r": 13
+    }
+  ],
+  "scope": "Exact global T0/k and all k-gcd strata; every far row arithmetic, not true far survival or all noncentral witness CDFs.",
+  "small_Farey_visits": 1832,
+  "small_checks": 481,
+  "small_definition_residues": 3773,
+  "small_interval_terms": 15252,
+  "small_validation": [
+    {
+      "M": 21,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              7,
+              0
+            ]
+          ],
+          "interval_sha256": "fcd052af3f3cd3491c62854677ae5379966e67c55495ea2b2edf15e910412b9c",
+          "interval_terms": 16,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 11,
+          "Farey_visits": 5,
+          "T": 3,
+          "full_unit_centres": 3,
+          "gcd_counts": [
+            [
+              1,
+              6
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              7,
+              0
+            ]
+          ],
+          "interval_sha256": "833a0af3fcca7e9bc762e408864520c9c9ebf12763a591509a38b2512817a5e8",
+          "interval_terms": 24,
+          "merged_intervals": 3,
+          "nonempty_integer_intervals": 3
+        },
+        {
+          "C": 17,
+          "Farey_visits": 7,
+          "T": 4,
+          "full_unit_centres": 5,
+          "gcd_counts": [
+            [
+              1,
+              10
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              7,
+              0
+            ]
+          ],
+          "interval_sha256": "26be8d15109d6118af743a5f892be2cc7fc8fef07d25c55034631b51b4dbc440",
+          "interval_terms": 24,
+          "merged_intervals": 3,
+          "nonempty_integer_intervals": 5
+        }
+      ],
+      "local": {
+        "C": 11,
+        "P": 5,
+        "T": 3,
+        "local_floor_terms": 3
+      },
+      "p": 3,
+      "r": 7
+    },
+    {
+      "M": 63,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              21,
+              0
+            ]
+          ],
+          "interval_sha256": "a3a00860cedd33d88eae437039f366ca323471e9ef7c1a212690e065fd9cc61a",
+          "interval_terms": 28,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 31,
+          "Farey_visits": 11,
+          "T": 5,
+          "full_unit_centres": 9,
+          "gcd_counts": [
+            [
+              1,
+              22
+            ],
+            [
+              3,
+              8
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              21,
+              0
+            ]
+          ],
+          "interval_sha256": "9a2bb9f2f4dd030a26752dc77cd335cb7c16d5d8d56654acb73f10187312c43a",
+          "interval_terms": 126,
+          "merged_intervals": 9,
+          "nonempty_integer_intervals": 9
+        },
+        {
+          "C": 41,
+          "Farey_visits": 19,
+          "T": 7,
+          "full_unit_centres": 9,
+          "gcd_counts": [
+            [
+              1,
+              22
+            ],
+            [
+              3,
+              12
+            ],
+            [
+              7,
+              6
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              21,
+              0
+            ]
+          ],
+          "interval_sha256": "884d82362251ed61e5524e4ed2cffa941099b10d9fcd95b0b4ecf42758c77bbd",
+          "interval_terms": 98,
+          "merged_intervals": 7,
+          "nonempty_integer_intervals": 9
+        }
+      ],
+      "local": {
+        "C": 31,
+        "P": 15,
+        "T": 5,
+        "local_floor_terms": 7
+      },
+      "p": 3,
+      "r": 7
+    },
+    {
+      "M": 147,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              21,
+              0
+            ],
+            [
+              49,
+              0
+            ]
+          ],
+          "interval_sha256": "c40019158084bc8eb16fe7b6ea063977cf831788885d33cd3d757fb68d3e3992",
+          "interval_terms": 28,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 55,
+          "Farey_visits": 23,
+          "T": 8,
+          "full_unit_centres": 13,
+          "gcd_counts": [
+            [
+              1,
+              30
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              21,
+              0
+            ],
+            [
+              49,
+              0
+            ]
+          ],
+          "interval_sha256": "f94a63a199bd6ec4100c4c33c752e999df084cb36f3cc17dc6c4a3fd7dcf017b",
+          "interval_terms": 182,
+          "merged_intervals": 13,
+          "nonempty_integer_intervals": 13
+        },
+        {
+          "C": 105,
+          "Farey_visits": 47,
+          "T": 12,
+          "full_unit_centres": 27,
+          "gcd_counts": [
+            [
+              1,
+              58
+            ],
+            [
+              3,
+              34
+            ],
+            [
+              7,
+              12
+            ],
+            [
+              21,
+              0
+            ],
+            [
+              49,
+              0
+            ]
+          ],
+          "interval_sha256": "a66b4a18f4e8a07dadf0177cce907791ab301eb0aa53c62121130547ef847ca8",
+          "interval_terms": 182,
+          "merged_intervals": 13,
+          "nonempty_integer_intervals": 27
+        }
+      ],
+      "local": {
+        "C": 55,
+        "P": 27,
+        "T": 8,
+        "local_floor_terms": 9
+      },
+      "p": 3,
+      "r": 7
+    },
+    {
+      "M": 189,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              21,
+              0
+            ],
+            [
+              27,
+              0
+            ],
+            [
+              63,
+              0
+            ]
+          ],
+          "interval_sha256": "1a6e1204aa1bdab1b35109c1869bbfdad7c1e622f9631547cd6a3c44317cc2fe",
+          "interval_terms": 40,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 65,
+          "Farey_visits": 29,
+          "T": 9,
+          "full_unit_centres": 13,
+          "gcd_counts": [
+            [
+              1,
+              30
+            ],
+            [
+              3,
+              14
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              9,
+              10
+            ],
+            [
+              21,
+              0
+            ],
+            [
+              27,
+              0
+            ],
+            [
+              63,
+              0
+            ]
+          ],
+          "interval_sha256": "db3706257f23369760e65f9e1e70e042fae0716edba1a29d631a90c7fe62ee9e",
+          "interval_terms": 260,
+          "merged_intervals": 13,
+          "nonempty_integer_intervals": 13
+        },
+        {
+          "C": 137,
+          "Farey_visits": 59,
+          "T": 13,
+          "full_unit_centres": 39,
+          "gcd_counts": [
+            [
+              1,
+              78
+            ],
+            [
+              3,
+              30
+            ],
+            [
+              7,
+              16
+            ],
+            [
+              9,
+              12
+            ],
+            [
+              21,
+              0
+            ],
+            [
+              27,
+              0
+            ],
+            [
+              63,
+              0
+            ]
+          ],
+          "interval_sha256": "8404202c9fc7b7410d058fa895258ee93fe99300481cea98ddaae80883d21b3e",
+          "interval_terms": 300,
+          "merged_intervals": 15,
+          "nonempty_integer_intervals": 39
+        }
+      ],
+      "local": {
+        "C": 65,
+        "P": 32,
+        "T": 9,
+        "local_floor_terms": 9
+      },
+      "p": 3,
+      "r": 7
+    },
+    {
+      "M": 441,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              7,
+              0
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              21,
+              0
+            ],
+            [
+              49,
+              0
+            ],
+            [
+              63,
+              0
+            ],
+            [
+              147,
+              0
+            ]
+          ],
+          "interval_sha256": "5f7bc101324540731e1de7a7a3ffa04285eff5840c92a99f13aa6e6f20b13c89",
+          "interval_terms": 48,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 159,
+          "Farey_visits": 65,
+          "T": 14,
+          "full_unit_centres": 39,
+          "gcd_counts": [
+            [
+              1,
+              86
+            ],
+            [
+              3,
+              32
+            ],
+            [
+              7,
+              24
+            ],
+            [
+              9,
+              16
+            ],
+            [
+              21,
+              0
+            ],
+            [
+              49,
+              0
+            ],
+            [
+              63,
+              0
+            ],
+            [
+              147,
+              0
+            ]
+          ],
+          "interval_sha256": "50fb6187c70698734a211ed4f6af788bc2a379d9533f549f298d7bbc347224d8",
+          "interval_terms": 936,
+          "merged_intervals": 39,
+          "nonempty_integer_intervals": 39
+        },
+        {
+          "C": 311,
+          "Farey_visits": 141,
+          "T": 21,
+          "full_unit_centres": 89,
+          "gcd_counts": [
+            [
+              1,
+              166
+            ],
+            [
+              3,
+              64
+            ],
+            [
+              7,
+              36
+            ],
+            [
+              9,
+              32
+            ],
+            [
+              21,
+              12
+            ],
+            [
+              49,
+              0
+            ],
+            [
+              63,
+              0
+            ],
+            [
+              147,
+              0
+            ]
+          ],
+          "interval_sha256": "5fcc0b2eabfd1884bcb3dd5afb78a0501395051d1a6604cfd85dd5c40a961a16",
+          "interval_terms": 744,
+          "merged_intervals": 31,
+          "nonempty_integer_intervals": 89
+        }
+      ],
+      "local": {
+        "C": 159,
+        "P": 79,
+        "T": 14,
+        "local_floor_terms": 17
+      },
+      "p": 3,
+      "r": 7
+    },
+    {
+      "M": 22,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              11,
+              0
+            ]
+          ],
+          "interval_sha256": "ce3147b826809d5f6bcaa81b85d3549b8c5b267b18b3c613eab43dd675169346",
+          "interval_terms": 16,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 11,
+          "Farey_visits": 5,
+          "T": 3,
+          "full_unit_centres": 4,
+          "gcd_counts": [
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              11,
+              0
+            ]
+          ],
+          "interval_sha256": "7a83208b8d077cfde89af2803b0af6ed66fb4cdc13b0b7f3bad336da23136b36",
+          "interval_terms": 32,
+          "merged_intervals": 4,
+          "nonempty_integer_intervals": 4
+        },
+        {
+          "C": 15,
+          "Farey_visits": 7,
+          "T": 4,
+          "full_unit_centres": 4,
+          "gcd_counts": [
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              11,
+              0
+            ]
+          ],
+          "interval_sha256": "887159f15e33aa0cc47b98ccb94001d49e47017332fd44c0dc37a8e1bef2e41f",
+          "interval_terms": 32,
+          "merged_intervals": 4,
+          "nonempty_integer_intervals": 4
+        }
+      ],
+      "local": {
+        "C": 11,
+        "P": 5,
+        "T": 3,
+        "local_floor_terms": 3
+      },
+      "p": 2,
+      "r": 11
+    },
+    {
+      "M": 44,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              22,
+              0
+            ]
+          ],
+          "interval_sha256": "16ad3760498fdcdb4b524b95990c8c06e68c631fb1e68e086bcf0c1b18965df8",
+          "interval_terms": 28,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 15,
+          "Farey_visits": 7,
+          "T": 4,
+          "full_unit_centres": 4,
+          "gcd_counts": [
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              22,
+              0
+            ]
+          ],
+          "interval_sha256": "108a07e066ca5528342627d72aa90c7f8e0a0378be1ae3faa231812c0818722b",
+          "interval_terms": 56,
+          "merged_intervals": 4,
+          "nonempty_integer_intervals": 4
+        },
+        {
+          "C": 31,
+          "Farey_visits": 13,
+          "T": 6,
+          "full_unit_centres": 8,
+          "gcd_counts": [
+            [
+              1,
+              14
+            ],
+            [
+              2,
+              10
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              22,
+              0
+            ]
+          ],
+          "interval_sha256": "a8591ce8c9bce4fb5070d57e9f2cc4cf27a17fc48c07afeb75809851fcc58270",
+          "interval_terms": 84,
+          "merged_intervals": 6,
+          "nonempty_integer_intervals": 8
+        }
+      ],
+      "local": {
+        "C": 15,
+        "P": 7,
+        "T": 4,
+        "local_floor_terms": 3
+      },
+      "p": 2,
+      "r": 11
+    },
+    {
+      "M": 88,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              22,
+              0
+            ],
+            [
+              44,
+              0
+            ]
+          ],
+          "interval_sha256": "6d1bfb51d2bfd426a7bc2cddd96e9b2a0e62decba3d5e3124a05152e05a8e4ec",
+          "interval_terms": 40,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 31,
+          "Farey_visits": 13,
+          "T": 6,
+          "full_unit_centres": 8,
+          "gcd_counts": [
+            [
+              1,
+              14
+            ],
+            [
+              2,
+              10
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              22,
+              0
+            ],
+            [
+              44,
+              0
+            ]
+          ],
+          "interval_sha256": "0bceabb4679db17a5f85684e8dcc0da319da34b341a20d8a5e20342c9986297e",
+          "interval_terms": 160,
+          "merged_intervals": 8,
+          "nonempty_integer_intervals": 8
+        },
+        {
+          "C": 67,
+          "Farey_visits": 29,
+          "T": 9,
+          "full_unit_centres": 20,
+          "gcd_counts": [
+            [
+              1,
+              30
+            ],
+            [
+              2,
+              16
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              22,
+              0
+            ],
+            [
+              44,
+              0
+            ]
+          ],
+          "interval_sha256": "ffa01f7cae33461d8786f01925cb52e61471a2165b31d97f072557de2c9e6b52",
+          "interval_terms": 200,
+          "merged_intervals": 10,
+          "nonempty_integer_intervals": 20
+        }
+      ],
+      "local": {
+        "C": 31,
+        "P": 15,
+        "T": 6,
+        "local_floor_terms": 5
+      },
+      "p": 2,
+      "r": 11
+    },
+    {
+      "M": 242,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              22,
+              0
+            ],
+            [
+              121,
+              0
+            ]
+          ],
+          "interval_sha256": "a149527e60e62e7471e06e664293e46135c8b29cf976621445a7289a891ec4dc",
+          "interval_terms": 28,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 93,
+          "Farey_visits": 43,
+          "T": 11,
+          "full_unit_centres": 20,
+          "gcd_counts": [
+            [
+              1,
+              38
+            ],
+            [
+              2,
+              44
+            ],
+            [
+              11,
+              10
+            ],
+            [
+              22,
+              0
+            ],
+            [
+              121,
+              0
+            ]
+          ],
+          "interval_sha256": "8270065553406baeab8766721c68e06ef8b7e16ee9a68d8446220b4e422d6497",
+          "interval_terms": 280,
+          "merged_intervals": 20,
+          "nonempty_integer_intervals": 20
+        },
+        {
+          "C": 157,
+          "Farey_visits": 73,
+          "T": 15,
+          "full_unit_centres": 40,
+          "gcd_counts": [
+            [
+              1,
+              70
+            ],
+            [
+              2,
+              76
+            ],
+            [
+              11,
+              10
+            ],
+            [
+              22,
+              0
+            ],
+            [
+              121,
+              0
+            ]
+          ],
+          "interval_sha256": "c59575b4f6fb5e016ef833cb7003bff628e5e9b924a413bd3af8b36210b2328a",
+          "interval_terms": 308,
+          "merged_intervals": 22,
+          "nonempty_integer_intervals": 40
+        }
+      ],
+      "local": {
+        "C": 93,
+        "P": 46,
+        "T": 11,
+        "local_floor_terms": 9
+      },
+      "p": 2,
+      "r": 11
+    },
+    {
+      "M": 484,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              22,
+              0
+            ],
+            [
+              44,
+              0
+            ],
+            [
+              121,
+              0
+            ],
+            [
+              242,
+              0
+            ]
+          ],
+          "interval_sha256": "8a496550d72ff15535e4d4f10c2e2ba5692cfae9192978179c5936b4eaf2bdba",
+          "interval_terms": 48,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 165,
+          "Farey_visits": 73,
+          "T": 15,
+          "full_unit_centres": 40,
+          "gcd_counts": [
+            [
+              1,
+              70
+            ],
+            [
+              2,
+              44
+            ],
+            [
+              4,
+              36
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              22,
+              0
+            ],
+            [
+              44,
+              0
+            ],
+            [
+              121,
+              0
+            ],
+            [
+              242,
+              0
+            ]
+          ],
+          "interval_sha256": "a2d1ca3e8b7270cfe4636ab95574a65e8aad52ecf8c232c9867a0774f504bfb6",
+          "interval_terms": 912,
+          "merged_intervals": 38,
+          "nonempty_integer_intervals": 40
+        },
+        {
+          "C": 319,
+          "Farey_visits": 151,
+          "T": 22,
+          "full_unit_centres": 86,
+          "gcd_counts": [
+            [
+              1,
+              134
+            ],
+            [
+              2,
+              74
+            ],
+            [
+              4,
+              80
+            ],
+            [
+              11,
+              20
+            ],
+            [
+              22,
+              10
+            ],
+            [
+              44,
+              0
+            ],
+            [
+              121,
+              0
+            ],
+            [
+              242,
+              0
+            ]
+          ],
+          "interval_sha256": "0bad0a341a3743149d26050eb09c06bab0f574632c8f89c9b36c3f2a21bfb7df",
+          "interval_terms": 1008,
+          "merged_intervals": 42,
+          "nonempty_integer_intervals": 86
+        }
+      ],
+      "local": {
+        "C": 165,
+        "P": 82,
+        "T": 15,
+        "local_floor_terms": 15
+      },
+      "p": 2,
+      "r": 11
+    },
+    {
+      "M": 352,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              11,
+              0
+            ],
+            [
+              16,
+              0
+            ],
+            [
+              22,
+              0
+            ],
+            [
+              32,
+              0
+            ],
+            [
+              44,
+              0
+            ],
+            [
+              88,
+              0
+            ],
+            [
+              176,
+              0
+            ]
+          ],
+          "interval_sha256": "a984a51b78d4f90ec2a3d4d8d4cfb71b4b0e74b1d94ae560652f1a20279eb84f",
+          "interval_terms": 64,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 133,
+          "Farey_visits": 59,
+          "T": 13,
+          "full_unit_centres": 32,
+          "gcd_counts": [
+            [
+              1,
+              58
+            ],
+            [
+              2,
+              30
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              11,
+              12
+            ],
+            [
+              16,
+              0
+            ],
+            [
+              22,
+              0
+            ],
+            [
+              32,
+              0
+            ],
+            [
+              44,
+              0
+            ],
+            [
+              88,
+              0
+            ],
+            [
+              176,
+              0
+            ]
+          ],
+          "interval_sha256": "bea0221b1644c4fafe93a61e5983b76602e82030abcb77a56444a52ea7618140",
+          "interval_terms": 1024,
+          "merged_intervals": 32,
+          "nonempty_integer_intervals": 32
+        },
+        {
+          "C": 221,
+          "Farey_visits": 103,
+          "T": 18,
+          "full_unit_centres": 56,
+          "gcd_counts": [
+            [
+              1,
+              94
+            ],
+            [
+              2,
+              60
+            ],
+            [
+              4,
+              26
+            ],
+            [
+              8,
+              16
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              16,
+              10
+            ],
+            [
+              22,
+              0
+            ],
+            [
+              32,
+              0
+            ],
+            [
+              44,
+              0
+            ],
+            [
+              88,
+              0
+            ],
+            [
+              176,
+              0
+            ]
+          ],
+          "interval_sha256": "7a90c5a8f1bd38b56284eb37c1c503fa4b670695feb233c6e96aa5650db7b581",
+          "interval_terms": 1152,
+          "merged_intervals": 36,
+          "nonempty_integer_intervals": 56
+        }
+      ],
+      "local": {
+        "C": 133,
+        "P": 66,
+        "T": 13,
+        "local_floor_terms": 11
+      },
+      "p": 2,
+      "r": 11
+    },
+    {
+      "M": 26,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              13,
+              0
+            ]
+          ],
+          "interval_sha256": "06e38df497bb51d5506ab4c1b2644d706117e9e80fcaaf2c72dd8477405c5779",
+          "interval_terms": 16,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 11,
+          "Farey_visits": 5,
+          "T": 3,
+          "full_unit_centres": 4,
+          "gcd_counts": [
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              13,
+              0
+            ]
+          ],
+          "interval_sha256": "4175a4791d343aca640b93068b76c1e34a76fd21d5dec838e570229be09717a4",
+          "interval_terms": 32,
+          "merged_intervals": 4,
+          "nonempty_integer_intervals": 4
+        },
+        {
+          "C": 23,
+          "Farey_visits": 11,
+          "T": 5,
+          "full_unit_centres": 8,
+          "gcd_counts": [
+            [
+              1,
+              12
+            ],
+            [
+              2,
+              10
+            ],
+            [
+              13,
+              0
+            ]
+          ],
+          "interval_sha256": "7b965e313a5f729f9108f0c311ad86170fb78fb174cee9a83c98b514410e705f",
+          "interval_terms": 16,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 8
+        }
+      ],
+      "local": {
+        "C": 11,
+        "P": 5,
+        "T": 3,
+        "local_floor_terms": 3
+      },
+      "p": 2,
+      "r": 13
+    },
+    {
+      "M": 52,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              26,
+              0
+            ]
+          ],
+          "interval_sha256": "83413cecf1b731a4fb67a09edaafdb3c2138a28cd8a04a5d8d9515cac554c886",
+          "interval_terms": 28,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 27,
+          "Farey_visits": 11,
+          "T": 5,
+          "full_unit_centres": 8,
+          "gcd_counts": [
+            [
+              1,
+              14
+            ],
+            [
+              2,
+              6
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              26,
+              0
+            ]
+          ],
+          "interval_sha256": "49a74d9798e7a99fdc07d9ab4aec28c633cb28238be65b1e5e237a6eb1235883",
+          "interval_terms": 84,
+          "merged_intervals": 6,
+          "nonempty_integer_intervals": 8
+        },
+        {
+          "C": 43,
+          "Farey_visits": 19,
+          "T": 7,
+          "full_unit_centres": 14,
+          "gcd_counts": [
+            [
+              1,
+              22
+            ],
+            [
+              2,
+              12
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              26,
+              0
+            ]
+          ],
+          "interval_sha256": "2cd7b889db64dd1f54c2b42b2be92c3ca94d1397f2f6f0b011fa4a8be41362d1",
+          "interval_terms": 56,
+          "merged_intervals": 4,
+          "nonempty_integer_intervals": 14
+        }
+      ],
+      "local": {
+        "C": 27,
+        "P": 13,
+        "T": 5,
+        "local_floor_terms": 5
+      },
+      "p": 2,
+      "r": 13
+    },
+    {
+      "M": 104,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              26,
+              0
+            ],
+            [
+              52,
+              0
+            ]
+          ],
+          "interval_sha256": "b1bf96c083e563b14fd9a57cee11b54a8ed5ec1777492faff8e0096c72927652",
+          "interval_terms": 40,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 49,
+          "Farey_visits": 19,
+          "T": 7,
+          "full_unit_centres": 14,
+          "gcd_counts": [
+            [
+              1,
+              26
+            ],
+            [
+              2,
+              14
+            ],
+            [
+              4,
+              8
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              26,
+              0
+            ],
+            [
+              52,
+              0
+            ]
+          ],
+          "interval_sha256": "f86ee967b49faa221a136f255acc9eac57829733491becd0e9c0fb1f7b93691e",
+          "interval_terms": 240,
+          "merged_intervals": 12,
+          "nonempty_integer_intervals": 14
+        },
+        {
+          "C": 79,
+          "Farey_visits": 33,
+          "T": 10,
+          "full_unit_centres": 20,
+          "gcd_counts": [
+            [
+              1,
+              38
+            ],
+            [
+              2,
+              20
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              8,
+              10
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              26,
+              0
+            ],
+            [
+              52,
+              0
+            ]
+          ],
+          "interval_sha256": "6c066da578460f036da9ffae9d896bc9d216dee88f332c5674f0bf4995b7e896",
+          "interval_terms": 200,
+          "merged_intervals": 10,
+          "nonempty_integer_intervals": 20
+        }
+      ],
+      "local": {
+        "C": 49,
+        "P": 24,
+        "T": 7,
+        "local_floor_terms": 7
+      },
+      "p": 2,
+      "r": 13
+    },
+    {
+      "M": 338,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              26,
+              0
+            ],
+            [
+              169,
+              0
+            ]
+          ],
+          "interval_sha256": "efa4b19dfe6810b7363b4bcfd9c706b9eaf4ba34df88b371fd3ea818ea471257",
+          "interval_terms": 28,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 133,
+          "Farey_visits": 59,
+          "T": 13,
+          "full_unit_centres": 30,
+          "gcd_counts": [
+            [
+              1,
+              58
+            ],
+            [
+              2,
+              62
+            ],
+            [
+              13,
+              12
+            ],
+            [
+              26,
+              0
+            ],
+            [
+              169,
+              0
+            ]
+          ],
+          "interval_sha256": "d171e0a54cf80a4c8e2b04a703bdf8455a174c936e5e618b62a9f1ce08f457be",
+          "interval_terms": 420,
+          "merged_intervals": 30,
+          "nonempty_integer_intervals": 30
+        },
+        {
+          "C": 221,
+          "Farey_visits": 103,
+          "T": 18,
+          "full_unit_centres": 54,
+          "gcd_counts": [
+            [
+              1,
+              96
+            ],
+            [
+              2,
+              112
+            ],
+            [
+              13,
+              12
+            ],
+            [
+              26,
+              0
+            ],
+            [
+              169,
+              0
+            ]
+          ],
+          "interval_sha256": "be07ff493a1cd3613bda2a16497f9325c47290455981813574302f3a831e0ac8",
+          "interval_terms": 420,
+          "merged_intervals": 30,
+          "nonempty_integer_intervals": 54
+        }
+      ],
+      "local": {
+        "C": 133,
+        "P": 66,
+        "T": 13,
+        "local_floor_terms": 11
+      },
+      "p": 2,
+      "r": 13
+    },
+    {
+      "M": 676,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              26,
+              0
+            ],
+            [
+              52,
+              0
+            ],
+            [
+              169,
+              0
+            ],
+            [
+              338,
+              0
+            ]
+          ],
+          "interval_sha256": "c9712f7033375d8965aac13f2a4b20ffc6ade85b729402dada05cf69c7f8b84a",
+          "interval_terms": 48,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 235,
+          "Farey_visits": 103,
+          "T": 18,
+          "full_unit_centres": 54,
+          "gcd_counts": [
+            [
+              1,
+              98
+            ],
+            [
+              2,
+              62
+            ],
+            [
+              4,
+              58
+            ],
+            [
+              13,
+              16
+            ],
+            [
+              26,
+              0
+            ],
+            [
+              52,
+              0
+            ],
+            [
+              169,
+              0
+            ],
+            [
+              338,
+              0
+            ]
+          ],
+          "interval_sha256": "82d4adfa27beac218af00ed0dd420178da167d009bea80ab5fa2c72fe5023313",
+          "interval_terms": 1296,
+          "merged_intervals": 54,
+          "nonempty_integer_intervals": 54
+        },
+        {
+          "C": 461,
+          "Farey_visits": 213,
+          "T": 26,
+          "full_unit_centres": 126,
+          "gcd_counts": [
+            [
+              1,
+              206
+            ],
+            [
+              2,
+              108
+            ],
+            [
+              4,
+              110
+            ],
+            [
+              13,
+              24
+            ],
+            [
+              26,
+              12
+            ],
+            [
+              52,
+              0
+            ],
+            [
+              169,
+              0
+            ],
+            [
+              338,
+              0
+            ]
+          ],
+          "interval_sha256": "d41afb97bbce26aa17488191ab921bc214f6d597e10c22a617e3e7398c3069fd",
+          "interval_terms": 1392,
+          "merged_intervals": 58,
+          "nonempty_integer_intervals": 126
+        }
+      ],
+      "local": {
+        "C": 235,
+        "P": 117,
+        "T": 18,
+        "local_floor_terms": 17
+      },
+      "p": 2,
+      "r": 13
+    },
+    {
+      "M": 416,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              0
+            ],
+            [
+              8,
+              0
+            ],
+            [
+              13,
+              0
+            ],
+            [
+              16,
+              0
+            ],
+            [
+              26,
+              0
+            ],
+            [
+              32,
+              0
+            ],
+            [
+              52,
+              0
+            ],
+            [
+              104,
+              0
+            ],
+            [
+              208,
+              0
+            ]
+          ],
+          "interval_sha256": "73686249422b32c3590396c72fb61e20186c2730f3fb5871217201954a755137",
+          "interval_terms": 64,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 143,
+          "Farey_visits": 65,
+          "T": 14,
+          "full_unit_centres": 30,
+          "gcd_counts": [
+            [
+              1,
+              58
+            ],
+            [
+              2,
+              40
+            ],
+            [
+              4,
+              20
+            ],
+            [
+              8,
+              12
+            ],
+            [
+              13,
+              12
+            ],
+            [
+              16,
+              0
+            ],
+            [
+              26,
+              0
+            ],
+            [
+              32,
+              0
+            ],
+            [
+              52,
+              0
+            ],
+            [
+              104,
+              0
+            ],
+            [
+              208,
+              0
+            ]
+          ],
+          "interval_sha256": "edb7adb1ec66943045a11102d452555171f657c1f5d318e6f54009109b73239c",
+          "interval_terms": 960,
+          "merged_intervals": 30,
+          "nonempty_integer_intervals": 30
+        },
+        {
+          "C": 279,
+          "Farey_visits": 129,
+          "T": 20,
+          "full_unit_centres": 72,
+          "gcd_counts": [
+            [
+              1,
+              126
+            ],
+            [
+              2,
+              68
+            ],
+            [
+              4,
+              38
+            ],
+            [
+              8,
+              18
+            ],
+            [
+              13,
+              16
+            ],
+            [
+              16,
+              12
+            ],
+            [
+              26,
+              0
+            ],
+            [
+              32,
+              0
+            ],
+            [
+              52,
+              0
+            ],
+            [
+              104,
+              0
+            ],
+            [
+              208,
+              0
+            ]
+          ],
+          "interval_sha256": "3744af2b8b1c1d3236ec1423bda90160fe8ff60362f2bea3e7f7fdbbcba0ce13",
+          "interval_terms": 1152,
+          "merged_intervals": 36,
+          "nonempty_integer_intervals": 72
+        }
+      ],
+      "local": {
+        "C": 143,
+        "P": 71,
+        "T": 14,
+        "local_floor_terms": 11
+      },
+      "p": 2,
+      "r": 13
+    },
+    {
+      "M": 18,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              9,
+              0
+            ]
+          ],
+          "interval_sha256": "6968275037c3a74eae7f381f4e35e6d39de229e4fcd4d6618e1ce14d445b96ce",
+          "interval_terms": 28,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 7,
+          "Farey_visits": 5,
+          "T": 3,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              9,
+              0
+            ]
+          ],
+          "interval_sha256": "cb432ef976a01c1f95ee9fad5a8d6468b5b42cec6087f11f1b62a09e5b177756",
+          "interval_terms": 28,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 9,
+          "Farey_visits": 7,
+          "T": 4,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              9,
+              0
+            ]
+          ],
+          "interval_sha256": "6fc168a3ab39184008a29c30a4da5e6c90e8233d01c09de0bede9e038feed626",
+          "interval_terms": 28,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        }
+      ],
+      "local": {
+        "C": 7,
+        "P": 3,
+        "T": 3,
+        "local_floor_terms": 1
+      },
+      "p": 2,
+      "r": 3
+    },
+    {
+      "M": 50,
+      "cases": [
+        {
+          "C": 3,
+          "Farey_visits": 2,
+          "T": 1,
+          "full_unit_centres": 2,
+          "gcd_counts": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              25,
+              0
+            ]
+          ],
+          "interval_sha256": "2cd7d77f53667e7dfbe1699426b7e54738c25866ea44e2f3dd946c059c41ee23",
+          "interval_terms": 28,
+          "merged_intervals": 2,
+          "nonempty_integer_intervals": 2
+        },
+        {
+          "C": 19,
+          "Farey_visits": 11,
+          "T": 5,
+          "full_unit_centres": 4,
+          "gcd_counts": [
+            [
+              1,
+              6
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              25,
+              0
+            ]
+          ],
+          "interval_sha256": "3e6cd7d7d6ea6174f631537f95e262eebd3e4441544aaebb90785935d22329ad",
+          "interval_terms": 56,
+          "merged_intervals": 4,
+          "nonempty_integer_intervals": 4
+        },
+        {
+          "C": 33,
+          "Farey_visits": 19,
+          "T": 7,
+          "full_unit_centres": 10,
+          "gcd_counts": [
+            [
+              1,
+              12
+            ],
+            [
+              2,
+              16
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              10,
+              0
+            ],
+            [
+              25,
+              0
+            ]
+          ],
+          "interval_sha256": "0f314f7bf8b677e244b7406b8de7189e48325ce838f0794d574af2f6466a92b7",
+          "interval_terms": 84,
+          "merged_intervals": 6,
+          "nonempty_integer_intervals": 10
+        }
+      ],
+      "local": {
+        "C": 19,
+        "P": 9,
+        "T": 5,
+        "local_floor_terms": 3
+      },
+      "p": 2,
+      "r": 5
+    }
+  ],
+  "status": "E037_LARGE_CENTRAL_AND_FAR_ARITHMETIC_PASS",
+  "true_far_survival_recomputed": false
+}

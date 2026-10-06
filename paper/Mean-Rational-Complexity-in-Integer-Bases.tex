@@ -1,0 +1,2483 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs,longtable,array}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{microtype}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prb}{\mathbb P}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\unit}{\mathbf1}
+\newcommand{\floor}[1]{\left\lfloor #1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1\right\rceil}
+\newcommand{\gcds}{\operatorname{gcd}}
+\newcommand{\Li}{\operatorname{Li}_2}
+\DeclareMathOperator{\supp}{supp}
+\title{Mean rational complexity in integer bases:\\
+a uniform bound and a two-prime theorem}
+\author{Oleksiy Babanskyy}
+\hypersetup{
+  pdftitle={Mean rational complexity in integer bases: a uniform bound and a two-prime theorem},
+  pdfauthor={Oleksiy Babanskyy}
+}
+\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+For a uniformly chosen residue modulo \(B^N\), let its rational height be
+the smallest \(\max(|a|,d)\) among congruent rational representations
+\(a\equiv sd\pmod {B^N}\), with \(d>0\) coprime to the entire modulus.
+We prove a uniform upper bound strictly below \(N/2+49/50\) for the mean
+base-\(B\) logarithm of this height. The additive correction can be removed
+for prime-power bases, and is strictly negative for bases with exactly two
+distinct prime factors. The latter result combines explicit estimates with
+finite integer certificates covering arbitrary positive valuations.
+The correction cannot be removed for all bases: \(B=30,N=2\) is a certified
+counterexample. An explicit lower estimate also gives an eventually
+positive family with radical \(510510\).
+The self-contained argument places the optimal global additive correction
+strictly between zero and \(49/50\); a classical Jacobsthal bound further
+gives a correction strictly below \(4/5\).
+Its supremum reduces to finitely many bases, though neither its value
+nor finite-length attainment is determined here.
+Classical rational-reconstruction and lattice tools are distinguished
+from the new bounds. The companion specifies retained evidence,
+independent checks and full reconstruction commands.
+\end{abstract}
+
+\section{Model, results and antecedents}
+Throughout, logarithms without a subscript are natural logarithms.
+All probability spaces in this paper contain \emph{all} residues, not only
+invertible states.
+
+\begin{definition}
+For \(M\ge2\) and \(s\in\Z/M\Z\), set
+\[
+ R_M(s)=\min_{\substack{d\in\Z_{>0},\ \gcd(d,M)=1\\a\in\Z,\ a\equiv sd\ (M)}}
+          \max(|a|,d).
+\]
+For integers \(B\ge2,N\ge1\), write \(R_{B,N}=R_{B^N}\), with \(s\)
+uniformly distributed on \(\Z/B^N\Z\), and put
+\[
+ E_{B,N}=\E\log_B R_{B,N},\qquad
+ \mu(M)=\E\log(R_M/\sqrt M).
+\]
+Thus \(E_{B,N}-N/2=\mu(B^N)/\log B\).
+\end{definition}
+The minimum exists: \(d=1\) with a centered representative of \(s\) gives
+\(R_M(s)\le\max(1,\floor{M/2})\). In particular \(R_M(0)=1\).
+An admissible witness can be made primitive by dividing \(a,d\) by their
+gcd; the divisor is coprime to \(M\). The full-unit condition on \(d\) is
+essential.
+
+\begin{theorem}\label{thm:main}
+For every \(N\ge1\):
+\begin{enumerate}
+\item For every integer \(B\ge2\), \(E_{B,N}<N/2+49/50\).
+\item If \(B\) is a power of a prime, \(E_{B,N}\le N/2\).
+\item If \(B\) has exactly two distinct prime factors, \(E_{B,N}<N/2\).
+\end{enumerate}
+\end{theorem}
+The binary case of the second assertion is the theorem of
+\cite{binary}; its proof is imported and attributed here. The odd-prime
+argument below is independent of limiting laws. The two-prime theorem
+includes \(B=p^a r^b\) with arbitrary \(a,b\ge1\); it is not restricted to
+squarefree bases or equal valuations.
+
+\begin{theorem}\label{thm:positive}
+One has \(E_{30,2}>1\). If \(\rad(B)=q_0=510510\) and \(B^N\ge q_0^2\),
+then
+\[
+ E_{B,N}>N/2+\frac{1}{1000\log B}.
+\]
+Consequently the zero-correction bound does not hold for all bases.
+\end{theorem}
+
+\begin{theorem}\label{thm:optimal}
+Set
+\[
+ c(B)=\sup_{N\ge1}(E_{B,N}-N/2),\quad c_+(B)=\max(0,c(B)),\quad
+ C^*=\sup_{B\ge2}c(B).
+\]
+Then \(c_+(B)\to0\) as \(B\to\infty\), and \(0<C^*<49/50\).
+There exists a finite \(B_0\) such that
+\(C^*=\max_{2\le B\le B_0}c(B)\).
+This does not assert that the supremum over \(N\) is attained.
+\end{theorem}
+
+Question 3.2 of the survey \cite[p.~20282]{survey} asks for an upper bound
+in general bases. Our answer concerns the explicitly defined rational
+height model. A connection integer in an FCSR realization may have the
+additional condition \(d\equiv-1\pmod B\), and register lengths may be
+rounded. We do not identify such quantities with this minimum for
+composite bases without a further equivalence theorem.
+The cited author draft of the monograph \cite[Sections 19.3,21.3,21.5]{GK}
+treats coprime rational reconstruction and complexity estimates; its
+Section 19.1 uses a different connection-integer convention.
+Section locators here refer to that author draft, not a verified
+pagination of the published edition. The known lower estimates already
+give the leading coefficient \(1/2\) for fixed bases. We do not claim that
+coefficient as a new result.
+
+Chen--Winterhof \cite{CW} gives probabilistic binary results; its accessible
+preprint version has been checked, while the final published text has not
+been fully accessed for the source comparison reported here. The exact binary mean and
+variance results in \cite{binary} are prior results, not new claims here.
+Farey fractions with excluded denominators were studied by
+Boca--Heersink--Spiegelhalter \cite{BHS}; congruence sections by
+Heersink \cite{Heersink}; smallest-denominator laws and logarithmic
+moments by Marklof \cite{Marklof,MarklofLog}. Those results are relevant
+antecedents, but an unmarked law cannot simply be rescaled to impose all
+the full-unit restrictions. Priority of the present bounds is not certified
+by the source comparison presented here.
+
+\section{A lattice upper bound}
+For a squarefree integer \(q\), let \(J(q)\) be the maximum gap between
+successive integers coprime to \(q\), including the cyclic gap modulo \(q\).
+Let \(\lambda_s\) be the shortest Euclidean length of a nonzero vector in
+\[
+ \Lambda_s=\{(a,d)\in\Z^2:a\equiv sd\pmod M\},
+ \qquad \det\Lambda_s=M.
+\]
+
+\begin{lemma}\label{lem:wheel}
+For \(q=\rad(M)\),
+\[
+ R_M(s)\le\sqrt{1+J(q)^2/3}\,\frac M{\lambda_s}.
+\]
+Also \(J(q)\le2\cdot4^{\omega(q)}\), uniformly over squarefree \(q\).
+\end{lemma}
+\begin{proof}
+A shortest vector \(u\) is primitive in the lattice and extends to a
+basis \(u,v\). After subtracting an integer multiple of \(u\), write
+\(v=\theta u+v_\perp\), where \(|\theta|\le1/2\) and
+\(\|v_\perp\|=M/\lambda_s\). Minimality of \(u\) gives
+\(\lambda_s^4\le4M^2/3\).
+The second coordinates of \(u,v\) have gcd one, since the lattice contains
+\((s,1)\). If a prime dividing \(q\) divides the second coordinate of \(u\),
+it cannot divide that of \(v+ju\). For every other prime, precisely one
+residue class of \(j\) is forbidden. By CRT this is a translate of the
+unit pattern modulo a divisor of \(q\). Its maximum gap is at most \(J(q)\).
+Choose an allowed integer \(j\) within \(J(q)/2\) of \(-\theta\).
+Then \(v+ju\) has a full-unit second coordinate and
+\[
+ \|v+ju\|^2\le M^2/\lambda_s^2+(J(q)^2/4)\lambda_s^2
+ \le (1+J(q)^2/3)M^2/\lambda_s^2.
+\]
+Changing the sign makes the denominator positive.
+If the denominator of \(u\) is already a unit, \(u\) itself is available;
+the same bound holds because
+\(\lambda_s^2\le2M/\sqrt3\) and \(J(q)\ge1\).
+
+For the second assertion, inclusion--exclusion shows that an interval of
+\(L\) consecutive integers contains at least
+\(L\varphi(q)/q-2^{\omega(q)}\) units. Since
+\(\varphi(q)/q\ge2^{-\omega(q)}\), \(L=2\cdot4^{\omega(q)}\)
+makes this quantity positive. Every such interval contains a unit.
+\end{proof}
+
+\begin{lemma}\label{lem:shorttail}
+For \(1\le Y<M\),
+\(\Prb(\lambda_s\le Y)\le3Y^2/M\).
+Consequently, with \(Z_M=R_M/\sqrt M\),
+\[
+ \Prb(Z_M>z)\le\min(1,(J(q)^2+3)z^{-2}),\qquad
+ \mu(M)\le \frac{\log(J(q)^2+3)+1}{2}.                 \tag{2.1}\label{eq:wheelmean}
+\]
+\end{lemma}
+\begin{proof}
+A horizontal nonzero lattice vector has length at least \(M\).
+For \(1\le d\le Y\), put \(g=\gcd(d,M)\).
+An integer \(a\) is incident with \(g\) residues \(s\) if \(g\mid a\),
+and with none otherwise. Hence the number of incidences in the disk is
+at most
+\[
+ \sum_{1\le d\le Y}\bigl(2\sqrt{Y^2-d^2}+\gcd(d,M)\bigr)
+ \le (1+\pi/2)Y^2<3Y^2.
+\]
+Here \(\gcd(d,M)\le d\), \(\sum_{d\le Y}d\le Y^2\) for \(Y\ge1\),
+and the decreasing semicircle sum is bounded by its integral.
+The union bound and Lemma~\ref{lem:wheel} give the tail bound.
+When its threshold is below one there is no nonzero integral vector;
+when it is at least \(M\), the stated probability bound is trivial.
+Finally
+\[
+ \E\log Z_M\le \E(\log Z_M)_+
+ \le\int_0^\infty\min(1,Ke^{-2t})\,dt
+       =(\log K+1)/2,\quad K=J(q)^2+3.
+\]
+\end{proof}
+
+For two primes a slightly sharper tail is available:
+\[
+ \Prb(Z_M>z)\le\min(1,6z^{-2}).                       \tag{2.2}\label{eq:two_tail}
+\]
+Indeed, if neither denominator of \(u,v\) is a full unit, the two bad-prime
+sets must be complementary. Then both \(u+v\) and \(u-v\) have unit
+denominators. The smaller Euclidean norm is at most
+\(\sqrt{\|u\|^2+\|v\|^2-2|\langle u,v\rangle|}\le\sqrt2 M/\lambda_s\)
+by the reduced-basis bounds. If one basis vector is a unit the same
+inequality follows directly. Combining with the disk count proves
+\eqref{eq:two_tail}.
+
+\begin{proof}[A first uniform bound]
+Prime-power bases satisfy the stronger second assertion, proved below.
+Suppose \(q\) has at least two primes and \(q\ge10\). If \(q\) is odd,
+the units \(1,(q-1)/2,(q+1)/2,q-1\) show \(J(q)\le q/2\).
+If \(q=2d\) is even and \(d\ge5\) is odd, the units
+\(1,d-2,d+2,2d-1\) give the same conclusion. Thus
+\[
+ J(q)^2+3\le 7q^2/25,\qquad e(J(q)^2+3)<q^2,
+\]
+using \(e<3\). Equation~\eqref{eq:wheelmean} gives
+\(\mu(B^N)<\log q\le\log B\).
+For \(q=6\), \(J(6)=4\); if \(B\ge12\), \(19e<57<144\le B^2\).
+For \(B=6\), \eqref{eq:two_tail} gives
+\(\mu(M)\le(\log6+1)/2<\log6\).
+All constants are independent of \(N\).
+\end{proof}
+
+
+\begin{proposition}[An explicit common correction]\label{prop:uniform-correction}
+For all integer bases \(B\ge2\),
+\[
+ c(B)\le\max(0,w,39/40)<49/50,\qquad
+ w=1+\frac{\log(209/300)}{24\log2}.
+\]
+In particular \(C^*<49/50\) and Theorem~\ref{thm:main}(1) holds.
+\end{proposition}
+\begin{proof}
+The prime-power and two-prime arguments of Sections~\ref{sec:prime}
+and~\ref{sec:two} do not use this proposition; they give \(c(B)\le0\)
+when \(k=\omega(q)\le2\), where \(q=\rad(B)\).
+For the other bases, \eqref{eq:wheelmean} gives
+\[
+ c(B)\le\frac{\log(e(J(q)^2+3))}{2\log q}.
+\]
+If \(3\le k\le5\), then \(q\ge30\) and
+\(J(q)\le\min(q/2,2048)\).
+For \(q\le4096\), using \(e<11/4\),
+\[
+ \frac{e(J(q)^2+3)}{q^2}
+ <\frac{11}{4}\left(\frac14+\frac3{30^2}\right)=\frac{209}{300}.
+\]
+Put \(\delta=-\log(209/300)>0\). Since
+\(2\log q\le24\log2\), the common upper bound is \(c(B)\le w\).
+For \(q\ge4096\), the fixed numerator \(\log(e(2048^2+3))\)
+and the increasing denominator give the same bound, by evaluating
+at \(q=4096\). Moreover
+\[
+ \delta>\frac{91}{300}+\frac12\left(\frac{91}{300}\right)^2
+ =\frac{62881}{180000}>\frac{42}{125},\qquad
+ 24\log2<\frac{84}{5}.
+\]
+Thus \(\delta/(24\log2)>1/50\), and \(w<49/50\).
+
+For \(k\ge6\), the product of the first six distinct primes is at least
+\(30030\), and every further prime is at least \(17>16\).
+Hence \(q\ge30030\,16^{k-6}\), while \(J(q)^2+3\le5\,16^k\).
+The elementary enclosures
+\(\log30030>10,\ 2/3<\log2<7/10,\ \log5<17/10\) give
+\[
+ c(B)<\frac{(14/5)k+27/10}{20+(16/3)(k-6)}
+       \le\frac{39}{40}<\frac{49}{50}.
+\]
+The rational function equals \(39/40\) at \(k=6\) and decreases;
+its derivative numerator is \(-48\).
+For the only additional constant, \(e<11/4\) and
+\(11^{10}<30030\,4^{10}\) imply \(\log30030>10\).
+Taking the supremum over bases uses the two \emph{common} caps
+\(w\) and \(39/40\), rather than merely a pointwise strict inequality.
+No optimum is identified.
+\end{proof}
+
+\section{Exact central counts and certified logarithms}\label{sec:cert}
+Let \(U_m(T)=\#\{1\le d\le T:\gcd(d,m)=1\}\).
+For \(T^2\le M\) and a proper divisor \(g\mid M\), put \(m=M/g\) and
+\[
+ P_g(T)=\sum_{\substack{e\le T/g\\\gcd(e,M)=1}}
+     \mu_{\rm Mob}(e)\,
+     U_m\!\left(\floor{\frac{T}{ge}}\right)
+     U_q\!\left(\floor{\frac Te}\right),\quad q=\rad(M). \tag{3.1}\label{eq:Pg}
+\]
+Here \(\mu_{\rm Mob}\) denotes the Möbius function.
+These count primitive positive witnesses \(a=ga'\), with
+\(\gcd(a',m)=1\) and full-unit denominator.
+Within either sign no two such primitive fractions coincide modulo \(M\):
+their determinant has absolute value at most \(T^2-1<M\).
+Opposite signs can collide only when \(af+ed=M\); the possible value \(2M\)
+at \(T^2=M\) would force all four components equal to \(T\), which cannot
+give a unit denominator. Write \(J_g(T)\) for these collisions in the
+gcd-\(g\) state layer. Then
+\[
+ C_g(T)=2P_g(T)-J_g(T),\qquad
+ C(T)=1+\sum_{g\mid M,\ g<M}C_g(T).                   \tag{3.2}\label{eq:central}
+\]
+The one is the zero state and must not be absorbed into a nonzero layer.
+
+For completeness the collisions are finite exact computations:
+enumerate ordered full-unit \(d,f\le T\) with \(\gcd(d,f)=1\),
+set \(a_0=Mf^{-1}\bmod d\) with \(0\le a_0<d\), and
+\(e_0=(M-fa_0)/d\).
+All solutions are
+\(a=a_0+kd,\ e=e_0-kf\).
+Intersect the two closed integer ranges \(1\le a,e\le T\);
+assign surviving pairs to \(\gcd(a,M)\), enforcing primitivity.
+This handles endpoints, signs and empty phases exactly.
+
+\subsection{Lower CDFs outside the central range}
+For \(M=p^a r^b\), \(p<r\), a nonzero state in layer \(g\) is \(s=gt\),
+where \(t\) is a unit modulo \(m=M/g\).
+For \(m>2\), choose the centered inverse magnitude \(h\) and its sign
+\(\varepsilon\in\{1,-1\}\), so that
+\(1\le h\le H=\floor{(m-1)/2}\) and \(th\equiv\varepsilon\pmod m\).
+The witness \((\varepsilon g,h)\) is admissible if \(h\) is a full unit.
+If \(m\) is a pure power of one prime \(u\) and the missing prime \(v\)
+divides \(h\), replacing \(h\) by \(m-h\) repairs the denominator and
+changes the numerator sign. Put
+\[
+ V(x)=\floor{x/v}-\floor{x/(pr)}.
+\]
+For \(T\ge g,m>2\) the resulting lower CDF in that layer is
+\[
+ W_g(T)=2U_q(\min(T,H))
+ +2\unit_{\{m\ {\rm pure}\}}
+  \max(0,V(H)-V(\max(0,m-T-1))).                    \tag{3.3}
+\]
+For \(T<g\) it is zero. When \(m=2\) the layer contains one state,
+with witness height \(g\). There is also the direct-denominator-one bound
+\[
+ B_g(T)=2U_m(\min(\floor{T/g},H))                 \tag{3.4}
+\]
+for \(T\ge g,m>2\), with the same exceptional conventions.
+Each layer has the deterministic height cap
+\[
+ K_g=\min\bigl(M/p,\;g\floor{m/2},\;\max(g,D_m)\bigr), \tag{3.5}
+\]
+where \(D_m=1\) for \(m=2\), \(D_m=H\) when \(m\) has both primes, and
+\(D_m=\max(H,m-v)\) when \(m\) is pure.
+The first cap follows from the circle lemma below; the others follow
+from the displayed witnesses. Bounds from the same layer are combined
+by a maximum, not a sum.
+
+\begin{lemma}[Circle cap]\label{lem:circle}
+For \(M\) with smallest prime divisor \(p\),
+\(R_M(s)\le\max(M/p,p-1)\).
+If \(M/p\ge p-1\), the bound is \(M/p\), and equality occurs for
+\(s=M/p\). This condition holds for every two-prime modulus and
+every prime power of exponent at least two.
+\end{lemma}
+\begin{proof}
+Place \(0,s,\ldots,(p-1)s\) on the circle of circumference \(M\).
+If two coincide their index difference supplies numerator zero and a
+denominator between one and \(p-1\). Otherwise their smallest cyclic
+gap is at most \(M/p\), again with index difference between one and
+\(p-1\). That denominator is coprime to \(M\), proving the maximum bound.
+For \(s=M/p\), every unit denominator is nonzero modulo \(p\);
+its centered product with \(s\) has absolute value at least \(M/p\).
+\end{proof}
+
+For \(T^2>2M\), delete nonunit denominators from the Farey sequence of
+order \(T\). Adjacent deleted denominators with complementary bad primes
+have unit difference; taking that difference repairs one neighbor.
+A gap can remain uncovered only next to a bad center \(d<M/T\).
+Its two retained neighbors have denominators \(>T-jd\), where \(j=1\)
+if \(pr\mid d\), and \(j=2\) otherwise. These are positive because
+\(T^2>2M\). Its open length in residue coordinates is at most
+\(2(M-Td)/(d(T-jd))\). One extra integer per open hole gives
+\[
+ S(T)\le
+ \sum_{\substack{d\le\floor{(M-1)/T}\\\gcd(d,M)>1}}\varphi(d)
+ +\sum_{\substack{d\le\floor{(M-1)/T}\\\gcd(d,M)>1}}
+       \frac{2\varphi(d)(M-Td)}{d(T-jd)}.           \tag{3.6}\label{eq:far}
+\]
+This is an upper survival bound, not an equality.
+The strict start \(\floor{\sqrt{2M}}+1\) avoids the removable
+equality endpoint. The same Farey repair and length argument underlies
+the analytic estimates in the appendix.
+
+
+\subsection{Pointwise histograms for the initial finite bridges}
+\label{sec:early-histograms}
+For a two-prime modulus \(M\), the base-six diagonal, sixth-power and
+squarefree-prefix batches use a pointwise construction, distinct from
+the aggregate CDF calendar. Put
+\[
+ k=\floor{\sqrt M},\qquad \tau=\floor{\sqrt{2M}}+1,\qquad
+ D_1(s)=\max(1,\min(s,M-s)).
+\]
+The closed central enumeration gives the exact height of every state
+with \(R_M(s)\le k\), including zero separately.
+Apply the proved far-cover construction at \(\tau\), retaining its
+actual full-unit neighbors and phases, and let \(\mathcal H\) be the
+union of the open exceptional holes.
+Outside \(\mathcal H\), set \(U(s)=\min(\tau,D_1(s))\), since the cover
+proves \(R_M(s)\le\tau\).
+Inside \(\mathcal H\), start with \(D_1(s)\) and lower \(U(s)\) only
+by heights \(\max(|a|,d)\) of explicitly checked pairs
+\[
+ d>0,\qquad \gcd(d,M)=1,\qquad a\equiv sd\pmod M.
+\]
+Every such pair is an admissible upper witness; overlaps are handled
+by minima. Restore the exact central heights wherever available.
+Consequently \(R_M(s)\le U(s)\) pointwise, and its histogram has mass \(M\).
+
+For example, at a reduced exceptional center \(c/v\), put
+\(\Delta=Mc-vs\) and \(\varepsilon=\operatorname{sign}(\Delta)\),
+with \(\varepsilon=1\) if \(\Delta=0\).
+For any positive full-unit \(d\) with \(cd\equiv\varepsilon\pmod v\), the
+integer
+\[
+ a=\varepsilon(M-|\Delta|d)/v
+\]
+satisfies \(a-sd=M(\varepsilon-cd)/v\).
+Thus it is a legal witness; its optimality is neither assumed nor needed.
+The implementation checks integrality, congruence and denominator marks.
+
+For \(M=pr\), \(p<r\), cap \(U\) by \(r\), using Lemma~\ref{lem:circle}.
+When \(r\le\tau\), that cap suffices off the exact central set.
+For the actual histograms in these batches, the separately checked
+integer sign premise \(Q<0\), together with \(R_M\le U\) and the outward
+logarithm enclosures below, proves the required negative centered mean.
+Pointwise domination alone does not imply that sign.
+For the diagonal moduli \(M=6^n\), \(2M\) is nonsquare, so the historical
+threshold \(\ceil{\sqrt{2M}}\) equals the strict threshold \(\tau\).
+
+\subsection{Integer logarithmic certificates}
+A calendar contains all integers up to an initial \(k\), then steps by
+\(T\mapsto\ceil{257T/256}\), with every layer cap, the far-tail start,
+and the terminal \(M/p\) inserted. At each calendar point combine
+\eqref{eq:central} when applicable, the layer witness bounds, and
+\eqref{eq:far}; take cumulative maxima. Filling the gaps by the previous
+CDF value produces a lower CDF \(\underline C\le C\).
+Its increments \(n_h\) give a dominating height histogram:
+\[
+ \sum_hn_h=M,\qquad \E\log R_M\le M^{-1}\sum_hn_h\log h.
+\]
+The increments are not claimed to be the true height distribution.
+
+Use outward integer ticks \(L_S(x)\le S\log x\le U_S(x)\) and retain
+\[
+ Q=2\sum_h n_h U_S(h)-M L_S(M).                    \tag{3.7}\label{eq:Q}
+\]
+Then \(Q<0\) proves \(\mu(M)<0\), including odd \(M\).
+The identity
+\[
+ \log x=2\sum_{j=0}^{K-1}\frac{z^{2j+1}}{2j+1}
+       +\varepsilon,\quad z=(x-1)/(x+1),\quad
+ 0\le\varepsilon\le
+ \frac{2z^{2K+1}}{(2K+1)(1-z^2)}
+\]
+for rational \(x\ge1\), with range reduction by powers of two, supplies
+exact rational enclosures. No floating logarithm or assertion-sensitive
+test is used for the sign. The independent checker uses a different
+series depth and tick scale.
+It independently reconstructs the initial boundary, terminal boundary
+and relevant boundary gcd strata. It consumes the intervening central
+arrays; the central lemma and producer are therefore essential parts
+of the proof. It is not a complete independent recount of every
+intermediate CDF value.
+
+\section{Prime powers}\label{sec:prime}
+For odd \(M=p^n\) let \(a=\sqrt M\), \(K=\floor{a/\sqrt2}\).
+The central count is
+\[
+ C(T)=1+2P_p(T),\qquad
+ P_p(T)=\#\{u,d\le T:\gcd(u,d)=1,\ p\nmid d\},\quad T\le K.
+\]
+Indeed \(2T^2<M\), so opposite primitive witnesses do not collide.
+Before primitivity there are at least \((1-1/p)T^2\) pairs.
+The divisor union bound gives
+\[
+ P_p(T)\ge(1-y)\{2-(1-y^2)\zeta(2)\}T^2
+            -(1-y)T\log T,\qquad y=1/p.
+\]
+To see the error explicitly, a common divisor \(d\ge2\) must satisfy
+\(p\nmid d\), and
+\(\floor{x}(\floor{x}-\floor{x/p})\le(1-y)(x^2+x)\).
+Sum over \(d\), use
+\(\sum_{d\ge2,p\nmid d}d^{-2}=(1-y^2)\zeta(2)-1\)
+and \(\sum_{d=2}^T d^{-1}\le\log T\).
+The elementary enclosure \(\zeta(2)<5/3\) follows by summing five terms
+and bounding the rest by an integral. Consequently
+\[
+ C(T)\ge cT^2-dT\log T,\quad
+ (c,d)=
+ \begin{cases}(56/81,4/3),&p=3,\\(5/8,2),&p\ge5.\end{cases}              \tag{4.1}
+\]
+
+The exact compensation identity is
+\[
+ \mu(M)=-D+P_+,\quad
+ D=M^{-1}\int_1^a C(\floor x)\frac{dx}{x},\quad
+ P_+=M^{-1}\int_a^\infty S(\floor x)\frac{dx}{x}.     \tag{4.2}\label{eq:comp}
+\]
+Retaining the plateau \(C(K)\) up to \(a\) yields
+\[
+ D\ge c(K^2/a^2)(1/2+\log(a/K))
+      -2cK/a^2-d(K\log K/a^2)(1+\log(a/K)).          \tag{4.3}
+\]
+For \(a\ge140\), \(K/a\ge11/16\), \(K/a<3/4\),
+\(K^2/a^2\ge1/2-\sqrt2/a\), and
+\(\log2/2\le\log(a/K)\le5/11\).
+Using \(2/3\le\log2\le1\) and \(\sqrt2<3/2\) gives
+\[
+ D\ge
+ \begin{cases}
+ 70/243-[56/27+(16/11)\log a]/a,&p=3,\\
+ 25/96-[15/8+(24/11)\log a]/a,&p\ge5.
+ \end{cases}                                      \tag{4.4}
+\]
+
+For integer \(T\ge a\), the holes next to reduced Farey centers with
+\(p\mid d,d<M/T\) have retained neighbors \(b_L,b_R>T-d\).
+Their open lengths are at most \(2(M-dT)/(d(T-d))\).
+Let \(\kappa=(p-1)/p^2\), \(t=T/a\), and
+\[
+ F(t)=\sum_{j\ge1}\frac{t^{-2j}}{j(j+1)}
+     =1+(t^2-1)\log(1-t^{-2}),\quad F(1)=1.
+\]
+Summation of lengths and one integer per hole, using
+\(\varphi(pk)\le(p-1)k\), gives
+\[
+ S(T)/M\le2\kappa F(t)+\frac{\kappa a^2}{2T^2}
+                  +\frac{1-1/p}{2T}.              \tag{4.5}
+\]
+One can check the rounding term directly: the hole count is bounded by
+\((p-1)L(L+1)/2,\ L=\floor{M/(pT)}\).
+The decreasing length summand is integrated with spacing \(p\).
+Since \(F\) decreases and
+\(\int_1^\infty F(t)\,dt/t=(\zeta(2)-1)/2\), integrating the initial
+interval \([a,\ceil a]\) and retaining the first summand gives
+\[
+ P_+\le
+ \begin{cases}
+ 11/54+17/(9a)+1/(3a^2),&p=3,\\
+ 11/75+19/(10a)+1/(2a^2),&p\ge5.
+ \end{cases}
+\]
+Thus
+\[
+ \mu(M)\le
+ \begin{cases}
+ -41/486+[107/27+(16/11)\log a]/a+1/(3a^2),&p=3,\\
+ -91/800+[151/40+(24/11)\log a]/a+1/(2a^2),&p\ge5.
+ \end{cases}                                      \tag{4.6}\label{eq:primeupper}
+\]
+At \(a=140\), using \(\log140<5\), both upper bounds are negative:
+the positive margins are at least \(214289/52390800\) and
+\(3811/431200\), respectively. All error terms decrease thereafter.
+
+For \(M=p\ge5\), choose \(k=\floor{\sqrt p}\). Among the
+\((k+1)^2>p\) pairs \(0\le u,v\le k\), two have the same \(u-sv\);
+their difference has nonzero denominator at most \(k<p\).
+Thus \(R_p\le k<\sqrt p\).
+For \(M=p^2\), the circle argument gives \(R_M\le p=\sqrt M\).
+Only the 21 entries in Table~\ref{tab:prime} remain below \(19600\).
+Here \(H=\sum_sR_M(s)\) and the exact inequality \(H^2<M^3\)
+implies \(\mu(M)<0\) by Jensen.
+The companion computes these minima without an assumed mean bound.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lll}\toprule
+Prime & Exponents \(n\) & Sums \(H\), in order\\\midrule
+3 &1--8&3,17,105,577,3107,16527,86977,455939\\
+5 &3--6&1009,11729,134011,1513793\\
+7 &3--5&4447,84975,1595511\\
+11&3--4&32803,1220493\\
+13&3&68697\\
+17&3&225957\\
+19&3&370511\\
+23&3&866951\\\bottomrule
+\end{tabular}
+\caption{The finite odd-prime bridge.}\label{tab:prime}
+\end{table}
+This proves Theorem~\ref{thm:main}(2) for odd prime powers.
+If \(B=p^b\), replace \(n\) by \(bN\); no new finite cases occur.
+For \(p=2\), use the exact theorem of \cite{binary}.
+
+\section{The two-prime theorem}\label{sec:two}
+The appendix gives the full parametric compensation inequality and its
+refinements. Its proof uses the exact central formula, explicit errors
+for the unit-counting function, and the Farey survival estimate
+\eqref{eq:far}. It is an inequality at each finite \(M\);
+no limiting approximation is substituted for a finite bound.
+In particular, for \(M=p^a r^b\), it proves negativity above:
+\[
+ \begin{array}{c|c}
+ \hbox{prime factors}&\hbox{sufficient modulus}\\\hline
+ 2,3 &6^9\\
+ 2,r,\ r\ge5 &9\,000\,000\\
+ 3\le p<r &2^{22}
+ \end{array}                                      \tag{5.1}
+\]
+The sharper uniform cutoffs, apart from the four radicals
+\(6,10,14,15\), are
+\[
+ M\ge C(p),\quad
+ C(2)=384^2,\quad C(3)=512^2,\quad C(p)=600^2\ (p\ge5).                 \tag{5.2}\label{eq:cutoffs}
+\]
+Appendix~\ref{ap:finite-two-prime} specifies all finite domains and reductions.
+The certificates are organized by domains of moduli, not assumed
+experimental monotonicity of means.
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}(3)]
+First the analytic bounds and the finite bridges settle the four
+exceptional radicals \(6,10,14,15\) at every pair of positive valuations.
+The squarefree two-prime moduli are settled by a single-mark reduction,
+with 4596 smaller moduli certified explicitly.
+For all bases, the analytic cutoffs leave three sixth powers, three
+fourth powers, 35 cubes and 99 squares, as detailed in the appendix.
+These imply the assertion for every length \(N\ge2\).
+The stronger length cutoffs are reindexings of the same modulus, not
+new hypotheses on states.
+
+For \(N=1\), write \(M=p^a r^b\). If \(\gcd(a,b)\ge2\), it is already
+a higher power of a two-prime base. Remove squarefree moduli, the four
+settled radicals, and the moduli above \eqref{eq:cutoffs}.
+The resulting exact inventory has 19239 profiles.
+A larger-prime-exponent-one lemma pays 7857 profiles.
+The five explicitly proved analytic bounds pay another 6972.
+The remaining 4410 profiles split into the three disjoint certificate
+domains of sizes 1087,1422 and1901. Each retained integer \(Q\) in
+\eqref{eq:Q} is strictly negative.
+All inventories, prime tests, powers, exclusions and sign comparisons
+are finite integer operations. The domain identities and mass totals
+are checked in the companion. There is no unexamined valuation class.
+\end{proof}
+
+\section{A lower estimate and positive corrections}
+For squarefree \(q\), put
+\[
+ D_q=2^{\omega(q)},\quad
+ \rho_q=\prod_{p\mid q}\frac p{p+1},\quad
+ \alpha_q=\frac{2\rho_q}{\zeta(2)},\quad
+ \beta_q=-\frac{1+\log\alpha_q}{2}.
+\]
+
+\begin{lemma}\label{lem:lower}
+With \(q=\rad(M)\) and \(L=\sqrt{M/\alpha_q}\),
+\[
+ \mu(M)\ge
+ \beta_q-
+ \left(\frac{2(D_q+3)}{\sqrt{\alpha_q M}}+\frac1M\right)\log L.
+                                                               \tag{6.1}\label{eq:lower}
+\]
+\end{lemma}
+\begin{proof}
+Let \(P_q(T)\) count positive primitive pairs \(a,d\le T\) with
+\(\gcd(d,q)=1\). Möbius inversion gives
+\[
+ P_q(T)=\sum_{\substack{e\le T\\\gcd(e,q)=1}}
+       \mu_{\rm Mob}(e)\floor{T/e}U_q(\floor{T/e}).
+\]
+Inclusion--exclusion gives \(|U_q(x)-(\varphi(q)/q)x|\le D_q\).
+Expanding each product, summing \(e^{-1}\le1+\log T\), and bounding
+the tail of \(\sum e^{-2}\) by \(1/T\), yields
+\[
+ \left|P_q(T)-\frac{\rho_q}{\zeta(2)}T^2\right|
+       \le(D_q+3)T(1+\log T).                       \tag{6.2}
+\]
+The main coefficient follows from
+\((\varphi(q)/q)\sum_{\gcd(e,q)=1}\mu_{\rm Mob}(e)e^{-2}
+=\rho_q/\zeta(2)\). These bounds also cover \(T=1\).
+Every admissible fraction can be reduced to a primitive one, so
+\(C(T)\le1+2P_q(T)\) by the union bound; injectivity is not needed.
+Use the resulting upper bound for \(C(\floor x)\) on \(1\le x\le L\)
+in \(\E\log R_M=\int_1^\infty(1-C(\floor x)/M)\,dx/x\), and discard
+the nonnegative remainder. Integrating gives \(\beta_q\) as the main
+centered term. The error integral is at most
+\(2(D_q+3)L\log L/M+\log L/M\).
+The omitted lower endpoint main term is nonnegative, giving
+\eqref{eq:lower}.
+\end{proof}
+For fixed \(B\), this bound and \eqref{eq:wheelmean} yield
+\(E_{B,N}/N\to1/2\), consistently with the antecedent in \cite{GK}.
+
+\subsection{The exact finite obstruction}
+The direct height histogram for \(M=900\) has total mass 900 and height
+sum 34007. If
+\(P=\prod_{s=0}^{899}R_{900}(s)\), integer multiplication gives
+\[
+             2\cdot30^{900}\le P<3\cdot30^{900}.     \tag{6.3}\label{eq:counter}
+\]
+The second bound is recorded for reproducibility, not needed for the sign.
+Hence \(\E\log_{30}R_{900}=\log_{30}P/900>1\).
+An independent algorithm enumerates admissible denominators and centered
+numerators directly. Replacing full-unit denominators by denominators
+coprime to only one prime changes many minima; that wrong model is not
+used. The decimal \(1.0002564533304775\ldots\) is descriptive;
+the proof is the integer comparison \eqref{eq:counter}.
+It refutes a possible strengthening, not a conjecture stated in
+Question 3.2.
+
+\subsection{An eventually positive family}
+For \(q_0=2\cdot3\cdot5\cdot7\cdot11\cdot13\cdot17=510510\),
+\[
+ \rho_{q_0}=12155/41472.
+\]
+For \(M\ge q_0^2\), the main lower term in \eqref{eq:lower} satisfies
+\(\beta_{q_0}>7/500\), and its error is \(<13/1000\).
+We give rational checks to make this explicit.
+The elementary enclosures \(e<87/32\) and \(\zeta(2)>41/25\)
+imply
+\[
+ e\alpha_{q_0}<1-\frac{256169}{9068544},\qquad
+ \beta_{q_0}>\frac{256169}{18137088}>\frac7{500}.
+\]
+The first follows from a factorial-series upper bound for \(e\),
+the second from a partial sum for \(\zeta(2)\).
+Also \(\zeta(2)<5/3\) gives
+\(\alpha_{q_0}>2431/6912>7/20>(59/100)^2\).
+At \(M=q_0^2\), \(\log L<14\) and \(q_0>510000\), so
+\[
+ \left(\frac{2(128+3)}{\sqrt{\alpha_{q_0} M}}+\frac1M\right)\log L
+ <\left(\frac{262}{(59/100)510000}
+               +\frac1{510000^2}\right)14<\frac{13}{1000}.
+\]
+The functions \(\log(\sqrt{M/\alpha})/\sqrt M\) and
+\(\log(\sqrt{M/\alpha})/M\) decrease on this range.
+Thus \(\mu(M)>1/1000\), proving the family in
+Theorem~\ref{thm:positive}. No minimal radical or minimal cutoff is claimed.
+For radicals containing \(q_0\), an eventually positive conclusion also
+follows from \eqref{eq:lower} with that radical's own constants.
+
+\section{The global additive optimum}
+\begin{proof}[Proof of Theorem~\ref{thm:optimal}]
+Let \(k=\omega(q)\). Since the \(i\)-th smallest distinct prime is at
+least \(i+1\), \(q\ge(k+1)!\).
+Lemma~\ref{lem:wheel} therefore gives \(J(q)=q^{o(1)}\) uniformly
+over squarefree radicals: for \(k\to\infty\),
+\[
+ \frac{\log J(q)}{\log q}
+ \le\frac{\log2+k\log4}{\log((k+1)!)}\longrightarrow0;
+\]
+for bounded \(k\) and \(q\to\infty\), the numerator is bounded.
+Equation~\eqref{eq:wheelmean} gives
+\[
+ c_+(B)\le\frac{\log(J(\rad B)^2+3)+1}{2\log B}.
+\]
+If the radical tends to infinity this goes to zero, since
+\(\log q\le\log B\). If radicals stay bounded their numerator is bounded
+and \(\log B\to\infty\). This proves \(c_+(B)\to0\).
+
+The witness \(c(30)\ge E_{30,2}-1>0\) now excludes all sufficiently large
+bases from the global supremum. Hence only finitely many bases remain.
+Proposition~\ref{prop:uniform-correction} supplies the common cap
+\(C^*\le\max(0,w,39/40)<49/50\). Together with the positive witness,
+this gives \(0<C^*<49/50\).
+A finite maximum of the quantities \(c(B)\) is still a maximum of
+suprema over infinitely many lengths; finite-length attainment is not
+part of the conclusion.
+\end{proof}
+This elementary argument requires no hypothesis about extremal
+Jacobsthal gaps or prime distributions. It is not a practical algorithm
+for locating the maximizing base.
+
+
+\begin{corollary}\label{cor:extremal-base}
+If \(c(B)=C^*\), then \(B\) has at least three distinct prime factors and
+is not a perfect power. Equivalently, the gcd of its positive prime
+valuations is one.
+\end{corollary}
+\begin{proof}
+The classes with one or two primes have \(c(B)\le0<C^*\).
+For \(B=A^e\), \(e\ge2\), equality of modulus and witness spaces gives
+\[
+ E_{A^e,N}-N/2=\frac1e(E_{A,eN}-eN/2),\qquad
+ c(A^e)\le c(A)/e\le C^*/e<C^*.
+\]
+The supremum here is over a subset of the lengths for \(A\); no
+maximizing finite length is asserted. Non-perfect-power does not
+mean squarefree.
+\end{proof}
+
+\begin{corollary}[A classical Jacobsthal sharpening]\label{cor:kanold}
+Using Kanold's bound \(J(q)\le2^{\omega(q)}\), as reported by
+Costello--Watts~\cite[Introduction, pp.~1--2]{CostelloWatts}, one has
+\[
+ 0<C^*\le\frac{\log67+1}{2\log30}
+       <\frac{5037}{6400}<\frac45.
+\]
+In particular, \(E_{B,N}<N/2+4/5\) for all \(B\ge2,N\ge1\).
+\end{corollary}
+\begin{proof}
+The maximum cyclic gap \(J(q)\) equals the least length of a consecutive
+integer interval guaranteed to contain a \(q\)-unit: a gap of length \(G\)
+has \(G-1\) intervening nonunits. Thus the cited bound uses precisely our
+convention, and applies to every radical, not only primorials.
+
+Put \(q=\rad(B)\) and \(k=\omega(q)\). For \(k\le2\),
+Theorem~\ref{thm:main}(2)--(3) gives \(c(B)\le0\).
+For \(k\ge3\), equation~\eqref{eq:wheelmean}, uniformly in \(N\), gives
+\[
+ c(B)\le\frac{\log(4^k+3)+1}{2\log q}.
+\]
+The first three distinct prime divisors have product at least \(30\),
+and each further prime is at least \(7\), hence at least \(4\).
+Consequently \(q\ge30\,4^{k-3}\). Also
+\(\log(4^k+3)\le k\log4+\log(67/64)\), so
+\[
+ c(B)\le F(k):=
+ \frac{k\log4+1+\log(67/64)}{2\log30+2(k-3)\log4}.
+\]
+The denominator is positive for real \(k\ge3\); the numerator of its
+derivative is \(2\log4(\log30-\log67-1)<0\).
+Thus \(F(k)\le F(3)=(\log67+1)/(2\log30)\).
+This is a common cap before either supremum over \(N\) or \(B\).
+
+For a rational enclosure, Appendix~\ref{app:constants} gives
+\(\log2<7/10\) and \(e<11/4\). Together with \(\log(1+x)<x\),
+\[
+ \log67+1=6\log2+\log(67/64)+1
+ <\frac{21}{5}+\frac3{64}+1=\frac{1679}{320}.
+\]
+Since \(11^{10}=25937424601<28311552000=27000\,4^{10}\),
+one has \(e^{10}<30^3\), hence \(\log30>10/3\). Therefore
+\[
+ \frac{\log67+1}{2\log30}
+ <\frac{1679/320}{20/3}=\frac{5037}{6400}
+ <\frac{5120}{6400}=\frac45.
+\]
+Positivity follows from Theorem~\ref{thm:positive}.
+\end{proof}
+This sharpening imports the cited classical gap bound; the self-contained
+\(49/50\) argument above remains valid independently.
+The argument does not determine the optimal correction or its extremizers.
+
+\section{Reproducibility and limitations}\label{sec:repro}
+The repository companion contains the original finite mathematical premises,
+portable reconstruction programs, exact logarithmic sums, complete domain
+lists and a provenance map. The original default checks remain a short
+retained-evidence check, a fixed defining oracle and a four-case squarefree
+reconstruction. They are distinct from the complete reconstruction route
+provided by \texttt{scripts/reconstruct\_all.py}. The reproduction guide
+specifies the commands, domains and limits of both routes.
+
+The complete source-replay chain passed all 37 stages in each of normal
+and optimized Python modes. The squarefree prefix, which originally
+retained only digests and signs, now has all 4596 reconstructed upper
+histograms and their consumed logarithmic ledgers. These histograms cover
+41585055 original envelope entries. A separate K32 logarithm implementation
+checked all 705257 consumed tick entries, involving 6929 distinct integers,
+and reconstructed every negative outward sum and its exact normalization.
+The retained full artifacts are indexed by
+\texttt{companion/reconstruction/index.json};
+\texttt{scripts/check\_complete\_evidence.py} checks their declared complete
+coverage, byte identities and the squarefree logarithmic certificates.
+
+An additional distinct central checker reconstructs all integer thresholds
+\(1\le T\le k=\floor{\sqrt M}\) and every proper original gcd stratum
+for all nine aggregate batches, including their consumed validation rows.
+For each full-unit denominator \(1\le d\le k\), it enumerates every
+\(1\le a\le k\) and both signed residues \(\pm ad^{-1}\pmod M\),
+retaining the smallest \(\max(a,d)\) at each state. There is no
+\(\gcd(a,d)=1\) filter: nonprimitive pairs are legal witnesses too.
+Zero is one separate atom; coincident signed witnesses update the same
+state. The resulting central height bins give every stratum prefix.
+All source-produced central arrays are compared at every threshold,
+including explicit zero counts for omitted strata above \(k\).
+The original endpoint-only checker descriptions elsewhere in the paper
+refer to the earlier retained-data checks, rather than this additional
+complete central comparison.
+
+The same direct central enumeration also checks every central histogram
+prefix for all 4596 squarefree cases, the eight base-six cases and the
+three sixth-power cases. All nine aggregate and all three pointwise-domain
+checks completed in both normal and optimized modes. The pointwise
+histograms provide global prefix comparison targets; they do not retain
+separate source stratum arrays. These checks compute exact central minima,
+not complete true minimum vectors in the far range. Far-envelope domination,
+the infinite estimates and the reduction arguments still use the proved
+mathematics and the source producer. The attributed binary mean theorem
+remains an import; this reconstruction does not repeat its earlier paper.
+
+The paper proves mean bounds for its full-unit rational-height model.
+It does not determine the optimal correction, maximizing lengths or a
+sign classification for all bases with at least three primes.
+It makes no assertion about the Collatz conjecture. The classical tools
+and earlier binary theorem are attributed, and no universal priority
+claim is made.
+
+\paragraph{Data and code availability.}
+All author-generated integer certificates and programs needed for the
+finite proof dependencies accompany the paper in the repository.
+The manuscript is licensed under CC BY 4.0; original code, certificates
+and repository documentation are licensed under MIT. Cited publications
+retain their own rights and are not bundled.
+
+\paragraph{AI-use disclosure.}
+OpenAI GPT models assisted with mathematical exploration, proof criticism,
+literature searches, manuscript editing, implementation and reproducibility
+checks. Several AI review passes shared source exposure. These do not
+constitute independent human peer review, formal proof verification or an
+originality certificate. The author retains responsibility for the arguments,
+source attributions and accompanying artifacts.
+
+\appendix
+\section{A finite compensation inequality for two-prime moduli}
+\label{ap:two-prime-compensation}
+
+Let \(M=p^a r^b\), where \(p<r\) are distinct primes and \(a,b\geq1\).
+Throughout this appendix the average is over all \(M\) residues, including zero,
+and
+\[
+ R_M(s)=\min_{\substack{d>0,\ (d,M)=1\\ A\equiv sd\pmod M}}
+          \max(|A|,d),\qquad
+ \mu(M)=\frac1M\sum_{s\bmod M}\log R_M(s)-\frac12\log M .
+\]
+All logarithms are natural. Write
+\[
+ \begin{gathered}
+ A_0=\sqrt M,\quad D=pr,\quad u=(1-p^{-1})(1-r^{-1}),\\
+ \rho=\frac{pr}{(p+1)(r+1)},\quad
+ \alpha=\zeta(2)^{-1},\quad \ell=\log2.
+ \end{gathered}
+\]
+\[
+ \kappa=\alpha\rho,\qquad
+ \theta=\alpha(1-\rho),\qquad \beta=3-2\sqrt2 .
+\]
+The symbol \(A_0\) denotes a real scale, not a numerator.
+
+\subsection{Unit discrepancy and primitive counting}
+\label{ap:unit-discrepancy}
+Define
+\[
+ U(x)=\lfloor x\rfloor-\lfloor x/p\rfloor-\lfloor x/r\rfloor
+                         +\lfloor x/D\rfloor,\qquad e(n)=U(n)-un.
+\]
+Let \(h=\max_{0\leq n<D}e(n)\), \(m=\min_{0\leq n<D}e(n)\), and put
+\[
+ K=h-m+u,\qquad W=\max(h,-m+2u),\qquad H_0=u+h.
+\]
+Then \(h\geq0\), \(m\leq0\), and \(H_0\geq1\), the last inequality following
+from \(e(1)=1-u\). The real discrepancy lies in \([m-u,h]\).
+Every closed interval of length \(v\) in the positive half-line therefore
+contains at most \(uv+K\) positive \(D\)-units: for its integer endpoints
+\(i=\lceil x\rceil\), \(j=\lfloor y\rfloor\), use
+\(U(j)-U(i-1)\) and \(j-i\leq y-x\).
+This includes both endpoint atoms and zero-width intervals.
+Partial summation gives
+\[
+ \sum_{\substack{d\leq Q\\(d,D)=1}}\frac1d\leq H_0+u\log Q
+ \quad(Q\geq1).
+\]
+For \(x=n+t\), \(0\leq t<1\),
+\[
+ nU(n)-ux^2=ne(n)-u(2nt+t^2),\qquad
+ |nU(n)-ux^2|\leq Wx.
+\]
+For the lower bound one uses
+\[
+ (-m+2u)x-\{-nm+u(2nt+t^2)\}
+ =2un(1-t)+(-m+2u)t-ut^2\geq0;
+\]
+the upper bound follows from \(h\geq0\).
+
+Let \(P(T)\) count pairs \(1\leq A,d\leq T\) with
+\((A,d)=1\) and \((d,D)=1\). For integer \(T\geq1\), cancelling content
+only at \(D\)-units yields
+\[
+ P(T)=\sum_{\substack{g\leq T\\(g,D)=1}}
+       \mu_{\rm Mob}(g)\lfloor T/g\rfloor U(\lfloor T/g\rfloor).
+\]
+The Euler product
+\[
+ u\sum_{(g,D)=1}\frac{\mu_{\rm Mob}(g)}{g^2}
+   =\frac{u\alpha}{(1-p^{-2})(1-r^{-2})}=\kappa
+\]
+and the integer-cutoff bound
+\(\sum_{g>T}g^{-2}\leq T^{-1}\) prove
+\begin{equation}
+ |P(T)-\kappa T^2|\leq T(b_0+b_1\log T),
+ \label{ap:primitive-error}
+\end{equation}
+with either of the \emph{coherent} choices
+\[
+ (b_0,b_1)=(W+u,W)
+ \quad\text{or}\quad
+ (b_0,b_1)=(WH_0+u,Wu).
+\]
+Both have \(b_0\geq b_1\). The elementary bounds \(h<2\), \(m>-1\)
+also permit the coarse pair \((b_0,b_1)=(4,3)\) and \(K=4\):
+here \(|nU(n)-ux^2|\leq3x\), and the unmarked harmonic sum is
+at most \(1+\log T\).
+
+For later sharpening we need the stronger uniform integer discrepancy
+\begin{equation}
+ -u\leq e(n)\leq2u.
+ \label{ap:refined-discrepancy}
+\end{equation}
+It suffices to work in one period. At units \(e(n)-e(n-1)=1-u>0\),
+so a minimum occurs at zero or a nonunit. If \(n=pt<D\), write
+\(pt=jr+s\), with \(1\leq t<r\), \(0\leq j\leq p-1\), \(1\leq s<r\).
+Then \(e(pt)=(s-t)/r\), and
+\[
+ t-s=jr-(p-1)t
+ \leq\frac{jr-(p-1)}p
+ \leq\frac{(p-1)(r-1)}p=ur.
+\]
+Interchanging the primes treats multiples of \(r\).
+Reflection gives
+\(e(D-n)=\mathbf1_{(n,D)=1}-e(n)\) for \(0<n<D\).
+At nonunits this implies \(e(n)\leq u\).
+At a unit \(t\), the lower bound for \(e(t-1)\) implies
+\(e(t)\geq1-2u\); reflection then gives \(e(n)\leq2u\).
+Thus \(K\leq4u\), \(W\leq3u\). For the second coherent parameter choice,
+\begin{equation}
+ b_0\leq9u^2+u,\quad b_1\leq3u^2,\quad
+ b_0-b_1=Wh+u\leq6u^2+u .
+ \label{ap:refined-parameters}
+\end{equation}
+
+\subsection{Central collisions with closed endpoints}
+\label{ap:central-collisions}
+For integer \(T^2\leq M\), let \(C(T)=\#\{s:R_M(s)\leq T\}\).
+Every nonzero short witness can be cancelled to a primitive one because its
+content is a unit modulo \(M\).
+Two primitive witnesses with the same numerator sign represent different
+states unless they are identical: a nonzero determinant would be a multiple
+of \(M\), while its magnitude is \(<M\). At \(T^2=M\), equality in this
+bound would require a denominator \(T\), which is not a unit.
+Opposite signs can meet only when
+\[
+ Ad+Eb=M,\qquad 1\leq A,E,b,d\leq T,\quad (bd,D)=1.
+\]
+The value \(2M\) is impossible for the same nonunit-endpoint reason.
+There is at most one witness of either sign at a given state.
+Neither a nonzero short witness nor its negative can be the zero state.
+Consequently
+\begin{equation}
+ C(T)=1+2P(T)-J(T),
+ \label{ap:central-cdf}
+\end{equation}
+where \(J(T)\) counts the ordered positive/negative collision pairs above;
+no further factor two is inserted.
+
+A common divisor of \(b,d\) divides \(M\) and is coprime to \(M\), so
+\((b,d)=1\). For fixed \(b,d\), the interval of progression parameters has
+width at most
+\[
+ \frac{T(b+d)-M}{bd}<1
+\]
+when nonempty. Indeed
+\(T(b+d)-M-bd\leq-(T-b)(T-d)\), with equality requiring \(M=T^2\)
+and one nonunit denominator \(T\).
+Hence at most one collision occurs per ordered denominator pair.
+Put \(L_T=(2T-M/T)_+\). The deficits \(T-b,T-d\) lie in the closed triangle
+\(x+y\leq L_T\).
+If \(V(v)\) counts admissible deficits up to \(v\), then \(V(v)\leq uv+K\).
+Summing the linear weights as a Stieltjes integral gives
+\begin{equation}
+ J(T)\leq \frac{u^2L_T^2}{2}+2uK L_T+K^2
+ \quad(2T^2>M).
+ \label{ap:collision-upper}
+\end{equation}
+There are no collisions for \(2T^2<M\). If \(2T^2=M\), equality forces
+\(b=d=T\); the odd prime divisor of \(M\) divides \(T\), so these are
+not units. Thus \(J(T)=0\) also at this boundary.
+
+\subsection{The global far cover}
+\label{ap:far-cover}
+For integer \(T^2\geq2M\), consider the complete Farey sequence of order \(T\).
+A unit-denominator center \(c/d\) covers the closed interval
+\([c/d-T/(Md),c/d+T/(Md)]\).
+Consecutive centers \(a/q<c/d\) have \(cq-ad=1\), \((q,d)=1\), and \(q+d>T\).
+If both denominators are units their intervals overlap.
+If only one is a unit, an uncovered point forces the other denominator to
+be \(<M/T\).
+
+If both are nonunits, their two prime obstructions are complementary.
+Hence \(q-d\) is a unit modulo \(D\).
+On the Farey arc the affine residual
+\[
+ (q-d)x-(a-c)
+\]
+has values \(1/q\) and \(1/d\) at its endpoints.
+If \(q,d\geq M/T\), its absolute value multiplied by \(M\) is at most \(T\),
+and the vector difference is a genuine witness of denominator
+\(0<|q-d|\leq T\) on the whole arc. A witness center outside that arc
+is allowed; no isolation of deleted centers is presumed.
+
+It follows that every uncovered point belongs to an arc incident to a
+deleted reduced center \(a/q\), \(0<a<q\), with \(q<M/T\leq T/2\).
+A complete Farey neighbor \(c/d\) has \(d>T-q>q\).
+If \(d\) is also a nonunit, replace it by
+\((c-a)/(d-q)\). Its denominator is a unit, lies in \((T-2q,T]\),
+and has determinant one with \(a/q\) on the same side.
+If \(D\mid q\), the original neighbors are already units and lie in
+\((T-q,T]\).
+The uncovered residues are therefore contained in the union of open holes
+\[
+ \left(\frac{Ma}{q}-\frac{M-qT}{qb_L},
+       \frac{Ma}{q}+\frac{M-qT}{qb_R}\right),\qquad
+ b_L,b_R>T-2q .
+\]
+An open interval of length \(v\) contains at most \(v+1\) integers.
+Overlapping holes may be counted repeatedly in an upper bound. Consequently
+\begin{equation}
+ M-C(T)\leq
+ \sum_{\substack{q<M/T\\(q,D)>1}}\varphi(q)
+ \left\{\frac{2(M-qT)}{q(T-2q)}+1\right\}.
+ \label{ap:far-holes}
+\end{equation}
+The \(+1\) allowances, positive denominator marks and open endpoints are
+essential. The displayed cover holds also at \(T^2=2M\), but a later
+partial summation must start strictly above that threshold.
+
+\subsection{Deleted-center density and its real-cutoff error}
+\label{ap:deleted-density}
+Put \(A(Q)=\sum_{q\leq Q,\,(q,D)>1}\varphi(q)/q\), and define
+\[
+ v=2-p^{-1}-r^{-1},\qquad
+ c_0=\frac{p-1}{p^2}+\frac{r-1}{r^2}-\frac{D-1}{D^2}.
+\]
+Expanding \(\varphi(q)/q=\sum_{d\mid q}\mu_{\rm Mob}(d)/d\) and separating its
+\(p,r\) parts yields the exact identity
+\[
+ A(Q)=\sum_{\substack{d\leq Q\\(d,D)=1}}\frac{\mu_{\rm Mob}(d)}d
+ \left\{(1-p^{-1})\left\lfloor\frac Q{pd}\right\rfloor
+ +(1-r^{-1})\left\lfloor\frac Q{rd}\right\rfloor
+ -(1-D^{-1})\left\lfloor\frac Q{Dd}\right\rfloor\right\}.
+\]
+The linear coefficient in braces is \(c_0Q/d\), and their error is
+at most \(v\) in absolute value.
+Since \(c_0=(1-p^{-2})(1-r^{-2})-u\), the leading density is \(\theta\).
+For real \(Q\geq1\), not merely integer \(Q\),
+\[
+ Q\sum_{d>Q}d^{-2}\leq Q/\lfloor Q\rfloor<2 .
+\]
+Thus
+\begin{equation}
+ |A(Q)-\theta Q|\leq E(Q)=E_0+E_1\log Q
+ \label{ap:deleted-error}
+\end{equation}
+with either \(E_0=v+2c_0,E_1=v\), or \(E_0=vH_0+2c_0,E_1=vu\).
+The coarse admissible choice is \(E(Q)=3+2\log Q\), since
+\(c_0\leq17/36\). For partial summation on \(0\leq Q<1\), take \(E(Q)=E_0\):
+then \(A(Q)=0\), \(\theta Q\leq\theta<1/3\), and \(E_0\geq vu\geq7/18\).
+A second partial summation gives
+\begin{equation}
+ B(Q):=\sum_{\substack{q\leq Q\\(q,D)>1}}\varphi(q)
+ \leq\frac{\theta Q^2}{2}+2QE(Q).
+ \label{ap:integer-hole-allowance}
+\end{equation}
+
+For \(T^2>2M\), write \(Q=M/T\) and
+\(f(x)=(M-Tx)/(T-2x)\). It decreases from \(M/T\) to zero at \(Q\).
+Equations \eqref{ap:far-holes}--\eqref{ap:integer-hole-allowance} imply
+\[
+ \frac{M-C(T)}M\leq V(T/A_0)+\frac{4E(Q)}T,
+ \qquad
+ V(t)=\theta F(t/\sqrt2)+\frac{\theta}{2t^2},
+\]
+where
+\[
+ F(z)=\sum_{n\geq1}\frac{z^{-2n}}{n(n+1)},\qquad F(1)=1.
+\]
+Indeed \(2\theta M^{-1}\int_0^Q f(x)\,dx=\theta F(T/(\sqrt2A_0))\);
+the weighted discrepancy costs \(2E(Q)/T\), and the integer-hole
+allowance costs another \(2E(Q)/T\).
+The function \(V\) is decreasing, \(V(\sqrt2)=5\theta/4\), and termwise
+integration of its positive series gives
+\begin{equation}
+ \int_{\sqrt2}^{\infty}V(t)\frac{dt}{t}
+ =\theta\left\{\frac{\zeta(2)-1}{2}+\frac18\right\}
+ =\frac{1-\rho}{2}-\frac{3\alpha(1-\rho)}8 .
+ \label{ap:far-integral}
+\end{equation}
+
+\subsection{The complete finite compensation}
+\label{ap:finite-balance}
+Denominator one bounds every height by \(\max(1,\lfloor M/2\rfloor)\).
+The layer-cake identity is
+\[
+ \mu(M)=-D_c+P_{\rm mid}+P_{\rm far},
+\]
+with
+\[
+ D_c=\frac1M\int_1^{A_0}C(\lfloor x\rfloor)\frac{dx}{x},\qquad
+ P_{\rm mid}=\frac1M\int_{A_0}^{\sqrt2A_0}
+                  [M-C(\lfloor x\rfloor)]\frac{dx}{x}.
+\]
+The floor lemma
+\[
+ \int_1^{A_0}\lfloor x\rfloor^2\frac{dx}{x}\geq A_0^2/2-A_0
+\]
+follows by summing
+\(\log(1+1/n)\geq1/n-1/(2n^2)\) and using
+\(\log((k+t)/k)\geq t/(k+t)\) on the last interval.
+The residual comparison is at least \(1/2+t-3t^2/2\geq0\) for \(0\leq t<1\).
+Integration of \eqref{ap:primitive-error} and
+\eqref{ap:collision-upper}, retaining the closed collision boundary, gives
+\[
+ D_c\geq\kappa-u^2(3/4-\ell)
+ -\frac{2\kappa+2(b_0-b_1)+2b_1\log A_0+2uK\beta}{A_0}
+ -\frac{K^2\ell}{2A_0^2}.
+\]
+Here the two collision integrals are
+\[
+ \frac1M\int_{A_0/\sqrt2}^{A_0}
+       (2x-M/x)^2\frac{dx}{x}=3/2-2\ell,\qquad
+ \int_{A_0/\sqrt2}^{A_0}(2x-M/x)\frac{dx}{x}=A_0\beta.
+\]
+The favorable central zero and favorable primitive-error endpoint
+\(2(b_0-b_1)/A_0^2\) have only been discarded.
+At \(k=\lfloor A_0\rfloor\), \(k^2\geq A_0^2-2A_0\).
+CDF monotonicity throughout the middle interval implies
+\[
+ P_{\rm mid}\leq(1-2\kappa+u^2/2)\frac\ell2
+ +\frac{\ell(4\kappa+2b_0+2b_1\log A_0+2uK)}{2A_0}
+ +\frac{K^2\ell}{2A_0^2}.
+\]
+
+Start the discrete far sum at
+\[
+ L=\lfloor\sqrt{2M}\rfloor+1 .
+\]
+The initial interval \([\sqrt{2M},L]\) costs at most
+\(1/(\sqrt2 A_0)\), including when \(\sqrt{2M}\) is an integer.
+This prevents the false substitution \(f(Q)=0\) at \(T^2=2M\).
+For all subsequent terms \(T^2>2M\).
+Use \(\log(1+1/T)\leq1/T\), decreasing-sum comparison and
+\(\sum_{T\geq L}T^{-2}\leq L^{-1}+L^{-2}\).
+Equations \eqref{ap:far-integral} and \eqref{ap:deleted-error} then give
+\[
+ P_{\rm far}\leq
+ \frac{1-\rho}{2}-\frac{3\alpha(1-\rho)}8
+ +\frac{1+5\theta/4+4E(A_0)}{\sqrt2 A_0}
+ +\frac{2E(A_0)}{A_0^2}.
+\]
+When \(Q<1\) the survival is zero; no negative logarithmic error is used.
+Combining the three bounds proves
+\begin{equation}
+ \mu(M)\leq-\Delta(p,r)+\mathcal E_{p,r}(A_0),
+ \label{ap:master-balance}
+\end{equation}
+where
+\[
+ \Delta=
+ \rho\{\alpha(5/8+\ell)+1/2\}
+ +3\alpha/8-1/2-\ell/2-\tfrac34(1-\ell)u^2
+\]
+and
+\begin{align}
+ \mathcal E_{p,r}(A_0)
+ =\frac1{A_0}\bigl[&
+ 2\kappa+2(b_0-b_1)+2b_1\log A_0+2uK\beta \notag\\
+ &+\tfrac\ell2(4\kappa+2b_0+2b_1\log A_0+2uK)
+ +(1+5\theta/4+4E(A_0))/\sqrt2\bigr] \notag\\
+ &+\frac{K^2\ell+2E(A_0)}{A_0^2}.
+ \label{ap:master-error}
+\end{align}
+All these estimates hold for arbitrary positive prime valuations.
+They are inequalities for the original finite average, not limiting-law
+or monotonicity assertions.
+
+\subsection{Uniform leading margins and universal cutoffs}
+\label{ap:universal-cutoffs}
+The margin \(\Delta\) increases with either prime.
+To check this algebraically put \(x=1/p,y=1/r\),
+\(A_*=\alpha(5/8+\ell)+1/2\), \(C_*=\tfrac34(1-\ell)\).
+Multiplication of \(\partial_x\Delta\) by \((1+x)/\rho\) gives
+\[
+ -A_*+2C_*(1-x)(1+x)^2(1-y)^2(1+y)<0 .
+\]
+For \(0\leq x,y\leq1/2\), its positive term is \(<9/8\), whereas
+\(A_*>51/40\), using \(\alpha>3/5\) and \(\ell>2/3\).
+Thus both reciprocal-prime derivatives are negative.
+
+The coarse coherent parameters \((b_0,b_1,K)=(4,3,4)\) and
+\(E(A_0)=3+2\log A_0\) give
+\begin{equation}
+ \mathcal E_{p,r}(A_0)<
+ \frac{22+15\log A_0}{A_0}+\frac{18+4\log A_0}{A_0^2}.
+ \label{ap:coarse-error}
+\end{equation}
+For example, the coefficients of its linear constant and logarithm are
+bounded by \(5167/240<22\) and \(141/10<15\); its quadratic constant
+is \(<18\).
+At the smallest corner,
+\[
+ \Delta(2,3)=\alpha(11/16+\ell/2)-1/3-5\ell/12
+             >2885/521272>1/200.
+\]
+Indeed convexity bounds
+\[
+\zeta(2)<\sum_{n=1}^5n^{-2}+\int_{11/2}^{\infty}x^{-2}dx
+=65159/39600.
+\]
+Insert \(\alpha>39600/65159\) first and
+\(\ell<7/10\) second. Elementary finite positive exponential or atanh
+series give
+\[
+ 3/5<\alpha<2/3,\quad 2/3<\ell<7/10,\quad
+ \log3<11/10,\quad\log5<17/10 .
+\]
+At \(A_0=2^{16}\), \(\log A_0<56/5\), and
+\[
+ \mathcal E<
+ \frac{190}{65536}+\frac{314/5}{65536^2}<1/300.
+\]
+The positive error terms decrease thereafter.
+Hence every two-prime modulus \(M\geq2^{32}\) has
+\(\mu(M)<-1/600\).
+
+The sharper three cutoffs follow from the refined parameters, still
+without finite-height experiments:
+\begin{equation}
+ \begin{array}{ll}
+ p=2,\ r\geq11,\ M\geq384^2:&\mu(M)<-1/600,\\
+ p=3,\ r\geq7,\ M\geq512^2:&\mu(M)<-1/350,\\
+ p\geq5,\ r\geq7,\ M\geq600^2:&\mu(M)<-1/750 .
+ \end{array}
+ \label{ap:three-cutoffs}
+\end{equation}
+Here are the exact parameter substitutions and endpoint comparisons.
+
+For \(p=2\) the periodic extrema are \(h=2u,m=-u\);
+they occur at \(n=r-2,r+1\). Thus \(K=4u,W=3u\).
+For \(r\geq11\), using the second coherent primitive and density choices,
+\[
+ u\leq\tfrac12,\quad\kappa<\tfrac49,\quad\theta<\tfrac13,\quad
+ b_0\leq\tfrac{11}4,\quad b_1\leq\tfrac34,\quad b_0-b_1\leq2,\quad K\leq2,
+ \quad E_0\leq\tfrac{125}{44},\quad E_1\leq\tfrac34 .
+\]
+Substitution in \eqref{ap:master-error}, using
+\(\beta<1/5\) and \(1/\sqrt2<3/4\), gives
+\[
+ \mathcal E<
+ \frac{363/20+(171/40)\log A_0}{A_0}
+ +\frac{17/2+(3/2)\log A_0}{A_0^2}.
+\]
+The unrounded linear constant is \(143521/7920<363/20\).
+At \(A_0=384\), \(\log384<6\), so
+\[
+ \mathcal E<73/640+35/294912<23/200.
+\]
+The exact corner after inserting \(\alpha>3/5\), then \(\ell>2/3\), is
+\[
+ \Delta(2,11)>
+ 109/240-761/2178+(157/7260)(2/3)
+ =3461/29040>7/60.
+\]
+This proves the first line of \eqref{ap:three-cutoffs}.
+
+For \(p=3,r\geq7\), \eqref{ap:refined-discrepancy} gives
+\[
+ u\leq\tfrac23,\quad\kappa<\tfrac12,\quad\theta<\tfrac13,\quad
+ K\leq\tfrac83,\quad b_0\leq\tfrac{14}3,\quad b_1\leq\tfrac43,\quad
+ b_0-b_1\leq\tfrac{10}3,\quad E_0\leq\tfrac{250}{63},\quad E_1\leq\tfrac{10}9 .
+\]
+Therefore
+\[
+ \mathcal E<
+ \frac{27+7\log A_0}{A_0}
+ +\frac{13+(9/4)\log A_0}{A_0^2}.
+\]
+The unrounded linear constant is \(133843/5040<27\).
+Since \(\log512<63/10\),
+\[
+ \mathcal E(512)<711/5120+1087/10485760<7/50.
+\]
+The corner computation is
+\[
+ \Delta(3,7)>
+ 603/1280-1307/3136+(1087/7840)(2/3)
+ =27613/188160>1/7,
+\]
+which proves the second line.
+
+Finally, at \(p=5,r=7\), insertion of \(\alpha>3/5\), then
+\(\ell>2/3\), gives
+\(\Delta(5,7)>95869/470400>61/300\).
+The coefficient of \(\ell\) after the first insertion is positive.
+Since \(600=2^3\cdot3\cdot5^2\), \(\log600<33/5\), and
+\eqref{ap:coarse-error} gives
+\[
+ \mathcal E(600)<121/600+37/300000
+                =60537/300000<101/500.
+\]
+The difference \(61/300-101/500=1/750\) proves the third line.
+All endpoint comparisons are strict rational inequalities, and all error
+terms decrease above the stated scale.
+
+\paragraph{Coverage boundary.}
+The three cutoffs cover every pair except radicals \(6,10,14,15\).
+They reduce the remaining problem to a bounded domain, but do not themselves
+certify that domain or those four families.
+A complete proof of the all-modulus theorem must additionally supply their
+separate family arguments, the later source-domain reductions and the exact
+finite-certificate clauses. No sign extrapolation or monotonicity of the
+true finite means may replace these remaining premises.
+
+
+\section{The refined radical-six balance}\label{app:rad6}
+This argument applies to every \(M\) with \(\rad(M)=6\), not just \(6^N\).
+Put \(a=\sqrt M\), \(\alpha=\zeta(2)^{-1}\), \(\ell=\log2\),
+\(\theta=\alpha/2\), and \(\theta_6=\alpha/12\).
+Period six gives
+\[
+ -2/3\le U_6(x)-x/3\le2/3,\qquad
+ -1/3\le U_6(n)-n/3\le2/3\quad(n\in\Z_{\ge0}).
+\]
+Partial summation yields
+\(\sum_{d\le Q,(d,6)=1}1/d\le1+\log Q/3\).
+For real \(Q\ge2\) the tail satisfies
+\(Q\sum_{d>Q,(d,6)=1}d^{-2}\le1/3+4/(3Q)\le1\).
+For \(1\le Q<2\), it is \(<2/9\) since
+\(\sum_{d\ge2,(d,6)=1}d^{-2}=2\zeta(2)/3-1<1/9\).
+The real-cutoff estimate is therefore valid without rounding \(Q\).
+
+For \(x=n+t\), \(0\le t<1\),
+\(|nU_6(n)-x^2/3|\le x\), by the displayed discrepancy.
+Möbius inversion with only six-unit contents consequently gives
+\[
+ |P(T)-\alpha T^2/2|\le(4/3)T+(1/3)T\log T.        \tag{B.1}\label{eq:six-primitive}
+\]
+Every closed interval of length \(h\) contains at most \(h/3+4/3\)
+six-units, including boundary atoms. One proof uses the alternating
+spacings two and four: \(2m+1\) consecutive units span at least \(6m\)
+and \(2m\) units span at least \(6m-4\).
+For \(L_T=(2T-M/T)_+\), the collision triangle in the preceding appendix
+then gives, when \(2T^2>M\),
+\[
+ J(T)\le L_T^2/18+(8/9)L_T+16/9.                 \tag{B.2}\label{eq:six-collision}
+\]
+At \(2T^2=M\), \(T\) is a nonunit, so the putative equality pair
+\(d=f=T\) is forbidden. At \(T^2=M\), \(T\) is also a nonunit.
+Thus the same endpoint conventions apply for unequal valuations.
+
+There is a useful additional gain in the far tail. Define
+\[
+ A(Q)=\sum_{\substack{d\le Q\\(d,6)>1}}\varphi(d)/d,\qquad
+ A_6(Q)=\sum_{\substack{d\le Q\\6\mid d}}\varphi(d)/d.
+\]
+Möbius expansion gives the exact identities
+\[
+ A(Q)=\sum_{\substack{d\le Q\\(d,6)=1}}\frac{\mu_{\rm Mob}(d)}d
+ \left[\frac12\floor{Q/(2d)}+\frac23\floor{Q/(3d)}
+                              -\frac56\floor{Q/(6d)}\right],
+\]
+\[
+ A_6(Q)=\frac13\sum_{\substack{d\le Q/6\\(d,6)=1}}
+             \frac{\mu_{\rm Mob}(d)}d\floor{Q/(6d)}.
+\]
+The first bracket minus \(Q/(3d)\) has period six and lies in
+\([-2/3,1/3]\). The harmonic and real tail bounds above then give,
+for real \(Q\ge1\),
+\[
+ |A(Q)-\theta Q|\le E(Q)=1+(2/9)\log Q,\quad
+ |A_6(Q)-\theta_6 Q|\le E_6(Q)=2/3+(1/9)\log Q.    \tag{B.3}
+\]
+For example, decompose a denominator into its powers of two and three
+and its six-unit part; summing the powers gives geometric series,
+and the six-unit harmonic and tail estimates above bound the remaining
+floor errors. Equivalently insert \(p=2,r=3\) into the exact deleted-density
+floor identity in Appendix~\ref{ap:two-prime-compensation}, and separately
+retain denominators divisible by both primes. The resulting coefficients
+are \(\theta=\alpha/2\) and \(\theta_6=\alpha/12\).
+
+For centers divisible by six the neighbor repair costs \(d\), rather
+than \(2d\). With \(F\) defined in Section~\ref{sec:prime}, the main survival
+envelope is therefore
+\[
+ V(t)=(\theta-\theta_6)F(t/\sqrt2)+2\theta_6F(t)
+                                      +\theta/(2t^2),\quad t\ge\sqrt2 .
+\]
+In partial summation, the difference between the two rational kernels
+is unimodal; its maximum is at most \(2M^2/T^3\) and its total variation
+is at most twice this. The extra error is consequently
+\(8E_6(M/T)M/T^3\); the original one is \(4E(M/T)/T\).
+Termwise positive-series integration, or the identity
+\(2\Li(1/2)=\zeta(2)-\ell^2\), gives
+\[
+ \int_{\sqrt2}^{\infty}V(t)\frac{dt}{t}
+       =1/4-3\alpha/16-\alpha(1-\ell)^2/24 .
+\]
+The dilogarithm identity follows by differentiating
+\(\Li(x)+\Li(1-x)=\zeta(2)-\log x\log(1-x)\) and fixing the endpoint.
+
+Repeat the central and middle integrals of the preceding appendix with
+\eqref{eq:six-primitive}--\eqref{eq:six-collision}, and start the far sum
+at \(\floor{\sqrt{2M}}+1\).
+The complete result is
+\[
+ \mu(M)\le-\Delta_6+\mathcal E_6(a),
+\]
+where
+\[
+ \Delta_6=\alpha(11/16+\ell/2)-1/3-5\ell/12
+                                +\alpha(1-\ell)^2/24>1/130
+\]
+and, writing \(\beta=3-2\sqrt2\),
+\begin{align*}
+ \mathcal E_6(a)=\frac1a\bigl[&
+ \alpha+2+(2/3)\log a+(8/9)\beta\\
+ &+\ell(2\alpha+32/9+(2/3)\log a)/2\\
+ &+(1+5\alpha/8+4E(a)+(4/3)E_6(a))/\sqrt2\bigr]\\
+ &+\{16\ell/9+2E(a)+2E_6(a)\}/a^2 .
+\end{align*}
+The margin follows from
+\(\alpha>39600/65159,\ \ell<7/10\):
+the part without the final gain exceeds \(2885/521272\),
+and the gain exceeds \(1/440\), whose sum exceeds \(1/130\).
+At \(a_0=6^{9/2}>3000\), \(\log a_0<81/10\);
+using \(\alpha<2/3,\ell<7/10,1/\sqrt2<3/4,\beta<1/5\) gives
+\[
+ \mathcal E_6(a_0)<23/a_0+10/a_0^2<6901/900000<1/130.
+\]
+Every error term decreases for \(a\ge a_0\). Hence
+\(\mu(M)<-287/11700000\) whenever \(\rad(M)=6,\ M\ge6^9\).
+The eight smaller diagonal moduli \(6^1,\ldots,6^8\) are finite
+certificates; unequal valuations below the cutoff are handled separately.
+
+\section{Elementary constant enclosures}\label{app:constants}
+All nonrational constants used for cutoff comparisons admit positive
+series enclosures. In particular
+\[
+ \sum_{n=1}^{10}n^{-2}+\frac1{11}>\frac{41}{25},\qquad
+ \zeta(2)<\sum_{n=1}^{5}n^{-2}+\frac2{11}
+          =\frac{65159}{39600}<\frac{33}{20}.
+\]
+For the upper bound, convexity of \(x^{-2}\) bounds the term at each
+integer \(n\ge6\) by its integral on \([n-1/2,n+1/2]\).
+The lower bound uses the integral tail after ten terms.
+Further,
+\[
+ e\le\sum_{n=0}^{6}\frac1{n!}
+             +\frac{1}{7!(1-1/8)}<\frac{87}{32}<3.
+\]
+The atanh enclosure in Section~\ref{sec:cert}, applied to rational
+arguments, proves all logarithmic comparisons with outward rounding.
+For instance its range reduction gives
+\(2/3<\log2<7/10,\ \log3<11/10,\ \log5<17/10\),
+\(\log140<5,\ \log384<6,\ \log512<63/10,\ \log600<13/2\).
+Alternatively, lower partial sums of \(\exp x\) prove each upper
+logarithm comparison. These checks do not rely on floating decimal
+evaluation.
+
+
+\section{The short-length bridges}\label{app:shortlength}
+Here we make explicit the predecessor result at lengths at least two
+used in Appendix~\ref{ap:finite-two-prime}. This order avoids a circular
+use of the length-one completion.
+First the three sixth-power certificates for \(B=10,12,14\), the eight
+base-six certificates, and the coarse cutoffs give every two-prime base
+at \(N\ge6\), as explained in the family proof.
+The complete radical families then follow without using any
+length-two or length-one result.
+
+Outside radicals \(6,10,14,15\), the coarse balance admits further
+corner cutoffs. Monotonicity of its leading margin gives
+\[
+ \begin{gathered}
+ \Delta(2,11)>3461/29040>1/9,\\
+ \Delta(3,7)>27613/188160>1/7,\quad
+ \Delta(2,17)>1447/10404>1/8 .
+ \end{gathered}
+\]
+At \(a=1296=6^4\), using \(\log a<36/5\), the coarse error
+\((22+15\log a)/a+(18+4\log a)/a^2\)
+is \(<46813/466560<1/9\).
+At \(a=1024\), using \(\log a<7\), it is
+\(<65047/524288<1/7\) and \(<1/8\).
+These comparisons and decreasing errors give:
+\[
+ \begin{array}{c|c}
+ \hbox{remaining prime factors}&\hbox{sufficient }M\\\hline
+ p=2,\ r=11\hbox{ or }13&6^8\\
+ p=2,\ r\ge17&2^{20}\\
+ p\ge3,\ r\ge7&2^{20}.
+ \end{array}                                                    \tag{D.1}
+\]
+In particular all lengths \(N\ge5\) are covered.
+For length four the complete remaining bases are \(21,22,26\);
+their three finite certificates prove all lengths \(N\ge4\).
+
+For length three define the conservative domain of bases \(B=p^a r^b\)
+outside the four complete radicals by
+\(B^3<6^8\) if \(p=2,r=11,13\), and \(B^3<2^{20}\) otherwise.
+Remove bases already covered by reindexing at length at least four.
+This gives exactly the following 35 bases:
+\[
+ \begin{gathered}
+ 21,22,26,33,34,35,38,39,44,46,51,52,55,57,58,62,63,65,68,69,\\
+ 74,76,77,82,85,86,87,88,91,92,93,94,95,99,104 .
+ \end{gathered}
+\]
+The retained domain generator also gives their unique prime valuations.
+Every one has a negative certificate, proving all lengths \(N\ge3\).
+The numerical limits behind the enumeration are \(B\le118\) in the
+first category and \(B\le101\) in the others.
+
+For length two enumerate every integer base \(B\le1295\) with exactly
+two prime factors outside the four radicals. Keep
+\[
+ B<1296\quad(p=2,r=11,13),\qquad
+ B<1024\quad\hbox{otherwise},
+\]
+and remove \(B=441,484,676\), which are respectively the squares of
+the already certified bases \(21,22,26\). Any other higher-power
+reindexing in this range is either in a complete radical family or
+above its analytic cutoff.
+There are exactly 454 retained bases, split into 256 odd bases,
+183 bases with \(p=2,r\ge17\), and 15 with \(p=2,r=11,13\).
+Their physical modulus is \(M=B^2\); they are not 454 arbitrary
+two-prime moduli.
+The parameterized balance with the actual periodic discrepancy and
+outward constant enclosures pays 355 of them. The other 99 have
+negative histogram/log certificates constructed by Section~\ref{sec:cert}.
+This proves every two-prime base at length two.
+All lengths \(N\ge2\) are now proved before the length-one residual
+inventory is formed.
+
+The arithmetic in the analytic filters is also fully finite.
+For \(\zeta(2)\) use
+\[
+ \sum_{j=1}^{K}j^{-2}+1/(K+1)<\zeta(2)
+            <\sum_{j=1}^{K}j^{-2}+1/K ,
+\]
+invert outward to enclose \(\alpha\), and enclose logarithms by the
+atanh series. Square roots have rational enclosures obtained by integer
+square roots. The length-two filter uses \(K=128\) for the zeta sum;
+the companion records the root scale \(10^{15}\), logarithmic precision
+and any outward dyadic grid separately. A row is paid only if its entire upper enclosure is
+strictly negative; an inconclusive enclosure remains in the finite
+certificate set. The later length-one five-bound filter is evaluated
+in the same outward manner. A rounded decimal sign is never a filter.
+
+\begin{table}[ht]
+\centering
+\begin{tabular}{lrr}\toprule
+Bridge & Rows & Kind of retained evidence\\\midrule
+Odd prime powers &21&exact heights and integer Jensen sums\\
+Base six, \(N=1,\ldots,8\)&8&upper histograms and integer log sums\\
+Length six, bases \(10,12,14\)&3&upper histograms and integer log sums\\
+Squarefree semiprime prefix&4596&digests/signs; reconstruction code\\
+Offdiagonal radical six&143&upper histograms and log ledger\\
+Radical ten&97&upper histograms and log ledger\\
+Radicals fourteen/fifteen&132&upper histograms and log ledger\\
+Length four&3&upper histograms and log ledger\\
+Length three&35&upper histograms and log ledger\\
+Length two residual&99&upper histograms and log ledger\\
+Final length one&4410&upper histograms and log ledger\\\bottomrule
+\end{tabular}
+\caption{Finite proof dependencies. Domains are specified above and in the
+companion. Rows with different proof roles may overlap and are not to be
+added as a count of distinct moduli.}\label{tab:dependencies}
+\end{table}
+
+
+\section{Effective reduction and finite completion for two prime factors}
+\label{ap:finite-two-prime}
+
+Write
+\[
+ M=p^a q^b,\qquad p<q\ \hbox{distinct primes},\qquad a,b\ge1,
+ \qquad
+ \mu(M)=\frac1M\sum_{s=0}^{M-1}\log R_M(s)-\frac12\log M .
+\]
+The minimum defining \(R_M\) uses positive denominators coprime to the
+whole \(M\), and zero is one of the \(M\) equally weighted states.
+All logarithms in this appendix are natural.
+The reductions below apply to the actual valuations \(a,b\); they do not
+compare means on different moduli.
+We write \(\mu_{\mathrm{Mob}}\) for the M\"obius function, to distinguish
+it from the centered mean \(\mu(M)\).
+
+\subsection{Exact discrepancy parameters and admissible errors}
+\label{ap:finite:parameters}
+
+Put
+\[
+ \begin{gathered}
+ D=pq,\quad u=\frac{(p-1)(q-1)}{pq},\quad
+ \rho=\frac{pq}{(p+1)(q+1)},\\
+ \alpha=\frac1{\zeta(2)},\quad \ell=\log2,\quad
+ \kappa=\alpha\rho,\quad \theta=\alpha(1-\rho),\quad
+ \beta=3-2\sqrt2 .
+ \end{gathered}
+\]
+For integer \(n\ge0\), let
+\[
+ U_D(n)=n-\lfloor n/p\rfloor-\lfloor n/q\rfloor+\lfloor n/D\rfloor,
+ \qquad e(n)=U_D(n)-un .
+\]
+The function \(e\) is \(D\)-periodic and
+\[
+ e(n)-e(n-1)=\mathbf1_{(n,D)=1}-u,\qquad
+ e(D-n)=\mathbf1_{(n,D)=1}-e(n)\quad(0<n<D).
+\]
+In particular,
+\begin{equation}
+ -u\le e(n)\le2u. \label{eq:finite:discrepancy}
+\end{equation}
+Indeed a minimum occurs at zero or a nonunit.  For \(n=pi<D\),
+write \(pi=tq+r\), \(1\le r<q\), \(0\le t<p\).  Then
+\[
+ e(pi)=\frac{r-i}{q},\qquad
+ i-r=tq-(p-1)i\le\frac{tq-(p-1)}p
+                  \le\frac{(p-1)(q-1)}p=uq .
+\]
+The other nonunit family is treated with the primes interchanged.
+Reflection bounds a nonunit above by \(u\).  For a unit, its reflected
+unit follows a step of size \(1-u\) from a value at least \(-u\);
+reflection then bounds the original value above by \(2u\).
+
+Let \(\sigma\) be the maximum of \(e(n)\) over nonunits in \(0\le n<D\),
+including \(n=0\).  The minimum over the whole period is \(-\sigma\),
+and its maximum is \(u+\sigma\): a maximum is immediately before a
+nonunit step, including the wraparound predecessor \(D-1\).
+An exact short formula, not a scan of all \(D\) residues, is
+\begin{align}
+ i_t&=\min\!\left(q-1,\left\lfloor\frac{q(t+1)-1}{p}\right\rfloor\right),
+       &&0\le t<p, \notag\\
+ \sigma&=\max\left(
+ 0,\ \max_{0\le t<p}\frac{(p-1)i_t-qt}{q},\
+       \max_{1\le j<p}\frac{(qj\bmod p)-j}{p}\right).
+ \label{eq:finite:sigma}
+\end{align}
+To prove this, the nonunits are \(pi\), \(1\le i<q\), and \(qj\),
+\(1\le j<p\).  On the block \(t=\lfloor pi/q\rfloor\),
+the first numerator is increasing in \(i\), so its maximum is at \(i_t\).
+Every such block is nonempty since \(q>p\); the minus one in
+\eqref{eq:finite:sigma} preserves its strict upper endpoint.
+There are at most \(2p-1\) nonzero candidates.
+
+Define
+\[
+ K=2u+2\sigma,\qquad W=2u+\sigma .
+\]
+The real discrepancy lies between \(-\sigma-u\) and \(u+\sigma\).
+Consequently a closed interval of length \(h\) contains at most \(uh+K\)
+positive \(D\)-units, with both boundary atoms included.  Also
+\[
+ \sum_{\substack{d\le Q\\(d,D)=1}}\frac1d
+       \le u+(u+\sigma)+u\log Q\qquad(Q\ge1).
+\]
+For \(x=n+t\), \(n=\lfloor x\rfloor\), \(0\le t<1\), the same discrepancy
+bounds give \(\left|nU_D(n)-ux^2\right|\le Wx\).
+M\"obius inversion and its integer-cutoff tail therefore yield
+\begin{equation}
+ \left|P(T)-\kappa T^2\right|\le T(b_0+b_1\log T),\qquad
+ P(T)=\sum_{\substack{d\le T\\(d,D)=1}}\mu_{\mathrm{Mob}}(d)
+       \lfloor T/d\rfloor U_D(\lfloor T/d\rfloor),
+ \label{eq:finite:primitive-error}
+\end{equation}
+with either admissible pair
+\begin{align}
+ (b_0,b_1)&=(3u+\sigma,\,2u+\sigma), \label{eq:finite:pair-one}\\
+ (b_0,b_1)&=((2u+\sigma)^2+u,\,u(2u+\sigma)).
+ \label{eq:finite:pair-two}
+\end{align}
+The coefficient follows from
+\[
+ u\sum_{(d,D)=1}\frac{\mu_{\mathrm{Mob}}(d)}{d^2}
+ =\frac{u\alpha}{(1-p^{-2})(1-q^{-2})}=\kappa .
+\]
+For the first pair use \(\sum_{d\le T}d^{-1}\le1+\log T\);
+for the second use the displayed unit harmonic bound.  The omitted series
+costs at most \(uT\).  Thus \(b_0-b_1\) is respectively \(u\) and
+\((2u+\sigma)(u+\sigma)+u\), both nonnegative.
+The independent coarse choice \((b_0,b_1,K)=(4,3,4)\) is also valid.
+
+For deleted denominators, set
+\[
+ A(Q)=\sum_{\substack{h\le Q\\(h,D)>1}}\frac{\varphi(h)}h,\quad
+ v=2-\frac1p-\frac1q,\quad
+ c_0=\frac{p-1}{p^2}+\frac{q-1}{q^2}-\frac{D-1}{D^2}.
+\]
+Decomposing squarefree totient divisors gives the exact identity
+\[
+ A(Q)=\sum_{\substack{d\le Q\\(d,D)=1}}\frac{\mu_{\mathrm{Mob}}(d)}d
+ \left[
+ (1-1/p)\left\lfloor\frac Q{pd}\right\rfloor+
+ (1-1/q)\left\lfloor\frac Q{qd}\right\rfloor-
+ (1-1/D)\left\lfloor\frac Q{Dd}\right\rfloor
+ \right].
+\]
+The full sum's leading coefficient is \(\theta\).
+The bracket's linear coefficient is \(c_0Q/d\), and its error is at most \(v\);
+for a real cutoff, \(Q\sum_{d>Q}d^{-2}<2\), not merely one.
+Hence either of the complete errors
+\begin{equation}
+ E_{\rm r}(x)=v(2u+\sigma)+2c_0+vu\log x,
+ \qquad E_{\rm u}(x)=3+2\log x
+ \label{eq:finite:deleted-errors}
+\end{equation}
+pays \(|A(Q)-\theta Q|\) for real \(Q\ge1\).
+The refined constant also bounds the below-one partial-summation interval:
+\(\theta<1/3\), whereas \(vu\ge7/18\).
+In particular,
+\[
+ \sum_{\substack{h\le Q\\(h,D)>1}}\varphi(h)
+       \le \frac{\theta Q^2}{2}+2QE(Q).
+\]
+
+\subsection{Finite balance, closed endpoints and the four simultaneous gains}
+\label{ap:finite:five-bounds}
+
+For every integer \(T^2\le M\), the original central count satisfies
+\[
+ C_M(T)=1+2P(T)-J_M(T).
+\]
+Reduction of common content is legitimate because it divides a full-unit
+denominator.  Same-sign primitive images are injective.  Opposite-sign
+images meet precisely at \(Ad+Eb=M\), with positive \(A,E,b,d\le T\).
+Thus \(b+d\ge M/T\), with equality retained, and \((b,d)=1\).
+For a fixed ordered denominator pair the allowed phase interval has width
+at most \([T(b+d)-M]/(bd)\le1\); equality would require \(M=T^2\) and
+a denominator \(T\), which is nonunit at a square modulus.
+Putting \(L_T=(2T-M/T)_+\), the closed interval unit bound gives
+\[
+ J_M(T)\le\frac{u^2L_T^2}{2}+2uKL_T+K^2\quad(2T^2>M).
+\]
+If \(2T^2=M\), equality would force \(b=d=T\); the odd prime divisor
+of \(M\) divides \(T\), so the collision is absent.  Thus \(J_M(T)=0\)
+also at that boundary.
+
+Here is the far-cover argument used in the finite balance.
+For \(T^2>2M\), full Farey neighbors of order \(T\) have coprime
+denominators and sum greater than \(T\).  Two retained neighbors cover
+their intervening arc.  If both are deleted, their prime obstructions
+are complementary, so their denominator difference is a full unit;
+when both denominators are at least \(M/T\), that difference witness
+covers the arc.  An uncovered point must therefore touch a deleted
+center \(c/h\) with \(h<M/T<T/2\).
+Its complete neighbors have denominators greater than \(T-h\);
+subtracting \(c/h\) once repairs a bad neighbor and gives a determinant-one
+unit neighbor of denominator greater than \(T-2h\).  When \(D\mid h\),
+the complete neighbors were already units.  The corresponding open
+hole has length at most
+\[
+ \frac{2(M-hT)}{h(T-j_hh)},\qquad
+ j_h=\begin{cases}1,&D\mid h,\\2,&D\nmid h.\end{cases}
+\]
+One additional integer per reduced center pays rounding; overlaps only
+enlarge the upper bound.  Therefore
+\begin{equation}
+ M-C_M(T)\le
+ \sum_{\substack{2\le h<M/T\\(h,D)>1}}\varphi(h)+
+ \sum_{\substack{2\le h<M/T\\(h,D)>1}}
+       \frac{2\varphi(h)(M-hT)}{h(T-j_hh)} .
+ \label{eq:finite:far-cover}
+\end{equation}
+The denominators are strictly positive.  No center phase or exact tail
+distribution is needed.
+
+Write \(x=\sqrt M\), \(k=\lfloor x\rfloor\), \(t=x-k\).
+For any compatible primitive pair and deleted error \(E\), define
+\begin{align}
+ \Delta&=\rho\{\alpha(5/8+\ell)+1/2\}
+          +3\alpha/8-1/2-\ell/2-\tfrac34(1-\ell)u^2,
+ \label{eq:finite:delta}\\
+ {\cal E}_{b,E}(x)
+ &=\frac{2\kappa+2(b_0-b_1)+2b_1\log x+2uK\beta}{x}\notag\\
+ &\quad+\frac\ell{2x}(4\kappa+2b_0+2b_1\log x+2uK)\notag\\
+ &\quad+\frac{1+5\theta/4+4E(x)}{\sqrt2 x}
+ +\frac{K^2\ell+2E(x)}{M}. \label{eq:finite:error}\\
+ \delta_x&=\frac{1+2t-3t^2}{2}+\frac{t^3}{x},\qquad
+ G_x=2x(1-t)+t^2=2x-M+k^2, \notag\\
+ {\cal G}_b(x)&=
+ \frac{\ell\kappa G_x+2\kappa\delta_x
+                  +2(b_0-b_1)+\log x}{M}. \label{eq:finite:gain}
+\end{align}
+Then the strengthened finite balance is
+\begin{equation}
+ \mu(M)\le-\Delta+{\cal E}_{b,E}(x)-{\cal G}_b(x).
+ \label{eq:finite:strengthened}
+\end{equation}
+
+For completeness, its integration and rounding costs can be checked directly.
+The centered mean is minus the central CDF integral up to \(x\), plus
+the survival integrals over \([x,\sqrt2x]\) and \([\sqrt2x,\infty)\).
+The collision integrals are
+\[
+ \frac1M\int_{x/\sqrt2}^x(2y-M/y)^2\frac{dy}{y}
+       =\frac32-2\ell,\qquad
+ \int_{x/\sqrt2}^x(2y-M/y)\frac{dy}{y}=x\beta .
+\]
+The central credit and monotone middle plateau, before retaining gains,
+are respectively at least
+\[
+ \kappa-u^2(3/4-\ell)
+ -\frac{2\kappa+2(b_0-b_1)+2b_1\log x+2uK\beta}{x}
+ -\frac{K^2\ell}{2M}
+\]
+and at most
+\[
+ (1-2\kappa+u^2/2)\frac\ell2
+ +\frac{\ell(4\kappa+2b_0+2b_1\log x+2uK)}{2x}
+ +\frac{K^2\ell}{2M}.
+\]
+For the far sum use \(h<M/T\), partial summation of \(A\), and
+\[
+ F(z)=\sum_{n\ge1}\frac{z^{-2n}}{n(n+1)},\qquad F(1)=1.
+\]
+The leading normalized survival is bounded by
+\(\theta F(T/(\sqrt2x))+\theta x^2/(2T^2)\).
+Its logarithmic integral is \((1-\rho)/2-3\theta/8\).
+The first integer far threshold is \(\lfloor\sqrt{2M}\rfloor+1\);
+the initial interval costs at most \(1/(\sqrt2x)\), including equality
+at an integer \(\sqrt{2M}\).  The first summand and discrete error add
+\((5\theta/4+4E(x))/(\sqrt2x)+2E(x)/M\).
+These terms give \eqref{eq:finite:delta}--\eqref{eq:finite:error}.
+
+The four gains in \eqref{eq:finite:gain} affect distinct terms.
+Indeed
+\[
+ \int_1^x\lfloor y\rfloor^2\frac{dy}{y}
+ \ge\frac{(k-1)^2}{2}+\frac{k^2t}{x}
+   =\frac{x^2}{2}-x+\delta_x .
+\]
+Here \(\log(1+1/j)\ge1/j-1/(2j^2)\) pays the complete intervals and
+\(\log(x/k)\ge t/x\) pays the last interval.
+Exact primitive-error integration restores \(2(b_0-b_1)/M\);
+the isolated zero restores \((\log x)/M\).
+Retaining the exact endpoint \(k^2\), instead of \(M-2x\), restores
+\(\ell\kappa G_x/M\) on the middle plateau.
+Collision and far penalties are unchanged, so all four improvements
+coexist.  At a square, \(\delta_x=1/2\), \(G_x=2x\).
+They must remain paired with their own \(b_0,b_1\).
+
+For the coarse pair \((4,3,4)\), the error in \eqref{eq:finite:error} is
+strictly below
+\[
+ {\cal E}_{\rm c}(x)=\frac{22+15\log x}{x}
+                           +\frac{18+4\log x}{M}.
+\]
+This follows from
+\(2\kappa\le4/3\), \(\theta\le1/3\), \(u\le1\),
+\(\ell<7/10\), \(\beta<1/5\), \(1/\sqrt2<3/4\):
+the linear constant is at most \(5167/240<22\), its logarithmic
+coefficient is at most \(141/10<15\), and the quadratic constant is
+less than \(18\).
+Thus the following are five separately valid, complete upper bounds:
+\[
+ -\Delta+{\cal E}_{\rm c}-{\cal G}_{(4,3)},\qquad
+ -\Delta+{\cal E}_{b,E}-{\cal G}_b,\quad
+ b\in\{\eqref{eq:finite:pair-one},\eqref{eq:finite:pair-two}\},\
+ E\in\{E_{\rm r},E_{\rm u}\}.
+\]
+Taking their minimum is legitimate; moving a gain from one bound to
+another is not.
+
+\subsection{Uniform modulus cutoffs}
+\label{ap:finite:cutoffs}
+
+The leading credit increases with either prime parameter.  Put
+\(z=1/p,w=1/q\), \(A_0=\alpha(5/8+\ell)+1/2\),
+\(C_0=3(1-\ell)/4\).  Multiplying its \(z\)-derivative by
+\((1+z)/\rho>0\) gives
+\[
+ -A_0+2C_0(1-z)(1+z)^2(1-w)^2(1+w)<0.
+\]
+Indeed the two factors are at most \(9/4\) and \(1\), respectively,
+\(2C_0<1/2\), and \(A_0>51/40>9/8\), using
+\(\alpha>3/5\) and \(2/3<\ell<7/10\).
+This is monotonicity of the bound, not of the true mean.
+
+Since \(\sigma\le u\), the second primitive pair has
+\[
+ b_0\le9u^2+u,\quad b_1\le3u^2,\quad
+ b_0-b_1\le6u^2+u,\quad K\le4u .
+\]
+For \(p=2\), reflection gives the exact values
+\(\sigma=u\), \(K=4u\), \(W=3u\).
+Using the refined deleted error in \eqref{eq:finite:error}, elementary
+substitution gives the following bounds and rational endpoint witnesses:
+\[
+\begin{array}{c|c|c|c}
+\hbox{prime range}&\hbox{error upper}&x_0&
+                   \hbox{leading credit lower}\\ \hline
+p=2,\ q\ge11&
+\dfrac{363/20+(171/40)\log x}{x}
+ +\dfrac{17/2+(3/2)\log x}{x^2}&384&
+\dfrac{3461}{29040}>\dfrac7{60}\\[5pt]
+p=3,\ q\ge7&
+\dfrac{27+7\log x}{x}
+ +\dfrac{13+(9/4)\log x}{x^2}&512&
+\dfrac{27613}{188160}>\dfrac17\\[5pt]
+p\ge5,\ q\ge7&{\cal E}_{\rm c}(x)&600&
+\dfrac{95869}{470400}>\dfrac{61}{300}
+\end{array}
+\]
+For the first two rows use respectively
+\[
+ c_0\le13/44,\ E_{{\rm r},0}\le125/44,\ E_{{\rm r},1}\le3/4,
+ \quad
+ c_0\le20/63,\ E_{{\rm r},0}\le250/63,\
+ E_{{\rm r},1}\le10/9 .
+\]
+For the second row \(u\le2/3\), \(\kappa<1/2\),
+\(K\le8/3\), \(b_0\le14/3\), \(b_1\le4/3\),
+\(b_0-b_1\le10/3\).  The first row uses
+\(u\le1/2\), \(\kappa<4/9\), \(K\le2\),
+\(b_0\le11/4\), \(b_1\le3/4\), \(b_0-b_1\le2\).
+The resulting unrounded linear constants are
+\(143521/7920<363/20\) and \(133843/5040<27\).
+At the three endpoints,
+\[
+\begin{split}
+ {\cal E}(384)&<73/640+35/294912<23/200,\\
+ {\cal E}(512)&<711/5120+1087/10485760<7/50,\\
+ {\cal E}_{\rm c}(600)&<60537/300000<101/500.
+\end{split}
+\]
+Use \(\log384<6\), \(\log512<63/10\), \(\log600<33/5\);
+these follow from the positive exponential sums giving
+\(\log2<7/10,\log3<11/10,\log5<17/10\).
+The constant and logarithmic error terms decrease thereafter.
+It follows, for arbitrary positive valuations, that
+\begin{equation}
+ \begin{array}{ll}
+ p=2,\ q\ge11,\ M\ge147456:&\mu(M)<-1/600,\\
+ p=3,\ q\ge7,\ M\ge262144:&\mu(M)<-1/350,\\
+ p\ge5,\ q\ge7,\ M\ge360000:&\mu(M)<-1/750.
+ \end{array} \label{eq:finite:cutoffs}
+\end{equation}
+Equality at these sufficient cutoffs is already covered.
+
+\subsection{The larger prime to the first power}
+\label{ap:finite:ratio}
+
+Suppose \(M=Kq\), \(K=p^a\), \(q>K\), \(M\ge19600\).
+In the single-\(p\)-mark model, all central denominators are smaller
+than \(q\) and are therefore also full units.  Primitive cancellation
+and the collision-free range through \(\lfloor\sqrt{M/2}\rfloor\)
+transfer unchanged from the single-mark proof.  In its Farey tail,
+adjacent denominators cannot both be multiples of \(p\); its deleted
+center bracket has denominators greater than \(T-h\).
+Thus the odd-prime estimates of Section~\ref{sec:prime}, and the binary
+calculation given in the following squarefree subsection, transfer to
+this modulus without a prime-power assumption:
+\[
+\begin{array}{c|c|c}
+p&\hbox{leading credit}&\hbox{error at }x=\sqrt M\\ \hline
+2&1/12&(33/8+(12/11)\log x)/x+1/(4x^2)\\
+3&41/486&(107/27+(16/11)\log x)/x+1/(3x^2)\\
+\ge5&91/800&(151/40+(24/11)\log x)/x+1/(2x^2)
+\end{array}
+\]
+At \(x=140\), \(\log140<5\) bounds the errors by quantities strictly
+below \(7/100,82/1000,106/1000\).  Explicit upper fractions are
+\[
+ 59021/862400,\quad467279/5821200,\quad22619/215600 .
+\]
+All three errors decrease for \(x\ge140\).  Their strict single-mark
+margins are respectively greater than \(1/75,287/121500,31/4000\).
+
+Below real height \(q\), single-mark and full-unit events coincide.
+For a complete reduced lattice basis, the two-prime short-basis argument
+gives \(R_M\le\sqrt2M/\lambda_1\).  The all-state incidence bound
+\(\Pr(\lambda_1\le Y)\le3Y^2/M\) therefore implies
+\(\Pr(R_M>X)\le\min(1,6M/X^2)\).
+If \(q\ge6K\), the extra full-unit logarithmic cost is at most
+\[
+ \int_q^\infty\frac{6M}{X^2}\frac{dX}{X}=\frac{3K}{q}.
+\]
+Consequently
+\begin{equation}
+ b=1,\quad M\ge19600,\quad q\ge c(p)p^a
+ \quad\Longrightarrow\quad\mu(M)<0,\qquad
+ c(p)=\begin{cases}225,&p=2,\\1300,&p=3,\\400,&p\ge5.\end{cases}
+ \label{eq:finite:ratio}
+\end{equation}
+These ratios imply \(q>K\) and \(q\ge6K\).
+The comparisons are \(3/225=1/75\),
+\(287/121500-3/1300=43/789750>0\), and
+\(31/4000-3/400=1/4000>0\).
+The first equality still pays a strict result because its single-mark
+margin is strict.  The proof has \(b=1\); it is not a radical-only rule
+and cannot be applied with the prime roles reversed.
+
+\subsection{Squarefree semiprimes: zero mark loss and the complete prefix}
+\label{ap:finite:squarefree}
+
+Let \(R_{p;M}\) denote the minimum with only \(p\nmid d\).
+Separating witnesses according to whether \(q\mid d\) gives exactly
+\[
+ R_{p;M}(s)=\min\{R_M(s),\
+                 qR_{p;M/q}(s\bmod M/q)\}.
+\]
+If \(q\mid d\), the congruence forces \(q\mid A\), and division by \(q\)
+gives the displayed child congruence; conversely multiplying a child
+witness by \(q\) gives a sole-\(p\) witness.  No arbitrary nonunit
+content is cancelled.  At \(M=pq\), the circle-gap cap proved below
+is \(R_{pq}\le q\), while the second term is at least \(q\).
+Consequently \(R_{pq}=R_{p;pq}\) pointwise.
+Since \(\sqrt{pq}<q\), the single-mark transfer of the preceding
+subsection applies, with NO mark-loss penalty.  Its odd-prime
+estimates give \(\mu(pq)<-1/500\) for \(p\ge3\), \(pq\ge19600\).
+
+For the even exterior we spell out the smaller sufficient threshold.
+The binary single-mark calculation below is valid more generally for
+\(M=2^a q\), \(q>2^a\), with \(x=\sqrt M<q\): all its central
+denominators are full units, and the sole-two-mark Farey tail depends
+only on the excluded even denominators. In particular it applies at
+\(M=2q\). The divisor union bound on pairs with odd denominator gives
+\[
+ P_2(T)\ge
+ [1-3\zeta(2)/8]T^2-\tfrac12T\log T
+ \ge\tfrac38T^2-\tfrac12T\log T.
+\]
+Indeed there are at least \(T^2/2\) raw pairs; remove every odd
+content \(h\ge3\), bounding its count by
+\(T^2/(2h^2)+T/(2h)\).
+The sums are bounded by
+\(\sum_{h\ge3,\ h\ {\rm odd}}h^{-2}=3\zeta(2)/4-1\) and
+\(\sum_{3\le h\le T,\ h\ {\rm odd}}h^{-1}\le\log T\).
+Here \(\zeta(2)<5/3\).
+For \(T\le K=\lfloor x/\sqrt2\rfloor\), \(x=\sqrt M\), there are no
+collisions, and hence \(C_M(T)\ge cT^2-dT\log T\) with \(c=3/4,d=1\).
+The quadratic floor integral and monotone plateau give
+\[
+ \frac1M\int_1^x C_M(\lfloor y\rfloor)\frac{dy}{y}
+ \ge c\frac{K^2}{x^2}\left(\frac12+\log\frac{x}{K}\right)
+ -\frac{2cK}{x^2}
+ -d\frac{K\log K}{x^2}\left(1+\log\frac{x}{K}\right).
+\]
+This follows by integrating to \(K\), using
+\(\int_1^K\lfloor y\rfloor^2dy/y\ge K^2/2-K\), bounding the
+primitive-error integral by \(K\log K\), and retaining the plateau
+\(C_M(K)\log(x/K)\).  The displayed \(2cK\) is a safe enlargement
+of the floor loss.
+For \(x\ge115\),
+\[
+ \begin{gathered}
+ K/x>7/10-1/115>11/16,\quad K/x<3/4,\\
+ K^2/x^2\ge1/2-\sqrt2/x,\quad
+ \ell/2\le\log(x/K)\le5/11 .
+ \end{gathered}
+\]
+With \(2/3<\ell<1\) and \(\sqrt2<3/2\), this yields central credit
+\(5/16-[9/4+(12/11)\log x]/x\).
+The single-mark Farey tail has majorant
+\[
+ V(z)=\tfrac12F(z)+\frac1{8z^2},\quad z\ge1,\qquad
+ V(1)=5/8,\qquad
+ \int_1^\infty V(z)\frac{dz}{z}
+ =\frac{\zeta(2)-1}{4}+\frac1{16}<\frac{11}{48}.
+\]
+The initial interval costs \(1/x\), the first summand \(5/(8x)\),
+and the integer-hole rounding costs \(1/(4x)+1/(4x^2)\).
+Subtracting the central credit gives, for every \(x\ge115\),
+\[
+ \mu(2q)\le-\frac1{12}
+ +\frac{33/8+(12/11)\log x}{x}+\frac1{4x^2}.
+\]
+The error decreases there.  Since \(\log115<5\), its remaining
+strict margin at \(x=115\) is
+\[
+ \frac1{12}-\frac{843}{10120}-\frac1{52900}
+       =\frac{1127}{80302200}>0 .
+\]
+Thus every odd prime \(q\ge6613\) lies in this analytic exterior:
+\(2q\ge13226>115^2\).
+
+The complete prefix is exactly
+\[
+ \{2q:3\le q<6613,\ q\ {\rm prime}\}
+ \ \cup\
+ \{pq:3\le p<q,\ p,q\ {\rm prime},\ pq<19600\}.
+\]
+It has \(853\) even and \(3743\) odd moduli, \(4596\) in total.
+Every row has a negative outward-log certificate obtained from a
+legal full-unit upper histogram, capped at the proved \(q\);
+the pointwise construction is proved in Section~\ref{sec:early-histograms},
+and the logarithmic certificate inequality is given below.
+This finite prefix plus the analytic exterior proves every
+squarefree-semiprime mean strictly negative, without any
+transfer to higher valuations or any sampling argument.
+
+\subsection{Complete small-radical families and their finite witnesses}
+\label{ap:finite:families}
+
+For clarity, the earlier complete families have an explicit infinite
+part and a separately retained finite part.  The uniform coarse balance
+gives the cutoffs \(2^{22}\) for odd prime pairs and \(9\,000\,000\)
+for \(p=2,q\ge5\): at \(x=2048\) its error is less than \(7/100\) and
+\(\Delta(3,5)>1691/14400>1/10\); at \(x=3000\) its error is less than
+\(1/20-2026/937500\) and \(\Delta(2,5)>263/4500>1/20\).
+
+The separately proved refined radical-six finite balance gives
+\(\mu(M)<-287/11700000\) for every modulus of radical six with
+\(M\ge6^9\).  It retains the shorter repaired bracket at centers
+divisible by both primes, and applies to unequal valuations, with
+nonunit central equality endpoints and a strictly started far sum.
+This preceding radical-six lemma, rather than an asymptotic sign or
+the coarse error above, is used for that one infinite family.
+
+The following finite witness table completes the families.
+Each entry means that every original modulus in the specified set has
+a retained negative outward-log upper certificate, not that its true
+minimum distribution was fully enumerated.
+\[
+\begin{array}{c|l|r}
+\hbox{family}&\hbox{finite set below its analytic cutoff}&\hbox{rows}\\ \hline
+6^n&1\le n\le8&8\\
+2^a3^b&M<6^9,\ a\ne b,\ \gcd(a,b)<6&143\\
+2^a5^b&M<9\,000\,000,\ (a,b)\ne(1,1),\ \gcd(a,b)<6&97\\
+2^a7^b&M<9\,000\,000,\ (a,b)\ne(1,1),\ \gcd(a,b)<6&78\\
+3^a5^b&M<2^{22},\ (a,b)\ne(1,1),\ \gcd(a,b)<6&54\\
+B^6&B\in\{10,12,14\}&3
+\end{array}
+\]
+These rows are not summed into a single disjoint inventory: their
+roles in the dependency proof differ.
+The first row plus the six-radical cutoff proves the base-six
+all-length statement.  Every two-prime base at length at least six
+is then covered: at length six, bases at least fifteen have modulus
+greater than \(6^9\), base six is already covered, and the other
+bases below fifteen are exactly \(10,12,14\), the last row.
+For lengths at least seven, base ten reaches its even cutoff,
+and bases at least twelve reach \(6^9\).
+Thus a modulus with \(\gcd(a,b)\ge6\) is covered by reindexing at
+that same modulus.  The middle four rows, the squarefree-semiprime
+theorem, and their respective large-modulus cutoffs now exhaust
+every valuation in radicals \(6,10,14,15\).
+
+\subsection{Certificate arithmetic and exhaustive final partition}
+\label{ap:finite:partition}
+
+The finite certificates use disjoint original gcd strata.
+For \(g\mid M\), \(g<M\), put \(m=M/g\) and
+\[
+ P_g(T)=\sum_{\substack{e\le T/g\\(e,D)=1}}\mu_{\mathrm{Mob}}(e)
+ U_m(\lfloor T/(ge)\rfloor)U_D(\lfloor T/e\rfloor).
+\]
+Through \(\lfloor\sqrt M\rfloor\), the exact stratum CDF is
+\(2P_g(T)-J_g(T)\), where ordered closed collision phases
+\(Af+Ed=M\) are assigned to \(g=\gcd(A,M)\).
+A centered inverse modulo \(m\), of magnitude
+\(h\le H=\lfloor(m-1)/2\rfloor\), supplies numerator \(\pm g\).
+If one prime \(v\) is missing from \(m\), repair a denominator
+divisible by \(v\) to \(m-h\), reversing the numerator sign.
+The repair remains a unit of the original \(M\).
+For \(T\ge g\) its CDF is \(2U_D(\min(T,H))\), with the extra pure-child
+term
+\[
+ 2\max\{0,V_v(H)-V_v(\max(0,m-T-1))\},\qquad
+ V_v(z)=\lfloor z/v\rfloor-\lfloor z/D\rfloor.
+\]
+Denominator one independently contributes
+\(2U_m(\min(\lfloor T/g\rfloor,H))\).
+At \(m=2\) each distribution is one atom at height \(g\), not a
+doubled pair; both are zero for \(T<g\).
+The circle-gap argument with \(p\) multiples of a state gives the
+global cap \(M/p\): the index difference is less than \(p\), hence
+full-unit, and its centered residue is at most \(M/p\).
+The state \(M/p\) attains this cap.  Thus each stratum is completely
+covered at
+\[
+ K_g=\min\{M/p,\ g\lfloor m/2\rfloor,\ \max(g,D_m)\}.
+\]
+\[
+ D_m=\begin{cases}
+ 1,&m=2,\\
+ H,&\operatorname{rad}(m)=D,\\
+ \max(H,m-v),&m\hbox{ is a pure-prime power missing }v .
+ \end{cases}
+\]
+The earliest radical-six stratum batch used the wider cap
+\(\floor{m r_m/2}\), with \(r_m=1\) for a mixed child and \(r_m=v\)
+for a pure child missing prime \(v\). This is also safe: in the mixed
+case it is at least \(H\); in the pure case, \(v\ge2\) makes it at
+least \(m\), hence at least every repaired denominator \(m-h\).
+The singleton \(m=2\) remains one explicit atom at height \(g\).
+Later batches use the refined \(D_m\) above. These safe recipes are
+distinguished in the provenance map.
+
+Take the maximum of these credits inside a stratum, sum only over
+disjoint strata, add zero once, and combine by maximum with the
+global far credit from \eqref{eq:finite:far-cover}.
+On an ordered calendar containing all integers through \(\lfloor\sqrt M\rfloor\),
+successive \(\lceil257T/256\rceil\) thereafter, all divisors/caps,
+the first strict far threshold, and \(M/p\), cumulative maxima give
+integer lower CDF values \(L_i\) ending at \(M\).
+The histogram \(h_i=L_i-L_{i-1}\) dominates the true height even
+between knots, by CDF monotonicity.  Therefore
+\[
+ \mu(M)\le
+ \frac{2\sum_i h_i u(t_i)-M l(M)}{2M\,2^{64}}
+ =\frac{Q_M}{2M\,2^{64}},
+ \quad l(n)\le2^{64}\log n\le u(n).
+\]
+This doubled denominator is unchanged for odd \(M\).
+The enclosures follow from binary range reduction and
+\[
+ 0\le\log y-2\sum_{j=0}^{K-1}\frac{z^{2j+1}}{2j+1}
+ \le\frac{2z^{2K+1}}{(2K+1)(1-z^2)},\qquad z=\frac{y-1}{y+1},
+ \quad1\le y\le2 .
+\]
+The finite assertion is \(Q_M<0\) on every row of each declared set.
+Large intermediate central counts rely on the exact formula and its
+generator; a retained checker is not described as a complete second
+implementation of every central count or of the true far survival.
+
+We now use the previously proved squarefree-semiprime theorem and the
+two-prime all-length theorem for lengths at least two.
+If \(e=\gcd(a,b)\ge2\), set \(C=p^{a/e}q^{b/e}\), so \(M=C^e\);
+this is precisely the same state space and witness set.
+Together with the four complete radicals and \eqref{eq:finite:cutoffs},
+the only conservative residual is
+\[
+ \begin{split}
+ {\cal R}=\{(M,p,q,a,b):\ &\gcd(a,b)=1,\ (a,b)\ne(1,1),\\
+ &pq\notin\{6,10,14,15\},\ M<C(p)\}.
+ \end{split}
+\]
+\[
+ C(p)=\begin{cases}
+147456,&p=2,\\262144,&p=3,\\360000,&p\ge5 .
+\end{cases}
+\]
+It contains all positive singleton and unequal valuations not paid by
+another stated rule.  Unique factorization gives one ordered tuple
+per physical modulus.  Since \(M\ge p^2q>p^3\), it is sufficient
+to enumerate primes \(p\le71\), primes \(q<C(p)/p^2\), and positive
+prime powers subject to the exact strict product test and these predicates.
+A second enumeration by factorization gives the same full list.
+
+Inside this residual the ratio rule \eqref{eq:finite:ratio} has only the
+following possible supports:
+\[
+\begin{array}{c|c}
+(p,a,b)&\hbox{prime }q\hbox{ range}\\ \hline
+(2,2,1)&4900\le q<36864\\
+(2,3,1)&2450\le q<18432\\
+(2,4,1)&3600\le q<9216\\
+(3,2,1)&11700\le q<262144/9\\
+(5,2,1)&10000\le q<14400
+\end{array}
+\]
+Indeed \(q\ge c(p)p^a\) and \(p^aq<C(p)\) imply
+\(c(p)p^{2a}<C(p)\), while \(a=1,b=1\) is excluded.
+The lower endpoints also impose \(M\ge19600\).
+This proves that the rule excludes no unseen exponent orientation.
+
+The exact coverage table is
+\[
+\begin{array}{l|r|l}
+\hbox{stage}&\hbox{rows}&\hbox{mathematical reason}\\ \hline
+\hbox{conservative residual }{\cal R}&19239&
+ \hbox{complete original predicate}\\
+\hbox{ratio-paid part}&7857&\eqref{eq:finite:ratio}\\
+\hbox{after the ratio filter}&11382&19239-7857\\
+\hbox{analytically certified part}&6972&
+ \hbox{negative upper from the five complete bounds}\\
+\hbox{finite remainder}&4410&11382-6972\\
+\hbox{both primes at least five}&1087&\hbox{every retained }Q_M<0\\
+\hbox{smaller prime three}&1422&\hbox{every retained }Q_M<0\\
+\hbox{smaller prime two}&1901&\hbox{every retained }Q_M<0\\ \hline
+\hbox{remaining two-prime obligations}&0&1087+1422+1901=4410
+\end{array}
+\]
+The \(6972\) analytic rows are a conservative certificate partition,
+not a claim that all other exact analytic bounds or true means are
+nonnegative.  Each row retains all five bound enclosures.
+For \(\alpha\), the rational tails
+\[
+ \sum_{j=1}^{128}j^{-2}+\frac1{129}<\zeta(2)
+ <\sum_{j=1}^{128}j^{-2}+\frac1{128}
+\]
+are inverted outward.  Integer square-root floors give rational
+\(x_L\le\sqrt M\le x_U\) with the same fixed \(k\) and \(t_U<1\).
+The gains use the lower bounds
+\[
+ \delta_L=\min_{z\in\{t_L,t_U\}}\frac{1+2z-3z^2}{2}
+                         +\frac{t_L^3}{x_U},\qquad
+ G_L=\max(1,\,2x_L-M+k^2).
+\]
+The first uses concavity, the second the exact identity
+\(G_x=1+(1-t)(2k-1+t)\ge1\).
+Their denominator is the exact \(M\), never an approximate root squared.
+After lowering \(\alpha\), write
+\[
+ \Delta_L=C_L+s_L\ell_\star,\quad
+ C_L=\alpha_L(5\rho/8+3/8)+\rho/2-1/2-3u^2/4,\quad
+ s_L=\alpha_L\rho-1/2+3u^2/4 ,
+\]
+where \(\ell_\star=\ell_L\) for \(s_L\ge0\) and \(\ell_U\) otherwise.
+Positive error coefficients are enclosed upward, while their own
+nonnegative gains are enclosed downward.  Strictly negative resulting
+uppers pay the analytic rows.  No sign-selected domain or interpolation
+is used.
+
+Every original two-prime modulus is thus covered by a preliminary
+theorem, an explicitly proved reduction, or one of the complete finite
+certificate sets.  We conclude \(\mu(p^a q^b)<0\) for all distinct
+primes and positive valuations.
+For \(B=p^\gamma q^\delta\), \(\gamma,\delta\ge1\), \(N\ge1\),
+put \(M=B^N\).  The original height, state measure and full-unit marks
+are identical, and \(\log M=N\log B\).  Division by \(\log B>0\)
+therefore gives
+\[
+ \mathbb E\log_B R_{(B,N)}<N/2 .
+\]
+This conclusion is restricted to exactly two prime divisors.
+It neither transfers to bases with three prime factors nor asserts
+monotonicity, optimal margins, exact true means or novelty.
+
+\begin{thebibliography}{99}
+\bibitem{binary}
+O.~Babanskyy,
+\emph{Rational complexity of binary strings: exact mean, finite
+distribution and logarithmic variance}, version 0.2.0, 2026.
+\url{https://github.com/aconsciousfractal/FCIG-Exact-Mean-Bound-for-the-Rational-Complexity-of-Binary-Strings}.
+\bibitem{survey}
+H.~Lin, L.~Xiao and Z.~Chen,
+\emph{A brief view on the linear and 2-adic complexities of pseudorandom
+binary sequences}, AIMS Mathematics 11(7) (2026), 20267--20290.
+\href{https://doi.org/10.3934/math.2026823}{doi:10.3934/math.2026823}.
+\bibitem{GK}
+M.~Goresky and A.~Klapper,
+\emph{Algebraic Shift Register Sequences}, Cambridge University Press, 2012.
+\href{https://doi.org/10.1017/CBO9781139057448}{doi:10.1017/CBO9781139057448}.
+Author draft (2009): \url{https://www.cs.uky.edu/~klapper/pdf/algebraic.pdf}.
+\bibitem{CW}
+Z.~Chen and A.~Winterhof,
+\emph{Probabilistic results on the 2-adic complexity},
+Designs, Codes and Cryptography 93 (2025), 2191--2203.
+\href{https://doi.org/10.1007/s10623-025-01592-1}{doi:10.1007/s10623-025-01592-1};
+preprint v1: \url{https://arxiv.org/abs/2501.16785}.
+\bibitem{CostelloWatts}
+F.~Costello and P.~Watts,
+\emph{A computational upper bound on Jacobsthal's function},
+preprint version 2, 2012.
+\url{https://arxiv.org/abs/1208.5342v2}.
+\bibitem{BHS}
+F.~P.~Boca, B.~Heersink and P.~Spiegelhalter,
+\emph{Gap distribution of Farey fractions under some divisibility constraints},
+Integers 13 (2013), A44.
+\url{https://arxiv.org/abs/1301.0277}.
+\bibitem{Heersink}
+B.~Heersink,
+\emph{Equidistribution of Farey sequences on horospheres in covers of
+\(\mathrm{SL}(n+1,\mathbb Z)\backslash\mathrm{SL}(n+1,\mathbb R)\)
+and applications},
+Ergodic Theory and Dynamical Systems 41 (2021), 471--493.
+\url{https://arxiv.org/abs/1712.03258}.
+\bibitem{Marklof}
+J.~Marklof, \emph{Smallest denominators},
+Bulletin of the London Mathematical Society 56 (2024), 1920--1938.
+\href{https://doi.org/10.1112/blms.13034}{doi:10.1112/blms.13034};
+\url{https://arxiv.org/abs/2310.11251}.
+\bibitem{MarklofLog}
+J.~Marklof, \emph{The log moments of smallest denominators},
+Integers 24 (2024), A55.
+\href{https://doi.org/10.5281/zenodo.12167470}{doi:10.5281/zenodo.12167470}.
+\end{thebibliography}
+\end{document}

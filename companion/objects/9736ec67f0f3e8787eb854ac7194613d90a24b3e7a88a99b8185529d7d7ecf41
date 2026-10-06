@@ -1,0 +1,43 @@
+"""Select already-retained R36 per-row costs for R37 analytical complement."""
+import hashlib
+import json
+from pathlib import Path
+import sys
+OUT = Path(__file__).parent
+ROOT = OUT.parents[1]
+OLD = ROOT / 'results/batch_36'
+WORK_SHA = '8b07089a5d37ceb657d6daab63c9b117608ddf9b8ecea77a73af2972e5131215'
+
+def need(ok, message):
+    if not ok:
+        raise ValueError(message)
+
+def main():
+    need(len(sys.argv) == 2, 'exact analytical payload SHA required')
+    raw = (OUT / 'ANALYTIC_N1.json').read_bytes()
+    need(hashlib.sha256(raw).hexdigest() == sys.argv[1], 'retained analytical input')
+    data = json.loads(raw)
+    work_raw = (OLD / 'resolve_work_normal1.json').read_bytes()
+    need(hashlib.sha256(work_raw).hexdigest() == WORK_SHA, 'historical work input')
+    work = json.loads(work_raw)
+    profiles = data['remaining_profiles']
+    paid = data['analytic_paid_profiles']
+    need(len(profiles) + len(paid) == len(data['rows']) == 11382, 'complete domain partition')
+    need(all((type(v) is int for profile in profiles + paid for v in profile)) and all((len(profile) == 5 for profile in profiles + paid)), 'exact profile shape')
+    need(len({profile[0] for profile in profiles + paid}) == 11382, 'unique original moduli')
+    by_modulus = {row['M']: row for row in work['details']}
+    need(len(by_modulus) == work['active_moduli'] == 11382, 'original cost domain')
+    retained = []
+    for profile in profiles:
+        row = by_modulus[profile[0]]
+        need([row[k] for k in ('M', 'p', 'q', 'a', 'b')] == profile, 'original model')
+        retained.append(row)
+    totals = {key: sum((row[key] for row in retained)) for key in work['totals']}
+    branches = []
+    for branch in ('p2', 'p3', 'p_ge5'):
+        rows = [row for row in retained if ('p2' if row['p'] == 2 else 'p3' if row['p'] == 3 else 'p_ge5') == branch]
+        branches.append(dict(branch=branch, count=len(rows), mass=sum((row['M'] for row in rows))))
+    result = dict(status='RETAINED_COMPLEMENT_COSTS_ONLY', analytic_payload_sha256=sys.argv[1], historical_work_sha256=WORK_SHA, remaining_moduli=len(retained), remaining_profiles=profiles, state_mass_not_visited=sum((row['M'] for row in retained)), distinct_radicals=len({(row['p'], row['q']) for row in retained}), min_M=min((row['M'] for row in retained), default=None), max_M=max((row['M'] for row in retained), default=None), active_by_branch=branches, totals=totals, large_interval_floor_divisions_bound=2 * totals['large_interval_terms_bound'], details=retained, mathematical_loops_reexecuted=False, minima_CDFs_or_means_evaluated=False, limitations=['Cost metadata only; no observed bridge runtime or RAM.', 'Naive all-mark local policy must be redesigned or prospectively recosted.', 'Remaining analytic upper>=0 is inconclusive, never a counterexample.'])
+    print(json.dumps(result, sort_keys=True, indent=2))
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,95 @@
+from pathlib import Path as _PortablePath
+import importlib.util as _portable_import_util
+_portable_original_file = _PortablePath(__file__).with_name('verify_general_prime_bridge.py')
+_portable_previous_spec = _portable_import_util.spec_from_file_location
+def _portable_spec(name, location, *args, **kwargs):
+    location = _PortablePath(location)
+    candidate = location.with_name("_portable_" + location.name)
+    if not location.name.startswith("_portable_") and candidate.is_file():
+        location = candidate
+    return _portable_previous_spec(name, location, *args, **kwargs)
+_portable_import_util.spec_from_file_location = _portable_spec
+"""E025: fixed thirteen exceptions, CDF versus denominator minimization.
+
+Exact integer Jensen premises only. The infinite and small-N proofs are
+separate symbolic arguments; the checker does not itself prove all N.
+"""
+from pathlib import Path
+from fractions import Fraction
+from collections import Counter
+import hashlib
+import importlib.util
+import json
+import math
+import sys
+ROOT = Path(__file__).resolve().parents[2]
+OUT = Path(__file__).parent
+CASES = ((5, 3), (5, 4), (5, 5), (5, 6), (7, 3), (7, 4), (7, 5), (11, 3), (11, 4), (13, 3), (17, 3), (19, 3), (23, 3))
+
+def require(ok, message):
+    if not ok:
+        raise RuntimeError(message)
+
+def minimum(p, m, r):
+    best = max(1, min(r, m - r))
+    b = 2
+    while b < best:
+        if b % p:
+            rem = r * b % m
+            best = min(best, max(b, min(rem, m - rem)))
+        b += 1
+    return best
+
+def main():
+    require(sum((p ** n for p, n in CASES)) == 81159, 'fixed domain count')
+    primes = [p for p in range(5, 28) if all((p % d for d in range(2, math.isqrt(p) + 1)))]
+    inventory = tuple(((p, n) for p in primes for n in range(3, 7) if p ** n < 19600))
+    require(inventory == CASES and 29 ** 3 >= 19600 and (5 ** 7 >= 19600), 'exception inventory')
+    code = ROOT / 'results/batch_22/verify_prime_cdf.py'
+    code_sha = hashlib.sha256(code.read_bytes()).hexdigest()
+    require(code_sha == '6b915a08afefcef0508b153834a6ac02d57a615ff69064e32474bb6ad1081482', 'frozen CDF code')
+    sys.dont_write_bytecode = True
+    spec = importlib.util.spec_from_file_location('frozen_prime_cdf', code)
+    cdf = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(cdf)
+    rows = []
+    formulas = overlaps = 0
+    for p, n in CASES:
+        m = p ** n
+        heights = [minimum(p, m, r) for r in range(m)]
+        oracle = sorted(Counter(heights).items())
+        previous = 0
+        rebuilt = []
+        for t in range(1, m // p + 1):
+            values = []
+            if t * t <= m:
+                values.append(cdf.central(p, m, t))
+            if t * t >= m:
+                values.append(cdf.high(p, m, t))
+            require(values and all((v == values[0] for v in values)), 'square overlap')
+            formulas += len(values)
+            overlaps += len(values) - 1
+            count = values[0]
+            require(previous <= count <= m, 'CDF monotonicity')
+            if count > previous:
+                rebuilt.append((t, count - previous))
+            previous = count
+        require(previous == m and rebuilt == oracle, 'full histogram agreement')
+        require(sum((c for _, c in oracle)) == m and heights[0] == 1, 'mass/zero')
+        require(max(heights) == m // p, 'exact maximum')
+        height_sum = sum((t * c for t, c in rebuilt))
+        margin = m ** 3 - height_sum ** 2
+        require(margin > 0, 'strict integer Jensen premise')
+        vector_sha = hashlib.sha256(json.dumps(heights, separators=(',', ':')).encode()).hexdigest()
+        rows.append({'p': p, 'N': n, 'M': m, 'height_sum': height_sum, 'integer_Jensen_margin': margin, 'maximum': max(heights), 'exact_histogram': rebuilt, 'minima_vector_sha256': vector_sha})
+    error = Fraction(6461, 61600) + Fraction(1, 39200)
+    margin = Fraction(91, 800) - error
+    require(error < Fraction(106, 1000) < Fraction(91, 800), 'rational sign at140')
+    exp5 = sum((Fraction(5) ** j / math.factorial(j) for j in range(10)), Fraction(0))
+    require(exp5 > 140, 'ln140<5')
+    result = {'status': 'PASS_13_FINITE_LEVELS_AND_RATIONAL_EFFECTIVE_PREMISES', 'meaning': 'Exact finite Jensen bridge only; infinite and N1/N2 proofs are separate.', 'experiment_id': 'E025', 'cdf_code_sha256': code_sha, 'levels': len(rows), 'residues': sum((r['M'] for r in rows)), 'CDF_formula_evaluations': formulas, 'CDF_square_overlaps': overlaps, 'rational_negative_margin_at140': str(margin), 'rational_exp5_partial_sum': str(exp5), 'rows': rows, 'floating_used_in_certificates': False, 'all_N_proved_by_checker_alone': False, 'formal_proof': False, 'novelty_certified': False}
+    payload = (json.dumps(result, indent=2) + '\n').encode()
+    (OUT / 'GENERAL_PRIME_BRIDGE.json').write_bytes(payload)
+    sys.stdout.buffer.write(payload)
+if __name__ == '__main__':
+    main()

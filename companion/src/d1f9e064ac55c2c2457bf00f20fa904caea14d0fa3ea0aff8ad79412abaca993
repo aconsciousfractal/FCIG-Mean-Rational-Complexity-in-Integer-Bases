@@ -1,0 +1,107 @@
+from pathlib import Path as _PortablePath
+import importlib.util as _portable_import_util
+_portable_original_file = _PortablePath(__file__).with_name('resolve_work.py')
+_portable_previous_spec = _portable_import_util.spec_from_file_location
+def _portable_spec(name, location, *args, **kwargs):
+    location = _PortablePath(location)
+    candidate = location.with_name("_portable_" + location.name)
+    if not location.name.startswith("_portable_") and candidate.is_file():
+        location = candidate
+    return _portable_previous_spec(name, location, *args, **kwargs)
+_portable_import_util.spec_from_file_location = _portable_spec
+"""R36 work-only inventory; never evaluates a height, CDF, log or sign."""
+from math import gcd, isqrt
+from pathlib import Path
+import hashlib, json, sys
+OUT = Path(__file__).parent
+
+def need(ok, msg):
+    if not ok:
+        raise ValueError(msg)
+
+def U(n, p, q):
+    return n - n // p - n // q + n // (p * q)
+
+def divisors(a, b, p, q):
+    return sorted((p ** i * q ** j for i in range(a + 1) for j in range(b + 1)))
+
+def cap(M, g, p, q):
+    m = M // g
+    H = (m - 1) // 2
+    D = 1 if m == 2 else H if m % p == m % q == 0 else max(H, m - (q if m % p == 0 else p))
+    return min(M // p, g * (m // 2), max(g, D))
+
+def calendar(M, p, q, gs):
+    k = isqrt(M)
+    terminal = M // p
+    ts = set(range(1, k + 1))
+    t = k
+    while t < terminal:
+        t = min(terminal, (257 * t + 255) // 256)
+        ts.add(t)
+    z = isqrt(2 * M) + 1
+    if z <= terminal:
+        ts.add(z)
+    for g in gs:
+        ts.update((g, cap(M, g, p, q)))
+    ts.add(terminal)
+    return sorted(ts)
+
+def counters(K):
+    phi = list(range(K + 1))
+    omega = [0] * (K + 1)
+    for p in range(2, K + 1):
+        if phi[p] == p:
+            for n in range(p, K + 1, p):
+                phi[n] -= phi[n] // p
+                omega[n] += 1
+    prefix = [1] * (K + 1)
+    for n in range(1, K + 1):
+        prefix[n] = prefix[n - 1] + phi[n]
+    return (phi, omega, prefix)
+
+def main():
+    need(len(sys.argv) == 2, 'certificate argument')
+    certpath = Path(sys.argv[1])
+    cert = json.loads(certpath.read_bytes())
+    need(cert['status'] == 'R36_TWO_METHOD_DOMAIN_PASS', 'domain gate')
+    source = OUT / cert['generator_output']
+    raw = source.read_bytes()
+    need(hashlib.sha256(raw).hexdigest() == cert['generator_sha256'], 'generator pin')
+    rows = json.loads(raw)['active_rows']
+    K = max((isqrt(v['M']) for v in rows))
+    phi, omega, pref = counters(K)
+    details = []
+    loginputs = set()
+    for row in rows:
+        M, p, q, a, b = (row[n] for n in ('M', 'p', 'q', 'a', 'b'))
+        k = isqrt(M)
+        T0 = isqrt(M // 2)
+        need(M == p ** a * q ** b and gcd(a, b) == 1 and ((a, b) != (1, 1)), 'model')
+        gs = divisors(a, b, p, q)[:-1]
+        ts = calendar(M, p, q, gs)
+        loginputs.update(ts)
+        loginputs.add(M)
+        c = (M + k - 1) // k
+        pairs = sum((U(k, p, q) - U(max(0, c - d - 1), p, q) for d in range(1, k + 1) if gcd(d, p * q) == 1))
+        conv = sum((sum((k // e - g + 1 for e in range(1, k // g + 1) if gcd(e, p * q) == 1)) for g in gs if g <= k))
+        stratumterms = sum((2 ** ((M // g % p == 0) + (M // g % q == 0)) for g in gs))
+        far = [T for T in ts if T * T > 2 * M]
+        curve = dict(M=M, p=p, q=q, a=a, b=b, k=k, T0=T0, terminal=M // p, proper_strata=len(gs), thresholds=len(ts), thresholds_sha256=hashlib.sha256(json.dumps(ts, separators=(',', ':')).encode()).hexdigest(), candidate_pairs_exact=pairs, convolution_updates_bound=conv, raw_F_steps=sum((k - g + 1 for g in gs if g <= k)), far_rows=len(far), far_q_iterations_bound=sum(((M - 1) // T for T in far)), large_Farey_visits_exact=pref[k], stratum_terms_per_interval=stratumterms, large_interval_terms_bound=pref[k] * stratumterms, local_floor_terms_exact=sum((2 ** omega[d] for d in range(1, T0 + 1) if gcd(d, M) == 1)))
+        details.append(curve)
+    marks = sorted({(v['p'], v['q']) for v in rows})
+    local = []
+    for p, q in marks:
+        for u, v in ((p, q), (q, p)):
+            m = u
+            while m <= 2 * v:
+                m *= u
+            n = (m - 1) // 2 - (m - 1) // 2 // u
+            local.append(dict(p=p, q=q, kind='pure', present=u, missing=v, child=m, original_modulus=v * m, signed_types=2 * n, step_tests_bound=4 * n + 3))
+        n = (p - 1) * (q - 1) // 2
+        local.append(dict(p=p, q=q, kind='mixed', child=p * q, original_modulus=p * q, signed_types=2 * n, step_tests_bound=4 * n + 3))
+    totals = {key: sum((v[key] for v in details)) for key in ('proper_strata', 'thresholds', 'candidate_pairs_exact', 'convolution_updates_bound', 'raw_F_steps', 'far_rows', 'far_q_iterations_bound', 'large_Farey_visits_exact', 'large_interval_terms_bound', 'local_floor_terms_exact')}
+    obj = dict(schema='p72-r36-work-only-v1', domain_certificate_sha256=hashlib.sha256(certpath.read_bytes()).hexdigest(), status='WORK_ONLY_RESOLVED_NOT_MEAN_CERTIFIED', active_moduli=len(rows), active_state_mass=sum((v['M'] for v in rows)), maximum_k=K, details=details, totals=totals, calendar_log_input_cardinality_bound=len(loginputs), all_mark_local_profiles=local, all_mark_local_signed_types=sum((v['signed_types'] for v in local)), all_mark_local_step_tests_bound_excluding_m2=sum((v['step_tests_bound'] for v in local)), all_mark_local_step_tests_bound_including_m2=sum((v['step_tests_bound'] for v in local)) + 3 * sum((p == 2 for p, q in marks)), all_mark_local_marginal_comparisons_bound=2 * (sum((v['step_tests_bound'] for v in local)) + 3 * sum((p == 2 for p, q in marks))), all_mark_local_curves=len(local), m2_singletons=sum((p == 2 for p, q in marks)), scientific_CDFs_evaluated=False, scientific_heights_evaluated=False, scientific_logs_evaluated=False, scientific_means_or_signs_evaluated=False, scope='Exact arithmetic loop metadata for unchanged generic core and two-prefix large audit. No timings forecast or frozen next mean/oracle protocol.')
+    sys.stdout.write(json.dumps(obj, sort_keys=True, separators=(',', ':')) + '\n')
+if __name__ == '__main__':
+    main()

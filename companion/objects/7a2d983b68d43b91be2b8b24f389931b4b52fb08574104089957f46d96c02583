@@ -1,0 +1,40 @@
+{
+  "all_main_true_CDFs_recomputed": false,
+  "checker_sha256": "4e2f7f9ca48ebe4c813965c60ed2429fea78ffd5daf0feb5bbaf5abadc125d8b",
+  "domain_sha256": "76a23043357af279bcd1a11c2721f7148392f19328d2d55a08aeb73051a098ee",
+  "independent32_log_enclosures": 1414,
+  "local_m2_physical_audit": {
+    "CDF_checks": 138,
+    "active_repair_profiles": 0,
+    "curves": 23,
+    "signed_types": 23,
+    "test_steps": 69
+  },
+  "local_physical_witness_audit": {
+    "CDF_checks": 38052,
+    "active_repair_profiles": 136,
+    "curves": 204,
+    "signed_types": 16916,
+    "test_steps": 19026
+  },
+  "main_definition_overlap_moduli": [
+    441,
+    484,
+    676
+  ],
+  "main_definition_overlap_states": 1601,
+  "main_histogram_Q_checks": 99,
+  "main_overlap_knot_checks": 687,
+  "moduli_reconstructed": 99,
+  "paid": 99,
+  "payload_sha256": "457827cb95ded59bd36878d13642437fa69f680ad76c0e9eea12d80d0acfc436",
+  "producer_imported": false,
+  "scientific_scope": "Independent retained Q/log/model/calendar/cap checks; 19 defining vectors including 3 main overlaps; 204 complete physical witness curves and 23 m2 atoms. General coverage proof and other main defining CDFs are not independently recounted here.",
+  "small_CDF_witness_checks": 29639,
+  "small_definition_residues": 3773,
+  "small_definition_vectors": 19,
+  "source_analytic_sha256": "2d856a44489bc4c8b98940d9cac6b18284e6e36361bc771be0017df763f7ea29",
+  "status": "E040_INDEPENDENT_PASS",
+  "true_far_survival_recomputed": false,
+  "unpaid": []
+}

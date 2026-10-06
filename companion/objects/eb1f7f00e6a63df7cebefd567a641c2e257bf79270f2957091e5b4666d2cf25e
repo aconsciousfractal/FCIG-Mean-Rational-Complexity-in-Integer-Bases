@@ -1,0 +1,294 @@
+"""E042 independent retained-bound checker; no producer imports or heights."""
+from fractions import Fraction as F
+from functools import lru_cache
+from hashlib import sha256
+from math import gcd, isqrt
+from pathlib import Path
+import json
+import sys
+HERE = Path(__file__).resolve().parent
+PROJECT = HERE.parent.parent
+R36 = PROJECT / 'results/batch_36'
+GRID = 1 << 100
+ROOT_SCALE = 10 ** 30
+PERIOD_LIMIT = 4096
+FAMILIES = ('coarse', 'first_exact', 'first_uniform', 'second_exact', 'second_uniform')
+GENERATOR_PIN = 'a93f5175e080376c010182dc211314725dcb019ff09a102b7a2b28fc8326bfa5'
+FRONTIER_PIN = '2ff38973147b074682b1c6c8a10f6619649bbd5973af7211a1715b299da0fe69'
+MATH_PINS = {'reports/batch_27/PARAMETERIZED_MEAN_BALANCE.md': 'a172bdcdc005cdb84c06c8d47353b96df3fd0a57d5cb0f98cff61c7a5f2d7d62', 'reports/batch_34/ANALYTIC_REDUCTION.md': 'dc676335e332b87949f968c11db2de16904850d409dc175ca3c02b0e218bf6e8', 'reports/batch_36/EXTREMA_COMPRESSION.md': '04c126e1b3211fe096e728c217a5255890205d2491b15e6a4565a3c5dc72e2c0', 'reports/batch_36/NONSQUARE_ENDPOINT_REFINEMENT.md': '61e98ac5467b1522c27926e278c2f4553a6fdb0718de232d3672f57debe4acb7'}
+MODEL = {'N': 1, 'measure': 'uniform_all_M_residues_including_zero', 'denominator': 'positive_d_with_gcd(d,M)=1', 'congruence': 'A=s*d_mod_M', 'height': 'min_max(abs(A),d)', 'logarithm': 'natural', 'center': 'ln(M)/2'}
+
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+def rat(value):
+    require(isinstance(value, list) and len(value) == 2, 'rational pair required')
+    n, d = value
+    require(type(n) is int and type(d) is int and (d > 0), 'bad rational integers')
+    answer = F(n, d)
+    require(answer.numerator == n and answer.denominator == d, 'noncanonical rational')
+    return answer
+
+def packed(value):
+    return [value.numerator, value.denominator]
+
+def down(value):
+    return F(value.numerator * GRID // value.denominator, GRID)
+
+def up(value):
+    return F(-(-value.numerator * GRID // value.denominator), GRID)
+
+@lru_cache(None)
+def log_integer(value):
+    """32 positive atanh terms; exact binary reduction, outward 2^100 grid."""
+    require(type(value) is int and value >= 1, 'log domain')
+    if value == 1:
+        return (F(0), F(0))
+    exponent = value.bit_length() - 1
+    reduced = F(value, 1 << exponent)
+    y = (reduced - 1) / (reduced + 1)
+
+    def series(z):
+        square = z * z
+        power = z
+        total = F(0)
+        for j in range(32):
+            total += power / (2 * j + 1)
+            power *= square
+        lower = 2 * total
+        upper = lower + 2 * power / (65 * (1 - square))
+        return (lower, upper)
+    l2, h2 = series(F(1, 3))
+    lo, hi = series(y)
+    return (down(exponent * l2 + lo), up(exponent * h2 + hi))
+
+def constants():
+    z = sum((F(1, n * n) for n in range(1, 257)), F(0))
+    zlo, zhi = (down(z + F(1, 257)), up(z + F(1, 256)))
+    alpha = (down(1 / zhi), up(1 / zlo))
+    r = isqrt(2 * ROOT_SCALE * ROOT_SCALE)
+    root = (F(r, ROOT_SCALE), F(r + 1, ROOT_SCALE))
+    return {'zeta': (zlo, zhi), 'alpha': alpha, 'ln2': log_integer(2), 'sqrt2': root}
+
+def parameters(p, q):
+    """Residue form C3 on independently generated last indices of blocks."""
+    D = p * q
+    require(type(p) is int and type(q) is int and (1 < p < q), 'prime-mark order')
+    require(all((p % d for d in range(2, isqrt(p) + 1))) and all((q % d for d in range(2, isqrt(q) + 1))), 'prime marks')
+    starts = [(q * t + p - 1) // p for t in range(p + 1)]
+    residue_values = [0]
+    for t in range(p):
+        last = min(q - 1, starts[t + 1] - 1)
+        first = max(1, starts[t])
+        require(first <= last and p * last // q == t, 'compressed block')
+        residue_values.append(p * (p * last % q - last))
+    for j in range(1, p):
+        residue_values.append(q * (q * j % p - j))
+    S = max(residue_values)
+    u = F((p - 1) * (q - 1), D)
+    sigma = F(S, D)
+    h, m = (u + sigma, -sigma)
+    K = h - m + u
+    W = max(h, -m + 2 * u)
+    v = F(2) - F(1, p) - F(1, q)
+    c0 = F(p - 1, p * p) + F(q - 1, q * q) - F(D - 1, D * D)
+    require(0 < sigma <= u and K == 2 * u + 2 * sigma, 'extrema range')
+    require((sigma == u) == (q % p == 1), 'sigma equality criterion')
+    return {'D': D, 'S': S, 'u': u, 'sigma': sigma, 'h': h, 'm': m, 'K': K, 'W': W, 'rho': F(D, (p + 1) * (q + 1)), 'v': v, 'c0': c0, 'first_b0': W + u, 'first_b1': W, 'second_b0': W * (u + h) + u, 'second_b1': W * u, 'coarse_b0': F(4), 'coarse_b1': F(3), 'E0': v * (u + h) + 2 * c0, 'E1': v * u}
+
+def period_oracle(p, q):
+    """Full-period oracle from unit indicators, never from floor counts."""
+    D = p * q
+    numerator_density = (p - 1) * (q - 1)
+    running_units = 0
+    mn = mx = nonunit_max = 0
+    for n in range(D):
+        unit = gcd(n, D) == 1
+        if unit:
+            running_units += 1
+        e = D * running_units - numerator_density * n
+        mn, mx = (min(mn, e), max(mx, e))
+        if not unit:
+            nonunit_max = max(nonunit_max, e)
+    return (F(mn, D), F(mx, D), nonunit_max)
+
+def sqrt_interval(M):
+    k = isqrt(M)
+    require(k * k <= M < (k + 1) * (k + 1), 'isqrt')
+    r = isqrt(M * ROOT_SCALE * ROOT_SCALE)
+    lo = F(r, ROOT_SCALE)
+    hi = lo if r * r == M * ROOT_SCALE * ROOT_SCALE else F(r + 1, ROOT_SCALE)
+    return (k, lo, hi)
+
+def independent_bounds(M, par, c):
+    """Positive-coefficient R3 evaluation plus lower S4, with own endpoints."""
+    u, rho, K = (par['u'], par['rho'], par['K'])
+    aL, aU = c['alpha']
+    ellL, ellU = c['ln2']
+    sL, _ = c['sqrt2']
+    k, xL, xU = sqrt_interval(M)
+    mlogL, mlogU = log_integer(M)
+    logL, logU = (mlogL / 2, mlogU / 2)
+    slope = aL * rho - F(1, 2) + F(3, 4) * u * u
+    ell_for_delta = ellL if slope >= 0 else ellU
+    deltaL = rho * (aL * F(5, 8) + F(1, 2)) + F(3, 8) * aL - F(1, 2) - F(3, 4) * u * u + slope * ell_for_delta
+    kappaL, kappaU = (aL * rho, aU * rho)
+    thetaU = aU * (1 - rho)
+    betaU = 3 - 2 * sL
+    Eupper = par['E0'] + par['E1'] * logU
+    tL, tU = (xL - k, xU - k)
+    require(0 <= tL <= tU < 1, 'fractional sqrt interval')
+    f = lambda t: (1 - t) * (1 + 3 * t) / 2
+    endpointL = max(F(0), min(f(tL), f(tU)) + tL ** 3 / xU)
+    plateauL = max(F(1), 2 * k + 2 * tL - (M - k * k))
+    answer = {'k': k, 'sqrt_lower': xL, 'sqrt_upper': xU, 'log_x_lower': logL, 'log_x_upper': logU, 't_lower': tL, 't_upper': tU, 'endpoint_delta_lower': endpointL, 'plateau_factor_lower': plateauL, 'delta_lower': deltaL, 'plateau_gain_lower': ellL * kappaL * plateauL / M, 'endpoint_gain_lower': 2 * kappaL * endpointL / M, 'zero_gain_lower': logL / M}
+    answer['exact_tail_error_upper'] = Eupper
+    answer['uniform_tail_error_upper'] = 3 + 2 * logU
+    pairs = {'coarse': (F(4), F(3))}
+    for primitive in ('first', 'second'):
+        for tail in ('exact', 'uniform'):
+            pairs[primitive + '_' + tail] = (par[primitive + '_b0'], par[primitive + '_b1'])
+    for name, (b0, b1) in pairs.items():
+        require(b0 >= b1 >= 0, 'primitive pair order')
+        gainL = (ellL * kappaL * plateauL + 2 * kappaL * endpointL + 2 * (b0 - b1) + logL) / M
+        if name == 'coarse':
+            errU = (22 + 15 * logU) / xL + (18 + 4 * logU) / M
+        else:
+            tailupper = 3 + 2 * logU if name.endswith('_uniform') else Eupper
+            central = 2 * kappaU + 2 * (b0 - b1) + 2 * b1 * logU + 2 * u * K * betaU
+            plateau = ellU * (4 * kappaU + 2 * b0 + 2 * b1 * logU + 2 * u * K) / 2
+            far = (1 + F(5, 4) * thetaU + 4 * tailupper) / sL
+            errU = (central + plateau + far) / xL + (K * K * ellU + 2 * tailupper) / M
+        answer[name + '_error_upper'] = errU
+        answer[name + '_gain_lower'] = gainL
+        answer[name + '_primitive_gain'] = 2 * (b0 - b1) / M
+        answer[name + '_upper'] = -deltaL + errU - gainL
+    answer['upper'] = min((answer[name + '_upper'] for name in pairs))
+    return answer
+
+def canonical_load(path):
+
+    def unique_object(pairs):
+        obj = {}
+        for key, value in pairs:
+            require(key not in obj, 'duplicate JSON key: ' + key)
+            obj[key] = value
+        return obj
+    return json.loads(path.read_text(encoding='utf-8'), object_pairs_hook=unique_object)
+
+def main():
+    require(len(sys.argv) <= 2, 'one optional certificate path')
+    target = Path(sys.argv[1]) if len(sys.argv) == 2 else HERE / 'ANALYTIC_N1.json'
+    cert = canonical_load(target)
+    domain = canonical_load(R36 / 'inventory_generate_normal1.json')['active_rows']
+    source_certificate = canonical_load(R36 / 'FRONTIER_CERTIFICATE.json')
+    require(sha256((R36 / 'FRONTIER_CERTIFICATE.json').read_bytes()).hexdigest() == FRONTIER_PIN, 'R36 certificate hash')
+    require(sha256((R36 / 'inventory_generate_normal1.json').read_bytes()).hexdigest() == GENERATOR_PIN == source_certificate['generator_sha256'], 'R36 input hash')
+    require(len(domain) == 11382 and sum((r['M'] for r in domain)) == 1209189194, 'active domain')
+    require(cert['schema'] == 'P72_E042_ANALYTIC_N1_V1', 'certificate schema')
+    require(cert['source_sha256'] == GENERATOR_PIN and cert['frontier_certificate_sha256'] == FRONTIER_PIN and (cert['imported_source_sha256'] == MATH_PINS), 'retained source pins')
+    for relative, pin in MATH_PINS.items():
+        require(sha256((PROJECT / relative).read_bytes()).hexdigest() == pin, 'mathematical source bytes ' + relative)
+    require(cert['model'] == MODEL, 'original model')
+    require(cert['bound_families'] == list(FAMILIES), 'fixed five bound families')
+    require((cert['zeta_terms'], cert['log_terms'], cert['sqrt_scale'], cert['enclosure_grid']) == (128, 16, 10 ** 15, 1 << 60), 'producer fixed precision')
+    rows = cert['rows']
+    require(len(rows) == len(domain), 'row count')
+    pairs = sorted({(r['p'], r['q']) for r in domain})
+    require(len(pairs) == 5714, 'prime pair count')
+    ours = {f'{p}:{q}': parameters(p, q) for p, q in pairs}
+    require(set(cert['parameters']) == set(ours), 'parameter key set')
+    parameter_fields = set(next(iter(ours.values())))
+    for key, par in ours.items():
+        retained = cert['parameters'][key]
+        require(set(retained) == parameter_fields, 'parameter fields ' + key)
+        for field, value in par.items():
+            actual = retained[field] if type(value) is int else rat(retained[field])
+            require(actual == value, 'parameter ' + key + ' ' + field)
+    controls = 0
+    oracle_entries = oracle_pairs = 0
+    oracle_panel = []
+    for p, q in pairs:
+        par = ours[f'{p}:{q}']
+        if p == 2:
+            require(par['sigma'] == par['u'] and par['h'] == 2 * par['u'] and (par['m'] == -par['u']) and (par['K'] == 4 * par['u']) and (par['W'] == 3 * par['u']), 'even closed controls')
+            controls += 1
+        if p * q <= PERIOD_LIMIT:
+            minimum, maximum, nonunitS = period_oracle(p, q)
+            require((minimum, maximum, nonunitS) == (par['m'], par['h'], par['S']), 'unit-indicator period oracle')
+            oracle_entries += p * q
+            oracle_pairs += 1
+            oracle_panel.append([p, q])
+    c = constants()
+    for prefix, own in (('zeta', c['zeta']), ('alpha', c['alpha']), ('ell', c['ln2']), ('sqrt2', c['sqrt2'])):
+        lo, hi = (rat(cert[prefix + '_lower']), rat(cert[prefix + '_upper']))
+        require(0 < lo <= own[0] <= own[1] <= hi, 'constant enclosure containment ' + prefix)
+    require(rat(cert['beta_upper']) == 3 - 2 * rat(cert['sqrt2_lower']), 'beta upper identity')
+    paid, remaining = ([], [])
+    comparisons = 0
+    for original, row in zip(domain, rows):
+        scalar_fields = {'M', 'p', 'q', 'a', 'b', 'N', 'k', 'status'}
+        rational_fields = {'sqrt_lower', 'sqrt_upper', 'log_x_lower', 'log_x_upper', 't_lower', 't_upper', 'delta_slope', 'delta_lower', 'endpoint_delta_lower', 'plateau_factor_lower', 'plateau_gain_lower', 'endpoint_gain_lower', 'zero_gain_lower', 'exact_tail_error_upper', 'uniform_tail_error_upper', 'upper'}
+        rational_fields.update((name + suffix for name in FAMILIES for suffix in ('_error_upper', '_gain_lower', '_upper', '_primitive_gain')))
+        require(type(row) is dict and set(row) == scalar_fields | rational_fields, 'retained row schema')
+        require(all((type(row[key]) is int for key in scalar_fields - {'status'})) and type(row['status']) is str, 'retained row scalar types')
+        for key in rational_fields:
+            rat(row[key])
+        identity = [original[f] for f in ('M', 'p', 'q', 'a', 'b')]
+        require([row[f] for f in ('M', 'p', 'q', 'a', 'b')] == identity and row['N'] == 1, 'row identity')
+        M, p, q, a, b = identity
+        require(M == p ** a * q ** b and gcd(a, b) == 1, 'prime-power normalization')
+        own = independent_bounds(M, ours[f'{p}:{q}'], c)
+        require(row['k'] == own['k'], 'integer square-root anchor')
+        require(rat(row['sqrt_lower']) <= own['sqrt_lower'] <= own['sqrt_upper'] <= rat(row['sqrt_upper']), 'sqrt containment')
+        require(rat(row['log_x_lower']) <= own['log_x_lower'] <= own['log_x_upper'] <= rat(row['log_x_upper']), 'half-lnM containment')
+        for field in ('t_lower', 'endpoint_delta_lower', 'plateau_factor_lower', 'delta_lower', 'plateau_gain_lower', 'endpoint_gain_lower', 'zero_gain_lower'):
+            require(rat(row[field]) <= own[field], 'lower direction ' + str(M) + ' ' + field)
+            comparisons += 1
+        require(rat(row['t_upper']) >= own['t_upper'], 't upper direction')
+        require(rat(row['t_lower']) == rat(row['sqrt_lower']) - row['k'] and rat(row['t_upper']) == rat(row['sqrt_upper']) - row['k'], 't identity')
+        par = ours[f'{p}:{q}']
+        u, rho = (par['u'], par['rho'])
+        slope = rat(cert['alpha_lower']) * rho - F(1, 2) + F(3, 4) * u * u
+        require(rat(row['delta_slope']) == slope, 'Delta slope exact identity')
+        ell_end = rat(cert['ell_lower'] if slope >= 0 else cert['ell_upper'])
+        delta_recorded = rho * (rat(cert['alpha_lower']) * F(5, 8) + F(1, 2)) + F(3, 8) * rat(cert['alpha_lower']) - F(1, 2) - F(3, 4) * u * u + slope * ell_end
+        require(rat(row['delta_lower']) == delta_recorded, 'retained Delta arithmetic')
+        tlo, thi = (rat(row['t_lower']), rat(row['t_upper']))
+        f = lambda t: (1 - t) * (1 + 3 * t) / 2
+        endpoint_recorded = min(f(tlo), f(thi)) + tlo ** 3 / rat(row['sqrt_upper'])
+        require(rat(row['endpoint_delta_lower']) == endpoint_recorded, 'retained endpoint credit arithmetic')
+        require(rat(row['plateau_factor_lower']) == max(F(1), 2 * row['k'] + 2 * tlo - (M - row['k'] ** 2)), 'retained plateau factor arithmetic')
+        require(rat(row['plateau_gain_lower']) == rat(cert['ell_lower']) * rat(cert['alpha_lower']) * rho * rat(row['plateau_factor_lower']) / M, 'retained plateau gain arithmetic')
+        require(rat(row['endpoint_gain_lower']) == 2 * rat(cert['alpha_lower']) * rho * endpoint_recorded / M, 'retained endpoint gain arithmetic')
+        require(rat(row['zero_gain_lower']) == rat(row['log_x_lower']) / M, 'retained zero gain arithmetic')
+        for tail, expression in (('exact', par['E0'] + par['E1'] * rat(row['log_x_upper'])), ('uniform', 3 + 2 * rat(row['log_x_upper']))):
+            key = tail + '_tail_error_upper'
+            require(rat(row[key]) == expression and rat(row[key]) >= own[key], 'retained deleted-totient error ' + tail)
+            comparisons += 1
+        for name in FAMILIES:
+            require(rat(row[name + '_error_upper']) >= own[name + '_error_upper'], 'error direction ' + str(M) + ' ' + name)
+            require(0 <= rat(row[name + '_gain_lower']) <= own[name + '_gain_lower'], 'gain direction ' + str(M) + ' ' + name)
+            require(rat(row[name + '_primitive_gain']) == own[name + '_primitive_gain'], 'retained pair-compatible primitive gain')
+            require(rat(row[name + '_gain_lower']) == sum((rat(row[f]) for f in ('plateau_gain_lower', 'endpoint_gain_lower', 'zero_gain_lower', name + '_primitive_gain')), F(0)), 'retained total gain arithmetic')
+            require(rat(row[name + '_upper']) == -rat(row['delta_lower']) + rat(row[name + '_error_upper']) - rat(row[name + '_gain_lower']), 'retained component upper arithmetic')
+            require(rat(row[name + '_upper']) >= own[name + '_upper'], 'component enclosure direction')
+            comparisons += 3
+        retained_upper = min((rat(row[name + '_upper']) for name in FAMILIES))
+        require(rat(row['upper']) == retained_upper and retained_upper >= own['upper'], 'minimum bound')
+        status = 'ANALYTIC_PAID' if retained_upper < 0 else 'NEEDS_FINITE'
+        require(row['status'] == status, 'retained status')
+        (paid if status == 'ANALYTIC_PAID' else remaining).append(identity)
+    require(cert['analytic_paid_profiles'] == paid and cert['remaining_profiles'] == remaining, 'exact paid/complement arrays')
+    require(cert['analytic_paid'] == len(paid) and cert['remaining'] == len(remaining) and (cert['analytic_paid_state_mass'] == sum((r[0] for r in paid))) and (cert['remaining_state_mass_not_visited'] == sum((r[0] for r in remaining))) and (cert['remaining_distinct_prime_pairs'] == len({(r[1], r[2]) for r in remaining})), 'retained complement summaries')
+    require(cert['input_count'] == len(domain) and cert['input_mass'] == sum((r['M'] for r in domain)) and (cert['input_distinct_prime_pairs'] == len(pairs)), 'retained input summaries')
+    expected_log_count = len({2, *(r['M'] for r in domain)})
+    expected_operations = {'compressed_nonzero_candidates': sum((2 * p - 1 for p, q in pairs)), 'compressed_zero_baselines': len(pairs), 'parameter_pairs': len(pairs), 'bound_families': len(FAMILIES), 'row_bound_evaluations': len(FAMILIES) * len(rows), 'zeta_sum_terms': 128, 'sqrt_M_enclosures': len(rows), 'sqrt2_enclosures': 1, 'log_series_evaluations': 2 * expected_log_count, 'log_atanh_terms': 2 * 16 * expected_log_count}
+    require(cert['operation_counts'] == expected_operations, 'retained operation metadata')
+    require(cert['log_inputs'] == sorted({2, *(r['M'] for r in domain)}) and cert['log_input_cardinality'] == len(domain) + 1, 'retained log input inventory')
+    require(all((cert[key] is False for key in ('finite_means_evaluated', 'residue_minima_evaluated', 'CDFs_evaluated', 'floating_used', 'general_N1_closed'))) and cert['analytical_upper_bounds_evaluated'] is True, 'scope flags')
+    evidence = {'status': 'INDEPENDENT_ANALYTIC_RETAINED_PASS', 'schema': 'P72_E042_CHECKER_EVIDENCE_V1', 'row_count': len(rows), 'pair_count': len(pairs), 'parameter_values_checked': sum((len(p) for p in ours.values())), 'bound_direction_comparisons': comparisons, 'period_limit': PERIOD_LIMIT, 'period_oracle_pairs': oracle_pairs, 'period_oracle_entries': oracle_entries, 'even_closed_control_pairs': controls, 'period_oracle_panel': oracle_panel, 'compressed_candidate_entries': sum((2 * p - 1 for p, q in pairs)), 'compressed_zero_baselines': len(pairs), 'paid_count': len(paid), 'remaining_count': len(remaining), 'paid_mass': sum((r[0] for r in paid)), 'remaining_mass': sum((r[0] for r in remaining)), 'checker_precision': {'zeta_terms': 256, 'atanh_terms': 32, 'grid_denominator': GRID, 'sqrt_scale': ROOT_SCALE}, 'certificate_sha256': sha256(target.read_bytes()).hexdigest(), 'scope': 'All retained analytical rows/parameters; bounded unit-period oracle, all active even-pair symbolic controls; no height, CDF, finite mean, all-period or theorem formalization.'}
+    print(json.dumps(evidence, sort_keys=True, separators=(',', ':')))
+if __name__ == '__main__':
+    main()

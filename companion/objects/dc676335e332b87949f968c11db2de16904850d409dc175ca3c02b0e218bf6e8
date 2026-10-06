@@ -1,0 +1,333 @@
+# finite analytical reduction at length two
+
+This mathematical supplement is read with `reports/batch_27/PARAMETERIZED_MEAN_BALANCE.md`. References to the parameterized-balance note mean that logical companion locator and its local P-labels. Local R-labels below are retained for the certificate implementations. The corresponding complete exposition is the manuscript appendix "Effective reduction and finite completion for two prime factors": "Exact discrepancy parameters and admissible errors" (`ap:finite:parameters`), "Finite balance, closed endpoints and the four simultaneous gains" (`ap:finite:five-bounds`), and "Uniform modulus cutoffs" (`ap:finite:cutoffs`). Leading-credit rational corners are displayed in that last subsection. This supplement is not a standalone proof of the complete theorem. Source labels are searchable in the distributed standalone LaTeX file.
+
+## 1. Normalization and imported finite balance
+
+Let \(M\) have precisely the two prime divisors \(p<r\), and let
+\(R_M(s)\) be the minimum of \(\max(|A|,d)\) over \(d>0\),
+\(\gcd(d,M)=1\), \(A\equiv sd\pmod M\). Average uniformly over all
+\(M\) residues, including zero. Put
+\[
+ a=\sqrt M,\quad
+ \mu(M)=\mathbb E\log R_M-\log a,\quad D=pr,\quad
+ u=(1-1/p)(1-1/r),\quad \rho=\frac{pr}{(p+1)(r+1)},
+\]
+\[
+ \alpha=1/\zeta(2),\quad \ell=\log2,\quad
+ \kappa=\alpha\rho,\quad\theta=\alpha(1-\rho),\quad
+ \beta=3-2\sqrt2 .
+\]
+The parameterized-balance note P18–P20 give, with their closed central collisions, strict far
+threshold and integer-rounding costs retained,
+\[
+ \mu(M)\le-\Delta(p,r)+\mathcal E_{p,r}(a),                 \tag{R1}
+\]
+\[
+ \Delta=\rho[\alpha(5/8+\ell)+1/2]+3\alpha/8-1/2-\ell/2
+             -\frac34(1-\ell)u^2,                         \tag{R2}
+\]
+\[
+\begin{split}
+ \mathcal E(a)={1\over a}\bigl[
+ &2\kappa+2(b_0-b_1)+2b_1\log a+2uK\beta\\
+ &+{\ell\over2}(4\kappa+2b_0+2b_1\log a+2uK)
+ +(1+5\theta/4+4E(a))/\sqrt2\bigr]\\
+ &+{K^2\ell+2E(a)\over a^2}.                              \tag{R3}
+\end{split}
+\]
+The parameters below are justified independently of finite mean signs.
+The imported proof applies to arbitrary exponent profiles, not only
+squarefree moduli. At length two \(M=B^2\), so \(a=B\).
+
+## 2. Uniform unit-discrepancy lemma
+
+Define
+\[
+ U(x)=\lfloor x\rfloor-\lfloor x/p\rfloor-\lfloor x/r\rfloor
+                         +\lfloor x/(pr)\rfloor,\qquad
+ e(n)=U(n)-un .
+\]
+For every integer \(n\),
+\[
+                    -u\le e(n)\le2u.                     \tag{R4}
+\]
+
+It suffices to consider \(0\le n<D\), because \(e\) is periodic.
+If \(n\) is a unit, \(e(n)-e(n-1)=1-u>0\). A minimum therefore
+occurs at zero or at a nonunit. For \(n=pt<D\), \(1\le t<r\),
+write \(pt=qr+s\), with \(0\le q\le p-1\), \(1\le s<r\).
+Then
+\[
+ e(pt)=(s-t)/r,\qquad
+ t-s=qr-(p-1)t\le{qr-(p-1)\over p}
+                    \le{(p-1)(r-1)\over p}=ur.
+\]
+The first inequality uses \(pt\ge qr+1\). The case \(n=rt\)
+is identical with the primes exchanged. Thus \(e(n)\ge-u\).
+
+For \(0<n<D\), reflection gives the exact identity
+\[
+             e(D-n)=\mathbf1_{\gcd(n,D)=1}-e(n).
+\]
+A nonunit therefore has \(e(n)\le u\). For a unit, put \(t=D-n\);
+the preceding minimum bound gives
+\(e(t)=e(t-1)+1-u\ge1-2u\), and hence
+\(e(n)=1-e(t)\le2u\). This proves (R4).
+
+Let \(h=\max_{0\le n<D}e(n)\), \(m=\min_{0\le n<D}e(n)\).
+The parameterized-balance note parameters consequently satisfy
+\[
+ h\le2u,\quad m\ge-u,\quad
+ K=h-m+u\le4u,\quad W=\max(h,-m+2u)\le3u.                \tag{R5}
+\]
+The real discrepancy lies in \([m-u,h]\). The closed interval
+constant is \(K\), including endpoint atoms; there is no silent
+replacement by an open interval.
+
+The parameterized-balance note P5 permits either
+\[
+ (b_0,b_1)=(W+u,W)
+ \quad\hbox{or}\quad
+ (b_0,b_1)=(W(u+h)+u,Wu).
+                                                               \tag{R6}
+\]
+Both have \(b_0\ge b_1\). In the second choice (R5) gives the safe
+substitutions
+\[
+ b_0\le9u^2+u,\quad b_1\le3u^2,\quad b_0-b_1=Wh+u\le6u^2+u.
+                                                               \tag{R7}
+\]
+Bounding the difference directly in (R7), rather than subtracting
+separate upper bounds, is required in (R3).
+
+For the deleted-totient error the parameterized-balance note P10–P11 permit
+\[
+ E(a)=E_0+E_1\log a,\quad
+ E_0=v(u+h)+2c_0,\quad E_1=vu,                         \tag{R8}
+\]
+\[
+ v=2-1/p-1/r,\qquad
+ c_0={p-1\over p^2}+{r-1\over r^2}-{pr-1\over p^2r^2}.
+\]
+The factor \(2c_0\) pays the REAL-cutoff tail; it is not reduced
+to \(c_0\) by an integer-cutoff argument. The constant also pays
+the partial-summation interval below one, as proved in the parameterized-balance note.
+
+## 3. Even radical: a new modulus cutoff
+
+For \(p=2\), \(u=(r-1)/(2r)\). On \(0\le n<2r\),
+\[
+ e(n)=\frac{n}{2r}+\frac{\mathbf1_{n\ {\rm odd}}}{2}
+                                      -\mathbf1_{n\ge r}.
+\]
+The extrema are attained at \(n=r-2\) and \(n=r+1\), respectively:
+\[
+                 h=2u,\quad m=-u,\quad K=4u,\quad W=3u. \tag{R9}
+\]
+For \(r\ge11\),
+\[
+ u\le\frac12,\quad \kappa<\frac49,\quad\theta<\frac13,\quad
+ c_0=\frac14+\frac{2r-3}{4r^2}\le\frac{13}{44},
+\]
+\[
+ b_0\le\frac{11}{4},\quad b_1\le\frac34,\quad
+ b_0-b_1\le2,\quad K\le2,\quad
+ E_0\le\frac{125}{44},\quad E_1\le\frac34.
+                                                               \tag{R10}
+\]
+Here the second choice of (R6) is fixed. Using
+\(\ell<7/10\), \(\beta<1/5\), \(1/\sqrt2<3/4\) in (R3)
+gives
+\[
+ \mathcal E(a)<
+ {363/20+(171/40)\log a\over a}
+ +{17/2+(3/2)\log a\over a^2}.                          \tag{R11}
+\]
+For transparency the unrounded constant in the first numerator is
+\[
+ \frac89+4+\frac25+
+ \frac7{20}\left(\frac{16}9+\frac{11}2+2\right)+
+ \frac34\left(1+\frac5{12}+\frac{125}{11}\right)
+ =\frac{143521}{7920}<\frac{363}{20}.
+\]
+The logarithmic coefficient is \(171/40\), and the constant in
+the second numerator is \(14/5+125/22=933/110<17/2\).
+
+At \(a=384=2^7\cdot3\), the elementary bounds
+\(\log2<7/10\), \(\log3<11/10\) give \(\log384<6\). Thus
+\[
+ \mathcal E(384)<\frac{73}{640}+\frac{35}{294912}
+                           <\frac{23}{200}.             \tag{R12}
+\]
+The last comparison has exact margin \(6037/7372800>0\).
+The positive terms in (R11) decrease for \(a\ge384\).
+The parameterized-balance note P21 and the rational corner in manuscript `ap:finite:cutoffs` give
+\[
+ \Delta(2,r)\ge\Delta(2,11)>
+             \frac{3461}{29040}>\frac7{60}.
+\]
+Consequently
+\[
+ \boxed{\mu(M)<-\frac1{600}
+ \quad(p=2,\ r\ge11,\ M\ge384^2).}                     \tag{R13}
+\]
+This is a proof for every exponent profile in that domain.
+For length two it removes every such base \(B\ge384\), without
+evaluating its finite mean.
+
+## 4. The smaller odd prime equal to three
+
+For \(p=3,r\ge7\), use (R5)–(R8), giving
+\[
+ u\le\frac23,\quad\kappa<\frac12,\quad\theta<\frac13,\quad
+ K\le\frac83,\quad b_0\le\frac{14}3,\quad b_1\le\frac43,
+ \quad b_0-b_1\le\frac{10}3 .
+\]
+Also
+\[
+ c_0=\frac29+\frac{6r-8}{9r^2}\le\frac{20}{63},\quad
+ E_0\le\frac{250}{63},\quad E_1\le\frac{10}9 .
+\]
+In (R3) the linear constant is at most
+\[
+ 1+\frac{20}3+\frac{32}{45}
+ +\frac7{20}\frac{134}9
+ +\frac34\left(1+\frac5{12}+\frac{1000}{63}\right)
+ =\frac{133843}{5040}<27 .
+\]
+The linear logarithmic coefficient is \(104/15<7\);
+the quadratic constant is \(452/35<13\);
+the quadratic logarithmic coefficient is \(20/9<9/4\).
+Therefore
+\[
+ \mathcal E(a)<
+ \frac{27+7\log a}{a}+
+ \frac{13+(9/4)\log a}{a^2}.                            \tag{R14}
+\]
+At \(a=512\), \(\log512<63/10\), so
+\[
+ \mathcal E(512)<\frac{711}{5120}+
+                 \frac{1087}{10485760}<\frac7{50}.
+\]
+The final exact margin is \(53957/52428800>0\).
+The manuscript leading-credit table (`ap:finite:cutoffs`) gives \(\Delta(3,7)>1/7\); monotonicity in the primes and
+in \(a\) consequently yields
+\[
+ \boxed{\mu(M)<-\frac1{350}
+ \quad(p=3,\ r\ge7,\ M\ge512^2).}                     \tag{R15}
+\]
+
+## 5. Both primes at least five
+
+The coarse bound of the parameterized-balance note P24 already improves the old cutoff after changing
+the leading corner. With \(\alpha>3/5,\ell>2/3\), (R2) at
+\((p,r)=(5,7)\) gives
+\[
+ \Delta(5,7)>
+ \frac{95869}{470400}>
+ \frac{61}{300};                                       \tag{R16}
+\]
+the second margin is \(221/470400>0\). The coefficient of \(\ell\)
+after setting \(\alpha=3/5\) is positive. The parameterized-balance note P21 extends this
+corner to every \(p\ge5,r\ge7\).
+
+The elementary bound \(\log5<17/10\) follows from
+\(\sum_{j=0}^4(17/10)^j/j!=1274841/240000>5\).
+Since \(600=2^3\cdot3\cdot5^2\), \(\log600<33/5\).
+The parameterized-balance note P24 therefore gives
+\[
+ \mathcal E(600)<
+ \frac{121}{600}+\frac{37}{300000}
+ =\frac{60537}{300000}<\frac{101}{500}.
+\]
+Monotonicity now proves
+\[
+ \boxed{\mu(M)<-\frac1{750}
+ \quad(p\ge5,\ r\ge7,\ M\ge600^2).}                     \tag{R17}
+\]
+These three cutoffs cover every prime pair outside the four already
+complete radicals \(6,10,14,15\). They leave an explicit residual;
+they do not close every two-prime length-two mean.
+
+## 6. Exact analytical parameter certificate
+
+The finite analytical domain contains all 454 rows, including
+those whose analytical upper bound fails. On each of their 289 pairs,
+the full period \(0\le n<D\) may certify the exact rational extrema
+\(h,m\). Since \(D\mid B\) and \(B\le1018\), the period is bounded
+by 1018. This counts integers coprime to \(D\); it does not evaluate
+any original-residue height, CDF, histogram or mean.
+
+Use (R6)'s second pair and (R8) consistently; compute (R3) and the
+coarse bound in the parameterized-balance note P24 independently and retain both. Their minimum is a
+valid upper bound because each is valid for the same modulus.
+The optional first pair in (R6) is valid; its own error parameters must be used
+if this alternative bound is evaluated.
+
+For rational enclosures \(\alpha_L\le\alpha\le\alpha_U\),
+\(\ell_L\le\ell\le\ell_U\), first replace \(\alpha\) in (R2)
+by \(\alpha_L\). Its coefficient is
+\(\rho(5/8+\ell)+3/8>0\). Then choose the appropriate endpoint
+of \(\ell\) using the EXACT slope
+\[
+           q=\alpha_L\rho-\frac12+\frac34u^2.
+\]
+This yields a certified lower bound for \(\Delta\), whether \(q\)
+is positive, negative or zero. In (R3), use
+\(\kappa_U=\alpha_U\rho\),
+\(\theta_U=\alpha_U(1-\rho)\), \(\ell_U\), \((\log B)_U\),
+and upper bounds for \(\beta\) and \(1/\sqrt2\).
+All their coefficients are nonnegative; \(b_0-b_1\) is an exact
+nonnegative parameter. Compute \(\beta_U=3-2s_L\) and
+\((1/\sqrt2)_U=1/s_L\) from a certified positive
+lower bound \(s_L\le\sqrt2\).
+
+The 128-term zeta enclosure uses integral tails on both sides:
+\[
+ \sum_{n=1}^{128}\frac1{n^2}+\frac1{129}
+ <\zeta(2)<
+ \sum_{n=1}^{128}\frac1{n^2}+\frac1{128}.
+\]
+Invert endpoints in the opposite order for \(\alpha\).
+For logarithms the positive atanh series with a bounded positive
+remainder gives both endpoints after binary range reduction.
+The retained rational upper centered value is
+\(-\Delta_L+\min(\mathcal E_{\rm coarse,U},
+\mathcal E_{\rm parameter,U})\).
+Its sign is an analytical certificate, not a measured finite mean.
+A nonnegative upper value is NEEDS_FINITE, never a counterexample.
+All rows of the declared analytical domain are retained in this calculation.
+
+## 7. Additional square-endpoint refinement
+
+At \(M=B^2\), the same proof admits a stronger inequality
+\[
+ \mu(B^2)\le-\Delta+
+ \mathcal E(B)-\frac{2\ell\kappa}{B}
+ -\frac{\kappa+2(b_0-b_1)+\log B}{B^2}.                  \tag{R18}
+\]
+
+
+To prove it, the exact integer endpoint gives \(k=B\), so the plateau
+bound in the parameterized-balance note P9 loses its unnecessary \(4\kappa/B\) term.
+After multiplying by \(\ell/2\), the error decreases by
+\(2\ell\kappa/B\). Moreover
+\[
+ \int_1^B\lfloor x\rfloor^2\,\frac{dx}{x}
+ =\sum_{t=1}^{B-1}t^2\log(1+1/t)
+ \ge\sum_{t=1}^{B-1}(t-1/2)=\frac{(B-1)^2}{2}.
+\]
+Compared with the parameterized-balance note's \(B^2/2-B\), this contributes \(\kappa/B^2\)
+to the central credit. Integration of the primitive error preserves
+the previously omitted favorable \(2(b_0-b_1)/B^2\). Finally
+the central zero residue contributes \((\log B)/B^2\).
+The collision and far-cover bounds need no alteration. All four
+gains therefore hold simultaneously, proving (R18).
+
+An outward upper enclosure subtracts these positive gains using
+\(\ell_L,\kappa_L=\alpha_L\rho,(\log B)_L\).
+If the coarse error is used, its paired primitive parameters are
+\((b_0,b_1)=(4,3)\); if the parameter error is used, its own
+\(b_0-b_1\) must be used. Do not subtract the larger gain of one
+parameterization from an error justified by another.

@@ -1,0 +1,81 @@
+{
+  "active_by_branch": [
+    {
+      "branch": "p2",
+      "count": 2996,
+      "mass": 122647526,
+      "max_M": 147328,
+      "min_M": 44,
+      "radical_count": 650
+    },
+    {
+      "branch": "p3",
+      "count": 3453,
+      "mass": 315100167,
+      "max_M": 261819,
+      "min_M": 63,
+      "radical_count": 1401
+    },
+    {
+      "branch": "p_ge5",
+      "count": 4933,
+      "mass": 771441501,
+      "max_M": 359917,
+      "min_M": 175,
+      "radical_count": 3663
+    }
+  ],
+  "factor_output": "inventory_factor_normal1.json",
+  "factor_sha256": "2b976d7a508b0d73ca7eea423623ae22d47f21ff97351bc419052a3e0096fb87",
+  "general_N1_closed": false,
+  "generator_output": "inventory_generate_normal1.json",
+  "generator_sha256": "a93f5175e080376c010182dc211314725dcb019ff09a102b7a2b28fc8326bfa5",
+  "normalized_full_list_fields": [
+    "all_rows",
+    "retained_rows",
+    "optional_r27_qualifying_retained_rows",
+    "supplemental_ratio_qualifying_retained_rows",
+    "active_rows"
+  ],
+  "scientific_heights_CDFs_or_signs_evaluated": false,
+  "scientific_means_evaluated": false,
+  "status": "R36_TWO_METHOD_DOMAIN_PASS",
+  "summaries": {
+    "active_rows": {
+      "count": 11382,
+      "mass": 1209189194,
+      "max_M": 359917,
+      "min_M": 44,
+      "radical_count": 5714
+    },
+    "all_rows": {
+      "count": 110922,
+      "mass": 19229433065,
+      "max_M": 359999,
+      "min_M": 6,
+      "radical_count": 79052
+    },
+    "optional_r27_qualifying_retained_rows": {
+      "count": 5361,
+      "mass": 642982002,
+      "max_M": 262107,
+      "min_M": 24028,
+      "radical_count": 4689
+    },
+    "retained_rows": {
+      "count": 19239,
+      "mass": 2142249651,
+      "max_M": 359917,
+      "min_M": 44,
+      "radical_count": 11185
+    },
+    "supplemental_ratio_qualifying_retained_rows": {
+      "count": 7857,
+      "mass": 933060457,
+      "max_M": 359725,
+      "min_M": 19612,
+      "radical_count": 5762
+    }
+  },
+  "supplemental_import": "R36 strict225/1300/400 corollary from attributed R27 A7\u2013A12, independently reviewed before runs."
+}

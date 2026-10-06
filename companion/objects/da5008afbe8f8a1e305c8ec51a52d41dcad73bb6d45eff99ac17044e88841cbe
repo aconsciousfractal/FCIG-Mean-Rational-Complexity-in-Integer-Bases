@@ -1,0 +1,154 @@
+"""Distinct R38 metadata checker: closed identities, no producer imports."""
+import hashlib
+import json
+from math import gcd, isqrt
+from pathlib import Path
+import sys
+OUT = Path(__file__).parent
+ROOT = OUT.parents[1]
+INPUT = 'results/batch_37/remaining_work_normal1.json'
+INPUT_SHA = '540ef3eed51deccca38f414098d49aa881200a9d7f778d143f28d3bbb6a038e9'
+ANALYTIC = 'results/batch_37/ANALYTIC_N1.json'
+ANALYTIC_SHA = '46d41a4a21778b864b7d821117a4633db26cb6cbedd93faa623dcb4e266008c9'
+SOURCE_PINS = {'results/batch_37/remaining_work.py': '9736ec67f0f3e8787eb854ac7194613d90a24b3e7a88a99b8185529d7d7ecf41', 'results/batch_36/resolve_work.py': 'afefc2df5fab87298133f4f5e0d4649f42862505b5d588c1dc2dd9817c39ed1b', 'results/batch_35/verify_large.py': '13b44f61425cc6b3d978909a3b2b61be9a71cc63c2f1c9a08ecf5bda8d7bccbb'}
+SYNTHETIC = ((12, 2, 3, 2, 1), (18, 2, 3, 1, 2), (45, 3, 5, 2, 1), (75, 3, 5, 1, 2))
+
+def need(ok, message):
+    if not ok:
+        raise RuntimeError(message)
+
+def equal(actual, expected, message):
+    """Strict structural equality: bool/float must not impersonate integers."""
+    need(type(actual) is type(expected), message + ': type')
+    if isinstance(expected, dict):
+        need(actual.keys() == expected.keys(), message + ': keys')
+        for key, value in expected.items():
+            equal(actual[key], value, message + '/' + str(key))
+    elif isinstance(expected, list):
+        need(len(actual) == len(expected), message + ': length')
+        for index, value in enumerate(expected):
+            equal(actual[index], value, message + '/' + str(index))
+    else:
+        need(actual == expected, message + ': value')
+
+def pinned(path, digest):
+    raw = path.read_bytes()
+    need(hashlib.sha256(raw).hexdigest() == digest, 'input pin ' + path.name)
+    return json.loads(raw)
+
+def scalar_cost(profile, inherited):
+    M, p, q, a, b = profile
+    need(all((type(value) is int for value in profile)), 'profile exact integers')
+    need(1 < p < q and a > 0 and (b > 0) and (M == p ** a * q ** b), 'original modulus and exponents')
+    need(gcd(a, b) == 1 and (a, b) != (1, 1), 'complete retained valuation scope')
+    k = isqrt(M)
+    need(M >= 6 and k >= 2, 'central half scope')
+    tau = (a + 1) * (b + 1)
+    proper = tau - 1
+    references = 4 * a * b + 2 * a + 2 * b
+    supported = (tau + int(k * k == M)) // 2 - 1
+    visits = inherited['large_Farey_visits_exact']
+    need(type(visits) is int and visits > 0 and (visits % 2 == 1), 'inherited Farey count/parity; not recomputed')
+    half = (visits + 1) // 2
+    equal(inherited['k'], k, 'inherited k')
+    equal(inherited['proper_strata'], proper, 'inherited proper cells')
+    equal(inherited['stratum_terms_per_interval'], references, 'inherited IE terms')
+    equal(inherited['large_interval_terms_bound'], visits * references, 'inherited IE bound')
+    result = {'divisor_grid_cells_exact': tau, 'proper_strata_output_exact': proper, 'supported_divisor_queries_per_component_exact': supported, 'potentially_nonzero_strata_exact': supported + 1, 'forced_zero_strata_exact': proper - supported - 1, 'full_Farey_visits_exact': visits, 'half_Farey_emissions_exact': half, 'half_stopping_probe_bound': 1, 'half_candidate_inspections_bound': half + 1, 'half_mark_gcd_tests_bound': half, 'half_Farey_recurrence_floor_divisions_bound': half, 'half_endpoint_floor_divisions_bound': half * 2, 'half_nonempty_intervals_bound': half, 'half_merged_components_bound': half, 'old_interval_terms_bound': visits * references, 'old_class_floor_divisions_bound': visits * references * 2, 'full_shared_divisor_queries_bound': visits * (tau - 2), 'full_shared_class_floor_divisions_bound': visits * (tau - 2) * 2, 'full_support_divisor_queries_bound': visits * supported, 'full_support_class_floor_divisions_bound': visits * supported * 2, 'half_support_divisor_queries_bound': half * supported, 'half_support_class_floor_divisions_bound': half * supported * 2, 'half_principal_floor_divisions_bound': half * (3 + 2 * supported), 'half_divisibility_accumulator_updates_bound': half * supported, 'half_divisibility_differences_bound': half * supported, 'half_interval_mass_additions_bound': half, 'reconstruction_signed_references_bound': references, 'reconstruction_additions_subtractions_bound': references - proper, 'full_stratum_doublings_bound': supported + 1, 'divisor_accumulators_exact': supported + 1}
+    need(result['half_support_class_floor_divisions_bound'] <= result['full_support_class_floor_divisions_bound'] <= result['full_shared_class_floor_divisions_bound'] <= result['old_class_floor_divisions_bound'], 'floor compression inequalities')
+    return result
+
+def sum_fields(rows):
+    names = rows[0].keys()
+    need(all((row.keys() == names for row in rows)), 'counter key conservation')
+    return {name: sum((row[name] for row in rows)) for name in names}
+
+def distinct_local_policy(marks):
+    records = []
+    for p, q in marks:
+        for present, missing in ((p, q), (q, p)):
+            exponent = next((e for e in range(1, (2 * missing).bit_length() + 1) if present ** e > 2 * missing))
+            child = present ** exponent
+            need(child > 2 * missing and child // present <= 2 * missing, 'minimal pure-child threshold')
+            signed = child - child // present
+            records.append(dict(p=p, q=q, kind='pure', present=present, missing=missing, exponent=exponent, child=child, original_modulus=missing * child, signed_types_exact=signed, step_tests_bound=2 * signed + 3))
+        signed = p * q - p - q + 1
+        records.append(dict(p=p, q=q, kind='mixed', child=p * q, original_modulus=p * q, signed_types_exact=signed, step_tests_bound=2 * signed + 3))
+    signed = sum((row['signed_types_exact'] for row in records))
+    steps = 2 * signed + 3 * len(records)
+    m2 = len([pair for pair in marks if pair[0] == 2])
+    totals = dict(distinct_radicals=len(marks), physical_curves_exact=3 * len(marks), signed_types_excluding_m2_exact=signed, m2_singletons_exact=m2, signed_types_including_m2_exact=signed + m2, step_tests_excluding_m2_bound=steps, m2_singleton_step_tests_bound=3 * m2, step_tests_including_m2_bound=steps + 3 * m2, marginal_comparisons_bound=2 * steps + 6 * m2)
+    return dict(policy='ALL_RETAINED_RADICALS_MINIMAL_PURE_CHILD_AND_MIXED', physical_witnesses_evaluated=False, profiles=records, totals=totals)
+
+def distinct_synthetic_policy():
+    rows = []
+    for M, p, q, a, b in SYNTHETIC:
+        k = isqrt(M)
+        tau = (a + 1) * (b + 1)
+        proper = tau - 1
+        references = 4 * a * b + 2 * a + 2 * b
+        supported = (tau + int(k * k == M)) // 2 - 1
+        intervals = M * (M + 1) // 2
+        short = k * (k + 1) // 2
+        rows.append(dict(M=M, p=p, q=q, a=a, b=b, k=k, full_interval_cases_exact=intervals, full_direct_gcd_membership_visits_exact=M * (M + 1) * (M + 2) // 6, full_lattice_floor_divisions_bound=2 * tau * intervals, original_IE_floor_divisions_bound=2 * references * intervals, full_stratum_comparisons_exact=proper * intervals, support_interval_cases_exact=short, support_direct_gcd_membership_visits_exact=k * (k + 1) * (k + 2) // 6, support_floor_divisions_bound=2 * supported * short, support_stratum_comparisons_exact=proper * short))
+    cost_rows = [{name: value for name, value in row.items() if name.endswith(('_exact', '_bound'))} for row in rows]
+    return dict(profiles=[list(profile) for profile in SYNTHETIC], details=rows, totals=sum_fields(cost_rows), arithmetic_panel_executed=False, original_defining_CDFs_evaluated=False, scope='Prospective finite-difference/IE/direct-gcd arithmetic tests, not witness tests.')
+
+def main():
+    need(len(sys.argv) == 2 and len(sys.argv[1]) == 64, 'exact prospective resolver payload SHA256 argument')
+    data = pinned(ROOT / INPUT, INPUT_SHA)
+    analytical = pinned(ROOT / ANALYTIC, ANALYTIC_SHA)
+    raw = (OUT / 'resolve_cost_normal1.json').read_bytes()
+    need(hashlib.sha256(raw).hexdigest() == sys.argv[1], 'resolver output byte pin')
+    result = json.loads(raw)
+    for name, pin in SOURCE_PINS.items():
+        need(hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == pin, 'historical source byte pin ' + name)
+    equal(result['historical_source_pins'], SOURCE_PINS, 'historical source pins')
+    equal(result['input_path'], INPUT, 'original input path')
+    equal(result['input_sha256'], INPUT_SHA, 'original input digest')
+    equal(data['analytic_payload_sha256'], ANALYTIC_SHA, 'retained source chain')
+    equal(data['status'], 'RETAINED_COMPLEMENT_COSTS_ONLY', 'input status')
+    equal(result['schema'], 'p72-r38-compressed-cost-v1', 'cost schema')
+    equal(result['status'], 'WORK_ONLY_COMPRESSION_COSTED_NOT_MEAN_CERTIFIED', 'cost status')
+    equal(result['algorithm'], 'HALF_FAREY_POSITIVE_UNION_SUPPORT_DIVISIBILITY_GLOBAL_INVERSION', 'accepted future algorithm')
+    profiles = analytical['remaining_profiles']
+    equal(data['remaining_profiles'], profiles, 'full analytical complement source order')
+    equal(result['remaining_profiles'], profiles, 'full prospective output order')
+    need(len(profiles) == len(data['details']) == len(result['details']) == 4410, 'complete 4410 domain; no zip truncation')
+    need(all((type(row) is list and len(row) == 5 for row in profiles)), 'profile shape')
+    need(len({row[0] for row in profiles}) == 4410, 'no duplicate original modulus')
+    details = []
+    for index, profile in enumerate(profiles):
+        baseline = data['details'][index]
+        equal([baseline[key] for key in ('M', 'p', 'q', 'a', 'b')], profile, 'baseline original model/order')
+        expected = dict(profile=profile, baseline=baseline, compression=scalar_cost(profile, baseline))
+        equal(result['details'][index], expected, 'complete metadata row ' + str(index))
+        details.append(expected)
+    inherited = {key: sum((row['baseline'][key] for row in details)) for key in data['totals']}
+    equal(inherited, data['totals'], 'retained baseline sum')
+    equal(result['inherited_totals'], inherited, 'all prospective inherited totals')
+    equal(inherited['large_interval_terms_bound'], 586418464, 'inherited interval cost')
+    equal(data['large_interval_floor_divisions_bound'], 1172836928, 'inherited floor cost')
+    compression = sum_fields([row['compression'] for row in details])
+    equal(result['compression_totals'], compression, 'all new aggregate counters')
+    mass = sum((row[0] for row in profiles))
+    equal(mass, 95870797, 'unvisited input mass')
+    equal(result['state_mass_not_visited'], mass, 'unvisited output mass')
+    equal(result['remaining_moduli'], 4410, 'full output count')
+    marks = sorted(set(((row[1], row[2]) for row in profiles)))
+    equal(len(marks), 2272, 'complete retained radicals')
+    equal(result['distinct_radicals'], len(marks), 'output radicals')
+    branches = []
+    for label in ('p2', 'p3', 'p_ge5'):
+        subset = [row for row in details if ('p2' if row['profile'][1] == 2 else 'p3' if row['profile'][1] == 3 else 'p_ge5') == label]
+        branches.append(dict(branch=label, count=len(subset), mass=sum((row['profile'][0] for row in subset)), compression_totals=sum_fields([row['compression'] for row in subset])))
+    equal([{key: row[key] for key in ('branch', 'count', 'mass')} for row in branches], data['active_by_branch'], 'branch conservation')
+    equal(result['active_by_branch'], branches, 'all branch counts and counters')
+    equal(result['all_mark_local_policy'], distinct_local_policy(marks), 'complete distinct all-mark metadata recost')
+    equal(result['synthetic_arithmetic_policy'], distinct_synthetic_policy(), 'complete prospective synthetic arithmetic counters')
+    for key in ('minima_CDFs_or_means_evaluated', 'actual_merged_components_observed', 'historical_scientific_programs_imported_or_executed', 'new_calendars_or_Farey_streams_generated'):
+        equal(result[key], False, 'scope flag ' + key)
+    output = dict(status='R38_DISTINCT_CLOSED_IDENTITY_METADATA_PASS', resolver_payload_sha256=sys.argv[1], retained_work_sha256=INPUT_SHA, analytical_complement_sha256=ANALYTIC_SHA, profiles_checked=4410, radicals_checked=2272, state_mass_not_visited=mass, per_profile_compression_counters_checked=len(compression) * len(details), compression_totals_checked=len(compression), branches_checked=3, local_policy_profiles_checked=len(result['all_mark_local_policy']['profiles']), synthetic_arithmetic_profiles_checked=len(SYNTHETIC), J_verified_by_closed_divisor_pairing=True, IE_verified_by_closed_exponent_identity=True, local_type_counts_verified_by_totient_identities=True, inherited_Farey_totients_or_calendars_recomputed=False, producer_imported=False, divisor_grids_enumerated=False, Farey_residue_witness_or_CDF_loops_executed=False, new_heights_means_or_signs_evaluated=False, scope='Distinct prospective cost metadata verification; no numerical central audit or mean certificate.')
+    sys.stdout.write(json.dumps(output, sort_keys=True, indent=2) + '\n')
+if __name__ == '__main__':
+    main()

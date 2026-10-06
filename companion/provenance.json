@@ -1,0 +1,1954 @@
+{
+  "entries": [
+    {
+      "batch": null,
+      "bytes": 67268,
+      "kind": "retained_data",
+      "locator": "data/prime_power_reference/prime_height_panel.json",
+      "origin_locator": "external/P72_G3_PRIME_BRIDGE_20261004/API_RETICOLI_20261004/results/prime_height_panel.json",
+      "original_bytes": 67268,
+      "original_sha256": "05a9793305c4f60537407c64ad35087dc21d8251903a206c6ac7eded1a938961",
+      "sha256": "05a9793305c4f60537407c64ad35087dc21d8251903a206c6ac7eded1a938961",
+      "storage": "objects/05a9793305c4f60537407c64ad35087dc21d8251903a206c6ac7eded1a938961.gz",
+      "stored_bytes": 5409,
+      "stored_sha256": "fb4f82f1f4081d86d67aec09828c260a935803da2a0419963439fe7340191dfc",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 24,
+      "bytes": 3152,
+      "kind": "source",
+      "locator": "reports/batch_24/certify_counterexample.py",
+      "origin_locator": "reports/P72_R24_PRIME_POWER_MEAN_RED_TEAM_20261004/certify_counterexample.py",
+      "original_bytes": 3130,
+      "original_sha256": "dcc255c7460b83c4028bb8f86f6df9d955dbd5addf53758a5ffe5c33544a5bd2",
+      "sha256": "1539a5bc9e9607025c5ad83a8bc75439b2b1033885a0de83253a747313539703",
+      "storage": "objects/1539a5bc9e9607025c5ad83a8bc75439b2b1033885a0de83253a747313539703",
+      "stored_bytes": 3152,
+      "stored_sha256": "1539a5bc9e9607025c5ad83a8bc75439b2b1033885a0de83253a747313539703",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 24,
+      "bytes": 1612,
+      "kind": "retained_data",
+      "locator": "reports/batch_24/counterexample_interval_normal.json",
+      "origin_locator": "reports/P72_R24_PRIME_POWER_MEAN_RED_TEAM_20261004/counterexample_interval_normal.json",
+      "original_bytes": 1612,
+      "original_sha256": "fdda94856231642abdfd59e6855e131f1a7f751c0c765a3313ef289900615547",
+      "sha256": "fdda94856231642abdfd59e6855e131f1a7f751c0c765a3313ef289900615547",
+      "storage": "objects/fdda94856231642abdfd59e6855e131f1a7f751c0c765a3313ef289900615547",
+      "stored_bytes": 1612,
+      "stored_sha256": "fdda94856231642abdfd59e6855e131f1a7f751c0c765a3313ef289900615547",
+      "transformations": []
+    },
+    {
+      "batch": 24,
+      "bytes": 1612,
+      "kind": "retained_data",
+      "locator": "reports/batch_24/counterexample_interval_O.json",
+      "origin_locator": "reports/P72_R24_PRIME_POWER_MEAN_RED_TEAM_20261004/counterexample_interval_O.json",
+      "original_bytes": 1612,
+      "original_sha256": "fdda94856231642abdfd59e6855e131f1a7f751c0c765a3313ef289900615547",
+      "sha256": "fdda94856231642abdfd59e6855e131f1a7f751c0c765a3313ef289900615547",
+      "storage": "objects/fdda94856231642abdfd59e6855e131f1a7f751c0c765a3313ef289900615547",
+      "stored_bytes": 1612,
+      "stored_sha256": "fdda94856231642abdfd59e6855e131f1a7f751c0c765a3313ef289900615547",
+      "transformations": []
+    },
+    {
+      "batch": 24,
+      "bytes": 125904,
+      "kind": "retained_data",
+      "locator": "reports/batch_24/mixed_normal.json",
+      "origin_locator": "reports/P72_R24_PRIME_POWER_MEAN_RED_TEAM_20261004/mixed_normal.json",
+      "original_bytes": 125904,
+      "original_sha256": "c267e481f1b71bcef1b0bbe051d4e1fceb54f4ff146b88db664536f492a2e3c9",
+      "sha256": "c267e481f1b71bcef1b0bbe051d4e1fceb54f4ff146b88db664536f492a2e3c9",
+      "storage": "objects/c267e481f1b71bcef1b0bbe051d4e1fceb54f4ff146b88db664536f492a2e3c9.gz",
+      "stored_bytes": 9191,
+      "stored_sha256": "4f949a188eb52fdba530ba11766e2b5a8cdcd1b81b26fab6aefc452bdf6775e9",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 27,
+      "bytes": 18610,
+      "kind": "proof",
+      "locator": "reports/batch_27/PARAMETERIZED_MEAN_BALANCE.md",
+      "origin_locator": "reports/P72_R27_TWO_PRIME_FINITE_BALANCE_20261004/PARAMETERIZED_MEAN_BALANCE.md",
+      "original_bytes": 23099,
+      "original_sha256": "ffc4886b5d5e8ad120e6cfeaf9bf745d14af527cc70a23101994ce5e0adafe65",
+      "sha256": "a172bdcdc005cdb84c06c8d47353b96df3fd0a57d5cb0f98cff61c7a5f2d7d62",
+      "storage": "objects/a172bdcdc005cdb84c06c8d47353b96df3fd0a57d5cb0f98cff61c7a5f2d7d62",
+      "stored_bytes": 18610,
+      "stored_sha256": "a172bdcdc005cdb84c06c8d47353b96df3fd0a57d5cb0f98cff61c7a5f2d7d62",
+      "transformations": [
+        "retain mathematical exposition; remove control/receipt/review prose",
+        "public relative locator routing and transitive digest relinking where present",
+        "public proof-note navigation curation; mathematical expressions retained"
+      ]
+    },
+    {
+      "batch": 33,
+      "bytes": 2327750,
+      "kind": "retained_data",
+      "locator": "reports/batch_33/REDUCED_FRONTIER_METADATA.json",
+      "origin_locator": "reports/P72_R33_UNIFORM_LENGTH_THREE_CERTIFICATE_20261005/REDUCED_FRONTIER_METADATA.json",
+      "original_bytes": 2327750,
+      "original_sha256": "19842472214539f5a3d59031b59bc1cb55c0ad0f7540485145a4e8c2152c3442",
+      "sha256": "19842472214539f5a3d59031b59bc1cb55c0ad0f7540485145a4e8c2152c3442",
+      "storage": "objects/19842472214539f5a3d59031b59bc1cb55c0ad0f7540485145a4e8c2152c3442.gz",
+      "stored_bytes": 246329,
+      "stored_sha256": "f85075b7260174efa76b60be97047256a898b98acd1a5fab2c46d29d900d547b",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 34,
+      "bytes": 12883,
+      "kind": "proof",
+      "locator": "reports/batch_34/ANALYTIC_REDUCTION.md",
+      "origin_locator": "reports/P72_R34_LENGTH_TWO_ANALYTIC_REDUCTION_20261005/ANALYTIC_REDUCTION.md",
+      "original_bytes": 15080,
+      "original_sha256": "65fe62987abe871bbb04545ae63ef436bb3124192cf56b376a5e1dc3ccb5ca07",
+      "sha256": "dc676335e332b87949f968c11db2de16904850d409dc175ca3c02b0e218bf6e8",
+      "storage": "objects/dc676335e332b87949f968c11db2de16904850d409dc175ca3c02b0e218bf6e8",
+      "stored_bytes": 12883,
+      "stored_sha256": "dc676335e332b87949f968c11db2de16904850d409dc175ca3c02b0e218bf6e8",
+      "transformations": [
+        "retain mathematical exposition; remove control/receipt/review prose",
+        "public relative locator routing and transitive digest relinking where present",
+        "public proof-note navigation curation; mathematical expressions retained"
+      ]
+    },
+    {
+      "batch": 34,
+      "bytes": 7855,
+      "kind": "retained_data",
+      "locator": "reports/batch_34/REDUCED_FRONTIER_METADATA.json",
+      "origin_locator": "reports/P72_R34_LENGTH_TWO_ANALYTIC_REDUCTION_20261005/REDUCED_FRONTIER_METADATA.json",
+      "original_bytes": 7855,
+      "original_sha256": "8bb82cc76228de942486e5e4de446a6bcae5eb00e636259c2a11e6ca450ed460",
+      "sha256": "8bb82cc76228de942486e5e4de446a6bcae5eb00e636259c2a11e6ca450ed460",
+      "storage": "objects/8bb82cc76228de942486e5e4de446a6bcae5eb00e636259c2a11e6ca450ed460",
+      "stored_bytes": 7855,
+      "stored_sha256": "8bb82cc76228de942486e5e4de446a6bcae5eb00e636259c2a11e6ca450ed460",
+      "transformations": []
+    },
+    {
+      "batch": 36,
+      "bytes": 7643,
+      "kind": "proof",
+      "locator": "reports/batch_36/EXTREMA_COMPRESSION.md",
+      "origin_locator": "reports/P72_R36_LENGTH_ONE_FRONTIER_AND_COSTS_20261005/EXTREMA_COMPRESSION.md",
+      "original_bytes": 9168,
+      "original_sha256": "736e11777c6276b8e6b27f70c3c27783c2847ef453b16f14ce1ce7e995520d9c",
+      "sha256": "04c126e1b3211fe096e728c217a5255890205d2491b15e6a4565a3c5dc72e2c0",
+      "storage": "objects/04c126e1b3211fe096e728c217a5255890205d2491b15e6a4565a3c5dc72e2c0",
+      "stored_bytes": 7643,
+      "stored_sha256": "04c126e1b3211fe096e728c217a5255890205d2491b15e6a4565a3c5dc72e2c0",
+      "transformations": [
+        "retain mathematical exposition; remove control/receipt/review prose",
+        "public relative locator routing and transitive digest relinking where present",
+        "public proof-note navigation curation; mathematical expressions retained"
+      ]
+    },
+    {
+      "batch": 36,
+      "bytes": 3098,
+      "kind": "proof",
+      "locator": "reports/batch_36/NONSQUARE_ENDPOINT_REFINEMENT.md",
+      "origin_locator": "reports/P72_R36_LENGTH_ONE_FRONTIER_AND_COSTS_20261005/NONSQUARE_ENDPOINT_REFINEMENT.md",
+      "original_bytes": 3177,
+      "original_sha256": "50b53fff54accae4359df456810f7c19b7edb0bdc962daebee44581ead91f0e9",
+      "sha256": "61e98ac5467b1522c27926e278c2f4553a6fdb0718de232d3672f57debe4acb7",
+      "storage": "objects/61e98ac5467b1522c27926e278c2f4553a6fdb0718de232d3672f57debe4acb7",
+      "stored_bytes": 3098,
+      "stored_sha256": "61e98ac5467b1522c27926e278c2f4553a6fdb0718de232d3672f57debe4acb7",
+      "transformations": [
+        "retain mathematical exposition; remove control/receipt/review prose",
+        "public relative locator routing and transitive digest relinking where present",
+        "public proof-note navigation curation; mathematical expressions retained"
+      ]
+    },
+    {
+      "batch": 22,
+      "bytes": 38555,
+      "kind": "retained_data",
+      "locator": "results/batch_22/independent_panel.json",
+      "origin_locator": "results/P72_R22_G3_PRIME_BASE_BRANCH_20261004/independent_panel.json",
+      "original_bytes": 38555,
+      "original_sha256": "4db02ef556d58e019a7b2c96f96508b6454967f7e3de0427bad3b7d42f4e9f02",
+      "sha256": "4db02ef556d58e019a7b2c96f96508b6454967f7e3de0427bad3b7d42f4e9f02",
+      "storage": "objects/4db02ef556d58e019a7b2c96f96508b6454967f7e3de0427bad3b7d42f4e9f02",
+      "stored_bytes": 38555,
+      "stored_sha256": "4db02ef556d58e019a7b2c96f96508b6454967f7e3de0427bad3b7d42f4e9f02",
+      "transformations": []
+    },
+    {
+      "batch": 22,
+      "bytes": 3133,
+      "kind": "source",
+      "locator": "results/batch_22/verify_prime_cdf.py",
+      "origin_locator": "results/P72_R22_G3_PRIME_BASE_BRANCH_20261004/verify_prime_cdf.py",
+      "original_bytes": 2959,
+      "original_sha256": "6fd56911a73d9ed40f0cc33739f261838d14ab95d4e9ec5eaa13079e02f39334",
+      "sha256": "6b915a08afefcef0508b153834a6ac02d57a615ff69064e32474bb6ad1081482",
+      "storage": "objects/6b915a08afefcef0508b153834a6ac02d57a615ff69064e32474bb6ad1081482",
+      "stored_bytes": 3133,
+      "stored_sha256": "6b915a08afefcef0508b153834a6ac02d57a615ff69064e32474bb6ad1081482",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 23,
+      "bytes": 22798,
+      "kind": "retained_data",
+      "locator": "results/batch_23/FINITE_BRIDGE.json",
+      "origin_locator": "results/P72_R23_TERNARY_EXACT_MEAN_ATTACK_20261004/FINITE_BRIDGE.json",
+      "original_bytes": 22798,
+      "original_sha256": "0f61d6d1eab0a101b73f09b46457d1e3abcb9dbbffb8ceac28ca83e873597a38",
+      "sha256": "deefce97f89addf345a332e9f39dacbd579405a7e50bdc4762d063967f587dba",
+      "storage": "objects/deefce97f89addf345a332e9f39dacbd579405a7e50bdc4762d063967f587dba",
+      "stored_bytes": 22798,
+      "stored_sha256": "deefce97f89addf345a332e9f39dacbd579405a7e50bdc4762d063967f587dba",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 23,
+      "bytes": 80506,
+      "kind": "retained_data",
+      "locator": "results/batch_23/GENERAL_PRIME_BRIDGE.json",
+      "origin_locator": "results/P72_R23_TERNARY_EXACT_MEAN_ATTACK_20261004/GENERAL_PRIME_BRIDGE.json",
+      "original_bytes": 80506,
+      "original_sha256": "625419f966d2f4d9e08a2521cf77f026cb44090a17f23e680b8d353c941e7a57",
+      "sha256": "825f031b9ae1e42b7724a1a81f2560dd3227a6fd4d4bff62c7b453f7f27e28d9",
+      "storage": "objects/825f031b9ae1e42b7724a1a81f2560dd3227a6fd4d4bff62c7b453f7f27e28d9.gz",
+      "stored_bytes": 6212,
+      "stored_sha256": "7f237047c5c608816e3dbe4356ae18b000729ac4078d7f5fea13cbf8e8d32a3f",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 23,
+      "bytes": 4294,
+      "kind": "source",
+      "locator": "results/batch_23/verify_finite_bridge.py",
+      "origin_locator": "results/P72_R23_TERNARY_EXACT_MEAN_ATTACK_20261004/verify_finite_bridge.py",
+      "original_bytes": 4549,
+      "original_sha256": "b859746ea091383c3b94dcc53d40431aebcc375934199eb215f964be3f313e65",
+      "sha256": "e3f3601d0addb0d54640c4fcf36cdc62c8794de8ff37a8c613b5c20b49f68382",
+      "storage": "objects/e3f3601d0addb0d54640c4fcf36cdc62c8794de8ff37a8c613b5c20b49f68382",
+      "stored_bytes": 4294,
+      "stored_sha256": "e3f3601d0addb0d54640c4fcf36cdc62c8794de8ff37a8c613b5c20b49f68382",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 23,
+      "bytes": 4233,
+      "kind": "source",
+      "locator": "results/batch_23/verify_general_prime_bridge.py",
+      "origin_locator": "results/P72_R23_TERNARY_EXACT_MEAN_ATTACK_20261004/verify_general_prime_bridge.py",
+      "original_bytes": 4516,
+      "original_sha256": "c342f777dc0bd51bebe70847e107b6980d8e83ee641887c1e52c1f5079547f9e",
+      "sha256": "ee879ee76539e4f0c10e69b81a098fe6a0c3e0cb28f3df9831ff2d0baa8c601f",
+      "storage": "objects/ee879ee76539e4f0c10e69b81a098fe6a0c3e0cb28f3df9831ff2d0baa8c601f",
+      "stored_bytes": 4233,
+      "stored_sha256": "ee879ee76539e4f0c10e69b81a098fe6a0c3e0cb28f3df9831ff2d0baa8c601f",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 25,
+      "bytes": 103184,
+      "kind": "retained_data",
+      "locator": "results/batch_25/MIXED_RESEARCH_PANEL.json",
+      "origin_locator": "results/P72_R25_MIXED_BASE_SHARP_BOUNDS_20261004/MIXED_RESEARCH_PANEL.json",
+      "original_bytes": 103184,
+      "original_sha256": "df02fe2299a3a603f609f711bc4b8456bf6ab3e59c6b7ac7e0f56e20869fcad8",
+      "sha256": "5e90dec5fced30478503e5de7430e36e2d1582359612f45195eba5bdd04686ef",
+      "storage": "objects/5e90dec5fced30478503e5de7430e36e2d1582359612f45195eba5bdd04686ef.gz",
+      "stored_bytes": 9018,
+      "stored_sha256": "266758381af379cf4b69ad9fe09257e27ba1db5e6f90c9cca429d9e0845687b3",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 25,
+      "bytes": 9028,
+      "kind": "source",
+      "locator": "results/batch_25/verify_mixed_research.py",
+      "origin_locator": "results/P72_R25_MIXED_BASE_SHARP_BOUNDS_20261004/verify_mixed_research.py",
+      "original_bytes": 8679,
+      "original_sha256": "e5c57591aecb750c8311fd00d1d9f0d54635ac1e61cb393a1b182878462cc53b",
+      "sha256": "1ad88d32b579fadcf55e4bacff9645f3b24a73e42b9d97d9de6c60912d0c6b1b",
+      "storage": "objects/1ad88d32b579fadcf55e4bacff9645f3b24a73e42b9d97d9de6c60912d0c6b1b",
+      "stored_bytes": 9028,
+      "stored_sha256": "1ad88d32b579fadcf55e4bacff9645f3b24a73e42b9d97d9de6c60912d0c6b1b",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 26,
+      "bytes": 689132,
+      "kind": "retained_data",
+      "locator": "results/batch_26/FINITE_BRIDGE.json",
+      "origin_locator": "results/P72_R26_BASE6_MEAN_BALANCE_20261004/FINITE_BRIDGE.json",
+      "original_bytes": 689132,
+      "original_sha256": "b6509f63e45cf7185c49bf3f3d7bff3fc5fcea4806c7620bd71748ded1c3df9c",
+      "sha256": "b6509f63e45cf7185c49bf3f3d7bff3fc5fcea4806c7620bd71748ded1c3df9c",
+      "storage": "objects/b6509f63e45cf7185c49bf3f3d7bff3fc5fcea4806c7620bd71748ded1c3df9c.gz",
+      "stored_bytes": 50883,
+      "stored_sha256": "d793994ec3d3cb852aca9b8c9264a3446ab29f47b89fc8c9042066b41433ba34",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 26,
+      "bytes": 11897,
+      "kind": "source",
+      "locator": "results/batch_26/verify_finite_bridge.py",
+      "origin_locator": "results/P72_R26_BASE6_MEAN_BALANCE_20261004/verify_finite_bridge.py",
+      "original_bytes": 12479,
+      "original_sha256": "525103df6dfab2505c748947295eccb166612f00f23dcbd22369c67959acfe3b",
+      "sha256": "39285339c04b921adae02a2dd81236a08879c6a86f9d88b281bd24d2cdbc6291",
+      "storage": "objects/39285339c04b921adae02a2dd81236a08879c6a86f9d88b281bd24d2cdbc6291",
+      "stored_bytes": 11897,
+      "stored_sha256": "39285339c04b921adae02a2dd81236a08879c6a86f9d88b281bd24d2cdbc6291",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 27,
+      "bytes": 2242278,
+      "kind": "retained_data",
+      "locator": "results/batch_27/SIXTH_LENGTH_BRIDGE.json",
+      "origin_locator": "results/P72_R27_TWO_PRIME_FINITE_BALANCE_20261004/SIXTH_LENGTH_BRIDGE.json",
+      "original_bytes": 2242278,
+      "original_sha256": "881647044759b2035183fcf295400676446ab2f7fc328de1b373af775b900018",
+      "sha256": "881647044759b2035183fcf295400676446ab2f7fc328de1b373af775b900018",
+      "storage": "objects/881647044759b2035183fcf295400676446ab2f7fc328de1b373af775b900018.gz",
+      "stored_bytes": 161448,
+      "stored_sha256": "6258e43f6fadfec3a0103b3d34f6851afa84564e44d8e1f04f21a649c4f841cf",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 27,
+      "bytes": 12882,
+      "kind": "source",
+      "locator": "results/batch_27/verify_sixth_length.py",
+      "origin_locator": "results/P72_R27_TWO_PRIME_FINITE_BALANCE_20261004/verify_sixth_length.py",
+      "original_bytes": 13458,
+      "original_sha256": "c9e348ddcaaaf9ddb2cc77d6c2b5decad213ad09a0ba306f88fb3425a38bd012",
+      "sha256": "3d6f6bd42722068146ec7587547362f8342f05cef18150702c62437a6245a96a",
+      "storage": "objects/3d6f6bd42722068146ec7587547362f8342f05cef18150702c62437a6245a96a",
+      "stored_bytes": 12882,
+      "stored_sha256": "3d6f6bd42722068146ec7587547362f8342f05cef18150702c62437a6245a96a",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 28,
+      "bytes": 4023253,
+      "kind": "retained_data",
+      "locator": "results/batch_28/SEMIPRIME_BRIDGE.json",
+      "origin_locator": "results/P72_R28_SHORT_MODULUS_VALUATION_BALANCE_20261004/SEMIPRIME_BRIDGE.json",
+      "original_bytes": 4023253,
+      "original_sha256": "d0b4ce1afe57b7ccbb2a9b38474562fd109527bc1b8e4b863075e3aed7620b7e",
+      "sha256": "d0b4ce1afe57b7ccbb2a9b38474562fd109527bc1b8e4b863075e3aed7620b7e",
+      "storage": "objects/d0b4ce1afe57b7ccbb2a9b38474562fd109527bc1b8e4b863075e3aed7620b7e.gz",
+      "stored_bytes": 474646,
+      "stored_sha256": "628e67f7f9a02285fcb68b66b1a8ee6c5ed4486064a9127f5ae3e7238af2c53b",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 28,
+      "bytes": 276977,
+      "kind": "retained_data",
+      "locator": "results/batch_28/SEMIPRIME_DOMAIN.json",
+      "origin_locator": "results/P72_R28_SHORT_MODULUS_VALUATION_BALANCE_20261004/SEMIPRIME_DOMAIN.json",
+      "original_bytes": 276977,
+      "original_sha256": "4ebe2d54855922280bb82631fa4f5137e735464d0573d00db820c9c422535797",
+      "sha256": "4ebe2d54855922280bb82631fa4f5137e735464d0573d00db820c9c422535797",
+      "storage": "objects/4ebe2d54855922280bb82631fa4f5137e735464d0573d00db820c9c422535797.gz",
+      "stored_bytes": 26903,
+      "stored_sha256": "cca66c562db63ed1018415f847301dfd5cd4a3394fc21c21f0b559ef7a91a6fe",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 28,
+      "bytes": 6670,
+      "kind": "source",
+      "locator": "results/batch_28/verify_semiprime.py",
+      "origin_locator": "results/P72_R28_SHORT_MODULUS_VALUATION_BALANCE_20261004/verify_semiprime.py",
+      "original_bytes": 6240,
+      "original_sha256": "68279c571767245993b30546a223df662ca08583fa96ddd2ee958d87d52a4e33",
+      "sha256": "cec3581770b2ccf29adee7e73bc443bfeaa5dfd5a1046a53175c711bb4a41fa9",
+      "storage": "objects/cec3581770b2ccf29adee7e73bc443bfeaa5dfd5a1046a53175c711bb4a41fa9",
+      "stored_bytes": 6670,
+      "stored_sha256": "cec3581770b2ccf29adee7e73bc443bfeaa5dfd5a1046a53175c711bb4a41fa9",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 29,
+      "bytes": 547,
+      "kind": "retained_data",
+      "locator": "results/batch_29/INDEPENDENT_AGGREGATE_CHECKS.json",
+      "origin_locator": "results/P72_R29_RADICAL6_AGGREGATE_CERTIFICATE_20261004/INDEPENDENT_AGGREGATE_CHECKS.json",
+      "original_bytes": 547,
+      "original_sha256": "0a54e1706af82033274d3ec6d3c9c0767172c2847a53547db359eace5ecbde3e",
+      "sha256": "0a54e1706af82033274d3ec6d3c9c0767172c2847a53547db359eace5ecbde3e",
+      "storage": "objects/0a54e1706af82033274d3ec6d3c9c0767172c2847a53547db359eace5ecbde3e",
+      "stored_bytes": 547,
+      "stored_sha256": "0a54e1706af82033274d3ec6d3c9c0767172c2847a53547db359eace5ecbde3e",
+      "transformations": []
+    },
+    {
+      "batch": 29,
+      "bytes": 30553991,
+      "kind": "retained_data",
+      "locator": "results/batch_29/RADICAL6_AGGREGATE.json",
+      "origin_locator": "results/P72_R29_RADICAL6_AGGREGATE_CERTIFICATE_20261004/RADICAL6_AGGREGATE.json",
+      "original_bytes": 30553991,
+      "original_sha256": "7a565b7b452e2a8a8df9d0715069d5c4a3a9b79c4062e81bbe261324cb3a1c19",
+      "sha256": "7a565b7b452e2a8a8df9d0715069d5c4a3a9b79c4062e81bbe261324cb3a1c19",
+      "storage": "objects/7a565b7b452e2a8a8df9d0715069d5c4a3a9b79c4062e81bbe261324cb3a1c19.gz",
+      "stored_bytes": 4722149,
+      "stored_sha256": "9f87d4052461ba0d9f6dfed945b51f691c8419cca81233dca7ba83abb3697f84",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 29,
+      "bytes": 3834394,
+      "kind": "retained_data",
+      "locator": "results/batch_29/RADICAL6_DOMAIN.json",
+      "origin_locator": "results/P72_R29_RADICAL6_AGGREGATE_CERTIFICATE_20261004/RADICAL6_DOMAIN.json",
+      "original_bytes": 3834394,
+      "original_sha256": "90df0ba69208516d817b4745a516c7c514e86bd49d964bdc6983a2f37d1f86f8",
+      "sha256": "90df0ba69208516d817b4745a516c7c514e86bd49d964bdc6983a2f37d1f86f8",
+      "storage": "objects/90df0ba69208516d817b4745a516c7c514e86bd49d964bdc6983a2f37d1f86f8.gz",
+      "stored_bytes": 566454,
+      "stored_sha256": "f7176ea0730b255d602bf4995dacadbb4578d6547fe47ba5982501ed20b3ee2d",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 29,
+      "bytes": 10770,
+      "kind": "source",
+      "locator": "results/batch_29/verify_aggregate.py",
+      "origin_locator": "results/P72_R29_RADICAL6_AGGREGATE_CERTIFICATE_20261004/verify_aggregate.py",
+      "original_bytes": 8224,
+      "original_sha256": "6a2c721fb533912210ad9d3415ca3a839736db4fcb64b465efc9b6d959e5454f",
+      "sha256": "2acd1169505646a62ac865e57a662d472a3025a08e3d19e9e41a38bde91a081f",
+      "storage": "objects/2acd1169505646a62ac865e57a662d472a3025a08e3d19e9e41a38bde91a081f",
+      "stored_bytes": 10770,
+      "stored_sha256": "2acd1169505646a62ac865e57a662d472a3025a08e3d19e9e41a38bde91a081f",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 29,
+      "bytes": 8368,
+      "kind": "source",
+      "locator": "results/batch_29/verify_retained.py",
+      "origin_locator": "results/P72_R29_RADICAL6_AGGREGATE_CERTIFICATE_20261004/verify_retained.py",
+      "original_bytes": 6721,
+      "original_sha256": "b9b118ca238810ac23b0e7244b376d1f3215a62428296996abaf3ba6c86756c0",
+      "sha256": "7d9c1f400f29dfce7cf635e67030b98f344d31ebf30a3da6d5530c31b834ed40",
+      "storage": "objects/7d9c1f400f29dfce7cf635e67030b98f344d31ebf30a3da6d5530c31b834ed40",
+      "stored_bytes": 8368,
+      "stored_sha256": "7d9c1f400f29dfce7cf635e67030b98f344d31ebf30a3da6d5530c31b834ed40",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 30,
+      "bytes": 545,
+      "kind": "retained_data",
+      "locator": "results/batch_30/INDEPENDENT_AGGREGATE_CHECKS.json",
+      "origin_locator": "results/P72_R30_RADICAL10_AGGREGATE_CERTIFICATE_20261004/INDEPENDENT_AGGREGATE_CHECKS.json",
+      "original_bytes": 545,
+      "original_sha256": "b032ba58a525d7408ce364dd0cb7edd9162fc9d14a3388625468f518d7c487e5",
+      "sha256": "b032ba58a525d7408ce364dd0cb7edd9162fc9d14a3388625468f518d7c487e5",
+      "storage": "objects/b032ba58a525d7408ce364dd0cb7edd9162fc9d14a3388625468f518d7c487e5",
+      "stored_bytes": 545,
+      "stored_sha256": "b032ba58a525d7408ce364dd0cb7edd9162fc9d14a3388625468f518d7c487e5",
+      "transformations": []
+    },
+    {
+      "batch": 30,
+      "bytes": 21008510,
+      "kind": "retained_data",
+      "locator": "results/batch_30/RADICAL10_AGGREGATE.json",
+      "origin_locator": "results/P72_R30_RADICAL10_AGGREGATE_CERTIFICATE_20261004/RADICAL10_AGGREGATE.json",
+      "original_bytes": 21008510,
+      "original_sha256": "defdabcdc91b8c5224dd25dfabcacd048bd5828ca48c2790410133041b6f5e30",
+      "sha256": "defdabcdc91b8c5224dd25dfabcacd048bd5828ca48c2790410133041b6f5e30",
+      "storage": "objects/defdabcdc91b8c5224dd25dfabcacd048bd5828ca48c2790410133041b6f5e30.gz",
+      "stored_bytes": 3265959,
+      "stored_sha256": "b9b366ed283292a65cf9311719d739a625efad6aa639c1a2d711fb8242da5631",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 30,
+      "bytes": 2553663,
+      "kind": "retained_data",
+      "locator": "results/batch_30/RADICAL10_DOMAIN.json",
+      "origin_locator": "results/P72_R30_RADICAL10_AGGREGATE_CERTIFICATE_20261004/RADICAL10_DOMAIN.json",
+      "original_bytes": 2553663,
+      "original_sha256": "9a5578457b9e17edbc32e0055f0fea9b8f5555ce888f6fb7dcf052ba202d838e",
+      "sha256": "9a5578457b9e17edbc32e0055f0fea9b8f5555ce888f6fb7dcf052ba202d838e",
+      "storage": "objects/9a5578457b9e17edbc32e0055f0fea9b8f5555ce888f6fb7dcf052ba202d838e.gz",
+      "stored_bytes": 375643,
+      "stored_sha256": "dd2145d5bb3589f8a308dbf15bb6d45d58b37086a4b41b9e421cdc598169784a",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 30,
+      "bytes": 10967,
+      "kind": "source",
+      "locator": "results/batch_30/verify_aggregate.py",
+      "origin_locator": "results/P72_R30_RADICAL10_AGGREGATE_CERTIFICATE_20261004/verify_aggregate.py",
+      "original_bytes": 8417,
+      "original_sha256": "5ff508af3783f9d06ccb249c09c38676c0dc59f49097e88c9efd5771e8e34eba",
+      "sha256": "bcf90a2f292faa57cf7b3f6fafc2c0877bd11e5d2809a978d068db8c541fd0b5",
+      "storage": "objects/bcf90a2f292faa57cf7b3f6fafc2c0877bd11e5d2809a978d068db8c541fd0b5",
+      "stored_bytes": 10967,
+      "stored_sha256": "bcf90a2f292faa57cf7b3f6fafc2c0877bd11e5d2809a978d068db8c541fd0b5",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 30,
+      "bytes": 8652,
+      "kind": "source",
+      "locator": "results/batch_30/verify_retained.py",
+      "origin_locator": "results/P72_R30_RADICAL10_AGGREGATE_CERTIFICATE_20261004/verify_retained.py",
+      "original_bytes": 6923,
+      "original_sha256": "e589946622a2b832305ccdd29c490f3f60992874b9f1bbb964cb856e7aed4323",
+      "sha256": "85ab07e0b4703f4b4c092dcf7acd8b73d54be3d1f18b41820d1bcefbe2b29bdd",
+      "storage": "objects/85ab07e0b4703f4b4c092dcf7acd8b73d54be3d1f18b41820d1bcefbe2b29bdd",
+      "stored_bytes": 8652,
+      "stored_sha256": "85ab07e0b4703f4b4c092dcf7acd8b73d54be3d1f18b41820d1bcefbe2b29bdd",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 31,
+      "bytes": 548,
+      "kind": "retained_data",
+      "locator": "results/batch_31/INDEPENDENT_AGGREGATE_CHECKS.json",
+      "origin_locator": "results/P72_R31_PARAMETRIC_TWO_PRIME_CERTIFICATE_20261005/INDEPENDENT_AGGREGATE_CHECKS.json",
+      "original_bytes": 548,
+      "original_sha256": "9907d22acc437d8fb2eceb2cb5351416e12460733bc7eaa6601bd497f578f7da",
+      "sha256": "9907d22acc437d8fb2eceb2cb5351416e12460733bc7eaa6601bd497f578f7da",
+      "storage": "objects/9907d22acc437d8fb2eceb2cb5351416e12460733bc7eaa6601bd497f578f7da",
+      "stored_bytes": 548,
+      "stored_sha256": "9907d22acc437d8fb2eceb2cb5351416e12460733bc7eaa6601bd497f578f7da",
+      "transformations": []
+    },
+    {
+      "batch": 31,
+      "bytes": 26256236,
+      "kind": "retained_data",
+      "locator": "results/batch_31/PARAMETRIC_AGGREGATE.json",
+      "origin_locator": "results/P72_R31_PARAMETRIC_TWO_PRIME_CERTIFICATE_20261005/PARAMETRIC_AGGREGATE.json",
+      "original_bytes": 26256236,
+      "original_sha256": "8be5618db8d174451f8b444b51e15c5db4d8c2ac3d5a1952285e3077980b6c71",
+      "sha256": "8be5618db8d174451f8b444b51e15c5db4d8c2ac3d5a1952285e3077980b6c71",
+      "storage": "objects/8be5618db8d174451f8b444b51e15c5db4d8c2ac3d5a1952285e3077980b6c71.gz",
+      "stored_bytes": 4064921,
+      "stored_sha256": "ddff46772b7507b1884ce099577c857e78832d4793a747d93c3f02ebd6eb97c3",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 31,
+      "bytes": 3203036,
+      "kind": "retained_data",
+      "locator": "results/batch_31/PARAMETRIC_DOMAIN.json",
+      "origin_locator": "results/P72_R31_PARAMETRIC_TWO_PRIME_CERTIFICATE_20261005/PARAMETRIC_DOMAIN.json",
+      "original_bytes": 3203036,
+      "original_sha256": "487a6b1c41bc293fc32deb8b765a68760a3956aa95fcc49e91789b86a56a39ef",
+      "sha256": "487a6b1c41bc293fc32deb8b765a68760a3956aa95fcc49e91789b86a56a39ef",
+      "storage": "objects/487a6b1c41bc293fc32deb8b765a68760a3956aa95fcc49e91789b86a56a39ef.gz",
+      "stored_bytes": 452007,
+      "stored_sha256": "8c79ddacd3618356a0a486b3dfab584614f37227302f7a7f3ab715b44f8e43f9",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 31,
+      "bytes": 12029,
+      "kind": "source",
+      "locator": "results/batch_31/verify_aggregate.py",
+      "origin_locator": "results/P72_R31_PARAMETRIC_TWO_PRIME_CERTIFICATE_20261005/verify_aggregate.py",
+      "original_bytes": 9240,
+      "original_sha256": "42e8686ab4a1a36f7ee05b055ebfc501f8eb8eab333a569dc749784daf8b0706",
+      "sha256": "762d49859fa519f6ed2fc3f0cf99bf1f77a6bb960d8151755fe4510c969cc7b2",
+      "storage": "objects/762d49859fa519f6ed2fc3f0cf99bf1f77a6bb960d8151755fe4510c969cc7b2",
+      "stored_bytes": 12029,
+      "stored_sha256": "762d49859fa519f6ed2fc3f0cf99bf1f77a6bb960d8151755fe4510c969cc7b2",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 31,
+      "bytes": 9905,
+      "kind": "source",
+      "locator": "results/batch_31/verify_retained.py",
+      "origin_locator": "results/P72_R31_PARAMETRIC_TWO_PRIME_CERTIFICATE_20261005/verify_retained.py",
+      "original_bytes": 7840,
+      "original_sha256": "b660d88470ad1e7b17f6f26cf40005f6e4a8b4d7f97a8ba922e29f8e764757b3",
+      "sha256": "0e951fa3f012910502aed8dc936ef6898483eaf9f7d9c2667a13dc77357c94b6",
+      "storage": "objects/0e951fa3f012910502aed8dc936ef6898483eaf9f7d9c2667a13dc77357c94b6",
+      "stored_bytes": 9905,
+      "stored_sha256": "0e951fa3f012910502aed8dc936ef6898483eaf9f7d9c2667a13dc77357c94b6",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 32,
+      "bytes": 541,
+      "kind": "retained_data",
+      "locator": "results/batch_32/INDEPENDENT_AGGREGATE_CHECKS.json",
+      "origin_locator": "results/P72_R32_UNIFORM_LENGTH_FOUR_CERTIFICATE_20261005/INDEPENDENT_AGGREGATE_CHECKS.json",
+      "original_bytes": 541,
+      "original_sha256": "5aed18dc35d2cfc5797bc170268935bb83f1a7127dccde0303012985bae2cfb4",
+      "sha256": "5aed18dc35d2cfc5797bc170268935bb83f1a7127dccde0303012985bae2cfb4",
+      "storage": "objects/5aed18dc35d2cfc5797bc170268935bb83f1a7127dccde0303012985bae2cfb4",
+      "stored_bytes": 541,
+      "stored_sha256": "5aed18dc35d2cfc5797bc170268935bb83f1a7127dccde0303012985bae2cfb4",
+      "transformations": []
+    },
+    {
+      "batch": 32,
+      "bytes": 53329,
+      "kind": "retained_data",
+      "locator": "results/batch_32/LARGE_CENTRAL_AUDIT.json",
+      "origin_locator": "results/P72_R32_UNIFORM_LENGTH_FOUR_CERTIFICATE_20261005/LARGE_CENTRAL_AUDIT.json",
+      "original_bytes": 53329,
+      "original_sha256": "a9b4e4e5bea72228dc76d3ff614803057b56701b2da834a31faf64748d007c3c",
+      "sha256": "a9b4e4e5bea72228dc76d3ff614803057b56701b2da834a31faf64748d007c3c",
+      "storage": "objects/a9b4e4e5bea72228dc76d3ff614803057b56701b2da834a31faf64748d007c3c",
+      "stored_bytes": 53329,
+      "stored_sha256": "a9b4e4e5bea72228dc76d3ff614803057b56701b2da834a31faf64748d007c3c",
+      "transformations": []
+    },
+    {
+      "batch": 32,
+      "bytes": 1584916,
+      "kind": "retained_data",
+      "locator": "results/batch_32/LENGTH_FOUR_AGGREGATE.json",
+      "origin_locator": "results/P72_R32_UNIFORM_LENGTH_FOUR_CERTIFICATE_20261005/LENGTH_FOUR_AGGREGATE.json",
+      "original_bytes": 1584916,
+      "original_sha256": "490cd32bdbf812e57dbb8ffc12cc30ab53329fa78738e152b15f93598dbe6bc3",
+      "sha256": "490cd32bdbf812e57dbb8ffc12cc30ab53329fa78738e152b15f93598dbe6bc3",
+      "storage": "objects/490cd32bdbf812e57dbb8ffc12cc30ab53329fa78738e152b15f93598dbe6bc3.gz",
+      "stored_bytes": 195420,
+      "stored_sha256": "8fbdd8dd48f3ee549f85a9a48482407ff053a1ac89fb00b232c10726be20102e",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 32,
+      "bytes": 82712,
+      "kind": "retained_data",
+      "locator": "results/batch_32/LENGTH_FOUR_DOMAIN.json",
+      "origin_locator": "results/P72_R32_UNIFORM_LENGTH_FOUR_CERTIFICATE_20261005/LENGTH_FOUR_DOMAIN.json",
+      "original_bytes": 82712,
+      "original_sha256": "d767ef2f2560427d3623d1dffefc4713a113544215e4e71cbeeed8dfc3dd237a",
+      "sha256": "d767ef2f2560427d3623d1dffefc4713a113544215e4e71cbeeed8dfc3dd237a",
+      "storage": "objects/d767ef2f2560427d3623d1dffefc4713a113544215e4e71cbeeed8dfc3dd237a.gz",
+      "stored_bytes": 11308,
+      "stored_sha256": "ec5086e7cd6da2b8d52e3fad6f116ed139e96e74088dfa42efcbb83d3ddc981e",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 32,
+      "bytes": 12140,
+      "kind": "source",
+      "locator": "results/batch_32/verify_aggregate.py",
+      "origin_locator": "results/P72_R32_UNIFORM_LENGTH_FOUR_CERTIFICATE_20261005/verify_aggregate.py",
+      "original_bytes": 9370,
+      "original_sha256": "1b47e2f123d1e6350e1706974f4d9709fcc9caf4c8fa2bd38cf3fc8bf37e1742",
+      "sha256": "fac700e4dc4abcbb23564f4cd37aafe782cd1f0f45e84a8f2e317a4ade8871f1",
+      "storage": "objects/fac700e4dc4abcbb23564f4cd37aafe782cd1f0f45e84a8f2e317a4ade8871f1",
+      "stored_bytes": 12140,
+      "stored_sha256": "fac700e4dc4abcbb23564f4cd37aafe782cd1f0f45e84a8f2e317a4ade8871f1",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 32,
+      "bytes": 10623,
+      "kind": "source",
+      "locator": "results/batch_32/verify_large.py",
+      "origin_locator": "results/P72_R32_UNIFORM_LENGTH_FOUR_CERTIFICATE_20261005/verify_large.py",
+      "original_bytes": 8628,
+      "original_sha256": "3ad65ac07a0ce8ca5f471130637f95b50209eb89e200dd8ca3f448411bc81ee3",
+      "sha256": "06ad24db7f41a88f8100ee3ae1cdbe00aa792e7e77841d0552110003860d4a53",
+      "storage": "objects/06ad24db7f41a88f8100ee3ae1cdbe00aa792e7e77841d0552110003860d4a53",
+      "stored_bytes": 10623,
+      "stored_sha256": "06ad24db7f41a88f8100ee3ae1cdbe00aa792e7e77841d0552110003860d4a53",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 32,
+      "bytes": 10079,
+      "kind": "source",
+      "locator": "results/batch_32/verify_retained.py",
+      "origin_locator": "results/P72_R32_UNIFORM_LENGTH_FOUR_CERTIFICATE_20261005/verify_retained.py",
+      "original_bytes": 8051,
+      "original_sha256": "3488a3fe4da0db1cf0d7c2ec428d066627b1440b598adde88d0e2c14f5ad688e",
+      "sha256": "4dd31012254aa1baf679de68c324d4ae6cd0e0444b26d7f32677f22ce1c88595",
+      "storage": "objects/4dd31012254aa1baf679de68c324d4ae6cd0e0444b26d7f32677f22ce1c88595",
+      "stored_bytes": 10079,
+      "stored_sha256": "4dd31012254aa1baf679de68c324d4ae6cd0e0444b26d7f32677f22ce1c88595",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 33,
+      "bytes": 546,
+      "kind": "retained_data",
+      "locator": "results/batch_33/INDEPENDENT_AGGREGATE_CHECKS.json",
+      "origin_locator": "results/P72_R33_UNIFORM_LENGTH_THREE_CERTIFICATE_20261005/INDEPENDENT_AGGREGATE_CHECKS.json",
+      "original_bytes": 546,
+      "original_sha256": "4f83635a490223da302821a8cec66ca0146c6eca1e8b87443f6ed50094981e12",
+      "sha256": "4f83635a490223da302821a8cec66ca0146c6eca1e8b87443f6ed50094981e12",
+      "storage": "objects/4f83635a490223da302821a8cec66ca0146c6eca1e8b87443f6ed50094981e12",
+      "stored_bytes": 546,
+      "stored_sha256": "4f83635a490223da302821a8cec66ca0146c6eca1e8b87443f6ed50094981e12",
+      "transformations": []
+    },
+    {
+      "batch": 33,
+      "bytes": 210225,
+      "kind": "retained_data",
+      "locator": "results/batch_33/LARGE_CENTRAL_AUDIT.json",
+      "origin_locator": "results/P72_R33_UNIFORM_LENGTH_THREE_CERTIFICATE_20261005/LARGE_CENTRAL_AUDIT.json",
+      "original_bytes": 210225,
+      "original_sha256": "cbd5df25d329fec76485b1017100c351cf5391990c5acb317108f13f6e0f0290",
+      "sha256": "cbd5df25d329fec76485b1017100c351cf5391990c5acb317108f13f6e0f0290",
+      "storage": "objects/cbd5df25d329fec76485b1017100c351cf5391990c5acb317108f13f6e0f0290.gz",
+      "stored_bytes": 21256,
+      "stored_sha256": "c1febcc22f15b80fab1d381d3668a77322a027951649f7d06411e56917f4a96e",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 33,
+      "bytes": 18026987,
+      "kind": "retained_data",
+      "locator": "results/batch_33/LENGTH_THREE_AGGREGATE.json",
+      "origin_locator": "results/P72_R33_UNIFORM_LENGTH_THREE_CERTIFICATE_20261005/LENGTH_THREE_AGGREGATE.json",
+      "original_bytes": 18026987,
+      "original_sha256": "5b197ec14f3cdb0a358914fecd084291148ed8de40eeb7598eb8e386d0ee4f6e",
+      "sha256": "5b197ec14f3cdb0a358914fecd084291148ed8de40eeb7598eb8e386d0ee4f6e",
+      "storage": "objects/5b197ec14f3cdb0a358914fecd084291148ed8de40eeb7598eb8e386d0ee4f6e.gz",
+      "stored_bytes": 1578482,
+      "stored_sha256": "b66387c47238f3ea7b324d6c2e5aaa0a5f280b783cfeaf6acef9163078bc6adf",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 33,
+      "bytes": 916406,
+      "kind": "retained_data",
+      "locator": "results/batch_33/LENGTH_THREE_DOMAIN.json",
+      "origin_locator": "results/P72_R33_UNIFORM_LENGTH_THREE_CERTIFICATE_20261005/LENGTH_THREE_DOMAIN.json",
+      "original_bytes": 916406,
+      "original_sha256": "25f68239e78e0e2e27574a55fc0a9bdc8457aecf896ad0858beb37b7f733683b",
+      "sha256": "25f68239e78e0e2e27574a55fc0a9bdc8457aecf896ad0858beb37b7f733683b",
+      "storage": "objects/25f68239e78e0e2e27574a55fc0a9bdc8457aecf896ad0858beb37b7f733683b.gz",
+      "stored_bytes": 111876,
+      "stored_sha256": "5fa58e6dcc738ef55192592459b4b4f3a9d82946bc51e6b73f40a6ce3012b912",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 33,
+      "bytes": 12716,
+      "kind": "source",
+      "locator": "results/batch_33/verify_aggregate.py",
+      "origin_locator": "results/P72_R33_UNIFORM_LENGTH_THREE_CERTIFICATE_20261005/verify_aggregate.py",
+      "original_bytes": 9998,
+      "original_sha256": "03a1a1f116081542e5f76bf2203f4669703f9d6209aeab9e341ece12f76c091c",
+      "sha256": "742d34e1e749f7ddd114e8f1d3faa40e339160d2028432ea3b2c8aac076eb3e2",
+      "storage": "objects/742d34e1e749f7ddd114e8f1d3faa40e339160d2028432ea3b2c8aac076eb3e2",
+      "stored_bytes": 12716,
+      "stored_sha256": "742d34e1e749f7ddd114e8f1d3faa40e339160d2028432ea3b2c8aac076eb3e2",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 33,
+      "bytes": 11989,
+      "kind": "source",
+      "locator": "results/batch_33/verify_large.py",
+      "origin_locator": "results/P72_R33_UNIFORM_LENGTH_THREE_CERTIFICATE_20261005/verify_large.py",
+      "original_bytes": 10053,
+      "original_sha256": "3cb010519dab9efc28a5a93ea7bc8fce44f494f6245d271366e155f33b35d01e",
+      "sha256": "58492fcbb8c73fb4079dc0615e6cd8cbbd831c1c4fbcd35cfd95d9d5e981290f",
+      "storage": "objects/58492fcbb8c73fb4079dc0615e6cd8cbbd831c1c4fbcd35cfd95d9d5e981290f",
+      "stored_bytes": 11989,
+      "stored_sha256": "58492fcbb8c73fb4079dc0615e6cd8cbbd831c1c4fbcd35cfd95d9d5e981290f",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 33,
+      "bytes": 11416,
+      "kind": "source",
+      "locator": "results/batch_33/verify_retained.py",
+      "origin_locator": "results/P72_R33_UNIFORM_LENGTH_THREE_CERTIFICATE_20261005/verify_retained.py",
+      "original_bytes": 9224,
+      "original_sha256": "4610d1d6565698fa57e5991d4f25ba88f5285953278c5b24fd2dda61d02a880f",
+      "sha256": "7315e9a139ad77982e22f3e32ae2a83df54b6ac5e264d24d2514e7f4d2f08f32",
+      "storage": "objects/7315e9a139ad77982e22f3e32ae2a83df54b6ac5e264d24d2514e7f4d2f08f32",
+      "stored_bytes": 11416,
+      "stored_sha256": "7315e9a139ad77982e22f3e32ae2a83df54b6ac5e264d24d2514e7f4d2f08f32",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 34,
+      "bytes": 1814186,
+      "kind": "retained_data",
+      "locator": "results/batch_34/ANALYTIC_N2.json",
+      "origin_locator": "results/P72_R34_LENGTH_TWO_ANALYTIC_REDUCTION_20261005/ANALYTIC_N2.json",
+      "original_bytes": 1814186,
+      "original_sha256": "2d856a44489bc4c8b98940d9cac6b18284e6e36361bc771be0017df763f7ea29",
+      "sha256": "2d856a44489bc4c8b98940d9cac6b18284e6e36361bc771be0017df763f7ea29",
+      "storage": "objects/2d856a44489bc4c8b98940d9cac6b18284e6e36361bc771be0017df763f7ea29.gz",
+      "stored_bytes": 537717,
+      "stored_sha256": "81fa4bc0b8e53d8c43e3aa7fe828427cc95a9c0afdf7ff6dbbee97b3eedd3fc4",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 34,
+      "bytes": 1197,
+      "kind": "retained_data",
+      "locator": "results/batch_34/INDEPENDENT_ANALYTIC_CHECKS.json",
+      "origin_locator": "results/P72_R34_LENGTH_TWO_ANALYTIC_REDUCTION_20261005/INDEPENDENT_ANALYTIC_CHECKS.json",
+      "original_bytes": 1197,
+      "original_sha256": "0366f0c537ec6682f7cc68bceddd26217553cff14584665654910f1f13f75d9f",
+      "sha256": "0366f0c537ec6682f7cc68bceddd26217553cff14584665654910f1f13f75d9f",
+      "storage": "objects/0366f0c537ec6682f7cc68bceddd26217553cff14584665654910f1f13f75d9f",
+      "stored_bytes": 1197,
+      "stored_sha256": "0366f0c537ec6682f7cc68bceddd26217553cff14584665654910f1f13f75d9f",
+      "transformations": []
+    },
+    {
+      "batch": 34,
+      "bytes": 5381,
+      "kind": "source",
+      "locator": "results/batch_34/verify_analytic.py",
+      "origin_locator": "results/P72_R34_LENGTH_TWO_ANALYTIC_REDUCTION_20261005/verify_analytic.py",
+      "original_bytes": 5523,
+      "original_sha256": "ca8b0b576e32fa404e8a3abde7819df5131c5cbf5ebb9a0969dc5b30fa1a42c5",
+      "sha256": "63245af2568445432c780c3cd3f52041b009f0f3261100e0919661a02197b4fc",
+      "storage": "objects/63245af2568445432c780c3cd3f52041b009f0f3261100e0919661a02197b4fc",
+      "stored_bytes": 5381,
+      "stored_sha256": "63245af2568445432c780c3cd3f52041b009f0f3261100e0919661a02197b4fc",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 34,
+      "bytes": 12771,
+      "kind": "source",
+      "locator": "results/batch_34/verify_analytic_retained.py",
+      "origin_locator": "results/P72_R34_LENGTH_TWO_ANALYTIC_REDUCTION_20261005/verify_analytic_retained.py",
+      "original_bytes": 13315,
+      "original_sha256": "47f43fd09261cb46eb4c02080641cb7c70030e6a37e90db4dbeab804873197f4",
+      "sha256": "edf4db215f25998c829c6b131f1566c97a511887787ff31a095c7d0f841d90be",
+      "storage": "objects/edf4db215f25998c829c6b131f1566c97a511887787ff31a095c7d0f841d90be",
+      "stored_bytes": 12771,
+      "stored_sha256": "edf4db215f25998c829c6b131f1566c97a511887787ff31a095c7d0f841d90be",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 35,
+      "bytes": 1495,
+      "kind": "retained_data",
+      "locator": "results/batch_35/INDEPENDENT_AGGREGATE_CHECKS.json",
+      "origin_locator": "results/P72_R35_UNIFORM_LENGTH_TWO_CERTIFICATE_20261005/INDEPENDENT_AGGREGATE_CHECKS.json",
+      "original_bytes": 1495,
+      "original_sha256": "1074fb72146da2328cc4e42961563b65d33f6650667a1b13eb3ac3f85854a9ca",
+      "sha256": "7a2d983b68d43b91be2b8b24f389931b4b52fb08574104089957f46d96c02583",
+      "storage": "objects/7a2d983b68d43b91be2b8b24f389931b4b52fb08574104089957f46d96c02583",
+      "stored_bytes": 1495,
+      "stored_sha256": "7a2d983b68d43b91be2b8b24f389931b4b52fb08574104089957f46d96c02583",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 35,
+      "bytes": 165784,
+      "kind": "retained_data",
+      "locator": "results/batch_35/LARGE_CENTRAL_AUDIT.json",
+      "origin_locator": "results/P72_R35_UNIFORM_LENGTH_TWO_CERTIFICATE_20261005/LARGE_CENTRAL_AUDIT.json",
+      "original_bytes": 165784,
+      "original_sha256": "014e7596a775b2118c00736ed9e0b9f3197fa3dfeacf170cab0f79631a2ef2cb",
+      "sha256": "014e7596a775b2118c00736ed9e0b9f3197fa3dfeacf170cab0f79631a2ef2cb",
+      "storage": "objects/014e7596a775b2118c00736ed9e0b9f3197fa3dfeacf170cab0f79631a2ef2cb.gz",
+      "stored_bytes": 19475,
+      "stored_sha256": "19115775876f8ce358f9105cca458b8cbfce7d1f92ede6322920eff98d25956d",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 35,
+      "bytes": 12441016,
+      "kind": "retained_data",
+      "locator": "results/batch_35/LENGTH_TWO_AGGREGATE.json",
+      "origin_locator": "results/P72_R35_UNIFORM_LENGTH_TWO_CERTIFICATE_20261005/LENGTH_TWO_AGGREGATE.json",
+      "original_bytes": 12441016,
+      "original_sha256": "457827cb95ded59bd36878d13642437fa69f680ad76c0e9eea12d80d0acfc436",
+      "sha256": "457827cb95ded59bd36878d13642437fa69f680ad76c0e9eea12d80d0acfc436",
+      "storage": "objects/457827cb95ded59bd36878d13642437fa69f680ad76c0e9eea12d80d0acfc436.gz",
+      "stored_bytes": 1717016,
+      "stored_sha256": "1d74f129ab39cb00fc99572cf77be8c8b207985be4f4d279194aa3c597c4663d",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 35,
+      "bytes": 1293262,
+      "kind": "retained_data",
+      "locator": "results/batch_35/LENGTH_TWO_DOMAIN.json",
+      "origin_locator": "results/P72_R35_UNIFORM_LENGTH_TWO_CERTIFICATE_20261005/LENGTH_TWO_DOMAIN.json",
+      "original_bytes": 1293262,
+      "original_sha256": "76a23043357af279bcd1a11c2721f7148392f19328d2d55a08aeb73051a098ee",
+      "sha256": "76a23043357af279bcd1a11c2721f7148392f19328d2d55a08aeb73051a098ee",
+      "storage": "objects/76a23043357af279bcd1a11c2721f7148392f19328d2d55a08aeb73051a098ee.gz",
+      "stored_bytes": 39421,
+      "stored_sha256": "2dc1911ed5b363c7069c9a6fef96d7c33602f8573cf85f692df215b4cfe275f9",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 35,
+      "bytes": 13329,
+      "kind": "source",
+      "locator": "results/batch_35/verify_aggregate.py",
+      "origin_locator": "results/P72_R35_UNIFORM_LENGTH_TWO_CERTIFICATE_20261005/verify_aggregate.py",
+      "original_bytes": 10344,
+      "original_sha256": "61c48fdd8003ae457fe8657961da2ab5294b1a51a27547e01864327c3d912253",
+      "sha256": "5d94d76ca668bc4bdb584a3f2f6feacd5fee28ba47f344e6f543183b400e7919",
+      "storage": "objects/5d94d76ca668bc4bdb584a3f2f6feacd5fee28ba47f344e6f543183b400e7919",
+      "stored_bytes": 13329,
+      "stored_sha256": "5d94d76ca668bc4bdb584a3f2f6feacd5fee28ba47f344e6f543183b400e7919",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 35,
+      "bytes": 12762,
+      "kind": "source",
+      "locator": "results/batch_35/verify_large.py",
+      "origin_locator": "results/P72_R35_UNIFORM_LENGTH_TWO_CERTIFICATE_20261005/verify_large.py",
+      "original_bytes": 10826,
+      "original_sha256": "23698f737376415d0b1933b20502da7320c9d9cbd97f040dbf7ecfc89af4a6fe",
+      "sha256": "13b44f61425cc6b3d978909a3b2b61be9a71cc63c2f1c9a08ecf5bda8d7bccbb",
+      "storage": "objects/13b44f61425cc6b3d978909a3b2b61be9a71cc63c2f1c9a08ecf5bda8d7bccbb",
+      "stored_bytes": 12762,
+      "stored_sha256": "13b44f61425cc6b3d978909a3b2b61be9a71cc63c2f1c9a08ecf5bda8d7bccbb",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 35,
+      "bytes": 20510,
+      "kind": "source",
+      "locator": "results/batch_35/verify_retained.py",
+      "origin_locator": "results/P72_R35_UNIFORM_LENGTH_TWO_CERTIFICATE_20261005/verify_retained.py",
+      "original_bytes": 16954,
+      "original_sha256": "d0f1fc8e6be76bd00142be80062f263646964b21f6c9704c84118ba7891db038",
+      "sha256": "4e2f7f9ca48ebe4c813965c60ed2429fea78ffd5daf0feb5bbaf5abadc125d8b",
+      "storage": "objects/4e2f7f9ca48ebe4c813965c60ed2429fea78ffd5daf0feb5bbaf5abadc125d8b",
+      "stored_bytes": 20510,
+      "stored_sha256": "4e2f7f9ca48ebe4c813965c60ed2429fea78ffd5daf0feb5bbaf5abadc125d8b",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 36,
+      "bytes": 2073,
+      "kind": "retained_data",
+      "locator": "results/batch_36/FRONTIER_CERTIFICATE.json",
+      "origin_locator": "results/P72_R36_LENGTH_ONE_FRONTIER_AND_COSTS_20261005/FRONTIER_CERTIFICATE.json",
+      "original_bytes": 2167,
+      "original_sha256": "dc993333d67efdb1a40d5519a450705de8ad56a3e65820434a0ab46014509689",
+      "sha256": "2ff38973147b074682b1c6c8a10f6619649bbd5973af7211a1715b299da0fe69",
+      "storage": "objects/2ff38973147b074682b1c6c8a10f6619649bbd5973af7211a1715b299da0fe69",
+      "stored_bytes": 2073,
+      "stored_sha256": "2ff38973147b074682b1c6c8a10f6619649bbd5973af7211a1715b299da0fe69",
+      "transformations": [
+        "remove source_freeze_sha256 control field",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 36,
+      "bytes": 6386,
+      "kind": "source",
+      "locator": "results/batch_36/inventory_factor.py",
+      "origin_locator": "results/P72_R36_LENGTH_ONE_FRONTIER_AND_COSTS_20261005/inventory_factor.py",
+      "original_bytes": 7369,
+      "original_sha256": "392c9a119e7cff913d1adfcf88d85b6ea789f8fce6092517dd2965f994e26d4d",
+      "sha256": "61ec604a4bbed5b003543a573ca092b5e071ebb93d07a9ef24b1a55c94957110",
+      "storage": "objects/61ec604a4bbed5b003543a573ca092b5e071ebb93d07a9ef24b1a55c94957110",
+      "stored_bytes": 6386,
+      "stored_sha256": "61ec604a4bbed5b003543a573ca092b5e071ebb93d07a9ef24b1a55c94957110",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 36,
+      "bytes": 15605592,
+      "kind": "retained_data",
+      "locator": "results/batch_36/inventory_factor_normal1.json",
+      "origin_locator": "results/P72_R36_LENGTH_ONE_FRONTIER_AND_COSTS_20261005/inventory_factor_normal1.json",
+      "original_bytes": 15605592,
+      "original_sha256": "2b976d7a508b0d73ca7eea423623ae22d47f21ff97351bc419052a3e0096fb87",
+      "sha256": "2b976d7a508b0d73ca7eea423623ae22d47f21ff97351bc419052a3e0096fb87",
+      "storage": "objects/2b976d7a508b0d73ca7eea423623ae22d47f21ff97351bc419052a3e0096fb87.gz",
+      "stored_bytes": 1123917,
+      "stored_sha256": "965e5dd532ae47d4f29e93aed76eb8532735fc7d29f739a775c1c25abf432c2e",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 36,
+      "bytes": 7397,
+      "kind": "source",
+      "locator": "results/batch_36/inventory_generate.py",
+      "origin_locator": "results/P72_R36_LENGTH_ONE_FRONTIER_AND_COSTS_20261005/inventory_generate.py",
+      "original_bytes": 8337,
+      "original_sha256": "e0c1afb4749a8b09a1444d62fecddd142fa628b8d60fa80cae73efde057aeb1b",
+      "sha256": "95bbb9b1611cc8c2dc3e184b8b8e0e6f1100cbc61b056a7a2a61cb2b4c1e28b0",
+      "storage": "objects/95bbb9b1611cc8c2dc3e184b8b8e0e6f1100cbc61b056a7a2a61cb2b4c1e28b0",
+      "stored_bytes": 7397,
+      "stored_sha256": "95bbb9b1611cc8c2dc3e184b8b8e0e6f1100cbc61b056a7a2a61cb2b4c1e28b0",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 36,
+      "bytes": 15938140,
+      "kind": "retained_data",
+      "locator": "results/batch_36/inventory_generate_normal1.json",
+      "origin_locator": "results/P72_R36_LENGTH_ONE_FRONTIER_AND_COSTS_20261005/inventory_generate_normal1.json",
+      "original_bytes": 15938140,
+      "original_sha256": "a93f5175e080376c010182dc211314725dcb019ff09a102b7a2b28fc8326bfa5",
+      "sha256": "a93f5175e080376c010182dc211314725dcb019ff09a102b7a2b28fc8326bfa5",
+      "storage": "objects/a93f5175e080376c010182dc211314725dcb019ff09a102b7a2b28fc8326bfa5.gz",
+      "stored_bytes": 1261174,
+      "stored_sha256": "be936406f9e44cb83e9ec017a89e19a253c9efe8e550ab7358e1340e24d2863a",
+      "transformations": [
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 36,
+      "bytes": 5426,
+      "kind": "source",
+      "locator": "results/batch_36/resolve_work.py",
+      "origin_locator": "results/P72_R36_LENGTH_ONE_FRONTIER_AND_COSTS_20261005/resolve_work.py",
+      "original_bytes": 4544,
+      "original_sha256": "b2b172e8b884b788b5d27a58cbe43de78fc19f099b5f2ea6810e4b149559a02d",
+      "sha256": "afefc2df5fab87298133f4f5e0d4649f42862505b5d588c1dc2dd9817c39ed1b",
+      "storage": "objects/afefc2df5fab87298133f4f5e0d4649f42862505b5d588c1dc2dd9817c39ed1b",
+      "stored_bytes": 5426,
+      "stored_sha256": "afefc2df5fab87298133f4f5e0d4649f42862505b5d588c1dc2dd9817c39ed1b",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 36,
+      "bytes": 7432457,
+      "kind": "retained_data",
+      "locator": "results/batch_36/resolve_work_normal1.json",
+      "origin_locator": "results/P72_R36_LENGTH_ONE_FRONTIER_AND_COSTS_20261005/resolve_work_normal1.json",
+      "original_bytes": 7432457,
+      "original_sha256": "aef4e7f6fbe731aac91fef589da47ce71ff9cf1f75867a5e78a379668e71e5d9",
+      "sha256": "8b07089a5d37ceb657d6daab63c9b117608ddf9b8ecea77a73af2972e5131215",
+      "storage": "objects/8b07089a5d37ceb657d6daab63c9b117608ddf9b8ecea77a73af2972e5131215.gz",
+      "stored_bytes": 1099303,
+      "stored_sha256": "1eb38c54f17886c2bf9ad30f9aa9fecc09a699d7c0f5bb700b613a5364cf36c4",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 37,
+      "bytes": 58306353,
+      "kind": "retained_data",
+      "locator": "results/batch_37/ANALYTIC_N1.json",
+      "origin_locator": "results/P72_R37_LENGTH_ONE_ANALYTIC_REDUCTION_20261005/ANALYTIC_N1.json",
+      "original_bytes": 58306500,
+      "original_sha256": "70bdd24a4642581bf955361fe664ccf5b2a5d4439a6aa8bd9fe3cb68b09a689f",
+      "sha256": "46d41a4a21778b864b7d821117a4633db26cb6cbedd93faa623dcb4e266008c9",
+      "storage": "objects/46d41a4a21778b864b7d821117a4633db26cb6cbedd93faa623dcb4e266008c9.gz",
+      "stored_bytes": 16160412,
+      "stored_sha256": "27b7e4190aacb527c114f7e66ba16ef8f6541f960492fe3502855ff2a8c9d5f7",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 37,
+      "bytes": 2900,
+      "kind": "source",
+      "locator": "results/batch_37/remaining_work.py",
+      "origin_locator": "results/P72_R37_LENGTH_ONE_ANALYTIC_REDUCTION_20261005/remaining_work.py",
+      "original_bytes": 3062,
+      "original_sha256": "7c7496db1a673100483ff79fc75473b340f22e73d749a020e32933b945a3442e",
+      "sha256": "9736ec67f0f3e8787eb854ac7194613d90a24b3e7a88a99b8185529d7d7ecf41",
+      "storage": "objects/9736ec67f0f3e8787eb854ac7194613d90a24b3e7a88a99b8185529d7d7ecf41",
+      "stored_bytes": 2900,
+      "stored_sha256": "9736ec67f0f3e8787eb854ac7194613d90a24b3e7a88a99b8185529d7d7ecf41",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 37,
+      "bytes": 3129792,
+      "kind": "retained_data",
+      "locator": "results/batch_37/remaining_work_normal1.json",
+      "origin_locator": "results/P72_R37_LENGTH_ONE_ANALYTIC_REDUCTION_20261005/remaining_work_normal1.json",
+      "original_bytes": 3129792,
+      "original_sha256": "f1542fcc2ad1cf58495a567211dfcc6ace21d9a89633b1ec44ee1df0b31b0825",
+      "sha256": "540ef3eed51deccca38f414098d49aa881200a9d7f778d143f28d3bbb6a038e9",
+      "storage": "objects/540ef3eed51deccca38f414098d49aa881200a9d7f778d143f28d3bbb6a038e9.gz",
+      "stored_bytes": 353693,
+      "stored_sha256": "5e57bf6290881641838bae4b3a4ac3d1698647720c5d949ac18f99145078a355",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 37,
+      "bytes": 13161,
+      "kind": "source",
+      "locator": "results/batch_37/verify_analytic.py",
+      "origin_locator": "results/P72_R37_LENGTH_ONE_ANALYTIC_REDUCTION_20261005/verify_analytic.py",
+      "original_bytes": 14216,
+      "original_sha256": "5c246743f57f7b65ed38fcab7034db2f8cd21c39d94507b8ef6418a2a249ab99",
+      "sha256": "5f693520c6a1d6490f2512ab274d6eac8bb6d24ec98c855729a8a40b8476e9f4",
+      "storage": "objects/5f693520c6a1d6490f2512ab274d6eac8bb6d24ec98c855729a8a40b8476e9f4",
+      "stored_bytes": 13161,
+      "stored_sha256": "5f693520c6a1d6490f2512ab274d6eac8bb6d24ec98c855729a8a40b8476e9f4",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 37,
+      "bytes": 19519,
+      "kind": "source",
+      "locator": "results/batch_37/verify_analytic_retained.py",
+      "origin_locator": "results/P72_R37_LENGTH_ONE_ANALYTIC_REDUCTION_20261005/verify_analytic_retained.py",
+      "original_bytes": 20483,
+      "original_sha256": "5d7fbd7ede2b6af3a7ce1f526da9ce7fe926996a6e63a979df0fabb193b663e0",
+      "sha256": "eb1f7f00e6a63df7cebefd567a641c2e257bf79270f2957091e5b4666d2cf25e",
+      "storage": "objects/eb1f7f00e6a63df7cebefd567a641c2e257bf79270f2957091e5b4666d2cf25e",
+      "stored_bytes": 19519,
+      "stored_sha256": "eb1f7f00e6a63df7cebefd567a641c2e257bf79270f2957091e5b4666d2cf25e",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 37,
+      "bytes": 10007,
+      "kind": "retained_data",
+      "locator": "results/batch_37/verify_analytic_retained_normal1.json",
+      "origin_locator": "results/P72_R37_LENGTH_ONE_ANALYTIC_REDUCTION_20261005/verify_analytic_retained_normal1.json",
+      "original_bytes": 10007,
+      "original_sha256": "c5f8d9288b67fe32996cddb27818e4282f89e13dd91d8e49452badb315c95c44",
+      "sha256": "26a1b62318efb1594713fd36b7adfd5dbef97ffd66d6aa62491275366ff92080",
+      "storage": "objects/26a1b62318efb1594713fd36b7adfd5dbef97ffd66d6aa62491275366ff92080",
+      "stored_bytes": 10007,
+      "stored_sha256": "26a1b62318efb1594713fd36b7adfd5dbef97ffd66d6aa62491275366ff92080",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 38,
+      "bytes": 12983,
+      "kind": "source",
+      "locator": "results/batch_38/check_cost.py",
+      "origin_locator": "results/P72_R38_COMPRESSED_INTERVAL_AUDIT_DESIGN_20261005/check_cost.py",
+      "original_bytes": 14338,
+      "original_sha256": "5b5c0e7bf60006bb1a83412fb254c1c6cec3800b50bb6c4d8092cae3416b044c",
+      "sha256": "da5008afbe8f8a1e305c8ec51a52d41dcad73bb6d45eff99ac17044e88841cbe",
+      "storage": "objects/da5008afbe8f8a1e305c8ec51a52d41dcad73bb6d45eff99ac17044e88841cbe",
+      "stored_bytes": 12983,
+      "stored_sha256": "da5008afbe8f8a1e305c8ec51a52d41dcad73bb6d45eff99ac17044e88841cbe",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 38,
+      "bytes": 1176,
+      "kind": "retained_data",
+      "locator": "results/batch_38/check_cost_normal1.json",
+      "origin_locator": "results/P72_R38_COMPRESSED_INTERVAL_AUDIT_DESIGN_20261005/check_cost_normal1.json",
+      "original_bytes": 1176,
+      "original_sha256": "2988e68a55a896c5cabef04d6409a3bfbe4fb30bd6f868fb8ec5c8a679bb0c3a",
+      "sha256": "0bff11aec5eee41f5d90f0077ef996029f18f5d4f2a3fd0c88a5b1aa7ea24f7e",
+      "storage": "objects/0bff11aec5eee41f5d90f0077ef996029f18f5d4f2a3fd0c88a5b1aa7ea24f7e",
+      "stored_bytes": 1176,
+      "stored_sha256": "0bff11aec5eee41f5d90f0077ef996029f18f5d4f2a3fd0c88a5b1aa7ea24f7e",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 38,
+      "bytes": 9744,
+      "kind": "source",
+      "locator": "results/batch_38/resolve_cost.py",
+      "origin_locator": "results/P72_R38_COMPRESSED_INTERVAL_AUDIT_DESIGN_20261005/resolve_cost.py",
+      "original_bytes": 10737,
+      "original_sha256": "30bebc38335d3c04fad10637271bc204d231a13c6f1fb2c15fdfad54f31974d0",
+      "sha256": "56ebe85c2952f9c6130b793ca8c42b88c2191b2c78c5793420fe83d1149da133",
+      "storage": "objects/56ebe85c2952f9c6130b793ca8c42b88c2191b2c78c5793420fe83d1149da133",
+      "stored_bytes": 9744,
+      "stored_sha256": "56ebe85c2952f9c6130b793ca8c42b88c2191b2c78c5793420fe83d1149da133",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 38,
+      "bytes": 12510631,
+      "kind": "retained_data",
+      "locator": "results/batch_38/resolve_cost_normal1.json",
+      "origin_locator": "results/P72_R38_COMPRESSED_INTERVAL_AUDIT_DESIGN_20261005/resolve_cost_normal1.json",
+      "original_bytes": 12510784,
+      "original_sha256": "60a07cd68f0d8234542bd21b39a9fd37ee2383f8a00ab8e3d39c031c0ed43b05",
+      "sha256": "86ce21b2bb7ea5c65aeab036ad14d89d6f221891ec9a299d088ab075eadb68fe",
+      "storage": "objects/86ce21b2bb7ea5c65aeab036ad14d89d6f221891ec9a299d088ab075eadb68fe.gz",
+      "stored_bytes": 660650,
+      "stored_sha256": "56400a12b83b5c5c6b9c6520615d795ace58ee7be434a9a1ac10edef09881639",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 39,
+      "bytes": 8996,
+      "kind": "source",
+      "locator": "results/batch_39/aggregate_core.py",
+      "origin_locator": "results/P72_R39_P_GE5_FINITE_CERTIFICATE_20261005/aggregate_core.py",
+      "original_bytes": 6708,
+      "original_sha256": "cf1be1a8d7bf8779bf775c35b1da38bdbe149718d5ac767e4bd2f3fbf463a202",
+      "sha256": "f7f168f4e63cc0077ffd0813491934cef0ead648c73be2321f6769d2507992c0",
+      "storage": "objects/f7f168f4e63cc0077ffd0813491934cef0ead648c73be2321f6769d2507992c0",
+      "stored_bytes": 8996,
+      "stored_sha256": "f7f168f4e63cc0077ffd0813491934cef0ead648c73be2321f6769d2507992c0",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 39,
+      "bytes": 45557946,
+      "kind": "retained_data",
+      "locator": "results/batch_39/BRANCH_AGGREGATE.json",
+      "origin_locator": "results/P72_R39_P_GE5_FINITE_CERTIFICATE_20261005/BRANCH_AGGREGATE.json",
+      "original_bytes": 45558045,
+      "original_sha256": "bd795ed7fbfb3792352b64da9d5d8f3824b451c8d91af3409b2ac80203e246a5",
+      "sha256": "34c1992f0a654546aec203c3ad4bbcc3a93396d3c07f6847f1b3e72ccc840e4d",
+      "storage": "objects/34c1992f0a654546aec203c3ad4bbcc3a93396d3c07f6847f1b3e72ccc840e4d.gz",
+      "stored_bytes": 18703914,
+      "stored_sha256": "b770021cc33682f62b71e17dc6a8b0b58074e14e4bf6ad28b737a46281649cb1",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 39,
+      "bytes": 6017673,
+      "kind": "retained_data",
+      "locator": "results/batch_39/BRANCH_DOMAIN.json",
+      "origin_locator": "results/P72_R39_P_GE5_FINITE_CERTIFICATE_20261005/BRANCH_DOMAIN.json",
+      "original_bytes": 6017813,
+      "original_sha256": "d37a6ecf7415073125219a3038e04b478606e1cb8bcd02fcedb2d319145da0af",
+      "sha256": "331f94d44c917a95a0b47f590c28b993d63fea6ee5876a9d104e5ca048998b69",
+      "storage": "objects/331f94d44c917a95a0b47f590c28b993d63fea6ee5876a9d104e5ca048998b69.gz",
+      "stored_bytes": 264200,
+      "stored_sha256": "da02afb20fdff753dba5e863a5517d89c617af26b8294bfeaa5ab7dd0731232e",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 39,
+      "bytes": 14827194,
+      "kind": "retained_data",
+      "locator": "results/batch_39/BRANCH_EXECUTION_DOMAIN.json",
+      "origin_locator": "results/P72_R39_P_GE5_FINITE_CERTIFICATE_20261005/BRANCH_EXECUTION_DOMAIN.json",
+      "original_bytes": 14827334,
+      "original_sha256": "01da63c7859062a54fe956e92f706edd577df77100939c311aec04c97e9bd70b",
+      "sha256": "070ea50048ea32d6940f63a0fa3a0bb3a01bbd631d4882691c9b0a16d736e550",
+      "storage": "objects/070ea50048ea32d6940f63a0fa3a0bb3a01bbd631d4882691c9b0a16d736e550.gz",
+      "stored_bytes": 460010,
+      "stored_sha256": "574f127c9733295c22e72f975c4b40e6522e084cd8934cfc23051e34c633d3e0",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 39,
+      "bytes": 25893,
+      "kind": "source",
+      "locator": "results/batch_39/check_branch.py",
+      "origin_locator": "results/P72_R39_P_GE5_FINITE_CERTIFICATE_20261005/check_branch.py",
+      "original_bytes": 26967,
+      "original_sha256": "4ad8b457bf1917209a6e01e55459505853c59faed4ab1ec4ad6967e28ea650e0",
+      "sha256": "dde94a659cf985977856d9229f72e3254e2f63e128465b496e2b24e4935ec6d1",
+      "storage": "objects/dde94a659cf985977856d9229f72e3254e2f63e128465b496e2b24e4935ec6d1",
+      "stored_bytes": 25893,
+      "stored_sha256": "dde94a659cf985977856d9229f72e3254e2f63e128465b496e2b24e4935ec6d1",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 39,
+      "bytes": 1324756,
+      "kind": "retained_data",
+      "locator": "results/batch_39/check_branch_normal1.json",
+      "origin_locator": "results/P72_R39_P_GE5_FINITE_CERTIFICATE_20261005/check_branch_normal1.json",
+      "original_bytes": 1324756,
+      "original_sha256": "1f0c4d3b001108c97346f021d477b71c899de94034fa0213c7c9d15139b9b193",
+      "sha256": "74edd0e61d06a585fabd56a08abbb143f2e01ade7ce76dd34d9c2f424bad9032",
+      "storage": "objects/74edd0e61d06a585fabd56a08abbb143f2e01ade7ce76dd34d9c2f424bad9032.gz",
+      "stored_bytes": 165833,
+      "stored_sha256": "7d100d975b06e6b2109de3dc13ec3821ea2eb8a1584cdbf9b942d361e05cf443",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 39,
+      "bytes": 7264,
+      "kind": "source",
+      "locator": "results/batch_39/compressed_oracle.py",
+      "origin_locator": "results/P72_R39_P_GE5_FINITE_CERTIFICATE_20261005/compressed_oracle.py",
+      "original_bytes": 7662,
+      "original_sha256": "493b3dc16c3b897419a1544b33402f305408e1b9745ce2a35c12181b878ee00b",
+      "sha256": "4a7a4230f2a72f2ffeece15e8d1ad2a2ad3546bc40a5749d0e590022911ba06d",
+      "storage": "objects/4a7a4230f2a72f2ffeece15e8d1ad2a2ad3546bc40a5749d0e590022911ba06d",
+      "stored_bytes": 7264,
+      "stored_sha256": "4a7a4230f2a72f2ffeece15e8d1ad2a2ad3546bc40a5749d0e590022911ba06d",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 39,
+      "bytes": 9764,
+      "kind": "source",
+      "locator": "results/batch_39/qualify_oracle.py",
+      "origin_locator": "results/P72_R39_P_GE5_FINITE_CERTIFICATE_20261005/qualify_oracle.py",
+      "original_bytes": 10846,
+      "original_sha256": "b4af7cad91ab1b87765bc91ec92309fe0860fd5478ea41ae6547ad67f5da1fe5",
+      "sha256": "3dff0560dea39910fdadc602782b4d6837c62d85e5202b6f25569c3101ecbff3",
+      "storage": "objects/3dff0560dea39910fdadc602782b4d6837c62d85e5202b6f25569c3101ecbff3",
+      "stored_bytes": 9764,
+      "stored_sha256": "3dff0560dea39910fdadc602782b4d6837c62d85e5202b6f25569c3101ecbff3",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 39,
+      "bytes": 156759,
+      "kind": "retained_data",
+      "locator": "results/batch_39/qualify_oracle_normal1.json",
+      "origin_locator": "results/P72_R39_P_GE5_FINITE_CERTIFICATE_20261005/qualify_oracle_normal1.json",
+      "original_bytes": 156759,
+      "original_sha256": "74f9a3ca80a914d58df9459e6f5b637024f8f75473303590a99dc37b7a266cd6",
+      "sha256": "2ae10e8c7013ea00ba1cd6df9a7dd159e18ce2ae28b8e6decb474d5e33e51e38",
+      "storage": "objects/2ae10e8c7013ea00ba1cd6df9a7dd159e18ce2ae28b8e6decb474d5e33e51e38.gz",
+      "stored_bytes": 7915,
+      "stored_sha256": "72de516e97348128e0fb51c7d44c4c59d58a451163fa38a8a5733c6e14b51710",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity"
+      ]
+    },
+    {
+      "batch": 39,
+      "bytes": 210174,
+      "kind": "retained_data",
+      "locator": "results/batch_39/REMAINING_N1.json",
+      "origin_locator": "results/P72_R39_P_GE5_FINITE_CERTIFICATE_20261005/REMAINING_N1.json",
+      "original_bytes": 210174,
+      "original_sha256": "7da660c1c50a478e070d4e594182cf483e3c06eaca44de8a3a8853aea5f48243",
+      "sha256": "9bab00d4b77ddbc51bf9e685eead0d7b0f6f6173b670baefad09c261882614bb",
+      "storage": "objects/9bab00d4b77ddbc51bf9e685eead0d7b0f6f6173b670baefad09c261882614bb.gz",
+      "stored_bytes": 21478,
+      "stored_sha256": "97ed7f8fa04b9bb14071709089515baf6b6877cfaeb0022a21292add23b6328b",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 39,
+      "bytes": 4881,
+      "kind": "source",
+      "locator": "results/batch_39/run_branch.py",
+      "origin_locator": "results/P72_R39_P_GE5_FINITE_CERTIFICATE_20261005/run_branch.py",
+      "original_bytes": 4384,
+      "original_sha256": "dd4b4a32d1fe9c97cc9b11b83c127ceb6308a8937b3d19b1f14484f6201984db",
+      "sha256": "6000ac576222867a370710548d915f5676949ff5280dd8a932cb61f7ed54822f",
+      "storage": "objects/6000ac576222867a370710548d915f5676949ff5280dd8a932cb61f7ed54822f",
+      "stored_bytes": 4881,
+      "stored_sha256": "6000ac576222867a370710548d915f5676949ff5280dd8a932cb61f7ed54822f",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 39,
+      "bytes": 8611,
+      "kind": "source",
+      "locator": "results/batch_39/verify_local_controls.py",
+      "origin_locator": "results/P72_R39_P_GE5_FINITE_CERTIFICATE_20261005/verify_local_controls.py",
+      "original_bytes": 9641,
+      "original_sha256": "8d17af20d88d5cd07a720bc6909cdea628882f4c727dc4d2936e72aa54549db8",
+      "sha256": "15bbdd89ae99c4eefa06de67a4b839bcf8b6b9d0c6883032d8ae77f948400396",
+      "storage": "objects/15bbdd89ae99c4eefa06de67a4b839bcf8b6b9d0c6883032d8ae77f948400396",
+      "stored_bytes": 8611,
+      "stored_sha256": "15bbdd89ae99c4eefa06de67a4b839bcf8b6b9d0c6883032d8ae77f948400396",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 39,
+      "bytes": 2009539,
+      "kind": "retained_data",
+      "locator": "results/batch_39/verify_local_controls_normal1.json",
+      "origin_locator": "results/P72_R39_P_GE5_FINITE_CERTIFICATE_20261005/verify_local_controls_normal1.json",
+      "original_bytes": 2009539,
+      "original_sha256": "09fc70bd032c8b86ebf0169e1d2c45e5ae3f325141465fac397be250747dfb3e",
+      "sha256": "6ea3b5eb06fc44e815eb3727436d6dee221deb4bb34f9d69c7ddce6e34c11491",
+      "storage": "objects/6ea3b5eb06fc44e815eb3727436d6dee221deb4bb34f9d69c7ddce6e34c11491.gz",
+      "stored_bytes": 343693,
+      "stored_sha256": "f796f031111134d9b29e227db2c18ebb9c90d3edc8b1a8c5fd680095b81ab75c",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 40,
+      "bytes": 8996,
+      "kind": "source",
+      "locator": "results/batch_40/aggregate_core.py",
+      "origin_locator": "results/P72_R40_P3_FINITE_CERTIFICATE_20261005/aggregate_core.py",
+      "original_bytes": 6708,
+      "original_sha256": "cf1be1a8d7bf8779bf775c35b1da38bdbe149718d5ac767e4bd2f3fbf463a202",
+      "sha256": "f7f168f4e63cc0077ffd0813491934cef0ead648c73be2321f6769d2507992c0",
+      "storage": "objects/f7f168f4e63cc0077ffd0813491934cef0ead648c73be2321f6769d2507992c0",
+      "stored_bytes": 8996,
+      "stored_sha256": "f7f168f4e63cc0077ffd0813491934cef0ead648c73be2321f6769d2507992c0",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 40,
+      "bytes": 75927561,
+      "kind": "retained_data",
+      "locator": "results/batch_40/BRANCH_AGGREGATE.json",
+      "origin_locator": "results/P72_R40_P3_FINITE_CERTIFICATE_20261005/BRANCH_AGGREGATE.json",
+      "original_bytes": 75927651,
+      "original_sha256": "8d2ebaab28df5bbfd23973cd778728b8e1fac86251951e3c08460f9ed85c49be",
+      "sha256": "fbdd3590f36bbe63e82cea5022532e38d46d371cb9ee1579ea4c7bdc8d884cb7",
+      "storage": "objects/fbdd3590f36bbe63e82cea5022532e38d46d371cb9ee1579ea4c7bdc8d884cb7.gz",
+      "stored_bytes": 31288716,
+      "stored_sha256": "1ceaad30585338db20a5ad4f8425289be2f397bb3095b3ae0830054dfaa34cde",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 40,
+      "bytes": 9144287,
+      "kind": "retained_data",
+      "locator": "results/batch_40/BRANCH_DOMAIN.json",
+      "origin_locator": "results/P72_R40_P3_FINITE_CERTIFICATE_20261005/BRANCH_DOMAIN.json",
+      "original_bytes": 9144451,
+      "original_sha256": "15220e284132e138a0a9b5209220fd43b842a063a627fb24a95650ab846517c9",
+      "sha256": "77d01b6d073a54554cae7f4c95ff396c9f2d15b92aa9e107f8818b23e39dfe76",
+      "storage": "objects/77d01b6d073a54554cae7f4c95ff396c9f2d15b92aa9e107f8818b23e39dfe76.gz",
+      "stored_bytes": 334720,
+      "stored_sha256": "ee4600b80bce9ab37e1dbc3e54e53364baaf29c48a7b6278d8c1b22c655789e6",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 40,
+      "bytes": 27219,
+      "kind": "source",
+      "locator": "results/batch_40/check_branch.py",
+      "origin_locator": "results/P72_R40_P3_FINITE_CERTIFICATE_20261005/check_branch.py",
+      "original_bytes": 28341,
+      "original_sha256": "a0a7a36d4386f7d7f37a534fb21e919835548771ad6b3ca8c22aea28cdc9244f",
+      "sha256": "71b30016e80613bd3dbe7f003bf7cda2e8fffe627ffab3ba6cbc79a71b43ebea",
+      "storage": "objects/71b30016e80613bd3dbe7f003bf7cda2e8fffe627ffab3ba6cbc79a71b43ebea",
+      "stored_bytes": 27219,
+      "stored_sha256": "71b30016e80613bd3dbe7f003bf7cda2e8fffe627ffab3ba6cbc79a71b43ebea",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 40,
+      "bytes": 1745023,
+      "kind": "retained_data",
+      "locator": "results/batch_40/check_branch_normal1.json",
+      "origin_locator": "results/P72_R40_P3_FINITE_CERTIFICATE_20261005/check_branch_normal1.json",
+      "original_bytes": 1745023,
+      "original_sha256": "421307819b115ca1947854b0a59d9c9da93dd892370e58b681fd1fef8ef77900",
+      "sha256": "d391618604b9f9e33d7dd58488fc8cf146ebda7a128bdd00e5d19c2353d1d0c4",
+      "storage": "objects/d391618604b9f9e33d7dd58488fc8cf146ebda7a128bdd00e5d19c2353d1d0c4.gz",
+      "stored_bytes": 194576,
+      "stored_sha256": "82de6479a5a0bb200e804a1e710fa2b68fa34bb664dfe93310b553f42a8205fe",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 40,
+      "bytes": 7264,
+      "kind": "source",
+      "locator": "results/batch_40/compressed_oracle.py",
+      "origin_locator": "results/P72_R40_P3_FINITE_CERTIFICATE_20261005/compressed_oracle.py",
+      "original_bytes": 7662,
+      "original_sha256": "493b3dc16c3b897419a1544b33402f305408e1b9745ce2a35c12181b878ee00b",
+      "sha256": "4a7a4230f2a72f2ffeece15e8d1ad2a2ad3546bc40a5749d0e590022911ba06d",
+      "storage": "objects/4a7a4230f2a72f2ffeece15e8d1ad2a2ad3546bc40a5749d0e590022911ba06d",
+      "stored_bytes": 7264,
+      "stored_sha256": "4a7a4230f2a72f2ffeece15e8d1ad2a2ad3546bc40a5749d0e590022911ba06d",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 40,
+      "bytes": 120296,
+      "kind": "retained_data",
+      "locator": "results/batch_40/REMAINING_N1.json",
+      "origin_locator": "results/P72_R40_P3_FINITE_CERTIFICATE_20261005/REMAINING_N1.json",
+      "original_bytes": 120296,
+      "original_sha256": "75477a28708e95409631ee1f602e5dce2c7d3aa0e204cd0573c982c7757df72a",
+      "sha256": "ded6928b24012cbdc2c38cb8f83dda1bf1950cc1391465cbb468e84ae256a68a",
+      "storage": "objects/ded6928b24012cbdc2c38cb8f83dda1bf1950cc1391465cbb468e84ae256a68a.gz",
+      "stored_bytes": 12314,
+      "stored_sha256": "5f58cf8294e4ad048c89de593f5083f099761bfc6229e6839424eca1e5ecf167",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 40,
+      "bytes": 5088,
+      "kind": "source",
+      "locator": "results/batch_40/run_branch.py",
+      "origin_locator": "results/P72_R40_P3_FINITE_CERTIFICATE_20261005/run_branch.py",
+      "original_bytes": 4584,
+      "original_sha256": "d12fdf8716dc864a71aa66a18d6f514c07a531123bf87a31a7ac445b44a02a2c",
+      "sha256": "0fa43144a134ea75548f0b935b5b986a8877384ee27f23ca1c74d8dd0bf1bb3b",
+      "storage": "objects/0fa43144a134ea75548f0b935b5b986a8877384ee27f23ca1c74d8dd0bf1bb3b",
+      "stored_bytes": 5088,
+      "stored_sha256": "0fa43144a134ea75548f0b935b5b986a8877384ee27f23ca1c74d8dd0bf1bb3b",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 40,
+      "bytes": 10338,
+      "kind": "source",
+      "locator": "results/batch_40/verify_local_controls.py",
+      "origin_locator": "results/P72_R40_P3_FINITE_CERTIFICATE_20261005/verify_local_controls.py",
+      "original_bytes": 11602,
+      "original_sha256": "b5af25291528ae4e55a7bf8577f4fe82c6b455dec375143a4746d0f08fbb3685",
+      "sha256": "130048ddfd360cab9cc10ee43cc48aae1dc7df273328530f8735cde96eaca928",
+      "storage": "objects/130048ddfd360cab9cc10ee43cc48aae1dc7df273328530f8735cde96eaca928",
+      "stored_bytes": 10338,
+      "stored_sha256": "130048ddfd360cab9cc10ee43cc48aae1dc7df273328530f8735cde96eaca928",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 40,
+      "bytes": 2144731,
+      "kind": "retained_data",
+      "locator": "results/batch_40/verify_local_controls_normal1.json",
+      "origin_locator": "results/P72_R40_P3_FINITE_CERTIFICATE_20261005/verify_local_controls_normal1.json",
+      "original_bytes": 2144731,
+      "original_sha256": "cd69d73e5875b850dda63e8d054c9cdd2bebc871dc35a02042a38585b69f1ae3",
+      "sha256": "3dcbb117efa9e7921c9e67085e43a988a2627de125eea602e0469d482ff5c332",
+      "storage": "objects/3dcbb117efa9e7921c9e67085e43a988a2627de125eea602e0469d482ff5c332.gz",
+      "stored_bytes": 367659,
+      "stored_sha256": "f1e7cd9e4efb3da1aafe9274fd8d819ab1ce85b223071e126f6848732334bf0a",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 41,
+      "bytes": 8996,
+      "kind": "source",
+      "locator": "results/batch_41/aggregate_core.py",
+      "origin_locator": "results/P72_R41_P2_FINITE_CERTIFICATE_20261005/aggregate_core.py",
+      "original_bytes": 6708,
+      "original_sha256": "cf1be1a8d7bf8779bf775c35b1da38bdbe149718d5ac767e4bd2f3fbf463a202",
+      "sha256": "f7f168f4e63cc0077ffd0813491934cef0ead648c73be2321f6769d2507992c0",
+      "storage": "objects/f7f168f4e63cc0077ffd0813491934cef0ead648c73be2321f6769d2507992c0",
+      "stored_bytes": 8996,
+      "stored_sha256": "f7f168f4e63cc0077ffd0813491934cef0ead648c73be2321f6769d2507992c0",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 41,
+      "bytes": 93350482,
+      "kind": "retained_data",
+      "locator": "results/batch_41/BRANCH_AGGREGATE.json",
+      "origin_locator": "results/P72_R41_P2_FINITE_CERTIFICATE_20261005/BRANCH_AGGREGATE.json",
+      "original_bytes": 93350572,
+      "original_sha256": "f82b99b9f2eeaa6e153342d796c49f3f5e1cbfd03901641a99087f65e3e236e5",
+      "sha256": "4483a31741b3b861e60855ae50dcb9cc8c5da574093cbba988941a49e7c996e8",
+      "storage": "objects/4483a31741b3b861e60855ae50dcb9cc8c5da574093cbba988941a49e7c996e8.gz",
+      "stored_bytes": 38002955,
+      "stored_sha256": "ca7fada9aacb717c141ef36914a50ae382c780922375d83a6b23af32f9675481",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 41,
+      "bytes": 11284270,
+      "kind": "retained_data",
+      "locator": "results/batch_41/BRANCH_DOMAIN.json",
+      "origin_locator": "results/P72_R41_P2_FINITE_CERTIFICATE_20261005/BRANCH_DOMAIN.json",
+      "original_bytes": 11284431,
+      "original_sha256": "e7aef29d092798503e87afb72e20c9f7cdddab662d8cf6eed539220d2adb7032",
+      "sha256": "49203317c45a398d04e5055fd2c8e8f999bc9bb9abd216c180ba410f852797b2",
+      "storage": "objects/49203317c45a398d04e5055fd2c8e8f999bc9bb9abd216c180ba410f852797b2.gz",
+      "stored_bytes": 413192,
+      "stored_sha256": "32fcc3bfdd99f77eea99c31fb4a09d09cd28ae0a4b5c174a14cbcdb03e045453",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 41,
+      "bytes": 28614,
+      "kind": "source",
+      "locator": "results/batch_41/check_branch.py",
+      "origin_locator": "results/P72_R41_P2_FINITE_CERTIFICATE_20261005/check_branch.py",
+      "original_bytes": 29791,
+      "original_sha256": "d4c9b3b2977b8822e62fc8180fa651e6de14ddb9796d86d89a16ab8aec726d16",
+      "sha256": "0fabeb49e4f829a45229bb53b6d7a20d593626fb4af9423ae995ed68f36987db",
+      "storage": "objects/0fabeb49e4f829a45229bb53b6d7a20d593626fb4af9423ae995ed68f36987db",
+      "stored_bytes": 28614,
+      "stored_sha256": "0fabeb49e4f829a45229bb53b6d7a20d593626fb4af9423ae995ed68f36987db",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 41,
+      "bytes": 2352191,
+      "kind": "retained_data",
+      "locator": "results/batch_41/check_branch_normal1.json",
+      "origin_locator": "results/P72_R41_P2_FINITE_CERTIFICATE_20261005/check_branch_normal1.json",
+      "original_bytes": 2352191,
+      "original_sha256": "50fbb9a67755b06467d5e4427ff714d25962cb62e772db4c01b2622f257dfdbe",
+      "sha256": "d6a1d1be726c74f300a30bcd785c1b33c5eccb3c658de3b901684005aed37220",
+      "storage": "objects/d6a1d1be726c74f300a30bcd785c1b33c5eccb3c658de3b901684005aed37220.gz",
+      "stored_bytes": 261590,
+      "stored_sha256": "f751d98d68a8e75942480120e47856c73deed53b0d972108f0a083419928e3d9",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 41,
+      "bytes": 7264,
+      "kind": "source",
+      "locator": "results/batch_41/compressed_oracle.py",
+      "origin_locator": "results/P72_R41_P2_FINITE_CERTIFICATE_20261005/compressed_oracle.py",
+      "original_bytes": 7662,
+      "original_sha256": "493b3dc16c3b897419a1544b33402f305408e1b9745ce2a35c12181b878ee00b",
+      "sha256": "4a7a4230f2a72f2ffeece15e8d1ad2a2ad3546bc40a5749d0e590022911ba06d",
+      "storage": "objects/4a7a4230f2a72f2ffeece15e8d1ad2a2ad3546bc40a5749d0e590022911ba06d",
+      "stored_bytes": 7264,
+      "stored_sha256": "4a7a4230f2a72f2ffeece15e8d1ad2a2ad3546bc40a5749d0e590022911ba06d",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present"
+      ]
+    },
+    {
+      "batch": 41,
+      "bytes": 831,
+      "kind": "retained_data",
+      "locator": "results/batch_41/REMAINING_N1.json",
+      "origin_locator": "results/P72_R41_P2_FINITE_CERTIFICATE_20261005/REMAINING_N1.json",
+      "original_bytes": 831,
+      "original_sha256": "399615606890aba83ecea78af01f3908d0108196bcf27922e0c2237c944854bc",
+      "sha256": "66dda9e174c34a383c615d10ae8b6d71d0f7eb17c2434c3590c3640cd1e75cc1",
+      "storage": "objects/66dda9e174c34a383c615d10ae8b6d71d0f7eb17c2434c3590c3640cd1e75cc1",
+      "stored_bytes": 831,
+      "stored_sha256": "66dda9e174c34a383c615d10ae8b6d71d0f7eb17c2434c3590c3640cd1e75cc1",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 41,
+      "bytes": 5296,
+      "kind": "source",
+      "locator": "results/batch_41/run_branch.py",
+      "origin_locator": "results/P72_R41_P2_FINITE_CERTIFICATE_20261005/run_branch.py",
+      "original_bytes": 4785,
+      "original_sha256": "b51038f1535c9aed913edc6d03028ffca322de059b8b5871a1bf40f416410ff6",
+      "sha256": "4b2cd600626c8c8d9e055c0282f93a80f41a093b563871f7fff5569743a840b8",
+      "storage": "objects/4b2cd600626c8c8d9e055c0282f93a80f41a093b563871f7fff5569743a840b8",
+      "stored_bytes": 5296,
+      "stored_sha256": "4b2cd600626c8c8d9e055c0282f93a80f41a093b563871f7fff5569743a840b8",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 41,
+      "bytes": 11527,
+      "kind": "source",
+      "locator": "results/batch_41/verify_local_controls.py",
+      "origin_locator": "results/P72_R41_P2_FINITE_CERTIFICATE_20261005/verify_local_controls.py",
+      "original_bytes": 12755,
+      "original_sha256": "2704eb28e99ea3c1b3d287c4a6ce782d3e66ad82e93b6d2464fcaff01e8480d7",
+      "sha256": "96b9a55af9dbdaa67edf6f5f705fd003a0b755d314819f654a64e02aa076b91b",
+      "storage": "objects/96b9a55af9dbdaa67edf6f5f705fd003a0b755d314819f654a64e02aa076b91b",
+      "stored_bytes": 11527,
+      "stored_sha256": "96b9a55af9dbdaa67edf6f5f705fd003a0b755d314819f654a64e02aa076b91b",
+      "transformations": [
+        "remove source control documentation/comments; normalize source rendering",
+        "public relative locator routing and transitive digest relinking where present",
+        "transitive public proof-note digest relinking"
+      ]
+    },
+    {
+      "batch": 41,
+      "bytes": 2174692,
+      "kind": "retained_data",
+      "locator": "results/batch_41/verify_local_controls_normal1.json",
+      "origin_locator": "results/P72_R41_P2_FINITE_CERTIFICATE_20261005/verify_local_controls_normal1.json",
+      "original_bytes": 2174692,
+      "original_sha256": "b12582df6341069b4fe9b3028f164b57811c0800262fc939579b6c615f064889",
+      "sha256": "9f4a06f1067592b996230687dd829b791b4ea151f586b8985c88f030ad3f45ac",
+      "storage": "objects/9f4a06f1067592b996230687dd829b791b4ea151f586b8985c88f030ad3f45ac.gz",
+      "stored_bytes": 343377,
+      "stored_sha256": "64cb38a601bb9f836401075fd230e3c768222298b8df9768770d5065adf97697",
+      "transformations": [
+        "public relative locator routing and transitive digest relinking where present",
+        "deterministic gzip; uncompressed hash is scientific byte identity",
+        "transitive public proof-note digest relinking"
+      ]
+    }
+  ],
+  "origin": "P72 integer-base companion; relative original locators identify the retained lineage only",
+  "schema": "integer-base-public-provenance-v1"
+}

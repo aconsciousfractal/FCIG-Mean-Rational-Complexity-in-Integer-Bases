@@ -1,0 +1,44 @@
+name: Verify reader package
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - name: Verify distributed identities
+        run: python -B scripts/check_manifest.py
+      - name: Test package and guards
+        run: |
+          python -B -m unittest discover -s tests -v
+          python -B -O -m unittest discover -s tests -v
+      - name: Compare fixed and retained replays
+        shell: bash
+        run: |
+          mkdir -p build/replay
+          for job in smoke retained semiprime; do
+            python -B scripts/reproduce.py "$job" > "build/replay/${job}_normal.json"
+            python -B scripts/reproduce.py "$job" --optimized > "build/replay/${job}_optimized.json"
+            python -B scripts/check_replay_output.py "$job" "build/replay/${job}_normal.json" "build/replay/${job}_optimized.json"
+          done
+      - name: Replay defining oracle from fresh materialization
+        run: |
+          python -B scripts/reproduce.py replay --batch 39 --script qualify_oracle.py --work oracle_normal > build/replay/oracle_normal.json
+          python -B scripts/reproduce.py replay --batch 39 --script qualify_oracle.py --work oracle_optimized --optimized > build/replay/oracle_optimized.json
+          python -B scripts/check_replay_output.py oracle build/replay/oracle_normal.json build/replay/oracle_optimized.json
+      - name: Verify complete distributed evidence
+        run: |
+          python -B scripts/check_complete_evidence.py
+          python -B -O scripts/check_complete_evidence.py
+      - name: Verify distributed identities after replay
+        run: python -B scripts/check_manifest.py

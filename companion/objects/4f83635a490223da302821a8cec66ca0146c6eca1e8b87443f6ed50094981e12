@@ -1,0 +1,14 @@
+{
+  "independent32_log_enclosures": 5488,
+  "large_CDFs_recomputed": false,
+  "main_histogram_Q_checks": 35,
+  "moduli_reconstructed": 35,
+  "paid": 35,
+  "payload_sha256": "5b197ec14f3cdb0a358914fecd084291148ed8de40eeb7598eb8e386d0ee4f6e",
+  "producer_imported": false,
+  "scientific_scope": "Autonomous retained histogram/Q/log validation and small independent defining CDFs, not a fresh full large count audit.",
+  "small_CDF_witness_checks": 548347,
+  "small_definition_residues": 53634,
+  "status": "E038_INDEPENDENT_PASS",
+  "unpaid": []
+}

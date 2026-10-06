@@ -1,0 +1,177 @@
+"""E042 ANALYTIC_ONLY: fixed N1 domain; no heights, CDFs or finite means."""
+from fractions import Fraction as F
+from functools import lru_cache
+import hashlib
+import json
+from math import gcd, isqrt
+from pathlib import Path
+import sys
+ROOT = Path(__file__).resolve().parents[2]
+R36 = ROOT / 'results/batch_36'
+CERTIFICATE_PIN = '2ff38973147b074682b1c6c8a10f6619649bbd5973af7211a1715b299da0fe69'
+SOURCE_PIN = 'a93f5175e080376c010182dc211314725dcb019ff09a102b7a2b28fc8326bfa5'
+SOURCE_PINS = {'reports/batch_27/PARAMETERIZED_MEAN_BALANCE.md': 'a172bdcdc005cdb84c06c8d47353b96df3fd0a57d5cb0f98cff61c7a5f2d7d62', 'reports/batch_34/ANALYTIC_REDUCTION.md': 'dc676335e332b87949f968c11db2de16904850d409dc175ca3c02b0e218bf6e8', 'reports/batch_36/EXTREMA_COMPRESSION.md': '04c126e1b3211fe096e728c217a5255890205d2491b15e6a4565a3c5dc72e2c0', 'reports/batch_36/NONSQUARE_ENDPOINT_REFINEMENT.md': '61e98ac5467b1522c27926e278c2f4553a6fdb0718de232d3672f57debe4acb7'}
+ZETA_TERMS = 128
+LOG_TERMS = 16
+SQRT_SCALE = 10 ** 15
+ENCLOSURE_GRID = 2 ** 60
+BOUND_FAMILIES = ('coarse', 'first_exact', 'first_uniform', 'second_exact', 'second_uniform')
+MODEL = dict(N=1, measure='uniform_all_M_residues_including_zero', denominator='positive_d_with_gcd(d,M)=1', congruence='A=s*d_mod_M', height='min_max(abs(A),d)', logarithm='natural', center='ln(M)/2')
+
+def require(ok, message):
+    if not ok:
+        raise ValueError(message)
+
+def pair(value):
+    require(type(value) is F, 'rational serialization')
+    return [value.numerator, value.denominator]
+
+def floor_grid(value):
+    return F(value.numerator * ENCLOSURE_GRID // value.denominator, ENCLOSURE_GRID)
+
+def ceil_grid(value):
+    return -floor_grid(-value)
+
+def series(z):
+    require(type(z) is F and 0 <= z <= F(1, 3), 'positive reduced atanh input')
+    power, total = (z, F(0))
+    for j in range(LOG_TERMS):
+        total += power / (2 * j + 1)
+        power *= z * z
+    lower = 2 * total
+    return (lower, lower + 2 * power / ((2 * LOG_TERMS + 1) * (1 - z * z)))
+
+@lru_cache(None)
+def logs(n):
+    require(type(n) is int and n > 0, 'exact positive integer logarithm')
+    exponent = n.bit_length() - 1
+    unit = 1 << exponent
+    lower, upper = series(F(n - unit, n + unit))
+    ell_lower, ell_upper = series(F(1, 3))
+    return (floor_grid(exponent * ell_lower + lower), ceil_grid(exponent * ell_upper + upper))
+
+@lru_cache(None)
+def prime(n):
+    return type(n) is int and n >= 2 and all((n % d for d in range(2, isqrt(n) + 1)))
+
+@lru_cache(None)
+def parameters(p, q):
+    require(type(p) is type(q) is int and 1 < p < q and prime(p) and prime(q), 'ordered distinct prime marks')
+    D = p * q
+    S = 0
+    for t in range(p):
+        endpoint = min(q - 1, (q * (t + 1) - 1) // p)
+        lower = max(1, (q * t + p - 1) // p)
+        require(lower <= endpoint and endpoint * p < q * (t + 1), 'nonempty strict block')
+        S = max(S, p * ((p - 1) * endpoint - q * t))
+    for j in range(1, p):
+        S = max(S, q * (q * j % p - j))
+    u, sigma = (F((p - 1) * (q - 1), D), F(S, D))
+    rho = F(D, (p + 1) * (q + 1))
+    h, m, K, W = (u + sigma, -sigma, 2 * u + 2 * sigma, 2 * u + sigma)
+    first_b0, first_b1 = (W + u, W)
+    second_b0, second_b1 = (W * W + u, W * u)
+    v = 2 - F(1, p) - F(1, q)
+    c0 = F(p - 1, p * p) + F(q - 1, q * q) - F(D - 1, D * D)
+    E0, E1 = (v * W + 2 * c0, v * u)
+    require(0 < sigma <= u and h == u + sigma and (m == -sigma) and (K == h - m + u) and (W == max(h, -m + 2 * u)) and (0 < K < 4) and (0 < W < 3) and (E0 > 0) and (E1 > 0) and (first_b0 >= first_b1 >= 0) and (second_b0 >= second_b1 >= 0), 'exact R27/R34/C7 parameter ranges')
+    require((sigma == u) == (q % p == 1), 'C9 equality guard')
+    return dict(D=D, S=S, u=u, sigma=sigma, rho=rho, h=h, m=m, K=K, W=W, first_b0=first_b0, first_b1=first_b1, second_b0=second_b0, second_b1=second_b1, coarse_b0=F(4), coarse_b1=F(3), v=v, c0=c0, E0=E0, E1=E1)
+
+def load_domain():
+    raw = (R36 / 'FRONTIER_CERTIFICATE.json').read_bytes()
+    require(hashlib.sha256(raw).hexdigest() == CERTIFICATE_PIN, 'R36 certificate bytes')
+    certificate = json.loads(raw)
+    require(certificate['status'] == 'R36_TWO_METHOD_DOMAIN_PASS' and certificate['generator_output'] == 'inventory_generate_normal1.json' and (certificate['generator_sha256'] == SOURCE_PIN) and (certificate['summaries']['active_rows'] == dict(count=11382, mass=1209189194, min_M=44, max_M=359917, radical_count=5714)), 'R36 certificate identity/domain')
+    raw = (R36 / 'inventory_generate_normal1.json').read_bytes()
+    require(hashlib.sha256(raw).hexdigest() == SOURCE_PIN, 'R36 immutable generator bytes')
+    source = json.loads(raw)
+    require(source['schema'] == 'p72-r36-source-only-frontier-v1' and source['status'] == 'SOURCE_ONLY' and (source['domain'] == dict(M_lower_inclusive=2, M_upper_exclusive=360000, omega=2, prime_order='p<q', valuations='a,b>=1')), 'fixed input schema/domain')
+    profiles = source['active_rows']
+    require(type(profiles) is list and len(profiles) == 11382, 'fixed active count')
+    previous = 0
+    for row in profiles:
+        require(type(row) is dict and set(row) == {'M', 'p', 'q', 'a', 'b', 'branch', 'cutoff', 'reasons'}, 'active row shape')
+        M, p, q, a, b = (row[key] for key in ('M', 'p', 'q', 'a', 'b'))
+        require(all((type(value) is int for value in (M, p, q, a, b, row['cutoff']))) and 1 < p < q and (a >= 1) and (b >= 1) and (M == p ** a * q ** b) and (gcd(a, b) == 1) and ((a, b) != (1, 1)) and (p * q not in (6, 10, 14, 15)) and (previous < M), 'exact ordered active N1 profile')
+        branch = 'p2' if p == 2 else 'p3' if p == 3 else 'p_ge5'
+        cutoff = {'p2': 147456, 'p3': 262144, 'p_ge5': 360000}[branch]
+        require(row['branch'] == branch and row['cutoff'] == cutoff and (M < cutoff) and (row['reasons'] == []), 'active branch metadata')
+        previous = M
+    require(sum((row['M'] for row in profiles)) == 1209189194 and len({(row['p'], row['q']) for row in profiles}) == 5714, 'fixed domain mass/marks')
+    for filename, pin in SOURCE_PINS.items():
+        require(hashlib.sha256((ROOT / filename).read_bytes()).hexdigest() == pin, 'imported mathematical source bytes: ' + filename)
+    return profiles
+
+def main():
+    profiles = load_domain()
+    partial = sum((F(1, n * n) for n in range(1, ZETA_TERMS + 1)), F(0))
+    zeta_lower = floor_grid(partial + F(1, ZETA_TERMS + 1))
+    zeta_upper = ceil_grid(partial + F(1, ZETA_TERMS))
+    alpha_lower, alpha_upper = (floor_grid(1 / zeta_upper), ceil_grid(1 / zeta_lower))
+    require(1 < zeta_lower < zeta_upper < 2 and 0 < alpha_lower < alpha_upper < 1, 'positive zeta/alpha enclosure')
+    sqrt2_lower = F(isqrt(2 * SQRT_SCALE ** 2), SQRT_SCALE)
+    sqrt2_upper = sqrt2_lower + F(1, SQRT_SCALE)
+    require(1 < sqrt2_lower and sqrt2_lower ** 2 < 2 < sqrt2_upper ** 2, 'sqrt2 exact enclosure')
+    beta_upper = 3 - 2 * sqrt2_lower
+    require(beta_upper >= 0, 'nonnegative beta upper')
+    ell_lower, ell_upper = logs(2)
+    rows = []
+    for profile in profiles:
+        M, p, q, a, b = (profile[key] for key in ('M', 'p', 'q', 'a', 'b'))
+        par = parameters(p, q)
+        u, rho = (par['u'], par['rho'])
+        slope = alpha_lower * rho - F(1, 2) + F(3, 4) * u * u
+        intercept = alpha_lower * (F(3, 8) + F(5, 8) * rho) - (1 - rho) / 2 - F(3, 4) * u * u
+        delta_lower = intercept + slope * (ell_lower if slope >= 0 else ell_upper)
+        k = isqrt(M)
+        scaled_root = isqrt(M * SQRT_SCALE ** 2)
+        x_lower = F(scaled_root, SQRT_SCALE)
+        x_upper = x_lower if scaled_root ** 2 == M * SQRT_SCALE ** 2 else x_lower + F(1, SQRT_SCALE)
+        require(k * k <= M < (k + 1) ** 2 and x_lower * x_lower <= M <= x_upper * x_upper and (F(k) <= x_lower <= x_upper < k + 1), 'fixed sqrt floor/enclosure')
+        t_lower, t_upper = (x_lower - k, x_upper - k)
+        logM_lower, logM_upper = logs(M)
+        log_x_lower, log_x_upper = (logM_lower / 2, logM_upper / 2)
+        endpoint = lambda t: (1 + 2 * t - 3 * t * t) / 2
+        endpoint_delta_lower = min(endpoint(t_lower), endpoint(t_upper)) + t_lower ** 3 / x_upper
+        plateau_factor_lower = max(F(1), 2 * x_lower - M + k * k)
+        require(0 <= t_lower <= t_upper < 1 and endpoint_delta_lower >= 0 and (plateau_factor_lower > 0) and (log_x_lower > 0), 'positive S4 gain intermediates')
+        kappa_lower, kappa_upper = (alpha_lower * rho, alpha_upper * rho)
+        theta_upper = alpha_upper * (1 - rho)
+        exact_tail_error = par['E0'] + par['E1'] * log_x_upper
+        uniform_tail_error = 3 + 2 * log_x_upper
+        bounds = {}
+        for label in BOUND_FAMILIES:
+            primitive_pair = label.split('_')[0]
+            b0, b1 = (par[primitive_pair + '_b0'], par[primitive_pair + '_b1'])
+            difference = b0 - b1
+            if label == 'coarse':
+                error = (22 + 15 * log_x_upper) / x_lower + (18 + 4 * log_x_upper) / M
+            else:
+                tail_error = exact_tail_error if label.endswith('_exact') else uniform_tail_error
+                K = par['K']
+                linear = 2 * kappa_upper + 2 * difference + 2 * b1 * log_x_upper + 2 * u * K * beta_upper + ell_upper / 2 * (4 * kappa_upper + 2 * b0 + 2 * b1 * log_x_upper + 2 * u * K) + (1 + F(5, 4) * theta_upper + 4 * tail_error) / sqrt2_lower
+                error = linear / x_lower + (K * K * ell_upper + 2 * tail_error) / M
+            plateau_gain = ell_lower * kappa_lower * plateau_factor_lower / M
+            endpoint_gain = 2 * kappa_lower * endpoint_delta_lower / M
+            primitive_gain = 2 * difference / M
+            zero_gain = log_x_lower / M
+            gain = plateau_gain + endpoint_gain + primitive_gain + zero_gain
+            upper = error - delta_lower - gain
+            require(error > 0 and gain > 0 and (difference >= 0), 'compatible positive error/gain pair')
+            bounds.update({label + '_error_upper': pair(error), label + '_gain_lower': pair(gain), label + '_upper': pair(upper), label + '_primitive_gain': pair(primitive_gain)})
+        values = [F(*bounds[label + '_upper']) for label in BOUND_FAMILIES]
+        upper = min(values)
+        rows.append(dict(M=M, p=p, q=q, a=a, b=b, N=1, k=k, sqrt_lower=pair(x_lower), sqrt_upper=pair(x_upper), t_lower=pair(t_lower), t_upper=pair(t_upper), log_x_lower=pair(log_x_lower), log_x_upper=pair(log_x_upper), delta_slope=pair(slope), delta_lower=pair(delta_lower), endpoint_delta_lower=pair(endpoint_delta_lower), plateau_factor_lower=pair(plateau_factor_lower), plateau_gain_lower=pair(plateau_gain), endpoint_gain_lower=pair(endpoint_gain), zero_gain_lower=pair(zero_gain), **bounds, upper=pair(upper), exact_tail_error_upper=pair(exact_tail_error), uniform_tail_error_upper=pair(uniform_tail_error), status='ANALYTIC_PAID' if upper < 0 else 'NEEDS_FINITE'))
+    profile_keys = ('M', 'p', 'q', 'a', 'b')
+    paid = [[row[key] for key in profile_keys] for row in rows if row['status'] == 'ANALYTIC_PAID']
+    remaining = [[row[key] for key in profile_keys] for row in rows if row['status'] == 'NEEDS_FINITE']
+    marks = sorted({(row['p'], row['q']) for row in profiles})
+    retained_parameters = {}
+    for p, q in marks:
+        retained_parameters[str(p) + ':' + str(q)] = {key: pair(value) if type(value) is F else value for key, value in parameters(p, q).items()}
+    result = dict(schema='P72_E042_ANALYTIC_N1_V1', model=MODEL, frontier_certificate_sha256=CERTIFICATE_PIN, source_sha256=SOURCE_PIN, imported_source_sha256=SOURCE_PINS, zeta_terms=ZETA_TERMS, log_terms=LOG_TERMS, sqrt_scale=SQRT_SCALE, enclosure_grid=ENCLOSURE_GRID, bound_families=list(BOUND_FAMILIES), zeta_lower=pair(zeta_lower), zeta_upper=pair(zeta_upper), alpha_lower=pair(alpha_lower), alpha_upper=pair(alpha_upper), ell_lower=pair(ell_lower), ell_upper=pair(ell_upper), sqrt2_lower=pair(sqrt2_lower), sqrt2_upper=pair(sqrt2_upper), beta_upper=pair(beta_upper), parameters=retained_parameters, rows=rows, analytic_paid_profiles=paid, remaining_profiles=remaining, analytic_paid=len(paid), remaining=len(remaining), analytic_paid_state_mass=sum((row[0] for row in paid)), remaining_distinct_prime_pairs=len({(row[1], row[2]) for row in remaining}), remaining_state_mass_not_visited=sum((row[0] for row in remaining)), input_count=len(profiles), input_mass=1209189194, input_distinct_prime_pairs=len(marks), operation_counts=dict(compressed_nonzero_candidates=sum((2 * p - 1 for p, q in marks)), compressed_zero_baselines=len(marks), parameter_pairs=len(marks), bound_families=len(BOUND_FAMILIES), row_bound_evaluations=len(BOUND_FAMILIES) * len(rows), zeta_sum_terms=ZETA_TERMS, sqrt_M_enclosures=len(rows), sqrt2_enclosures=1, log_series_evaluations=2 * logs.cache_info().currsize, log_atanh_terms=2 * LOG_TERMS * logs.cache_info().currsize), log_input_cardinality=logs.cache_info().currsize, log_inputs=sorted({2, *(row['M'] for row in profiles)}), finite_means_evaluated=False, residue_minima_evaluated=False, CDFs_evaluated=False, analytical_upper_bounds_evaluated=True, floating_used=False, general_N1_closed=False)
+    json.dump(result, sys.stdout, sort_keys=True, separators=(',', ':'))
+    sys.stdout.write('\n')
+if __name__ == '__main__':
+    main()

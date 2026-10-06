@@ -1,0 +1,124 @@
+from pathlib import Path as _PortablePath
+import importlib.util as _portable_import_util
+_portable_original_file = _PortablePath(__file__).with_name('resolve_cost.py')
+_portable_previous_spec = _portable_import_util.spec_from_file_location
+def _portable_spec(name, location, *args, **kwargs):
+    location = _PortablePath(location)
+    candidate = location.with_name("_portable_" + location.name)
+    if not location.name.startswith("_portable_") and candidate.is_file():
+        location = candidate
+    return _portable_previous_spec(name, location, *args, **kwargs)
+_portable_import_util.spec_from_file_location = _portable_spec
+import hashlib
+import json
+from math import gcd, isqrt
+from pathlib import Path
+import sys
+OUT = Path(__file__).parent
+ROOT = OUT.parents[1]
+INPUT = 'results/batch_37/remaining_work_normal1.json'
+INPUT_SHA = '540ef3eed51deccca38f414098d49aa881200a9d7f778d143f28d3bbb6a038e9'
+SOURCE_PINS = {'results/batch_37/remaining_work.py': '9736ec67f0f3e8787eb854ac7194613d90a24b3e7a88a99b8185529d7d7ecf41', 'results/batch_36/resolve_work.py': 'afefc2df5fab87298133f4f5e0d4649f42862505b5d588c1dc2dd9817c39ed1b', 'results/batch_35/verify_large.py': '13b44f61425cc6b3d978909a3b2b61be9a71cc63c2f1c9a08ecf5bda8d7bccbb'}
+SYNTHETIC = ((12, 2, 3, 2, 1), (18, 2, 3, 1, 2), (45, 3, 5, 2, 1), (75, 3, 5, 1, 2))
+
+def need(ok, message):
+    if not ok:
+        raise ValueError(message)
+
+def divisor_grid(p, q, a, b):
+    return sorted((p ** i * q ** j for i in range(a + 1) for j in range(b + 1)))
+
+def branch(p):
+    return 'p2' if p == 2 else 'p3' if p == 3 else 'p_ge5'
+
+def counters(row):
+    M, p, q, a, b = (row[key] for key in ('M', 'p', 'q', 'a', 'b'))
+    k = row['k']
+    need(M == p ** a * q ** b and 1 < p < q and (a > 0) and (b > 0), 'retained original two-prime profile')
+    need(gcd(a, b) == 1 and (a, b) != (1, 1), 'retained valuation scope')
+    need(k == isqrt(M) and k >= 2 and (M >= 6), 'half/support scope')
+    ds = divisor_grid(p, q, a, b)
+    tau = len(ds)
+    G = tau - 1
+    S = sum((2 ** ((M // g % p == 0) + (M // g % q == 0)) for g in ds[:-1]))
+    need(S == (2 * a + 1) * (2 * b + 1) - 1, 'original IE lattice identity')
+    J = sum((1 < d <= k for d in ds))
+    V = row['large_Farey_visits_exact']
+    need(type(V) is int and V > 0 and (V % 2 == 1), 'inherited Farey parity')
+    need(row['proper_strata'] == G and row['stratum_terms_per_interval'] == S, 'inherited class lattice')
+    need(row['large_interval_terms_bound'] == V * S, 'inherited interval term bound')
+    H = (V + 1) // 2
+    result = dict(divisor_grid_cells_exact=tau, proper_strata_output_exact=G, supported_divisor_queries_per_component_exact=J, potentially_nonzero_strata_exact=J + 1, forced_zero_strata_exact=G - J - 1, full_Farey_visits_exact=V, half_Farey_emissions_exact=H, half_stopping_probe_bound=1, half_candidate_inspections_bound=H + 1, half_mark_gcd_tests_bound=H, half_Farey_recurrence_floor_divisions_bound=H, half_endpoint_floor_divisions_bound=2 * H, half_nonempty_intervals_bound=H, half_merged_components_bound=H, old_interval_terms_bound=V * S, old_class_floor_divisions_bound=2 * V * S, full_shared_divisor_queries_bound=V * (tau - 2), full_shared_class_floor_divisions_bound=2 * V * (tau - 2), full_support_divisor_queries_bound=V * J, full_support_class_floor_divisions_bound=2 * V * J, half_support_divisor_queries_bound=H * J, half_support_class_floor_divisions_bound=2 * H * J, half_principal_floor_divisions_bound=H + 2 * H + 2 * H * J, half_divisibility_accumulator_updates_bound=H * J, half_divisibility_differences_bound=H * J, half_interval_mass_additions_bound=H, reconstruction_signed_references_bound=S, reconstruction_additions_subtractions_bound=S - G, full_stratum_doublings_bound=J + 1, divisor_accumulators_exact=J + 1)
+    need(result['half_support_class_floor_divisions_bound'] <= result['full_support_class_floor_divisions_bound'] <= result['full_shared_class_floor_divisions_bound'] <= result['old_class_floor_divisions_bound'], 'compression ordering')
+    return result
+
+def local_policy(marks):
+    profiles = []
+    for p, q in marks:
+        for u, v in ((p, q), (q, p)):
+            child = u
+            exponent = 1
+            while child <= 2 * v:
+                child *= u
+                exponent += 1
+            half = (child - 1) // 2
+            signed = 2 * (half - half // u)
+            profiles.append(dict(p=p, q=q, kind='pure', present=u, missing=v, exponent=exponent, child=child, original_modulus=v * child, signed_types_exact=signed, step_tests_bound=2 * signed + 3))
+        signed = (p - 1) * (q - 1)
+        profiles.append(dict(p=p, q=q, kind='mixed', child=p * q, original_modulus=p * q, signed_types_exact=signed, step_tests_bound=2 * signed + 3))
+    m2 = sum((p == 2 for p, q in marks))
+    signed = sum((row['signed_types_exact'] for row in profiles))
+    steps = sum((row['step_tests_bound'] for row in profiles))
+    totals = dict(distinct_radicals=len(marks), physical_curves_exact=len(profiles), signed_types_excluding_m2_exact=signed, m2_singletons_exact=m2, signed_types_including_m2_exact=signed + m2, step_tests_excluding_m2_bound=steps, m2_singleton_step_tests_bound=3 * m2, step_tests_including_m2_bound=steps + 3 * m2, marginal_comparisons_bound=2 * (steps + 3 * m2))
+    return dict(policy='ALL_RETAINED_RADICALS_MINIMAL_PURE_CHILD_AND_MIXED', physical_witnesses_evaluated=False, profiles=profiles, totals=totals)
+
+def synthetic_costs():
+    rows = []
+    for M, p, q, a, b in SYNTHETIC:
+        k = isqrt(M)
+        ds = divisor_grid(p, q, a, b)
+        tau = len(ds)
+        G = tau - 1
+        S = (2 * a + 1) * (2 * b + 1) - 1
+        J = sum((1 < d <= k for d in ds))
+        intervals = M * (M + 1) // 2
+        short = k * (k + 1) // 2
+        rows.append(dict(M=M, p=p, q=q, a=a, b=b, k=k, full_interval_cases_exact=intervals, full_direct_gcd_membership_visits_exact=M * (M + 1) * (M + 2) // 6, full_lattice_floor_divisions_bound=2 * tau * intervals, original_IE_floor_divisions_bound=2 * S * intervals, full_stratum_comparisons_exact=G * intervals, support_interval_cases_exact=short, support_direct_gcd_membership_visits_exact=k * (k + 1) * (k + 2) // 6, support_floor_divisions_bound=2 * J * short, support_stratum_comparisons_exact=G * short))
+    names = [key for key in rows[0] if key.endswith(('_exact', '_bound'))]
+    return dict(profiles=[list(v) for v in SYNTHETIC], details=rows, totals={key: sum((row[key] for row in rows)) for key in names}, arithmetic_panel_executed=False, original_defining_CDFs_evaluated=False, scope='Prospective finite-difference/IE/direct-gcd arithmetic tests, not witness tests.')
+
+def main():
+    need(len(sys.argv) == 1, 'no adaptive arguments permitted')
+    raw = (ROOT / INPUT).read_bytes()
+    need(hashlib.sha256(raw).hexdigest() == INPUT_SHA, 'retained input byte pin')
+    for name, pin in SOURCE_PINS.items():
+        need(hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == pin, name)
+    data = json.loads(raw)
+    need(data['status'] == 'RETAINED_COMPLEMENT_COSTS_ONLY', 'retained metadata status')
+    need(data['remaining_moduli'] == 4410 and len(data['details']) == 4410, 'all retained rows')
+    profiles = data['remaining_profiles']
+    need(len(profiles) == 4410 and len({v[0] for v in profiles}) == 4410, 'complete unique profile list')
+    details = []
+    for profile, row in zip(profiles, data['details']):
+        need(all((type(v) is int for v in profile)) and len(profile) == 5, 'exact profile types')
+        need([row[key] for key in ('M', 'p', 'q', 'a', 'b')] == profile, 'unchanged original order/model')
+        need(all((type(value) is int for key, value in row.items() if key != 'thresholds_sha256')), 'exact baseline scalars')
+        details.append(dict(profile=profile, baseline=row, compression=counters(row)))
+    need(sum((v[0] for v in profiles)) == data['state_mass_not_visited'] == 95870797, 'retained mass without state visit')
+    marks = sorted({(v[1], v[2]) for v in profiles})
+    need(len(marks) == data['distinct_radicals'] == 2272, 'retained radical set')
+    inherited = {key: sum((row['baseline'][key] for row in details)) for key in data['totals']}
+    need(inherited == data['totals'], 'all retained baseline totals')
+    need(inherited['large_interval_terms_bound'] == 586418464, 'unchanged baseline work')
+    need(data['large_interval_floor_divisions_bound'] == 1172836928, 'unchanged baseline floors')
+    names = list(details[0]['compression'])
+    totals = {key: sum((row['compression'][key] for row in details)) for key in names}
+    branches = []
+    for name in ('p2', 'p3', 'p_ge5'):
+        subset = [row for row in details if branch(row['profile'][1]) == name]
+        branches.append(dict(branch=name, count=len(subset), mass=sum((row['profile'][0] for row in subset)), compression_totals={key: sum((row['compression'][key] for row in subset)) for key in names}))
+    need([{key: row[key] for key in ('branch', 'count', 'mass')} for row in branches] == data['active_by_branch'], 'complete branch conservation')
+    result = dict(schema='p72-r38-compressed-cost-v1', status='WORK_ONLY_COMPRESSION_COSTED_NOT_MEAN_CERTIFIED', input_path=INPUT, input_sha256=INPUT_SHA, historical_source_pins=SOURCE_PINS, algorithm='HALF_FAREY_POSITIVE_UNION_SUPPORT_DIVISIBILITY_GLOBAL_INVERSION', remaining_moduli=4410, remaining_profiles=profiles, distinct_radicals=2272, state_mass_not_visited=95870797, active_by_branch=branches, inherited_totals=inherited, compression_totals=totals, details=details, all_mark_local_policy=local_policy(marks), synthetic_arithmetic_policy=synthetic_costs(), minima_CDFs_or_means_evaluated=False, actual_merged_components_observed=False, historical_scientific_programs_imported_or_executed=False, new_calendars_or_Farey_streams_generated=False, scope='Prospective exact metadata and conservative operation bounds on all retained rows.', limitations=['Merged components, actual interval queries, runtime and RAM remain unobserved.', 'Central interval audit only: inherited local, producer, calendar and far costs remain separate.', 'All-mark physical witness policy is costed, never evaluated.', 'Synthetic arithmetic checks are costed, never executed.', 'No finite-mean bridge or new scientific sign is executed or certified.'])
+    sys.stdout.write(json.dumps(result, sort_keys=True, indent=2) + '\n')
+if __name__ == '__main__':
+    main()

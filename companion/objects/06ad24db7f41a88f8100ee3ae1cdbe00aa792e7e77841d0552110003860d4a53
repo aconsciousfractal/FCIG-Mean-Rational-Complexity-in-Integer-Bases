@@ -1,0 +1,236 @@
+"""E037 standalone large central-CDF/stratum recount and far arithmetic audit.
+
+No producer/checker import, large original-state loop or minimum vector.
+"""
+from fractions import Fraction
+from functools import lru_cache
+import hashlib, json
+from math import gcd, isqrt
+from pathlib import Path
+import sys
+OUT = Path(__file__).parent
+S = 2 ** 64
+DOMAIN_PIN = 'd767ef2f2560427d3623d1dffefc4713a113544215e4e71cbeeed8dfc3dd237a'
+ROWS = ((194481, 3, 7, 4, 4), (234256, 2, 11, 4, 4), (456976, 2, 13, 4, 4))
+SMALL = ((21, 3, 7), (63, 3, 7), (147, 3, 7), (189, 3, 7), (441, 3, 7), (22, 2, 11), (44, 2, 11), (88, 2, 11), (242, 2, 11), (484, 2, 11), (352, 2, 11), (26, 2, 13), (52, 2, 13), (104, 2, 13), (338, 2, 13), (676, 2, 13), (416, 2, 13), (18, 2, 3), (50, 2, 5))
+
+def need(ok, message):
+    if not ok:
+        raise RuntimeError(message)
+
+@lru_cache(maxsize=None)
+def prime_factors(n):
+    need(type(n) is int and n > 0, 'factorinput')
+    out = []
+    q = 2
+    while q * q <= n:
+        if n % q == 0:
+            out.append(q)
+            while n % q == 0:
+                n //= q
+        q += 1
+    if n > 1:
+        out.append(n)
+    return tuple(out)
+
+def squarefree_terms(n):
+    out = [(1, 1)]
+    for q in prime_factors(n):
+        out += [(e * q, -sign) for e, sign in out]
+    return out
+
+def divisors(n):
+    out = []
+    for g in range(1, isqrt(n) + 1):
+        if n % g == 0:
+            out.append(g)
+            if g * g != n:
+                out.append(n // g)
+    return sorted(out)
+
+@lru_cache(maxsize=None)
+def totient(n):
+    result = n
+    for q in prime_factors(n):
+        result -= result // q
+    return result
+
+def farey(T):
+    need(type(T) is int and T >= 1, 'exactFareyorder')
+    yield (0, 1)
+    a, b, c, d = (0, 1, 1, T)
+    while c <= d:
+        need(b * c - a * d == 1 and 1 <= d <= T and (b + d > T), 'Fareyneighborinvariant')
+        yield (c, d)
+        z = (T + b) // d
+        a, b, c, d = (c, d, z * c - a, z * d - b)
+
+def interval_count(L, U, g, terms):
+    return sum((sign * (U // (g * e) - (L - 1) // (g * e)) for e, sign in terms))
+
+def interval_union(M, T):
+    need(type(M) is int and 1 <= T < M and (T * T <= M), 'central interval scope')
+    gs = [g for g in divisors(M) if g < M]
+    class_terms = {g: squarefree_terms(M // g) for g in gs}
+    counts = {g: 0 for g in gs}
+    visits = marked = intervals = merged = termwork = mass = 0
+    digest = hashlib.sha256()
+    active = None
+    previous = None
+
+    def finish(L, U):
+        nonlocal merged, termwork, mass
+        merged += 1
+        mass += U - L + 1
+        digest.update((str(L) + ',' + str(U) + '\n').encode())
+        for g in gs:
+            value = interval_count(L, U, g, class_terms[g])
+            need(value >= 0, 'interval stratum count')
+            counts[g] += value
+            termwork += len(class_terms[g])
+    for c, q in farey(T):
+        visits += 1
+        if gcd(q, M) > 1:
+            continue
+        marked += 1
+        L = max(0, -((T - M * c) // q))
+        U = min(M - 1, (M * c + T) // q)
+        if L > U:
+            continue
+        intervals += 1
+        if previous is not None:
+            need(L >= previous[0] and U >= previous[1], 'ordered rounded endpoints')
+        previous = (L, U)
+        if active is None:
+            active = (L, U)
+        elif L <= active[1] + 1:
+            active = (active[0], max(active[1], U))
+        else:
+            finish(*active)
+            active = (L, U)
+    if active is not None:
+        finish(*active)
+    need(visits == 1 + sum((totient(q) for q in range(1, T + 1))), 'completeFareyvisitcount')
+    need(1 + sum(counts.values()) == mass, 'zero and disjoint strata')
+    return dict(T=T, C=mass, gcd_counts=[[g, counts[g]] for g in gs], Farey_visits=visits, full_unit_centres=marked, nonempty_integer_intervals=intervals, merged_intervals=merged, interval_terms=termwork, interval_sha256=digest.hexdigest())
+
+def local_primitive_count(M, T):
+    need(2 * T * T <= M and T >= 1, 'collisionfree scope')
+    value = termwork = 0
+    for d in range(1, T + 1):
+        if gcd(d, M) > 1:
+            continue
+        terms = squarefree_terms(d)
+        termwork += len(terms)
+        count = sum((sign * (T // e) for e, sign in terms))
+        need(count >= 0, 'denominatorrowcount')
+        value += count
+    return dict(T=T, P=value, C=1 + 2 * value, local_floor_terms=termwork)
+
+def defining_minima_small(M, p):
+    values = [max(1, min(s, M - s)) for s in range(M)]
+    for d in range(1, M // p + 1):
+        if gcd(d, M) > 1:
+            continue
+        for s in range(M):
+            A = s * d % M
+            h = max(d, min(A, M - A))
+            if h < values[s]:
+                values[s] = h
+    return values
+
+def histogram_CDF(hist, T):
+    return sum((c for h, c in hist if h <= T))
+
+def far_fraction(M, p, r, T):
+    need(T * T > 2 * M, 'strictfar')
+    Q = (M - 1) // T
+    need(T > 2 * Q, 'positivefar denominator')
+    centres = ticks = groups = 0
+    for q in range(2, Q + 1):
+        if gcd(q, M) == 1:
+            continue
+        j = 1 if q % (p * r) == 0 else 2
+        length = Fraction(2 * totient(q) * (M - T * q), q * (T - j * q))
+        need(length > 0, 'positive grouped length')
+        ticklength = length * S
+        ticks += -(-ticklength.numerator // ticklength.denominator)
+        centres += totient(q)
+        groups += 1
+    return ([T, Q, centres, ticks, ticks // S + centres], groups)
+
+def main():
+    domainraw = (OUT / 'LENGTH_FOUR_DOMAIN.json').read_bytes()
+    need(hashlib.sha256(domainraw).hexdigest() == DOMAIN_PIN, 'domainpin')
+    domain = json.loads(domainraw)
+    raw = (OUT / 'LENGTH_FOUR_AGGREGATE.json').read_bytes()
+    data = json.loads(raw)
+    need(domain['rows'] == [list(v) for v in ROWS] and len(data['rows']) == 3, 'fixedthree')
+    need(data['domain_sha256'] == DOMAIN_PIN, 'payload domain')
+    need(domain['small_profiles'] == [list(v) for v in SMALL], 'smallfixed')
+    result = []
+    allfarchecks = allfargroups = 0
+    for profile, row, work in zip(ROWS, data['rows'], domain['details']):
+        M, p, r, a, b = profile
+        need([row[k] for k in ('M', 'p', 'r', 'a', 'b')] == list(profile), 'profile')
+        need(prime_factors(M) == (p, r) and M == p ** a * r ** b, 'exact model')
+        need(work['M'] == M and work['k'] == isqrt(M), 'workrow')
+        local = local_primitive_count(M, work['T0'])
+        need(local['C'] == histogram_CDF(row['upper_histogram'], work['T0']), 'local exact CDF')
+        need(local['local_floor_terms'] == work['local_floor_terms_exact'], 'local work')
+        union = interval_union(M, work['k'])
+        need(union['C'] == histogram_CDF(row['upper_histogram'], work['k']) == row['exact_central_states'], 'large defining central CDF')
+        need(union['gcd_counts'] == row['central_stratum_totals'] and len(union['gcd_counts']) == 24, 'all24 independent strata')
+        need(union['Farey_visits'] == work['large_Farey_visits_exact'], 'Farey exact work')
+        need(union['interval_terms'] <= work['large_interval_terms_bound'], 'interval work bound')
+        wantedfar = [T for T in work['thresholds'] if T * T > 2 * M]
+        need([v[0] for v in row['far_counts']] == wantedfar, 'allfarrows retained')
+        farchecks = fargroups = 0
+        for v in row['far_counts']:
+            rebuilt, groups = far_fraction(M, p, r, v[0])
+            need(rebuilt == v, 'independent far Fraction arithmetic')
+            farchecks += 1
+            fargroups += groups
+        need(farchecks == work['far_rows'], 'far rowcount')
+        allfarchecks += farchecks
+        allfargroups += fargroups
+        result.append(dict(M=M, p=p, r=r, T0=local, central=union, far_arithmetic_checks=farchecks, far_groups=fargroups))
+    small = []
+    smallchecks = smallvisits = smallterms = 0
+    smallrows = {(v['M'], v['p'], v['r']): v for v in data['validation']}
+    need(len(smallrows) == len(SMALL), 'allsmallrows')
+    for M, p, r in SMALL:
+        truth = defining_minima_small(M, p)
+        gs = [g for g in divisors(M) if g < M]
+        cases = []
+        for T in sorted({1, isqrt(M // 2), isqrt(M)}):
+            value = interval_union(M, T)
+            need(value['C'] == sum((h <= T for h in truth)), 'small exact defining Fareyunion')
+            for g, c in value['gcd_counts']:
+                need(c == sum((truth[s] <= T for s in range(M) if gcd(s, M) == g)), 'small exact defining stratum')
+                smallchecks += 1
+            need(value['C'] == histogram_CDF(smallrows[M, p, r]['upper_histogram'], T), 'small prefix linkage')
+            smallchecks += 2
+            smallvisits += value['Farey_visits']
+            smallterms += value['interval_terms']
+            cases.append(value)
+        T0 = isqrt(M // 2)
+        local = local_primitive_count(M, T0)
+        need(local['C'] == sum((h <= T0 for h in truth)), 'small exact local primitivecount')
+        smallchecks += 1
+        small.append(dict(M=M, p=p, r=r, cases=cases, local=local))
+    need(smallvisits == domain['small_Farey_visits_exact'], 'smallFareyvisits')
+    need(smallterms <= domain['small_Farey_visits_exact'] * 32, 'small interval term bound')
+    need(sum((v[0] for v in SMALL)) == 3773, 'smallstatecount')
+    need(allfarchecks == domain['large_far_rows'], 'allfarcheckcount')
+    obj = dict(status='E037_LARGE_CENTRAL_AND_FAR_ARITHMETIC_PASS', payload_sha256=hashlib.sha256(raw).hexdigest(), domain_sha256=DOMAIN_PIN, rows=result, small_validation=small, main_moduli=3, large_global_CDF_values_recomputed=6, large_gcd_stratum_values_recomputed=72, large_Farey_visits=sum((v['central']['Farey_visits'] for v in result)), large_interval_terms_observed=sum((v['central']['interval_terms'] for v in result)), large_local_floor_terms=sum((v['T0']['local_floor_terms'] for v in result)), large_far_arithmetic_checks=allfarchecks, large_far_rational_groups=allfargroups, small_definition_residues=3773, small_checks=smallchecks, small_Farey_visits=smallvisits, small_interval_terms=smallterms, producer_imported=False, retained_checker_imported=False, large_full_minimum_vectors=0, all_large_CDF_knots_recomputed=False, true_far_survival_recomputed=False, scope='Exact global T0/k and all k-gcd strata; every far row arithmetic, not true far survival or all noncentral witness CDFs.')
+    raw = (json.dumps(obj, sort_keys=True, indent=2) + '\n').encode()
+    target = OUT / 'LARGE_CENTRAL_AUDIT.json'
+    if target.exists():
+        need(target.read_bytes() == raw, 'largeaudit mode mismatch')
+    else:
+        with target.open('xb') as f:
+            f.write(raw)
+    sys.stdout.buffer.write(raw)
+if __name__ == '__main__':
+    main()

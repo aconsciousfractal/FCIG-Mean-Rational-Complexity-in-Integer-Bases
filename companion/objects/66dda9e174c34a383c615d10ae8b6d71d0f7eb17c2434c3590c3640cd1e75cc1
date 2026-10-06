@@ -1,0 +1,31 @@
+{
+  "all_profiles_preserved": true,
+  "branches": {
+    "p2": {
+      "moduli": 0,
+      "radicals": 0,
+      "state_mass_not_swept": 0
+    },
+    "p3": {
+      "moduli": 0,
+      "radicals": 0,
+      "state_mass_not_swept": 0
+    },
+    "p_ge5": {
+      "moduli": 0,
+      "radicals": 0,
+      "state_mass_not_swept": 0
+    }
+  },
+  "favorable_subset_selection": false,
+  "general_N1_closed": true,
+  "general_two_prime_N1_closed": true,
+  "moduli": 0,
+  "radicals": 0,
+  "remaining_profiles": [],
+  "source_certificate_sha256": "4483a31741b3b861e60855ae50dcb9cc8c5da574093cbba988941a49e7c996e8",
+  "source_domain_sha256": "49203317c45a398d04e5055fd2c8e8f999bc9bb9abd216c180ba410f852797b2",
+  "state_mass_not_swept": 0,
+  "status": "EMPTY_COMPLETE_TWO_PRIME_N1_OBLIGATION_SET",
+  "universal_all_base_zero_offset_claimed": false
+}

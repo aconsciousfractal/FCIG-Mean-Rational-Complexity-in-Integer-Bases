@@ -1,0 +1,185 @@
+"""E027 fixed mixed panel: independent minima, Farey unions, exact signs.
+
+Scientific proofs are in the companion notes. This finite checker uses
+floats only in explicitly labelled exploratory mean offsets.
+"""
+from pathlib import Path
+from collections import Counter
+from fractions import Fraction
+import hashlib
+import importlib.util
+import json
+import math
+import sys
+ROOT = Path(__file__).resolve().parents[2]
+OUT = Path(__file__).parent
+CASES = tuple(((b, n) for b, maxn in ((6, 5), (10, 4), (15, 3), (30, 3)) for n in range(1, maxn + 1)))
+
+def require(ok, message):
+    if not ok:
+        raise RuntimeError(message)
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+def minimum(b, m, r):
+    best = max(1, min(r, m - r))
+    d = 2
+    while d < best:
+        if math.gcd(d, b) == 1:
+            a = r * d % m
+            best = min(best, max(d, min(a, m - a)))
+        d += 1
+    return best
+
+def ceildiv(a, b):
+    return -(-a // b)
+
+def mobius(n):
+    sign = 1
+    p = 2
+    while p * p <= n:
+        if n % p == 0:
+            n //= p
+            sign = -sign
+            if n % p == 0:
+                return 0
+        p += 1
+    return -sign if n > 1 else sign
+
+def central(b, m, t):
+    require(1 <= t and t * t <= m, 'central domain')
+    units = [0]
+    for k in range(1, t + 1):
+        units.append(units[-1] + (math.gcd(k, b) == 1))
+    pcount = sum((mobius(g) * (t // g) * units[t // g] for g in range(1, t + 1) if math.gcd(g, b) == 1))
+    collision = 0
+    for d in range(1, t + 1):
+        if math.gcd(d, b) != 1:
+            continue
+        for e in range(1, t + 1):
+            if math.gcd(e, b) != 1 or math.gcd(d, e) != 1:
+                continue
+            a0 = m * pow(e, -1, d) % d if d > 1 else 0
+            collision += max(0, (t - a0) // d - ceildiv(m - d * t - e * a0, d * e) + 1)
+    return 1 + 2 * pcount - collision
+
+def farey_union(b, m, t):
+    if t >= max(1, m // 2):
+        return (m, 0)
+    intervals = []
+    for q in range(1, t + 1):
+        if math.gcd(q, b) != 1:
+            continue
+        for a in range(q + 1):
+            if math.gcd(a, q) != 1:
+                continue
+            lo = max(0, ceildiv(m * a - t, q))
+            hi = min(m - 1, (m * a + t) // q)
+            if lo <= hi:
+                intervals.append((lo, hi))
+    intervals.sort()
+    covered = 0
+    left = right = None
+    for lo, hi in intervals:
+        if right is None:
+            left, right = (lo, hi)
+        elif lo <= right + 1:
+            right = max(right, hi)
+        else:
+            covered += right - left + 1
+            left, right = (lo, hi)
+    if right is not None:
+        covered += right - left + 1
+    return (covered, len(intervals))
+
+def main():
+    require(len(CASES) == 15 and sum((b ** n for b, n in CASES)) == 51985, 'fixed panel')
+    olddir = ROOT / 'reports/batch_24'
+    source = olddir / 'mixed_normal.json'
+    require(sha(source.read_bytes()) == 'c267e481f1b71bcef1b0bbe051d4e1fceb54f4ff146b88db664536f492a2e3c9', 'R24 panel pin')
+    old = {(z['base'], z['N']): z for z in json.loads(source.read_bytes())['rows']}
+    rows = []
+    union_checks = central_checks = overlaps = intervals_total = 0
+    for b, n in CASES:
+        m = b ** n
+        heights = [minimum(b, m, r) for r in range(m)]
+        hist = sorted(Counter(heights).items())
+        require(sum((c for _, c in hist)) == m and heights[0] == 1, 'mass/zero')
+        vector_sha = sha(json.dumps(heights, separators=(',', ':')).encode())
+        if (b, n) in old:
+            require([list(z) for z in hist] == old[b, n]['histogram'], 'R24 histogram')
+            require(vector_sha == old[b, n]['minimum_vector_sha256'], 'R24 vector')
+            overlaps += 1
+        cap = max(1, m // 2)
+        thresholds = sorted({min(cap, max(1, t)) for t in (1, math.isqrt((m - 1) // 2), math.isqrt(m), 2 * math.isqrt(m))})
+        checked = []
+        for t in thresholds:
+            expected = sum((c for h, c in hist if h <= t))
+            got, num_intervals = farey_union(b, m, t)
+            require(got == expected, 'integer Farey union')
+            union_checks += 1
+            intervals_total += num_intervals
+            row = {'T': t, 'count': got, 'intervals': num_intervals}
+            if t * t <= m:
+                c = central(b, m, t)
+                require(c == got, 'mixed central formula')
+                row['central_count'] = c
+                central_checks += 1
+            checked.append(row)
+        product = math.prod((h ** c for h, c in hist))
+        comparison = (product * product > m ** m) - (product * product < m ** m)
+        if (b, n) in old:
+            require(comparison == old[b, n]['exact_squared_product_comparison'], 'R24 sign')
+        offset = sum((c * math.log(h) for h, c in hist)) / m - 0.5 * math.log(m)
+        rows.append({'base': b, 'N': n, 'M': m, 'histogram': hist, 'height_sum': sum(heights), 'minimum_vector_sha256': vector_sha, 'exact_squared_product_comparison': comparison, 'natural_mean_offset_CL1': offset, 'base_mean_offset_CL1': offset / math.log(b), 'CDF_checks': checked})
+    certifier = olddir / 'certify_counterexample.py'
+    require(sha(certifier.read_bytes()) == '1539a5bc9e9607025c5ad83a8bc75439b2b1033885a0de83253a747313539703', 'R24 certifier pin')
+    sys.dont_write_bytecode = True
+    spec = importlib.util.spec_from_file_location('frozen_r24_logs', certifier)
+    logs = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(logs)
+    z = next((z for z in rows if (z['base'], z['N']) == (30, 2)))
+    low = high = Fraction(0)
+    product = 1
+    for h, c in z['histogram']:
+        l, u = logs.log_int_interval(h)
+        low += c * l
+        high += c * u
+        product *= h ** c
+    l30, u30 = logs.log_int_interval(30)
+    meanlo = low / (900 * u30)
+    meanhi = high / (900 * l30)
+    require(product // 30 ** 900 == 2 and meanlo > 1, 'B30N2 counterexample')
+    counter = {'exact_product_ratio_floor': 2, 'mean_log30_outward_interval': logs.decimal_outward(meanlo, meanhi), 'source_certifier_sha256': sha(certifier.read_bytes())}
+    primes = (2, 3, 5, 7, 11, 13, 17)
+    q0 = math.prod(primes)
+    rho = math.prod((Fraction(p, p + 1) for p in primes))
+    require(q0 == 510510 and rho == Fraction(85085, 290304), 'primorial/rho')
+    gamma = Fraction(7553, 1886976)
+    require((1 - Fraction(44, 13) * rho) / 2 == gamma and gamma > 0, 'positive gap')
+    alpha_lower = Fraction(6, 5) * rho
+    d = 2 ** len(primes)
+    sufficient_m = Fraction(16 * (4 * d + 14) ** 4, 1) / (alpha_lower ** 3 * gamma ** 4)
+    sufficient_integer = ceildiv(sufficient_m.numerator, sufficient_m.denominator)
+    powers = [n for n in range(1, 11) if q0 ** n >= sufficient_integer]
+    require(powers, 'finite power-parameter range')
+    zeta_lower5 = sum((Fraction(1, k * k) for k in range(1, 6)), Fraction(0)) + Fraction(1, 6)
+    zeta_lower10 = sum((Fraction(1, k * k) for k in range(1, 11)), Fraction(0)) + Fraction(1, 11)
+    require(zeta_lower5 > Fraction(13, 8) and zeta_lower10 > Fraction(41, 25), 'zeta lower premises')
+    e_upper = sum((Fraction(1, math.factorial(k)) for k in range(4)), Fraction(0)) + Fraction(5, 96)
+    require(e_upper == Fraction(87, 32) < Fraction(11, 4), 'e upper')
+    beta_lower = (1 - Fraction(2175, 656) * rho) / 2
+    error_upper = 14 * (Fraction(26200, 59 * 510000) + Fraction(1, 510000 ** 2))
+    require(beta_lower > Fraction(7, 500) and error_upper < Fraction(13, 1000), 'N2 positive-family margin')
+    require(alpha_lower > Fraction(7, 20) > Fraction(59, 100) ** 2 and 510000 < q0 < 2 ** 19, 'N2 scale premises')
+    require(sum((Fraction(7, 10) ** k / math.factorial(k) for k in range(4)), Fraction(0)) > 2, 'ln2<.7')
+    require(sum((Fraction(6, 5) ** k / math.factorial(k) for k in range(5)), Fraction(0)) > 3, 'ln3<1.2')
+    require(33 ** 5 < 32 * 6 ** 8, 'two-prime four-fifths premise')
+    parameters = {'q0': q0, 'rho0': str(rho), 'gamma': str(gamma), 'alpha_lower': str(alpha_lower), 'general_sufficient_M_ceiling': str(sufficient_integer), 'q0_first_power_meeting_general_coarse_cutoff': powers[0], 'zeta_lower10': str(zeta_lower10), 'e_upper': str(e_upper), 'N2_beta_lower': str(beta_lower), 'N2_error_upper': str(error_upper), 'N2_natural_gap_claim_separately_proved': '1/1000'}
+    result = {'status': 'PASS_FIXED_MIXED_PANEL_AND_RATIONAL_PREMISES', 'experiment_id': 'P72-E027', 'levels': len(rows), 'residues': 51985, 'R24_overlapping_vectors': overlaps, 'union_CDF_checks': union_checks, 'central_CDF_checks': central_checks, 'integer_intervals_processed': intervals_total, 'rows': rows, 'counterexample_recertification': counter, 'positive_family_parameters': parameters, 'float_used_only_for_CL1_offsets': True, 'floating_used_in_certificates': False, 'infinite_theorem_proved_by_checker_alone': False, 'novelty_certified': False, 'formal_proof': False}
+    payload = (json.dumps(result, indent=2) + '\n').encode()
+    (OUT / 'MIXED_RESEARCH_PANEL.json').write_bytes(payload)
+    sys.stdout.buffer.write(payload)
+if __name__ == '__main__':
+    main()

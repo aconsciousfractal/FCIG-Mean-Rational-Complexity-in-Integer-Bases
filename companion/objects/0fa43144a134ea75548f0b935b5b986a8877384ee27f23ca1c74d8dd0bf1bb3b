@@ -1,0 +1,72 @@
+"""R40 exact complete p==3 aggregate upper certificate, no original-state sweep."""
+import hashlib, importlib.util, json, sys
+from pathlib import Path
+OUT = Path(__file__).parent
+ROOT = OUT.parents[1]
+
+def need(ok, msg):
+    if not ok:
+        raise ValueError(msg)
+
+def digest(raw):
+    return hashlib.sha256(raw).hexdigest()
+
+def load_core(path):
+    sys.dont_write_bytecode = True
+    spec = importlib.util.spec_from_file_location('r40_aggregate_core', path)
+    core = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(core)
+    return core
+
+def main():
+    need(len(sys.argv) == 3, 'exact domain path and SHA256 required')
+    path = Path(sys.argv[1])
+    raw = path.read_bytes()
+    need(digest(raw) == sys.argv[2], 'consumed domain pin')
+    domain = json.loads(raw)
+    need(domain['schema'] == 'p72-e045-p3-domain-v1' and domain['moduli'] == 1422 and (len(domain['profiles']) == len(domain['details']) == 1422) and (len(domain['complement_profiles']) == 1901), 'fixed complete branch')
+    need(domain['source_r38_sha256'] == '86ce21b2bb7ea5c65aeab036ad14d89d6f221891ec9a299d088ab075eadb68fe', 'R38 scope')
+    need(domain['source_r39_remaining_sha256'] == '9bab00d4b77ddbc51bf9e685eead0d7b0f6f6173b670baefad09c261882614bb', 'R39 complete remaining source')
+    for loc, h in domain['source_pins'].items():
+        need(digest((ROOT / loc).read_bytes()) == h, 'domain source pin ' + loc)
+    core = load_core(OUT / 'aggregate_core.py')
+    mu, phis = core.sieve(domain['maximum_k'])
+    rows = []
+    for i, (profile, work) in enumerate(zip(domain['profiles'], domain['details']), 1):
+        try:
+            M, p, q, a, b = profile
+            need(p == 3 and core.validate_model(M, p, q) == (a, b), 'exact p==3 original profile')
+            need(core.thresholds(M, p, q) == work['thresholds'], 'unchanged calendar')
+            value = core.row(M, p, q, mu, phis)
+            baseline = work['baseline']
+            need(value['candidate_pairs'] == baseline['candidate_pairs_exact'], 'candidate budget')
+            need(value['actual_convolution_updates'] <= baseline['convolution_updates_bound'], 'convolution budget')
+            need(value['threshold_count'] == baseline['thresholds'], 'complete calendar count')
+            need(len(value['far_counts']) == baseline['far_rows'], 'complete far rows')
+            value.update(calendar_thresholds=work['thresholds'], calendar_sha256=work['thresholds_sha256'])
+            need(len(value['CDF_knots']) == len(work['thresholds']), 'all knots retained')
+        except Exception as error:
+            failure = dict(status='R40_PRODUCER_ROW_FAILURE', domain_sha256=sys.argv[2], completed_rows=rows, failed_index=i, failed_profile=profile, error_type=type(error).__name__, error=str(error), unexecuted_profiles=domain['profiles'][i:], branch_accepted=False)
+            sys.stdout.write(json.dumps(failure, sort_keys=True, separators=(',', ':')) + '\n')
+            sys.stdout.flush()
+            raise
+        rows.append(value)
+        if i % 100 == 0 or i == 1422:
+            print('PROGRESS ' + str(i) + '/1422', file=sys.stderr, flush=True)
+    need(sum((v['candidate_pairs'] for v in rows)) == domain['totals']['candidate_pairs_exact'], 'candidate total')
+    used = {v['M'] for v in rows}
+    used.update((h for v in rows for h, c in v['upper_histogram']))
+    logs = [[h, *core.logticks(h)] for h in sorted(used)]
+    paid = [v['M'] for v in rows if v['status'] == 'PAID']
+    unpaid = [v['M'] for v in rows if v['status'] == 'UNPAID']
+    obj = dict(schema='p72-e045-p3-mean-v1', status='PARTIAL' if unpaid else 'ALL_PAID', domain_sha256=sys.argv[2], r38_cost_sha256=domain['source_r38_sha256'], r39_remaining_sha256=domain['source_r39_remaining_sha256'], producer_sha256=digest(Path(__file__).read_bytes()), core_sha256=digest((OUT / 'aggregate_core.py').read_bytes()), oracle_sha256=digest((OUT / 'compressed_oracle.py').read_bytes()), source_pins=domain['source_pins'], rows=rows, log_tick_ledger=logs, paid_moduli=paid, unpaid_moduli=unpaid, moduli=1422, observed_candidate_pairs=sum((v['candidate_pairs'] for v in rows)), observed_convolution_updates=sum((v['actual_convolution_updates'] for v in rows)), calendar_knots=sum((v['threshold_count'] for v in rows)), far_arithmetic_rows=sum((len(v['far_counts']) for v in rows)), residues_swept=0, full_minimum_vectors_main=0, small_definition_residues=0, centre_phases_swept=0, local_physical_controls_embedded=False, floating_used=False, analytic_proof_replaced=False, scientific_scope='Complete fixed branch upper certificate; exact primitive/collision central core and marked marginal/cap/far uppers. No original-residue minimum vectors.')
+    encoded = (json.dumps(obj, sort_keys=True, separators=(',', ':')) + '\n').encode()
+    target = OUT / 'BRANCH_AGGREGATE.json'
+    if target.exists():
+        need(target.read_bytes() == encoded, 'retain first scientific payload unchanged')
+    else:
+        with target.open('xb') as stream:
+            stream.write(encoded)
+    sys.stdout.buffer.write(encoded)
+if __name__ == '__main__':
+    main()

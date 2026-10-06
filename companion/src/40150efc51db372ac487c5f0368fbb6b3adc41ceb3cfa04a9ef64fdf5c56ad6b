@@ -1,0 +1,79 @@
+from pathlib import Path as _PortablePath
+import importlib.util as _portable_import_util
+_portable_original_file = _PortablePath(__file__).with_name('certify_counterexample.py')
+_portable_previous_spec = _portable_import_util.spec_from_file_location
+def _portable_spec(name, location, *args, **kwargs):
+    location = _PortablePath(location)
+    candidate = location.with_name("_portable_" + location.name)
+    if not location.name.startswith("_portable_") and candidate.is_file():
+        location = candidate
+    return _portable_previous_spec(name, location, *args, **kwargs)
+_portable_import_util.spec_from_file_location = _portable_spec
+"""P72-E026: rational-series certificate for the recorded B30,N2 witness."""
+from pathlib import Path
+from fractions import Fraction
+from collections import Counter
+import json, sys, hashlib
+HERE = Path(__file__).resolve().parent
+TERMS = 32
+
+def log_unit_interval(z):
+    t = (z - 1) / (z + 1)
+    if not 0 <= t < Fraction(1, 1):
+        raise ValueError('atanh domain')
+    lo = 2 * sum((t ** (2 * j + 1) / (2 * j + 1) for j in range(TERMS)), Fraction(0))
+    rem = 2 * t ** (2 * TERMS + 1) / ((2 * TERMS + 1) * (1 - t * t))
+    return (lo, lo + rem)
+
+def log_int_interval(n):
+    e = n.bit_length() - 1
+    ln2lo, ln2hi = log_unit_interval(Fraction(2))
+    lo, hi = log_unit_interval(Fraction(n, 2 ** e))
+    return (e * ln2lo + lo, e * ln2hi + hi)
+
+def decimal_outward(lo, hi, digits=20):
+    factor = 10 ** digits
+    low = lo.numerator * factor // lo.denominator
+    high = -(-hi.numerator * factor // hi.denominator)
+
+    def fmt(n):
+        sign = '-' if n < 0 else ''
+        q, r = divmod(abs(n), factor)
+        return sign + str(q) + '.' + str(r).zfill(digits)
+    return [fmt(low), fmt(high)]
+
+def main():
+    source = HERE / 'mixed_normal.json'
+    row = next((x for x in json.loads(source.read_bytes())['rows'] if (x['base'], x['N']) == (30, 2)))
+    counts = row['histogram']
+    if sum((c for _, c in counts)) != 900:
+        raise RuntimeError('mass')
+    lo = hi = Fraction(0)
+    product = 1
+    factors = Counter()
+    for h, c in counts:
+        l, u = log_int_interval(h)
+        lo += c * l
+        hi += c * u
+        product *= h ** c
+        v = h
+        p = 2
+        while p * p <= v:
+            while v % p == 0:
+                factors[p] += c
+                v //= p
+            p += 1
+        if v > 1:
+            factors[v] += c
+    l30, u30 = log_int_interval(30)
+    meanlo = lo / (900 * u30)
+    meanhi = hi / (900 * l30)
+    if not product > 30 ** 900 or not meanlo > 1:
+        raise RuntimeError('counterexample not certified')
+    result = dict(experiment='P72-E026', source_sha256=hashlib.sha256(source.read_bytes()).hexdigest(), base=30, N=2, M=900, terms=TERMS, log_method='ln z = 2 sum_{j=0}^{31} t^(2j+1)/(2j+1), t=(z-1)/(z+1); remainder <= 2t^65/(65(1-t^2)); reduce by powers of 2', product_prime_factorization=sorted(factors.items()), product_gt_30_pow_900=True, exact_floor_product_div_30_pow_900=str(product // 30 ** 900), mean_log_base30_interval=decimal_outward(meanlo, meanhi), natural_log_excess_interval=decimal_outward(lo / 900 - u30, hi / 900 - l30), minimum_required_additive_correction_interval=decimal_outward(meanlo - 1, meanhi - 1), floating_used=False)
+    payload = (json.dumps(result, indent=2) + '\n').encode()
+    out = HERE / ('counterexample_interval_O.json' if sys.flags.optimize else 'counterexample_interval_normal.json')
+    out.write_bytes(payload)
+    print(json.dumps({'output': out.name, 'sha256': hashlib.sha256(payload).hexdigest(), 'mean_interval': result['mean_log_base30_interval'], 'excess_interval': result['minimum_required_additive_correction_interval'], 'product_ratio_floor': result['exact_floor_product_div_30_pow_900']}))
+if __name__ == '__main__':
+    main()

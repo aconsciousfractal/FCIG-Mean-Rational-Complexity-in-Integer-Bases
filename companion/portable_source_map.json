@@ -1,0 +1,492 @@
+[
+  {
+    "locator": "reports/batch_24/certify_counterexample.py",
+    "original_sha256": "dcc255c7460b83c4028bb8f86f6df9d955dbd5addf53758a5ffe5c33544a5bd2",
+    "portable_sha256": "40150efc51db372ac487c5f0368fbb6b3adc41ceb3cfa04a9ef64fdf5c56ad6b",
+    "public_source_sha256": "1539a5bc9e9607025c5ad83a8bc75439b2b1033885a0de83253a747313539703",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_22/verify_prime_cdf.py",
+    "original_sha256": "6fd56911a73d9ed40f0cc33739f261838d14ab95d4e9ec5eaa13079e02f39334",
+    "portable_sha256": "97267862a9514cf39332061e3d42db253fe8a1882e7a1b912ecd04f0b164cb58",
+    "public_source_sha256": "6b915a08afefcef0508b153834a6ac02d57a615ff69064e32474bb6ad1081482",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_23/verify_finite_bridge.py",
+    "original_sha256": "b859746ea091383c3b94dcc53d40431aebcc375934199eb215f964be3f313e65",
+    "portable_sha256": "52b026df74cf5665cc789d43b066b71725db8b8d3a1b0b90f7d3b5629804b2b7",
+    "public_source_sha256": "e3f3601d0addb0d54640c4fcf36cdc62c8794de8ff37a8c613b5c20b49f68382",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_23/verify_general_prime_bridge.py",
+    "original_sha256": "c342f777dc0bd51bebe70847e107b6980d8e83ee641887c1e52c1f5079547f9e",
+    "portable_sha256": "73b1b67c444cc6e6f1b2860391c8ecfb11ae4d7f0b8eaf0e50a5e1d9b74d6f1c",
+    "public_source_sha256": "ee879ee76539e4f0c10e69b81a098fe6a0c3e0cb28f3df9831ff2d0baa8c601f",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_25/verify_mixed_research.py",
+    "original_sha256": "e5c57591aecb750c8311fd00d1d9f0d54635ac1e61cb393a1b182878462cc53b",
+    "portable_sha256": "7575a61bac8dbfc606a2dffd04329538da636320300defa567d0ddf49571059c",
+    "public_source_sha256": "1ad88d32b579fadcf55e4bacff9645f3b24a73e42b9d97d9de6c60912d0c6b1b",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_26/verify_finite_bridge.py",
+    "original_sha256": "525103df6dfab2505c748947295eccb166612f00f23dcbd22369c67959acfe3b",
+    "portable_sha256": "7fac5d6c92cbee587382ec2aef1279d9c65518874ca4481ef62f6c57cc18fc25",
+    "public_source_sha256": "39285339c04b921adae02a2dd81236a08879c6a86f9d88b281bd24d2cdbc6291",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_27/verify_sixth_length.py",
+    "original_sha256": "c9e348ddcaaaf9ddb2cc77d6c2b5decad213ad09a0ba306f88fb3425a38bd012",
+    "portable_sha256": "19acc3dba977c0a91b74aaa94e06a46f40f85d0b67df8a0a4c3a792ede84bd59",
+    "public_source_sha256": "3d6f6bd42722068146ec7587547362f8342f05cef18150702c62437a6245a96a",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_28/verify_semiprime.py",
+    "original_sha256": "68279c571767245993b30546a223df662ca08583fa96ddd2ee958d87d52a4e33",
+    "portable_sha256": "69340d29d3a3d91e302dc088f94ca4b644a31b693d4e60add602320928ec1b1e",
+    "public_source_sha256": "cec3581770b2ccf29adee7e73bc443bfeaa5dfd5a1046a53175c711bb4a41fa9",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_29/verify_aggregate.py",
+    "original_sha256": "6a2c721fb533912210ad9d3415ca3a839736db4fcb64b465efc9b6d959e5454f",
+    "portable_sha256": "d043addcc7cbfee19f2f48f9a70f36e0fccca3e1d2bc9ae92d761ffce8d805ae",
+    "public_source_sha256": "2acd1169505646a62ac865e57a662d472a3025a08e3d19e9e41a38bde91a081f",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_29/verify_retained.py",
+    "original_sha256": "b9b118ca238810ac23b0e7244b376d1f3215a62428296996abaf3ba6c86756c0",
+    "portable_sha256": "8778a8873eadf1b21f48c3fbd89734bed472ab3b54fb19689b47f30d8f6ab68b",
+    "public_source_sha256": "7d9c1f400f29dfce7cf635e67030b98f344d31ebf30a3da6d5530c31b834ed40",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_30/verify_aggregate.py",
+    "original_sha256": "5ff508af3783f9d06ccb249c09c38676c0dc59f49097e88c9efd5771e8e34eba",
+    "portable_sha256": "0191863d73088403969cc34d1bb87e97235007a17d2217dcdda8ad535d8ab75f",
+    "public_source_sha256": "bcf90a2f292faa57cf7b3f6fafc2c0877bd11e5d2809a978d068db8c541fd0b5",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_30/verify_retained.py",
+    "original_sha256": "e589946622a2b832305ccdd29c490f3f60992874b9f1bbb964cb856e7aed4323",
+    "portable_sha256": "a454cfadea6f656fa059caebe09f620e1030f43c0e24b171d46e811f16c1a2b8",
+    "public_source_sha256": "85ab07e0b4703f4b4c092dcf7acd8b73d54be3d1f18b41820d1bcefbe2b29bdd",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_31/verify_aggregate.py",
+    "original_sha256": "42e8686ab4a1a36f7ee05b055ebfc501f8eb8eab333a569dc749784daf8b0706",
+    "portable_sha256": "a50a5b35f86b4c0b11edcf0bcd097a663fd34e4347e0a2f10ce28b671f0ef92b",
+    "public_source_sha256": "762d49859fa519f6ed2fc3f0cf99bf1f77a6bb960d8151755fe4510c969cc7b2",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_31/verify_retained.py",
+    "original_sha256": "b660d88470ad1e7b17f6f26cf40005f6e4a8b4d7f97a8ba922e29f8e764757b3",
+    "portable_sha256": "f25fdadc74a212e3731286931285cac73dec0b3b8d168345c868c9516ca649f9",
+    "public_source_sha256": "0e951fa3f012910502aed8dc936ef6898483eaf9f7d9c2667a13dc77357c94b6",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_32/verify_aggregate.py",
+    "original_sha256": "1b47e2f123d1e6350e1706974f4d9709fcc9caf4c8fa2bd38cf3fc8bf37e1742",
+    "portable_sha256": "a734c1358dd5dcb56e0fa9334ed61642a9c8ffd3e9f0a8ba6c3b3694ce37f34a",
+    "public_source_sha256": "fac700e4dc4abcbb23564f4cd37aafe782cd1f0f45e84a8f2e317a4ade8871f1",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_32/verify_large.py",
+    "original_sha256": "3ad65ac07a0ce8ca5f471130637f95b50209eb89e200dd8ca3f448411bc81ee3",
+    "portable_sha256": "a564b4f1410375926dfe1303384746aac61e1aaf2a0462dba3a065a919dade65",
+    "public_source_sha256": "06ad24db7f41a88f8100ee3ae1cdbe00aa792e7e77841d0552110003860d4a53",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_32/verify_retained.py",
+    "original_sha256": "3488a3fe4da0db1cf0d7c2ec428d066627b1440b598adde88d0e2c14f5ad688e",
+    "portable_sha256": "63fbb71fbd06f59fd77c5650b4a37dc68bbd2270425e3baec63024506f458aa7",
+    "public_source_sha256": "4dd31012254aa1baf679de68c324d4ae6cd0e0444b26d7f32677f22ce1c88595",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_33/verify_aggregate.py",
+    "original_sha256": "03a1a1f116081542e5f76bf2203f4669703f9d6209aeab9e341ece12f76c091c",
+    "portable_sha256": "1757076421f83ef9e938fb44cd35c6d750c010372a7eff92199d19502ee59ce2",
+    "public_source_sha256": "742d34e1e749f7ddd114e8f1d3faa40e339160d2028432ea3b2c8aac076eb3e2",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_33/verify_large.py",
+    "original_sha256": "3cb010519dab9efc28a5a93ea7bc8fce44f494f6245d271366e155f33b35d01e",
+    "portable_sha256": "cb62cc6cb9996a642cd209e6255e10acc0d9092b4e797fa9d72cf880507ea013",
+    "public_source_sha256": "58492fcbb8c73fb4079dc0615e6cd8cbbd831c1c4fbcd35cfd95d9d5e981290f",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_33/verify_retained.py",
+    "original_sha256": "4610d1d6565698fa57e5991d4f25ba88f5285953278c5b24fd2dda61d02a880f",
+    "portable_sha256": "f8a944cfa9b434949583dbc7da4b8b63d6706d7d38c626b588414ca13af35b7a",
+    "public_source_sha256": "7315e9a139ad77982e22f3e32ae2a83df54b6ac5e264d24d2514e7f4d2f08f32",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_34/verify_analytic.py",
+    "original_sha256": "ca8b0b576e32fa404e8a3abde7819df5131c5cbf5ebb9a0969dc5b30fa1a42c5",
+    "portable_sha256": "6b57ed70cca487764dc61d0297c5e6904240a375e24dbbc951fd8a73143e0e69",
+    "public_source_sha256": "63245af2568445432c780c3cd3f52041b009f0f3261100e0919661a02197b4fc",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_34/verify_analytic_retained.py",
+    "original_sha256": "47f43fd09261cb46eb4c02080641cb7c70030e6a37e90db4dbeab804873197f4",
+    "portable_sha256": "e53e8ece9feef357bd1ce6e7e7d758f3976295ee2103bfb8496a953ee2143baf",
+    "public_source_sha256": "edf4db215f25998c829c6b131f1566c97a511887787ff31a095c7d0f841d90be",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_35/verify_aggregate.py",
+    "original_sha256": "61c48fdd8003ae457fe8657961da2ab5294b1a51a27547e01864327c3d912253",
+    "portable_sha256": "adea527fedce414642c128c3ac988cc815cfa8e9d75fb69805641c06b0fd8bfb",
+    "public_source_sha256": "5d94d76ca668bc4bdb584a3f2f6feacd5fee28ba47f344e6f543183b400e7919",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_35/verify_large.py",
+    "original_sha256": "23698f737376415d0b1933b20502da7320c9d9cbd97f040dbf7ecfc89af4a6fe",
+    "portable_sha256": "a0cb00ce13483bceabb1fa5fa30c6fc62abe0e55a0d48f76f65c0ddd8ddef159",
+    "public_source_sha256": "13b44f61425cc6b3d978909a3b2b61be9a71cc63c2f1c9a08ecf5bda8d7bccbb",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_35/verify_retained.py",
+    "original_sha256": "d0f1fc8e6be76bd00142be80062f263646964b21f6c9704c84118ba7891db038",
+    "portable_sha256": "d2119d12e0a8b47e7847ee4115056dea838b6ad4ebeb2beba8de10b8cd36427e",
+    "public_source_sha256": "4e2f7f9ca48ebe4c813965c60ed2429fea78ffd5daf0feb5bbaf5abadc125d8b",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_36/inventory_factor.py",
+    "original_sha256": "392c9a119e7cff913d1adfcf88d85b6ea789f8fce6092517dd2965f994e26d4d",
+    "portable_sha256": "9a233fa2646a8ef909430c023ebb84572afe52e323bab8a7455f9aadc34782b3",
+    "public_source_sha256": "61ec604a4bbed5b003543a573ca092b5e071ebb93d07a9ef24b1a55c94957110",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_36/inventory_generate.py",
+    "original_sha256": "e0c1afb4749a8b09a1444d62fecddd142fa628b8d60fa80cae73efde057aeb1b",
+    "portable_sha256": "4632ede053ceb1a93e03b784e233a8ceb0988862c7c0c43503290cb1ac6b1ac8",
+    "public_source_sha256": "95bbb9b1611cc8c2dc3e184b8b8e0e6f1100cbc61b056a7a2a61cb2b4c1e28b0",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_36/resolve_work.py",
+    "original_sha256": "b2b172e8b884b788b5d27a58cbe43de78fc19f099b5f2ea6810e4b149559a02d",
+    "portable_sha256": "d1f9e064ac55c2c2457bf00f20fa904caea14d0fa3ea0aff8ad79412abaca993",
+    "public_source_sha256": "afefc2df5fab87298133f4f5e0d4649f42862505b5d588c1dc2dd9817c39ed1b",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_37/remaining_work.py",
+    "original_sha256": "7c7496db1a673100483ff79fc75473b340f22e73d749a020e32933b945a3442e",
+    "portable_sha256": "6e8d3572963b752c8b3f5f7b5b1f8e1df961afb43fc4b4abe9bad1a7ede9ac46",
+    "public_source_sha256": "9736ec67f0f3e8787eb854ac7194613d90a24b3e7a88a99b8185529d7d7ecf41",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_37/verify_analytic.py",
+    "original_sha256": "5c246743f57f7b65ed38fcab7034db2f8cd21c39d94507b8ef6418a2a249ab99",
+    "portable_sha256": "5c2fe1d377ba6d8f9f2a925a68db91c81b9230d7ada4d189d25d29c55e168424",
+    "public_source_sha256": "5f693520c6a1d6490f2512ab274d6eac8bb6d24ec98c855729a8a40b8476e9f4",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_37/verify_analytic_retained.py",
+    "original_sha256": "5d7fbd7ede2b6af3a7ce1f526da9ce7fe926996a6e63a979df0fabb193b663e0",
+    "portable_sha256": "5933c2e2c58269e65b7cf6389e139754b1bca6d6aa3c8e7b281e36a0b140916e",
+    "public_source_sha256": "eb1f7f00e6a63df7cebefd567a641c2e257bf79270f2957091e5b4666d2cf25e",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_38/check_cost.py",
+    "original_sha256": "5b5c0e7bf60006bb1a83412fb254c1c6cec3800b50bb6c4d8092cae3416b044c",
+    "portable_sha256": "dc2e45d182cce6c4402117c16818021f948521f968005f3264c515fd8cb3decf",
+    "public_source_sha256": "da5008afbe8f8a1e305c8ec51a52d41dcad73bb6d45eff99ac17044e88841cbe",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_38/resolve_cost.py",
+    "original_sha256": "30bebc38335d3c04fad10637271bc204d231a13c6f1fb2c15fdfad54f31974d0",
+    "portable_sha256": "0be7ab6d029322ca21812887f8855eacf0eb09ed8e7972e7aaab4ae042f38668",
+    "public_source_sha256": "56ebe85c2952f9c6130b793ca8c42b88c2191b2c78c5793420fe83d1149da133",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_39/aggregate_core.py",
+    "original_sha256": "cf1be1a8d7bf8779bf775c35b1da38bdbe149718d5ac767e4bd2f3fbf463a202",
+    "portable_sha256": "88bb8293443109fb528a434ee48c85818bf2abd23e4a808ad03985c52a4ee492",
+    "public_source_sha256": "f7f168f4e63cc0077ffd0813491934cef0ead648c73be2321f6769d2507992c0",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_39/check_branch.py",
+    "original_sha256": "4ad8b457bf1917209a6e01e55459505853c59faed4ab1ec4ad6967e28ea650e0",
+    "portable_sha256": "e6031eb839dc09bb0ef09b94768a6899edd1f455d8b2862a96a707b09442c4b3",
+    "public_source_sha256": "dde94a659cf985977856d9229f72e3254e2f63e128465b496e2b24e4935ec6d1",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_39/compressed_oracle.py",
+    "original_sha256": "493b3dc16c3b897419a1544b33402f305408e1b9745ce2a35c12181b878ee00b",
+    "portable_sha256": "0e19f1b7a946cb50630d85ec51b021de46c8b12a2f407435397465c278858f07",
+    "public_source_sha256": "4a7a4230f2a72f2ffeece15e8d1ad2a2ad3546bc40a5749d0e590022911ba06d",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_39/qualify_oracle.py",
+    "original_sha256": "b4af7cad91ab1b87765bc91ec92309fe0860fd5478ea41ae6547ad67f5da1fe5",
+    "portable_sha256": "12ce8a6dc410f3f17c2f1d40d10368ec7e2cdac89ce11b1117b1b06fb74e34cd",
+    "public_source_sha256": "3dff0560dea39910fdadc602782b4d6837c62d85e5202b6f25569c3101ecbff3",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_39/run_branch.py",
+    "original_sha256": "dd4b4a32d1fe9c97cc9b11b83c127ceb6308a8937b3d19b1f14484f6201984db",
+    "portable_sha256": "bffcba2f7763854ed56b9ceab81a682d4eacc5b9fdcc342dc9dfd63dbe8ce481",
+    "public_source_sha256": "6000ac576222867a370710548d915f5676949ff5280dd8a932cb61f7ed54822f",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_39/verify_local_controls.py",
+    "original_sha256": "8d17af20d88d5cd07a720bc6909cdea628882f4c727dc4d2936e72aa54549db8",
+    "portable_sha256": "30a88bef9e7406da04391fad9f22beac2aa31c31f2549976c8c7f9bad4000365",
+    "public_source_sha256": "15bbdd89ae99c4eefa06de67a4b839bcf8b6b9d0c6883032d8ae77f948400396",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_40/aggregate_core.py",
+    "original_sha256": "cf1be1a8d7bf8779bf775c35b1da38bdbe149718d5ac767e4bd2f3fbf463a202",
+    "portable_sha256": "88bb8293443109fb528a434ee48c85818bf2abd23e4a808ad03985c52a4ee492",
+    "public_source_sha256": "f7f168f4e63cc0077ffd0813491934cef0ead648c73be2321f6769d2507992c0",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_40/check_branch.py",
+    "original_sha256": "a0a7a36d4386f7d7f37a534fb21e919835548771ad6b3ca8c22aea28cdc9244f",
+    "portable_sha256": "b4f9ae4c8603cdc0deb9f9242822bf84279cfca164a8b65c7aeff4caaf60d7be",
+    "public_source_sha256": "71b30016e80613bd3dbe7f003bf7cda2e8fffe627ffab3ba6cbc79a71b43ebea",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_40/compressed_oracle.py",
+    "original_sha256": "493b3dc16c3b897419a1544b33402f305408e1b9745ce2a35c12181b878ee00b",
+    "portable_sha256": "0e19f1b7a946cb50630d85ec51b021de46c8b12a2f407435397465c278858f07",
+    "public_source_sha256": "4a7a4230f2a72f2ffeece15e8d1ad2a2ad3546bc40a5749d0e590022911ba06d",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_40/run_branch.py",
+    "original_sha256": "d12fdf8716dc864a71aa66a18d6f514c07a531123bf87a31a7ac445b44a02a2c",
+    "portable_sha256": "4f04fb022dfe162552934659599554b75b7e435eb750af9ea8981b898efcbf69",
+    "public_source_sha256": "0fa43144a134ea75548f0b935b5b986a8877384ee27f23ca1c74d8dd0bf1bb3b",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_40/verify_local_controls.py",
+    "original_sha256": "b5af25291528ae4e55a7bf8577f4fe82c6b455dec375143a4746d0f08fbb3685",
+    "portable_sha256": "8200bb7fde13b3658af5befaf23a5af0646c030e7b096a1a604f3f1a5ecb5d38",
+    "public_source_sha256": "130048ddfd360cab9cc10ee43cc48aae1dc7df273328530f8735cde96eaca928",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_41/aggregate_core.py",
+    "original_sha256": "cf1be1a8d7bf8779bf775c35b1da38bdbe149718d5ac767e4bd2f3fbf463a202",
+    "portable_sha256": "88bb8293443109fb528a434ee48c85818bf2abd23e4a808ad03985c52a4ee492",
+    "public_source_sha256": "f7f168f4e63cc0077ffd0813491934cef0ead648c73be2321f6769d2507992c0",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_41/check_branch.py",
+    "original_sha256": "d4c9b3b2977b8822e62fc8180fa651e6de14ddb9796d86d89a16ab8aec726d16",
+    "portable_sha256": "73f27682d9cf1db9d2f57f14f73217c1aee732a6e636ce9530b1d1430d59cdca",
+    "public_source_sha256": "0fabeb49e4f829a45229bb53b6d7a20d593626fb4af9423ae995ed68f36987db",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_41/compressed_oracle.py",
+    "original_sha256": "493b3dc16c3b897419a1544b33402f305408e1b9745ce2a35c12181b878ee00b",
+    "portable_sha256": "0e19f1b7a946cb50630d85ec51b021de46c8b12a2f407435397465c278858f07",
+    "public_source_sha256": "4a7a4230f2a72f2ffeece15e8d1ad2a2ad3546bc40a5749d0e590022911ba06d",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_41/run_branch.py",
+    "original_sha256": "b51038f1535c9aed913edc6d03028ffca322de059b8b5871a1bf40f416410ff6",
+    "portable_sha256": "bab57dec977f56dc8bebf8ecf88719e307d248726e1dfdae492611b8dfa7614a",
+    "public_source_sha256": "4b2cd600626c8c8d9e055c0282f93a80f41a093b563871f7fff5569743a840b8",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  },
+  {
+    "locator": "results/batch_41/verify_local_controls.py",
+    "original_sha256": "2704eb28e99ea3c1b3d287c4a6ce782d3e66ad82e93b6d2464fcaff01e8480d7",
+    "portable_sha256": "bd6d7b48ee60be0c535c7af66abc0d3c3305239d4d7760ee56c35b9dd19a8364",
+    "public_source_sha256": "96b9a55af9dbdaa67edf6f5f705fd003a0b755d314819f654a64e02aa076b91b",
+    "transformations": [
+      "local imports route to public adapters",
+      "source identity reads public source bytes"
+    ]
+  }
+]

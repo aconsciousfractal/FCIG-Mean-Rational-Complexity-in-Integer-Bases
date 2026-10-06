@@ -1,0 +1,142 @@
+"""R39 complete physical all-mark local controls; no original-state sweep."""
+from bisect import bisect_right
+import hashlib
+import importlib.util
+import json
+from math import gcd
+from pathlib import Path
+import sys
+OUT = Path(__file__).resolve().parent
+R38_PIN = '86ce21b2bb7ea5c65aeab036ad14d89d6f221891ec9a299d088ab075eadb68fe'
+SIGNED_TYPES = 6068480
+STEP_BOUND = 12144043
+COMPARISON_BOUND = 24288086
+
+def need(ok, message):
+    if not ok:
+        raise RuntimeError(message)
+
+def sha(raw):
+    return hashlib.sha256(raw).hexdigest()
+
+def digest(values):
+    return sha(json.dumps(values, separators=(',', ':')).encode())
+
+def pinned(path, pin):
+    raw = Path(path).read_bytes()
+    need(sha(raw) == pin, 'exact frozen input pin: ' + str(path))
+    return json.loads(raw)
+
+def load_core(path, pin):
+    path = Path(path).resolve()
+    need(path.parent == OUT and path.name == 'aggregate_core.py', 'only new frozen R39 formula source may be imported')
+    need(sha(path.read_bytes()) == pin, 'exact R39 formula source pin')
+    spec = importlib.util.spec_from_file_location('r39_local_formula_under_test', path)
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+def validate_domain(domain):
+    need(domain['schema'] == 'p72-e044-pge5-domain-v1' and domain['source_r38_sha256'] == R38_PIN, 'original branch source chain')
+    profiles = domain['profiles']
+    need(len(profiles) == 1087 and len(domain['complement_profiles']) == 3323, 'whole branch and preserved complement')
+    need(len({v[0] for v in profiles}) == 1087, 'unique branch moduli')
+    marks = sorted({(v[1], v[2]) for v in profiles})
+    need(len(marks) == 787 and all((p >= 5 and p < q for p, q in marks)) and (domain['radicals'] == [list(v) for v in marks]), 'complete original radical set')
+    records = domain['local_profiles']
+    need(len(records) == 2361, 'three physical curves per radical, no sampling')
+    expected = []
+    for p, q in marks:
+        for u, v in ((p, q), (q, p)):
+            child = u
+            e = 1
+            while child <= 2 * v:
+                child *= u
+                e += 1
+            signed = child - child // u
+            expected.append(dict(p=p, q=q, kind='pure', present=u, missing=v, exponent=e, child=child, original_modulus=v * child, signed_types_exact=signed, step_tests_bound=2 * signed + 3))
+        signed = (p - 1) * (q - 1)
+        expected.append(dict(p=p, q=q, kind='mixed', child=p * q, original_modulus=p * q, signed_types_exact=signed, step_tests_bound=2 * signed + 3))
+    need(records == expected, 'fixed minimal pure/mixed policy and source order')
+    need(sum((v['signed_types_exact'] for v in records)) == SIGNED_TYPES and sum((v['step_tests_bound'] for v in records)) == STEP_BOUND, 'complete inherited control budgets')
+    return records
+
+def physical_curve(record):
+    p, q, M, m = (record[k] for k in ('p', 'q', 'original_modulus', 'child'))
+    g = M // m
+    need(M == g * m and m % 2 == 1, 'odd p>=5 local child')
+    witness_heights = []
+    one_heights = []
+    repairs = 0
+    for h in range(1, (m - 1) // 2 + 1):
+        if gcd(h, m) != 1:
+            continue
+        positive_state = pow(h, -1, m)
+        for t in (positive_state, m - positive_state):
+            s = g * t
+            need(gcd(s, M) == g, 'physical original gcd class')
+            residue_inverse = pow(t, -1, m)
+            signed_inverse = residue_inverse if 2 * residue_inverse <= m else residue_inverse - m
+            d = abs(signed_inverse)
+            A = g if signed_inverse > 0 else -g
+            if gcd(d, M) != 1:
+                d = m - d
+                A = -A
+                repairs += 1
+            need(d > 0 and gcd(d, M) == 1 and (abs(A) == g) and ((s * d - A) % M == 0), 'physical repaired full-unit witness')
+            witness_heights.append(max(abs(A), d))
+            A_one = s if 2 * s <= M else s - M
+            need((s - A_one) % M == 0, 'physical denominator-one witness')
+            one_heights.append(max(1, abs(A_one)))
+    need(len(witness_heights) == record['signed_types_exact'], 'every signed local type represented')
+    if record['kind'] == 'pure':
+        need(m > 2 * record['missing'] and repairs >= 2, 'both signed missing-prime repairs are actually exercised')
+    else:
+        need(repairs == 0 and g == 1, 'mixed child already has full mark')
+    knots = {g} | set(witness_heights) | set(one_heights)
+    tests = sorted({0} | knots | {h - 1 for h in knots})
+    need(len(tests) <= record['step_tests_bound'], 'inherited complete-step allowance')
+    witness_heights.sort()
+    one_heights.sort()
+    return (g, witness_heights, one_heights, tests, repairs)
+
+def main():
+    need(len(sys.argv) == 5, 'frozen domain path/SHA and R39 formula path/SHA required')
+    sys.dont_write_bytecode = True
+    domain = pinned(sys.argv[1], sys.argv[2])
+    records = validate_domain(domain)
+    need(domain['core_sha256'] == sys.argv[4], 'local formula is the exact producer-bound core')
+    core_locator = 'results/batch_39/aggregate_core.py'
+    need(domain['source_pins'][core_locator] == sys.argv[4], 'domain source mapping binds the same actual core')
+    core = load_core(sys.argv[3], sys.argv[4])
+    rows = []
+    total_types = total_steps = total_checks = pure_repairs = 0
+    for index, record in enumerate(records):
+        try:
+            g, hw, hb, tests, repairs = physical_curve(record)
+        except Exception as error:
+            failure = dict(status='R39_LOCAL_PHYSICAL_CURVE_FAILURE', domain_sha256=sys.argv[2], formula_source_sha256=sys.argv[4], complete_policy_curves=2361, completed_curves=rows, completed_signed_types=total_types, completed_step_tests=total_steps, completed_marginal_comparisons=total_checks, failing_index=index, failing_profile=record, failing_curve_complete=False, unexecuted_curves=len(records) - index - 1, error_type=type(error).__name__, error_message=str(error), branch_paid_or_sign_claimed=False)
+            sys.stdout.write(json.dumps(failure, sort_keys=True, indent=2) + '\n')
+            sys.stdout.flush()
+            raise
+        M, p, q = (record[k] for k in ('original_modulus', 'p', 'q'))
+        for T in tests:
+            actual_w = core.witness(M, g, T, p, q)
+            actual_b = core.denomone(M, g, T, p, q)
+            expected_w = bisect_right(hw, T)
+            expected_b = bisect_right(hb, T)
+            if not (type(actual_w) is int and type(actual_b) is int and (actual_w == expected_w) and (actual_b == expected_b)):
+                failure = dict(status='R39_LOCAL_CONTROL_MISMATCH', domain_sha256=sys.argv[2], formula_source_sha256=sys.argv[4], complete_policy_curves=2361, completed_curves=rows, failing_index=index, failing_profile=record, T=T, actual=[actual_w, actual_b], expected=[expected_w, expected_b], unexecuted_curves=len(records) - index - 1, branch_paid_or_sign_claimed=False)
+                sys.stdout.write(json.dumps(failure, sort_keys=True, indent=2) + '\n')
+                raise RuntimeError('physical local comparison mismatch retained in stdout')
+            total_checks += 2
+        total_types += len(hw)
+        total_steps += len(tests)
+        pure_repairs += record['kind'] == 'pure'
+        rows.append(dict(profile=record, original_gcd_stratum=g, signed_types_checked=len(hw), step_tests=len(tests), marginal_comparisons=2 * len(tests), missing_prime_repairs=repairs, witness_height_sha256=digest(hw), denominator_one_height_sha256=digest(hb), complete_schedule_sha256=digest(tests), first_threshold=tests[0], last_threshold=tests[-1], status='PASS'))
+    need(total_types == SIGNED_TYPES and len(rows) == 2361 and (pure_repairs == 1574) and (total_steps <= STEP_BOUND) and (total_checks == 2 * total_steps <= COMPARISON_BOUND), 'complete physical policy and marginal budgets')
+    result = dict(status='R39_ALL_MARK_PHYSICAL_LOCAL_CONTROLS_PASS', domain_sha256=sys.argv[2], formula_source_sha256=sys.argv[4], radical_pairs_checked=787, curves_checked=len(rows), signed_types_checked=total_types, test_steps=total_steps, marginal_comparisons=total_checks, step_tests_bound=STEP_BOUND, marginal_comparisons_bound=COMPARISON_BOUND, active_pure_repair_profiles=pure_repairs, m2_singletons=0, complete_curve_records=rows, original_state_minimum_sweeps=False, historical_modules_imported=False, full_branch_means_or_signs_evaluated=False, scope='All original-modulus local witnesses and denominator-one marginals, not defining minima.')
+    sys.stdout.write(json.dumps(result, sort_keys=True, indent=2) + '\n')
+if __name__ == '__main__':
+    main()

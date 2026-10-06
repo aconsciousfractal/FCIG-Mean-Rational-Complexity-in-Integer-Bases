@@ -1,0 +1,58 @@
+# nonsquare endpoint refinement
+
+This mathematical supplement is read with `reports/batch_34/ANALYTIC_REDUCTION.md` (the analytical-reduction note, local equation R18) and `reports/batch_27/PARAMETERIZED_MEAN_BALANCE.md` (the parameterized-balance note, local P-labels). It is not a standalone proof of the complete theorem. The manuscript counterpart is "Finite balance, closed endpoints and the four simultaneous gains" (`ap:finite:five-bounds`, especially `eq:finite:gain` and `eq:finite:strengthened`). Source labels are searchable in the distributed standalone LaTeX file.
+
+## Nonsquare endpoint lemma
+
+This is a symbolic extension of the analytical-reduction note equation (R18), using only
+The parameterized-balance note equations P8–P9/P18–P20. It does not assume a
+square modulus or coprime valuations. Let (x=\sqrt M), (k=\lfloor x\rfloor),
+(t=x-k\in[0,1)), and fix one valid parameter pair ((b_0,b_1)) from
+The parameterized-balance note P5, with (b_0\ge b_1). Keep the corresponding error function
+(\mathcal E(x)), leading credit (\Delta), (\ell=\ln2),
+(\kappa=\alpha\rho), and all original collision/far penalties. Put
+\[
+\delta(x)=\frac{(1-t)(1+3t)}2+\frac{t^3}{x}\ge0.
+\]
+Then the following stronger inequality holds:
+\[
+\boxed{\mu(M)\le-\Delta+\mathcal E(x)
+-\frac{\ell\kappa[2x(1-t)+t^2]}{x^2}
+-\frac{2\kappa\delta(x)+2(b_0-b_1)+\ln x}{x^2}.}           \tag{S4}
+\]
+
+Proof. Let (I(x)=\int_1^x\lfloor y\rfloor^2dy/y). The elementary
+(\ln(1+1/j)\ge1/j-1/(2j^2)) gives
+(\sum_{j=1}^{k-1}j^2\ln(1+1/j)\ge(k-1)^2/2).
+Also (\ln(x/k)\ge(x-k)/x=t/x). Therefore
+\[
+I(x)\ge(k-1)^2/2+k^2t/x
+      =x^2/2-x+\delta(x).
+\]
+Relative to the parameterized-balance note P8 this increases central credit by
+(2\kappa\delta(x)/x^2). Integrating the primitive-error term exactly,
+instead of discarding its favorable lower endpoint, recovers
+(2(b_0-b_1)/x^2). Retaining the isolated zero residue recovers
+((\ln x)/x^2).
+
+In the plateau bound retain (k^2) exactly. The lost quadratic central
+density is (2\kappa(x^2-k^2)/x^2), where the parameterized-balance note P9 used (4\kappa/x).
+Multiplication by plateau length (\ell/2) saves
+\[
+\ell\kappa[2x-(x^2-k^2)]/x^2
+=\ell\kappa[2x(1-t)+t^2]/x^2.
+\]
+The primitive penalty still safely uses
+(k(b_0+b_1\ln k)\le x(b_0+b_1\ln x)), and the collision triangle
+still uses (L_k\le x). Hence no original penalty is understated.
+The four gains can be retained together, proving S4. At (t=0),
+(\delta=1/2), so S4 reduces exactly to the analytical-reduction note equation (R18). All gains are nonnegative
+for arbitrary two-prime (M); the strict far start and closed central
+endpoints are unchanged.
+
+An exact enclosure can use rational enclosures
+for (x), after fixing (k=\operatorname{isqrt}(M)), and interval arithmetic
+for (t). Subtracted gains require lower enclosures. Do not import the
+(b_0-b_1) gain from a different parameter pair into an error bound. The
+same consistency guard is required if taking the minimum of the coarse
+and parameterized bounds (the analytical-reduction note equation (R18)).

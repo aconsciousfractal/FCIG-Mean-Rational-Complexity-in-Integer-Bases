@@ -1,0 +1,129 @@
+from pathlib import Path as _PortablePath
+import importlib.util as _portable_import_util
+_portable_original_file = _PortablePath(__file__).with_name('inventory_generate.py')
+_portable_previous_spec = _portable_import_util.spec_from_file_location
+def _portable_spec(name, location, *args, **kwargs):
+    location = _PortablePath(location)
+    candidate = location.with_name("_portable_" + location.name)
+    if not location.name.startswith("_portable_") and candidate.is_file():
+        location = candidate
+    return _portable_previous_spec(name, location, *args, **kwargs)
+_portable_import_util.spec_from_file_location = _portable_spec
+"""R36 SOURCE_ONLY inventory; ordered-prime/power algorithm A."""
+from bisect import bisect_right
+from math import gcd, isqrt
+import json
+import sys
+SCHEMA = 'p72-r36-source-only-frontier-v1'
+LIMIT = 360000
+PRIME_LIMIT = (LIMIT - 1) // 2
+REASONS = ('closed_radical', 'common_valuation_factor', 'squarefree', 'branch_cutoff')
+BRANCHES = ('p2', 'p3', 'p_ge5')
+
+def need(condition, message):
+    """Fail closed equally with ordinary Python and python -O."""
+    if not condition:
+        raise ValueError('R36 NEED: ' + message)
+
+def primes_through(bound):
+    need(type(bound) is int and bound >= 2, 'invalid prime bound')
+    flags = bytearray(b'\x01') * (bound + 1)
+    flags[0] = flags[1] = 0
+    for n in range(2, isqrt(bound) + 1):
+        if flags[n]:
+            start = n * n
+            count = (bound - start) // n + 1
+            flags[start:bound + 1:n] = b'\x00' * count
+    return [n for n in range(2, bound + 1) if flags[n]]
+
+def classify(M, p, q, a, b):
+    need(all((type(n) is int for n in (M, p, q, a, b))), 'noninteger tuple')
+    need(2 <= p < q and a >= 1 and (b >= 1), 'tuple order or valuation')
+    need(2 <= M < LIMIT and M == p ** a * q ** b, 'tuple reconstruction or range')
+    if p == 2:
+        branch, cutoff = ('p2', 147456)
+    elif p == 3:
+        branch, cutoff = ('p3', 262144)
+    else:
+        need(p >= 5, 'unknown prime branch')
+        branch, cutoff = ('p_ge5', 360000)
+    reasons = []
+    if p * q in (6, 10, 14, 15):
+        reasons.append('closed_radical')
+    if gcd(a, b) >= 2:
+        reasons.append('common_valuation_factor')
+    if a == 1 and b == 1:
+        reasons.append('squarefree')
+    if M >= cutoff:
+        reasons.append('branch_cutoff')
+    return {'M': M, 'p': p, 'q': q, 'a': a, 'b': b, 'branch': branch, 'cutoff': cutoff, 'reasons': reasons}
+
+def generate_rows():
+    primes = primes_through(PRIME_LIMIT)
+    prime_set = set(primes)
+    need(primes[0] == 2 and primes == sorted(prime_set), 'prime list order')
+    rows = []
+    seen = set()
+    for index, p in enumerate(primes):
+        if p * p >= LIMIT:
+            break
+        q_min = primes[index + 1]
+        p_power, a = (p, 1)
+        while p_power * q_min < LIMIT:
+            stop = bisect_right(primes, (LIMIT - 1) // p_power)
+            for q_index in range(index + 1, stop):
+                q = primes[q_index]
+                q_power, b = (q, 1)
+                while p_power * q_power < LIMIT:
+                    M = p_power * q_power
+                    need(p in prime_set and q in prime_set, 'nonprime factor')
+                    need(M not in seen, 'duplicate physical modulus')
+                    seen.add(M)
+                    rows.append(classify(M, p, q, a, b))
+                    q_power *= q
+                    b += 1
+                need(b >= 2, 'prime upper-bound failure')
+            p_power *= p
+            a += 1
+    rows.sort(key=lambda row: row['M'])
+    need(all((rows[i - 1]['M'] < rows[i]['M'] for i in range(1, len(rows)))), 'output is not strictly ordered')
+    return rows
+
+def profile(rows):
+    """Mass means sum of physical moduli, never a measured state visit."""
+    return {'count': len(rows), 'mass': sum((row['M'] for row in rows)), 'min_M': min((row['M'] for row in rows), default=None), 'max_M': max((row['M'] for row in rows), default=None), 'radical_count': len({(row['p'], row['q']) for row in rows})}
+
+def grouped_profiles(rows, keys):
+    groups = {}
+    for row in rows:
+        key = tuple((row[name] for name in keys))
+        groups.setdefault(key, []).append(row)
+    return [dict(zip(keys, key), **profile(groups[key])) for key in sorted(groups)]
+
+def supplemental_ratio_qualifies(row):
+    coefficient = 225 if row['p'] == 2 else 1300 if row['p'] == 3 else 400
+    return row['b'] == 1 and row['M'] >= 19600 and (row['q'] >= coefficient * row['p'] ** row['a'])
+
+def summarize(rows):
+    retained = [row for row in rows if not row['reasons']]
+    optional = [row for row in retained if row['b'] == 1 and row['M'] >= 19600 and (row['q'] >= 1500 * row['p'] ** row['a'])]
+    excluded = [row for row in rows if row['reasons']]
+    supplemental = [row for row in retained if supplemental_ratio_qualifies(row)]
+    active = [row for row in retained if not supplemental_ratio_qualifies(row)]
+    summary = {'all': profile(rows), 'retained': profile(retained), 'excluded': profile(excluded), 'by_branch': [{'branch': branch, 'all': profile([r for r in rows if r['branch'] == branch]), 'retained': profile([r for r in retained if r['branch'] == branch]), 'excluded': profile([r for r in excluded if r['branch'] == branch]), 'supplemental_ratio': profile([r for r in supplemental if r['branch'] == branch]), 'active': profile([r for r in active if r['branch'] == branch])} for branch in BRANCHES], 'by_reason': [{'reason': reason, **profile([r for r in rows if reason in r['reasons']])} for reason in REASONS], 'all_exponent_profiles': grouped_profiles(rows, ('a', 'b')), 'retained_exponent_profiles': grouped_profiles(retained, ('a', 'b')), 'retained_radical_profiles': grouped_profiles(retained, ('p', 'q')), 'supplemental_ratio_qualifying_retained': profile(supplemental), 'active': profile(active), 'active_exponent_profiles': grouped_profiles(active, ('a', 'b')), 'active_radical_profiles': grouped_profiles(active, ('p', 'q')), 'optional_r27_qualifying_retained': profile(optional), 'conditional_retained_after_optional_r27': profile([r for r in retained if not (r['b'] == 1 and r['M'] >= 19600 and (r['q'] >= 1500 * r['p'] ** r['a']))])}
+    need(summary['all']['count'] == summary['retained']['count'] + summary['excluded']['count'], 'count partition')
+    need(summary['all']['mass'] == summary['retained']['mass'] + summary['excluded']['mass'], 'mass partition')
+    need(summary['retained']['count'] == summary['active']['count'] + summary['supplemental_ratio_qualifying_retained']['count'], 'active count partition')
+    need(summary['retained']['mass'] == summary['active']['mass'] + summary['supplemental_ratio_qualifying_retained']['mass'], 'active mass partition')
+    return (retained, optional, supplemental, active, summary)
+
+def main():
+    need(len(sys.argv) == 1, 'no command-line inputs are accepted')
+    need(LIMIT == 360000 and PRIME_LIMIT == 179999, 'frozen domain constants')
+    rows = generate_rows()
+    retained, optional, supplemental, active, summary = summarize(rows)
+    document = {'schema': SCHEMA, 'status': 'SOURCE_ONLY', 'algorithm': 'ordered_primes_and_powers', 'domain': {'M_lower_inclusive': 2, 'M_upper_exclusive': LIMIT, 'omega': 2, 'prime_order': 'p<q', 'valuations': 'a,b>=1'}, 'reason_order': list(REASONS), 'optional_r27_status': 'CONDITIONAL_UNTIL_PRIMARY_IMPORTS_PROOF', 'optional_r27_predicate': 'b=1 and M>=19600 and q>=1500*p^a', 'optional_r27_changes_conservative_retained': False, 'supplemental_ratio_status': 'SOURCE_ONLY_RULE_FIXED_BEFORE_RUN', 'supplemental_ratio_predicate': 'b=1 and M>=19600 and q>=c(p)*p^a; c(2)=225,c(3)=1300,c(p>=5)=400', 'supplemental_ratio_changes_conservative_retained': False, 'all_rows': rows, 'retained_rows': retained, 'optional_r27_qualifying_retained_rows': optional, 'supplemental_ratio_qualifying_retained_rows': supplemental, 'active_rows': active, 'summary': summary}
+    json.dump(document, sys.stdout, sort_keys=True, separators=(',', ':'), ensure_ascii=True)
+    sys.stdout.write('\n')
+if __name__ == '__main__':
+    main()

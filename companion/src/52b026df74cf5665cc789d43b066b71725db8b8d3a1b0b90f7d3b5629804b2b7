@@ -1,0 +1,84 @@
+from pathlib import Path as _PortablePath
+import importlib.util as _portable_import_util
+_portable_original_file = _PortablePath(__file__).with_name('verify_finite_bridge.py')
+_portable_previous_spec = _portable_import_util.spec_from_file_location
+def _portable_spec(name, location, *args, **kwargs):
+    location = _PortablePath(location)
+    candidate = location.with_name("_portable_" + location.name)
+    if not location.name.startswith("_portable_") and candidate.is_file():
+        location = candidate
+    return _portable_previous_spec(name, location, *args, **kwargs)
+_portable_import_util.spec_from_file_location = _portable_spec
+"""E024 finite bridge N1..8: exact CDF plus integer Jensen premises."""
+from pathlib import Path
+import importlib.util
+import hashlib
+import json
+import math
+from fractions import Fraction
+import sys
+ROOT = Path(__file__).resolve().parents[2]
+OUT = Path(__file__).parent
+
+def require(ok, message):
+    if not ok:
+        raise RuntimeError(message)
+
+def main():
+    source = ROOT / 'data/prime_power_reference/prime_height_panel.json'
+    source_sha = hashlib.sha256(source.read_bytes()).hexdigest()
+    require(source_sha == '05a9793305c4f60537407c64ad35087dc21d8251903a206c6ac7eded1a938961', 'frozen source')
+    panel = json.loads(source.read_text())
+    code = ROOT / 'results/batch_22/verify_prime_cdf.py'
+    code_sha = hashlib.sha256(code.read_bytes()).hexdigest()
+    sys.dont_write_bytecode = True
+    spec = importlib.util.spec_from_file_location('frozen_prime_cdf', code)
+    cdf = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(cdf)
+    rows = []
+    formulas = 0
+    for n in range(1, 9):
+        m = 3 ** n
+        frozen = next((z for z in panel['rows'] if z['p'] == 3 and z['N'] == n))
+        oracle_hist = dict(frozen['exact_histogram'])
+        maximum = m // 3
+        previous = 0
+        rebuilt = []
+        for t in range(1, maximum + 1):
+            candidates = []
+            if t * t <= m:
+                candidates.append(cdf.central(3, m, t))
+            if t * t >= m:
+                candidates.append(cdf.high(3, m, t))
+            require(candidates and all((x == candidates[0] for x in candidates)), 'square overlap')
+            count = candidates[0]
+            require(previous <= count <= m, 'CDF order')
+            if count > previous:
+                rebuilt.append([t, count - previous])
+            previous = count
+            formulas += len(candidates)
+        require(previous == m, 'CDF final mass')
+        require(rebuilt == frozen['exact_histogram'], 'CDF histogram mismatch')
+        require(sum(oracle_hist.values()) == m, 'histogram mass')
+        height_sum = sum((t * count for t, count in rebuilt))
+        margin = m ** 3 - height_sum ** 2
+        require(margin > 0, 'Jensen premise')
+        gap_margin = 249 ** 2 * m ** 3 - (250 * height_sum) ** 2
+        require(gap_margin > 0, 'uniform-gap Jensen premise')
+        budget = sum((count * (-math.log(t / math.sqrt(m)) + 2 * max(0, math.log(math.sqrt(2) * t / math.sqrt(m))) + 2 * max(0, math.log(math.sqrt(3) * t / math.sqrt(m)))) for t, count in rebuilt)) / m
+        rows.append({'N': n, 'M': m, 'height_sum': height_sum, 'height_mean_numerator': height_sum, 'height_mean_denominator': m, 'integer_Jensen_margin': margin, 'integer_uniform_gap_margin': gap_margin, 'exact_histogram': rebuilt, 'child_budget_CL1': budget, 'child_budget_margin_CL1': 1.5 * math.log(3) - budget})
+    error = Fraction(3337, 41580) + Fraction(1, 58800)
+    margin = Fraction(41, 486) - error
+    require(margin > 0, 'effective rational margin')
+    require(margin > Fraction(1, 250), 'effective uniform gap')
+    exp5 = sum((Fraction(5) ** j / Fraction(math.factorial(j)) for j in range(10)), Fraction(0))
+    require(exp5 > 140, 'ln140<5 certificate')
+    require(Fraction(19683) > 140 ** 2, 'N9 threshold')
+    zeta2 = sum((Fraction(1, k * k) for k in range(1, 6)), Fraction(0)) + Fraction(1, 5)
+    require(zeta2 == Fraction(5989, 3600) and zeta2 < Fraction(5, 3), 'zeta2 bound')
+    result = {'status': 'PASS_FINITE_BRIDGE_AND_RATIONAL_EFFECTIVE_PREMISES', 'meaning': 'Exact finite Jensen certificates N1..8 and rational premises; infinite proof is separate.', 'source_panel_sha256': source_sha, 'cdf_code_sha256': code_sha, 'rows': rows, 'levels': 8, 'residues': sum((r['M'] for r in rows)), 'CDF_formula_evaluations': formulas, 'analytic_cutoff_N': 9, 'rational_negative_margin_at_140': str(margin), 'universal_natural_log_gap': str(Fraction(1, 250)), 'rational_exp5_partial_sum': str(exp5), 'rational_zeta2_upper': str(zeta2), 'floating_used_in_certificates': False, 'child_budget_diagnostic_only': True, 'all_N_proved_by_checker_alone': False, 'formal_proof': False, 'novelty_certified': False}
+    payload = json.dumps(result, indent=2) + '\n'
+    (OUT / 'FINITE_BRIDGE.json').write_bytes(payload.encode())
+    print(payload, end='')
+if __name__ == '__main__':
+    main()

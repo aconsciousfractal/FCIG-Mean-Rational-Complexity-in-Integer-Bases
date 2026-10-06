@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "package_version": "0.1.0",
+  "canonicalization": "UTF-8 JSON, sorted keys, compact separators, ensure_ascii=true, allow_nan=false; no terminal newline",
+  "outputs": {
+    "smoke": {
+      "canonical_json_sha256": "52dec572f04feae97c0ef5f4b9ac2ee278d8c868cb0b6a340622efef7c5e2e23",
+      "observed_status": "PORTABLE_FIXED_DEFINITION_SMOKE_PASS",
+      "normal_optimized_equal": true
+    },
+    "retained": {
+      "canonical_json_sha256": "3af9779f46c7e3a65f2e9935c889f7facbedc35ecb321129a5b73aa2729f86f8",
+      "observed_status": "PORTABLE_RETAINED_ARITHMETIC_PASS",
+      "normal_optimized_equal": true
+    },
+    "semiprime": {
+      "canonical_json_sha256": "b7c2761477780fb6dff8edba98e80cf6dbc8b7eec5f10b7e1876a539ce246838",
+      "observed_status": "PORTABLE_E032_RECONSTRUCTION_PASS",
+      "normal_optimized_equal": true
+    },
+    "oracle": {
+      "canonical_json_sha256": "6005121b26f208de81c16ad4af9dbf81e070778810bd382da6073cf247c217aa",
+      "observed_status": "R39_FIXED_ORACLE_QUALIFICATION_PASS",
+      "normal_optimized_equal": true
+    }
+  },
+  "full_historical_replay": false,
+  "all_4596_reconstructed": false,
+  "oracle_scope": {
+    "central_states": 797,
+    "CDFs": 83,
+    "strata": 494,
+    "intervals": 4134,
+    "supports": 73,
+    "guards": 35
+  },
+  "smoke_moduli": [
+    2,
+    3,
+    9,
+    6,
+    10,
+    44,
+    352,
+    900
+  ],
+  "smoke_states": 1326,
+  "semiprime_moduli": [
+    6,
+    10,
+    77,
+    221
+  ],
+  "retained_scope": "116 locators,111 objects; preserved signs/domains/log records; not all producers regenerated",
+  "RAM_peak_measured": false,
+  "hosted_CI_observed": false,
+  "companion_tests": {
+    "per_mode": 6,
+    "passed": 5,
+    "skipped": 1,
+    "skip_reason": "Windows native directory symlink privilege absent"
+  }
+}

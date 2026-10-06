@@ -1,0 +1,23 @@
+{
+  "Farey_residue_witness_or_CDF_loops_executed": false,
+  "IE_verified_by_closed_exponent_identity": true,
+  "J_verified_by_closed_divisor_pairing": true,
+  "analytical_complement_sha256": "46d41a4a21778b864b7d821117a4633db26cb6cbedd93faa623dcb4e266008c9",
+  "branches_checked": 3,
+  "compression_totals_checked": 30,
+  "divisor_grids_enumerated": false,
+  "inherited_Farey_totients_or_calendars_recomputed": false,
+  "local_policy_profiles_checked": 6816,
+  "local_type_counts_verified_by_totient_identities": true,
+  "new_heights_means_or_signs_evaluated": false,
+  "per_profile_compression_counters_checked": 132300,
+  "producer_imported": false,
+  "profiles_checked": 4410,
+  "radicals_checked": 2272,
+  "resolver_payload_sha256": "86ce21b2bb7ea5c65aeab036ad14d89d6f221891ec9a299d088ab075eadb68fe",
+  "retained_work_sha256": "540ef3eed51deccca38f414098d49aa881200a9d7f778d143f28d3bbb6a038e9",
+  "scope": "Distinct prospective cost metadata verification; no numerical central audit or mean certificate.",
+  "state_mass_not_visited": 95870797,
+  "status": "R38_DISTINCT_CLOSED_IDENTITY_METADATA_PASS",
+  "synthetic_arithmetic_profiles_checked": 4
+}

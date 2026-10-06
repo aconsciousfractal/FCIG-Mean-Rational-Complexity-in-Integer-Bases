@@ -1,0 +1,188 @@
+"""E039 autonomous retained analytical bound audit; no finite-height oracle.
+
+This checks the retained arithmetic against tighter independent enclosures.
+The R27/R34 finite-balance theorem remains an attributed mathematical premise.
+No producer import, finite minimum, CDF, state vector or empirical mean.
+"""
+from bisect import bisect_right
+from fractions import Fraction
+from functools import lru_cache
+import hashlib
+import json
+from math import gcd, isqrt
+from pathlib import Path
+OUT = Path(__file__).resolve().parent
+PROJECT = OUT.parents[1]
+SOURCE = PROJECT / 'reports/batch_33/REDUCED_FRONTIER_METADATA.json'
+SOURCE_PIN = '19842472214539f5a3d59031b59bc1cb55c0ad0f7540485145a4e8c2152c3442'
+ZETA_COUNT = 256
+LOG_COUNT = 32
+ROOT_SCALE = 10 ** 30
+
+def check(condition, explanation):
+    if not condition:
+        raise RuntimeError(explanation)
+
+def integer(value):
+    return type(value) is int
+
+def rational(value, name):
+    check(type(value) is list and len(value) == 2, name + ': rational pair')
+    n, d = value
+    check(integer(n) and integer(d) and (d > 0), name + ': exact numerator/positive denominator')
+    check(gcd(abs(n), d) == 1, name + ': reduced representation')
+    return Fraction(n, d)
+
+def prime(value):
+    return integer(value) and value >= 2 and all((value % q for q in range(2, isqrt(value) + 1)))
+
+def model(profile):
+    check(type(profile) is list and len(profile) == 6 and all((integer(x) for x in profile)), 'six exact profile integers')
+    B, M, p, r, a, b = profile
+    check(1 < p < r and prime(p) and prime(r), 'ordered prime factors')
+    check(B > 1 and M == B * B and (a >= 2) and (b >= 2) and (a % 2 == b % 2 == 0), 'positive square profile')
+    check(B == p ** (a // 2) * r ** (b // 2) and M == p ** a * r ** b, 'full base valuations')
+
+@lru_cache(None)
+def logarithm(n):
+    """Direct 32-term positive atanh fractions, not producer recurrence."""
+    check(integer(n) and n >= 1, 'positive exact logarithm argument')
+    exponent = n.bit_length() - 1
+    binary_unit = 2 ** exponent
+
+    def atanh_twice(a, b):
+        check(integer(a) and integer(b) and (0 <= a < b), 'atanh range')
+        finite = sum((Fraction(2 * a ** (2 * j + 1), (2 * j + 1) * b ** (2 * j + 1)) for j in range(LOG_COUNT)), Fraction(0))
+        omitted = Fraction(2 * a ** (2 * LOG_COUNT + 1) * b * b, (2 * LOG_COUNT + 1) * b ** (2 * LOG_COUNT + 1) * (b * b - a * a))
+        return (finite, finite + omitted)
+    left, right = atanh_twice(n - binary_unit, n + binary_unit)
+    l2, u2 = atanh_twice(1, 3)
+    return (left + exponent * l2, right + exponent * u2)
+
+def parameters_from_unit_residues(p, r):
+    """Count actual sorted full-unit residues: no inclusion-exclusion floors."""
+    check(prime(p) and prime(r) and (p < r), 'parameter prime pair')
+    D = p * r
+    residues = sorted((s for s in range(1, D) if gcd(s, D) == 1))
+    density = Fraction(len(residues), D)
+    check(len(residues) == (p - 1) * (r - 1), 'unit residue cardinality')
+    discrepancies = [Fraction(bisect_right(residues, n)) - density * n for n in range(D)]
+    high, low = (max(discrepancies), min(discrepancies))
+    span = high - low + density
+    primitive_constant = max(high, 2 * density - low)
+    b1 = primitive_constant * density
+    b0 = primitive_constant * (density + high) + density
+    deleted_factor = Fraction(2) - Fraction(1, p) - Fraction(1, r)
+    inverse_square_coefficient = Fraction(p - 1, p * p) + Fraction(r - 1, r * r) - Fraction(D - 1, D * D)
+    E0 = deleted_factor * (density + high) + 2 * inverse_square_coefficient
+    E1 = deleted_factor * density
+    check(0 <= high <= 2 * density and -density <= low <= 0, 'counted unit discrepancy bounds')
+    check(0 < span < 4 and 0 < primitive_constant < 3 and (b0 >= b1 >= 0) and (E0 > 0) and (E1 > 0), 'counted refined parameter range')
+    values = dict(u=density, rho=Fraction(D, (p + 1) * (r + 1)), h=high, m=low, K=span, W=primitive_constant, b0=b0, b1=b1, v=deleted_factor, c0=inverse_square_coefficient, E0=E0, E1=E1)
+    return (values, len(residues), D)
+
+def tighter_bounds(B, par, alpha_low, alpha_high, ell_low, ell_high, root_low):
+    density, rho = (par['u'], par['rho'])
+    intercept = (alpha_low * (3 + 5 * rho) - 4 * (1 - rho) - 6 * density * density) / 8
+    slope = (4 * alpha_low * rho - 2 + 3 * density * density) / 4
+    lower_delta = intercept + slope * (ell_low if slope >= 0 else ell_high)
+    _, upper_log = logarithm(B)
+    upper_coarse = (B * (22 + 15 * upper_log) + 18 + 4 * upper_log) / (B * B)
+    kappa = alpha_high * rho
+    theta = alpha_high * (1 - rho)
+    K, b0, b1 = (par['K'], par['b0'], par['b1'])
+    deletion_error = par['E0'] + par['E1'] * upper_log
+    linear = 2 * kappa + 2 * b0 - 2 * b1 + 2 * b1 * upper_log + 2 * density * K * (3 - 2 * root_low) + ell_high * (2 * kappa + b0 + b1 * upper_log + density * K) + (1 + Fraction(5, 4) * theta + 4 * deletion_error) / root_low
+    quadratic = K * K * ell_high + 2 * deletion_error
+    upper_refined = (B * linear + quadratic) / (B * B)
+    check(upper_coarse > 0 and upper_refined > 0, 'positive independent error upper bounds')
+    return (lower_delta, upper_coarse, upper_refined)
+
+def main():
+    source_bytes = SOURCE.read_bytes()
+    check(hashlib.sha256(source_bytes).hexdigest() == SOURCE_PIN, 'source byte pin')
+    source = json.loads(source_bytes)
+    profiles = source['proposed_N2_profiles']
+    check(type(profiles) is list and len(profiles) == 454, 'complete pinned 454 profiles')
+    for profile in profiles:
+        model(profile)
+    check([v[0] for v in profiles] == sorted(set((v[0] for v in profiles))), 'fixed input order and uniqueness')
+    check(sum((v[1] for v in profiles)) == 159824036, 'source state-mass metadata')
+    marks = sorted({(v[2], v[3]) for v in profiles})
+    check(len(marks) == 289, 'all selected prime pairs')
+    payload_bytes = (OUT / 'ANALYTIC_N2.json').read_bytes()
+    data = json.loads(payload_bytes)
+    check(data['schema'] == 'p72-e039-analytic-n2-v1' and data['source_sha256'] == SOURCE_PIN, 'retained identity/source')
+    for field, expected in (('zeta_terms', 128), ('log_terms', 16), ('sqrt_scale', 10 ** 15)):
+        check(integer(data[field]) and data[field] == expected, 'retained frozen scalar parameter ' + field)
+    for field in ('finite_means_evaluated', 'residue_minima_evaluated', 'CDFs_evaluated', 'floating_used'):
+        check(data[field] is False, 'retained negative scientific flag ' + field)
+    check(data['analytical_upper_bounds_evaluated'] is True, 'analytical evaluation flag')
+    zeta_partial = sum((Fraction(1, j * j) for j in range(1, ZETA_COUNT + 1)), Fraction(0))
+    own_alpha_low = 1 / (zeta_partial + Fraction(1, ZETA_COUNT))
+    own_alpha_high = 1 / (zeta_partial + Fraction(1, ZETA_COUNT + 1))
+    own_ell_low, own_ell_high = logarithm(2)
+    root_integer = isqrt(2 * ROOT_SCALE * ROOT_SCALE)
+    own_root_low = Fraction(root_integer, ROOT_SCALE)
+    check(root_integer * root_integer < 2 * ROOT_SCALE * ROOT_SCALE < (root_integer + 1) ** 2, 'independent sqrt2 floor enclosure')
+    retained_alpha_low = rational(data['alpha_lower'], 'alpha lower')
+    retained_alpha_high = rational(data['alpha_upper'], 'alpha upper')
+    retained_ell_low = rational(data['ell_lower'], 'ell lower')
+    retained_ell_high = rational(data['ell_upper'], 'ell upper')
+    retained_root_low = rational(data['sqrt2_lower'], 'sqrt2 lower')
+    check(0 < retained_alpha_low <= own_alpha_low < own_alpha_high <= retained_alpha_high, 'independent reciprocal-zeta interval containment')
+    check(0 < retained_ell_low <= own_ell_low < own_ell_high <= retained_ell_high, 'independent ln2 interval containment')
+    scaled_root = retained_root_low * data['sqrt_scale']
+    check(scaled_root.denominator == 1 and scaled_root > 0, 'retained root scale')
+    k = scaled_root.numerator
+    check(k * k < 2 * data['sqrt_scale'] ** 2 < (k + 1) ** 2 and retained_root_low <= own_root_low, 'retained sqrt2 floor and tighter containment')
+    check(own_root_low > 1 and 3 - 2 * own_root_low > 0, 'positive refined beta endpoint')
+    retained_params = data['parameters']
+    check(type(retained_params) is list and len(retained_params) == len(marks), 'complete parameter ledger')
+    reconstructed = {}
+    unit_residues_counted = period_entries = parameter_values = 0
+    for (p, r), entry in zip(marks, retained_params):
+        check(integer(entry['p']) and integer(entry['r']) and ((entry['p'], entry['r']) == (p, r)), 'parameter ledger ordering')
+        par, count, period = parameters_from_unit_residues(p, r)
+        check(set(entry) == {'p', 'r'} | set(par), 'complete parameter fields')
+        for name, expected in par.items():
+            check(rational(entry[name], 'parameter ' + name) == expected, 'counted-residue parameter mismatch ' + name)
+            parameter_values += 1
+        reconstructed[p, r] = par
+        unit_residues_counted += count
+        period_entries += period
+    check(integer(data['period_floor_entries']) and data['period_floor_entries'] == period_entries, 'retained period-loop count metadata')
+    rows = data['rows']
+    check(type(rows) is list and len(rows) == len(profiles), 'complete retained row list')
+    paid, remaining = ([], [])
+    bound_comparisons = 0
+    for profile, row in zip(profiles, rows):
+        check(type(row['profile']) is list and all((integer(v) for v in row['profile'])) and (row['profile'] == profile), 'exact retained profile ordering')
+        B, M, p, r, a, b = profile
+        delta = rational(row['delta_lower'], 'delta')
+        coarse = rational(row['coarse_error_upper'], 'coarse error')
+        refined = rational(row['refined_error_upper'], 'refined error')
+        own_delta, own_coarse, own_refined = tighter_bounds(B, reconstructed[p, r], own_alpha_low, own_alpha_high, own_ell_low, own_ell_high, own_root_low)
+        check(delta <= own_delta, 'retained delta lower not covered by tighter independent lower')
+        check(coarse >= own_coarse and refined >= own_refined, 'retained error upper not covered by tighter independent upper')
+        bound_comparisons += 3
+        mu_coarse, mu_refined = (coarse - delta, refined - delta)
+        upper = min(mu_coarse, mu_refined)
+        check(rational(row['mu_upper_coarse'], 'coarse centered bound') == mu_coarse, 'retained coarse centered arithmetic')
+        check(rational(row['mu_upper_refined'], 'refined centered bound') == mu_refined, 'retained refined centered arithmetic')
+        check(rational(row['mu_upper'], 'selected centered bound') == upper, 'retained exact minimum of analytical bounds')
+        status = 'ANALYTIC_PAID' if upper < 0 else 'NEEDS_FINITE'
+        check(row['status'] == status, 'retained status from exact retained bound')
+        (paid if upper < 0 else remaining).append(profile)
+    for field in ('analytic_paid_profiles', 'remaining_profiles'):
+        check(type(data[field]) is list, 'exact retained status list ' + field)
+        for profile in data[field]:
+            model(profile)
+    check(data['analytic_paid_profiles'] == paid and data['remaining_profiles'] == remaining, 'complete ordered status lists')
+    for field, expected in (('analytic_paid', len(paid)), ('remaining', len(remaining)), ('remaining_distinct_prime_pairs', len({(v[2], v[3]) for v in remaining})), ('remaining_state_mass_not_visited', sum((v[1] for v in remaining)))):
+        check(integer(data[field]) and data[field] == expected, 'retained status counter/mass ' + field)
+    check(data['all_N2_claim'] is (not remaining), 'all-N2 flag must reflect retained complete list')
+    result = dict(status='E039_INDEPENDENT_ANALYTIC_RETAINED_PASS', payload_sha256=hashlib.sha256(payload_bytes).hexdigest(), source_sha256=SOURCE_PIN, profiles_checked=len(profiles), prime_pairs_checked=len(marks), parameters_from_actual_unit_residues=True, parameter_values_checked=parameter_values, full_unit_period_residues_counted=unit_residues_counted, period_entries_checked=period_entries, independent_zeta_terms=ZETA_COUNT, independent_log_terms=LOG_COUNT, independent_sqrt_scale=ROOT_SCALE, scalar_enclosures_checked=5, tighter_row_bound_comparisons=bound_comparisons, analytic_paid=len(paid), remaining=len(remaining), remaining_distinct_prime_pairs=len({(v[2], v[3]) for v in remaining}), remaining_state_mass_not_visited=sum((v[1] for v in remaining)), producer_imported=False, finite_means_evaluated=False, residue_minima_evaluated=False, CDFs_evaluated=False, floating_used=False, all_N2_claim=not remaining, scope='Independent period parameters, tighter analytical enclosures, all retained row arithmetic/statuses; R27/R34 balance theorem remains attributed, no finite mean, CDF or residue-height audit.')
+    print(json.dumps(result, sort_keys=True, indent=2))
+if __name__ == '__main__':
+    main()

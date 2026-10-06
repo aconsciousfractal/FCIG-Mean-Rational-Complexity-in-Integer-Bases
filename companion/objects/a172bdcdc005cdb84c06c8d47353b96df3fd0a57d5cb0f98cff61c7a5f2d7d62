@@ -1,0 +1,448 @@
+# parameterized finite compensation for two distinct primes
+
+This is a mathematical supplement to the accompanying manuscript, not a standalone proof of the complete two-prime theorem. Its local P-labels are retained for the certificate implementations. The manuscript supplies the central identity in Section "Exact central counts and certified logarithms" (source label `eq:central`), the far-cover proof in Appendix "A finite compensation inequality for two-prime moduli", subsection "The global far cover" (`ap:far-cover`), the finite balance and universal cutoffs (`ap:finite-balance`, `ap:universal-cutoffs`), the refined radical-six argument (`app:rad6`), and the complete finite completion (`ap:finite-two-prime`). Source labels are searchable in the distributed standalone LaTeX file.
+
+## 1. Scope of the finite compensation estimates
+
+Let M be ANY integer with precisely two prime divisors p<r. Define R_M(j)
+as the least max(|A|,b) with b>0, gcd(b,M)=1 and A congruent to jb modulo M.
+Average uniformly over all M residues, including zero. Put a=sqrt M.
+All logarithms in this report are natural.
+
+The finite estimates below prove
+
+\[
+\begin{array}{ll}
+\mathbb E\log R_M-\log a<-3/100,&p\ge3,\ M\ge2^{22},\\
+\mathbb E\log R_M-\log a<-2026/937500,&p=2,\ r\ge5,\ M\ge9000000,\\
+\mathbb E\log R_M-\log a<-287/11700000,&\operatorname{rad}M=6,
+\ M\ge6^9.
+\end{array}                                                    \tag{P1}
+\]
+
+In particular every two-prime M>=6^9 has a strictly negative centered
+mean. For the model M=B^N this gives
+
+\[
+\boxed{\mathbb E\log_B R_{B,N}<N/2
+\quad\text{for every }\omega(B)=2\text{ and }N\ge7.}       \tag{P2}
+\]
+
+This is uniform while both primes vary; it is stronger than a qualitative
+fixed-radical limit. Statement (P2) additionally uses the complete base6 certificate
+for its one small-base branch; see the manuscript's short-length bridges (`app:shortlength`). It does not prove the
+full two-prime all-N assertion.
+The finite exceptional domain in section 9 is not closed by these estimates alone;
+the manuscript supplies the subsequent finite completion (`ap:finite-two-prime`).
+No domination of one finite residue grid by another is assumed.
+
+## 2. Elementary unit discrepancy and parameterized primitive error
+
+Write D=pr, u=(1-1/p)(1-1/r), rho=pr/[(p+1)(r+1)], alpha=1/zeta(2),
+ell=log 2, and kappa=alpha*rho. Then
+
+\[
+U(x)=\lfloor x\rfloor-\lfloor x/p\rfloor-\lfloor x/r\rfloor
++\lfloor x/D\rfloor
+\]
+
+counts the positive D-units <=x. At integer n the periodic error
+e(n)=U(n)-un is in (-1,2). At real x it is in (-2,2). Consequently
+
+\[
+H_U(Q)=\sum_{d\le Q,(d,D)=1}1/d\le1+\log Q,\qquad Q\ge1, \tag{P3}
+\]
+
+and every CLOSED real interval of length h contains at most uh+4 units.
+The latter follows by taking the upper endpoint and the left-hand limit
+at the lower endpoint of U; it includes zero-length intervals and both
+boundary atoms. Collision intervals below have nonnegative endpoints.
+
+For n=floor x and x=n+t, 0<=t<1,
+nU(n)-ux^2=n e(n)-u(2nt+t^2). Its upper bound is 2x and its lower bound
+is -3x: n+u(2nt+t^2)<=n+2n+2t<=3x. Hence its absolute value is <=3x.
+Möbius inversion gives, at INTEGER T>=1,
+
+\[
+P(T)=\sum_{d\le T,(d,D)=1}\mu(d)\lfloor T/d\rfloor
+U(\lfloor T/d\rfloor),\qquad
+\sum_{(d,D)=1}\frac{\mu(d)}{d^2}
+=\frac{\alpha}{(1-p^{-2})(1-r^{-2})}.
+\]
+
+The main coefficient after multiplying by u is kappa. The omitted
+integer-cutoff absolute series is at most sum_(d>T)d^-2<=1/T. Together
+with (P3), this pays
+
+\[
+\boxed{|P(T)-\kappa T^2|\le T(4+3\log T).}               \tag{P4}
+\]
+
+There is a useful parameter refinement without any asymptotic claim.
+Define h=max e(n), m=min e(n) over n=0,...,D-1, K=h-m+u and
+W=max(h,-m+2u). Then h>=0, m<=0, K<4 and W<3. Real discrepancy lies
+in [m-u,h], so the closed-interval constant is K. Also
+|nU(n)-ux^2|<=Wx, by the same calculation, and partial summation gives
+H_U(Q)<=u+h+u log Q. Thus either coefficient pair
+
+\[
+(b_0,b_1)=(W+u,W)
+\quad\text{or}\quad
+(b_0,b_1)=(W(u+h)+u,Wu)                                  \tag{P5}
+\]
+
+is admissible in |P(T)-kappa T²|<=T(b0+b1 log T). One may choose a pair
+before integrating; b0>=b1 for both pairs. The coarse uniform choice
+(b0,b1,K)=(4,3,4) will suffice for (P1). These periodic extrema are
+symbolic parameters, not values inferred from a numerical sweep.
+
+## 3. Closed central collisions and exact finite CDF
+
+The manuscript exact central identity (`eq:central`) holds for integer T²<=M:
+
+\[
+C(T)=1+2P(T)-J(T).                                        \tag{P6}
+\]
+
+Cancellation of primitive content preserves the congruence because all
+denominators are units modulo M. A collision has positive numerators A,E,
+unit denominators b,d<=T, and Ad+Eb=M. Thus b+d>=M/T, INCLUDING equality.
+The common divisor of b,d divides M and is a unit, hence gcd(b,d)=1.
+For a fixed ordered denominator pair the allowed progression parameter
+has interval width at most [T(b+d)-M]/(bd)<=1. Equality in the latter
+requires M=T² and b=T OR d=T. At a square M with rad(M)=pr, sqrt M is
+not a unit; hence that equality is impossible. Each ordered pair admits
+at most one collision, including a zero-width boundary solution.
+
+Let L_T=(2T-M/T)_+. The deficits x=T-b,y=T-d satisfy x+y<=L_T. The
+closed-interval unit bound uh+K, including its endpoint atoms, gives
+
+\[
+J(T)\le u\int_0^{L_T}(uh+K)\,dh+K(uL_T+K)
+=\frac{u^2L_T^2}{2}+2uK L_T+K^2\quad(L_T>0).             \tag{P7}
+\]
+
+For 2T²<M it is zero. For 2T²=M, b+d>=2T forces b=d=T;
+T²=M/2 implies that T contains the odd prime divisor of M, so it is
+nonunit. Thus J=0 also at this equality. The constant K² is charged only
+above a/sqrt2. No strict replacement of b+d>=M/T has occurred.
+
+## 4. Central credit and the plateau from a to sqrt(2)a
+
+The exact centered logarithmic mean is -D_c+P_mid+P_far, where
+
+\[
+D_c=M^{-1}\int_1^a C(\lfloor x\rfloor)\frac{dx}{x},\quad
+P_{mid}=M^{-1}\int_a^{\sqrt2a}[M-C(\lfloor x\rfloor)]\frac{dx}{x}.
+\]
+
+The far integral runs from sqrt2 a to infinity. Denominator one bounds
+every height by max(1,floor(M/2)), so the integral is finite.
+The floor lemma used in the manuscript finite balance (`ap:finite-balance`), valid for every real a>=1, is
+integral_1^a floor(x)² dx/x >=a²/2-a. Its proof sums
+log(1+1/T)>=1/T-1/(2T²), then pays the last fractional interval with
+k²(a-k)/a; the residual is >=1/2+t-3t²/2>=0.
+
+Replacing floor x by x only enlarges the increasing collision penalties.
+Their two integrals are
+
+\[
+M^{-1}\int_{a/\sqrt2}^a (2x-M/x)^2\frac{dx}{x}=3/2-2\ell,
+\quad \int_{a/\sqrt2}^a(2x-M/x)\frac{dx}{x}=a(3-2\sqrt2).
+\]
+
+Put beta=3-2sqrt2. Integration of the primitive remainder and omission of
+its favorable -2(b0-b1)/a² term now gives
+
+\[
+D_c\ge\kappa-u^2(3/4-\ell)
+-\frac{2\kappa+2(b_0-b_1)+2b_1\log a+2uK\beta}{a}
+-\frac{K^2\ell}{2a^2}.                                  \tag{P8}
+\]
+
+At k=floor a, using k²>=a²-2a and L_k<=a gives
+
+\[
+\frac{C(k)}M\ge2\kappa-u^2/2
+-\frac{4\kappa+2b_0+2b_1\log a+2uK}{a}-\frac{K^2}{a^2}.
+\]
+
+CDF monotonicity pays the entire middle interval:
+
+\[
+P_{mid}\le(1-2\kappa+u^2/2)\frac\ell2
++\frac{\ell(4\kappa+2b_0+2b_1\log a+2uK)}{2a}
++\frac{K^2\ell}{2a^2}.                                  \tag{P9}
+\]
+
+## 5. Deleted totient density with its real-cutoff error
+
+Let A(Q)=sum_(q<=Q,gcd(q,D)>1) phi(q)/q. Decomposing each squarefree
+totient divisor into its p/r part yields the exact identity
+
+\[
+A(Q)=\sum_{d\le Q,(d,D)=1}\frac{\mu(d)}d
+\left[(1-1/p)\left\lfloor\frac Q{pd}\right\rfloor
++(1-1/r)\left\lfloor\frac Q{rd}\right\rfloor
+-(1-1/D)\left\lfloor\frac Q{Dd}\right\rfloor\right].      \tag{P10}
+\]
+
+The bracket's linear coefficient is
+c0=(p-1)/p²+(r-1)/r²-(D-1)/D². Its error has absolute value at most
+v=2-1/p-1/r<2, since the two positive floor coefficients have sum v
+and the negative one is <1<v. Moreover 0<c0<=1/4+2/9=17/36:
+(z-1)/z² decreases for z>=2 and ordered distinct primes satisfy r>=3.
+The leading density is theta=alpha(1-rho), because
+c0=(1-p^-2)(1-r^-2)-u.
+
+For REAL Q>=1, with n=floor Q,
+Q sum_(d>Q)d^-2<=Q/n<2 (the inequality can be nonstrict at integer
+endpoints without affecting the stated bound). Therefore (P10) pays
+
+\[
+|A(Q)-\theta Q|\le v(1+\log Q)+2c_0
+\le E(Q):=3+2\log Q.                                   \tag{P11}
+\]
+
+Alternatively E0=v(u+h)+2c0,E1=vu, or E0=v+2c0,E1=v,
+give admissible E(Q)=E0+E1 log Q. These extend to the partial-summation
+interval 0<=x<1 by their constant term: theta<=alpha/2<1/3,
+whereas E0>=vu>=7/18. No integer-cutoff tail estimate was applied
+silently at a real Q.
+
+Partial summation also pays the extra one-integer allowance per hole:
+
+\[
+B(Q):=\sum_{q\le Q,(q,D)>1}\varphi(q)
+\le\theta Q^2/2+2QE(Q).                                 \tag{P12}
+\]
+
+## 6. Far cover, strict threshold and all rounding costs
+
+Use the manuscript's two-prime far-cover lemma (`ap:far-cover`). For T>=sqrt(2M), every uncovered full-Farey
+edge touches a deleted center q<M/T. If both endpoint denominators are
+bad, adjacency makes their p/r obstructions complementary; their
+difference has a unit denominator and covers the edge when both original
+denominators are >=M/T. For a low q, a bad full neighbor is repaired by
+subtracting q once. The resulting unit determinant-one bracket has both
+denominators >T-2q; if D divides q they are already >T-q.
+This is an upper cover, with possible overlaps, not an exact void law.
+
+We use only its unrefined consequence, the sum of open-hole lengths
+
+\[
+\sum_{q<Q,(q,D)>1}2\frac{\varphi(q)}q f_2(q),\qquad
+Q=M/T,\quad f_2(x)=\frac{M-Tx}{T-2x}.                    \tag{P13}
+\]
+
+A reduced center contributes at most its open length plus one integer.
+The centers have count B(Q), paid in (P12). For T²>2M, f2 is decreasing
+from M/T to zero at Q. Partial summation of (P11) costs E(Q)M/T in
+the weighted sum. Length normalization contributes 2E(Q)/T; (P12)
+contributes another 2E(Q)/T. Thus, with t=T/a,
+
+\[
+\frac{M-C(T)}M\le V(t)+\frac{4E(Q)}T,
+\quad V(t)=\theta F(t/\sqrt2)+\frac\theta{2t^2},          \tag{P14}
+\]
+
+where F(z)=sum_(n>=1) z^-2n/[n(n+1)], F(1)=1. It is positive and
+decreasing. Also V(sqrt2)=5theta/4 and
+
+\[
+\int_{\sqrt2}^\infty V(t)\frac{dt}{t}
+=\theta\left(\frac{\zeta(2)-1}{2}+\frac18\right)
+=\frac{1-\rho}{2}-\frac{3\alpha(1-\rho)}8.               \tag{P15}
+\]
+
+An IMPORTANT general-M boundary is T²=2M, which CAN occur (M=18,T=6).
+At that threshold f2 has a nonzero left endpoint limit at Q=T/2;
+one must not pretend f2(Q)=0. Start the discrete far sum instead at
+
+\[
+L=\lfloor\sqrt{2M}\rfloor+1.                             \tag{P16}
+\]
+
+The initial interval [sqrt2 a,L] costs at most 1/(sqrt2 a), including
+when sqrt2 a is integral. For T>=L strict inequality holds. Bound E(Q)
+by E(a) for Q>=1; for Q<1 survival is zero. The decreasing-sum comparison
+and log(1+1/T)<=1/T give
+
+\[
+P_{far}\le\frac{1-\rho}{2}-\frac{3\alpha(1-\rho)}8
++\frac{1+5\theta/4+4E(a)}{\sqrt2a}+\frac{2E(a)}{a^2}.    \tag{P17}
+\]
+
+The leading sum's first summand costs 5theta/(4sqrt2 a). The error sum
+uses sum_(T>=L)T^-2<=L^-2+L^-1, explaining both error terms in (P17).
+All interval floors, first summands, closed central atoms and open-hole
+rounding have explicit costs.
+
+## 7. Paid parameterized balance and uniform leading minimum
+
+Combining (P8),(P9),(P17),
+
+\[
+\mathbb E\log R_M-\log a\le-\Delta(p,r)+\mathcal E_{p,r}(a), \tag{P18}
+\]
+\[
+\Delta=\rho[\alpha(5/8+\ell)+1/2]+3\alpha/8-1/2-\ell/2
+-\tfrac34(1-\ell)u^2,                                  \tag{P19}
+\]
+\[
+\begin{aligned}
+\mathcal E_{p,r}(a)=\frac1a\bigl[&2\kappa+2(b_0-b_1)
++2b_1\log a+2uK\beta\\
+&+\tfrac\ell2(4\kappa+2b_0+2b_1\log a+2uK)
++(1+5\theta/4+4E(a))/\sqrt2\bigr]
++\frac{K^2\ell+2E(a)}{a^2}.                             \tag{P20}
+\end{aligned}
+\]
+
+This is a quantified parameterized reduction: any a with
+mathcal E_(p,r)(a)<Delta(p,r) closes that modulus. The positive constants
+and log(a)/a, log(a)/a² terms decrease for a>=e.
+
+The main margin is minimized at the smallest available primes. To pay
+this WITHOUT a finite-grid assertion, put x=1/p,y=1/r,
+A0=alpha(5/8+ell)+1/2, C0=3(1-ell)/4. Then rho=1/[(1+x)(1+y)] and
+u=(1-x)(1-y). Multiplying the x derivative of (P19) by (1+x)/rho gives
+
+\[
+-A_0+2C_0(1-x)(1+x)^2(1-y)^2(1+y).                      \tag{P21}
+\]
+
+For 0<=x,y<=1/2, the second factor (1-y)²(1+y)<=1 and
+(1-x)(1+x)²<=9/4. Since ell>2/3, 2C0<1/2, its positive term is
+<9/8. On the other hand alpha>3/5 and ell>2/3 imply A0>51/40>9/8.
+Both partial derivatives are strictly negative. Thus for ordered distinct
+primes the minimum occurs at (2,3); in the odd-prime domain it occurs
+at (3,5), and in the even radical other than six it occurs at (2,5).
+
+The unrefined rational margin derived below gives
+
+\[
+\Delta(2,3)>2885/521272>1/200.                           \tag{P22}
+\]
+
+For completeness its ingredients are zeta(2)<=65159/39600 from the
+first five terms plus the convex-midpoint integral from 11/2, and ell<7/10.
+The expression at (2,3) is alpha(11/16+ell/2)-1/3-5ell/12.
+No both-prime gain is needed here; its positive leading value would not
+permit discarding its finite error without a separate proof.
+
+The useful stronger endpoint bounds are entirely rational:
+
+\[
+\begin{aligned}
+\Delta(3,5)&=\alpha(49/64+5\ell/8)-481/1200-43\ell/150
+>1691/14400>1/10,\\
+\Delta(2,5)&=\alpha(13/18+5\ell/9)-77/225-19\ell/50
+>263/4500>1/20.                                         \tag{P23}
+\end{aligned}
+\]
+
+For the first, lower alpha to 3/5; its ell coefficient is then positive,
+so lower ell to 2/3. For the second, lower alpha to 3/5; its ell coefficient
+becomes -7/150, so upper ell by 7/10. This proves the two strict margins.
+
+## 8. Explicit cutoffs and transfer for radical six
+
+For the uniform choice (b0,b1,K)=(4,3,4), E(a)=3+2log a,
+use 2kappa<=4/3, theta<=1/3, u<=1, ell<7/10, beta<1/5 and
+1/sqrt2<3/4 in (P20). Its linear constant is at most
+
+\[
+74/15+98/15+161/16=5167/240<22;
+\]
+
+the linear log coefficient is <=6+21/10+6=141/10<15. Its quadratic
+constant is <56/5+6<18 and its quadratic log coefficient is four.
+Thus the completely elementary uniform error is
+
+\[
+\boxed{\mathcal E_{p,r}(a)
+<\frac{22+15\log a}{a}+\frac{18+4\log a}{a^2}.}          \tag{P24}
+\]
+
+At a=2^11, log a<77/10. The right side is
+less than (275/2)/2048+(244/5)/2048²<7/100.
+At a=2^12, log a<42/5. It is less than
+148/4096+(258/5)/4096²<1/25. Both are direct rational comparisons;
+monotonicity extends them to larger a. Thus the stronger negative
+margin -1/100 holds for p=2,r>=5 when M>=2^24.
+
+A smaller threshold sufficient for the desired sign is a=3000.
+The elementary bounds used in the manuscript radical-six argument (`app:rad6`) 3000<6^(9/2) and log(6^(9/2))<81/10
+give log3000<81/10. Hence (P24) is strictly less than
+
+\[
+\frac{287}{6000}+\frac7{1250000}
+=\frac1{20}-\frac{2026}{937500}.                         \tag{P26}
+\]
+
+Monotonicity and (P23) prove the first two cases of (P1), including the
+even-radical threshold M>=9000000.
+
+As a separate coarse check, a>=2^16 yields log(a0)<56/5 and error
+<190/65536+(314/5)/65536²<1/300; (P22) then yields surplus<-1/600.
+This proves a uniform 2^32 threshold even before the sharper case split.
+
+For rad(M)=6 the manuscript radical-six proof (`app:rad6`) transfers to ALL such moduli M, not only 6^N.
+The unit, primitive, density and integral estimates there depend only on
+the radical and a. Two formerly automatic boundary facts require changes:
+
+1. If 2T²=M occurs, its central collision has b=d=T, a nonunit; J=0.
+   Hence the same collision constant starts strictly above a/sqrt2.
+2. Start the far sum at floor(sqrt2 a)+1. The original initial allowance
+   1/(sqrt2 a) already pays this whole interval even at an exact square.
+   Every weighted f2/g application then has strict T²>2M, so its zero
+   endpoint and unimodal variation proof remain valid.
+
+No other part of that argument uses the exponent pattern M=6^N. Consequently its
+refined margin >1/130 and error at a0=6^(9/2) <6901/900000 apply whenever
+a>=a0. This proves the third line of (P1), with exactly the stated negative
+margin 287/11700000. The transfer is analytic; the base6 certificate grid is NOT
+being transferred to an untested modulus.
+
+Since 2^22<9000000<6^9=10077696, every two-prime M>=6^9 is covered.
+For M=B^N and N>=7, B=6 is already closed for every N by the complete
+base6 hybrid theorem (manuscript `app:shortlength`). The only other two-prime base below 12 is B=10;
+10^7=10000000>9000000 closes it by the even-radical bound. For all
+B>=12, B^7>=12^7=35831808>6^9, so the universal modulus theorem applies.
+This proves (P2). The fixed-base finite import is confined to B=6.
+
+## 9. Exact residual domain of these estimates
+
+The estimates above leave a finite, explicit residual domain:
+
+\[
+\begin{array}{ll}
+B=p^i r^j,\ i,j\ge1,\ p\ge3:&B^N<2^{22},\\
+B=2^i r^j,\ i,j\ge1,\ r\ge5:&B^N<9000000,\\
+B=2^i3^j,\ i,j\ge1:&B^N<6^9.
+\end{array}                                                    \tag{P25}
+\]
+
+Known source-pinned finite certificates may remove matching moduli;
+The all-length base6 certificate removes B=6 entirely (manuscript `app:shortlength`). Equality at a threshold is already
+analytic and is excluded from this residual domain. Equivalent moduli
+appearing as different B^N require only one natural-log certificate.
+This reduction can also be stated directly in M: two-prime moduli below
+their corresponding threshold. There are finitely many, but no claim is
+made that an exhaustive residue enumeration is proportionate.
+
+At N=6 the residual of these estimates is a finite list. If B>=15 then
+B^6>=15^6=11390625>6^9, so every such base is already analytic. Among
+6<=B<15 the bases with two prime divisors are exactly 6,10,12,14.
+Base6 is already closed. Therefore only
+
+\[
+\boxed{(B,N)=(10,6),(12,6),(14,6)}                       \tag{P27}
+\]
+
+are the residual cases at N=6 for this reduction. Their moduli are 1000000, 2985984 and 7529536, totaling
+11515520 residues; these arithmetic sizes specify the residual domain. The fixed central-plus-full-upper
+certificates for these three levels are included in the manuscript short-length
+bridges (`app:shortlength`); together they close two-prime bases at
+N>=6. The lower lengths N=1,...,5 are completed separately in the manuscript.

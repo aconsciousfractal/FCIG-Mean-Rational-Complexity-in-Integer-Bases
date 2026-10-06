@@ -1,0 +1,251 @@
+"""E037 independent retained histogram/log verifier: no producer import."""
+import hashlib, json
+from fractions import Fraction
+from math import gcd, isqrt
+from pathlib import Path
+import sys
+OUT = Path(__file__).parent
+S = 2 ** 64
+W = 2 ** 192
+K = 32
+SMALL = ((21, 3, 7), (63, 3, 7), (147, 3, 7), (189, 3, 7), (441, 3, 7), (22, 2, 11), (44, 2, 11), (88, 2, 11), (242, 2, 11), (484, 2, 11), (352, 2, 11), (26, 2, 13), (52, 2, 13), (104, 2, 13), (338, 2, 13), (676, 2, 13), (416, 2, 13), (18, 2, 3), (50, 2, 5))
+DOMAIN_PIN = 'd767ef2f2560427d3623d1dffefc4713a113544215e4e71cbeeed8dfc3dd237a'
+
+def need(ok, why):
+    if not ok:
+        raise RuntimeError(why)
+
+def exactint(n):
+    return type(n) is int
+
+def series32(a, b):
+    if a == 0:
+        return (0, 0)
+    lower = 0
+    an = a
+    bn = b
+    for i in range(K):
+        lower += 2 * an * W // ((2 * i + 1) * bn)
+        an *= a * a
+        bn *= b * b
+    numerator = 2 * an * b * b * W
+    denominator = (2 * K + 1) * bn * (b * b - a * a)
+    remainder = (numerator + denominator - 1) // denominator
+    return (lower, lower + K + remainder)
+LOG2 = series32(1, 3)
+
+def logs32(n):
+    need(exactint(n) and n > 0, 'exact positive log')
+    e = n.bit_length() - 1
+    p = 2 ** e
+    low, high = series32(n - p, n + p)
+    low += e * LOG2[0]
+    high += e * LOG2[1]
+    return (low * S // W, (high * S + W - 1) // W)
+
+def divisors(n):
+    result = []
+    for g in range(1, isqrt(n) + 1):
+        if n % g == 0:
+            result.append(g)
+            if g * g != n:
+                result.append(n // g)
+    return sorted(result)
+
+def phi(n, p, r):
+    value = n
+    for q in (p, r):
+        if n % q == 0:
+            value -= value // q
+    return value
+
+def classcap(M, g, p, r):
+    m = M // g
+    H = (m - 1) // 2
+    if m == 2:
+        delta = 1
+    elif m % p == 0 and m % r == 0:
+        delta = H
+    elif m % p == 0:
+        delta = max(H, m - r)
+    else:
+        delta = max(H, m - p)
+    return min(M // p, g * (m // 2), max(g, delta))
+
+def grid(M, p, r):
+    k = isqrt(M)
+    top = M // p
+    ts = set(range(1, k + 1))
+    t = k
+    while t < top:
+        t = min(top, -(-257 * t // 256))
+        ts.add(t)
+    start = isqrt(2 * M) + 1
+    if start <= top:
+        ts.add(start)
+    for g in divisors(M):
+        if g < M:
+            ts.update((g, classcap(M, g, p, r)))
+    ts.add(top)
+    return sorted(ts)
+
+def model(M, p, r):
+    need(all((exactint(x) for x in (M, p, r))) and 1 < p < r and (M > 1), 'typedmodel')
+    for q in (p, r):
+        need(all((q % d for d in range(2, isqrt(q) + 1))), 'modelprime')
+    n = M
+    a = b = 0
+    while n % p == 0:
+        a += 1
+        n //= p
+    while n % r == 0:
+        b += 1
+        n //= r
+    need(n == 1 and a > 0 and (b > 0), 'modulusprofile')
+    return (a, b)
+
+def definition(M):
+    result = []
+    for s in range(M):
+        best = max(1, min(s, M - s))
+        d = 1
+        while d < best:
+            if gcd(d, M) == 1:
+                v = s * d % M
+                best = min(best, max(d, min(v, M - v)))
+            d += 1
+        result.append(best)
+    return result
+
+def witness_heights(M, g, p, r):
+    m = M // g
+    out = []
+    one = []
+    for t in range(1, m):
+        if gcd(t, m) != 1:
+            continue
+        v = pow(t, -1, m)
+        v = v if 2 * v <= m else v - m
+        d = abs(v)
+        if gcd(d, p * r) != 1:
+            d = m - d
+        need(d > 0 and gcd(d, p * r) == 1, 'independent witness mark')
+        out.append(max(g, d))
+        one.append(max(1, g * min(t, m - t)))
+    return (out, one)
+
+def histogramCDF(hist, T):
+    return sum((c for h, c in hist if h <= T))
+
+def check_validation(row, ledger):
+    M = row['M']
+    p = row['p']
+    r = row['r']
+    model(M, p, r)
+    k = isqrt(M)
+    true = definition(M)
+    checks = 0
+    need(len(true) == M, 'small model mass')
+    need([T for T, F in row['CDF_knots']] == grid(M, p, r), 'complete small knot schedule')
+    for T, F in row['CDF_knots']:
+        need(F == histogramCDF(row['upper_histogram'], T), 'small knots must bind consumed histogram')
+        need(F <= sum((v <= T for v in true)), 'upper distribution small')
+        if T <= k:
+            need(F == sum((v <= T for v in true)), 'small central equality')
+        checks += 1
+    for g, cdf in row['central_strata']:
+        for T in range(k + 1):
+            need(cdf[T] == sum((true[s] <= T for s in range(M) if gcd(s, M) == g)), 'central stratum')
+            checks += 1
+    for g, cw, cb in row['witness_cdfs']:
+        hw, hb = witness_heights(M, g, p, r)
+        need(len(hw) == phi(M // g, p, r), 'small classmass')
+        for T in range(1, M // p + 1):
+            need(cw[T - 1] == sum((h <= T for h in hw)), 'witnessCDF exact')
+            need(cb[T - 1] == sum((h <= T for h in hb)), 'denom1CDF exact')
+            checks += 2
+    return checks
+
+def main():
+    domainraw = (OUT / 'LENGTH_FOUR_DOMAIN.json').read_bytes()
+    need(hashlib.sha256(domainraw).hexdigest() == DOMAIN_PIN, 'domain byte pin')
+    domain = json.loads(domainraw)
+    raw = (OUT / 'LENGTH_FOUR_AGGREGATE.json').read_bytes()
+    data = json.loads(raw)
+    need(data['domain_sha256'] == DOMAIN_PIN, 'scientific domain')
+    wanted = [[B ** 4, p, r, 4, 4] for B, p, r in ((21, 3, 7), (22, 2, 11), (26, 2, 13))]
+    need(wanted == domain['rows'] and len(wanted) == 3, 'fixed three independent powers')
+    need(sum((v[0] for v in wanted)) == 885713, 'domainmass')
+    need(domain['small_profiles'] == [list(v) for v in SMALL], 'smalldomain')
+    led = {}
+    enclosures = 0
+    for n, l, u in data['log_tick_ledger']:
+        need(exactint(n) and exactint(l) and exactint(u) and (n not in led) and (l <= u), 'log ledger types')
+        L, U = logs32(n)
+        need(l <= L and U <= u, 'independent32 interval not enclosed')
+        led[n] = (l, u)
+        enclosures += 1
+    paid = []
+    unpaid = []
+    mainchecks = 0
+    for profile, row in zip(wanted, data['rows']):
+        M, p, r, a, b = profile
+        need(model(M, p, r) == (a, b), 'modelmain')
+        need((row['M'], row['p'], row['r'], row['a'], row['b']) == (M, p, r, a, b), 'row')
+        need(row['terminal'] == M // p, 'terminal')
+        hist = row['upper_histogram']
+        need(all((len(v) == 2 and exactint(v[0]) and exactint(v[1]) and (1 <= v[0] <= M // p) and (v[1] > 0) for v in hist)), 'histogram type/range')
+        need([v[0] for v in hist] == sorted(set((v[0] for v in hist))), 'histogram order')
+        need(sum((v[1] for v in hist)) == M, 'histogram mass')
+        need(all((h in led for h, c in hist)) and M in led, 'log ledger closure')
+        Q = 2 * sum((c * led[h][1] for h, c in hist)) - M * led[M][0]
+        need(Q == row['upper_centered_numerator'] and row['upper_centered_denominator'] == 2 * M * S, 'autonomous Q')
+        need(histogramCDF(hist, isqrt(M)) == row['exact_central_states'], 'central aggregate mass')
+        need(row['exact_central_states'] == 1 + 2 * row['primitive_positive_pairs'] - row['ordered_collisions'], 'central identity summary')
+        ts = grid(M, p, r)
+        need(len(ts) == row['threshold_count'], 'independent schedule')
+        need(all((h in ts for h, c in hist)), 'height schedule')
+        need(row['gcd_caps'] == [[g, M // g, phi(M // g, p, r), classcap(M, g, p, r)] for g in divisors(M) if g < M], 'class caps')
+        need(sum((x[2] for x in row['gcd_caps'])) + 1 == M, 'disjoint classmass')
+        totals = row['central_stratum_totals']
+        need([g for g, v in totals] == [g for g in divisors(M) if g < M] and len(totals) == 24, 'all central stratum headers')
+        need(all((exactint(v) and 0 <= v <= phi(M // g, p, r) for g, v in totals)), 'central stratum total range')
+        need(1 + sum((v for g, v in totals)) == row['exact_central_states'], 'central stratum sum')
+        status = 'PAID' if Q < 0 else 'UNPAID'
+        need(status == row['status'], 'row sign')
+        (paid if Q < 0 else unpaid).append(M)
+        mainchecks += 1
+    need(len(data['rows']) == 3 and paid == data['paid_moduli'] and (unpaid == data['unpaid_moduli']), 'all statuses retained')
+    need(data['moduli'] == 3 and data['status'] == ('PARTIAL' if unpaid else 'ALL_PAID'), 'global status/count must match retained rows')
+    need([(v['M'], v['p'], v['r']) for v in data['validation']] == list(SMALL), 'fixed validation')
+    main_histograms = {r['M']: r['upper_histogram'] for r in data['rows']}
+    for row in data['validation']:
+        if row['M'] in main_histograms:
+            need(row['upper_histogram'] == main_histograms[row['M']], 'small oracle must bind overlapping main histogram')
+    smallchecks = sum((check_validation(row, led) for row in data['validation']))
+    need(sum((v[0] for v in SMALL)) == 3773, 'small residues')
+    for bad in ((0, 2, 7), (14, True, 7), (14, 2, 2), (14, 7, 2), (20, 4, 5), (30, 2, 7), (49, 2, 7), (14, 2.0, 7)):
+        try:
+            model(*bad)
+        except RuntimeError:
+            pass
+        else:
+            raise RuntimeError('invalid model accepted independently')
+    for x in (True, 0, -1, 1.0, Fraction(1)):
+        try:
+            logs32(x)
+        except RuntimeError:
+            pass
+        else:
+            raise RuntimeError('bad independent log accepted')
+    obj = dict(status='E037_INDEPENDENT_PASS', payload_sha256=hashlib.sha256(raw).hexdigest(), moduli_reconstructed=3, paid=len(paid), unpaid=unpaid, independent32_log_enclosures=enclosures, small_definition_residues=3773, small_CDF_witness_checks=smallchecks, main_histogram_Q_checks=mainchecks, producer_imported=False, large_CDFs_recomputed=False, scientific_scope='Autonomous retained histogram/Q/log validation and small independent defining CDFs, not a fresh full large count audit.')
+    raw = (json.dumps(obj, sort_keys=True, indent=2) + '\n').encode()
+    target = OUT / 'INDEPENDENT_AGGREGATE_CHECKS.json'
+    if target.exists():
+        need(target.read_bytes() == raw, 'independent mode mismatch')
+    else:
+        with target.open('xb') as f:
+            f.write(raw)
+    sys.stdout.buffer.write(raw)
+if __name__ == '__main__':
+    main()

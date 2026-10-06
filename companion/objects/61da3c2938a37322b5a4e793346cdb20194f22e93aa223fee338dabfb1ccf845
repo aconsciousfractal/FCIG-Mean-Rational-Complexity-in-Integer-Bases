@@ -1,0 +1,1 @@
+{"consumed_tick_entries":705257,"distinct_log_integers":6929,"every_outward_sum_negative":true,"histograms_checked":4596,"input_sha256":"3bd091a916df28b0321c9eb7fd15ed435437957ff4ffc87c968fbcea4b4d502a","pointwise_dominance_producer_and_proof_required":true,"status":"COMPLETE_SEMIPRIME_HISTOGRAM_AND_DISTINCT_LOG_PASS","upper_envelope_entries":41585055}
