@@ -1,0 +1,736 @@
+{
+  "schema": "early-closure-contract-1",
+  "checks": [
+    {
+      "json_pointer": "/counts/cases",
+      "operation": "equals",
+      "expected": 210,
+      "source": {
+        "case": "three_prime_28",
+        "path": "results/census_certificate.json",
+        "sha256": "c67f4eacdfe78930d65e7a2a51253b1165ebc892f5e6009ad01e8d3c7fee840f"
+      }
+    },
+    {
+      "json_pointer": "/counts/distinct_moduli",
+      "operation": "equals",
+      "expected": 204,
+      "source": {
+        "case": "three_prime_28",
+        "path": "results/census_certificate.json",
+        "sha256": "c67f4eacdfe78930d65e7a2a51253b1165ebc892f5e6009ad01e8d3c7fee840f"
+      }
+    },
+    {
+      "json_pointer": "/counts/full_state_mass",
+      "operation": "equals",
+      "expected": 7734228,
+      "source": {
+        "case": "three_prime_28",
+        "path": "results/census_certificate.json",
+        "sha256": "c67f4eacdfe78930d65e7a2a51253b1165ebc892f5e6009ad01e8d3c7fee840f"
+      }
+    },
+    {
+      "json_pointer": "/counts/representatives",
+      "operation": "equals",
+      "expected": 3867318,
+      "source": {
+        "case": "three_prime_28",
+        "path": "results/census_certificate.json",
+        "sha256": "c67f4eacdfe78930d65e7a2a51253b1165ebc892f5e6009ad01e8d3c7fee840f"
+      }
+    },
+    {
+      "json_pointer": "/counts/histogram_bins",
+      "operation": "equals",
+      "expected": 162393,
+      "source": {
+        "case": "three_prime_28",
+        "path": "results/census_certificate.json",
+        "sha256": "c67f4eacdfe78930d65e7a2a51253b1165ebc892f5e6009ad01e8d3c7fee840f"
+      }
+    },
+    {
+      "json_pointer": "/case_comparisons",
+      "operation": "array_length_equals",
+      "expected": 210,
+      "source": {
+        "case": "three_prime_28",
+        "path": "results/census_certificate.json",
+        "sha256": "c67f4eacdfe78930d65e7a2a51253b1165ebc892f5e6009ad01e8d3c7fee840f"
+      }
+    },
+    {
+      "json_pointer": "/moduli",
+      "operation": "array_length_equals",
+      "expected": 204,
+      "source": {
+        "case": "three_prime_28",
+        "path": "results/census_certificate.json",
+        "sha256": "c67f4eacdfe78930d65e7a2a51253b1165ebc892f5e6009ad01e8d3c7fee840f"
+      }
+    },
+    {
+      "json_pointer": "/profiles",
+      "operation": "array_length_equals",
+      "expected": 33,
+      "source": {
+        "case": "three_prime_28",
+        "path": "results/uniform_certificates.json",
+        "sha256": "02e482116fabe33263d13a6c27e35ec45c1480a1d2dafcbc2825051f71e54c0c"
+      }
+    },
+    {
+      "json_pointer": "/complete_prime_list",
+      "operation": "array_length_equals",
+      "expected": 28,
+      "source": {
+        "case": "three_prime_28",
+        "path": "results/uniform_certificates.json",
+        "sha256": "02e482116fabe33263d13a6c27e35ec45c1480a1d2dafcbc2825051f71e54c0c"
+      }
+    },
+    {
+      "json_pointer": "/direction_count",
+      "operation": "equals",
+      "expected": 64,
+      "source": {
+        "case": "three_prime_28",
+        "path": "results/uniform_certificates.json",
+        "sha256": "02e482116fabe33263d13a6c27e35ec45c1480a1d2dafcbc2825051f71e54c0c"
+      }
+    },
+    {
+      "json_pointer": "/prime_count",
+      "operation": "equals",
+      "expected": 28,
+      "source": {
+        "case": "three_prime_28",
+        "path": "results/closure_certificate.json",
+        "sha256": "c4b4ac72589d8c800d49f403f94adab87c52c7c997c59bbdcb66c920d422ab0f"
+      }
+    },
+    {
+      "json_pointer": "/all_lengths_and_positive_valuations",
+      "operation": "equals",
+      "expected": true,
+      "source": {
+        "case": "three_prime_28",
+        "path": "results/closure_certificate.json",
+        "sha256": "c4b4ac72589d8c800d49f403f94adab87c52c7c997c59bbdcb66c920d422ab0f"
+      }
+    },
+    {
+      "json_pointer": "/clean_rational_cap",
+      "operation": "equals",
+      "expected": "117/5000",
+      "source": {
+        "case": "three_prime_28",
+        "path": "results/closure_certificate.json",
+        "sha256": "c4b4ac72589d8c800d49f403f94adab87c52c7c997c59bbdcb66c920d422ab0f"
+      }
+    },
+    {
+      "json_pointer": "/moduli",
+      "operation": "equals",
+      "expected": 2419,
+      "source": {
+        "case": "three_prime_family",
+        "path": "results/finite_summary.json",
+        "sha256": "f32e53735d6f741e3372fb5b5b4cbceaa68a8226f476920086cf843a0633c38f"
+      }
+    },
+    {
+      "json_pointer": "/all_state_mass",
+      "operation": "equals",
+      "expected": 54035760,
+      "source": {
+        "case": "three_prime_family",
+        "path": "results/finite_summary.json",
+        "sha256": "f32e53735d6f741e3372fb5b5b4cbceaa68a8226f476920086cf843a0633c38f"
+      }
+    },
+    {
+      "json_pointer": "/representatives",
+      "operation": "equals",
+      "expected": 27020299,
+      "source": {
+        "case": "three_prime_family",
+        "path": "results/finite_summary.json",
+        "sha256": "f32e53735d6f741e3372fb5b5b4cbceaa68a8226f476920086cf843a0633c38f"
+      }
+    },
+    {
+      "column": "M",
+      "operation": "row_count_equals",
+      "expected": 2419,
+      "source": {
+        "case": "three_prime_family",
+        "path": "results/finite_domain.csv",
+        "sha256": "8a39134dbb71dd96dd9d90955021910227d4379a11ac974e42b25df8bdbb24e1"
+      }
+    },
+    {
+      "column": "M",
+      "operation": "integer_sum_equals",
+      "expected": 54035760,
+      "source": {
+        "case": "three_prime_family",
+        "path": "results/finite_domain.csv",
+        "sha256": "8a39134dbb71dd96dd9d90955021910227d4379a11ac974e42b25df8bdbb24e1"
+      }
+    },
+    {
+      "column": "M",
+      "operation": "sum_floor_half_plus_one_equals",
+      "expected": 27020299,
+      "source": {
+        "case": "three_prime_family",
+        "path": "results/finite_domain.csv",
+        "sha256": "8a39134dbb71dd96dd9d90955021910227d4379a11ac974e42b25df8bdbb24e1"
+      }
+    },
+    {
+      "json_pointer": "/total_histogram_bins",
+      "operation": "equals",
+      "expected": 1584665,
+      "source": {
+        "case": "three_prime_family",
+        "path": "results/finite_summary.json",
+        "sha256": "f32e53735d6f741e3372fb5b5b4cbceaa68a8226f476920086cf843a0633c38f"
+      }
+    },
+    {
+      "json_pointer": "/S113_full_proof_replayed_this_task",
+      "operation": "equals",
+      "expected": false,
+      "source": {
+        "case": "three_prime_family",
+        "path": "results/family_splice.json",
+        "sha256": "ffce495981f2af05e05526b9915e6896cb899cc5c40281c63f60c3c7357c760a"
+      }
+    },
+    {
+      "json_pointer": "/combined_uniform_cap",
+      "operation": "equals",
+      "expected": "117/5000",
+      "source": {
+        "case": "three_prime_family",
+        "path": "results/family_splice.json",
+        "sha256": "ffce495981f2af05e05526b9915e6896cb899cc5c40281c63f60c3c7357c760a"
+      }
+    },
+    {
+      "json_pointer": "/all_moduli",
+      "operation": "equals",
+      "expected": 8816,
+      "source": {
+        "case": "three_prime_family",
+        "path": "results/inventory.json",
+        "sha256": "4d0d43c6184168a3863550f4e04587762ee69b20caa4e1b1a1856830a2934c57"
+      }
+    },
+    {
+      "json_pointer": "/analytic_small_moduli",
+      "operation": "equals",
+      "expected": 6397,
+      "source": {
+        "case": "three_prime_family",
+        "path": "results/inventory.json",
+        "sha256": "4d0d43c6184168a3863550f4e04587762ee69b20caa4e1b1a1856830a2934c57"
+      }
+    },
+    {
+      "json_pointer": "/finite_moduli",
+      "operation": "equals",
+      "expected": 7590,
+      "source": {
+        "case": "three_prime_large",
+        "path": "results/finite_summary.json",
+        "sha256": "d97e3e4f0108a4bb797c6f73017b38cd1569d54244728bb14bc5c22aa47bb433"
+      }
+    },
+    {
+      "json_pointer": "/all_state_mass",
+      "operation": "equals",
+      "expected": 218529022,
+      "source": {
+        "case": "three_prime_large",
+        "path": "results/finite_summary.json",
+        "sha256": "d97e3e4f0108a4bb797c6f73017b38cd1569d54244728bb14bc5c22aa47bb433"
+      }
+    },
+    {
+      "json_pointer": "/representatives",
+      "operation": "equals",
+      "expected": 109269833,
+      "source": {
+        "case": "three_prime_large",
+        "path": "results/finite_summary.json",
+        "sha256": "d97e3e4f0108a4bb797c6f73017b38cd1569d54244728bb14bc5c22aa47bb433"
+      }
+    },
+    {
+      "column": "M",
+      "operation": "row_count_equals",
+      "expected": 7590,
+      "source": {
+        "case": "three_prime_large",
+        "path": "results/finite_domain.csv",
+        "sha256": "f2c96e40ade6e1f50ba1ac01eea63d1191c3433b687a6308cdf16ee5cac16227"
+      }
+    },
+    {
+      "column": "M",
+      "operation": "integer_sum_equals",
+      "expected": 218529022,
+      "source": {
+        "case": "three_prime_large",
+        "path": "results/finite_domain.csv",
+        "sha256": "f2c96e40ade6e1f50ba1ac01eea63d1191c3433b687a6308cdf16ee5cac16227"
+      }
+    },
+    {
+      "column": "M",
+      "operation": "sum_floor_half_plus_one_equals",
+      "expected": 109269833,
+      "source": {
+        "case": "three_prime_large",
+        "path": "results/finite_domain.csv",
+        "sha256": "f2c96e40ade6e1f50ba1ac01eea63d1191c3433b687a6308cdf16ee5cac16227"
+      }
+    },
+    {
+      "json_pointer": "/histogram_bins",
+      "operation": "equals",
+      "expected": 4214892,
+      "source": {
+        "case": "three_prime_large",
+        "path": "results/finite_summary.json",
+        "sha256": "d97e3e4f0108a4bb797c6f73017b38cd1569d54244728bb14bc5c22aa47bb433"
+      }
+    },
+    {
+      "json_pointer": "/pair_families",
+      "operation": "equals",
+      "expected": 855,
+      "source": {
+        "case": "three_prime_large",
+        "path": "results/inventory.json",
+        "sha256": "53262f612092445483762640cc1c199bceec9c7434d2eb08be518d81fca41e24"
+      }
+    },
+    {
+      "json_pointer": "/support_exceptions",
+      "operation": "equals",
+      "expected": 4193,
+      "source": {
+        "case": "three_prime_large",
+        "path": "results/inventory.json",
+        "sha256": "53262f612092445483762640cc1c199bceec9c7434d2eb08be518d81fca41e24"
+      }
+    },
+    {
+      "json_pointer": "/analytic_valuation_moduli",
+      "operation": "equals",
+      "expected": 785,
+      "source": {
+        "case": "three_prime_large",
+        "path": "results/inventory.json",
+        "sha256": "53262f612092445483762640cc1c199bceec9c7434d2eb08be518d81fca41e24"
+      }
+    },
+    {
+      "json_pointer": "/moduli",
+      "operation": "equals",
+      "expected": 1663,
+      "source": {
+        "case": "three_prime_353",
+        "path": "results/finite_summary.json",
+        "sha256": "236c494b48da17c9cbd6d9d7f8780559e268fdc49d2cf3d6cd046f0052e4d75f"
+      }
+    },
+    {
+      "json_pointer": "/full_state_mass",
+      "operation": "equals",
+      "expected": 426634122,
+      "source": {
+        "case": "three_prime_353",
+        "path": "results/finite_summary.json",
+        "sha256": "236c494b48da17c9cbd6d9d7f8780559e268fdc49d2cf3d6cd046f0052e4d75f"
+      }
+    },
+    {
+      "json_pointer": "/representatives",
+      "operation": "equals",
+      "expected": 213318146,
+      "source": {
+        "case": "three_prime_353",
+        "path": "results/finite_summary.json",
+        "sha256": "236c494b48da17c9cbd6d9d7f8780559e268fdc49d2cf3d6cd046f0052e4d75f"
+      }
+    },
+    {
+      "column": "M",
+      "operation": "row_count_equals",
+      "expected": 1663,
+      "source": {
+        "case": "three_prime_353",
+        "path": "results/finite_domain.csv",
+        "sha256": "5a441dbf37c77cf178720f36d580f8a1dafef9d047b718e0ac18c70e395404d8"
+      }
+    },
+    {
+      "column": "M",
+      "operation": "integer_sum_equals",
+      "expected": 426634122,
+      "source": {
+        "case": "three_prime_353",
+        "path": "results/finite_domain.csv",
+        "sha256": "5a441dbf37c77cf178720f36d580f8a1dafef9d047b718e0ac18c70e395404d8"
+      }
+    },
+    {
+      "column": "M",
+      "operation": "sum_floor_half_plus_one_equals",
+      "expected": 213318146,
+      "source": {
+        "case": "three_prime_353",
+        "path": "results/finite_domain.csv",
+        "sha256": "5a441dbf37c77cf178720f36d580f8a1dafef9d047b718e0ac18c70e395404d8"
+      }
+    },
+    {
+      "json_pointer": "/G53_large_prime_result_replayed",
+      "operation": "equals",
+      "expected": false,
+      "source": {
+        "case": "three_prime_353",
+        "path": "results/closure.json",
+        "sha256": "e61ad224dd6cac00db2af1e024410f0d29ce5a993f2f170acdddbad1f988064c"
+      }
+    },
+    {
+      "json_pointer": "/F6p_replayed",
+      "operation": "equals",
+      "expected": false,
+      "source": {
+        "case": "three_prime_353",
+        "path": "results/closure.json",
+        "sha256": "e61ad224dd6cac00db2af1e024410f0d29ce5a993f2f170acdddbad1f988064c"
+      }
+    },
+    {
+      "json_pointer": "/complement_moduli",
+      "operation": "equals",
+      "expected": 4117,
+      "source": {
+        "case": "three_prime_353",
+        "path": "results/inventory.json",
+        "sha256": "d60bf202381fd00038895a141b1033be8417195292f714d79288f14c9ee6418f"
+      }
+    },
+    {
+      "json_pointer": "/analytic_moduli",
+      "operation": "equals",
+      "expected": 2454,
+      "source": {
+        "case": "three_prime_353",
+        "path": "results/inventory.json",
+        "sha256": "d60bf202381fd00038895a141b1033be8417195292f714d79288f14c9ee6418f"
+      }
+    },
+    {
+      "json_pointer": "/moduli",
+      "operation": "equals",
+      "expected": 35,
+      "source": {
+        "case": "three_prime_89",
+        "path": "results/finite.json",
+        "sha256": "dde1658e7867acc324ecbbb91bfb0cc0432dda55fdcc1053c912b76f4dd73805"
+      }
+    },
+    {
+      "json_pointer": "/states",
+      "operation": "equals",
+      "expected": 105345,
+      "source": {
+        "case": "three_prime_89",
+        "path": "results/finite.json",
+        "sha256": "dde1658e7867acc324ecbbb91bfb0cc0432dda55fdcc1053c912b76f4dd73805"
+      }
+    },
+    {
+      "json_pointer": "/representatives",
+      "operation": "equals",
+      "expected": 52707,
+      "source": {
+        "case": "three_prime_89",
+        "path": "results/finite.json",
+        "sha256": "dde1658e7867acc324ecbbb91bfb0cc0432dda55fdcc1053c912b76f4dd73805"
+      }
+    },
+    {
+      "json_pointer": "/all_means_negative",
+      "operation": "equals",
+      "expected": true,
+      "source": {
+        "case": "three_prime_89",
+        "path": "results/finite.json",
+        "sha256": "dde1658e7867acc324ecbbb91bfb0cc0432dda55fdcc1053c912b76f4dd73805"
+      }
+    },
+    {
+      "json_pointer": "/independently_checked_integer_logs",
+      "operation": "equals",
+      "expected": 654,
+      "source": {
+        "case": "three_prime_89",
+        "path": "results/finite.json",
+        "sha256": "dde1658e7867acc324ecbbb91bfb0cc0432dda55fdcc1053c912b76f4dd73805"
+      }
+    },
+    {
+      "json_pointer": "/finite_profiles",
+      "operation": "equals",
+      "expected": 93,
+      "source": {
+        "case": "three_prime_89",
+        "path": "results/closure.json",
+        "sha256": "0fa68e8fc16169253921bd1ad3caa0727e6a52a52fd7c1673a0dd309ffaf0642"
+      }
+    },
+    {
+      "json_pointer": "/new_supports_closed",
+      "operation": "equals",
+      "expected": 89,
+      "source": {
+        "case": "three_prime_89",
+        "path": "results/closure.json",
+        "sha256": "0fa68e8fc16169253921bd1ad3caa0727e6a52a52fd7c1673a0dd309ffaf0642"
+      }
+    },
+    {
+      "json_pointer": "/witness_records",
+      "operation": "equals",
+      "expected": 549868032,
+      "source": {
+        "case": "three_prime_89",
+        "path": "results/closure.json",
+        "sha256": "0fa68e8fc16169253921bd1ad3caa0727e6a52a52fd7c1673a0dd309ffaf0642"
+      }
+    },
+    {
+      "json_pointer": "/corner_checks",
+      "operation": "equals",
+      "expected": 2199472128,
+      "source": {
+        "case": "three_prime_89",
+        "path": "results/closure.json",
+        "sha256": "0fa68e8fc16169253921bd1ad3caa0727e6a52a52fd7c1673a0dd309ffaf0642"
+      }
+    },
+    {
+      "json_pointer": "/cell_profiles",
+      "operation": "equals",
+      "expected": 249984,
+      "source": {
+        "case": "three_prime_89",
+        "path": "results/closure.json",
+        "sha256": "0fa68e8fc16169253921bd1ad3caa0727e6a52a52fd7c1673a0dd309ffaf0642"
+      }
+    },
+    {
+      "json_pointer": "/one_level_closed",
+      "operation": "equals",
+      "expected": 85,
+      "source": {
+        "case": "three_prime_89",
+        "path": "results/closure.json",
+        "sha256": "0fa68e8fc16169253921bd1ad3caa0727e6a52a52fd7c1673a0dd309ffaf0642"
+      }
+    },
+    {
+      "json_pointer": "/previous_exclusions_replayed",
+      "operation": "equals",
+      "expected": false,
+      "source": {
+        "case": "three_prime_89",
+        "path": "results/closure.json",
+        "sha256": "0fa68e8fc16169253921bd1ad3caa0727e6a52a52fd7c1673a0dd309ffaf0642"
+      }
+    },
+    {
+      "json_pointer": "/global_Cstar_identified",
+      "operation": "equals",
+      "expected": false,
+      "source": {
+        "case": "three_prime_89",
+        "path": "results/closure.json",
+        "sha256": "0fa68e8fc16169253921bd1ad3caa0727e6a52a52fd7c1673a0dd309ffaf0642"
+      }
+    }
+  ],
+  "imports": [
+    {
+      "property": "bytes_equal",
+      "child": {
+        "case": "three_prime_family",
+        "path": "imports/S113_closure_certificate.json",
+        "sha256": "c4b4ac72589d8c800d49f403f94adab87c52c7c997c59bbdcb66c920d422ab0f"
+      },
+      "parent": {
+        "case": "three_prime_28",
+        "path": "results/closure_certificate.json",
+        "sha256": "c4b4ac72589d8c800d49f403f94adab87c52c7c997c59bbdcb66c920d422ab0f"
+      }
+    },
+    {
+      "property": "bytes_equal",
+      "child": {
+        "case": "three_prime_family",
+        "path": "imports/S113_uniform_certificates.json",
+        "sha256": "02e482116fabe33263d13a6c27e35ec45c1480a1d2dafcbc2825051f71e54c0c"
+      },
+      "parent": {
+        "case": "three_prime_28",
+        "path": "results/uniform_certificates.json",
+        "sha256": "02e482116fabe33263d13a6c27e35ec45c1480a1d2dafcbc2825051f71e54c0c"
+      }
+    },
+    {
+      "property": "bytes_equal",
+      "child": {
+        "case": "three_prime_353",
+        "path": "imports/frontier_442.csv",
+        "sha256": "8323c535e8cce5506f99942f44ae037408f9816d799f95558c1115476ac9360c"
+      },
+      "parent": {
+        "case": "three_prime_large",
+        "path": "results/remaining_support_tail_frontier.csv",
+        "sha256": "8323c535e8cce5506f99942f44ae037408f9816d799f95558c1115476ac9360c"
+      }
+    },
+    {
+      "property": "bytes_equal",
+      "child": {
+        "case": "three_prime_89",
+        "path": "data/remaining_89.csv",
+        "sha256": "5ef452a9a14ab63a4a2622b02d522a69ff0dcbdc97d97037baf1cbe7f4bdb031"
+      },
+      "parent": {
+        "case": "three_prime_353",
+        "path": "results/remaining_89.csv",
+        "sha256": "5ef452a9a14ab63a4a2622b02d522a69ff0dcbdc97d97037baf1cbe7f4bdb031"
+      }
+    },
+    {
+      "property": "sets_equal",
+      "child": {
+        "case": "three_prime_89",
+        "path": "imports/closed_353_radicals.txt",
+        "sha256": "eb05f031f4a574632482a0520b898dd67916d590a3266786454490731b9f8dc9",
+        "selector": {
+          "format": "whitespace_integer_lines",
+          "transform": "integer_set"
+        }
+      },
+      "parent": {
+        "case": "three_prime_353",
+        "path": "results/selected_353.csv",
+        "sha256": "4b740628e5c585e32fbe05dbc851ac59797c610a2359fd28ebe21664fe126826",
+        "selector": {
+          "format": "csv",
+          "columns": [
+            "radical"
+          ],
+          "transform": "integer_set"
+        }
+      },
+      "count": 353
+    },
+    {
+      "property": "sets_equal",
+      "child": {
+        "case": "three_prime_353",
+        "path": "results/profiles_442.csv",
+        "sha256": "4a76f5fb78b44d9fc0372010d9c7cdf8c254b61de4cbaffd97d5696aec7540ca",
+        "selector": {
+          "format": "csv",
+          "columns": [
+            "r",
+            "s",
+            "p"
+          ],
+          "transform": "ordered_prime_triples_to_set"
+        }
+      },
+      "parent": {
+        "case": "three_prime_large",
+        "path": "results/remaining_442_supports.csv",
+        "sha256": "586f32ad1d57d8abd598fce9920d3f1d262f29bde113cc294aafd0ed0bd15a1d",
+        "selector": {
+          "format": "csv",
+          "columns": [
+            "r",
+            "s",
+            "p"
+          ],
+          "transform": "ordered_prime_triples_to_set"
+        }
+      },
+      "count": 442
+    }
+  ],
+  "partition": {
+    "universe": {
+      "case": "three_prime_large",
+      "path": "results/remaining_442_supports.csv",
+      "sha256": "586f32ad1d57d8abd598fce9920d3f1d262f29bde113cc294aafd0ed0bd15a1d",
+      "selector": {
+        "format": "csv",
+        "columns": [
+          "r",
+          "s",
+          "p"
+        ],
+        "transform": "ordered_prime_triples_to_set"
+      }
+    },
+    "parts": [
+      {
+        "case": "three_prime_353",
+        "path": "results/selected_353.csv",
+        "sha256": "4b740628e5c585e32fbe05dbc851ac59797c610a2359fd28ebe21664fe126826",
+        "selector": {
+          "format": "csv",
+          "columns": [
+            "r",
+            "s",
+            "p"
+          ],
+          "transform": "ordered_prime_triples_to_set"
+        }
+      },
+      {
+        "case": "three_prime_89",
+        "path": "data/remaining_89.csv",
+        "sha256": "5ef452a9a14ab63a4a2622b02d522a69ff0dcbdc97d97037baf1cbe7f4bdb031",
+        "selector": {
+          "format": "csv",
+          "columns": [
+            "r",
+            "s",
+            "p"
+          ],
+          "transform": "ordered_prime_triples_to_set"
+        }
+      }
+    ],
+    "counts": [
+      353,
+      89
+    ]
+  }
+}

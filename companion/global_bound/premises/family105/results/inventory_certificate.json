@@ -1,0 +1,84 @@
+{
+  "M_free_chosen": 36,
+  "all_five_prime_supports_closed": false,
+  "all_moduli": 387,
+  "all_positive_prime_valuations": true,
+  "analytic_moduli": 270,
+  "base_upper_exclusive": 1000000,
+  "cofactor_count": 24,
+  "core": 105,
+  "core_factors": [
+    3,
+    5,
+    7
+  ],
+  "finite_moduli_are_bases_at_N1": true,
+  "infinite_regions": [
+    {
+      "M_min": 13125,
+      "base_min": 13125,
+      "margin_to_delta": "22522714329903593/40299664871704252000",
+      "mean_upper": "54453217318592871/250000000000000000",
+      "name": "large_p",
+      "normalized_upper": "54453217318592871/2370568521864956000",
+      "normalized_upper_decimal": "0.022970530831041",
+      "p_min": 125,
+      "penalty_method": "M_free",
+      "relaxed_cap": "6/125"
+    },
+    {
+      "M_min": 10595025,
+      "base_min": 3255,
+      "margin_to_delta": "1397854880681091645961/441728472422982111956505",
+      "mean_upper": "105832426295926842077/642537000000000000000",
+      "name": "N_ge_2",
+      "normalized_upper": "105832426295926842077/5196805557917436611253",
+      "normalized_upper_decimal": "0.020364900151920",
+      "p_min": 31,
+      "penalty_method": "periodic",
+      "relaxed_cap": "-2/25"
+    },
+    {
+      "M_min": 1000000,
+      "base_min": 1000000,
+      "margin_to_delta": "6091272965044897073/5132945715153256540590",
+      "mean_upper": "1349222592149162191/4371000000000000000",
+      "name": "large_base",
+      "normalized_upper": "1349222592149162191/60387596648861841654",
+      "normalized_upper_decimal": "0.022342710540288",
+      "p_min": 31,
+      "penalty_method": "periodic",
+      "relaxed_cap": "6/125"
+    }
+  ],
+  "marked_anchors": [
+    {
+      "divisor": 105,
+      "exact_upper": "51983760252876388192538460284725792909173/1083197534374707740536733696000000000000000",
+      "k": 1,
+      "relaxed_cap": "6/125",
+      "sha256": "3812d51c26319ef856151707c0f35a380a767ab8f48771d334e78348265037c8"
+    },
+    {
+      "divisor": 11025,
+      "exact_upper": "-89818809207934122745162057704258610616459/1083197534374707740536733696000000000000000",
+      "k": 2,
+      "relaxed_cap": "-2/25",
+      "sha256": "756f88025cd14219464915c6c3fcfc84f845d8c734097863b885c93b4c274fda"
+    }
+  ],
+  "maximum_witness_modulus": 615195,
+  "nonnegative_normalized_uppers": true,
+  "normalization": "log B, including N>=2",
+  "other_four_prime_supports_closed": false,
+  "prime_count": 20,
+  "prime_range": [
+    31,
+    125
+  ],
+  "second_profile_used_at_N1": 14,
+  "status": "PASS",
+  "witness_moduli": 117,
+  "witness_representatives": 5168106,
+  "witness_states": 10336095
+}

@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "cdf_alpha": "3/2",
+  "marked_caps": [
+    {
+      "q": 6090,
+      "required_divisor": 6090,
+      "exact_upper": "25473884205370911070166313412762933788587/154742504910672534362390528000000000000000",
+      "upper_decimal": "0.164621118289872",
+      "normalized_upper": "25473884205370911070166313412762933788587/1348488604837310981699160120019503993061376",
+      "normalized_upper_decimal": "0.018890692968403",
+      "strict_gate_2_over85": true,
+      "strict_margin": "531697052218094522434183599954158614092857/114621531411171433444428610201657839410216960",
+      "scope": "all positive M divisible by required_divisor, extra primes allowed; marked mean nu6090, equality with physical mean under rad(M)=6090"
+    }
+  ],
+  "profiles": 1,
+  "geometric_witnesses": 46448640,
+  "geometric_corner_evaluations": 3158507520,
+  "arbitrary_prime_valuations": true,
+  "whole_radical_directly_closed_here": true,
+  "all_N_positive_if_direct_gate": true,
+  "geometric_witnesses_replayed_here": false,
+  "global_Cstar_identified": false
+}

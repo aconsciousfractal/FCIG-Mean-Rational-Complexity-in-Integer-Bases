@@ -1,0 +1,25 @@
+{
+  "core": 130,
+  "core_primes": [
+    2,
+    5,
+    13
+  ],
+  "cdf_alpha": "3/2",
+  "first_new_prime": 17,
+  "small_primes": [
+    17,
+    19,
+    23,
+    29,
+    31
+  ],
+  "tail_first_prime": 37,
+  "simple_marked_caps": {
+    "130": "7/500",
+    "260": "3/1000",
+    "650": "-7/400",
+    "1690": "-21/500"
+  },
+  "scope": "all positive M divisible by actual K; nu130; all seed L including noncoprime"
+}

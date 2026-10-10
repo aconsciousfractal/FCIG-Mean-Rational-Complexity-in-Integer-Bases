@@ -1,0 +1,143 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "truncated_stream",
+      "status": "REJECTED",
+      "expected_diagnostic": "truncated witness file",
+      "nonzero_exit": true
+    },
+    {
+      "name": "extra_record",
+      "status": "REJECTED",
+      "expected_diagnostic": "extra witness data",
+      "nonzero_exit": true
+    },
+    {
+      "name": "nonunit_zero_coefficients",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true
+    },
+    {
+      "name": "composite_parameter",
+      "status": "REJECTED",
+      "expected_diagnostic": "prime input",
+      "nonzero_exit": true
+    },
+    {
+      "name": "forbidden_core_prime_2",
+      "status": "REJECTED",
+      "expected_diagnostic": "prime parameter range",
+      "nonzero_exit": true
+    },
+    {
+      "name": "forbidden_core_prime_3",
+      "status": "REJECTED",
+      "expected_diagnostic": "prime parameter range",
+      "nonzero_exit": true
+    },
+    {
+      "name": "forbidden_core_prime_17",
+      "status": "REJECTED",
+      "expected_diagnostic": "prime parameter range",
+      "nonzero_exit": true
+    },
+    {
+      "name": "unsupported_core_index",
+      "status": "REJECTED",
+      "expected_diagnostic": "marked-102 index multiplier",
+      "nonzero_exit": true
+    },
+    {
+      "name": "only_prime_2_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        2,
+        3,
+        17,
+        19
+      ],
+      "unique_nonunit_prime": 2,
+      "coefficient_pairs_checked": 4320,
+      "block_sha256": "bb9762c966b166930301630cd99655a7957887851f59b93b6caaffa9b3d7ff56",
+      "stream_records": 11612160
+    },
+    {
+      "name": "only_prime_3_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        2,
+        3,
+        17,
+        19
+      ],
+      "unique_nonunit_prime": 3,
+      "coefficient_pairs_checked": 4320,
+      "block_sha256": "33789b0b2fbc70c2929744209eab4896b318be3e5b372ad134a1c2e3d89b93ab",
+      "stream_records": 11612160
+    },
+    {
+      "name": "only_prime_17_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        2,
+        3,
+        17,
+        19
+      ],
+      "unique_nonunit_prime": 17,
+      "coefficient_pairs_checked": 4320,
+      "block_sha256": "7c020be1e4277a3611e650d2fd6a28a499d56bca7e68a8cb626c156254bc6bac",
+      "stream_records": 11612160
+    },
+    {
+      "name": "only_prime_19_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        2,
+        3,
+        17,
+        19
+      ],
+      "unique_nonunit_prime": 19,
+      "coefficient_pairs_checked": 4320,
+      "block_sha256": "a67d522a2c9c03549e46d708a9b06a651abbdc7c95113ec095cdc7bc26d72123",
+      "stream_records": 11612160
+    },
+    {
+      "name": "radial_gap",
+      "status": "REJECTED",
+      "expected_diagnostic": "radial continuity"
+    },
+    {
+      "name": "angular_penalty_necessity",
+      "status": "PASS",
+      "vector": [
+        1,
+        3
+      ],
+      "sampled_squared_max": "169/17",
+      "continuous_squared_max": "10",
+      "node_tangents": "n/4 for -4<=n<=4"
+    },
+    {
+      "name": "cdf_below_three_halves_fails",
+      "status": "REJECTED",
+      "example_M": 3,
+      "x": "2/3",
+      "probability": "1",
+      "constant_rejected": "1499/1000"
+    }
+  ],
+  "isolated_synthetic_files": true,
+  "positive_geometry_gate": "all selected profiles are separately produced and consumed in full"
+}

@@ -1,0 +1,23 @@
+{
+  "core": 114,
+  "core_primes": [
+    2,
+    3,
+    19
+  ],
+  "cdf_alpha": "3/2",
+  "first_new_prime": 23,
+  "small_primes": [
+    23,
+    29,
+    31
+  ],
+  "tail_first_prime": 37,
+  "simple_marked_caps": {
+    "114": "1/25",
+    "228": "31/1000",
+    "342": "3/100",
+    "2166": "-1/200"
+  },
+  "scope": "all positive M divisible by actualK; nu114; all seedL including noncoprime"
+}

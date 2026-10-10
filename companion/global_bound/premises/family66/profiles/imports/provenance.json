@@ -1,0 +1,86 @@
+[
+  {
+    "source": "P72_70P_20261008/profiles/code/algebra.cpp",
+    "source_sha256": "c96b756b8b0c2707e825c164047feb86d339795c56671e322c88c14c8c7ca9c8",
+    "destination": "code/algebra.cpp",
+    "destination_sha256": "c96b756b8b0c2707e825c164047feb86d339795c56671e322c88c14c8c7ca9c8"
+  },
+  {
+    "source": "P72_70P_20261008/profiles/code/angle.cpp",
+    "source_sha256": "343e580967f48f77fb6e18b162ebf85eab4a9b705f9b6a88058605e0a65d8771",
+    "destination": "code/angle.cpp",
+    "destination_sha256": "343e580967f48f77fb6e18b162ebf85eab4a9b705f9b6a88058605e0a65d8771"
+  },
+  {
+    "source": "P72_70P_20261008/profiles/code/kernel.hpp",
+    "source_sha256": "b6dc4a4fed7b04864b5bba47294176afb52c18ce8395643b910d9d95a58a1d6c",
+    "destination": "code/kernel.hpp",
+    "destination_sha256": "13fdb2fcea5df20b7022ed7af967d1b946beeb3485824d02681d4667e560b431"
+  },
+  {
+    "source": "P72_70P_20261008/profiles/code/search.hpp",
+    "source_sha256": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281",
+    "destination": "code/search.hpp",
+    "destination_sha256": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281"
+  },
+  {
+    "source": "P72_70P_20261008/profiles/code/exact.py",
+    "source_sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59",
+    "destination": "code/exact.py",
+    "destination_sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59"
+  },
+  {
+    "source": "P72_70P_20261008/profiles/code/assemble.py",
+    "source_sha256": "f471fea98fe3c2e6ce126a5a3f9a9bb5c2fe19c6079c603725572a014f0468e5",
+    "destination": "code/assemble.py",
+    "destination_sha256": "5e3ac255bca58598fbd13c7d8bc7f92622774c53613bf0b5a62b6a7146439b69"
+  },
+  {
+    "source": "P72_70P_20261008/profiles/code/checks.py",
+    "source_sha256": "eeb5f3db2614d98c724c4b3e36b95d3d9cdcf7bc5393c73b7e3b80da78228706",
+    "destination": "code/checks.py",
+    "destination_sha256": "985a0908167d8e5383772d5843a0625da0b825929d006b9305747d88417f5aed"
+  },
+  {
+    "source": "P72_70P_20261008/profiles/code/audit_one.py",
+    "source_sha256": "6b3a882009a8518ff394b182a86ba34618cce5da8f7fae6098cd3148f22dfb79",
+    "destination": "code/audit_one.py",
+    "destination_sha256": "ee29df77a62d53ce2644b7d5bf2ef5933b09c3f86470cf02d56985d976b1cca7"
+  },
+  {
+    "source": "P72_70P_20261008/profiles/code/emit_profile.py",
+    "source_sha256": "f92cec02fa2a9a9fb7fc3c7e255fe8890907c7cb7bbf8c5899c8dbd138c0a16a",
+    "destination": "code/emit_profile.py",
+    "destination_sha256": "f92cec02fa2a9a9fb7fc3c7e255fe8890907c7cb7bbf8c5899c8dbd138c0a16a"
+  },
+  {
+    "source": "P72_70P_20261008/profiles/code/stored_profile.py",
+    "source_sha256": "4ca78070fd13f70f713774809c0f973e17bb388cbbe3e0e675e8e52e2207ecad",
+    "destination": "code/stored_profile.py",
+    "destination_sha256": "4ca78070fd13f70f713774809c0f973e17bb388cbbe3e0e675e8e52e2207ecad"
+  },
+  {
+    "source": "P72_70P_20261008/profiles/data/grid.tsv",
+    "source_sha256": "536d5990d2f19003fc5b6534d3c209e87f46b68671f5d3577159d94b4d24df13",
+    "destination": "data/grid.tsv",
+    "destination_sha256": "536d5990d2f19003fc5b6534d3c209e87f46b68671f5d3577159d94b4d24df13"
+  },
+  {
+    "source": "P72_70P_20261008/profiles/data/log_table.txt",
+    "source_sha256": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b",
+    "destination": "data/log_table.txt",
+    "destination_sha256": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b"
+  },
+  {
+    "source": "P72_70P_20261008/profiles/data/log_seeds.tsv",
+    "source_sha256": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a",
+    "destination": "data/log_seeds.tsv",
+    "destination_sha256": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a"
+  },
+  {
+    "source": "P72_70P_20261008/profiles/imports/DIRECT_METHOD_SOURCE.tex",
+    "source_sha256": "2706488d6447ca2c21101aa8ee3d8e29fafc0e594be38fd0939a3107673df7e9",
+    "destination": "imports/DIRECT_METHOD_SOURCE.tex",
+    "destination_sha256": "2706488d6447ca2c21101aa8ee3d8e29fafc0e594be38fd0939a3107673df7e9"
+  }
+]

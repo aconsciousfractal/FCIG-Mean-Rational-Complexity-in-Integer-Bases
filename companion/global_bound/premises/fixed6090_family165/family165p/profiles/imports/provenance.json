@@ -1,0 +1,237 @@
+{
+  "source_manifest_copy": "imports/SOURCE_MANIFEST_6006.json",
+  "source_manifest_sha256": "d470b6036940e3fc8af8e16ebdd95e3cfdd503c0075ba491abddee41d3f91ce5",
+  "sources": [
+    {
+      "path": "family154p/profiles/code/algebra.cpp",
+      "destination": "code/algebra.cpp",
+      "sha256": "72623bddbaea1a7aa5e4fb3d6f1e1eda411a78059cfdc9684ee6e691a24417be"
+    },
+    {
+      "path": "family154p/profiles/code/algebra.cpp",
+      "destination": "imports/originals/algebra.cpp",
+      "sha256": "72623bddbaea1a7aa5e4fb3d6f1e1eda411a78059cfdc9684ee6e691a24417be"
+    },
+    {
+      "path": "family154p/profiles/code/angle.cpp",
+      "destination": "code/angle.cpp",
+      "sha256": "0726430ce7e28991c51b30fc1f12493b42e4b16d9fe62091a26c4ff8a5aa6ed3"
+    },
+    {
+      "path": "family154p/profiles/code/angle.cpp",
+      "destination": "imports/originals/angle.cpp",
+      "sha256": "0726430ce7e28991c51b30fc1f12493b42e4b16d9fe62091a26c4ff8a5aa6ed3"
+    },
+    {
+      "path": "family154p/profiles/code/assemble.py",
+      "destination": "code/assemble.py",
+      "sha256": "547664ffbaf63dee9452fd5faf7be0e7ceb6d5a82553e64d3ca3a99cb1931fe1"
+    },
+    {
+      "path": "family154p/profiles/code/assemble.py",
+      "destination": "imports/originals/assemble.py",
+      "sha256": "547664ffbaf63dee9452fd5faf7be0e7ceb6d5a82553e64d3ca3a99cb1931fe1"
+    },
+    {
+      "path": "family154p/profiles/code/assemble_profiles.py",
+      "destination": "code/assemble_profiles.py",
+      "sha256": "c18ed56f64c337f62d05b26ded3cdc912a4cb3bd2f8614b6893a4947d9b0fca9"
+    },
+    {
+      "path": "family154p/profiles/code/assemble_profiles.py",
+      "destination": "imports/originals/assemble_profiles.py",
+      "sha256": "c18ed56f64c337f62d05b26ded3cdc912a4cb3bd2f8614b6893a4947d9b0fca9"
+    },
+    {
+      "path": "family154p/profiles/code/audit_one.py",
+      "destination": "code/audit_one.py",
+      "sha256": "f439c9bad4e1efbe9224c5bc47548267e25a5674c8eb812e141a1cc1fc60f714"
+    },
+    {
+      "path": "family154p/profiles/code/audit_one.py",
+      "destination": "imports/originals/audit_one.py",
+      "sha256": "f439c9bad4e1efbe9224c5bc47548267e25a5674c8eb812e141a1cc1fc60f714"
+    },
+    {
+      "path": "family154p/profiles/code/checks.py",
+      "destination": "code/checks.py",
+      "sha256": "b7ce792823e3bb6fc5279cc5a6953bfcf51e30d31d66098fb62ad6c6a650326e"
+    },
+    {
+      "path": "family154p/profiles/code/checks.py",
+      "destination": "imports/originals/checks.py",
+      "sha256": "b7ce792823e3bb6fc5279cc5a6953bfcf51e30d31d66098fb62ad6c6a650326e"
+    },
+    {
+      "path": "family154p/profiles/code/core.py",
+      "destination": "code/core.py",
+      "sha256": "3c6faa1c0780a3d4dd5e2f549b21b2ce598a57857cf933a82adb3026a0e91ca8"
+    },
+    {
+      "path": "family154p/profiles/code/core.py",
+      "destination": "imports/originals/core.py",
+      "sha256": "3c6faa1c0780a3d4dd5e2f549b21b2ce598a57857cf933a82adb3026a0e91ca8"
+    },
+    {
+      "path": "family154p/profiles/code/custody.py",
+      "destination": "code/custody.py",
+      "sha256": "35e8acbf6561bc7d721588202dd7a4dfb079344f61193f0fd95e9d9a5ab3a6aa"
+    },
+    {
+      "path": "family154p/profiles/code/custody.py",
+      "destination": "imports/originals/custody.py",
+      "sha256": "35e8acbf6561bc7d721588202dd7a4dfb079344f61193f0fd95e9d9a5ab3a6aa"
+    },
+    {
+      "path": "family154p/profiles/code/emit_profile.py",
+      "destination": "code/emit_profile.py",
+      "sha256": "f92cec02fa2a9a9fb7fc3c7e255fe8890907c7cb7bbf8c5899c8dbd138c0a16a"
+    },
+    {
+      "path": "family154p/profiles/code/emit_profile.py",
+      "destination": "imports/originals/emit_profile.py",
+      "sha256": "f92cec02fa2a9a9fb7fc3c7e255fe8890907c7cb7bbf8c5899c8dbd138c0a16a"
+    },
+    {
+      "path": "family154p/profiles/code/exact.py",
+      "destination": "code/exact.py",
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59"
+    },
+    {
+      "path": "family154p/profiles/code/exact.py",
+      "destination": "imports/originals/exact.py",
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59"
+    },
+    {
+      "path": "family154p/profiles/code/kernel.hpp",
+      "destination": "code/kernel.hpp",
+      "sha256": "7a4c0e22ee8c5b366471e969aeda27d9e36c6adf98718aa53666fc80a1fa1629"
+    },
+    {
+      "path": "family154p/profiles/code/kernel.hpp",
+      "destination": "imports/originals/kernel.hpp",
+      "sha256": "7a4c0e22ee8c5b366471e969aeda27d9e36c6adf98718aa53666fc80a1fa1629"
+    },
+    {
+      "path": "family154p/profiles/code/mixed_indices.py",
+      "destination": "code/mixed_indices.py",
+      "sha256": "7ba6cbe907d57e9f61b46fe71e09bcc81e748d335de0d8af06b2ead688d10342"
+    },
+    {
+      "path": "family154p/profiles/code/mixed_indices.py",
+      "destination": "imports/originals/mixed_indices.py",
+      "sha256": "7ba6cbe907d57e9f61b46fe71e09bcc81e748d335de0d8af06b2ead688d10342"
+    },
+    {
+      "path": "family154p/profiles/code/negative_profiles.py",
+      "destination": "code/negative_profiles.py",
+      "sha256": "35324b1a5f5a6cd2fa03b1e25b319b0bee76a12577ace2e6e41d5ed6be346a65"
+    },
+    {
+      "path": "family154p/profiles/code/negative_profiles.py",
+      "destination": "imports/originals/negative_profiles.py",
+      "sha256": "35324b1a5f5a6cd2fa03b1e25b319b0bee76a12577ace2e6e41d5ed6be346a65"
+    },
+    {
+      "path": "family154p/profiles/code/pcdf_check.py",
+      "destination": "code/pcdf_check.py",
+      "sha256": "36145072bcb33611f52086083a58a8ce46c08a849681a6d988b1edb331112e3e"
+    },
+    {
+      "path": "family154p/profiles/code/pcdf_check.py",
+      "destination": "imports/originals/pcdf_check.py",
+      "sha256": "36145072bcb33611f52086083a58a8ce46c08a849681a6d988b1edb331112e3e"
+    },
+    {
+      "path": "family154p/profiles/code/search.hpp",
+      "destination": "code/search.hpp",
+      "sha256": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281"
+    },
+    {
+      "path": "family154p/profiles/code/search.hpp",
+      "destination": "imports/originals/search.hpp",
+      "sha256": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281"
+    },
+    {
+      "path": "family154p/profiles/code/stored_profile.py",
+      "destination": "code/stored_profile.py",
+      "sha256": "4ca78070fd13f70f713774809c0f973e17bb388cbbe3e0e675e8e52e2207ecad"
+    },
+    {
+      "path": "family154p/profiles/code/stored_profile.py",
+      "destination": "imports/originals/stored_profile.py",
+      "sha256": "4ca78070fd13f70f713774809c0f973e17bb388cbbe3e0e675e8e52e2207ecad"
+    },
+    {
+      "path": "family154p/profiles/data/grid.tsv",
+      "destination": "data/grid.tsv",
+      "sha256": "536d5990d2f19003fc5b6534d3c209e87f46b68671f5d3577159d94b4d24df13"
+    },
+    {
+      "path": "family154p/profiles/data/log_seeds.tsv",
+      "destination": "data/log_seeds.tsv",
+      "sha256": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a"
+    },
+    {
+      "path": "family154p/profiles/data/log_table.txt",
+      "destination": "data/log_table.txt",
+      "sha256": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b"
+    },
+    {
+      "path": "family154p/profiles/imports/DIRECT_METHOD_SOURCE.tex",
+      "destination": "imports/DIRECT_METHOD_SOURCE.tex",
+      "sha256": "2706488d6447ca2c21101aa8ee3d8e29fafc0e594be38fd0939a3107673df7e9"
+    },
+    {
+      "path": "family154p/profiles/imports/PRIMITIVE_CDF.md",
+      "destination": "imports/PRIMITIVE_CDF.md",
+      "sha256": "2dd80d3616090d8d2501178ea18690215bd78f7d94496a846adeb0a508bc7077"
+    },
+    {
+      "path": "family154p/profiles/imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "destination": "imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "sha256": "229aac5019834e7ff6d4e4d77890773054ac7b7b0d5caaed185b3ad3e7ed3714"
+    },
+    {
+      "path": "family154p/profiles/build.py",
+      "destination": "build.py",
+      "sha256": "2c59e9c6e2b2fcf89f7ec19d033c69451e1c9d64782485e782e6dadb9a6df605"
+    },
+    {
+      "path": "family154p/profiles/build.py",
+      "destination": "imports/originals/build.py",
+      "sha256": "2c59e9c6e2b2fcf89f7ec19d033c69451e1c9d64782485e782e6dadb9a6df605"
+    },
+    {
+      "path": "family154p/profiles/generate.py",
+      "destination": "generate.py",
+      "sha256": "2e5d82a3feab8a72207725b5bf1f76068cff9d0694d458219a64c8ddb70103c0"
+    },
+    {
+      "path": "family154p/profiles/generate.py",
+      "destination": "imports/originals/generate.py",
+      "sha256": "2e5d82a3feab8a72207725b5bf1f76068cff9d0694d458219a64c8ddb70103c0"
+    },
+    {
+      "path": "family154p/profiles/run_negative.py",
+      "destination": "run_negative.py",
+      "sha256": "d2a47780349503ffe9d079e255cd64d9b8cb5094cb23867873a292fc4b67acd1"
+    },
+    {
+      "path": "family154p/profiles/run_negative.py",
+      "destination": "imports/originals/run_negative.py",
+      "sha256": "d2a47780349503ffe9d079e255cd64d9b8cb5094cb23867873a292fc4b67acd1"
+    },
+    {
+      "path": "family154p/profiles/verify_profiles.py",
+      "destination": "verify_profiles.py",
+      "sha256": "d0570af8e29a2d95a46f8623f014ae46e77577f36d88b66eff2d46c768da60e1"
+    },
+    {
+      "path": "family154p/profiles/verify_profiles.py",
+      "destination": "imports/originals/verify_profiles.py",
+      "sha256": "d0570af8e29a2d95a46f8623f014ae46e77577f36d88b66eff2d46c768da60e1"
+    }
+  ],
+  "adaptation": "Core (3,5,11), exact odd indices165,495,825,1815 and new complete profiles; originals preserved under imports/originals. No prior numerical cap imported."
+}

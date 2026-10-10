@@ -1,0 +1,9 @@
+{
+  "all_common_cell_costs_regenerated_by_each_main_engine": 5677056,
+  "cells": 2688,
+  "condition_corners": 10752,
+  "corners_per_checked_cost": 4,
+  "independent_common_costs": 5696,
+  "largest_condition_upper": "35163121/31250000",
+  "stride": 997
+}

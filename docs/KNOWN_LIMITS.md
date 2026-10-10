@@ -13,6 +13,10 @@
   normal and optimized modes. Every central aggregate threshold and proper
   gcd stratum has passed a distinct enumeration. All 4,596 semiprime
   histograms and consumed ledgers are distributed and checked.
+- The stronger global bound adds finite geometric premises beyond the original
+  two-prime chain. Retained arithmetic checks, full source reconstructions,
+  independent scalar recomputation and sampled alternative geometric audits
+  have separate scopes. None constitutes formal or human peer verification.
 - The short baseline and complete-evidence commands retain their explicitly
   stated scopes. The latter validates recorded central coverage but does not
   repeat the enumeration; use the full reconstruction command to rerun it.

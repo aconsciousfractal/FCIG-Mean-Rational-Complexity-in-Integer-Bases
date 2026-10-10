@@ -1,0 +1,186 @@
+{
+  "checked_utc_date": "2026-10-09",
+  "search_type": "targeted recent primary-source review, not exhaustive",
+  "recent_external_theorems_used_as_numerical_premises": false,
+  "mathematical_novelty_of_fibre_mechanism_claimed": false,
+  "third_party_fulltexts_included": false,
+  "sources": [
+    {
+      "id": "dhanda_haynes_prasala_2026",
+      "authors": [
+        "Kavita Dhanda",
+        "Alan Haynes",
+        "Silmi Prasala"
+      ],
+      "title": "Counting 2 x 2 matrices with fixed determinant and bounded coefficients",
+      "year": 2026,
+      "online_date": "2026-03-25",
+      "journal": "Mathematical Proceedings of the Cambridge Philosophical Society 181(1),743-750",
+      "doi": "10.1017/S0305004126101881",
+      "urls": [
+        "https://doi.org/10.1017/S0305004126101881",
+        "https://arxiv.org/abs/2509.16890"
+      ],
+      "inspected": "Theorems1-2, proof structure in Section2; Section3 Lemma3 and proof of Theorem2",
+      "role": "direct antecedent of the fibre mechanism; critical-scale warning; no imported numerical bound"
+    },
+    {
+      "id": "han_lee_2025_2026",
+      "authors": [
+        "Jiyoung Han",
+        "Seul Bee Lee"
+      ],
+      "title": "Moment formulas of Siegel transforms with congruence conditions in dimension 2",
+      "year": 2026,
+      "arxiv": "2507.05905v2",
+      "version_date": "2025-07-14",
+      "journal": "Indagationes Mathematicae 37(4),1431-1449",
+      "doi": "10.1016/j.indag.2025.10.003",
+      "urls": [
+        "https://arxiv.org/html/2507.05905v2",
+        "https://doi.org/10.1016/j.indag.2025.10.003"
+      ],
+      "inspected": "Theorems1.1-1.3; definitions of Haar/congruence averages and determinant grouping for second moments",
+      "role": "motivation for finite first/second moments, not an all-M finite-orbit theorem"
+    },
+    {
+      "id": "openai_jacobsthal_2026",
+      "authors": [
+        "OpenAI"
+      ],
+      "title": "A quadratic bound for Jacobsthal’s function",
+      "year": 2026,
+      "date_on_paper": "2026-09-25",
+      "publication_status": "preprint; not independently fully audited in this task",
+      "observed_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+      "earlier_checked_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "urls": [
+        "https://github.com/openai/math/blob/main/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf",
+        "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf"
+      ],
+      "inspected": "83-page PDF: theorem and applicability in pp2-5, constants conventions and selected prime-distribution inputs; full body not audited",
+      "role": "asymptotic prospect; no explicit numerical constant adopted"
+    },
+    {
+      "id": "marklof_smallest_2024",
+      "authors": [
+        "Jens Marklof"
+      ],
+      "title": "Smallest denominators",
+      "year": 2024,
+      "arxiv": "2310.11251v2",
+      "journal": "Bulletin of the London Mathematical Society 56(6),1920-1938",
+      "urls": [
+        "https://arxiv.org/abs/2310.11251"
+      ],
+      "inspected": "Propositions on distribution, finite moments and discrete sampling",
+      "role": "tail and moment control; limiting regime differs from P72"
+    },
+    {
+      "id": "marklof_log_2024",
+      "authors": [
+        "Jens Marklof"
+      ],
+      "title": "The log moments of smallest denominators",
+      "year": 2024,
+      "publication_date": "2024-06-19",
+      "journal": "Integers 24,A55",
+      "doi": "10.5281/zenodo.12167470",
+      "urls": [
+        "https://math.colgate.edu/~integers/y55/y55.pdf",
+        "https://arxiv.org/abs/2312.15303"
+      ],
+      "inspected": "Introduction and Propositions1-2, including proof via positive/negative moment domination and discrete sampling statement",
+      "role": "integrability and tail control before logarithmic averaging"
+    },
+    {
+      "id": "kim_lee_liao_2025",
+      "authors": [
+        "Dong Han Kim",
+        "Seul Bee Lee",
+        "Lingmin Liao"
+      ],
+      "title": "Diophantine approximation by rational numbers of certain parity types",
+      "year": 2025,
+      "arxiv": "2403.12341v1",
+      "version_date": "2024-03-19",
+      "first_online_date": "2024-10-10",
+      "journal": "Mathematika 71,e12285",
+      "doi": "10.1112/mtk.12285",
+      "urls": [
+        "https://arxiv.org/html/2403.12341v1",
+        "https://doi.org/10.1112/mtk.12285"
+      ],
+      "inspected": "Theorem1.3, Proposition3.2, algorithm descriptions",
+      "role": "possible marked continued-fraction candidate generator; no direct finite norm bound"
+    },
+    {
+      "id": "hauke_kowalski_2025",
+      "authors": [
+        "Christoph Hauke",
+        "Emmanuel Kowalski"
+      ],
+      "title": "Rational approximation with chosen numerators",
+      "year": 2025,
+      "arxiv": "2502.08335v3",
+      "version_date": "2025-11-20",
+      "journal": "International Mathematics Research Notices 2025(23),rnaf355",
+      "doi": "10.1093/imrn/rnaf355",
+      "urls": [
+        "https://arxiv.org/html/2502.08335v3",
+        "https://academic.oup.com/imrn/article/2025/23/rnaf355/8374446"
+      ],
+      "inspected": "Introductory theorems and Section7.4 exceptional-set discussion",
+      "role": "metric/all-state distinction; no all-state theorem imported"
+    },
+    {
+      "id": "kalmynin_konyagin_2024",
+      "authors": [
+        "Alexander Kalmynin",
+        "Sergey Konyagin"
+      ],
+      "title": "A polynomial analogue of Jacobsthal function",
+      "year": 2024,
+      "journal": "Izvestiya: Mathematics 88(2),225-235",
+      "doi": "10.4213/im9467e",
+      "urls": [
+        "https://www.mathnet.ru/eng/im9467"
+      ],
+      "inspected": "Primary journal abstract and direction of the main bound",
+      "role": "lower covered-block bound is not the upper repair bound required here"
+    }
+  ],
+  "public_download_receipts": {
+    "utc": "2026-10-09T06:50:42.932830+00:00",
+    "files": [
+      {
+        "name": "jacobsthal_current.pdf",
+        "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf",
+        "bytes": 824106,
+        "sha256": "f80267eebc82a9b8905057b45b35ef8734485b2b0b7b809a3051c06240cf0b1e",
+        "status": "downloaded"
+      },
+      {
+        "name": "jacobsthal_README.md",
+        "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/README.md",
+        "bytes": 577,
+        "sha256": "b8c180c1fe87fd7b91863a8514027889535e3c4dd20be194d071f9afd7aabb68",
+        "status": "downloaded"
+      },
+      {
+        "name": "han_lee_2507.05905v2.pdf",
+        "url": "https://arxiv.org/pdf/2507.05905v2",
+        "bytes": 463143,
+        "sha256": "3d22cf0489cb16c9569ed75fef9244a047dd7728793031a7283138269474013d",
+        "status": "downloaded"
+      },
+      {
+        "name": "math_history.md",
+        "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/history.md",
+        "bytes": 2281,
+        "sha256": "41c2a2d470014b3628695c7aabf5fd0c93f6f687621fca172062f22b59ed6a1e",
+        "status": "downloaded"
+      }
+    ]
+  }
+}

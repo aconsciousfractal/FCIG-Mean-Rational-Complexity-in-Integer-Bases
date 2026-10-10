@@ -1,0 +1,8 @@
+{
+  "extra_record": "FAIL extra witness records",
+  "incomplete_domain": "ArithmeticError: prime block missing 113",
+  "insufficient_uniform_gate": "ArithmeticError: k=2 uniform cap alone does not close B=30; finite case required",
+  "nonunit": "FAIL full-modulus denominator unit",
+  "truncation": "FAIL truncated witness",
+  "wrong_state": "FAIL state congruence"
+}

@@ -1,0 +1,9 @@
+{
+  "radial_intervals": 256,
+  "shear_intervals": 42,
+  "shear_denominator": 80,
+  "cells": 10752,
+  "radial_split": 2,
+  "shear_split": 2,
+  "source_grid_sha256": "536d5990d2f19003fc5b6534d3c209e87f46b68671f5d3577159d94b4d24df13"
+}

@@ -13,7 +13,7 @@ All $M$ residues, including zero, have uniform weight; logarithms are real and u
 
 The paper proves
 $$
-\mathbb E\log_B R_{B,N}<\frac N2+\frac{49}{50}
+\mathbb E\log_B R_{B,N}<\frac N2+0.241933621228105
 $$
 for every integer base and every length. It strengthens this to
 $\mathbb E\log_B R_{B,N}\le N/2$ for prime-power bases and to
@@ -26,15 +26,15 @@ counterexample. If $\operatorname{rad}(B)=510510$ and $B^N\ge510510^2$,
 the centered mean exceeds $1/(1000\log B)$.
 For the optimal additive correction,
 $$
-0<C^*=\sup_{B,N}\left(\mathbb E\log_B R_{B,N}-N/2\right)<49/50.
+0.023672606561106<C^*=\sup_{B,N}\left(\mathbb E\log_B R_{B,N}-N/2\right)<0.241933621228105.
 $$
-A further corollary, using Kanold's classical unit-gap bound as reported by
+Two simpler independent bounds remain available. A corollary using Kanold's classical unit-gap bound as reported by
 [Costello–Watts, arXiv:1208.5342v2, pp. 1–2](https://arxiv.org/pdf/1208.5342v2), gives
 $$
 C^*\le\frac{\log67+1}{2\log30}<\frac{5037}{6400}<\frac45.
 $$
 Thus the mean is also strictly below $N/2+4/5$ in every base and length.
-The original $49/50$ proof remains self-contained. Neither cap is claimed optimal.
+The original $49/50$ proof remains self-contained. The sharper bound combines supportwise positive and negative log contributions. It is not claimed optimal.
 
 The positive per-base correction tends to zero for large bases; the global
 supremum reduces to finitely many bases. A maximizing base has at least three
@@ -47,7 +47,11 @@ connection conditions and rounded register lengths require separate comparison.
 
 ## Verify
 
-Python >=3.10; standard library only for the companion. From the repository root:
+Python >=3.10 for the original two-prime checks and the scalar computation;
+Python >=3.11 for the marked-70 component, including the new global retained chain.
+These arithmetic checks use the standard library.
+The new full geometric reconstruction requires GNU g++ with C++17, OpenMP and
+`__int128`, on little-endian Linux. From the repository root:
 
 ~~~text
 python -B scripts/check_manifest.py
@@ -61,10 +65,11 @@ python -B -m unittest discover -s tests -v
 python -B -O -m unittest discover -s tests -v
 ~~~
 
-The complete proof-premise reconstruction has now passed normally and with
+The original two-prime proof-premise reconstruction passed normally and with
 optimization: all 37 dependency stages, all 4,596 semiprime histograms and log
 ledgers, and distinct checks of every central threshold and gcd stratum in
-the nine aggregate batches. The main theorems and computational premises are unchanged by the classical sharpening.
+the nine aggregate batches. Those numerical premises are preserved in this
+revision; the sharper global bound has its own reconstruction chain below.
 
 ~~~text
 python -B scripts/check_complete_evidence.py
@@ -83,6 +88,27 @@ original, narrower scopes.
 [Sources](docs/SOURCES.md) · [Limits](docs/KNOWN_LIMITS.md) ·
 [Provenance](docs/PROVENANCE.md)
 
+## Sharper global bound
+
+The new self-contained companion is in
+[companion/global_bound](companion/global_bound/README.md). Outputs must be new;
+the following commands deliberately write outside the distributed tree.
+
+~~~text
+python -B companion/global_bound/producer.py --build --output ../new-global-certificate.json
+python -B companion/global_bound/verify_closures.py --output ../new-closure-check
+python -B companion/global_bound/check.py --certificate ../new-global-certificate.json --closures-report ../new-closure-check/report.json --output ../new-global-check.json
+~~~
+
+The producer and distinct scalar checker evaluate all 621 support sectors and
+the remaining cardinality tail. Retained closure checks verify their finite
+premises and bind their complete-domain report to the scalar check. Without
+that report, the scalar check explicitly remains conditional on those
+closure premises. Full C++ reconstruction commands and exact scopes are in
+[REPRODUCE.md](REPRODUCE.md).
+The printed proof supplies the infinite transfer and tail inequalities.
+The earlier 37-stage two-prime reconstruction remains a separate chain.
+
 ## Scope and attribution
 
 The manuscript supplies the infinite estimates and exact finite proof
@@ -94,7 +120,7 @@ the final journal body was not read. Priority is not certified.
 
 [AI_USE.md](AI_USE.md) discloses substantive assistance and shared review exposure.
 
-Version **0.1.2**. [Changes](CHANGELOG.md).
+Version **0.2.0**. [Changes](CHANGELOG.md).
 Code, author-generated certificates and documentation: [MIT](LICENSE).
 Original manuscript source/PDF: [CC BY 4.0](LICENSE_MANUSCRIPT.md).
 [License scopes](LICENSE_SCOPE.md) · [Third-party notices](THIRD_PARTY_NOTICES.md).

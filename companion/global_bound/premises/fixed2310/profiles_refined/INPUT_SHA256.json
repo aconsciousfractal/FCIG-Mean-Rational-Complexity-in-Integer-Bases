@@ -1,0 +1,20 @@
+{
+  "CONTRACT.json": "f9a676917f9fd952d4392a36fcdd14a7a3502c73f663ddfaee36a243700c99ef",
+  "code/algebra.cpp": "c96b756b8b0c2707e825c164047feb86d339795c56671e322c88c14c8c7ca9c8",
+  "code/assemble.py": "9c39d626c3b0ab4d6bd8293904df79d21f348fb7059d14791114b0fba5db816d",
+  "code/checks.py": "bc7d150ebc7ccf34a0eb6ebc5c6159074ccfb1d951f8c2c6cbad66153da631aa",
+  "code/core.py": "7c82ad312d5601cba24e84df873954846e5c94897bb1f0be79783d4adb8da800",
+  "code/exact.py": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59",
+  "code/kernel.hpp": "2dad959215570aefe51cc43093bb3c3f079ef1c200e7f1d2c6b8c1b38040438f",
+  "code/search.hpp": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281",
+  "data/grid.tsv": "536d5990d2f19003fc5b6534d3c209e87f46b68671f5d3577159d94b4d24df13",
+  "data/log_seeds.tsv": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a",
+  "data/log_table.txt": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b",
+  "imports/DIRECT_METHOD_SOURCE.tex": "2706488d6447ca2c21101aa8ee3d8e29fafc0e594be38fd0939a3107673df7e9",
+  "imports/UNEQUAL_VALUATION_TRANSFER.md": "229aac5019834e7ff6d4e4d77890773054ac7b7b0d5caaed185b3ad3e7ed3714",
+  "imports/q2310_K13860_AG4.branches": "e552d80c40aaecdf9f17e35a58fbdc91b07e58a967ffc897b56bb2e8062f41eb",
+  "imports/q2310_K13860_AG4.cells": "17ef6939d86125d2ed127e9a8932e3fadbe0794893ecf2bb20e62ce27aaa3c63",
+  "imports/q2310_K13860_AG4.independent.json": "43b76456f7db0287c03b329a1621577e7ac3e89578e41874a44632c48da0b4bf",
+  "imports/q2310_K13860_AG4.json": "f107a26a7b129f35e1171d24645e9317b6ae77fd35ab2cde0e9be3ecbfdaba93",
+  "imports/q2310_K13860_AG4.tensor": "d34494fb9ae1aebfa077f278b6bced5b6d9dbd701b0168d410da3f3753a4dc8e"
+}

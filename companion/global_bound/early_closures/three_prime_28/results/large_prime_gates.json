@@ -1,0 +1,109 @@
+{
+  "N_ge_5_unexcluded_primes_by_this_filter": [
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    23,
+    29,
+    31,
+    37,
+    41,
+    43,
+    47,
+    53,
+    59,
+    61,
+    67,
+    71,
+    73,
+    79,
+    83,
+    89,
+    97,
+    101,
+    103,
+    107,
+    109,
+    113
+  ],
+  "entire_6p_family_closed": false,
+  "formalized": false,
+  "full_prime_list_sha256": "c766e738c548553a21fb290b5b2fb587d3048bc71a3ab6c7de38ae4d90434b7f",
+  "global_Cstar_identified": false,
+  "level": "CL3 exact comparisons with general monotonic extension proved in text",
+  "negative_gate": "FAIL: p=113,k=5: this majorant does not prove Delta < 2/85; not a counterexample",
+  "prime_frontier_full_range": [
+    5,
+    2999999
+  ],
+  "prime_frontier_methods": [
+    "Eratosthenes",
+    "segmented sieve with trial-division base primes"
+  ],
+  "rows": [
+    {
+      "all_p_above_threshold": true,
+      "condition": "min(v2(B^N),v3(B^N)) >= k",
+      "k": 1,
+      "largest_unexcluded_prime_for_N_ge_k": 2999999,
+      "log_6p_lower": "16705882315860237/1000000000000000",
+      "nu6_cap": "393/1000",
+      "p_threshold": 3000000,
+      "positive_margin_lower": "436382973704555273/8500000000000000000000",
+      "psi_upper": "14122364608402631/500000000000000000000",
+      "remaining_prime_count_for_N_ge_k": 216814
+    },
+    {
+      "all_p_above_threshold": true,
+      "condition": "min(v2(B^N),v3(B^N)) >= k",
+      "k": 2,
+      "largest_unexcluded_prime_for_N_ge_k": 1459,
+      "log_6p_lower": "4542728594914691/500000000000000",
+      "nu6_cap": "187/1000",
+      "p_threshold": 1471,
+      "positive_margin_lower": "30842846754332999/125035000000000000000",
+      "psi_upper": "39023849479102457/1471000000000000000",
+      "remaining_prime_count_for_N_ge_k": 230
+    },
+    {
+      "all_p_above_threshold": true,
+      "condition": "min(v2(B^N),v3(B^N)) >= k",
+      "k": 3,
+      "largest_unexcluded_prime_for_N_ge_k": 271,
+      "log_6p_lower": "1483155395083061/200000000000000",
+      "nu6_cap": "17/250",
+      "p_threshold": 277,
+      "positive_margin_lower": "3734483405467279/2354500000000000000",
+      "psi_upper": "7264516500957077/69250000000000000",
+      "remaining_prime_count_for_N_ge_k": 56
+    },
+    {
+      "all_p_above_threshold": true,
+      "condition": "min(v2(B^N),v3(B^N)) >= k",
+      "k": 4,
+      "largest_unexcluded_prime_for_N_ge_k": 151,
+      "log_6p_lower": "171200131864407/25000000000000",
+      "nu6_cap": "-3/500",
+      "p_threshold": 157,
+      "positive_margin_lower": "9166445143284529/2669000000000000000",
+      "psi_upper": "5140026895295363/31400000000000000",
+      "remaining_prime_count_for_N_ge_k": 34
+    },
+    {
+      "all_p_above_threshold": true,
+      "condition": "min(v2(B^N),v3(B^N)) >= k",
+      "k": 5,
+      "largest_unexcluded_prime_for_N_ge_k": 113,
+      "log_6p_lower": "3317973277843283/500000000000000",
+      "nu6_cap": "-19/500",
+      "p_threshold": 127,
+      "positive_margin_lower": "17140458222399439/10795000000000000000",
+      "psi_upper": "4890823451581149/25400000000000000",
+      "remaining_prime_count_for_N_ge_k": 28
+    }
+  ],
+  "status": "PASS"
+}

@@ -1,0 +1,61 @@
+{
+  "M_free_chosen": 130,
+  "all_five_prime_supports_closed": false,
+  "all_moduli": 1475,
+  "all_positive_prime_valuations": true,
+  "analytic_moduli": 1118,
+  "base_upper_exclusive": 1000000,
+  "cofactor_count": 43,
+  "core": 66,
+  "finite_moduli_are_bases_at_N1": true,
+  "infinite_regions": [
+    {
+      "M_min": 23100,
+      "base_min": 23100,
+      "margin_to_delta": "11892907179091851/7472893498029226225",
+      "mean_upper": "9643522412343007/43750000000000000",
+      "name": "large_p",
+      "normalized_upper": "9643522412343007/439581970472307425",
+      "normalized_upper_decimal": "0.021937938905870",
+      "p_min": 350,
+      "penalty_method": "M_free",
+      "relaxed_cap": "127/1000"
+    },
+    {
+      "M_min": 9622404,
+      "base_min": 3102,
+      "margin_to_delta": "1586619847584154345169989/1133746511682820109883794370",
+      "mean_upper": "295173748971762920474483/1659020170500000000000000",
+      "name": "N_ge_2",
+      "normalized_upper": "295173748971762920474483/13338194255092001292750522",
+      "normalized_upper_decimal": "0.022129963271384",
+      "p_min": 47,
+      "penalty_method": "periodic",
+      "relaxed_cap": "2/125"
+    },
+    {
+      "M_min": 1000000,
+      "base_min": 1000000,
+      "margin_to_delta": "97377875531160052377163/59036906300623254505243665",
+      "mean_upper": "15196774142712512741651/50273338500000000000000",
+      "name": "large_base",
+      "normalized_upper": "15196774142712512741651/694551838830861817708749",
+      "normalized_upper_decimal": "0.021879971073568",
+      "p_min": 47,
+      "penalty_method": "periodic",
+      "relaxed_cap": "127/1000"
+    }
+  ],
+  "maximum_witness_modulus": 502524,
+  "other_four_prime_supports_closed": false,
+  "prime_count": 56,
+  "prime_range": [
+    47,
+    350
+  ],
+  "second_profile_used_at_N1": 61,
+  "status": "PASS",
+  "witness_moduli": 357,
+  "witness_representatives": 12396708,
+  "witness_states": 24792702
+}

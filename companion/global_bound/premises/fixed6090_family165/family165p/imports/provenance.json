@@ -1,0 +1,452 @@
+{
+  "predecessor": "P72_6006_LITERATURE_20261009",
+  "source_manifest_copy": "imports/SOURCE_MANIFEST_6006.json",
+  "source_manifest_sha256": "d470b6036940e3fc8af8e16ebdd95e3cfdd503c0075ba491abddee41d3f91ce5",
+  "sources": [
+    {
+      "path": "family154p/profiles/code/algebra.cpp",
+      "destination": "profiles/code/algebra.cpp",
+      "sha256": "72623bddbaea1a7aa5e4fb3d6f1e1eda411a78059cfdc9684ee6e691a24417be",
+      "bytes": 697
+    },
+    {
+      "path": "family154p/profiles/code/algebra.cpp",
+      "destination": "profiles/imports/originals/algebra.cpp",
+      "sha256": "72623bddbaea1a7aa5e4fb3d6f1e1eda411a78059cfdc9684ee6e691a24417be",
+      "bytes": 697
+    },
+    {
+      "path": "family154p/profiles/code/angle.cpp",
+      "destination": "profiles/code/angle.cpp",
+      "sha256": "0726430ce7e28991c51b30fc1f12493b42e4b16d9fe62091a26c4ff8a5aa6ed3",
+      "bytes": 5151
+    },
+    {
+      "path": "family154p/profiles/code/angle.cpp",
+      "destination": "profiles/imports/originals/angle.cpp",
+      "sha256": "0726430ce7e28991c51b30fc1f12493b42e4b16d9fe62091a26c4ff8a5aa6ed3",
+      "bytes": 5151
+    },
+    {
+      "path": "family154p/profiles/code/assemble.py",
+      "destination": "profiles/code/assemble.py",
+      "sha256": "547664ffbaf63dee9452fd5faf7be0e7ceb6d5a82553e64d3ca3a99cb1931fe1",
+      "bytes": 2030
+    },
+    {
+      "path": "family154p/profiles/code/assemble.py",
+      "destination": "profiles/imports/originals/assemble.py",
+      "sha256": "547664ffbaf63dee9452fd5faf7be0e7ceb6d5a82553e64d3ca3a99cb1931fe1",
+      "bytes": 2030
+    },
+    {
+      "path": "family154p/profiles/code/assemble_profiles.py",
+      "destination": "profiles/code/assemble_profiles.py",
+      "sha256": "c18ed56f64c337f62d05b26ded3cdc912a4cb3bd2f8614b6893a4947d9b0fca9",
+      "bytes": 4054
+    },
+    {
+      "path": "family154p/profiles/code/assemble_profiles.py",
+      "destination": "profiles/imports/originals/assemble_profiles.py",
+      "sha256": "c18ed56f64c337f62d05b26ded3cdc912a4cb3bd2f8614b6893a4947d9b0fca9",
+      "bytes": 4054
+    },
+    {
+      "path": "family154p/profiles/code/audit_one.py",
+      "destination": "profiles/code/audit_one.py",
+      "sha256": "f439c9bad4e1efbe9224c5bc47548267e25a5674c8eb812e141a1cc1fc60f714",
+      "bytes": 2778
+    },
+    {
+      "path": "family154p/profiles/code/audit_one.py",
+      "destination": "profiles/imports/originals/audit_one.py",
+      "sha256": "f439c9bad4e1efbe9224c5bc47548267e25a5674c8eb812e141a1cc1fc60f714",
+      "bytes": 2778
+    },
+    {
+      "path": "family154p/profiles/code/checks.py",
+      "destination": "profiles/code/checks.py",
+      "sha256": "b7ce792823e3bb6fc5279cc5a6953bfcf51e30d31d66098fb62ad6c6a650326e",
+      "bytes": 6278
+    },
+    {
+      "path": "family154p/profiles/code/checks.py",
+      "destination": "profiles/imports/originals/checks.py",
+      "sha256": "b7ce792823e3bb6fc5279cc5a6953bfcf51e30d31d66098fb62ad6c6a650326e",
+      "bytes": 6278
+    },
+    {
+      "path": "family154p/profiles/code/core.py",
+      "destination": "profiles/code/core.py",
+      "sha256": "3c6faa1c0780a3d4dd5e2f549b21b2ce598a57857cf933a82adb3026a0e91ca8",
+      "bytes": 516
+    },
+    {
+      "path": "family154p/profiles/code/core.py",
+      "destination": "profiles/imports/originals/core.py",
+      "sha256": "3c6faa1c0780a3d4dd5e2f549b21b2ce598a57857cf933a82adb3026a0e91ca8",
+      "bytes": 516
+    },
+    {
+      "path": "family154p/profiles/code/custody.py",
+      "destination": "profiles/code/custody.py",
+      "sha256": "35e8acbf6561bc7d721588202dd7a4dfb079344f61193f0fd95e9d9a5ab3a6aa",
+      "bytes": 4099
+    },
+    {
+      "path": "family154p/profiles/code/custody.py",
+      "destination": "profiles/imports/originals/custody.py",
+      "sha256": "35e8acbf6561bc7d721588202dd7a4dfb079344f61193f0fd95e9d9a5ab3a6aa",
+      "bytes": 4099
+    },
+    {
+      "path": "family154p/profiles/code/emit_profile.py",
+      "destination": "profiles/code/emit_profile.py",
+      "sha256": "f92cec02fa2a9a9fb7fc3c7e255fe8890907c7cb7bbf8c5899c8dbd138c0a16a",
+      "bytes": 673
+    },
+    {
+      "path": "family154p/profiles/code/emit_profile.py",
+      "destination": "profiles/imports/originals/emit_profile.py",
+      "sha256": "f92cec02fa2a9a9fb7fc3c7e255fe8890907c7cb7bbf8c5899c8dbd138c0a16a",
+      "bytes": 673
+    },
+    {
+      "path": "family154p/profiles/code/exact.py",
+      "destination": "profiles/code/exact.py",
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59",
+      "bytes": 2297
+    },
+    {
+      "path": "family154p/profiles/code/exact.py",
+      "destination": "profiles/imports/originals/exact.py",
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59",
+      "bytes": 2297
+    },
+    {
+      "path": "family154p/profiles/code/kernel.hpp",
+      "destination": "profiles/code/kernel.hpp",
+      "sha256": "7a4c0e22ee8c5b366471e969aeda27d9e36c6adf98718aa53666fc80a1fa1629",
+      "bytes": 5015
+    },
+    {
+      "path": "family154p/profiles/code/kernel.hpp",
+      "destination": "profiles/imports/originals/kernel.hpp",
+      "sha256": "7a4c0e22ee8c5b366471e969aeda27d9e36c6adf98718aa53666fc80a1fa1629",
+      "bytes": 5015
+    },
+    {
+      "path": "family154p/profiles/code/mixed_indices.py",
+      "destination": "profiles/code/mixed_indices.py",
+      "sha256": "7ba6cbe907d57e9f61b46fe71e09bcc81e748d335de0d8af06b2ead688d10342",
+      "bytes": 4129
+    },
+    {
+      "path": "family154p/profiles/code/mixed_indices.py",
+      "destination": "profiles/imports/originals/mixed_indices.py",
+      "sha256": "7ba6cbe907d57e9f61b46fe71e09bcc81e748d335de0d8af06b2ead688d10342",
+      "bytes": 4129
+    },
+    {
+      "path": "family154p/profiles/code/negative_profiles.py",
+      "destination": "profiles/code/negative_profiles.py",
+      "sha256": "35324b1a5f5a6cd2fa03b1e25b319b0bee76a12577ace2e6e41d5ed6be346a65",
+      "bytes": 5013
+    },
+    {
+      "path": "family154p/profiles/code/negative_profiles.py",
+      "destination": "profiles/imports/originals/negative_profiles.py",
+      "sha256": "35324b1a5f5a6cd2fa03b1e25b319b0bee76a12577ace2e6e41d5ed6be346a65",
+      "bytes": 5013
+    },
+    {
+      "path": "family154p/profiles/code/pcdf_check.py",
+      "destination": "profiles/code/pcdf_check.py",
+      "sha256": "36145072bcb33611f52086083a58a8ce46c08a849681a6d988b1edb331112e3e",
+      "bytes": 2398
+    },
+    {
+      "path": "family154p/profiles/code/pcdf_check.py",
+      "destination": "profiles/imports/originals/pcdf_check.py",
+      "sha256": "36145072bcb33611f52086083a58a8ce46c08a849681a6d988b1edb331112e3e",
+      "bytes": 2398
+    },
+    {
+      "path": "family154p/profiles/code/search.hpp",
+      "destination": "profiles/code/search.hpp",
+      "sha256": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281",
+      "bytes": 1487
+    },
+    {
+      "path": "family154p/profiles/code/search.hpp",
+      "destination": "profiles/imports/originals/search.hpp",
+      "sha256": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281",
+      "bytes": 1487
+    },
+    {
+      "path": "family154p/profiles/code/stored_profile.py",
+      "destination": "profiles/code/stored_profile.py",
+      "sha256": "4ca78070fd13f70f713774809c0f973e17bb388cbbe3e0e675e8e52e2207ecad",
+      "bytes": 917
+    },
+    {
+      "path": "family154p/profiles/code/stored_profile.py",
+      "destination": "profiles/imports/originals/stored_profile.py",
+      "sha256": "4ca78070fd13f70f713774809c0f973e17bb388cbbe3e0e675e8e52e2207ecad",
+      "bytes": 917
+    },
+    {
+      "path": "family154p/profiles/data/grid.tsv",
+      "destination": "profiles/data/grid.tsv",
+      "sha256": "536d5990d2f19003fc5b6534d3c209e87f46b68671f5d3577159d94b4d24df13",
+      "bytes": 162631
+    },
+    {
+      "path": "family154p/profiles/data/log_seeds.tsv",
+      "destination": "profiles/data/log_seeds.tsv",
+      "sha256": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a",
+      "bytes": 42889
+    },
+    {
+      "path": "family154p/profiles/data/log_table.txt",
+      "destination": "profiles/data/log_table.txt",
+      "sha256": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b",
+      "bytes": 12042
+    },
+    {
+      "path": "family154p/profiles/imports/DIRECT_METHOD_SOURCE.tex",
+      "destination": "profiles/imports/DIRECT_METHOD_SOURCE.tex",
+      "sha256": "2706488d6447ca2c21101aa8ee3d8e29fafc0e594be38fd0939a3107673df7e9",
+      "bytes": 27289
+    },
+    {
+      "path": "family154p/profiles/imports/PRIMITIVE_CDF.md",
+      "destination": "profiles/imports/PRIMITIVE_CDF.md",
+      "sha256": "2dd80d3616090d8d2501178ea18690215bd78f7d94496a846adeb0a508bc7077",
+      "bytes": 7078
+    },
+    {
+      "path": "family154p/profiles/imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "destination": "profiles/imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "sha256": "229aac5019834e7ff6d4e4d77890773054ac7b7b0d5caaed185b3ad3e7ed3714",
+      "bytes": 10847
+    },
+    {
+      "path": "family154p/profiles/build.py",
+      "destination": "profiles/build.py",
+      "sha256": "2c59e9c6e2b2fcf89f7ec19d033c69451e1c9d64782485e782e6dadb9a6df605",
+      "bytes": 1899
+    },
+    {
+      "path": "family154p/profiles/build.py",
+      "destination": "profiles/imports/originals/build.py",
+      "sha256": "2c59e9c6e2b2fcf89f7ec19d033c69451e1c9d64782485e782e6dadb9a6df605",
+      "bytes": 1899
+    },
+    {
+      "path": "family154p/profiles/generate.py",
+      "destination": "profiles/generate.py",
+      "sha256": "2e5d82a3feab8a72207725b5bf1f76068cff9d0694d458219a64c8ddb70103c0",
+      "bytes": 4627
+    },
+    {
+      "path": "family154p/profiles/generate.py",
+      "destination": "profiles/imports/originals/generate.py",
+      "sha256": "2e5d82a3feab8a72207725b5bf1f76068cff9d0694d458219a64c8ddb70103c0",
+      "bytes": 4627
+    },
+    {
+      "path": "family154p/profiles/run_negative.py",
+      "destination": "profiles/run_negative.py",
+      "sha256": "d2a47780349503ffe9d079e255cd64d9b8cb5094cb23867873a292fc4b67acd1",
+      "bytes": 1588
+    },
+    {
+      "path": "family154p/profiles/run_negative.py",
+      "destination": "profiles/imports/originals/run_negative.py",
+      "sha256": "d2a47780349503ffe9d079e255cd64d9b8cb5094cb23867873a292fc4b67acd1",
+      "bytes": 1588
+    },
+    {
+      "path": "family154p/profiles/verify_profiles.py",
+      "destination": "profiles/verify_profiles.py",
+      "sha256": "d0570af8e29a2d95a46f8623f014ae46e77577f36d88b66eff2d46c768da60e1",
+      "bytes": 7815
+    },
+    {
+      "path": "family154p/profiles/verify_profiles.py",
+      "destination": "profiles/imports/originals/verify_profiles.py",
+      "sha256": "d0570af8e29a2d95a46f8623f014ae46e77577f36d88b66eff2d46c768da60e1",
+      "bytes": 7815
+    },
+    {
+      "path": "next/NEXT165_NOTES.md",
+      "destination": "imports/NEXT165_NOTES.md",
+      "sha256": "4bf6373a39b18d7744ed616b5311c502c5449ac38c655a688eb499a895a409f8",
+      "bytes": 6437
+    },
+    {
+      "path": "family154p/code/assemble_closure.py",
+      "destination": "code/assemble_closure.py",
+      "sha256": "d31337eb2747c0d8ae29efa61839e94d27e642b9eb35439efab2e3937381dfde",
+      "bytes": 13831
+    },
+    {
+      "path": "family154p/code/assemble_closure.py",
+      "destination": "imports/originals/assemble_closure.py",
+      "sha256": "d31337eb2747c0d8ae29efa61839e94d27e642b9eb35439efab2e3937381dfde",
+      "bytes": 13831
+    },
+    {
+      "path": "family154p/code/candidate210.py",
+      "destination": "code/candidate210.py",
+      "sha256": "e7156442bece3120f77bcfce08e269fb79705343f7110cd5eb9de24059b201f0",
+      "bytes": 2208
+    },
+    {
+      "path": "family154p/code/candidate210.py",
+      "destination": "imports/originals/candidate210.py",
+      "sha256": "e7156442bece3120f77bcfce08e269fb79705343f7110cd5eb9de24059b201f0",
+      "bytes": 2208
+    },
+    {
+      "path": "family154p/code/exact.py",
+      "destination": "code/exact.py",
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59",
+      "bytes": 2297
+    },
+    {
+      "path": "family154p/code/exact.py",
+      "destination": "imports/originals/exact.py",
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59",
+      "bytes": 2297
+    },
+    {
+      "path": "family154p/code/finite.cpp",
+      "destination": "code/finite.cpp",
+      "sha256": "2baa41f10f403b0ce40476e80abcdc8c79c7b793f817840b534e82765c90a484",
+      "bytes": 8887
+    },
+    {
+      "path": "family154p/code/finite.cpp",
+      "destination": "imports/originals/finite.cpp",
+      "sha256": "2baa41f10f403b0ce40476e80abcdc8c79c7b793f817840b534e82765c90a484",
+      "bytes": 8887
+    },
+    {
+      "path": "family154p/code/independent_physical.py",
+      "destination": "code/independent_physical.py",
+      "sha256": "bcecb50b044ed5ecfb2747e97fe69bc969c3b0767e020ed0766d021c74c38b63",
+      "bytes": 9145
+    },
+    {
+      "path": "family154p/code/independent_physical.py",
+      "destination": "imports/originals/independent_physical.py",
+      "sha256": "bcecb50b044ed5ecfb2747e97fe69bc969c3b0767e020ed0766d021c74c38b63",
+      "bytes": 9145
+    },
+    {
+      "path": "family154p/code/inventory154.py",
+      "destination": "code/inventory154.py",
+      "sha256": "95c7b82b05de369a378b8dc616c6df8e892dd6c32fb2b3454a19bbef23b85a2b",
+      "bytes": 7063
+    },
+    {
+      "path": "family154p/code/inventory154.py",
+      "destination": "imports/originals/inventory154.py",
+      "sha256": "95c7b82b05de369a378b8dc616c6df8e892dd6c32fb2b3454a19bbef23b85a2b",
+      "bytes": 7063
+    },
+    {
+      "path": "family154p/code/log_inputs.py",
+      "destination": "code/log_inputs.py",
+      "sha256": "f8b8b150d388317bda204c8d41c96de0471f30ffcef2f1e5b851e6884bf9e14c",
+      "bytes": 2151
+    },
+    {
+      "path": "family154p/code/log_inputs.py",
+      "destination": "imports/originals/log_inputs.py",
+      "sha256": "f8b8b150d388317bda204c8d41c96de0471f30ffcef2f1e5b851e6884bf9e14c",
+      "bytes": 2151
+    },
+    {
+      "path": "family154p/code/run_finite154.py",
+      "destination": "code/run_finite154.py",
+      "sha256": "747b5e132ac8503ae1ca0d62176ba9828ebc31795c50e560813d188fe5cdb582",
+      "bytes": 4923
+    },
+    {
+      "path": "family154p/code/run_finite154.py",
+      "destination": "imports/originals/run_finite154.py",
+      "sha256": "747b5e132ac8503ae1ca0d62176ba9828ebc31795c50e560813d188fe5cdb582",
+      "bytes": 4923
+    },
+    {
+      "path": "family154p/data/log_table.txt",
+      "destination": "data/log_table.txt",
+      "sha256": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b",
+      "bytes": 12042
+    },
+    {
+      "path": "family154p/data/log_seeds.tsv",
+      "destination": "data/log_seeds.tsv",
+      "sha256": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a",
+      "bytes": 42889
+    },
+    {
+      "path": "family154p/insertion/code/insertion154.py",
+      "destination": "insertion/code/insertion165.py",
+      "sha256": "7d19d62f9341aa69137ed30424b893630b214496fc736cb4313cda1a961250d5",
+      "bytes": 4854
+    },
+    {
+      "path": "family154p/insertion/code/insertion154.py",
+      "destination": "imports/originals/insertion154.py",
+      "sha256": "7d19d62f9341aa69137ed30424b893630b214496fc736cb4313cda1a961250d5",
+      "bytes": 4854
+    },
+    {
+      "path": "family154p/insertion/code/verify_insertion154.py",
+      "destination": "insertion/code/verify_insertion165.py",
+      "sha256": "dcba901e4ded1e12ba07c460d9aae0837e6461772130bf1516a79585d53a43b0",
+      "bytes": 17907
+    },
+    {
+      "path": "family154p/insertion/code/verify_insertion154.py",
+      "destination": "imports/originals/verify_insertion154.py",
+      "sha256": "dcba901e4ded1e12ba07c460d9aae0837e6461772130bf1516a79585d53a43b0",
+      "bytes": 17907
+    },
+    {
+      "path": "family154p/insertion/INTEGRAL_CONSTANTS.md",
+      "destination": "insertion/INTEGRAL_CONSTANTS.md",
+      "sha256": "8bb96f33bab8a6804361083ee345dfa9f62662aeae2bcbb347b570e9e63be09e",
+      "bytes": 4572
+    },
+    {
+      "path": "family154p/insertion/REPAIR154_PROOF.md",
+      "destination": "insertion/REPAIR154_PROOF.md",
+      "sha256": "2dc1267793a7a6e5e6b697d9a779312c958b28fe602a8d546ad79d80e0c57dd8",
+      "bytes": 7427
+    },
+    {
+      "path": "family154p/verify_family.py",
+      "destination": "verify_family.py",
+      "sha256": "0f4b033c0ae70c018c30a198b14bfee3735e70e2e149fdc5f8721f2a96ba6e60",
+      "bytes": 7609
+    },
+    {
+      "path": "family154p/verify_family.py",
+      "destination": "imports/originals/verify_family.py",
+      "sha256": "0f4b033c0ae70c018c30a198b14bfee3735e70e2e149fdc5f8721f2a96ba6e60",
+      "bytes": 7609
+    },
+    {
+      "path": "family154p/profiles/PROOF.md",
+      "destination": "profiles/imports/originals/PROOF_154_PROFILES.md",
+      "sha256": "c295d64ae51064f148f46ae517a4073a013573b5ff4a44b35d8102fd31133784",
+      "bytes": 12721
+    }
+  ],
+  "adaptation": "Explicit odd nucleus165=(3,5,11), no330 index; all geometry and scalar results regenerated. Immutable originals preserved where edited."
+}

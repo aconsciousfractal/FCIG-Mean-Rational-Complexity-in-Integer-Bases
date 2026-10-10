@@ -1,0 +1,121 @@
+{
+  "source_root": "P72_110P_20261009/profiles",
+  "files": {
+    "code/exact.py": {
+      "bytes": 2297,
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59"
+    },
+    "code/search.hpp": {
+      "bytes": 1487,
+      "sha256": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281"
+    },
+    "code/pcdf_check.py": {
+      "bytes": 2398,
+      "sha256": "36145072bcb33611f52086083a58a8ce46c08a849681a6d988b1edb331112e3e"
+    },
+    "code/assemble_profiles.py": {
+      "bytes": 4047,
+      "sha256": "e400bb1ddf9cda2ff3ebcaa5a14a24cfd97f8623b57ef476227eba7accf715fe"
+    },
+    "code/stored_profile.py": {
+      "bytes": 917,
+      "sha256": "4ca78070fd13f70f713774809c0f973e17bb388cbbe3e0e675e8e52e2207ecad"
+    },
+    "code/algebra.cpp": {
+      "bytes": 697,
+      "sha256": "72623bddbaea1a7aa5e4fb3d6f1e1eda411a78059cfdc9684ee6e691a24417be"
+    },
+    "code/negative_profiles.py": {
+      "bytes": 5005,
+      "sha256": "f4f4bd45d0f9c26cd39073cd74466f3db930e303a99e593fea2b2fcf5c849e6d"
+    },
+    "code/angle.cpp": {
+      "bytes": 5151,
+      "sha256": "0726430ce7e28991c51b30fc1f12493b42e4b16d9fe62091a26c4ff8a5aa6ed3"
+    },
+    "code/core.py": {
+      "bytes": 474,
+      "sha256": "cfaa7461706553a720f849c0daaf18cff197c4cbcc6d2c98c1dc69023fdae56f"
+    },
+    "code/checks.py": {
+      "bytes": 6278,
+      "sha256": "b7ce792823e3bb6fc5279cc5a6953bfcf51e30d31d66098fb62ad6c6a650326e"
+    },
+    "code/assemble.py": {
+      "bytes": 2030,
+      "sha256": "547664ffbaf63dee9452fd5faf7be0e7ceb6d5a82553e64d3ca3a99cb1931fe1"
+    },
+    "code/kernel.hpp": {
+      "bytes": 5021,
+      "sha256": "b58322206bbc4418ccd2e8321d0fc208a5778af4c5f946f3b86f4b3885257b9b"
+    },
+    "code/custody.py": {
+      "bytes": 4099,
+      "sha256": "35e8acbf6561bc7d721588202dd7a4dfb079344f61193f0fd95e9d9a5ab3a6aa"
+    },
+    "code/audit_one.py": {
+      "bytes": 2778,
+      "sha256": "f439c9bad4e1efbe9224c5bc47548267e25a5674c8eb812e141a1cc1fc60f714"
+    },
+    "code/emit_profile.py": {
+      "bytes": 673,
+      "sha256": "f92cec02fa2a9a9fb7fc3c7e255fe8890907c7cb7bbf8c5899c8dbd138c0a16a"
+    },
+    "data/log_seeds.tsv": {
+      "bytes": 42889,
+      "sha256": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a"
+    },
+    "data/log_table.txt": {
+      "bytes": 12042,
+      "sha256": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b"
+    },
+    "data/grid.tsv": {
+      "bytes": 162631,
+      "sha256": "536d5990d2f19003fc5b6534d3c209e87f46b68671f5d3577159d94b4d24df13"
+    },
+    "imports/SOURCE_MANIFEST_78.json": {
+      "bytes": 13137,
+      "sha256": "e4a15b1a067e677b948359da721e06567d8f40ac8a82a50f4003a37ef50133a8"
+    },
+    "imports/provenance.json": {
+      "bytes": 4876,
+      "sha256": "b895e37c3195900fa1e6c8e985d72532f98a9428f1c501a9ddd05111a4030de6"
+    },
+    "imports/UNEQUAL_VALUATION_TRANSFER.md": {
+      "bytes": 10847,
+      "sha256": "229aac5019834e7ff6d4e4d77890773054ac7b7b0d5caaed185b3ad3e7ed3714"
+    },
+    "imports/PRIMITIVE_CDF.md": {
+      "bytes": 7078,
+      "sha256": "2dd80d3616090d8d2501178ea18690215bd78f7d94496a846adeb0a508bc7077"
+    },
+    "imports/DIRECT_METHOD_SOURCE.tex": {
+      "bytes": 27289,
+      "sha256": "2706488d6447ca2c21101aa8ee3d8e29fafc0e594be38fd0939a3107673df7e9"
+    },
+    "imports/78_to_110_source.diff": {
+      "bytes": 22547,
+      "sha256": "4a9e1539f0ed8dbc3a9efc1e15b8af435987b93f90bf8c90a695072a5dde038c"
+    },
+    "generate.py": {
+      "bytes": 4173,
+      "sha256": "df7847d7519e22e6ae3ba22bf9c1bde14c56bf7359a9a5ef8fbd53dc081b7706"
+    },
+    "build.py": {
+      "bytes": 1899,
+      "sha256": "694cf67cc9292208f9f7f45fc5f8e69390937e9e8f589cfbb28657fd3933a2cf"
+    },
+    "verify_profiles.py": {
+      "bytes": 7389,
+      "sha256": "031d451f270aba33602b61e3ef61004a7d5cd74826fd9f4927aa09567f03fcf3"
+    },
+    "run_small.py": {
+      "bytes": 514,
+      "sha256": "a14073d5dd7946b861163f01819b802395d1c23409c707c4b1a72106549b4cde"
+    },
+    "run_negative.py": {
+      "bytes": 1588,
+      "sha256": "e3d9a90a64c7227311a8a3f632a6d2a1b7221158d915693701ae112b8e75ff23"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "p": 11,
+    "k": 1,
+    "ag": 4,
+    "multiplier": null,
+    "index": 2310,
+    "stem": "q2310",
+    "simple_cap": "4/15"
+  },
+  {
+    "p": 11,
+    "k": 1,
+    "ag": 4,
+    "multiplier": 2,
+    "index": 4620,
+    "stem": "q2310_K4620_AG4",
+    "simple_cap": "6/25"
+  },
+  {
+    "p": 11,
+    "k": 1,
+    "ag": 4,
+    "multiplier": 6,
+    "index": 13860,
+    "stem": "q2310_K13860_AG4",
+    "simple_cap": "213/1000"
+  }
+]

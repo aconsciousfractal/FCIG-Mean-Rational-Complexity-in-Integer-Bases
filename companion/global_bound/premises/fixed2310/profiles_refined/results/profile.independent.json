@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "algebra": {
+    "branches": 41472,
+    "local_projective_checks": 1378944,
+    "tensor_constant_outputs": 6912,
+    "signed_direct_outputs": 14
+  },
+  "stratified_geometry": {
+    "witnesses": 96,
+    "independent_corner_logarithms": 12672,
+    "rational_interior_checks": 9504
+  },
+  "physical": {
+    "rows": [
+      {
+        "L": 1,
+        "M": 13860,
+        "mean_upper": "1463227713278358221/13860000000000000000",
+        "denominator_tests": 491724
+      },
+      {
+        "L": 2,
+        "M": 27720,
+        "mean_upper": "2994846073011786277/27720000000000000000",
+        "denominator_tests": 1383802
+      },
+      {
+        "L": 3,
+        "M": 41580,
+        "mean_upper": "4527851036160481171/41580000000000000000",
+        "denominator_tests": 2534256
+      },
+      {
+        "L": 5,
+        "M": 69300,
+        "mean_upper": "86820089947273939/787500000000000000",
+        "denominator_tests": 5442718
+      },
+      {
+        "L": 7,
+        "M": 97020,
+        "mean_upper": "3580646031607595437/32340000000000000000",
+        "denominator_tests": 9002650
+      }
+    ],
+    "state_modulus_incidences": 249480,
+    "denominator_tests": 18855150,
+    "conditional_parent_means": 18,
+    "fibre_states": 249480
+  },
+  "all_refined_records_consumed_by_this_python_audit": false,
+  "consumer_CPP_exhaustive_separately": true,
+  "geometric_second_audit_exhaustive": false,
+  "coarse_certificate_imported": true
+}

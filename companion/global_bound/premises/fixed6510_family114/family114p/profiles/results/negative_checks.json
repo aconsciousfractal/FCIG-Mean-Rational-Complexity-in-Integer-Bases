@@ -1,0 +1,464 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "truncated_stream",
+      "status": "REJECTED",
+      "expected_diagnostic": "truncated witness file",
+      "nonzero_exit": true
+    },
+    {
+      "name": "extra_record",
+      "status": "REJECTED",
+      "expected_diagnostic": "extra witness data",
+      "nonzero_exit": true
+    },
+    {
+      "name": "nonunit_zero_coefficients",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true
+    },
+    {
+      "name": "composite_parameter",
+      "status": "REJECTED",
+      "expected_diagnostic": "prime input",
+      "nonzero_exit": true
+    },
+    {
+      "name": "forbidden_core_prime_2",
+      "status": "REJECTED",
+      "expected_diagnostic": "prime parameter range",
+      "nonzero_exit": true
+    },
+    {
+      "name": "forbidden_core_prime_3",
+      "status": "REJECTED",
+      "expected_diagnostic": "prime parameter range",
+      "nonzero_exit": true
+    },
+    {
+      "name": "forbidden_core_prime_19",
+      "status": "REJECTED",
+      "expected_diagnostic": "prime parameter range",
+      "nonzero_exit": true
+    },
+    {
+      "name": "unsupported_core_index",
+      "status": "REJECTED",
+      "expected_diagnostic": "marked-114 divisor index multiplier",
+      "nonzero_exit": true
+    },
+    {
+      "name": "only_prime_2_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        2,
+        3,
+        19,
+        23
+      ],
+      "unique_nonunit_prime": 2,
+      "coefficient_pairs_checked": 5760,
+      "block_sha256": "5d0d294ece6f04f72c3cb61401c934230e333c7632a431d93a9864d8277b4d2d",
+      "stream_records": 15482880
+    },
+    {
+      "name": "only_prime_3_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        2,
+        3,
+        19,
+        23
+      ],
+      "unique_nonunit_prime": 3,
+      "coefficient_pairs_checked": 5760,
+      "block_sha256": "597a9c807c87621683526c3e694ef8e4b588142742c0205ff50bae1fba56c107",
+      "stream_records": 15482880
+    },
+    {
+      "name": "only_prime_19_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        2,
+        3,
+        19,
+        23
+      ],
+      "unique_nonunit_prime": 19,
+      "coefficient_pairs_checked": 5760,
+      "block_sha256": "5ad6c2d5d82fb85b50e24dc468f703a657b81e81f7f64264b23d391af6b84e3f",
+      "stream_records": 15482880
+    },
+    {
+      "name": "only_prime_23_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        2,
+        3,
+        19,
+        23
+      ],
+      "unique_nonunit_prime": 23,
+      "coefficient_pairs_checked": 5760,
+      "block_sha256": "4726750626f97e69d39cb906dff189313224592f2eea1143b4e8d5e01b1f8b18",
+      "stream_records": 15482880
+    },
+    {
+      "name": "radial_gap",
+      "status": "REJECTED",
+      "expected_diagnostic": "radial continuity"
+    },
+    {
+      "name": "angular_penalty_necessity",
+      "status": "PASS",
+      "vector": [
+        1,
+        3
+      ],
+      "sampled_squared_max": "169/17",
+      "continuous_squared_max": "10",
+      "node_tangents": "n/4 for -4<=n<=4"
+    },
+    {
+      "name": "cdf_below_three_halves_fails",
+      "status": "REJECTED",
+      "example_M": 3,
+      "x": "2/3",
+      "probability": "1",
+      "constant_rejected": "1499/1000"
+    },
+    {
+      "name": "allowed_prime5_actual_records",
+      "status": "PASS",
+      "prime_allowed": 5,
+      "q": 2622,
+      "records": [
+        {
+          "cell": 18,
+          "branch": 4032,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 1865
+        },
+        {
+          "cell": 262,
+          "branch": 3842,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": -625
+        },
+        {
+          "cell": 423,
+          "branch": 2832,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 875
+        },
+        {
+          "cell": 610,
+          "branch": 1212,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 655
+        },
+        {
+          "cell": 868,
+          "branch": 2610,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 695
+        },
+        {
+          "cell": 1011,
+          "branch": 3210,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 2305
+        },
+        {
+          "cell": 1325,
+          "branch": 4212,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 2345
+        },
+        {
+          "cell": 1932,
+          "branch": 1242,
+          "ci": -4,
+          "cj": 5,
+          "denominator_mark": 3935
+        },
+        {
+          "cell": 2345,
+          "branch": 4740,
+          "ci": -3,
+          "cj": 7,
+          "denominator_mark": 85
+        },
+        {
+          "cell": 2418,
+          "branch": 2204,
+          "ci": 2,
+          "cj": -37,
+          "denominator_mark": -37555
+        },
+        {
+          "cell": 108,
+          "branch": 4134,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": -955
+        },
+        {
+          "cell": 1493,
+          "branch": 2294,
+          "ci": 1,
+          "cj": -1,
+          "denominator_mark": -745
+        },
+        {
+          "cell": 1782,
+          "branch": 3140,
+          "ci": 3,
+          "cj": -5,
+          "denominator_mark": -7835
+        },
+        {
+          "cell": 1880,
+          "branch": 5754,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": -5
+        },
+        {
+          "cell": 1980,
+          "branch": 2814,
+          "ci": -6,
+          "cj": 7,
+          "denominator_mark": 15575
+        },
+        {
+          "cell": 2493,
+          "branch": 2724,
+          "ci": -39,
+          "cj": 41,
+          "denominator_mark": 102295
+        },
+        {
+          "cell": 125,
+          "branch": 3990,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 425
+        }
+      ],
+      "scope": "actual sampled coefficients from the complete stream; only the four marked primes are forbidden"
+    },
+    {
+      "name": "allowed_prime7_actual_records",
+      "status": "PASS",
+      "prime_allowed": 7,
+      "q": 2622,
+      "records": [
+        {
+          "cell": 81,
+          "branch": 84,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 1897
+        },
+        {
+          "cell": 292,
+          "branch": 4380,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 91
+        },
+        {
+          "cell": 389,
+          "branch": 1470,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 833
+        },
+        {
+          "cell": 423,
+          "branch": 2832,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 875
+        },
+        {
+          "cell": 495,
+          "branch": 414,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 1351
+        },
+        {
+          "cell": 1216,
+          "branch": 4974,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": -679
+        },
+        {
+          "cell": 1325,
+          "branch": 4212,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 2345
+        },
+        {
+          "cell": 1381,
+          "branch": 4140,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 413
+        },
+        {
+          "cell": 2065,
+          "branch": 5424,
+          "ci": 1,
+          "cj": -2,
+          "denominator_mark": -3899
+        },
+        {
+          "cell": 2418,
+          "branch": 2204,
+          "ci": 2,
+          "cj": -37,
+          "denominator_mark": -37555
+        },
+        {
+          "cell": 2491,
+          "branch": 5634,
+          "ci": 1,
+          "cj": -12,
+          "denominator_mark": 77
+        },
+        {
+          "cell": 267,
+          "branch": 1740,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 2149
+        },
+        {
+          "cell": 1122,
+          "branch": 2130,
+          "ci": 1,
+          "cj": -1,
+          "denominator_mark": -2443
+        },
+        {
+          "cell": 1980,
+          "branch": 2814,
+          "ci": -6,
+          "cj": 7,
+          "denominator_mark": 15575
+        },
+        {
+          "cell": 2081,
+          "branch": 80,
+          "ci": -5,
+          "cj": 7,
+          "denominator_mark": 10087
+        },
+        {
+          "cell": 2285,
+          "branch": 990,
+          "ci": -5,
+          "cj": 13,
+          "denominator_mark": 30121
+        },
+        {
+          "cell": 234,
+          "branch": 2904,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 1519
+        },
+        {
+          "cell": 344,
+          "branch": 2024,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 889
+        }
+      ],
+      "scope": "actual sampled coefficients from the complete stream; only the four marked primes are forbidden"
+    },
+    {
+      "name": "allowed_prime13_actual_records",
+      "status": "PASS",
+      "prime_allowed": 13,
+      "q": 2622,
+      "records": [
+        {
+          "cell": 292,
+          "branch": 4380,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 91
+        },
+        {
+          "cell": 356,
+          "branch": 314,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 481
+        },
+        {
+          "cell": 570,
+          "branch": 4580,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 949
+        },
+        {
+          "cell": 1496,
+          "branch": 4614,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 793
+        },
+        {
+          "cell": 348,
+          "branch": 852,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 1391
+        },
+        {
+          "cell": 2285,
+          "branch": 990,
+          "ci": -5,
+          "cj": 13,
+          "denominator_mark": 30121
+        },
+        {
+          "cell": 909,
+          "branch": 714,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 143
+        }
+      ],
+      "scope": "actual sampled coefficients from the complete stream; only the four marked primes are forbidden"
+    }
+  ],
+  "isolated_synthetic_files": true,
+  "positive_geometry_gate": "all selected profiles are separately produced and consumed in full"
+}

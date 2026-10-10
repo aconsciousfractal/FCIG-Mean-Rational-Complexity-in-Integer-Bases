@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "previous_root_manifest_sha256": "a0c939b13f16ada60e35d3e881c47da90689658ccb5756e1e2efcc1d76c3a48e",
+  "included_previous_manifest": "global/imports/SOURCE_MANIFEST_5610_102P.json",
+  "inherited_mathematical_theorems_declared_separately": true,
+  "rows": [
+    {
+      "source": "code/exact.py",
+      "source_sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59",
+      "current": "code/exact.py",
+      "current_sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59",
+      "byte_identical": true
+    },
+    {
+      "source": "code/candidate210.py",
+      "source_sha256": "e7156442bece3120f77bcfce08e269fb79705343f7110cd5eb9de24059b201f0",
+      "current": "code/candidate210.py",
+      "current_sha256": "e7156442bece3120f77bcfce08e269fb79705343f7110cd5eb9de24059b201f0",
+      "byte_identical": true
+    },
+    {
+      "source": "code/assemble_closure.py",
+      "source_sha256": "c129b4cac480b76ba3e2ca2bd089e2aea1d014c4e9e07ae8ac086dd4b50acf3e",
+      "current": "code/assemble_closure.py",
+      "current_sha256": "0bf1112b463b500670fd71b5fffc928de4c4030d5dc2cd325776b14e32ff1d06",
+      "byte_identical": false,
+      "diff": "imports/root_assemble_closure.py.diff"
+    },
+    {
+      "source": "code/custody.py",
+      "source_sha256": "852962e677449d00f2f3f5d070e39094e979d63cdfed5b5d177878335ce986fa",
+      "current": "code/custody.py",
+      "current_sha256": "8be7cab8e9e7721f7a965a08fe197ed37af47b4622185f05e905b9ac01fa8598",
+      "byte_identical": false,
+      "diff": "imports/root_custody.py.diff"
+    },
+    {
+      "source": "code/family_custody.py",
+      "source_sha256": "aab31dcb3ca006a22608c4f076cdde189c8e3e3566137434c3f82a1dc83147bd",
+      "current": "code/family_custody.py",
+      "current_sha256": "0579374d324bc319792f654cfe3a0a8c46da098638320caf3dba40a143beaef0",
+      "byte_identical": false,
+      "diff": "imports/root_family_custody.py.diff"
+    },
+    {
+      "source": "code/assemble_family.py",
+      "source_sha256": "2a131c3c7aad4704d1d4b18a074b22c818a5ba96efb06b64911a4da81c4cb1e6",
+      "current": "code/assemble_family.py",
+      "current_sha256": "da003d03b424d563b745cb7257c571238dbf4ce80289b826693c7aac4b46320d",
+      "byte_identical": false,
+      "diff": "imports/root_assemble_family.py.diff"
+    },
+    {
+      "source": "code/coverage.py",
+      "source_sha256": "a36c1b54e1f6da264a3d6eddd9400f5c6591f79a21e7f354e3eef76ab8cfef40",
+      "current": "code/coverage.py",
+      "current_sha256": "8cefe5b5232df45c7c4ec8fede1e27729cbf42ebe03159a4b914e1a4e8faa0c5",
+      "byte_identical": false,
+      "diff": "imports/root_coverage.py.diff"
+    },
+    {
+      "source": "verify.py",
+      "source_sha256": "a6b506aaa4c0307cd3ec4f470588f0b90e1fda9c95aad5c2a7894f687dc8e2ae",
+      "current": "verify.py",
+      "current_sha256": "8cf82450d989c8d70c636f18993778aa92fdccfb157c67780b81e4fdabfc9634",
+      "byte_identical": false,
+      "diff": "imports/root_verify.py.diff"
+    }
+  ]
+}

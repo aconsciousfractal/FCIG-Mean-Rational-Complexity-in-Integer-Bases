@@ -1,0 +1,117 @@
+{
+  "sources": [
+    {
+      "path": "P72_78P_20261008/profiles/code/algebra.cpp",
+      "sha256": "72623bddbaea1a7aa5e4fb3d6f1e1eda411a78059cfdc9684ee6e691a24417be",
+      "destination": "code/algebra.cpp"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/code/angle.cpp",
+      "sha256": "0726430ce7e28991c51b30fc1f12493b42e4b16d9fe62091a26c4ff8a5aa6ed3",
+      "destination": "code/angle.cpp"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/code/assemble.py",
+      "sha256": "547664ffbaf63dee9452fd5faf7be0e7ceb6d5a82553e64d3ca3a99cb1931fe1",
+      "destination": "code/assemble.py"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/code/assemble_profiles.py",
+      "sha256": "9d274866c40c3a93ca6044a5da6d66544425651277aad7ddc9ab2ad91a076617",
+      "destination": "code/assemble_profiles.py"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/code/audit_one.py",
+      "sha256": "f439c9bad4e1efbe9224c5bc47548267e25a5674c8eb812e141a1cc1fc60f714",
+      "destination": "code/audit_one.py"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/code/checks.py",
+      "sha256": "b7ce792823e3bb6fc5279cc5a6953bfcf51e30d31d66098fb62ad6c6a650326e",
+      "destination": "code/checks.py"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/code/core.py",
+      "sha256": "fa77e7401a93435d32ecfb0b32ba33b31b5448057201330713c04e16948f5efb",
+      "destination": "code/core.py"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/code/emit_profile.py",
+      "sha256": "f92cec02fa2a9a9fb7fc3c7e255fe8890907c7cb7bbf8c5899c8dbd138c0a16a",
+      "destination": "code/emit_profile.py"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/code/exact.py",
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59",
+      "destination": "code/exact.py"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/code/kernel.hpp",
+      "sha256": "0855083cc06ef7abf71bc930a791eebeb31f23072d79422383aa78093cf44415",
+      "destination": "code/kernel.hpp"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/code/negative_profiles.py",
+      "sha256": "7acfe6c211bc33d3b5ea90e04115888b6c9c066e0677991c3f336775f6ce2de6",
+      "destination": "code/negative_profiles.py"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/code/pcdf_check.py",
+      "sha256": "36145072bcb33611f52086083a58a8ce46c08a849681a6d988b1edb331112e3e",
+      "destination": "code/pcdf_check.py"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/code/search.hpp",
+      "sha256": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281",
+      "destination": "code/search.hpp"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/code/stored_profile.py",
+      "sha256": "4ca78070fd13f70f713774809c0f973e17bb388cbbe3e0e675e8e52e2207ecad",
+      "destination": "code/stored_profile.py"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/data/grid.tsv",
+      "sha256": "536d5990d2f19003fc5b6534d3c209e87f46b68671f5d3577159d94b4d24df13",
+      "destination": "data/grid.tsv"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/data/log_seeds.tsv",
+      "sha256": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a",
+      "destination": "data/log_seeds.tsv"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/data/log_table.txt",
+      "sha256": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b",
+      "destination": "data/log_table.txt"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/imports/DIRECT_METHOD_SOURCE.tex",
+      "sha256": "2706488d6447ca2c21101aa8ee3d8e29fafc0e594be38fd0939a3107673df7e9",
+      "destination": "imports/DIRECT_METHOD_SOURCE.tex"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/imports/PRIMITIVE_CDF.md",
+      "sha256": "2dd80d3616090d8d2501178ea18690215bd78f7d94496a846adeb0a508bc7077",
+      "destination": "imports/PRIMITIVE_CDF.md"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "sha256": "229aac5019834e7ff6d4e4d77890773054ac7b7b0d5caaed185b3ad3e7ed3714",
+      "destination": "imports/UNEQUAL_VALUATION_TRANSFER.md"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/generate.py",
+      "sha256": "745279d368cd2f814fe4455d7ba8595768c10d2bef6343babafdae1da0f468d9",
+      "destination": "generate.py"
+    },
+    {
+      "path": "P72_78P_20261008/profiles/verify_profiles.py",
+      "sha256": "c9c234f9ac5d0732c76c46b42faa8d44c763b10723aae40e06519a7def567f86",
+      "destination": "verify_profiles.py"
+    }
+  ],
+  "source_manifest_sha256": "e4a15b1a067e677b948359da721e06567d8f40ac8a82a50f4003a37ef50133a8",
+  "source_manifest_copy": "imports/SOURCE_MANIFEST_78.json",
+  "adaptation": "Explicit core change (2,3,13) to (2,5,11), projective labels216 and indices110,220,12100. First new prime13. Recompute every profile with marked CRT, unit tests, mixed valuations, CDF3/2. No imported numeric profile caps."
+}

@@ -71,3 +71,21 @@ Public sources and retained metadata are derived by documented relative-path,
 comment and digest-binding transformations; provenance identifies original
 and exported identities. Such transformations do not imply historical jobs
 were run with the exported sources. [AI-use disclosure](AI_USE.md).
+
+
+## Version 0.2.0 delta
+
+Start with the sharper global theorem and its appended proof sections in the
+same paper. Then inspect `companion/global_bound/README.md` and its finite
+certificate index. Check the seed CDF, residue-class cover, coupled shear,
+physical CDF lower profiles, support exclusions and cardinality tail as
+distinct obligations. A cap for one support is never mixed into the negative
+profile of another support. Arbitrary positive valuations are part of the
+statement, not inferred from squarefree experiments.
+
+Run the new producer, retained closure verifier and distinct checker using
+the `--closures-report` join in REPRODUCE.md. The scalar-only command states
+its conditional scope explicitly. The full C++ driver covers the later
+geometric and finite producers; the global companion lists the eight early
+closure commands separately. The original two-prime evidence is retained.
+No optimum or finite-length attainment is asserted.

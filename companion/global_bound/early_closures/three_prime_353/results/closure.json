@@ -1,0 +1,17 @@
+{
+  "F6p_replayed": false,
+  "G53_large_prime_result_replayed": false,
+  "all_lengths": true,
+  "all_positive_valuations": true,
+  "all_selected_complements_checked": true,
+  "common_delta_upper": "9414140526022369796829419012397/400151204788876624832000000000000",
+  "common_delta_upper_decimal": "0.023526458032257",
+  "entire_three_prime_sector_closed": false,
+  "global_Cstar_identified": false,
+  "remaining_three_prime_supports_after_G53_and_F6p_import": 89,
+  "selected_supports_closed": 353,
+  "status": "PASS",
+  "strict_margin_to_2_over_85": "20092973170363386699876789251/6802570481410902622144000000000000",
+  "worst_majorant_route": "analytic M=135837",
+  "worst_route_radical": 1677
+}

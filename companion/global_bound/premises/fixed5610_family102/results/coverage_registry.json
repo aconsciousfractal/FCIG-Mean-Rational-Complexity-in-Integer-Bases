@@ -1,0 +1,1319 @@
+{
+  "status": "PASS_WITH_DECLARED_HISTORICAL_DEPENDENCIES",
+  "newly_closed_radical": 5610,
+  "new_5610_premise_paid": true,
+  "new_102p_family_premise_paid": true,
+  "new_5610_closure_certificate_sha256": "c82cdacd09f4263a058e69d68c7b90b6556bff39f45e7367c39abf1e62c3d6f6",
+  "new_102p_family_certificate_sha256": "0a5e0956c1a0957db09e201accabc6e6416bdb3dd828e0d94d0cdfa9273628ca",
+  "all_positive_valuations": true,
+  "all_N_ge_1": true,
+  "normalization": "Delta(B,N)=mu(B^N)/ln(B)",
+  "first_open_four_prime_radical": 2002,
+  "first_open_four_prime_support": [
+    2,
+    7,
+    11,
+    13
+  ],
+  "declared_four_prime_families": [
+    {
+      "core": 30,
+      "new_prime_minimum": 7
+    },
+    {
+      "core": 42,
+      "new_prime_minimum": 11
+    },
+    {
+      "core": 70,
+      "new_prime_minimum": 11
+    },
+    {
+      "core": 66,
+      "new_prime_minimum": 13
+    },
+    {
+      "core": 105,
+      "new_prime_minimum": 11
+    },
+    {
+      "core": 78,
+      "new_prime_minimum": 17
+    },
+    {
+      "core": 110,
+      "new_prime_minimum": 13
+    },
+    {
+      "core": 102,
+      "new_prime_minimum": 19
+    }
+  ],
+  "historical_30p_includes_candidate_and_is_not_claimed_strictly_below_2_over_85": true,
+  "covered_four_prime_radicals_below_first_open": [
+    {
+      "radical": 210,
+      "primes": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 330,
+      "primes": [
+        2,
+        3,
+        5,
+        11
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 390,
+      "primes": [
+        2,
+        3,
+        5,
+        13
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 462,
+      "primes": [
+        2,
+        3,
+        7,
+        11
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 510,
+      "primes": [
+        2,
+        3,
+        5,
+        17
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 546,
+      "primes": [
+        2,
+        3,
+        7,
+        13
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 570,
+      "primes": [
+        2,
+        3,
+        5,
+        19
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 690,
+      "primes": [
+        2,
+        3,
+        5,
+        23
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 714,
+      "primes": [
+        2,
+        3,
+        7,
+        17
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 770,
+      "primes": [
+        2,
+        5,
+        7,
+        11
+      ],
+      "family": "70p"
+    },
+    {
+      "radical": 798,
+      "primes": [
+        2,
+        3,
+        7,
+        19
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 858,
+      "primes": [
+        2,
+        3,
+        11,
+        13
+      ],
+      "family": "66p"
+    },
+    {
+      "radical": 870,
+      "primes": [
+        2,
+        3,
+        5,
+        29
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 910,
+      "primes": [
+        2,
+        5,
+        7,
+        13
+      ],
+      "family": "70p"
+    },
+    {
+      "radical": 930,
+      "primes": [
+        2,
+        3,
+        5,
+        31
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 966,
+      "primes": [
+        2,
+        3,
+        7,
+        23
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 1110,
+      "primes": [
+        2,
+        3,
+        5,
+        37
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1122,
+      "primes": [
+        2,
+        3,
+        11,
+        17
+      ],
+      "family": "66p"
+    },
+    {
+      "radical": 1155,
+      "primes": [
+        3,
+        5,
+        7,
+        11
+      ],
+      "family": "105p"
+    },
+    {
+      "radical": 1190,
+      "primes": [
+        2,
+        5,
+        7,
+        17
+      ],
+      "family": "70p"
+    },
+    {
+      "radical": 1218,
+      "primes": [
+        2,
+        3,
+        7,
+        29
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 1230,
+      "primes": [
+        2,
+        3,
+        5,
+        41
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1254,
+      "primes": [
+        2,
+        3,
+        11,
+        19
+      ],
+      "family": "66p"
+    },
+    {
+      "radical": 1290,
+      "primes": [
+        2,
+        3,
+        5,
+        43
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1302,
+      "primes": [
+        2,
+        3,
+        7,
+        31
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 1326,
+      "primes": [
+        2,
+        3,
+        13,
+        17
+      ],
+      "family": "78p"
+    },
+    {
+      "radical": 1330,
+      "primes": [
+        2,
+        5,
+        7,
+        19
+      ],
+      "family": "70p"
+    },
+    {
+      "radical": 1365,
+      "primes": [
+        3,
+        5,
+        7,
+        13
+      ],
+      "family": "105p"
+    },
+    {
+      "radical": 1410,
+      "primes": [
+        2,
+        3,
+        5,
+        47
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1430,
+      "primes": [
+        2,
+        5,
+        11,
+        13
+      ],
+      "family": "110p"
+    },
+    {
+      "radical": 1482,
+      "primes": [
+        2,
+        3,
+        13,
+        19
+      ],
+      "family": "78p"
+    },
+    {
+      "radical": 1518,
+      "primes": [
+        2,
+        3,
+        11,
+        23
+      ],
+      "family": "66p"
+    },
+    {
+      "radical": 1554,
+      "primes": [
+        2,
+        3,
+        7,
+        37
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 1590,
+      "primes": [
+        2,
+        3,
+        5,
+        53
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1610,
+      "primes": [
+        2,
+        5,
+        7,
+        23
+      ],
+      "family": "70p"
+    },
+    {
+      "radical": 1722,
+      "primes": [
+        2,
+        3,
+        7,
+        41
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 1770,
+      "primes": [
+        2,
+        3,
+        5,
+        59
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1785,
+      "primes": [
+        3,
+        5,
+        7,
+        17
+      ],
+      "family": "105p"
+    },
+    {
+      "radical": 1794,
+      "primes": [
+        2,
+        3,
+        13,
+        23
+      ],
+      "family": "78p"
+    },
+    {
+      "radical": 1806,
+      "primes": [
+        2,
+        3,
+        7,
+        43
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 1830,
+      "primes": [
+        2,
+        3,
+        5,
+        61
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1870,
+      "primes": [
+        2,
+        5,
+        11,
+        17
+      ],
+      "family": "110p"
+    },
+    {
+      "radical": 1914,
+      "primes": [
+        2,
+        3,
+        11,
+        29
+      ],
+      "family": "66p"
+    },
+    {
+      "radical": 1938,
+      "primes": [
+        2,
+        3,
+        17,
+        19
+      ],
+      "family": "102p"
+    },
+    {
+      "radical": 1974,
+      "primes": [
+        2,
+        3,
+        7,
+        47
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 1995,
+      "primes": [
+        3,
+        5,
+        7,
+        19
+      ],
+      "family": "105p"
+    }
+  ],
+  "previous_first_open_five_prime_radical": 5610,
+  "first_five_prime_radical_not_closed_vs_c0": 6006,
+  "first_open_five_prime_support": [
+    2,
+    3,
+    7,
+    11,
+    13
+  ],
+  "five_prime_radicals_closed_below_2_over_85": [
+    2310,
+    2730,
+    3570,
+    3990,
+    4290,
+    4830,
+    5610
+  ],
+  "exact_five_prime_frontier": [
+    {
+      "radical": 2310,
+      "prime_support": [
+        2,
+        3,
+        5,
+        7,
+        11
+      ],
+      "closed_vs_c0": true
+    },
+    {
+      "radical": 2730,
+      "prime_support": [
+        2,
+        3,
+        5,
+        7,
+        13
+      ],
+      "closed_vs_c0": true
+    },
+    {
+      "radical": 3570,
+      "prime_support": [
+        2,
+        3,
+        5,
+        7,
+        17
+      ],
+      "closed_vs_c0": true
+    },
+    {
+      "radical": 3990,
+      "prime_support": [
+        2,
+        3,
+        5,
+        7,
+        19
+      ],
+      "closed_vs_c0": true
+    },
+    {
+      "radical": 4290,
+      "prime_support": [
+        2,
+        3,
+        5,
+        11,
+        13
+      ],
+      "closed_vs_c0": true
+    },
+    {
+      "radical": 4830,
+      "prime_support": [
+        2,
+        3,
+        5,
+        7,
+        23
+      ],
+      "closed_vs_c0": true
+    },
+    {
+      "radical": 5610,
+      "prime_support": [
+        2,
+        3,
+        5,
+        11,
+        17
+      ],
+      "closed_vs_c0": true
+    },
+    {
+      "radical": 6006,
+      "prime_support": [
+        2,
+        3,
+        7,
+        11,
+        13
+      ],
+      "closed_vs_c0": false
+    }
+  ],
+  "two_exhaustive_radical_inventories_agree": true,
+  "global_lower_candidate": "632899864073014/26735537653587345",
+  "global_upper_expression": "(log(20/3)+631/1250)/log(6006)",
+  "global_upper": "2401919984885881302039978339221/8700514248543275586033261121354",
+  "global_upper_decimal": "0.276066438864581",
+  "simple_strict_global_upper": "7/25",
+  "global_numerical_bound_changed_this_task": true,
+  "previous_global_upper_decimal": "0.278247780523373",
+  "previous_unrounded_integration_upper_decimal": "0.278243711971095",
+  "unrounded_integration_upper": "12507003212058827491663930470521415421591/45311409873340089011799548835468568067415",
+  "unrounded_integration_upper_decimal": "0.276023263169695",
+  "independent_high_precision_logarithm_series_used": true,
+  "independent_finite_endpoint_integrals": [
+    {
+      "base_min": 6006,
+      "cut_z": "20/3",
+      "kappa_squared": "103/3",
+      "upper": "12507003212058827491663930470521415421591/45311409873340089011799548835468568067415",
+      "upper_decimal": "0.276023263169695",
+      "independent_log_series_terms": 160,
+      "square_root_decimal_places": 40,
+      "finite_endpoint_enclosure_checked": true,
+      "all_real_M_monotonicity_checked": true
+    },
+    {
+      "base_min": 2002,
+      "cut_z": "4",
+      "kappa_squared": "13",
+      "upper": "213747923426154717242375533726750756603493/844585529988469622144652525131441964269280",
+      "upper_decimal": "0.253080257518825",
+      "independent_log_series_terms": 160,
+      "square_root_decimal_places": 40,
+      "finite_endpoint_enclosure_checked": true,
+      "all_real_M_monotonicity_checked": true
+    },
+    {
+      "base_min": 30030,
+      "cut_z": "37/4",
+      "kappa_squared": "199/3",
+      "upper": "459273500007558720634819740644187166950858833/1737414389330715037373925865161990670928457000",
+      "upper_decimal": "0.264343096746471",
+      "independent_log_series_terms": 160,
+      "square_root_decimal_places": 40,
+      "finite_endpoint_enclosure_checked": true,
+      "all_real_M_monotonicity_checked": true
+    },
+    {
+      "base_min": 510510,
+      "cut_z": "29/2",
+      "kappa_squared": "487/3",
+      "upper": "846314808198452962855609480263185940624619913/3509480941731828772622054336666717169681417660",
+      "upper_decimal": "0.241150991343131",
+      "independent_log_series_terms": 160,
+      "square_root_decimal_places": 40,
+      "finite_endpoint_enclosure_checked": true,
+      "all_real_M_monotonicity_checked": true
+    },
+    {
+      "base_min": 9699690,
+      "cut_z": "17",
+      "kappa_squared": "679/3",
+      "upper": "19835713870464738576696827839627293712205882437/95690497425324814851479430885550661220319785480",
+      "upper_decimal": "0.207290320399309",
+      "independent_log_series_terms": 160,
+      "square_root_decimal_places": 40,
+      "finite_endpoint_enclosure_checked": true,
+      "all_real_M_monotonicity_checked": true
+    },
+    {
+      "base_min": 223092870,
+      "cut_z": "40",
+      "kappa_squared": "1201",
+      "upper": "134212997512333114117174276541598024613363670333/618784937331833967586490734001813845497324005280",
+      "upper_decimal": "0.216897647979365",
+      "independent_log_series_terms": 160,
+      "square_root_decimal_places": 40,
+      "finite_endpoint_enclosure_checked": true,
+      "all_real_M_monotonicity_checked": true
+    },
+    {
+      "base_min": 6469693230,
+      "cut_z": "87",
+      "kappa_squared": "5809",
+      "upper": "1156890617812815274059021249639367869254746310279/5272033483891795797321011415904801011343028891640",
+      "upper_decimal": "0.219439163531034",
+      "independent_log_series_terms": 160,
+      "square_root_decimal_places": 40,
+      "finite_endpoint_enclosure_checked": true,
+      "all_real_M_monotonicity_checked": true
+    },
+    {
+      "base_min": 200560490130,
+      "cut_z": "669",
+      "kappa_squared": "1048579/3",
+      "upper": "12602259760689155294482589892066530567424003931323158957/46814047250338392508852395566559799296662781449836023000",
+      "upper_decimal": "0.269198253534853",
+      "independent_log_series_terms": 160,
+      "square_root_decimal_places": 40,
+      "finite_endpoint_enclosure_checked": true,
+      "all_real_M_monotonicity_checked": true
+    }
+  ],
+  "reused_periodic_CDF": {
+    "CDF": "min(1,3*x/2,quadratic*x+linear*sqrt(x/M)+constant/M)",
+    "all_M_ge_1": true,
+    "all_real_x_ge_0": true,
+    "constant_coefficient": "221184/715715",
+    "discrepancy_maximum": "744773/1431430",
+    "discrepancy_maximum_first_at": 18653,
+    "discrepancy_minimum": "-134597/1431430",
+    "discrepancy_minimum_first_at": 11376,
+    "integer_weight_stream_sha256": "fdc7868422c1578cf8d682575b9724630d1b59eb64a83fd3021e93bcee2a7a74",
+    "large_Y_at_least_M_covered_by_probability_1": true,
+    "linear_coefficient": "45173053/51531480",
+    "mean": "442368/715715",
+    "period": 30030,
+    "primes": [
+      2,
+      3,
+      5,
+      7,
+      11,
+      13
+    ],
+    "quadratic_coefficient": "6414336/5010005",
+    "small_Y_below_1_event_empty": true,
+    "sqrt5_strict_upper": "161/72",
+    "two_weight_algorithms_agree": true,
+    "weight_stream_format": "ASCII decimal P*w(n), LF, n=1,...,P",
+    "weights_checked": 30030
+  },
+  "rechecked_uniform_covering": {
+    "H": 132,
+    "all_forbidden_classes": true,
+    "all_integer_intervals": true,
+    "cases": [
+      {
+        "CRT_intersection_lower": 8,
+        "case": "3_and_5",
+        "ceil_terms": [
+          44,
+          27,
+          19,
+          12,
+          11,
+          8,
+          7,
+          6,
+          5
+        ],
+        "length": 132,
+        "ordered_prime_lower_bounds": [
+          3,
+          5,
+          7,
+          11,
+          13,
+          17,
+          19,
+          23,
+          29
+        ],
+        "parity": "odd",
+        "upper_covered": 131
+      },
+      {
+        "CRT_intersection_lower": 0,
+        "case": "no_3",
+        "ceil_terms": [
+          27,
+          19,
+          12,
+          11,
+          8,
+          7,
+          6,
+          5,
+          5
+        ],
+        "length": 132,
+        "ordered_prime_lower_bounds": [
+          5,
+          7,
+          11,
+          13,
+          17,
+          19,
+          23,
+          29,
+          31
+        ],
+        "parity": "odd",
+        "upper_covered": 100
+      },
+      {
+        "CRT_intersection_lower": 0,
+        "case": "3_but_no_5",
+        "ceil_terms": [
+          44,
+          19,
+          12,
+          11,
+          8,
+          7,
+          6,
+          5,
+          5
+        ],
+        "length": 132,
+        "ordered_prime_lower_bounds": [
+          3,
+          7,
+          11,
+          13,
+          17,
+          19,
+          23,
+          29,
+          31
+        ],
+        "parity": "odd",
+        "upper_covered": 117
+      },
+      {
+        "CRT_intersection_lower": 4,
+        "case": "3_and_5",
+        "ceil_terms": [
+          22,
+          14,
+          10,
+          6,
+          6,
+          4,
+          4,
+          3
+        ],
+        "length": 66,
+        "ordered_prime_lower_bounds": [
+          3,
+          5,
+          7,
+          11,
+          13,
+          17,
+          19,
+          23
+        ],
+        "parity": "even",
+        "upper_covered": 65
+      },
+      {
+        "CRT_intersection_lower": 0,
+        "case": "no_3",
+        "ceil_terms": [
+          14,
+          10,
+          6,
+          6,
+          4,
+          4,
+          3,
+          3
+        ],
+        "length": 66,
+        "ordered_prime_lower_bounds": [
+          5,
+          7,
+          11,
+          13,
+          17,
+          19,
+          23,
+          29
+        ],
+        "parity": "even",
+        "upper_covered": 50
+      },
+      {
+        "CRT_intersection_lower": 0,
+        "case": "3_but_no_5",
+        "ceil_terms": [
+          22,
+          10,
+          6,
+          6,
+          4,
+          4,
+          3,
+          3
+        ],
+        "length": 66,
+        "ordered_prime_lower_bounds": [
+          3,
+          7,
+          11,
+          13,
+          17,
+          19,
+          23,
+          29
+        ],
+        "parity": "even",
+        "upper_covered": 58
+      }
+    ],
+    "residual_primes_at_most": 9
+  },
+  "other_prime_count_sectors": [
+    {
+      "H": 6,
+      "all_N_ge_1": true,
+      "all_positive_valuations": true,
+      "base_min": 2002,
+      "bound_without_endpoint_subtractions_upper": "397116751353430189164411705492537119406487/1568515984264300726840068975244106505071520",
+      "bound_without_endpoint_subtractions_upper_decimal": "0.253179919960902",
+      "correction_without_endpoint_subtractions_upper": "111079799576203855373681812444388640657847/206332045920000000000000000000000000000000",
+      "cut_z": "4",
+      "cutoff_ratio_squared_at_Q": "13013/8",
+      "derivative_M_squared_gate_margin": "86105727951091644899/4337305937284320",
+      "derivative_M_upper_at_Q": "-46636019188397386430459914586296137005753/2885762880000000000000000000000000000000",
+      "domain": "residual four-prime supports",
+      "finite_endpoint_subtraction_E": "547127467/360720360",
+      "finite_endpoint_subtraction_E_over_Q": "547127467/722162160720",
+      "full_correction_lower": "43136907894412610423098482617244658085879/80240240080000000000000000000000000000000",
+      "full_correction_upper": "59728026315340537508905591316209268046533/111101870880000000000000000000000000000000",
+      "full_correction_upper_decimal": "0.537596944518173",
+      "historical_classic_bound": {
+        "K": "39/2",
+        "lower": "3970414465569701118031500557029/15203803919750331789276031768864",
+        "upper": "1985207232784850559015750278515/7601901959875165894638015884431",
+        "upper_decimal": "0.261146124123055"
+      },
+      "kappa_squared": "13",
+      "log_cutoff_ratio_squared_lower": "1848565648774230348255643710041/250000000000000000000000000000",
+      "lower": "154373500252222851341715663246999937359159/609978438325005838215582379261677214434560",
+      "mean_lower": "154373500252222851341715663246999937359159/80240240080000000000000000000000000000000",
+      "mean_upper": "213747923426154717242375533726750756603493/111101870880000000000000000000000000000000",
+      "mean_upper_decimal": "1.923891305638064",
+      "monotone_in_M_for_every_real_M_ge_Q": true,
+      "normalization": "Delta(B,N)=mu(B^N)/ln(B)",
+      "omega": 4,
+      "tail_A": "6414336/385385",
+      "tail_constant_is_not_integrated_to_infinity": true,
+      "tail_event_empty_for": "z>sqrt(kappa_squared*M)",
+      "upper": "213747923426154717242375533726750756603493/844585529988469622144652525131441964269280",
+      "upper_decimal": "0.253080257518825"
+    },
+    {
+      "H": 14,
+      "all_N_ge_1": true,
+      "all_positive_valuations": true,
+      "base_min": 30030,
+      "bound_without_endpoint_subtractions_upper": "240576291774806490570619864146955182688545103/910074203935136448148246881751518922867287000",
+      "bound_without_endpoint_subtractions_upper_decimal": "0.264347995728877",
+      "correction_without_endpoint_subtractions_upper": "44205593240261970657222844801862054220507703/88271428395150000000000000000000000000000000",
+      "cut_z": "37/4",
+      "cutoff_ratio_squared_at_Q": "31871840/1369",
+      "derivative_M_squared_gate_margin": "796303573366776101896519/520476712474118400",
+      "derivative_M_upper_at_Q": "-29078143606148264915094730571202971425451/444888444000000000000000000000000000000",
+      "domain": "all bases with this prime count",
+      "finite_endpoint_subtraction_E": "547127467/360720360",
+      "finite_endpoint_subtraction_E_over_Q": "547127467/10832432410800",
+      "full_correction_lower": "464111915428855504400839870419463728142108817/926849998149075000000000000000000000000000000",
+      "full_correction_upper": "84383984623428273527425430985373012602787433/168518181481650000000000000000000000000000000",
+      "full_correction_upper_decimal": "0.500741130016389",
+      "historical_classic_bound": {
+        "K": "199/2",
+        "lower": "2800078822082273542996444585205/10309952160977375960634020454581",
+        "upper": "5600157644164547085992889170411/20619904321954751921268040909160",
+        "upper_decimal": "0.271589894731076"
+      },
+      "kappa_squared": "199/3",
+      "log_cutoff_ratio_squared_lower": "628462349624068188348852103331/62500000000000000000000000000",
+      "lower": "2526004250041572963491508573542014727058352442/9555779141318932705556592258391875540104662575",
+      "mean_lower": "1263002125020786481745754286771007363529176221/463424999074537500000000000000000000000000000",
+      "mean_upper": "459273500007558720634819740644187166950858833/168518181481650000000000000000000000000000000",
+      "mean_upper_decimal": "2.725364681540723",
+      "monotone_in_M_for_every_real_M_ge_Q": true,
+      "normalization": "Delta(B,N)=mu(B^N)/ln(B)",
+      "omega": 6,
+      "tail_A": "425484288/5010005",
+      "tail_constant_is_not_integrated_to_infinity": true,
+      "tail_event_empty_for": "z>sqrt(kappa_squared*M)",
+      "upper": "459273500007558720634819740644187166950858833/1737414389330715037373925865161990670928457000",
+      "upper_decimal": "0.264343096746471"
+    },
+    {
+      "H": 22,
+      "all_N_ge_1": true,
+      "all_positive_valuations": true,
+      "base_min": 510510,
+      "bound_without_endpoint_subtractions_upper": "5757248990022313692895302586824394153908979/23874020011781148113075199569161341290349780",
+      "bound_without_endpoint_subtractions_upper_decimal": "0.241151217397878",
+      "correction_without_endpoint_subtractions_upper": "899767864456642460846578935224286287857939/1816458904260000000000000000000000000000000",
+      "cut_z": "29/2",
+      "cutoff_ratio_squared_at_Q": "331491160/841",
+      "derivative_M_squared_gate_margin": "2762055984129109754505847/43373059372843200",
+      "derivative_M_upper_at_Q": "-572549500413657915275338854345955020320509/2092178088000000000000000000000000000000",
+      "domain": "all bases with this prime count",
+      "finite_endpoint_subtraction_E": "547127467/360720360",
+      "finite_endpoint_subtraction_E_over_Q": "547127467/184151350983600",
+      "full_correction_lower": "2431343432726089921772924696285918039110211/4908445936143750000000000000000000000000000",
+      "full_correction_upper": "132265082740299291744447103477970084315117033/267019458926220000000000000000000000000000000",
+      "full_correction_upper_decimal": "0.495338741499156",
+      "historical_classic_bound": {
+        "K": "487/2",
+        "lower": "1623779235630661120328169677448/6571582752516796020441777536227",
+        "upper": "6495116942522644481312678709793/26286331010067184081767110144906",
+        "upper_decimal": "0.247091042870728"
+      },
+      "kappa_squared": "487/3",
+      "log_cutoff_ratio_squared_lower": "6442260020297507352343070422487/500000000000000000000000000000",
+      "lower": "62229030014592129621735991195801674866042069/258050069244987409751621642401984131554437050",
+      "mean_lower": "62229030014592129621735991195801674866042069/19633783744575000000000000000000000000000000",
+      "mean_upper": "846314808198452962855609480263185940624619913/267019458926220000000000000000000000000000000",
+      "mean_upper_decimal": "3.169487390925685",
+      "monotone_in_M_for_every_real_M_ge_Q": true,
+      "normalization": "Delta(B,N)=mu(B^N)/ln(B)",
+      "omega": 7,
+      "tail_A": "1041260544/5010005",
+      "tail_constant_is_not_integrated_to_infinity": true,
+      "tail_event_empty_for": "z>sqrt(kappa_squared*M)",
+      "upper": "846314808198452962855609480263185940624619913/3509480941731828772622054336666717169681417660",
+      "upper_decimal": "0.241150991343131"
+    },
+    {
+      "H": 26,
+      "all_N_ge_1": true,
+      "all_positive_valuations": true,
+      "base_min": 9699690,
+      "bound_without_endpoint_subtractions_upper": "944557847646734879842706087601299700581232497/4556690353586895945308544327883364820015227880",
+      "bound_without_endpoint_subtractions_upper_decimal": "0.207290330119361",
+      "correction_without_endpoint_subtractions_upper": "142071938250225137616404038688940014613614177/283242316036680000000000000000000000000000000",
+      "cut_z": "17",
+      "cutoff_ratio_squared_at_Q": "129139010/17",
+      "derivative_M_squared_gate_margin": "36585534593518273304517181/21686529686421600",
+      "derivative_M_upper_at_Q": "-2959477492240539363091505544763200919264367/2452898448000000000000000000000000000000",
+      "domain": "all bases with this prime count",
+      "finite_endpoint_subtraction_E": "547127467/360720360",
+      "finite_endpoint_subtraction_E_over_Q": "547127467/3498875668688400",
+      "full_correction_lower": "7458774432845084974861212031168583978909562481/14870221591925700000000000000000000000000000000",
+      "full_correction_upper": "2983509773138033989944484812467740306885897717/5948088636770280000000000000000000000000000000",
+      "full_correction_upper_decimal": "0.501591343930953",
+      "historical_classic_bound": {
+        "K": "679/2",
+        "lower": "1706868486749687704451210560922/8043802242100016250446291252171",
+        "upper": "2275824648999583605934947414563/10725069656133355000595055002894",
+        "upper_decimal": "0.212196724307344"
+      },
+      "kappa_squared": "679/3",
+      "log_cutoff_ratio_squared_lower": "15843186634978186776220342396819/1000000000000000000000000000000",
+      "lower": "49589284676161846441742069599052597270617598581/239226243563312037128698577213891523272391389400",
+      "mean_lower": "49589284676161846441742069599052597270617598581/14870221591925700000000000000000000000000000000",
+      "mean_upper": "19835713870464738576696827839627293712205882437/5948088636770280000000000000000000000000000000",
+      "mean_upper_decimal": "3.334804687987169",
+      "monotone_in_M_for_every_real_M_ge_Q": true,
+      "normalization": "Delta(B,N)=mu(B^N)/ln(B)",
+      "omega": 8,
+      "tail_A": "207396864/715715",
+      "tail_constant_is_not_integrated_to_infinity": true,
+      "tail_event_empty_for": "z>sqrt(kappa_squared*M)",
+      "upper": "19835713870464738576696827839627293712205882437/95690497425324814851479430885550661220319785480",
+      "upper_decimal": "0.207290320399309"
+    },
+    {
+      "H": 60,
+      "all_N_ge_1": true,
+      "all_positive_valuations": true,
+      "base_min": 223092870,
+      "bound_without_endpoint_subtractions_upper": "163874234104009891229761021418312606365523407/755537164019333293756398942615157320509553120",
+      "bound_without_endpoint_subtractions_upper_decimal": "0.216897648333043",
+      "correction_without_endpoint_subtractions_upper": "18887956675610685634068464807246470288346287/39303609465120000000000000000000000000000000",
+      "cut_z": "40",
+      "cutoff_ratio_squared_at_Q": "26793453687/160",
+      "derivative_M_squared_gate_margin": "2679067359806672201758929407/13011917811852960",
+      "derivative_M_upper_at_Q": "-40908700895081118079202649502665699047796191/7214407200000000000000000000000000000000",
+      "domain": "all bases with this prime count",
+      "finite_endpoint_subtraction_E": "547127467/360720360",
+      "finite_endpoint_subtraction_E_over_Q": "547127467/80474140379833200",
+      "full_correction_lower": "11899412537287819026386209751641656708546525737/24761273963025600000000000000000000000000000000",
+      "full_correction_upper": "15469236298474164734302072677134859166155609053/32189656151933280000000000000000000000000000000",
+      "full_correction_upper_decimal": "0.480565440819259",
+      "historical_classic_bound": {
+        "K": "3603/2",
+        "lower": "4248187465094073961485425412841/19223098700129182191699335336152",
+        "upper": "2832124976729382640990283608561/12815399133419454794466223557434",
+        "upper_decimal": "0.220993895488116"
+      },
+      "kappa_squared": "1201",
+      "log_cutoff_ratio_squared_lower": "18936249613981293126987261651167/1000000000000000000000000000000",
+      "lower": "103240767317179318551672520416588561163205085737/475988413332179975066531333847573873194981491200",
+      "mean_lower": "103240767317179318551672520416588561163205085737/24761273963025600000000000000000000000000000000",
+      "mean_upper": "134212997512333114117174276541598024613363670333/32189656151933280000000000000000000000000000000",
+      "mean_upper_decimal": "4.169444894933195",
+      "monotone_in_M_for_every_real_M_ge_Q": true,
+      "normalization": "Delta(B,N)=mu(B^N)/ln(B)",
+      "omega": 9,
+      "tail_A": "7703617536/5010005",
+      "tail_constant_is_not_integrated_to_infinity": true,
+      "tail_event_empty_for": "z>sqrt(kappa_squared*M)",
+      "upper": "134212997512333114117174276541598024613363670333/618784937331833967586490734001813845497324005280",
+      "upper_decimal": "0.216897647979365"
+    },
+    {
+      "H": 132,
+      "all_N_ge_1": true,
+      "all_positive_valuations": true,
+      "base_min": 6469693230,
+      "bound_without_endpoint_subtractions_upper": "4237694570943326083366378203807208312288448023/19311477962973610979197844014303300407849922680",
+      "bound_without_endpoint_subtractions_upper_decimal": "0.219439163541412",
+      "correction_without_endpoint_subtractions_upper": "419997358834415149546013948028212996945695423/854853505866360000000000000000000000000000000",
+      "cut_z": "87",
+      "cutoff_ratio_squared_at_Q": "431982160610/87",
+      "derivative_M_squared_gate_margin": "626309183577828679314070539551/21686529686421600",
+      "derivative_M_upper_at_Q": "-646141197582485499625417517012007391543445759/20921780880000000000000000000000000000000",
+      "domain": "all bases with this prime count",
+      "finite_endpoint_subtraction_E": "547127467/360720360",
+      "finite_endpoint_subtraction_E_over_Q": "547127467/2333750071015162800",
+      "full_correction_lower": "114843027751484965070174086349859571997956573/233749005510332812500000000000000000000000000",
+      "full_correction_upper": "114659278907082589126061807811702148166174850479/233375007101516280000000000000000000000000000000",
+      "full_correction_upper_decimal": "0.491309160870028",
+      "historical_classic_bound": {
+        "K": "17427/2",
+        "lower": "3357542942033565627923518007633/15060263020077104145921738245676",
+        "upper": "387408801003872957068098231650/1737722656162742786067892874501",
+        "upper_decimal": "0.222940524847247"
+      },
+      "kappa_squared": "5809",
+      "log_cutoff_ratio_squared_lower": "22325742010799021283518113737379/1000000000000000000000000000000",
+      "lower": "9269956873500122388293439500313558836251841234/42243858044004774016995283781290339634215788525",
+      "mean_lower": "4634978436750061194146719750156779418125920617/934996022041331250000000000000000000000000000",
+      "mean_upper": "1156890617812815274059021249639367869254746310279/233375007101516280000000000000000000000000000000",
+      "mean_upper_decimal": "4.957217279524611",
+      "monotone_in_M_for_every_real_M_ge_Q": true,
+      "normalization": "Delta(B,N)=mu(B^N)/ln(B)",
+      "omega": 10,
+      "tail_A": "37260877824/5010005",
+      "tail_constant_is_not_integrated_to_infinity": true,
+      "tail_event_empty_for": "z>sqrt(kappa_squared*M)",
+      "upper": "1156890617812815274059021249639367869254746310279/5272033483891795797321011415904801011343028891640",
+      "upper_decimal": "0.219439163531034"
+    }
+  ],
+  "infinite_prime_count_tail": {
+    "C_lower": "2100376626781525882413764982010788226157406954629730001/299808897977241996443100000000000000000000000000000000",
+    "C_upper": "12602259760689155294482589892066530567424003931323158957/1798853387863451978658600000000000000000000000000000000",
+    "H_at_anchor": 1024,
+    "Kanold_universal_bound_is_a_declared_classical_import": true,
+    "all_N_ge_1": true,
+    "all_positive_valuations": true,
+    "base_growth_lower": "37^v",
+    "base_min": 200560490130,
+    "bound_without_endpoint_subtractions_upper": "62080097343363346528994144788505076686817753356271719/230611070198711293147056135795861080279127002215941000",
+    "bound_without_endpoint_subtractions_upper_decimal": "0.269198253535144",
+    "correction_without_endpoint_subtractions_upper": "4430088982428826720659395143436038005239824440266519/8861346738243605806200000000000000000000000000000000",
+    "cut_growth": "cut_z*2^v",
+    "cut_z": "669",
+    "cutoff_ratio_squared_at_Q": "70101172726675090/447561",
+    "derivative_M_squared_gate_margin": "3504695201782859851608749956663487/65059589059264800",
+    "derivative_M_upper_at_Q": "-9302374465236850574665521098469535834826837807/53627093520000000000000000000000000000000",
+    "derivative_v_upper": "-310873824940377883885747171034818039176947092610967458536369003672249755293382651233/42829842568177428063300000000000000000000000000000000000000000000000000000000000000",
+    "finite_cardinality_scan_used_as_proof": false,
+    "finite_endpoint_subtraction_E": "547127467/360720360",
+    "finite_endpoint_subtraction_E_over_Q": "547127467/72346252201470046800",
+    "from_omega": 11,
+    "full_correction_lower": "149884677236574628898439285686252226328664268301330501/299808897977241996443100000000000000000000000000000000",
+    "full_correction_upper": "899308063419447773390635714117515715063684361374103357/1798853387863451978658600000000000000000000000000000000",
+    "full_correction_upper_decimal": "0.499934052150621",
+    "function": "(C+v*log(2))/(log(base_min)+v*log(next_prime_lower))",
+    "kappa_growth_upper": "sqrt(kappa_squared)*2^v",
+    "kappa_squared": "1048579/3",
+    "log_cutoff_ratio_squared_lower": "25777147797893998562096728706461/1000000000000000000000000000000",
+    "lower": "2100376626781525882413764982010788226157406954629730001/7802341208389732084808732594426933025008440816969113600",
+    "mean_lower": "2100376626781525882413764982010788226157406954629730001/299808897977241996443100000000000000000000000000000000",
+    "mean_upper": "12602259760689155294482589892066530567424003931323158957/1798853387863451978658600000000000000000000000000000000",
+    "mean_upper_decimal": "7.005718112278850",
+    "monotone_for_every_real_v_ge_0": true,
+    "monotone_in_M_for_every_real_M_ge_Q": true,
+    "next_prime_lower": 37,
+    "normalization": "Delta(B,N)=mu(B^N)/ln(B)",
+    "primorial_primes": [
+      2,
+      3,
+      5,
+      7,
+      11,
+      13,
+      17,
+      19,
+      23,
+      29,
+      31
+    ],
+    "ratio_kappa_over_cut_is_constant": true,
+    "tail_A": "320282763264/715715",
+    "tail_constant_is_not_integrated_to_infinity": true,
+    "tail_event_empty_for": "z>sqrt(kappa_squared*M)",
+    "upper": "12602259760689155294482589892066530567424003931323158957/46814047250338392508852395566559799296662781449836023000",
+    "upper_decimal": "0.269198253534853",
+    "v": "omega(B)-11"
+  },
+  "all_omega_ge_6_upper": "12602259760689155294482589892066530567424003931323158957/46814047250338392508852395566559799296662781449836023000",
+  "all_omega_ge_6_upper_decimal": "0.269198253534853",
+  "inherited_far_tail": {
+    "prime_counts_from": 2000,
+    "prime_count_upper": "29854729/1308000000",
+    "base_from": "2^20480",
+    "large_base_upper": "29854729/1271808000",
+    "all_positive_valuations": true,
+    "all_N_ge_1": true
+  },
+  "previous_global_and_sector_proofs_are_explicit_imports": true,
+  "previous_large_geometry_or_covering_replayed_this_task": false,
+  "all_four_prime_supports_closed": false,
+  "all_five_prime_supports_closed": false,
+  "uniform_210p_family_closed": false,
+  "exact_Cstar_equals_c0_proved": false,
+  "offset_sign_classification_claimed": false,
+  "next_four_prime_family": "rad(B)=154p,p>=13 prime; proposed, not proved",
+  "next_five_prime_target": "6006=2*3*7*11*13; no full profile produced in this task",
+  "remaining_domain_for_a_value_greater_than_c0": {
+    "prime_counts": "4<=omega(B)<=1999",
+    "base": "2<=B<2^20480",
+    "length": "N>=1 remains unbounded",
+    "practical_finite_enumeration_claimed": false
+  },
+  "inputs": [
+    {
+      "path": "code/coverage.py",
+      "sha256": "a36c1b54e1f6da264a3d6eddd9400f5c6591f79a21e7f354e3eef76ab8cfef40"
+    },
+    {
+      "path": "code/exact.py",
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59"
+    },
+    {
+      "path": "code/assemble_family.py",
+      "sha256": "2a131c3c7aad4704d1d4b18a074b22c818a5ba96efb06b64911a4da81c4cb1e6"
+    },
+    {
+      "path": "global/verify_global.py",
+      "sha256": "d67b2cdd0b699194eb844c9bc2c4ab0f8a55f10b085d29ebcf6ec0913dafe3a2"
+    },
+    {
+      "path": "global/PROOF.md",
+      "sha256": "008ed1f03931b0caee00adb3ceeb52460b720acc43b423871a699fc0ff3d8e5f"
+    },
+    {
+      "path": "global/imports/TAIL_PROOF_4830.md",
+      "sha256": "a010e254aecba5eec404a49fbaf569e80de872cc9fbd77de5f462c343f636c73"
+    },
+    {
+      "path": "global/imports/H132_PROOF_4830.md",
+      "sha256": "1f52ae3265249020d5524864c4b4ce2c0ac577a16e48e0de92eb030382504478"
+    },
+    {
+      "path": "global/imports/PERIODIC_CDF_4290.md",
+      "sha256": "c2729fb2ca0b0e72e766ba2440b548f92e4da430a3a7b7cb67ccc61be1db5820"
+    },
+    {
+      "path": "imports/previous4830/coverage_registry.json",
+      "sha256": "43116dac635de055f60ab56f4b11cb66671c427c54f3ae40b2065076e8b5b877"
+    },
+    {
+      "path": "imports/previous4830/global_certificate.json",
+      "sha256": "48289d31007c82f6c02e566cf8c9a610660b09121ba5bb6ea720ef67447a6568"
+    },
+    {
+      "path": "imports/previous4830/SOURCE_RECEIPT.json",
+      "sha256": "83d74a467cba2cd79b1493e11a13322e51ed28f382508af34f06949a81789ae7"
+    },
+    {
+      "path": "imports/previous4830/PREVIOUS_MANIFEST_SHA256.json",
+      "sha256": "825acc633ce759c1b2ec98fcd854356ead08d81e61f6d9c30b2158195b045a79"
+    },
+    {
+      "path": "logs/previous_checkpoint_quick.json",
+      "sha256": "5b6ecdb14eb179da38e89d30ba7ab61d4d145a7c40f52f0daad3eb0315983833"
+    },
+    {
+      "path": "results/closure_certificate.json",
+      "sha256": "c82cdacd09f4263a058e69d68c7b90b6556bff39f45e7367c39abf1e62c3d6f6"
+    },
+    {
+      "path": "results/family102_certificate.json",
+      "sha256": "0a5e0956c1a0957db09e201accabc6e6416bdb3dd828e0d94d0cdfa9273628ca"
+    },
+    {
+      "path": "global/results/global_certificate.json",
+      "sha256": "84135feef105d0596d756b9f04b0813054718c685a6f8923aab46ef98f1f7243"
+    },
+    {
+      "path": "logs/global_replay.json",
+      "sha256": "cc2beb7b6245fb67027743a2619bc1f286b23d169709fded44ab599beb05fb91"
+    }
+  ]
+}

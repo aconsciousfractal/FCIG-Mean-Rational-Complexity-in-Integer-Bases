@@ -75,3 +75,19 @@ records, source pins and stored reconstruction objects are unchanged from
 0.1.1. Only the reconstruction index's package-version field follows the
 new release; it does not relabel the historical scientific executions.
 No new complete reconstruction is claimed for this manuscript-only delta.
+
+## Version 0.2.0: supportwise bound
+
+The new `companion/global_bound` tree supplies author-generated code and
+numerical data for the stronger bound. All exported files carry their own
+identities. Reconstruction history distinguishes the previously executed
+early closures from newly rerun closure components. New replacements for
+missing marked-70 members carry reconstruction provenance; coincident
+historical hashes are recorded only when actually calculated.
+The retained checker validates numerical inputs, exact domain joins and
+bounds. Full producer/consumer routes are separately available.
+
+The original two-prime object graph and its observed reconstruction records
+are preserved. Full raw witness streams and internal review records are not
+distributed; their generators, consumers and compact checking data are.
+Cited third-party papers are not bundled.

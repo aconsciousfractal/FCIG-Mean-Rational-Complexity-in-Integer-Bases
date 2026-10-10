@@ -1,0 +1,27 @@
+{
+  "core": 78,
+  "core_primes": [
+    2,
+    3,
+    13
+  ],
+  "cdf_alpha": "3/2",
+  "first_new_prime": 17,
+  "small_primes": [
+    17,
+    19,
+    23,
+    29,
+    31,
+    37
+  ],
+  "tail_first_prime": 41,
+  "simple_marked_caps": {
+    "78": "3/40",
+    "156": "7/100",
+    "6084": "1/250"
+  },
+  "comparison_threshold": "2/85",
+  "scope": "marked profiles on all positive multiples of K=q*multiplier; full-prime identification only when rad(M)=q",
+  "infinite_78p_tail_certified_elsewhere": true
+}

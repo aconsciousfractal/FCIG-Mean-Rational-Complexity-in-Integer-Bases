@@ -8,7 +8,7 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v7
         with:
@@ -40,5 +40,11 @@ jobs:
         run: |
           python -B scripts/check_complete_evidence.py
           python -B -O scripts/check_complete_evidence.py
+      - name: Verify sharper global bound and retained closure premises
+        run: |
+          python -B companion/global_bound/verify_closures.py --output build/global-closures
+          python -B companion/global_bound/producer.py --build --output build/global-certificate.json
+          python -B companion/global_bound/check.py --certificate build/global-certificate.json --output build/global-check.json --closures-report build/global-closures/report.json
+          python -B -O companion/global_bound/check.py --certificate build/global-certificate.json --output build/global-check-optimized.json --closures-report build/global-closures/report.json
       - name: Verify distributed identities after replay
         run: python -B scripts/check_manifest.py

@@ -1,0 +1,41 @@
+{
+  "p": 13,
+  "q": 2730,
+  "multiplier": 6,
+  "transfer_index": 16380,
+  "style": "hybrid",
+  "source_cells": 2667,
+  "coarse_band_range": [
+    0,
+    89
+  ],
+  "refined_band_range": [
+    90,
+    126
+  ],
+  "radial_parts": 4,
+  "fine_angular": 8,
+  "coarse_angular": 4,
+  "gauss_crop": 5200308914369309,
+  "threads": 2,
+  "sanitize": true,
+  "producer": "only fixed coefficient pairs",
+  "consumer": "all coefficients and all nodes of all continuous rectangles",
+  "inputs": {
+    "generate_profile.py": "1fdbfe10c6ea22b5b328bcc8b7fe6124890756671dc216d140de88a498a5add5",
+    "code/integrate.py": "c54c5b9ec89e3c2ff9dc957470abfb93becde420e436583b0b4258bf28e30d83",
+    "code/assemble.py": "9c39d626c3b0ab4d6bd8293904df79d21f348fb7059d14791114b0fba5db816d",
+    "code/core.py": "7c82ad312d5601cba24e84df873954846e5c94897bb1f0be79783d4adb8da800",
+    "code/exact.py": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59",
+    "code/kernel.hpp": "2dad959215570aefe51cc43093bb3c3f079ef1c200e7f1d2c6b8c1b38040438f",
+    "code/search.hpp": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281",
+    "code/profile.cpp": "4a2a1e73ee212df5946c6f09ff9bd5891e83976766c9ad77dea72462081097d1",
+    "code/algebra.cpp": "c96b756b8b0c2707e825c164047feb86d339795c56671e322c88c14c8c7ca9c8",
+    "data/grid.tsv": "536d5990d2f19003fc5b6534d3c209e87f46b68671f5d3577159d94b4d24df13",
+    "data/log_seeds.tsv": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a",
+    "data/log_table.txt": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b",
+    "imports/DIRECT_METHOD_SOURCE.tex": "2706488d6447ca2c21101aa8ee3d8e29fafc0e594be38fd0939a3107673df7e9",
+    "imports/REFINEMENT_METHOD_SOURCE.md": "6a16e77997368faaf4796005d390b056614cebba81ee42806411b3f7c9deaf65",
+    "imports/UNEQUAL_VALUATION_TRANSFER.md": "229aac5019834e7ff6d4e4d77890773054ac7b7b0d5caaed185b3ad3e7ed3714"
+  }
+}

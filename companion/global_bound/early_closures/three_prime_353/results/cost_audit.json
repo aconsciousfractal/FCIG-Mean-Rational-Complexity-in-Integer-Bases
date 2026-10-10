@@ -1,0 +1,12 @@
+{
+  "large_legacy_states_enumerated": false,
+  "legacy_primitive_base_pending_moduli": 1470,
+  "legacy_primitive_base_state_mass": 3511413042,
+  "legacy_radical_normalized_pending_moduli": 3502,
+  "legacy_radical_normalized_state_mass": 605095848801,
+  "new_pending_moduli": 1663,
+  "new_state_mass": 426634122,
+  "new_supports": 353,
+  "old_tail_supports": 340,
+  "status": "PASS"
+}

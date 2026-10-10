@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "radial_parts": 4,
+  "angular_grid": 8,
+  "selected_cells": 84,
+  "raw_witnesses_reused": true,
+  "no_new_search": true,
+  "whole_domain_refined": false,
+  "bands": [
+    {
+      "band": 100,
+      "old_AG4": 219585561,
+      "old_AG8": 207866813,
+      "quarters_AG8": [
+        194936600,
+        194080430,
+        193369962,
+        192794236
+      ],
+      "min_gain_ticks": 24648961,
+      "max_gain_ticks": 26791325
+    },
+    {
+      "band": 110,
+      "old_AG4": 195375818,
+      "old_AG8": 183657070,
+      "quarters_AG8": [
+        165876845,
+        165140371,
+        164692715,
+        164425840
+      ],
+      "min_gain_ticks": 29498973,
+      "max_gain_ticks": 30949978
+    },
+    {
+      "band": 115,
+      "old_AG4": 188043600,
+      "old_AG8": 176324852,
+      "quarters_AG8": [
+        159031081,
+        158822327,
+        158741050,
+        158785129
+      ],
+      "min_gain_ticks": 29012519,
+      "max_gain_ticks": 29302550
+    },
+    {
+      "band": 125,
+      "old_AG4": 187043698,
+      "old_AG8": 175900497,
+      "quarters_AG8": [
+        160539192,
+        160449587,
+        160484240,
+        160634624
+      ],
+      "min_gain_ticks": 26409074,
+      "max_gain_ticks": 26594111
+    }
+  ],
+  "wall_seconds": 61.37
+}

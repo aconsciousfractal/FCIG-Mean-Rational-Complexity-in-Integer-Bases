@@ -1,0 +1,16 @@
+[
+  {
+    "stem": "q3570_K7140_coarse",
+    "p": 17,
+    "multiplier": 2,
+    "style": "coarse",
+    "angular": 8
+  },
+  {
+    "stem": "q3990_K7980_coarse",
+    "p": 19,
+    "multiplier": 2,
+    "style": "coarse",
+    "angular": 8
+  }
+]

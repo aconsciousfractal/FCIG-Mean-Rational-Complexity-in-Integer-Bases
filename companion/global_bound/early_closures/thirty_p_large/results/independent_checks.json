@@ -1,0 +1,739 @@
+{
+  "inputs": {
+    "dense_log_seed_entries": 1024,
+    "mantissa_entries": 1024,
+    "secondary_series_rational_checks": 151,
+    "status": "PASS"
+  },
+  "not_second_exhaustive_geometric_evaluation": true,
+  "per_profile": [
+    {
+      "algebra": {
+        "branches": 2736,
+        "local_projective_checks": 139536,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 2736
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 37
+    },
+    {
+      "algebra": {
+        "branches": 3024,
+        "local_projective_checks": 166320,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 3024
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 41
+    },
+    {
+      "algebra": {
+        "branches": 3168,
+        "local_projective_checks": 180576,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 3168
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 43
+    },
+    {
+      "algebra": {
+        "branches": 3456,
+        "local_projective_checks": 210816,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 3456
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 47
+    },
+    {
+      "algebra": {
+        "branches": 3888,
+        "local_projective_checks": 260496,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 3888
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 53
+    },
+    {
+      "algebra": {
+        "branches": 4320,
+        "local_projective_checks": 315360,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 4320
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 59
+    },
+    {
+      "algebra": {
+        "branches": 4464,
+        "local_projective_checks": 334800,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 4464
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 61
+    },
+    {
+      "algebra": {
+        "branches": 4896,
+        "local_projective_checks": 396576,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 4896
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 67
+    },
+    {
+      "algebra": {
+        "branches": 5184,
+        "local_projective_checks": 440640,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 5184
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 71
+    },
+    {
+      "algebra": {
+        "branches": 5328,
+        "local_projective_checks": 463536,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 5328
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 73
+    },
+    {
+      "algebra": {
+        "branches": 5760,
+        "local_projective_checks": 535680,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 5760
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 79
+    },
+    {
+      "algebra": {
+        "branches": 6048,
+        "local_projective_checks": 586656,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 6048
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 83
+    },
+    {
+      "algebra": {
+        "branches": 6480,
+        "local_projective_checks": 667440,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 6480
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 89
+    },
+    {
+      "algebra": {
+        "branches": 7056,
+        "local_projective_checks": 783216,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 7056
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 97
+    },
+    {
+      "algebra": {
+        "branches": 7344,
+        "local_projective_checks": 844560,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 7344
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 101
+    },
+    {
+      "algebra": {
+        "branches": 7488,
+        "local_projective_checks": 876096,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 7488
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 103
+    },
+    {
+      "algebra": {
+        "branches": 7776,
+        "local_projective_checks": 940896,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 7776
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 107
+    },
+    {
+      "algebra": {
+        "branches": 7920,
+        "local_projective_checks": 974160,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 7920
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 109
+    },
+    {
+      "algebra": {
+        "branches": 8208,
+        "local_projective_checks": 1042416,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 8208
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 113
+    },
+    {
+      "algebra": {
+        "branches": 9216,
+        "local_projective_checks": 1299456,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 9216
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 127
+    },
+    {
+      "algebra": {
+        "branches": 9504,
+        "local_projective_checks": 1378080,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 9504
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 131
+    },
+    {
+      "algebra": {
+        "branches": 9936,
+        "local_projective_checks": 1500336,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 9936
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 137
+    },
+    {
+      "algebra": {
+        "branches": 10080,
+        "local_projective_checks": 1542240,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 10080
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 139
+    },
+    {
+      "algebra": {
+        "branches": 10800,
+        "local_projective_checks": 1760400,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 10800
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 149
+    },
+    {
+      "algebra": {
+        "branches": 10944,
+        "local_projective_checks": 1805760,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 10944
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 151
+    },
+    {
+      "algebra": {
+        "branches": 11376,
+        "local_projective_checks": 1945296,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 11376
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 157
+    },
+    {
+      "algebra": {
+        "branches": 11808,
+        "local_projective_checks": 2090016,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 11808
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 163
+    },
+    {
+      "algebra": {
+        "branches": 12096,
+        "local_projective_checks": 2189376,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 12096
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 167
+    },
+    {
+      "algebra": {
+        "branches": 12528,
+        "local_projective_checks": 2342736,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 12528
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 173
+    },
+    {
+      "algebra": {
+        "branches": 12960,
+        "local_projective_checks": 2501280,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 12960
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 179
+    },
+    {
+      "algebra": {
+        "branches": 13104,
+        "local_projective_checks": 2555280,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 13104
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 181
+    },
+    {
+      "algebra": {
+        "branches": 13824,
+        "local_projective_checks": 2833920,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 13824
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 191
+    },
+    {
+      "algebra": {
+        "branches": 13968,
+        "local_projective_checks": 2891376,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 13968
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 193
+    },
+    {
+      "algebra": {
+        "branches": 14256,
+        "local_projective_checks": 3008016,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 14256
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 197
+    },
+    {
+      "algebra": {
+        "branches": 14400,
+        "local_projective_checks": 3067200,
+        "signed_direct_outputs": 14,
+        "tensor_constant_outputs": 14400
+      },
+      "geometry": {
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 199
+    },
+    {
+      "algebra": {
+        "branches": 72,
+        "local_projective_checks": 936,
+        "signed_direct_outputs": 144,
+        "tensor_constant_outputs": 72
+      },
+      "geometry": {
+        "independent_corner_logarithms": 12672,
+        "rational_interior_checks": 9504,
+        "witnesses": 96
+      },
+      "k": 1,
+      "p": 1
+    },
+    {
+      "algebra": {
+        "branches": 2160,
+        "local_projective_checks": 29142,
+        "signed_direct_outputs": 144,
+        "tensor_constant_outputs": 72
+      },
+      "geometry": {
+        "independent_corner_logarithms": 12672,
+        "rational_interior_checks": 9504,
+        "witnesses": 96
+      },
+      "k": 2,
+      "p": 1
+    }
+  ],
+  "physical": {
+    "complete_state_modulus_incidences": 84750,
+    "conditional_parent_means": 71,
+    "direct_denominator_tests": 2700842,
+    "physical_lift_states": 84750,
+    "rows": [
+      {
+        "L": 1,
+        "M": 30,
+        "denominators_tested": 44,
+        "k": 1,
+        "q": 30,
+        "upper_exact_minimum_mean": "-35541046571871/500000000000000"
+      },
+      {
+        "L": 2,
+        "M": 60,
+        "denominators_tested": 144,
+        "k": 1,
+        "q": 30,
+        "upper_exact_minimum_mean": "28232757615669/2000000000000000"
+      },
+      {
+        "L": 3,
+        "M": 90,
+        "denominators_tested": 274,
+        "k": 1,
+        "q": 30,
+        "upper_exact_minimum_mean": "129982300771399/10000000000000000"
+      },
+      {
+        "L": 5,
+        "M": 150,
+        "denominators_tested": 608,
+        "k": 1,
+        "q": 30,
+        "upper_exact_minimum_mean": "1324538327484391/75000000000000000"
+      },
+      {
+        "L": 7,
+        "M": 210,
+        "denominators_tested": 1038,
+        "k": 1,
+        "q": 30,
+        "upper_exact_minimum_mean": "707704006577311/105000000000000000"
+      },
+      {
+        "L": 1,
+        "M": 900,
+        "denominators_tested": 9236,
+        "k": 2,
+        "q": 30,
+        "upper_exact_minimum_mean": "49063972282849/56250000000000000"
+      },
+      {
+        "L": 2,
+        "M": 1800,
+        "denominators_tested": 26186,
+        "k": 2,
+        "q": 30,
+        "upper_exact_minimum_mean": "1134136093353347/1800000000000000000"
+      },
+      {
+        "L": 3,
+        "M": 2700,
+        "denominators_tested": 47966,
+        "k": 2,
+        "q": 30,
+        "upper_exact_minimum_mean": "-159133181835983/56250000000000000"
+      },
+      {
+        "L": 5,
+        "M": 4500,
+        "denominators_tested": 103046,
+        "k": 2,
+        "q": 30,
+        "upper_exact_minimum_mean": "-1523550687251641/281250000000000000"
+      },
+      {
+        "L": 7,
+        "M": 6300,
+        "denominators_tested": 171286,
+        "k": 2,
+        "q": 30,
+        "upper_exact_minimum_mean": "-29634499921343081/6300000000000000000"
+      },
+      {
+        "L": 1,
+        "M": 1110,
+        "denominators_tested": 12228,
+        "k": 1,
+        "q": 1110,
+        "upper_exact_minimum_mean": "220457782998699/18500000000000000"
+      },
+      {
+        "L": 2,
+        "M": 2220,
+        "denominators_tested": 34802,
+        "k": 1,
+        "q": 1110,
+        "upper_exact_minimum_mean": "4650471433796377/222000000000000000"
+      },
+      {
+        "L": 3,
+        "M": 3330,
+        "denominators_tested": 64020,
+        "k": 1,
+        "q": 1110,
+        "upper_exact_minimum_mean": "33322401500475803/1665000000000000000"
+      },
+      {
+        "L": 5,
+        "M": 5550,
+        "denominators_tested": 138284,
+        "k": 1,
+        "q": 1110,
+        "upper_exact_minimum_mean": "105722365076527801/5550000000000000000"
+      },
+      {
+        "L": 7,
+        "M": 7770,
+        "denominators_tested": 229794,
+        "k": 1,
+        "q": 1110,
+        "upper_exact_minimum_mean": "127870219478469101/7770000000000000000"
+      },
+      {
+        "L": 11,
+        "M": 12210,
+        "denominators_tested": 453662,
+        "k": 1,
+        "q": 1110,
+        "upper_exact_minimum_mean": "21246772756108961/1526250000000000000"
+      },
+      {
+        "L": 1,
+        "M": 5970,
+        "denominators_tested": 156016,
+        "k": 1,
+        "q": 5970,
+        "upper_exact_minimum_mean": "-13473388377138917/1492500000000000000"
+      },
+      {
+        "L": 2,
+        "M": 11940,
+        "denominators_tested": 441620,
+        "k": 1,
+        "q": 5970,
+        "upper_exact_minimum_mean": "-2247211003122331/238800000000000000"
+      },
+      {
+        "L": 3,
+        "M": 17910,
+        "denominators_tested": 810588,
+        "k": 1,
+        "q": 5970,
+        "upper_exact_minimum_mean": "-881127828082519/99500000000000000"
+      }
+    ],
+    "short_vector_jumps": 21478,
+    "short_vector_states": 80200,
+    "status": "PASS"
+  },
+  "status": "PASS",
+  "totals": {
+    "branches": 297576,
+    "independent_corner_logarithms": 146304,
+    "local_projective_checks": 44900622,
+    "rational_interior_checks": 109728,
+    "signed_direct_outputs": 778,
+    "tensor_constant_outputs": 295488,
+    "witnesses": 3552
+  }
+}

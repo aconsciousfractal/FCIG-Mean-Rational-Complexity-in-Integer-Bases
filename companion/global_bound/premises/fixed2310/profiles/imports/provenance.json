@@ -1,0 +1,104 @@
+{
+  "status": "fresh computation only; no numeric cap inherited",
+  "files": [
+    {
+      "source": "agent_profiles105/export_ready/code/algebra.cpp",
+      "destination": "code/algebra.cpp",
+      "sha256": "c96b756b8b0c2707e825c164047feb86d339795c56671e322c88c14c8c7ca9c8"
+    },
+    {
+      "source": "agent_profiles105/export_ready/code/angle.cpp",
+      "destination": "code/angle.cpp",
+      "sha256": "343e580967f48f77fb6e18b162ebf85eab4a9b705f9b6a88058605e0a65d8771"
+    },
+    {
+      "source": "agent_profiles105/export_ready/code/assemble.py",
+      "destination": "code/assemble.py",
+      "sha256": "5e3ac255bca58598fbd13c7d8bc7f92622774c53613bf0b5a62b6a7146439b69"
+    },
+    {
+      "source": "agent_profiles105/export_ready/code/assemble_small.py",
+      "destination": "code/assemble_small.py",
+      "sha256": "df3aa1f284e0f9bae9cf8c2976ea1abe76579c569ff5d2e6c9785565fdc0e54c"
+    },
+    {
+      "source": "agent_profiles105/export_ready/code/audit_one.py",
+      "destination": "code/audit_one.py",
+      "sha256": "13b0d550cf77d2c811ea6a38d93eaa41cdf5d93a2490365b9104105cf06bdb6e"
+    },
+    {
+      "source": "agent_profiles105/export_ready/code/checks.py",
+      "destination": "code/checks.py",
+      "sha256": "985a0908167d8e5383772d5843a0625da0b825929d006b9305747d88417f5aed"
+    },
+    {
+      "source": "agent_profiles105/export_ready/code/core.py",
+      "destination": "code/core.py",
+      "sha256": "2233a646a31d7a7408129d1e9a562e823a5f73fcb07bae9070ae8a24ec95e38a"
+    },
+    {
+      "source": "agent_profiles105/export_ready/code/emit_profile.py",
+      "destination": "code/emit_profile.py",
+      "sha256": "f92cec02fa2a9a9fb7fc3c7e255fe8890907c7cb7bbf8c5899c8dbd138c0a16a"
+    },
+    {
+      "source": "agent_profiles105/export_ready/code/exact.py",
+      "destination": "code/exact.py",
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59"
+    },
+    {
+      "source": "agent_profiles105/export_ready/code/kernel.hpp",
+      "destination": "code/kernel.hpp",
+      "sha256": "873a9e83b5719be88bd29c718acc62103c64fd60ee1d6aa150c37cac48b9da47"
+    },
+    {
+      "source": "agent_profiles105/export_ready/code/negative_profiles.py",
+      "destination": "code/negative_profiles.py",
+      "sha256": "8e505b1a1ca68ecfde92669525c80eeb8d1bbb400fc7caa84c1d759de45505cc"
+    },
+    {
+      "source": "agent_profiles105/export_ready/code/search.hpp",
+      "destination": "code/search.hpp",
+      "sha256": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281"
+    },
+    {
+      "source": "agent_profiles105/export_ready/code/stored_profile.py",
+      "destination": "code/stored_profile.py",
+      "sha256": "4ca78070fd13f70f713774809c0f973e17bb388cbbe3e0e675e8e52e2207ecad"
+    },
+    {
+      "source": "agent_profiles105/export_ready/data/grid.tsv",
+      "destination": "data/grid.tsv",
+      "sha256": "536d5990d2f19003fc5b6534d3c209e87f46b68671f5d3577159d94b4d24df13"
+    },
+    {
+      "source": "agent_profiles105/export_ready/data/log_seeds.tsv",
+      "destination": "data/log_seeds.tsv",
+      "sha256": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a"
+    },
+    {
+      "source": "agent_profiles105/export_ready/data/log_table.txt",
+      "destination": "data/log_table.txt",
+      "sha256": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b"
+    },
+    {
+      "source": "agent_profiles105/export_ready/imports/DIRECT_METHOD_SOURCE.tex",
+      "destination": "imports/DIRECT_METHOD_SOURCE.tex",
+      "sha256": "2706488d6447ca2c21101aa8ee3d8e29fafc0e594be38fd0939a3107673df7e9"
+    },
+    {
+      "archive": "p72_source/bundles/Cstar_CHIUSURA_RADICALE_210_2026-10-07.zip",
+      "archive_sha256": "010009981b0430c29673105b4d3363ac8e8c1dc73208337d9bc4f2ad9c0b97c5",
+      "member": "Cstar_CHIUSURA_RADICALE_210_2026-10-07/README.md",
+      "destination": "imports/210_README_SOURCE.md",
+      "sha256": "d31f0ddd64d5fef5c95cef56aef7f2392b1ffefb604c06f80022e54515f80575"
+    },
+    {
+      "archive": "p72_source/bundles/Cstar_CHIUSURA_RADICALE_210_2026-10-07.zip",
+      "archive_sha256": "010009981b0430c29673105b4d3363ac8e8c1dc73208337d9bc4f2ad9c0b97c5",
+      "member": "Cstar_CHIUSURA_RADICALE_210_2026-10-07/proofs/UNIFORME_RADICALE_210.md",
+      "destination": "imports/210_UNIFORM_SOURCE.md",
+      "sha256": "4b08618a03c84170d15ab236d1eddeec3366315bc2ce24bf9d9e864b73bd1303"
+    }
+  ]
+}

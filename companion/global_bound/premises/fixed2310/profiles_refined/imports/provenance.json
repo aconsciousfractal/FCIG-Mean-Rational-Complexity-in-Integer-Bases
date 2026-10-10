@@ -1,0 +1,44 @@
+{
+  "reused_code": {
+    "algebra.cpp": {
+      "source": "../code/algebra.cpp",
+      "sha256": "c96b756b8b0c2707e825c164047feb86d339795c56671e322c88c14c8c7ca9c8",
+      "byte_identical": true
+    },
+    "assemble.py": {
+      "source": "../code/assemble.py",
+      "sha256": "9c39d626c3b0ab4d6bd8293904df79d21f348fb7059d14791114b0fba5db816d",
+      "byte_identical": true
+    },
+    "checks.py": {
+      "source": "../code/checks.py",
+      "sha256": "bc7d150ebc7ccf34a0eb6ebc5c6159074ccfb1d951f8c2c6cbad66153da631aa",
+      "byte_identical": true
+    },
+    "core.py": {
+      "source": "../code/core.py",
+      "sha256": "7c82ad312d5601cba24e84df873954846e5c94897bb1f0be79783d4adb8da800",
+      "byte_identical": true
+    },
+    "exact.py": {
+      "source": "../code/exact.py",
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59",
+      "byte_identical": true
+    },
+    "kernel.hpp": {
+      "source": "../code/kernel.hpp",
+      "sha256": "2dad959215570aefe51cc43093bb3c3f079ef1c200e7f1d2c6b8c1b38040438f",
+      "byte_identical": true
+    },
+    "search.hpp": {
+      "source": "../code/search.hpp",
+      "sha256": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281",
+      "byte_identical": true
+    }
+  },
+  "new_code": "code/refine.cpp",
+  "baseline_export_manifest_sha256": "5b3f03ca7ae83088c28f570ea0fac8519e77f59f71b48184f9a0fac66e14ca4a",
+  "historical_numeric_cap_assumed": false,
+  "baseline_coarse_profile_is_new_current_session_dependency": true,
+  "pilot_source": "../pilot_radial"
+}

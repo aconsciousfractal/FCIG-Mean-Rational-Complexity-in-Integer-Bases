@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "cdf_alpha": "3/2",
+  "marked_caps": [
+    {
+      "q": 102,
+      "required_divisor": 102,
+      "exact_upper": "291098774216802285560151612033413703267/6189700196426901374495621120000000000000",
+      "upper_decimal": "0.047029543431659",
+      "simple_cap": "6/125",
+      "scope": "all positive M divisible by required_divisor, with extra primes allowed; marked mean nu102 only"
+    },
+    {
+      "q": 102,
+      "required_divisor": 204,
+      "exact_upper": "1373631290820564836202250433394473041903/30948500982134506872478105600000000000000",
+      "upper_decimal": "0.044384420803241",
+      "simple_cap": "9/200",
+      "scope": "all positive M divisible by required_divisor, with extra primes allowed; marked mean nu102 only"
+    },
+    {
+      "q": 102,
+      "required_divisor": 10404,
+      "exact_upper": "-1596491677031183284673562696298244210773/154742504910672534362390528000000000000000",
+      "upper_decimal": "-0.010317085651113",
+      "simple_cap": "-1/100",
+      "scope": "all positive M divisible by required_divisor, with extra primes allowed; marked mean nu102 only"
+    }
+  ],
+  "small_prime_routes": [
+    {
+      "p": 19,
+      "q": 1938,
+      "mean_upper": "9925532481618017483148559496711360610219/154742504910672534362390528000000000000000",
+      "normalized_upper": "3308510827206005827716186498903786870073/390436580488068912461332730862437857755136",
+      "normalized_upper_decimal": "0.008473875124791",
+      "scope": "B=2^a*3^b*17^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    },
+    {
+      "p": 23,
+      "q": 2346,
+      "mean_upper": "8488792360172067661506576097593668272043/154742504910672534362390528000000000000000",
+      "normalized_upper": "8488792360172067661506576097593668272043/1200874107377169938533236962449522698485760",
+      "normalized_upper_decimal": "0.007068844525854",
+      "scope": "B=2^a*3^b*17^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    },
+    {
+      "p": 29,
+      "q": 2958,
+      "mean_upper": "1354519620689363648854057642967493902319/30948500982134506872478105600000000000000",
+      "normalized_upper": "451506540229787882951352547655831300773/82449577985249158127860923384703928500224",
+      "normalized_upper_decimal": "0.005476153441448",
+      "scope": "B=2^a*3^b*17^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    },
+    {
+      "p": 31,
+      "q": 3162,
+      "mean_upper": "6266510963127563692666237893819250376619/154742504910672534362390528000000000000000",
+      "normalized_upper": "2088836987709187897555412631273083458873/415687886708199208302472927687675469627392",
+      "normalized_upper_decimal": "0.005025012887074",
+      "scope": "B=2^a*3^b*17^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    }
+  ],
+  "closed_primes": [
+    19,
+    23,
+    29,
+    31
+  ],
+  "profiles": 7,
+  "geometric_witnesses": 122508288,
+  "geometric_corner_evaluations": 6472617984,
+  "arbitrary_prime_valuations": true,
+  "all_N_positive": true,
+  "geometric_witnesses_replayed_here": false,
+  "entire_102p_family_closed_here": false,
+  "global_Cstar_identified": false,
+  "small_prime_common_upper": "3308510827206005827716186498903786870073/390436580488068912461332730862437857755136",
+  "small_prime_common_upper_decimal": "0.008473875124791",
+  "small_prime_strict_margin": "29391161215507489974517035842238460679651/1952182902440344562306663654312189288775680"
+}

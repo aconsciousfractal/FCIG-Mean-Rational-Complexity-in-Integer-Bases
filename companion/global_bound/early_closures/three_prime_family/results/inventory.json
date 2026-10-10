@@ -1,0 +1,19 @@
+{
+  "all_moduli": 8816,
+  "all_state_mass": 651967032,
+  "analytic_small_moduli": 6397,
+  "finite_moduli": 2419,
+  "finite_representatives": 27020299,
+  "finite_state_mass": 54035760,
+  "inventory_methods": [
+    "prime sieve and positive exponent products",
+    "all multiples of 6, trial division of stripped cofactor"
+  ],
+  "largest_analytic_upper": "779997956647071159593693/5206292730000000000000000",
+  "largest_finite_modulus": 123444,
+  "largest_finite_prime": 5701,
+  "min_prime": 127,
+  "prime_parameters": 2732,
+  "status": "PASS",
+  "strict_modulus_cutoff": 150000
+}

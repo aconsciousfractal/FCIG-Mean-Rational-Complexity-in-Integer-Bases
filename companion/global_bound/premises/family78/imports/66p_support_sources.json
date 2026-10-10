@@ -1,0 +1,12 @@
+{
+  "source_root": "P72_66P_20261008",
+  "sources_sha256": {
+    "code/exact.py": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59",
+    "code/log_inputs.py": "f8b8b150d388317bda204c8d41c96de0471f30ffcef2f1e5b851e6884bf9e14c",
+    "code/candidate210.py": "e7156442bece3120f77bcfce08e269fb79705343f7110cd5eb9de24059b201f0",
+    "data/log_table.txt": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b",
+    "data/log_seeds.tsv": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a",
+    "code/finite.cpp": "8815cc157097a5e9f01c1a0136337c7418a714ec0e43bd5cd94a378cc21a4aa4"
+  },
+  "adapted_finite_source": "replace core66 by78; factor11 by13; lower modulus858 by1326; lowerprime13 by17; other numeric bounds unchanged initially"
+}

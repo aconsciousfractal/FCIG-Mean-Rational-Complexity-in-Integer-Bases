@@ -1,0 +1,44 @@
+[
+  {
+    "p": 1,
+    "multiplier": 1,
+    "ag": 16,
+    "stem": "q114_K114"
+  },
+  {
+    "p": 1,
+    "multiplier": 2,
+    "ag": 16,
+    "stem": "q114_K228"
+  },
+  {
+    "p": 1,
+    "multiplier": 3,
+    "ag": 16,
+    "stem": "q114_K342"
+  },
+  {
+    "p": 1,
+    "multiplier": 19,
+    "ag": 16,
+    "stem": "q114_K2166"
+  },
+  {
+    "p": 23,
+    "multiplier": 1,
+    "ag": 4,
+    "stem": "q2622"
+  },
+  {
+    "p": 29,
+    "multiplier": 1,
+    "ag": 4,
+    "stem": "q3306"
+  },
+  {
+    "p": 31,
+    "multiplier": 1,
+    "ag": 4,
+    "stem": "q3534"
+  }
+]

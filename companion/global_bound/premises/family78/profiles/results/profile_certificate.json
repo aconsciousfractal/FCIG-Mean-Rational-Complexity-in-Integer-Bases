@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "cdf_alpha": "3/2",
+  "marked_caps": [
+    {
+      "q": 78,
+      "required_divisor": 78,
+      "exact_upper": "11500181283844699905258956530638740914091/154742504910672534362390528000000000000000",
+      "upper_decimal": "0.074318179678450",
+      "simple_cap": "3/40",
+      "scope": "all positive M divisible by required_divisor, with extra primes allowed; marked mean nu78 only"
+    },
+    {
+      "q": 78,
+      "required_divisor": 156,
+      "exact_upper": "10830317647205313600590722848005121507243/154742504910672534362390528000000000000000",
+      "upper_decimal": "0.069989287387181",
+      "simple_cap": "7/100",
+      "scope": "all positive M divisible by required_divisor, with extra primes allowed; marked mean nu78 only"
+    },
+    {
+      "q": 78,
+      "required_divisor": 6084,
+      "exact_upper": "123282259299992114615544129286410469359/30948500982134506872478105600000000000000",
+      "upper_decimal": "0.003983464639246",
+      "simple_cap": "1/250",
+      "scope": "all positive M divisible by required_divisor, with extra primes allowed; marked mean nu78 only"
+    }
+  ],
+  "small_prime_routes": [
+    {
+      "p": 17,
+      "q": 1326,
+      "mean_upper": "13151296405815085909363124729677467746219/154742504910672534362390528000000000000000",
+      "normalized_upper": "13151296405815085909363124729677467746219/1112586566813986367782152422300417152516096",
+      "normalized_upper_decimal": "0.011820470243026",
+      "scope": "B=2^a*3^b*13^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    },
+    {
+      "p": 19,
+      "q": 1482,
+      "mean_upper": "12323858027783393676650512306275391766443/154742504910672534362390528000000000000000",
+      "normalized_upper": "12323858027783393676650512306275391766443/1129797900201223031297447508995296928464896",
+      "normalized_upper_decimal": "0.010908019943734",
+      "scope": "B=2^a*3^b*13^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    },
+    {
+      "p": 23,
+      "q": 1794,
+      "mean_upper": "10246782656775431008684193203084970033067/154742504910672534362390528000000000000000",
+      "normalized_upper": "3415594218925143669561397734361656677689/386454088704728744148895426285835351228416",
+      "normalized_upper_decimal": "0.008838292358022",
+      "scope": "B=2^a*3^b*13^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    },
+    {
+      "p": 29,
+      "q": 2262,
+      "mean_upper": "8382013932058147418533503540184258838443/154742504910672534362390528000000000000000",
+      "normalized_upper": "8382013932058147418533503540184258838443/1195231828515753511088858256506007920312320",
+      "normalized_upper_decimal": "0.007012877110600",
+      "scope": "B=2^a*3^b*13^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    },
+    {
+      "p": 31,
+      "q": 2418,
+      "mean_upper": "7968634593690511794600266524025880444843/154742504910672534362390528000000000000000",
+      "normalized_upper": "7968634593690511794600266524025880444843/1205551818861613764078363188798475401691136",
+      "normalized_upper_decimal": "0.006609947800681",
+      "scope": "B=2^a*3^b*13^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    },
+    {
+      "p": 37,
+      "q": 2886,
+      "mean_upper": "272762943205786825319805644545519806051/6189700196426901374495621120000000000000",
+      "normalized_upper": "6819073580144670632995141113637995151275/1232930519837768815277940149583843948494848",
+      "normalized_upper_decimal": "0.005530784963489",
+      "scope": "B=2^a*3^b*13^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    }
+  ],
+  "closed_primes": [
+    17,
+    19,
+    23,
+    29,
+    31,
+    37
+  ],
+  "profiles": 9,
+  "geometric_witnesses": 109734912,
+  "geometric_corner_evaluations": 5207666688,
+  "arbitrary_prime_valuations": true,
+  "all_N_positive": true,
+  "geometric_witnesses_replayed_here": false,
+  "entire_78p_family_closed_here": false,
+  "global_Cstar_identified": false,
+  "small_prime_common_upper": "13151296405815085909363124729677467746219/1112586566813986367782152422300417152516096",
+  "small_prime_common_upper_decimal": "0.011820470243026",
+  "small_prime_strict_margin": "1107312939133690433268439242578249546603577/94569858179188841261482955895535457963868160"
+}

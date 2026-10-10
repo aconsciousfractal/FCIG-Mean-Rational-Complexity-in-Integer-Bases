@@ -1,0 +1,33 @@
+{
+  "alpha_interval": [
+    "39600/65159",
+    "2/3"
+  ],
+  "coarsened_coefficients": [
+    "20",
+    "31/20",
+    "13/4",
+    "4/9"
+  ],
+  "cutoff_margin": "108074213/28530994500",
+  "cutoff_modulus": 150000,
+  "cutoff_upper": "2085787481/14265497250",
+  "cutoff_upper_decimal": "0.146212041855043",
+  "delta_lower": "2885/521272",
+  "linear_constant_upper": "175123/8820",
+  "log2_upper": "7/10",
+  "logarithmic_coefficient_upper": "967/630",
+  "new_prime_loss_above_cutoff_upper": "15246577976131271359/160553400000000000000",
+  "old_Psi127_interval": [
+    "12227058628941881/63500000000000000",
+    "4890823451576779/25400000000000000"
+  ],
+  "phi127_upper": "5339894625596237/76200000000000000",
+  "phi127_upper_decimal": "0.070077357291290",
+  "quadratic_constant_upper": "146/45",
+  "sqrt2_interval": [
+    "7/5",
+    "99/70"
+  ],
+  "status": "PASS"
+}

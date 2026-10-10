@@ -1,0 +1,26 @@
+{
+  "core": 165,
+  "core_primes": [
+    3,
+    5,
+    11
+  ],
+  "cdf_alpha": "3/2",
+  "first_new_prime": 13,
+  "small_primes": [
+    13,
+    17,
+    19,
+    23
+  ],
+  "tail_first_prime": 29,
+  "simple_marked_caps": {
+    "165": "-21/500",
+    "495": "-31/500",
+    "825": "-19/250",
+    "1815": "-2/25"
+  },
+  "comparison_threshold": "2/85",
+  "scope": "all positive M divisible by K, marked denominator gcd(d,165)=1, all seed L including noncoprime",
+  "configuration_status": "four AG16 odd core indices declared before generation; four AG4 small profiles declared before generation; signed scalar caps and finite partition frozen before small-profile production"
+}

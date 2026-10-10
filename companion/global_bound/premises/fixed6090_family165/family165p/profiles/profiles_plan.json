@@ -1,0 +1,50 @@
+[
+  {
+    "p": 1,
+    "multiplier": 1,
+    "ag": 16,
+    "stem": "q165_K165"
+  },
+  {
+    "p": 1,
+    "multiplier": 3,
+    "ag": 16,
+    "stem": "q165_K495"
+  },
+  {
+    "p": 1,
+    "multiplier": 5,
+    "ag": 16,
+    "stem": "q165_K825"
+  },
+  {
+    "p": 1,
+    "multiplier": 11,
+    "ag": 16,
+    "stem": "q165_K1815"
+  },
+  {
+    "p": 13,
+    "multiplier": 1,
+    "ag": 4,
+    "stem": "q2145"
+  },
+  {
+    "p": 17,
+    "multiplier": 1,
+    "ag": 4,
+    "stem": "q2805"
+  },
+  {
+    "p": 19,
+    "multiplier": 1,
+    "ag": 4,
+    "stem": "q3135"
+  },
+  {
+    "p": 23,
+    "multiplier": 1,
+    "ag": 4,
+    "stem": "q3795"
+  }
+]

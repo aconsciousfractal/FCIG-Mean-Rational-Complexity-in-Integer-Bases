@@ -1,0 +1,83 @@
+{
+  "global_counterexample_claimed": false,
+  "negative_test_count": 14,
+  "status": "PASS",
+  "tests": [
+    {
+      "continuous_squared_max": "10",
+      "grid_squared_max": "169/17",
+      "missing_angle_tangent": "-1/3",
+      "name": "angular_grid_without_error",
+      "status": "bounded shortcut rejected",
+      "witness": [
+        1,
+        3
+      ]
+    },
+    {
+      "name": "excision_bound_at_p37_M1110",
+      "status": "does not establish 4/25 or the normalized target; not a counterexample",
+      "upper": "12167130522366139723/11072250000000000000"
+    },
+    {
+      "name": "geometry_truncated",
+      "required_output": "truncated witness file",
+      "returncode": 2
+    },
+    {
+      "name": "geometry_extra",
+      "required_output": "extra witness data",
+      "returncode": 2
+    },
+    {
+      "name": "geometry_nonunit",
+      "required_output": "full mark unit",
+      "returncode": 2
+    },
+    {
+      "name": "geometry_composite_prime",
+      "required_output": "prime input",
+      "returncode": 2
+    },
+    {
+      "name": "valid_finite_mutation_control",
+      "states": 6330,
+      "status": "PASS"
+    },
+    {
+      "name": "finite_truncated",
+      "required_output": "truncated witnesses",
+      "returncode": 1
+    },
+    {
+      "name": "finite_extra",
+      "required_output": "extra witnesses",
+      "returncode": 1
+    },
+    {
+      "name": "finite_nonunit",
+      "required_output": "full denominator unit",
+      "returncode": 1
+    },
+    {
+      "name": "finite_congruence",
+      "required_output": "state congruence",
+      "returncode": 1
+    },
+    {
+      "name": "finite_composite_prime",
+      "required_output": "prime input",
+      "returncode": 1
+    },
+    {
+      "name": "finite_fifth_prime",
+      "required_output": "exact radical 30p",
+      "returncode": 1
+    },
+    {
+      "name": "finite_duplicate_modulus",
+      "required_output": "duplicate modulus",
+      "returncode": 1
+    }
+  ]
+}

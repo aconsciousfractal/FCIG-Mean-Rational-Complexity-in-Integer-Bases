@@ -1,0 +1,6 @@
+{
+  "source": "agent_audit5610_102p/family_physical_consumer.py",
+  "bytes": 9145,
+  "sha256": "7f15416b75d4879aafab72139c12b5443a0abf5f4b88b9e0e4b47c7d7d3fc50c",
+  "scope": "separate auditor implementation, no producer function imports"
+}

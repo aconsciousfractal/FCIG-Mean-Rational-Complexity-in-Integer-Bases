@@ -1,0 +1,69 @@
+{
+  "status": "PASS_PROFILE_ARITHMETIC",
+  "profiles": [
+    {
+      "stem": "q3570_K7140_angular_tail_AG8",
+      "q": 3570,
+      "K": 7140,
+      "style": "angular_tail",
+      "input_scope": ".",
+      "labels": 10368,
+      "branches": 20736,
+      "source_cells": 2667,
+      "output_cells": 2667,
+      "geometric_witness_records": 55302912,
+      "geometric_corner_evaluations": 2506484736,
+      "total_upper": "28559427016550463677616106903428610260907/154742504910672534362390528000000000000000",
+      "upper_decimal": "0.184560971357139",
+      "normalized_upper": "28559427016550463677616106903428610260907/1265843343135543838392454285813913225265152",
+      "normalized_upper_decimal": "0.022561580918701",
+      "strict_2_over_85_gate": true,
+      "margin_mu": "104135389864298264187539484836394578353209/13153112917407165420803194880000000000000000",
+      "stratified_geometry": {
+        "witnesses": 96,
+        "independent_corner_logarithms": 4192,
+        "rational_interior_checks": 3144
+      },
+      "negative_cases": 14,
+      "positive_fixtures": 1
+    },
+    {
+      "stem": "q3990_K7980_coarse",
+      "q": 3990,
+      "K": 7980,
+      "style": "coarse",
+      "input_scope": "baseline",
+      "labels": 11520,
+      "branches": 23040,
+      "source_cells": 2667,
+      "output_cells": 2667,
+      "geometric_witness_records": 61447680,
+      "geometric_corner_evaluations": 2212116480,
+      "total_upper": "29235339718815867055620103143212914704299/154742504910672534362390528000000000000000",
+      "upper_decimal": "0.188928954818797",
+      "normalized_upper": "29235339718815867055620103143212914704299/1283054676522780501907749372508793001213952",
+      "normalized_upper_decimal": "0.022785731780385",
+      "strict_2_over_85_gate": true,
+      "margin_mu": "81105476946212304087789977844488252562489/13153112917407165420803194880000000000000000",
+      "stratified_geometry": {
+        "witnesses": 96,
+        "independent_corner_logarithms": 3456,
+        "rational_interior_checks": 2592
+      },
+      "negative_cases": 14,
+      "positive_fixtures": 1
+    }
+  ],
+  "unique_witness_records": 116750592,
+  "final_corner_evaluations": 4718601216,
+  "final_output_rectangles": 5334,
+  "CDF_source_sha256": "2dd80d3616090d8d2501178ea18690215bd78f7d94496a846adeb0a508bc7077",
+  "CDF_dependency": "full PCDF proof imported; its formal arithmetic status remains explicitly conditional in alpha3over2 JSON",
+  "all_positive_multiples_of_K": true,
+  "identification_mu_only_when_rad_M_equals_q": true,
+  "normalization": "log B",
+  "coarse_3570_failed_and_not_used_as_an_exclusion": true,
+  "coarse_3990_already_sufficient": true,
+  "alternative_geometric_audit_exhaustive": false,
+  "full_replay_to_be_run_by_main_task": true
+}

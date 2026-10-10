@@ -1,0 +1,212 @@
+{
+  "sources": [
+    {
+      "path": "P72_6090_165P_20261009/profiles/PROOF.md",
+      "source_relative": "PROOF.md",
+      "destination": "PROOF.md",
+      "original_copy": "imports/originals/PROOF.md",
+      "sha256": "4397e0ceb8effd9ee391f7496b81e6558492f338f2c800f5bc2d35574021768d"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/README.md",
+      "source_relative": "README.md",
+      "destination": "README.md",
+      "original_copy": "imports/originals/README.md",
+      "sha256": "63bfc49a6ae4b734cc1df76c448b6eb79ac54a07c04891357a6b661f5b070f65"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/build.py",
+      "source_relative": "build.py",
+      "destination": "build.py",
+      "original_copy": "imports/originals/build.py",
+      "sha256": "38db3726a7770b08020716ac673ad35509d4968b78491f6b8f39ce107f980c72"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/code/algebra.cpp",
+      "source_relative": "code/algebra.cpp",
+      "destination": "code/algebra.cpp",
+      "original_copy": "imports/originals/code/algebra.cpp",
+      "sha256": "72623bddbaea1a7aa5e4fb3d6f1e1eda411a78059cfdc9684ee6e691a24417be"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/code/angle.cpp",
+      "source_relative": "code/angle.cpp",
+      "destination": "code/angle.cpp",
+      "original_copy": "imports/originals/code/angle.cpp",
+      "sha256": "0726430ce7e28991c51b30fc1f12493b42e4b16d9fe62091a26c4ff8a5aa6ed3"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/code/assemble.py",
+      "source_relative": "code/assemble.py",
+      "destination": "code/assemble.py",
+      "original_copy": "imports/originals/code/assemble.py",
+      "sha256": "547664ffbaf63dee9452fd5faf7be0e7ceb6d5a82553e64d3ca3a99cb1931fe1"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/code/assemble_profiles.py",
+      "source_relative": "code/assemble_profiles.py",
+      "destination": "code/assemble_profiles.py",
+      "original_copy": "imports/originals/code/assemble_profiles.py",
+      "sha256": "9fffaa4e2a5f812558d334897ddcb02aa952e7797d12ff17d922cbffb8b6c412"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/code/audit_one.py",
+      "source_relative": "code/audit_one.py",
+      "destination": "code/audit_one.py",
+      "original_copy": "imports/originals/code/audit_one.py",
+      "sha256": "35081b0dee895a27402239639ca0689f2e9acad9d1f12ff2aaf13db891b63153"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/code/checks.py",
+      "source_relative": "code/checks.py",
+      "destination": "code/checks.py",
+      "original_copy": "imports/originals/code/checks.py",
+      "sha256": "b7ce792823e3bb6fc5279cc5a6953bfcf51e30d31d66098fb62ad6c6a650326e"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/code/core.py",
+      "source_relative": "code/core.py",
+      "destination": "code/core.py",
+      "original_copy": "imports/originals/code/core.py",
+      "sha256": "591eea342d2754cd3f877a0e600d3d5bae4ee8ec93c6e54791bc44d920c352a4"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/code/custody.py",
+      "source_relative": "code/custody.py",
+      "destination": "code/custody.py",
+      "original_copy": "imports/originals/code/custody.py",
+      "sha256": "7d2ca9746fa99463db0362c12b3e532f8c2c2270be96939decacf39b99044868"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/code/emit_profile.py",
+      "source_relative": "code/emit_profile.py",
+      "destination": "code/emit_profile.py",
+      "original_copy": "imports/originals/code/emit_profile.py",
+      "sha256": "f92cec02fa2a9a9fb7fc3c7e255fe8890907c7cb7bbf8c5899c8dbd138c0a16a"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/code/exact.py",
+      "source_relative": "code/exact.py",
+      "destination": "code/exact.py",
+      "original_copy": "imports/originals/code/exact.py",
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/code/kernel.hpp",
+      "source_relative": "code/kernel.hpp",
+      "destination": "code/kernel.hpp",
+      "original_copy": "imports/originals/code/kernel.hpp",
+      "sha256": "42a2fe21fb88fb74a98e3a4fc35d73bda4c561c572b565c2adabe4a5d0b4cf4e"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/code/negative_profiles.py",
+      "source_relative": "code/negative_profiles.py",
+      "destination": "code/negative_profiles.py",
+      "original_copy": "imports/originals/code/negative_profiles.py",
+      "sha256": "837539d8019e9dadc87bc2a40ba67e3afef964d0b4c53ca92287c36ff317c316"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/code/pcdf_check.py",
+      "source_relative": "code/pcdf_check.py",
+      "destination": "code/pcdf_check.py",
+      "original_copy": "imports/originals/code/pcdf_check.py",
+      "sha256": "36145072bcb33611f52086083a58a8ce46c08a849681a6d988b1edb331112e3e"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/code/search.hpp",
+      "source_relative": "code/search.hpp",
+      "destination": "code/search.hpp",
+      "original_copy": "imports/originals/code/search.hpp",
+      "sha256": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/code/stored_profile.py",
+      "source_relative": "code/stored_profile.py",
+      "destination": "code/stored_profile.py",
+      "original_copy": "imports/originals/code/stored_profile.py",
+      "sha256": "4ca78070fd13f70f713774809c0f973e17bb388cbbe3e0e675e8e52e2207ecad"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/data/grid.tsv",
+      "source_relative": "data/grid.tsv",
+      "destination": "data/grid.tsv",
+      "original_copy": "imports/originals/data/grid.tsv",
+      "sha256": "536d5990d2f19003fc5b6534d3c209e87f46b68671f5d3577159d94b4d24df13"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/data/log_seeds.tsv",
+      "source_relative": "data/log_seeds.tsv",
+      "destination": "data/log_seeds.tsv",
+      "original_copy": "imports/originals/data/log_seeds.tsv",
+      "sha256": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/data/log_table.txt",
+      "source_relative": "data/log_table.txt",
+      "destination": "data/log_table.txt",
+      "original_copy": "imports/originals/data/log_table.txt",
+      "sha256": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/generate.py",
+      "source_relative": "generate.py",
+      "destination": "generate.py",
+      "original_copy": "imports/originals/generate.py",
+      "sha256": "bb9e32d870db9cb20916a544651e4ad4873f5a529f5718e13c9fde4ac09d6187"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/imports/DIRECT_METHOD_SOURCE.tex",
+      "source_relative": "imports/DIRECT_METHOD_SOURCE.tex",
+      "destination": "imports/DIRECT_METHOD_SOURCE.tex",
+      "original_copy": "imports/originals/imports/DIRECT_METHOD_SOURCE.tex",
+      "sha256": "2706488d6447ca2c21101aa8ee3d8e29fafc0e594be38fd0939a3107673df7e9"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/imports/PRIMITIVE_CDF.md",
+      "source_relative": "imports/PRIMITIVE_CDF.md",
+      "destination": "imports/PRIMITIVE_CDF.md",
+      "original_copy": "imports/originals/imports/PRIMITIVE_CDF.md",
+      "sha256": "2dd80d3616090d8d2501178ea18690215bd78f7d94496a846adeb0a508bc7077"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "source_relative": "imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "destination": "imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "original_copy": "imports/originals/imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "sha256": "229aac5019834e7ff6d4e4d77890773054ac7b7b0d5caaed185b3ad3e7ed3714"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/profile_contract.json",
+      "source_relative": "profile_contract.json",
+      "destination": "profile_contract.json",
+      "original_copy": "imports/originals/profile_contract.json",
+      "sha256": "919c6f1531ef66a0497e2c7d7bffaf1302c54ca42263164fdb4002275a08d77d"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/profiles_plan.json",
+      "source_relative": "profiles_plan.json",
+      "destination": "profiles_plan.json",
+      "original_copy": "imports/originals/profiles_plan.json",
+      "sha256": "5304cdb2e31c76a083ba3853da4beea4888865a64b0e4fc77253788b23ebbdb0"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/run_negative.py",
+      "source_relative": "run_negative.py",
+      "destination": "run_negative.py",
+      "original_copy": "imports/originals/run_negative.py",
+      "sha256": "90b9bd47e15638cb59dfe4868aea77834f2e7c5001e952ea711cb4fd67808db0"
+    },
+    {
+      "path": "P72_6090_165P_20261009/profiles/verify_profiles.py",
+      "source_relative": "verify_profiles.py",
+      "destination": "verify_profiles.py",
+      "original_copy": "imports/originals/verify_profiles.py",
+      "sha256": "b9492124b357ba9d27fab68614376df5711bdc6660c39f139cd945dcb4e03434"
+    }
+  ],
+  "source_manifest_copy": "imports/SOURCE_MANIFEST_6090.json",
+  "source_manifest_sha256": "dd1eb558200e1f550b3836ad2a7c8dc57febebf31615b905bf8c4771ef113024",
+  "source_root_manifest_copy": "imports/SOURCE_ROOT_MANIFEST_6090.json",
+  "source_root_manifest_sha256": "4c6313f3d6c29b90cca7dd739f9df03a5e4da08c08b81086ad106b35bb1b026a",
+  "adaptation": "Full mark6270=(2,3,5,11,19), actual index6270, predeclaredAG8. All original selected sources preserved. No numeric6090 cap or old operational failure is imported as a new premise."
+}

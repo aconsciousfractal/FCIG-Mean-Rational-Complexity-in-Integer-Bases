@@ -1,0 +1,152 @@
+{
+  "sources": [
+    {
+      "path": "P72_5610_102P_20261009/profiles/code/algebra.cpp",
+      "destination": "code/algebra.cpp",
+      "sha256": "72623bddbaea1a7aa5e4fb3d6f1e1eda411a78059cfdc9684ee6e691a24417be"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/code/angle.cpp",
+      "destination": "code/angle.cpp",
+      "sha256": "0726430ce7e28991c51b30fc1f12493b42e4b16d9fe62091a26c4ff8a5aa6ed3"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/code/assemble.py",
+      "destination": "code/assemble.py",
+      "sha256": "547664ffbaf63dee9452fd5faf7be0e7ceb6d5a82553e64d3ca3a99cb1931fe1"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/code/assemble_profiles.py",
+      "destination": "code/assemble_profiles.py",
+      "sha256": "cd317875db465de6e9075fbe3bf3ffecce7edca86a756b51899b28cc968658a8"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/code/audit_one.py",
+      "destination": "code/audit_one.py",
+      "sha256": "88aa4cdfc5c7b610727f817ada8b4f7650e6866676e1a2baac2240049393b3d7"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/code/checks.py",
+      "destination": "code/checks.py",
+      "sha256": "b7ce792823e3bb6fc5279cc5a6953bfcf51e30d31d66098fb62ad6c6a650326e"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/code/core.py",
+      "destination": "code/core.py",
+      "sha256": "a4f79d2f80b0f811df4b7bb7efffb0c1f267d74640146171764d3e4692d05a0e"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/code/custody.py",
+      "destination": "code/custody.py",
+      "sha256": "ade5f262cbee05f17b33798d7776586d9932cb3d1ab1dfb27be82910c3364e0c"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/code/emit_profile.py",
+      "destination": "code/emit_profile.py",
+      "sha256": "f92cec02fa2a9a9fb7fc3c7e255fe8890907c7cb7bbf8c5899c8dbd138c0a16a"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/code/exact.py",
+      "destination": "code/exact.py",
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/code/kernel.hpp",
+      "destination": "code/kernel.hpp",
+      "sha256": "5d1c1515c1f324e1c9298adb694e88e191b993d96739802b423d08062e18eefd"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/code/negative_profiles.py",
+      "destination": "code/negative_profiles.py",
+      "sha256": "59490f1abf9a14bfeecc2a22ac810b7720620fd0f7a8f10c9331ef2809fcaaa8"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/code/pcdf_check.py",
+      "destination": "code/pcdf_check.py",
+      "sha256": "36145072bcb33611f52086083a58a8ce46c08a849681a6d988b1edb331112e3e"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/code/search.hpp",
+      "destination": "code/search.hpp",
+      "sha256": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/code/stored_profile.py",
+      "destination": "code/stored_profile.py",
+      "sha256": "4ca78070fd13f70f713774809c0f973e17bb388cbbe3e0e675e8e52e2207ecad"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/data/grid.tsv",
+      "destination": "data/grid.tsv",
+      "sha256": "536d5990d2f19003fc5b6534d3c209e87f46b68671f5d3577159d94b4d24df13"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/data/log_seeds.tsv",
+      "destination": "data/log_seeds.tsv",
+      "sha256": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/data/log_table.txt",
+      "destination": "data/log_table.txt",
+      "sha256": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/generate.py",
+      "destination": "generate.py",
+      "sha256": "2c43587e90d086a34fc259b79f354f0e93fae73651cbc7750f4aa6ae4b33e39a"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/build.py",
+      "destination": "build.py",
+      "sha256": "38db3726a7770b08020716ac673ad35509d4968b78491f6b8f39ce107f980c72"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/run_negative.py",
+      "destination": "run_negative.py",
+      "sha256": "709559ea1ff42553f04cc56c6d8929649b56a4e85e326af0022dcaf15b690c3a"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/verify_profiles.py",
+      "destination": "verify_profiles.py",
+      "sha256": "d66d9cb8c64387b8d59aab19cf5f0e64a7d07354e67675f8edcaadf2d7410d70"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/profile_contract.json",
+      "destination": "profile_contract.json",
+      "sha256": "ff8a0a64110bd7eb52b3d2f87943650936ed3c64b3627e74e04fac9693fd6e69"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/profiles_plan.json",
+      "destination": "profiles_plan.json",
+      "sha256": "b457029fd544f72775717752ce176005a86350f23f37d5d0ffc4e5523dc05a73"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/imports/PRIMITIVE_CDF.md",
+      "destination": "imports/PRIMITIVE_CDF.md",
+      "sha256": "2dd80d3616090d8d2501178ea18690215bd78f7d94496a846adeb0a508bc7077"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "destination": "imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "sha256": "229aac5019834e7ff6d4e4d77890773054ac7b7b0d5caaed185b3ad3e7ed3714"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/imports/DIRECT_METHOD_SOURCE.tex",
+      "destination": "imports/DIRECT_METHOD_SOURCE.tex",
+      "sha256": "2706488d6447ca2c21101aa8ee3d8e29fafc0e594be38fd0939a3107673df7e9"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/PROOF.md",
+      "destination": "PROOF.md",
+      "sha256": "16f5958fb87c706ab480a2bcaa9f88038db9d3b0167c18a2b474fdbd6dd290f5"
+    },
+    {
+      "path": "P72_5610_102P_20261009/profiles/README.md",
+      "destination": "README.md",
+      "sha256": "80b5a41729d6bdaaabed1a76622552b73f359d921e8fec0ec146be9cf81ed429"
+    }
+  ],
+  "source_manifest_copy": "imports/SOURCE_MANIFEST_5610.json",
+  "source_manifest_sha256": "f0c091f8f3dfb755f81ef55097eb95047575b108e682edd55f132b23838b2575",
+  "adaptation": "New fixed mark6006=(2,3,7,11,13), all16128projective labels; initial plan only K6006 with AG8. No numeric cap from previous profiles is imported."
+}

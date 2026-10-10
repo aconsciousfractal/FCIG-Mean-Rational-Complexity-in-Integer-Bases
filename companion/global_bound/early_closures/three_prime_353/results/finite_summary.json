@@ -1,0 +1,30 @@
+{
+  "all_witness_means_negative": true,
+  "distinct_log_inputs": 257050,
+  "full_state_mass": 426634122,
+  "minimality_claimed": false,
+  "moduli": 1663,
+  "representatives": 213318146,
+  "status": "PASS",
+  "worst_upper": {
+    "M": 8600,
+    "alpha": 3,
+    "beta": 2,
+    "bins": 333,
+    "gamma": 1,
+    "histogram_sha256": "23992efee335479060ca9a0a209ca33e5c53fb64586b1cc2c3ae2321b7c4641a",
+    "log_M_lower_ticks": 9059517482241599,
+    "max_length": 1,
+    "mu_upper": "-317904848948389153/2150000000000000000",
+    "mu_upper_decimal": "-0.147862720441111",
+    "p": 43,
+    "primitive_base": 8600,
+    "r": 2,
+    "radical": 430,
+    "representatives": 4301,
+    "s": 5,
+    "sum_log_upper_ticks": 37684305777845319088,
+    "target_lower": "9059517482241599/42500000000000000",
+    "witness_sha256": "6c1fe8c3a939b79cb2765bb3ec26adf477cc5f8949de86a5a87e591d7d18a0f7"
+  }
+}

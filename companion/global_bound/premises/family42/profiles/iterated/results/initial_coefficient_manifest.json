@@ -1,0 +1,7 @@
+{
+  "bytes": 12386304,
+  "sha256": "d1338aa05f8774547f2cad21474ddee51e21233b3c314a2dfbde2191e00d29d3",
+  "records": 3096576,
+  "record_format": "two little-endian int16 coefficients",
+  "all_consumed_without_search": true
+}

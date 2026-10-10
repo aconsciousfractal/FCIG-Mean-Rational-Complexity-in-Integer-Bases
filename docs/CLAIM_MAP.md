@@ -5,7 +5,9 @@ over all residues uniformly, including zero. Logarithms are unrounded.
 
 | Claim | Evidence in the paper | Computational or import boundary |
 |---|---|---|
-| Universal E<N/2+49/50 | Reduced lattice, unit wheel, incidence tail and common numerical caps | No large computation for the numerical strengthening |
+| Universal E<N/2+0.241933621228105; C* below the same strict decimal | Supportwise shear upper bound, negative CDF lower bounds, domain exclusions, finite sector integrals and cardinality tail | Exact rational common upper bound; finite geometric witnesses and domains are essential; arbitrary valuations and lengths |
+| C* at least Delta(210,1)>0.023672606561106 | Candidate histogram and outward log enclosure | Exact original-model minima for this one candidate, not a global optimizer claim |
+| Elementary E<N/2+49/50 | Reduced lattice, unit wheel, incidence tail and common numerical caps | No large computation for the numerical strengthening |
 | Prime-power E<=N/2 | Odd-prime compensation, explicit cutoff and21 integer Jensen cases | Binary theorem imported with attribution |
 | Exactly two primes E<N/2 | Central/Farey/compensation proofs and complete finite-domain reduction | Arbitrary valuations; finite certificate premises essential |
 | B30,N2 positive | Product comparison2<=P/30^900<3 | Exact original-model histogram; defining oracle available |
@@ -36,3 +38,13 @@ baseline commands retain their original scopes.
 Mean inequalities concern this rational height; FCSR normalization/rounding
 requires separate equivalence. Finite checks alone do not prove infinite
 claims, novelty, specialist review or Collatz.
+
+## Sharper-bound premises
+
+The new proof uses unmarked Euclidean minimum CDF bounds separately from
+marked full-unit height CDF lower bounds. Their transfer, gcd reduction,
+orientation/sign conditions and infinite tails are printed in the paper.
+The companion index binds the finite periods, covering predicates, profiles,
+finite residual domains and scalar sectors to their checking routes.
+A successful retained check does not mean that a geometric producer was rerun.
+The exact optimum and finite-length attainment remain open.

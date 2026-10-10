@@ -1,0 +1,20 @@
+{
+  "all_selected_complements_checked": false,
+  "analytic_moduli": 2454,
+  "complement_moduli": 4117,
+  "global_Cstar_identified": false,
+  "independent_radical_scan": true,
+  "input_supports": 442,
+  "max_witness_modulus": 170953875,
+  "new_tail_supports": 13,
+  "old_tail_supports": 340,
+  "primitive_base_normalization": true,
+  "remaining_supports": 89,
+  "representatives": 213318146,
+  "selected_supports": 353,
+  "status": "PASS",
+  "tail_cutoff_max": 74490839040,
+  "valuation_enumeration_two_routes": true,
+  "witness_moduli": 1663,
+  "witness_state_mass": 426634122
+}

@@ -1,6 +1,9 @@
 # Reproduction
 
-Python >=3.10 and the standard library suffice for mathematical checks.
+Python >=3.10 and the standard library suffice for the original two-prime
+chain and the scalar checks. The marked-70 component, including the new global
+retained chain, requires Python >=3.11. Full geometric reconstruction of the new
+global bound additionally requires the GNU C++ environment described below.
 No Git, network, internal checkout or external Python package is required.
 Run from the repository root.
 
@@ -124,3 +127,42 @@ artifact. No TeX packages are bundled.
 
 These checks do not establish originality, human specialist review, formal
 proof verification, universal FCSR equivalence or a Collatz theorem.
+
+## Version 0.2.0 global correction
+
+All defaults under `companion/global_bound` are relative and may be relocated.
+Write outputs outside the distributed tree, or in a fresh ignored work directory.
+No command silently accepts an old output as a fresh reconstruction.
+
+~~~text
+python -B companion/global_bound/producer.py --build --output ../new-global-certificate.json
+python -B companion/global_bound/verify_closures.py --output ../new-retained-closures
+python -B -O companion/global_bound/verify_closures.py --output ../new-retained-closures-optimized
+python -B companion/global_bound/check.py --certificate ../new-global-certificate.json --closures-report ../new-retained-closures/report.json --output ../new-global-check.json
+python -B -O companion/global_bound/check.py --certificate ../new-global-certificate.json --closures-report ../new-retained-closures-optimized/report.json --output ../new-global-check-optimized.json
+~~~
+
+The scalar checker recomputes all negative profiles and infinite profile
+tails, all 621 sector integrals and the scalar/cardinality tail.
+The premise checker also recomputes the finite incidence period, covering
+predicates, shear comparisons and candidate minimum histogram.
+Retained closure checking validates the other numerical finite premises,
+exact finite-domain partitions and support joins.
+The scalar check authenticates the complete retained report against its
+component domain and the distributed closure inventory. Omitting
+`--closures-report` produces an explicitly conditional scalar result.
+
+For full geometric reconstruction, use a little-endian Linux environment
+with GNU g++ C++17, `__int128` and OpenMP. No third-party Python library is
+required. This longer path produces and consumes the complete witness
+streams and finite residuals, rather than inferring their cost predicates
+from retained profile maxima or samples.
+
+~~~text
+python3 -B companion/global_bound/reconstruct_closures.py --output ../new-full-closures --threads 4
+~~~
+
+Consult the global companion README for individual early closure routes,
+thread limits, output refusal rules and the exact current execution record.
+The new chain does not rerun the unchanged original two-prime companion.
+Its older complete route remains `scripts/reconstruct_all.py`.

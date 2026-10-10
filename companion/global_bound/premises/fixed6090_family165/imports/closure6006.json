@@ -1,0 +1,141 @@
+{
+  "status": "PASS",
+  "theorem": "rad(B)=6006 implies Delta(B,N)<=Gamma6006<2/85<c0 for every N>=1",
+  "radical": 6006,
+  "primes": [
+    2,
+    3,
+    7,
+    11,
+    13
+  ],
+  "all_positive_valuations": true,
+  "all_N_ge_1": true,
+  "base_form": "B=2^a*3^b*7^c*11^d*13^e, a,b,c,d,e>=1",
+  "normalization": "Delta(B,N)=mu(B^N)/ln(B)",
+  "all_states_including_zero": true,
+  "norm": "infinity",
+  "logarithm": "natural",
+  "mean_upper": "24211884300067341297715930039632520413099/154742504910672534362390528000000000000000",
+  "mean_upper_decimal": "0.156465635049944",
+  "log6006_lower": "348020569941731/40000000000000",
+  "Gamma6006": "24211884300067341297715930039632520413099/1346339368830584086837594005309970658099200",
+  "Gamma6006_upper_decimal": "0.017983492766091",
+  "margin_to_2_over_85": "126933714431088832673866791450235416216997/22887769270119929476239098090269501187686400",
+  "candidate": {
+    "c0_lower": "632899864073014/26735537653587345",
+    "c0_upper": "443029904851115/18714876357511138",
+    "c0_lower_decimal": "0.023672606561106",
+    "c0_upper_decimal": "0.023672606561107",
+    "integer_comparison": "P^170 > 210^18690"
+  },
+  "transfer": {
+    "mark": 6006,
+    "required_divisor_of_M": 6006,
+    "seed": "L=M/6006>=1",
+    "all_positive_multiples_including_extra_primes": true,
+    "physical_mean_identification_sufficient_hypothesis": "rad(M)=6006",
+    "final_state_coverage": "Every state modulo M occurs exactly once among6006 lifts of each seed state.",
+    "base_minimum": 6006,
+    "positive_mean_upper_normalized_by": "ln(B)>=ln(6006)"
+  },
+  "geometry": {
+    "profiles": 1,
+    "projective_labels": 16128,
+    "cells": 2688,
+    "angular_nodes": 17,
+    "distinct_final_profile_records": 43352064,
+    "final_corner_evaluations": 2947940352,
+    "raw_bytes": 346816512,
+    "raw_sha256": "b3b152069e5e8a20240efc4818ede72215ef4a282669549262a4238bcbf97501",
+    "diagnostics_and_replays_not_added_to_distinct_record_count": true
+  },
+  "completed_full_geometric_replay": {
+    "status": "PASS",
+    "completed_full_replay_verified": true,
+    "profiles": 1,
+    "geometric_records": 43352064,
+    "corner_evaluations": 2947940352,
+    "complete_file_comparisons": 10,
+    "executed_component_payload_files": 55,
+    "final_component_payload_files": 55,
+    "scientific_payload_files_byte_identical": 55,
+    "component_unchanged_after_replay": true,
+    "replay_runtime_seconds": 209.324,
+    "final_component_manifest_sha256": "0ffd087c085cc37c30361594b703d4f4723a7fa181dc8fb241ea6cee31df8e57",
+    "source_manifest_sha256": "0ffd087c085cc37c30361594b703d4f4723a7fa181dc8fb241ea6cee31df8e57",
+    "report_sha256": "e382c8bca95a8e1ef0284afa74567f03df16e81fa2b12d3b6d6ad85df43b7768",
+    "receipt_sha256": "16f08cd143881fffd136f41f7cf6bb5a771cd006f684191828ba157b088e3831"
+  },
+  "second_profile_required": false,
+  "finite_complement_required_for_closure": false,
+  "offset_sign_classification_claimed": false,
+  "exact_maximum_for_radical_claimed": false,
+  "all_five_prime_supports_closed": false,
+  "uniform_210p_family_closed": false,
+  "exact_Cstar_equals_c0_proved": false,
+  "formalized_in_proof_assistant": false,
+  "independent_geometric_audit_exhaustive": false,
+  "inputs": [
+    {
+      "path": "code/assemble_closure.py",
+      "sha256": "0bf1112b463b500670fd71b5fffc928de4c4030d5dc2cd325776b14e32ff1d06"
+    },
+    {
+      "path": "code/exact.py",
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59"
+    },
+    {
+      "path": "code/candidate210.py",
+      "sha256": "e7156442bece3120f77bcfce08e269fb79705343f7110cd5eb9de24059b201f0"
+    },
+    {
+      "path": "code/custody.py",
+      "sha256": "8be7cab8e9e7721f7a965a08fe197ed37af47b4622185f05e905b9ac01fa8598"
+    },
+    {
+      "path": "PROOF_6006.md",
+      "sha256": "015475df7bd2d7ece8846a913c3bd063512557bc28780106d21d4ac1691ee391"
+    },
+    {
+      "path": "profiles/results/profile_certificate.json",
+      "sha256": "be803ed73a05beb3e982ba31a309b3daa20f5dd9f023a0d66f8e55aec6ce3122"
+    },
+    {
+      "path": "profiles/profile_contract.json",
+      "sha256": "aa43cdb216c369a51f338096b89f5432c3e201546dd2330b43a0be5e325ed9cf"
+    },
+    {
+      "path": "profiles/profiles_plan.json",
+      "sha256": "468edf88c0b6ea347cfb4f8ed96203bd4d858f96cbc77a143f1da3d536f88d48"
+    },
+    {
+      "path": "profiles/results/q6006_K6006.json",
+      "sha256": "853e25401e65a62ed3e2f5e960047e99ef0e85acd167b645a5770560fdd3aa5c"
+    },
+    {
+      "path": "results/candidate210.json",
+      "sha256": "a8e6be43996cede955ddffc8fc6d584fc46019f2c322c0965dfab561afcb29d9"
+    },
+    {
+      "path": "logs/profiles_full_replay.json",
+      "sha256": "e382c8bca95a8e1ef0284afa74567f03df16e81fa2b12d3b6d6ad85df43b7768"
+    },
+    {
+      "path": "logs/profiles_full_replay.log",
+      "sha256": "a0cc607f5df8efed739b0c58916faa057e8a73d12cefcddcea5be01285429fec"
+    },
+    {
+      "path": "logs/profiles_full_replay_RECEIPT.json",
+      "sha256": "16f08cd143881fffd136f41f7cf6bb5a771cd006f684191828ba157b088e3831"
+    },
+    {
+      "path": "logs/profiles_full_replay_CONTRACT.json",
+      "sha256": "94820e7673d2010fcbcf47a7fdd3d6a2a6555a4372a96904e23eb33534368388"
+    },
+    {
+      "path": "logs/profiles_full_replay_SOURCE_MANIFEST.json",
+      "sha256": "0ffd087c085cc37c30361594b703d4f4723a7fa181dc8fb241ea6cee31df8e57"
+    }
+  ]
+}

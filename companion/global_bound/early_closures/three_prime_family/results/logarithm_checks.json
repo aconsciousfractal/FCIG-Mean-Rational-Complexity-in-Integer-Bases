@@ -1,0 +1,7 @@
+{
+  "all_census_integer_log_inputs": 11124,
+  "primary": "range-reduced atanh series, 28 terms",
+  "secondary": "negative logarithm Taylor series, 96 terms",
+  "status": "PASS",
+  "tick_scale": 1000000000000000
+}

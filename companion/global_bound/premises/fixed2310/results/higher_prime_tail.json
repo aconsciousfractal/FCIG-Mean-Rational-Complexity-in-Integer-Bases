@@ -1,0 +1,99 @@
+{
+  "status": "PASS_WITH_DECLARED_IMPORTS",
+  "theorem": "For every B with omega(B)>=6 and every N>=1, Delta(B,N)<=U6<5/16",
+  "exact_upper_expression": "(1+log(3161/14))/(2*log(30030))",
+  "upper": "641958638260036/2061990432195475",
+  "upper_decimal": "0.311329591173961",
+  "simple_strict_upper": "5/16",
+  "all_positive_valuations": true,
+  "all_N_ge_1": true,
+  "all_prime_counts_ge_6": true,
+  "below_c0_exclusion_claimed": false,
+  "new_geometric_profile_used": false,
+  "H76": {
+    "max_remaining_primes": 7,
+    "block": 76,
+    "odd_cover": [
+      26,
+      16,
+      11,
+      7,
+      6,
+      5,
+      4
+    ],
+    "odd_sum": 75,
+    "odd_subsequence_length": 38,
+    "even_cover": [
+      13,
+      8,
+      6,
+      4,
+      3,
+      3
+    ],
+    "even_sum": 37,
+    "optimal_Jacobsthal_constant_claimed": false
+  },
+  "sectors": [
+    {
+      "omega": 6,
+      "base_min": 30030,
+      "H": 18,
+      "K": "3161/14",
+      "lower": "2139862127533453/6873301440651584",
+      "upper": "641958638260036/2061990432195475",
+      "upper_decimal": "0.311329591173961"
+    },
+    {
+      "omega": 7,
+      "base_min": 510510,
+      "H": 38,
+      "K": "41963/42",
+      "lower": "7906873938334589/26286331010067186",
+      "upper": "3953436969167295/13143165505033592",
+      "upper_decimal": "0.300797929361325"
+    },
+    {
+      "omega": 8,
+      "base_min": 9699690,
+      "H": 76,
+      "K": "167591/42",
+      "lower": "9291612148020883/32175208968400066",
+      "upper": "2322903037005221/8043802242100016",
+      "upper_decimal": "0.288781718780642"
+    },
+    {
+      "omega": 9,
+      "base_min": 223092870,
+      "H": 256,
+      "K": "1900631/42",
+      "lower": "5860013437990856/19223098700129183",
+      "upper": "11720026875981713/38446197400258364",
+      "upper_decimal": "0.304842290486262"
+    }
+  ],
+  "infinite_tail": {
+    "omega_from": 9,
+    "P9": 223092870,
+    "K9": "1900631/42",
+    "v": "omega(B)-9",
+    "base_growth_lower": "29^v",
+    "K_growth_upper": "4^v",
+    "derivative_upper": "-2563184859116485599928436096887/200000000000000000000000000000",
+    "decreasing_for_every_real_v_ge_0": true,
+    "finite_k_scan_is_not_the_proof": true
+  },
+  "integer_gate": {
+    "expression": "(49*3161)^8 < 30030^5*(18*14)^8",
+    "left": "331256651083723534077692591288122957135681",
+    "right": "397174161407336819693883706720931020800000",
+    "positive_difference": "65917510323613285616191115432808063664319"
+  },
+  "imports": [
+    "SV/W/MEAN, sources/GLOBAL_CAP_SOURCE.md sections3-4",
+    "elementary H18 andH38 bounds, same source section2",
+    "Kanold J(q)<=2^omega(q), only for omega(B)>=9"
+  ],
+  "formalized": false
+}

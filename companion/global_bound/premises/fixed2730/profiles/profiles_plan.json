@@ -1,0 +1,30 @@
+[
+  {
+    "stem": "q2730_K2730_coarse",
+    "p": 13,
+    "multiplier": 1,
+    "style": "coarse",
+    "angular": 8
+  },
+  {
+    "stem": "q2730_K16380_hybrid_AG8",
+    "p": 13,
+    "multiplier": 6,
+    "style": "hybrid",
+    "angular": 8
+  },
+  {
+    "stem": "q3570_K3570_coarse",
+    "p": 17,
+    "multiplier": 1,
+    "style": "coarse",
+    "angular": 8
+  },
+  {
+    "stem": "q3990_K3990_coarse",
+    "p": 19,
+    "multiplier": 1,
+    "style": "coarse",
+    "angular": 8
+  }
+]

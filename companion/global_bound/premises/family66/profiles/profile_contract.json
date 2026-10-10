@@ -1,0 +1,17 @@
+{
+  "core": 66,
+  "core_primes": [
+    2,
+    3,
+    11
+  ],
+  "first_new_prime": 13,
+  "last_small_prime": 43,
+  "tail_first_prime": 47,
+  "marked_simple_caps": {
+    "1": "127/1000",
+    "2": "2/125"
+  },
+  "comparison_threshold": "2/85",
+  "external_tail_gates_are_not_certified_by_this_component": true
+}

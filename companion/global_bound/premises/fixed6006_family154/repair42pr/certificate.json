@@ -1,0 +1,3435 @@
+{
+  "checks_by_type": {
+    "G boundary Phi cancellation": 1,
+    "G boundary first logarithm": 1,
+    "J endpoint a": 1,
+    "J endpoint b": 1,
+    "J6 scaled upper25over4": 1,
+    "actual minimum below repair witness": 2174,
+    "all42 residue classes": 1,
+    "certified J4 upper": 1,
+    "certified K upper": 1,
+    "closed shear endpoint": 504,
+    "companion denominator coprime": 2174,
+    "core42 unit": 252,
+    "declared radius obstruction": 3,
+    "gate anchor divisor": 2,
+    "historical anchor42 below107over500": 1,
+    "historical anchor42square positive below67over1000": 1,
+    "historical profile manifest link": 4,
+    "historical root manifest schema and unique inventory": 1,
+    "historical root42 manifest expected identity": 1,
+    "imported source byte identity": 7,
+    "independent full shear coverage": 7560,
+    "independent interval no gap": 64832,
+    "joint periodic linear coefficient": 1,
+    "joint root coefficient": 1,
+    "marked minimum monotonicity": 13850,
+    "new infinite joint prime gate": 2,
+    "no bad prime no cost": 11676,
+    "nonzero determinant at most4": 126,
+    "observed joint free CDF": 1903,
+    "observed joint periodic CDF": 1903,
+    "periodic inclusion exclusion": 42,
+    "periodic initial intercept": 42,
+    "periodic integral domain": 2,
+    "periodic linear slope": 42,
+    "periodic sharp endpoint31": 1,
+    "pointwise high-X geometric bound": 290,
+    "pointwise low-X geometric bound": 1884,
+    "primitive lattice coordinates": 2174,
+    "radius4 core unit": 42,
+    "radius4 full positive half": 42,
+    "radius6 coefficient": 252,
+    "reduced companion determinant": 2174,
+    "regression theorem domain": 9,
+    "repaired vector coefficients": 2174,
+    "repaired vector in lattice": 2174,
+    "residue groups disjoint": 1,
+    "selected anchor source linked to frozen root42 manifest": 5,
+    "source directory exact inventory": 1,
+    "source receipt exact unique inventory": 1,
+    "source receipt original paths unique": 1,
+    "source receipt status": 1,
+    "symbolic radius5 obstruction sole candidate": 1
+  },
+  "exact_assertions": 118341,
+  "independent_finite_prime_cover": {
+    "method": "union of exact intervals from all admissible coefficient pairs",
+    "primes": [
+      11,
+      13,
+      17,
+      19,
+      23,
+      29,
+      31,
+      37
+    ],
+    "residues_by_prime": {
+      "11": 462,
+      "13": 546,
+      "17": 714,
+      "19": 798,
+      "23": 966,
+      "29": 1218,
+      "31": 1302,
+      "37": 1554
+    },
+    "total_residue_classes": 7560,
+    "universal_prime_proof": false
+  },
+  "infinite_gates": {
+    "anchor_1764_is_negative": false,
+    "anchor_exact_upper_1764": "69121560350921936453336513359595976304501/1083197534374707740536733696000000000000000",
+    "anchor_exact_upper_42": "227330675661969612121497761214887074506613/1083197534374707740536733696000000000000000",
+    "anchor_status": "inherited proven marked42 profiles; no large-stream replay in this module",
+    "full_family_closed": false,
+    "gates": [
+      {
+        "B_minimum": 2202522,
+        "M_minimum": 2202522,
+        "all_N_at_least": 1,
+        "all_positive_valuations": true,
+        "anchor_divisor": 42,
+        "anchor_upper": "107/500",
+        "gap_to_2over85_lower": "94534031697119491733086820369/10000000000000000000000000000000000",
+        "insertion_cost_upper": "1295116643347208375963226880653199/10000000000000000000000000000000000",
+        "normalized_upper": "2351995836153617040376786778855133/100000000000000000000000000000000000",
+        "normalized_upper_decimal": "0.023519958361537",
+        "p_and_r_minimum": 229,
+        "uses_distinctness_to_tighten_scalar_boundary": false
+      },
+      {
+        "B_minimum": 289338,
+        "M_minimum": 83716478244,
+        "all_N_at_least": 2,
+        "all_positive_valuations": true,
+        "anchor_divisor": 1764,
+        "anchor_upper": "67/1000",
+        "gap_to_2over85_lower": "3607945968065377132365161536719/12500000000000000000000000000000000",
+        "insertion_cost_upper": "11263045647443587715620276951557729/50000000000000000000000000000000000",
+        "normalized_upper": "2324077608726065218235196354765071/100000000000000000000000000000000000",
+        "normalized_upper_decimal": "0.023240776087261",
+        "p_and_r_minimum": 83,
+        "uses_distinctness_to_tighten_scalar_boundary": false
+      }
+    ]
+  },
+  "integrals": {
+    "J4_interval": [
+      "101989979145228512116192193577659963/20000000000000000000000000000000000",
+      "12748757373707887682094368710049767/2500000000000000000000000000000000"
+    ],
+    "J4_upper": "51/10",
+    "J6_upper": "25/4",
+    "K_interval": [
+      "9267787142801231482947504861267051/50000000000000000000000000000000000",
+      "463389357141346703306852945378633/2500000000000000000000000000000000"
+    ],
+    "K_upper": "46339/250000",
+    "general_G_branches": "Phi(y/2)+yK for y<=4/3; log(1+y*y)/2+y*atan(1/y) for y>=4/3",
+    "periodic_Msqrt_coefficient": "18825/434",
+    "periodic_Phi_coefficient": "15/7",
+    "periodic_lambda_coefficient": "139017/175000"
+  },
+  "periodic_count": {
+    "A": "5/7",
+    "C": "753/217",
+    "mark": 42,
+    "rho": "2/7",
+    "rows": [
+      {
+        "D": "0/1",
+        "S": 0,
+        "U": 0,
+        "epsilon": "0/1",
+        "j": 0
+      },
+      {
+        "D": "16/7",
+        "S": 1,
+        "U": 1,
+        "epsilon": "5/7",
+        "j": 1
+      },
+      {
+        "D": "15/7",
+        "S": 1,
+        "U": 1,
+        "epsilon": "3/7",
+        "j": 2
+      },
+      {
+        "D": "4/7",
+        "S": 1,
+        "U": 1,
+        "epsilon": "1/7",
+        "j": 3
+      },
+      {
+        "D": "-17/7",
+        "S": 1,
+        "U": 1,
+        "epsilon": "-1/7",
+        "j": 4
+      },
+      {
+        "D": "57/7",
+        "S": 6,
+        "U": 2,
+        "epsilon": "4/7",
+        "j": 5
+      },
+      {
+        "D": "30/7",
+        "S": 6,
+        "U": 2,
+        "epsilon": "2/7",
+        "j": 6
+      },
+      {
+        "D": "-1/1",
+        "S": 6,
+        "U": 2,
+        "epsilon": "0/1",
+        "j": 7
+      },
+      {
+        "D": "-54/7",
+        "S": 6,
+        "U": 2,
+        "epsilon": "-2/7",
+        "j": 8
+      },
+      {
+        "D": "-111/7",
+        "S": 6,
+        "U": 2,
+        "epsilon": "-4/7",
+        "j": 9
+      },
+      {
+        "D": "-178/7",
+        "S": 6,
+        "U": 2,
+        "epsilon": "-6/7",
+        "j": 10
+      },
+      {
+        "D": "-24/7",
+        "S": 17,
+        "U": 3,
+        "epsilon": "-1/7",
+        "j": 11
+      },
+      {
+        "D": "-97/7",
+        "S": 17,
+        "U": 3,
+        "epsilon": "-3/7",
+        "j": 12
+      },
+      {
+        "D": "93/7",
+        "S": 30,
+        "U": 4,
+        "epsilon": "2/7",
+        "j": 13
+      },
+      {
+        "D": "2/1",
+        "S": 30,
+        "U": 4,
+        "epsilon": "0/1",
+        "j": 14
+      },
+      {
+        "D": "-75/7",
+        "S": 30,
+        "U": 4,
+        "epsilon": "-2/7",
+        "j": 15
+      },
+      {
+        "D": "-174/7",
+        "S": 30,
+        "U": 4,
+        "epsilon": "-4/7",
+        "j": 16
+      },
+      {
+        "D": "74/7",
+        "S": 47,
+        "U": 5,
+        "epsilon": "1/7",
+        "j": 17
+      },
+      {
+        "D": "-31/7",
+        "S": 47,
+        "U": 5,
+        "epsilon": "-1/7",
+        "j": 18
+      },
+      {
+        "D": "253/7",
+        "S": 66,
+        "U": 6,
+        "epsilon": "4/7",
+        "j": 19
+      },
+      {
+        "D": "142/7",
+        "S": 66,
+        "U": 6,
+        "epsilon": "2/7",
+        "j": 20
+      },
+      {
+        "D": "3/1",
+        "S": 66,
+        "U": 6,
+        "epsilon": "0/1",
+        "j": 21
+      },
+      {
+        "D": "-110/7",
+        "S": 66,
+        "U": 6,
+        "epsilon": "-2/7",
+        "j": 22
+      },
+      {
+        "D": "232/7",
+        "S": 89,
+        "U": 7,
+        "epsilon": "3/7",
+        "j": 23
+      },
+      {
+        "D": "95/7",
+        "S": 89,
+        "U": 7,
+        "epsilon": "1/7",
+        "j": 24
+      },
+      {
+        "D": "473/7",
+        "S": 114,
+        "U": 8,
+        "epsilon": "6/7",
+        "j": 25
+      },
+      {
+        "D": "330/7",
+        "S": 114,
+        "U": 8,
+        "epsilon": "4/7",
+        "j": 26
+      },
+      {
+        "D": "177/7",
+        "S": 114,
+        "U": 8,
+        "epsilon": "2/7",
+        "j": 27
+      },
+      {
+        "D": "2/1",
+        "S": 114,
+        "U": 8,
+        "epsilon": "0/1",
+        "j": 28
+      },
+      {
+        "D": "450/7",
+        "S": 143,
+        "U": 9,
+        "epsilon": "5/7",
+        "j": 29
+      },
+      {
+        "D": "281/7",
+        "S": 143,
+        "U": 9,
+        "epsilon": "3/7",
+        "j": 30
+      },
+      {
+        "D": "753/7",
+        "S": 174,
+        "U": 10,
+        "epsilon": "8/7",
+        "j": 31
+      },
+      {
+        "D": "578/7",
+        "S": 174,
+        "U": 10,
+        "epsilon": "6/7",
+        "j": 32
+      },
+      {
+        "D": "393/7",
+        "S": 174,
+        "U": 10,
+        "epsilon": "4/7",
+        "j": 33
+      },
+      {
+        "D": "198/7",
+        "S": 174,
+        "U": 10,
+        "epsilon": "2/7",
+        "j": 34
+      },
+      {
+        "D": "-1/1",
+        "S": 174,
+        "U": 10,
+        "epsilon": "0/1",
+        "j": 35
+      },
+      {
+        "D": "-222/7",
+        "S": 174,
+        "U": 10,
+        "epsilon": "-2/7",
+        "j": 36
+      },
+      {
+        "D": "330/7",
+        "S": 211,
+        "U": 11,
+        "epsilon": "3/7",
+        "j": 37
+      },
+      {
+        "D": "109/7",
+        "S": 211,
+        "U": 11,
+        "epsilon": "1/7",
+        "j": 38
+      },
+      {
+        "D": "-122/7",
+        "S": 211,
+        "U": 11,
+        "epsilon": "-1/7",
+        "j": 39
+      },
+      {
+        "D": "-363/7",
+        "S": 211,
+        "U": 11,
+        "epsilon": "-3/7",
+        "j": 40
+      },
+      {
+        "D": "247/7",
+        "S": 252,
+        "U": 12,
+        "epsilon": "2/7",
+        "j": 41
+      }
+    ],
+    "sharp_endpoint_for_fixed_A": 31
+  },
+  "physical_regressions": {
+    "cases": [
+      {
+        "M": 143,
+        "bad_height_histogram": {
+          "11": 28,
+          "13": 22,
+          "22": 2
+        },
+        "bad_selected_minima": 52,
+        "both_bad": 0,
+        "max_repair_radius_used": 6,
+        "p": 11,
+        "r": 13,
+        "states": 143,
+        "zero_numerator_bad_minima": 16
+      },
+      {
+        "M": 286,
+        "bad_height_histogram": {
+          "11": 30,
+          "13": 34,
+          "22": 8,
+          "26": 6,
+          "39": 2
+        },
+        "bad_selected_minima": 80,
+        "both_bad": 0,
+        "max_repair_radius_used": 6,
+        "p": 11,
+        "r": 13,
+        "states": 286,
+        "zero_numerator_bad_minima": 22
+      },
+      {
+        "M": 429,
+        "bad_height_histogram": {
+          "11": 30,
+          "13": 36,
+          "22": 14,
+          "26": 12,
+          "39": 2,
+          "55": 2,
+          "143": 2
+        },
+        "bad_selected_minima": 98,
+        "both_bad": 2,
+        "max_repair_radius_used": 6,
+        "p": 11,
+        "r": 13,
+        "states": 429,
+        "zero_numerator_bad_minima": 22
+      },
+      {
+        "M": 1573,
+        "bad_height_histogram": {
+          "11": 30,
+          "13": 36,
+          "22": 20,
+          "26": 24,
+          "33": 20,
+          "39": 18,
+          "44": 8,
+          "52": 8,
+          "55": 30,
+          "65": 20,
+          "66": 4,
+          "77": 2,
+          "78": 2,
+          "121": 18,
+          "143": 16,
+          "198": 2
+        },
+        "bad_selected_minima": 258,
+        "both_bad": 16,
+        "max_repair_radius_used": 6,
+        "p": 11,
+        "r": 13,
+        "states": 1573,
+        "zero_numerator_bad_minima": 22
+      },
+      {
+        "M": 1859,
+        "bad_height_histogram": {
+          "11": 30,
+          "13": 36,
+          "22": 20,
+          "26": 24,
+          "33": 20,
+          "39": 22,
+          "44": 14,
+          "52": 8,
+          "55": 38,
+          "65": 28,
+          "66": 8,
+          "77": 2,
+          "78": 4,
+          "121": 2,
+          "143": 18,
+          "169": 16,
+          "209": 4,
+          "234": 2
+        },
+        "bad_selected_minima": 296,
+        "both_bad": 18,
+        "max_repair_radius_used": 6,
+        "p": 11,
+        "r": 13,
+        "states": 1859,
+        "zero_numerator_bad_minima": 22
+      },
+      {
+        "M": 3146,
+        "bad_height_histogram": {
+          "11": 30,
+          "13": 36,
+          "22": 20,
+          "26": 24,
+          "33": 20,
+          "39": 24,
+          "44": 20,
+          "52": 24,
+          "55": 74,
+          "65": 58,
+          "66": 20,
+          "77": 14,
+          "78": 22,
+          "88": 10,
+          "91": 8,
+          "104": 2,
+          "121": 34,
+          "143": 32,
+          "182": 2,
+          "187": 2,
+          "198": 2,
+          "209": 2,
+          "273": 2,
+          "319": 2,
+          "352": 2
+        },
+        "bad_selected_minima": 486,
+        "both_bad": 30,
+        "max_repair_radius_used": 6,
+        "p": 11,
+        "r": 13,
+        "states": 3146,
+        "zero_numerator_bad_minima": 22
+      },
+      {
+        "M": 6006,
+        "bad_height_histogram": {
+          "11": 30,
+          "13": 36,
+          "22": 20,
+          "26": 24,
+          "33": 20,
+          "39": 24,
+          "44": 20,
+          "52": 24,
+          "55": 100,
+          "65": 114,
+          "66": 36,
+          "77": 28,
+          "78": 34,
+          "88": 18,
+          "91": 24,
+          "99": 14,
+          "104": 18,
+          "110": 4,
+          "117": 6,
+          "121": 40,
+          "132": 8,
+          "143": 66,
+          "154": 2,
+          "165": 2,
+          "169": 10,
+          "182": 6,
+          "187": 6,
+          "209": 8,
+          "220": 2,
+          "221": 4,
+          "231": 2,
+          "234": 2,
+          "253": 4,
+          "273": 2,
+          "275": 6,
+          "286": 4,
+          "299": 2,
+          "341": 2,
+          "377": 2,
+          "403": 2,
+          "407": 2,
+          "429": 2,
+          "671": 2,
+          "858": 2
+        },
+        "bad_selected_minima": 784,
+        "both_bad": 52,
+        "max_repair_radius_used": 6,
+        "p": 11,
+        "r": 13,
+        "states": 6006,
+        "zero_numerator_bad_minima": 24
+      },
+      {
+        "M": 187,
+        "bad_height_histogram": {
+          "11": 30,
+          "17": 24,
+          "22": 4
+        },
+        "bad_selected_minima": 58,
+        "both_bad": 0,
+        "max_repair_radius_used": 6,
+        "p": 11,
+        "r": 17,
+        "states": 187,
+        "zero_numerator_bad_minima": 18
+      },
+      {
+        "M": 221,
+        "bad_height_histogram": {
+          "13": 32,
+          "17": 26,
+          "26": 4
+        },
+        "bad_selected_minima": 62,
+        "both_bad": 0,
+        "max_repair_radius_used": 6,
+        "p": 13,
+        "r": 17,
+        "states": 221,
+        "zero_numerator_bad_minima": 20
+      }
+    ],
+    "does_not_replace_universal_proof": true,
+    "method": "all states, exact denominator enumeration plus constructive lattice repair",
+    "states": 13850
+  },
+  "radius6": {
+    "both_bad_radius4_rows": [
+      {
+        "pair": [
+          1,
+          -1
+        ],
+        "z": 0
+      },
+      {
+        "pair": [
+          1,
+          0
+        ],
+        "z": 1
+      },
+      {
+        "pair": [
+          1,
+          -1
+        ],
+        "z": 2
+      },
+      {
+        "pair": [
+          2,
+          -1
+        ],
+        "z": 3
+      },
+      {
+        "pair": [
+          3,
+          -1
+        ],
+        "z": 4
+      },
+      {
+        "pair": [
+          1,
+          0
+        ],
+        "z": 5
+      },
+      {
+        "pair": [
+          1,
+          -1
+        ],
+        "z": 6
+      },
+      {
+        "pair": [
+          2,
+          -1
+        ],
+        "z": 7
+      },
+      {
+        "pair": [
+          3,
+          -1
+        ],
+        "z": 8
+      },
+      {
+        "pair": [
+          2,
+          -1
+        ],
+        "z": 9
+      },
+      {
+        "pair": [
+          2,
+          -1
+        ],
+        "z": 10
+      },
+      {
+        "pair": [
+          1,
+          0
+        ],
+        "z": 11
+      },
+      {
+        "pair": [
+          1,
+          -1
+        ],
+        "z": 12
+      },
+      {
+        "pair": [
+          1,
+          0
+        ],
+        "z": 13
+      },
+      {
+        "pair": [
+          1,
+          -1
+        ],
+        "z": 14
+      },
+      {
+        "pair": [
+          2,
+          -1
+        ],
+        "z": 15
+      },
+      {
+        "pair": [
+          2,
+          -1
+        ],
+        "z": 16
+      },
+      {
+        "pair": [
+          1,
+          0
+        ],
+        "z": 17
+      },
+      {
+        "pair": [
+          1,
+          -1
+        ],
+        "z": 18
+      },
+      {
+        "pair": [
+          1,
+          0
+        ],
+        "z": 19
+      },
+      {
+        "pair": [
+          1,
+          -1
+        ],
+        "z": 20
+      },
+      {
+        "pair": [
+          2,
+          -1
+        ],
+        "z": 21
+      },
+      {
+        "pair": [
+          2,
+          -1
+        ],
+        "z": 22
+      },
+      {
+        "pair": [
+          1,
+          0
+        ],
+        "z": 23
+      },
+      {
+        "pair": [
+          1,
+          -1
+        ],
+        "z": 24
+      },
+      {
+        "pair": [
+          1,
+          0
+        ],
+        "z": 25
+      },
+      {
+        "pair": [
+          1,
+          -1
+        ],
+        "z": 26
+      },
+      {
+        "pair": [
+          2,
+          -1
+        ],
+        "z": 27
+      },
+      {
+        "pair": [
+          2,
+          -1
+        ],
+        "z": 28
+      },
+      {
+        "pair": [
+          1,
+          0
+        ],
+        "z": 29
+      },
+      {
+        "pair": [
+          1,
+          -1
+        ],
+        "z": 30
+      },
+      {
+        "pair": [
+          1,
+          0
+        ],
+        "z": 31
+      },
+      {
+        "pair": [
+          1,
+          -1
+        ],
+        "z": 32
+      },
+      {
+        "pair": [
+          2,
+          -1
+        ],
+        "z": 33
+      },
+      {
+        "pair": [
+          2,
+          -1
+        ],
+        "z": 34
+      },
+      {
+        "pair": [
+          4,
+          -1
+        ],
+        "z": 35
+      },
+      {
+        "pair": [
+          2,
+          -1
+        ],
+        "z": 36
+      },
+      {
+        "pair": [
+          1,
+          0
+        ],
+        "z": 37
+      },
+      {
+        "pair": [
+          1,
+          -1
+        ],
+        "z": 38
+      },
+      {
+        "pair": [
+          4,
+          -1
+        ],
+        "z": 39
+      },
+      {
+        "pair": [
+          2,
+          -1
+        ],
+        "z": 40
+      },
+      {
+        "pair": [
+          1,
+          0
+        ],
+        "z": 41
+      }
+    ],
+    "determinant_histogram": {
+      "1": 100,
+      "2": 17,
+      "3": 6,
+      "4": 3
+    },
+    "groups": 14,
+    "max_abs_determinant": 4,
+    "negative_cells_by_reflection": 126,
+    "positive_cells": 126,
+    "positive_closed_intervals": 3,
+    "rows": [
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 0
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 0
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 0
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 1
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 1
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 1
+      },
+      {
+        "abs_determinant": 2,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 2
+      },
+      {
+        "abs_determinant": 2,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 2
+      },
+      {
+        "abs_determinant": 2,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 2
+      },
+      {
+        "abs_determinant": 2,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 3
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            5,
+            -2
+          ]
+        ],
+        "z": 3
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            5,
+            -2
+          ]
+        ],
+        "z": 3
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            5,
+            -1
+          ],
+          [
+            6,
+            -1
+          ]
+        ],
+        "z": 4
+      },
+      {
+        "abs_determinant": 2,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            5,
+            -1
+          ]
+        ],
+        "z": 4
+      },
+      {
+        "abs_determinant": 4,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            5,
+            -3
+          ]
+        ],
+        "z": 4
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 5
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 5
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 5
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 6
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 6
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 6
+      },
+      {
+        "abs_determinant": 4,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            6,
+            -1
+          ]
+        ],
+        "z": 7
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -2
+          ]
+        ],
+        "z": 7
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -2
+          ]
+        ],
+        "z": 7
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 8
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 8
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 8
+      },
+      {
+        "abs_determinant": 4,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            6,
+            -1
+          ]
+        ],
+        "z": 9
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -2
+          ]
+        ],
+        "z": 9
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -2
+          ]
+        ],
+        "z": 9
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 10
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 10
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 10
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 11
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 11
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 11
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 12
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 12
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 12
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 13
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 13
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 13
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 14
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 14
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 14
+      },
+      {
+        "abs_determinant": 2,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 15
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -2
+          ]
+        ],
+        "z": 15
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -2
+          ]
+        ],
+        "z": 15
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 16
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 16
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 16
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 17
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 17
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 17
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 18
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 18
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 18
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 19
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 19
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 19
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 20
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 20
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 20
+      },
+      {
+        "abs_determinant": 2,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 21
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -2
+          ]
+        ],
+        "z": 21
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -2
+          ]
+        ],
+        "z": 21
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 22
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 22
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 22
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            6,
+            -1
+          ]
+        ],
+        "z": 23
+      },
+      {
+        "abs_determinant": 2,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            3,
+            -2
+          ]
+        ],
+        "z": 23
+      },
+      {
+        "abs_determinant": 2,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            3,
+            -2
+          ]
+        ],
+        "z": 23
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 24
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 24
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 24
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            6,
+            -1
+          ]
+        ],
+        "z": 25
+      },
+      {
+        "abs_determinant": 2,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            3,
+            -2
+          ]
+        ],
+        "z": 25
+      },
+      {
+        "abs_determinant": 2,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            3,
+            -2
+          ]
+        ],
+        "z": 25
+      },
+      {
+        "abs_determinant": 2,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            4,
+            -1
+          ],
+          [
+            6,
+            -1
+          ]
+        ],
+        "z": 26
+      },
+      {
+        "abs_determinant": 3,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 26
+      },
+      {
+        "abs_determinant": 2,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            5,
+            -3
+          ]
+        ],
+        "z": 26
+      },
+      {
+        "abs_determinant": 2,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 27
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -2
+          ]
+        ],
+        "z": 27
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -2
+          ]
+        ],
+        "z": 27
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 28
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 28
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 28
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 29
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 29
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 29
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 30
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 30
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            -1
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 30
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 31
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 31
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 31
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 32
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 32
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 32
+      },
+      {
+        "abs_determinant": 2,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 33
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -2
+          ]
+        ],
+        "z": 33
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -2
+          ]
+        ],
+        "z": 33
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 34
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 34
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 34
+      },
+      {
+        "abs_determinant": 2,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            4,
+            -1
+          ],
+          [
+            6,
+            -1
+          ]
+        ],
+        "z": 35
+      },
+      {
+        "abs_determinant": 3,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            4,
+            -1
+          ],
+          [
+            5,
+            -2
+          ]
+        ],
+        "z": 35
+      },
+      {
+        "abs_determinant": 3,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            4,
+            -1
+          ],
+          [
+            5,
+            -2
+          ]
+        ],
+        "z": 35
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 36
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 36
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            3,
+            -1
+          ]
+        ],
+        "z": 36
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 37
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 37
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            -1
+          ]
+        ],
+        "z": 37
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 38
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 38
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            3,
+            -1
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 38
+      },
+      {
+        "abs_determinant": 2,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            4,
+            -1
+          ],
+          [
+            6,
+            -1
+          ]
+        ],
+        "z": 39
+      },
+      {
+        "abs_determinant": 3,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            4,
+            -1
+          ],
+          [
+            5,
+            -2
+          ]
+        ],
+        "z": 39
+      },
+      {
+        "abs_determinant": 3,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            4,
+            -1
+          ],
+          [
+            5,
+            -2
+          ]
+        ],
+        "z": 39
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            5,
+            -1
+          ],
+          [
+            6,
+            -1
+          ]
+        ],
+        "z": 40
+      },
+      {
+        "abs_determinant": 3,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            5,
+            -1
+          ]
+        ],
+        "z": 40
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            2,
+            -1
+          ],
+          [
+            5,
+            -3
+          ]
+        ],
+        "z": 40
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "0/1",
+          "1/3"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 41
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "1/3",
+          "2/5"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 41
+      },
+      {
+        "abs_determinant": 1,
+        "interval": [
+          "2/5",
+          "1/2"
+        ],
+        "pairs": [
+          [
+            1,
+            0
+          ],
+          [
+            4,
+            -1
+          ]
+        ],
+        "z": 41
+      }
+    ]
+  },
+  "radius_obstructions": {
+    "all_primes_argument": "z=7 mod42 and 2z=1 mod r; CRT applies for every prime r>=11",
+    "examples": [
+      {
+        "eligible_pairs_and_gcd": [
+          [
+            1,
+            -1,
+            2
+          ],
+          [
+            1,
+            0,
+            11
+          ],
+          [
+            2,
+            -1,
+            3
+          ],
+          [
+            2,
+            0,
+            22
+          ],
+          [
+            3,
+            -1,
+            2
+          ],
+          [
+            3,
+            0,
+            33
+          ],
+          [
+            4,
+            -2,
+            6
+          ],
+          [
+            4,
+            -1,
+            7
+          ],
+          [
+            4,
+            0,
+            22
+          ]
+        ],
+        "preserved_mark": 462,
+        "radius": 4,
+        "tau": "1/4",
+        "z": 275
+      },
+      {
+        "eligible_pairs_and_gcd": [
+          [
+            1,
+            -1,
+            2
+          ],
+          [
+            1,
+            0,
+            13
+          ],
+          [
+            2,
+            -1,
+            3
+          ],
+          [
+            2,
+            0,
+            26
+          ],
+          [
+            3,
+            -1,
+            2
+          ],
+          [
+            3,
+            0,
+            39
+          ],
+          [
+            4,
+            -2,
+            6
+          ],
+          [
+            4,
+            -1,
+            7
+          ],
+          [
+            4,
+            0,
+            26
+          ]
+        ],
+        "preserved_mark": 546,
+        "radius": 4,
+        "tau": "1/4",
+        "z": 65
+      },
+      {
+        "eligible_pairs_and_gcd": [
+          [
+            1,
+            -1,
+            6
+          ],
+          [
+            1,
+            0,
+            7
+          ],
+          [
+            2,
+            -1,
+            11
+          ],
+          [
+            2,
+            0,
+            14
+          ],
+          [
+            3,
+            -1,
+            2
+          ],
+          [
+            3,
+            0,
+            21
+          ],
+          [
+            4,
+            -2,
+            22
+          ],
+          [
+            4,
+            -1,
+            3
+          ],
+          [
+            4,
+            0,
+            14
+          ],
+          [
+            5,
+            -2,
+            3
+          ],
+          [
+            5,
+            -1,
+            2
+          ]
+        ],
+        "preserved_mark": 462,
+        "radius": 5,
+        "tau": "1/4",
+        "z": 259
+      }
+    ],
+    "scope": "coefficient ansatz only; not a physical shortest-vector counterexample"
+  },
+  "schema": "P72_JOINT42PR_RADIUS6_V1",
+  "status": "PASS_UNIFORM_REPAIR_AND_TWO_INFINITE_GATES_WITH_DECLARED_HISTORICAL_ANCHORS",
+  "theorem_domain": "distinct primes p,r>=11 dividing M; no requirement42|M for insertion; physical specialization rad(B)=42*p*r,M=B**N"
+}

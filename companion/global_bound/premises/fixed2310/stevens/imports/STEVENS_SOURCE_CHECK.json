@@ -1,0 +1,46 @@
+{
+  "checked_utc_date": "2026-10-08",
+  "classical_import": "J(n) <= 2*r^(2+2*e*ln(r)), r=omega(n)>=1, for every n",
+  "natural_logarithms": true,
+  "primary_author_paper_used": {
+    "authors": [
+      "Fintan Costello",
+      "Paul Watts"
+    ],
+    "title": "A computational upper bound on Jacobsthal’s function",
+    "identifier": "arXiv:1208.5342v2",
+    "version_date": "2012-09-14",
+    "url": "https://arxiv.org/pdf/1208.5342",
+    "location": "Page 1, final two displayed bounds and immediately following applicability statement; sentence continues on page 2",
+    "read_scope": "Formula, attribution, definition of g(n), and universal applicability statement read from the retrieved author paper",
+    "universal_gn_scope_explicit": true,
+    "does_not_assume_gn_le_primorial_hk": true
+  },
+  "original_bibliography": {
+    "author": "Harlan Stevens",
+    "title": "On Jacobsthal’s g(n)-function",
+    "journal": "Mathematische Annalen",
+    "volume": 226,
+    "pages": "95–97",
+    "year": 1977,
+    "doi": "10.1007/BF01391221",
+    "url": "https://doi.org/10.1007/BF01391221",
+    "publisher_metadata_read": true,
+    "full_original_proof_retrieved": false
+  },
+  "dependency_status": "Classical theorem imported with explicit statement; the new P72 deduction is proved and verified locally. No reconstruction of Stevens’ original proof is claimed.",
+  "institutional_crosscheck": {
+    "url": "https://researchrepository.ucd.ie/rest/bitstreams/17125/retrieve",
+    "authors": [
+      "Fintan Costello",
+      "Paul Watts"
+    ],
+    "title": "An upper bound on Jacobsthal’s function",
+    "location": "Page 1, bound and Stevens attribution; universal scope taken from arXiv v2 above"
+  },
+  "not_used": [
+    "The false assertion that arbitrary g(n) is always bounded by its primorial value",
+    "Any unpublished numerical table for arbitrary prime supports",
+    "Any new result from the separate Short note on Jacobsthal paper"
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "status": "PASS",
+  "radical": 2730,
+  "base_upper_exclusive": 20000,
+  "all_positive_valuations": true,
+  "rows": [
+    {
+      "M": 2730,
+      "B": 2730,
+      "N": 1,
+      "exponents": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "M": 5460,
+      "B": 5460,
+      "N": 1,
+      "exponents": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "M": 8190,
+      "B": 8190,
+      "N": 1,
+      "exponents": [
+        1,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "M": 10920,
+      "B": 10920,
+      "N": 1,
+      "exponents": [
+        3,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "M": 13650,
+      "B": 13650,
+      "N": 1,
+      "exponents": [
+        1,
+        1,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "M": 16380,
+      "B": 16380,
+      "N": 1,
+      "exponents": [
+        2,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "M": 19110,
+      "B": 19110,
+      "N": 1,
+      "exponents": [
+        1,
+        1,
+        1,
+        2,
+        1
+      ]
+    }
+  ],
+  "states": 76440,
+  "representatives": 38227,
+  "maximum_modulus": 19110,
+  "analytic_large_base_gate_required": true,
+  "all_N_theorem_claimed": false
+}

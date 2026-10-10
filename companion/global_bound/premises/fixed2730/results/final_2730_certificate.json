@@ -1,0 +1,109 @@
+{
+  "status": "PASS_WITH_DECLARED_COMPONENT_DEPENDENCIES",
+  "theorem": "rad(B)=2730 implies Delta(B,N)<=Gamma2730<2/85<c0 for every N>=1",
+  "radical": 2730,
+  "prime_support": [
+    2,
+    3,
+    5,
+    7,
+    13
+  ],
+  "all_positive_valuations": true,
+  "all_N_ge_1": true,
+  "all_states_including_zero": true,
+  "norm": "max(abs(a),d)",
+  "logarithms": "natural",
+  "normalization": "mu(B^N)/log(B)",
+  "profile_mean_uppers": [
+    {
+      "index": 2730,
+      "mean_upper": "35924217614486155493084189212293855575979/154742504910672534362390528000000000000000",
+      "upper_decimal": "0.232154815092492",
+      "domain": "all_M_divisible_by2730",
+      "cell_sha256": "689763a25dea3f97ccac30a96cbae969ea2fa409bdb01f6b67da1ef4ef5294c0"
+    },
+    {
+      "index": 16380,
+      "mean_upper": "26146077943110855127857641241728026804139/154742504910672534362390528000000000000000",
+      "upper_decimal": "0.168965068506576",
+      "domain": "all_M_divisible_by16380",
+      "cell_sha256": "68dd799dc8c9979b97142b423fe9a2f3d7659ff274950bf693f3ab7bcc011958"
+    }
+  ],
+  "cases": [
+    {
+      "case": "N=1 and B<20000",
+      "upper": "4859237527/308570218398",
+      "upper_decimal": "0.015747590782506",
+      "moduli": 7
+    },
+    {
+      "case": "N=1 and B>=20000",
+      "upper": "35924217614486155493084189212293855575979/1532490471231106105678975895513347164995584",
+      "upper_decimal": "0.023441723318271"
+    },
+    {
+      "case": "N>=2 and every admissible B",
+      "upper": "26146077943110855127857641241728026804139/1224331501872560132305903602221896580464640",
+      "upper_decimal": "0.021355391005722"
+    }
+  ],
+  "Gamma2730": "35924217614486155493084189212293855575979/1532490471231106105678975895513347164995584",
+  "Gamma2730_upper_decimal": "0.023441723318271",
+  "simple_strict_upper": "2/85",
+  "c0_lower": "632899864073014/26735537653587345",
+  "exact_margin_to_2_over_85": "11422445230888994445795707981716606032953/130261690054644018982712951118634509024624640",
+  "exact_margin_to_c0_lower": "9459738227595868092915960347376057580476912665003184421/40971956697363051169043691200616504991150526501348683284480",
+  "inputs": [
+    {
+      "path": "results/candidate210.json",
+      "sha256": "a8e6be43996cede955ddffc8fc6d584fc46019f2c322c0965dfab561afcb29d9"
+    },
+    {
+      "path": "theory/theory_certificate.json",
+      "sha256": "5b346986c7166ffb2a26ee9246da370688117d2e7455c863057e3b3a86f5ad7d"
+    },
+    {
+      "path": "profiles/results/q2730_K2730_coarse.json",
+      "sha256": "87a5fd897d73e09b74d5e19af333666cbfa2e51931ad679cbc15300ac717441b"
+    },
+    {
+      "path": "profiles/results/q2730_K2730_coarse.alpha3over2.json",
+      "sha256": "dcaf91ce0e1d1069c3c4ae2685381d87f95f5249dda93aff3fc123f3f5ed27df"
+    },
+    {
+      "path": "profiles/results/q2730_K2730_coarse.cells",
+      "sha256": "689763a25dea3f97ccac30a96cbae969ea2fa409bdb01f6b67da1ef4ef5294c0"
+    },
+    {
+      "path": "profiles/results/q2730_K16380_hybrid_AG8.json",
+      "sha256": "9f2a7294a9931b650f06710bd1c99876797c9a8b9eef33a929baee265038270c"
+    },
+    {
+      "path": "profiles/results/q2730_K16380_hybrid_AG8.alpha3over2.json",
+      "sha256": "de69b557cf0dc6c4b58be5f7e42622f542c1f4d2418bcf94d8f9baac66d131cb"
+    },
+    {
+      "path": "profiles/results/q2730_K16380_hybrid_AG8.cells",
+      "sha256": "68dd799dc8c9979b97142b423fe9a2f3d7659ff274950bf693f3ab7bcc011958"
+    },
+    {
+      "path": "physical/results/finite_inventory.json",
+      "sha256": "b24a1d6c28adc81e7ba965a9f208514cb01b9d30f558d4649fe7ba613adb1cec"
+    },
+    {
+      "path": "physical/results/finite_certificate.json",
+      "sha256": "498b2a47aa5048d812735029c238af58ba367e07a353141ae24a482f37e3d3fe"
+    }
+  ],
+  "required_components": [
+    "profiles",
+    "theory",
+    "physical",
+    "audit"
+  ],
+  "this_assembler_performs_geometric_replay": false,
+  "classification_of_offset_signs_claimed": false,
+  "exact_Cstar_equals_c0_proved": false
+}

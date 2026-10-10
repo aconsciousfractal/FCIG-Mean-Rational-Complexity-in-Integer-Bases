@@ -1,0 +1,740 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "truncated_stream",
+      "status": "REJECTED",
+      "expected_diagnostic": "truncated witness file",
+      "nonzero_exit": true
+    },
+    {
+      "name": "extra_record",
+      "status": "REJECTED",
+      "expected_diagnostic": "extra witness data",
+      "nonzero_exit": true
+    },
+    {
+      "name": "nonunit_zero_coefficients",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true
+    },
+    {
+      "name": "unsupported_mark_selector",
+      "status": "REJECTED",
+      "expected_diagnostic": "fixed6006 mark selector",
+      "nonzero_exit": true
+    },
+    {
+      "name": "unsupported_mixed_index",
+      "status": "REJECTED",
+      "expected_diagnostic": "marked6006 index multiplier",
+      "nonzero_exit": true
+    },
+    {
+      "name": "only_prime_2_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        2,
+        3,
+        7,
+        11,
+        13
+      ],
+      "unique_nonunit_prime": 2,
+      "coefficient_pairs_checked": 16128,
+      "block_sha256": "604c32e7436e1c261a112dab9d900a6126301218e958d963bb4537cc139a64af",
+      "stream_records": 43352064
+    },
+    {
+      "name": "only_prime_3_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        2,
+        3,
+        7,
+        11,
+        13
+      ],
+      "unique_nonunit_prime": 3,
+      "coefficient_pairs_checked": 16128,
+      "block_sha256": "4a4e9e5626941ce7912561736dfd3979f5c07a81e360ad35f43acd401235af56",
+      "stream_records": 43352064
+    },
+    {
+      "name": "only_prime_7_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        2,
+        3,
+        7,
+        11,
+        13
+      ],
+      "unique_nonunit_prime": 7,
+      "coefficient_pairs_checked": 16128,
+      "block_sha256": "f359e5bbddf07f08e0415db607b591796a93305fc3ec2a675b57261c86fe3969",
+      "stream_records": 43352064
+    },
+    {
+      "name": "only_prime_11_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        2,
+        3,
+        7,
+        11,
+        13
+      ],
+      "unique_nonunit_prime": 11,
+      "coefficient_pairs_checked": 16128,
+      "block_sha256": "dc0b61614cc2f8900084eaca58a0334ac0db91506a51c65595f3393b5d9912c5",
+      "stream_records": 43352064
+    },
+    {
+      "name": "only_prime_13_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        2,
+        3,
+        7,
+        11,
+        13
+      ],
+      "unique_nonunit_prime": 13,
+      "coefficient_pairs_checked": 16128,
+      "block_sha256": "23a51a543768103cc7daccb6e4503d35967a764cb5dfd5f8fa2f583138492476",
+      "stream_records": 43352064
+    },
+    {
+      "name": "radial_gap",
+      "status": "REJECTED",
+      "expected_diagnostic": "radial continuity"
+    },
+    {
+      "name": "angular_penalty_necessity",
+      "status": "PASS",
+      "vector": [
+        1,
+        3
+      ],
+      "sampled_squared_max": "729/73",
+      "continuous_squared_max": "10",
+      "node_tangents": "n/8 for -8<=n<=8"
+    },
+    {
+      "name": "cdf_below_three_halves_fails",
+      "status": "REJECTED",
+      "example_M": 3,
+      "x": "2/3",
+      "probability": "1",
+      "constant_rejected": "1499/1000"
+    },
+    {
+      "name": "unmarked_prime5_accepted_in_primary_stream",
+      "status": "PASS",
+      "unmarked_prime": 5,
+      "actual_records": [
+        {
+          "record_index": 2,
+          "cell": 0,
+          "branch": 2,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 3235,
+          "reduced_mark_linear_form": 3235
+        },
+        {
+          "record_index": 6,
+          "cell": 0,
+          "branch": 6,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 5545,
+          "reduced_mark_linear_form": 5545
+        },
+        {
+          "record_index": 11,
+          "cell": 0,
+          "branch": 11,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 925,
+          "reduced_mark_linear_form": 925
+        },
+        {
+          "record_index": 13,
+          "cell": 0,
+          "branch": 13,
+          "ci": 1,
+          "cj": 1,
+          "mark_linear_form_integer": 475,
+          "reduced_mark_linear_form": 475
+        },
+        {
+          "record_index": 16,
+          "cell": 0,
+          "branch": 16,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 505,
+          "reduced_mark_linear_form": 505
+        },
+        {
+          "record_index": 20,
+          "cell": 0,
+          "branch": 20,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 2815,
+          "reduced_mark_linear_form": 2815
+        },
+        {
+          "record_index": 24,
+          "cell": 0,
+          "branch": 24,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 5125,
+          "reduced_mark_linear_form": 5125
+        },
+        {
+          "record_index": 28,
+          "cell": 0,
+          "branch": 28,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 4915,
+          "reduced_mark_linear_form": 4915
+        },
+        {
+          "record_index": 32,
+          "cell": 0,
+          "branch": 32,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 295,
+          "reduced_mark_linear_form": 295
+        },
+        {
+          "record_index": 36,
+          "cell": 0,
+          "branch": 36,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 2605,
+          "reduced_mark_linear_form": 2605
+        },
+        {
+          "record_index": 40,
+          "cell": 0,
+          "branch": 40,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 4915,
+          "reduced_mark_linear_form": 4915
+        },
+        {
+          "record_index": 43,
+          "cell": 0,
+          "branch": 43,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 4705,
+          "reduced_mark_linear_form": 4705
+        },
+        {
+          "record_index": 48,
+          "cell": 0,
+          "branch": 48,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 85,
+          "reduced_mark_linear_form": 85
+        },
+        {
+          "record_index": 52,
+          "cell": 0,
+          "branch": 52,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 2395,
+          "reduced_mark_linear_form": 2395
+        },
+        {
+          "record_index": 55,
+          "cell": 0,
+          "branch": 55,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 3415,
+          "reduced_mark_linear_form": 3415
+        },
+        {
+          "record_index": 56,
+          "cell": 0,
+          "branch": 56,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 2185,
+          "reduced_mark_linear_form": 2185
+        },
+        {
+          "record_index": 59,
+          "cell": 0,
+          "branch": 59,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 4495,
+          "reduced_mark_linear_form": 4495
+        },
+        {
+          "record_index": 68,
+          "cell": 0,
+          "branch": 68,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 2185,
+          "reduced_mark_linear_form": 2185
+        },
+        {
+          "record_index": 71,
+          "cell": 0,
+          "branch": 71,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 1975,
+          "reduced_mark_linear_form": 1975
+        },
+        {
+          "record_index": 75,
+          "cell": 0,
+          "branch": 75,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 4285,
+          "reduced_mark_linear_form": 4285
+        },
+        {
+          "record_index": 87,
+          "cell": 0,
+          "branch": 87,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 1765,
+          "reduced_mark_linear_form": 1765
+        },
+        {
+          "record_index": 91,
+          "cell": 0,
+          "branch": 91,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 4075,
+          "reduced_mark_linear_form": 4075
+        },
+        {
+          "record_index": 103,
+          "cell": 0,
+          "branch": 103,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 1555,
+          "reduced_mark_linear_form": 1555
+        },
+        {
+          "record_index": 107,
+          "cell": 0,
+          "branch": 107,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 3865,
+          "reduced_mark_linear_form": 3865
+        },
+        {
+          "record_index": 114,
+          "cell": 0,
+          "branch": 114,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 5965,
+          "reduced_mark_linear_form": 5965
+        },
+        {
+          "record_index": 119,
+          "cell": 0,
+          "branch": 119,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 1345,
+          "reduced_mark_linear_form": 1345
+        },
+        {
+          "record_index": 123,
+          "cell": 0,
+          "branch": 123,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 3655,
+          "reduced_mark_linear_form": 3655
+        },
+        {
+          "record_index": 130,
+          "cell": 0,
+          "branch": 130,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 5755,
+          "reduced_mark_linear_form": 5755
+        },
+        {
+          "record_index": 135,
+          "cell": 0,
+          "branch": 135,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 1135,
+          "reduced_mark_linear_form": 1135
+        },
+        {
+          "record_index": 139,
+          "cell": 0,
+          "branch": 139,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 3205,
+          "reduced_mark_linear_form": 3205
+        },
+        {
+          "record_index": 142,
+          "cell": 0,
+          "branch": 142,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 3235,
+          "reduced_mark_linear_form": 3235
+        },
+        {
+          "record_index": 146,
+          "cell": 0,
+          "branch": 146,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 5545,
+          "reduced_mark_linear_form": 5545
+        }
+      ],
+      "witness_sha256": "b3b152069e5e8a20240efc4818ede72215ef4a282669549262a4238bcbf97501",
+      "acceptance_evidence": "same whole stream is consumed successfully by the primary consumer; these32records are individually checked here"
+    },
+    {
+      "name": "unmarked_prime17_accepted_in_primary_stream",
+      "status": "PASS",
+      "unmarked_prime": 17,
+      "actual_records": [
+        {
+          "record_index": 48,
+          "cell": 0,
+          "branch": 48,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 85,
+          "reduced_mark_linear_form": 85
+        },
+        {
+          "record_index": 63,
+          "cell": 0,
+          "branch": 63,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 799,
+          "reduced_mark_linear_form": 799
+        },
+        {
+          "record_index": 78,
+          "cell": 0,
+          "branch": 78,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 1513,
+          "reduced_mark_linear_form": 1513
+        },
+        {
+          "record_index": 93,
+          "cell": 0,
+          "branch": 93,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 2227,
+          "reduced_mark_linear_form": 2227
+        },
+        {
+          "record_index": 108,
+          "cell": 0,
+          "branch": 108,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 2941,
+          "reduced_mark_linear_form": 2941
+        },
+        {
+          "record_index": 123,
+          "cell": 0,
+          "branch": 123,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 3655,
+          "reduced_mark_linear_form": 3655
+        },
+        {
+          "record_index": 126,
+          "cell": 0,
+          "branch": 126,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 4369,
+          "reduced_mark_linear_form": 4369
+        },
+        {
+          "record_index": 138,
+          "cell": 0,
+          "branch": 138,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 4369,
+          "reduced_mark_linear_form": 4369
+        },
+        {
+          "record_index": 153,
+          "cell": 0,
+          "branch": 153,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 3247,
+          "reduced_mark_linear_form": 3247
+        },
+        {
+          "record_index": 166,
+          "cell": 0,
+          "branch": 166,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 1649,
+          "reduced_mark_linear_form": 1649
+        },
+        {
+          "record_index": 172,
+          "cell": 0,
+          "branch": 172,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 3961,
+          "reduced_mark_linear_form": 3961
+        },
+        {
+          "record_index": 188,
+          "cell": 0,
+          "branch": 188,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 5389,
+          "reduced_mark_linear_form": 5389
+        },
+        {
+          "record_index": 238,
+          "cell": 0,
+          "branch": 238,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 391,
+          "reduced_mark_linear_form": 391
+        },
+        {
+          "record_index": 250,
+          "cell": 0,
+          "branch": 250,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 391,
+          "reduced_mark_linear_form": 391
+        },
+        {
+          "record_index": 267,
+          "cell": 0,
+          "branch": 267,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 1819,
+          "reduced_mark_linear_form": 1819
+        },
+        {
+          "record_index": 282,
+          "cell": 0,
+          "branch": 282,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 2533,
+          "reduced_mark_linear_form": 2533
+        },
+        {
+          "record_index": 297,
+          "cell": 0,
+          "branch": 297,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 3247,
+          "reduced_mark_linear_form": 3247
+        },
+        {
+          "record_index": 312,
+          "cell": 0,
+          "branch": 312,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 3961,
+          "reduced_mark_linear_form": 3961
+        },
+        {
+          "record_index": 359,
+          "cell": 0,
+          "branch": 359,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 901,
+          "reduced_mark_linear_form": 901
+        },
+        {
+          "record_index": 374,
+          "cell": 0,
+          "branch": 374,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 1615,
+          "reduced_mark_linear_form": 1615
+        },
+        {
+          "record_index": 389,
+          "cell": 0,
+          "branch": 389,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 2329,
+          "reduced_mark_linear_form": 2329
+        },
+        {
+          "record_index": 392,
+          "cell": 0,
+          "branch": 392,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 3043,
+          "reduced_mark_linear_form": 3043
+        },
+        {
+          "record_index": 404,
+          "cell": 0,
+          "branch": 404,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 3043,
+          "reduced_mark_linear_form": 3043
+        },
+        {
+          "record_index": 421,
+          "cell": 0,
+          "branch": 421,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 4471,
+          "reduced_mark_linear_form": 4471
+        },
+        {
+          "record_index": 436,
+          "cell": 0,
+          "branch": 436,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 5185,
+          "reduced_mark_linear_form": 5185
+        },
+        {
+          "record_index": 451,
+          "cell": 0,
+          "branch": 451,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 5899,
+          "reduced_mark_linear_form": 5899
+        },
+        {
+          "record_index": 503,
+          "cell": 0,
+          "branch": 503,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 1037,
+          "reduced_mark_linear_form": 1037
+        },
+        {
+          "record_index": 512,
+          "cell": 0,
+          "branch": 512,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 2839,
+          "reduced_mark_linear_form": 2839
+        },
+        {
+          "record_index": 528,
+          "cell": 0,
+          "branch": 528,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 4267,
+          "reduced_mark_linear_form": 4267
+        },
+        {
+          "record_index": 543,
+          "cell": 0,
+          "branch": 543,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 4981,
+          "reduced_mark_linear_form": 4981
+        },
+        {
+          "record_index": 546,
+          "cell": 0,
+          "branch": 546,
+          "ci": -1,
+          "cj": 1,
+          "mark_linear_form_integer": 5695,
+          "reduced_mark_linear_form": 5695
+        },
+        {
+          "record_index": 558,
+          "cell": 0,
+          "branch": 558,
+          "ci": 0,
+          "cj": 1,
+          "mark_linear_form_integer": 5695,
+          "reduced_mark_linear_form": 5695
+        }
+      ],
+      "witness_sha256": "b3b152069e5e8a20240efc4818ede72215ef4a282669549262a4238bcbf97501",
+      "acceptance_evidence": "same whole stream is consumed successfully by the primary consumer; these32records are individually checked here"
+    }
+  ],
+  "isolated_synthetic_files": true,
+  "positive_geometry_gate": "all selected original streams are separately produced and consumed in full"
+}

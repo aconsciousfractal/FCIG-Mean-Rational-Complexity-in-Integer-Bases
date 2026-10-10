@@ -1,0 +1,23 @@
+{
+  "all_state_mass": 218529022,
+  "analytic_valuation_moduli": 785,
+  "empty_pair_domains": 10,
+  "finite_domain_complete_integer_scan": true,
+  "finite_moduli": 7590,
+  "finite_pair_count": 174,
+  "floating_point_decisions": false,
+  "global_Cstar_identified": false,
+  "largest_prime_threshold": 53,
+  "max_M_cut": 1085440,
+  "max_finite_M": 898880,
+  "max_finite_p": 1487,
+  "ordered_supports_below_radical_cutoff": 191299,
+  "pair_families": 855,
+  "pair_inventory_two_routes": true,
+  "primes_generated": 9592,
+  "primes_trial_verified": true,
+  "radical_cutoff": 1000000,
+  "representatives": 109269833,
+  "status": "PASS",
+  "support_exceptions": 4193
+}

@@ -1,0 +1,26 @@
+{
+  "core": 102,
+  "core_primes": [
+    2,
+    3,
+    17
+  ],
+  "cdf_alpha": "3/2",
+  "first_new_prime": 19,
+  "small_primes": [
+    19,
+    23,
+    29,
+    31
+  ],
+  "tail_first_prime": 37,
+  "simple_marked_caps": {
+    "102": "6/125",
+    "204": "9/200",
+    "10404": "-1/100"
+  },
+  "comparison_threshold": "2/85",
+  "scope": "all positive M divisible by K with marked denominator gcd(d,102)=1; physical identification requires exact radical",
+  "infinite_102p_tail_certified_elsewhere": true,
+  "configuration_status": "selected7 profiles; every angular rule declared before production; infinite family gate remains separate"
+}

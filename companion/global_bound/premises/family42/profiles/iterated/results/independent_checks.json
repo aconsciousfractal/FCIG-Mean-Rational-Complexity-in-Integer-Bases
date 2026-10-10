@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "cell_inputs": {
+    "cells": 2688,
+    "condition_corners": 10752,
+    "largest_condition_upper": "35163121/31250000"
+  },
+  "log_table": {
+    "upper_log_entries": 11520,
+    "two_sided_mantissa_entries": 1024,
+    "log210_gt_16_over_3": true
+  },
+  "initial_coefficients_and_routes": {
+    "p": 11,
+    "q": 462,
+    "algebra": {
+      "local_prime_line_checks": 31104,
+      "nonzero_image_checks": 26496,
+      "labels": 1152,
+      "branches": 1152,
+      "admissible_pairs": 532224,
+      "signed_tensor_outputs": 8064
+    },
+    "all_initial_coefficients": 3096576,
+    "largest_absolute_coefficient": 3,
+    "all_geometric_edges_regenerated_by_main": 3096576,
+    "independent_geometric_edges_checked": 758,
+    "independent_stride": 4093,
+    "ordinary_edges": 755,
+    "fallback_edges": 3,
+    "condition_polynomials_checked": 755,
+    "max_condition_num": 1112796626,
+    "condition_scale": 1000000000,
+    "direction_routes_checked": 3020,
+    "directions_per_ordinary_edge": 4,
+    "log_corrections_independent_series": 3020,
+    "all_direction_routes_are_not_independently_rechecked": true
+  },
+  "common_costs": {
+    "all_common_cell_costs_regenerated_by_each_main_engine": 2838528,
+    "independent_common_costs": 2849,
+    "corners_per_checked_cost": 4,
+    "stride": 997
+  },
+  "physical": {
+    "complete_states": 213906,
+    "pointwise_checks": 462,
+    "conditional_checks": 462,
+    "rows": [
+      {
+        "k": 1,
+        "M": 462,
+        "mean_upper": "178696087542989/2887500000000000",
+        "profile_root_upper": "41288049/500000000"
+      },
+      {
+        "k": 2,
+        "M": 213444,
+        "mean_upper": "2937933149759992613/213444000000000000000",
+        "profile_root_upper": "42638123/1000000000"
+      }
+    ]
+  },
+  "independent_integer_logarithms": 2710,
+  "second_geometric_audit_exhaustive": false
+}

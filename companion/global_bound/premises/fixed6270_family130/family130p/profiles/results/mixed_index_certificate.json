@@ -1,0 +1,70 @@
+{
+  "status": "PASS",
+  "core": 130,
+  "core_primes": [
+    2,
+    5,
+    13
+  ],
+  "checks": 54259,
+  "stored_profile_algebra_compared": true,
+  "enumerations": [
+    {
+      "K": 130,
+      "multiplier": 1,
+      "local_prime_powers": [
+        2,
+        5,
+        13
+      ],
+      "branches": 252,
+      "labels": 252,
+      "lifts_per_label": 1,
+      "all_parent_tensor_rows": 252,
+      "hnf_sha256": "2bbf50a6e5577805d6cd8c7d129bdbec00c0464382298d393d45448debe697c5"
+    },
+    {
+      "K": 260,
+      "multiplier": 2,
+      "local_prime_powers": [
+        4,
+        5,
+        13
+      ],
+      "branches": 504,
+      "labels": 252,
+      "lifts_per_label": 2,
+      "all_parent_tensor_rows": 252,
+      "hnf_sha256": "7ccffd2258d5494f7d502dea0915782e06c39556c7897c5fd406669021034aae"
+    },
+    {
+      "K": 650,
+      "multiplier": 5,
+      "local_prime_powers": [
+        2,
+        25,
+        13
+      ],
+      "branches": 1260,
+      "labels": 252,
+      "lifts_per_label": 5,
+      "all_parent_tensor_rows": 252,
+      "hnf_sha256": "645aac593bafac647ad12cc407471fe16832cdc9a1b16f417aaa8bc554b6f55b"
+    },
+    {
+      "K": 1690,
+      "multiplier": 13,
+      "local_prime_powers": [
+        2,
+        5,
+        169
+      ],
+      "branches": 3276,
+      "labels": 252,
+      "lifts_per_label": 13,
+      "all_parent_tensor_rows": 252,
+      "hnf_sha256": "822788f689ce618b327f861f5ba7e5c36a1b1491ab129ed954e105c2b848c506"
+    }
+  ],
+  "scope": "proof plus independent complete local quotient and HNF construction, no numerical profile assumed"
+}

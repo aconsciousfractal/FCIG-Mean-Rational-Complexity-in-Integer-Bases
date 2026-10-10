@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "claim_level": "CL5 with finite CL3 dependencies",
+  "closed_sector": "all integer B>=2 with rad(B)=210, all N>=1",
+  "unique_maximizing_pair": [
+    210,
+    1
+  ],
+  "sector_maximum_exact": "log(P^2/210^210)/(420*log(210))",
+  "all_other_pairs_strictly_below_2_over_85": true,
+  "global_Cstar_value_determined": false,
+  "other_radicals_excluded_here": false,
+  "historical_base210_or_tail35_theorem_used": false,
+  "formalized": false,
+  "independent_specialist_review": false
+}

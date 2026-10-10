@@ -1,0 +1,28 @@
+{
+  "core": 110,
+  "core_primes": [
+    2,
+    5,
+    11
+  ],
+  "cdf_alpha": "3/2",
+  "first_new_prime": 13,
+  "small_primes": [
+    13,
+    17,
+    19,
+    23,
+    29,
+    31
+  ],
+  "tail_first_prime": 37,
+  "simple_marked_caps": {
+    "110": "17/500",
+    "220": "23/1000",
+    "12100": "-6/125"
+  },
+  "comparison_threshold": "2/85",
+  "scope": "marked profiles on all positive multiples of K=q*multiplier; identification with the full denominator mean is used under the sufficient hypothesis rad(M)=q",
+  "infinite_110p_tail_certified_elsewhere": true,
+  "configuration_status": "final selected profiles; marked caps completely generated and consumed"
+}

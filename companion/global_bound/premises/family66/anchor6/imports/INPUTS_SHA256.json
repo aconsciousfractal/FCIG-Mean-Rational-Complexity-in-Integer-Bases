@@ -1,0 +1,14 @@
+{
+  "code/algebra.cpp": "c96b756b8b0c2707e825c164047feb86d339795c56671e322c88c14c8c7ca9c8",
+  "code/angle.cpp": "343e580967f48f77fb6e18b162ebf85eab4a9b705f9b6a88058605e0a65d8771",
+  "code/assemble.py": "8c92be2088875c06e5f15ea32e2bb426f161e0fd7f6c9129b6519fb4ddf5240d",
+  "code/emit_profile.py": "f92cec02fa2a9a9fb7fc3c7e255fe8890907c7cb7bbf8c5899c8dbd138c0a16a",
+  "code/exact.py": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59",
+  "code/kernel.hpp": "8fea2a420e6581c65e2a82c99cb82ace06494f8df2a73f76bef0d182eb8a6260",
+  "code/search.hpp": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281",
+  "data/grid.tsv": "536d5990d2f19003fc5b6534d3c209e87f46b68671f5d3577159d94b4d24df13",
+  "data/log_seeds.tsv": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a",
+  "data/log_table.txt": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b",
+  "imports/CHANGES_FROM_70.diff": "5f2c2a9f1c5aa7da2ee6b947f163a2586ca48849d72bcd656fdec6d9e659f404",
+  "imports/DIRECT_METHOD_SOURCE.md": "60f45296615c739cf6d7a94ea76cc5e574be78a024cfae1df74a9208e73fabc3"
+}

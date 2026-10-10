@@ -1,0 +1,9 @@
+{
+  "all_census_log_inputs": 257050,
+  "all_inputs_checked": true,
+  "primary_terms": 28,
+  "scale": 1000000000000000,
+  "secondary_arithmetic": "outward integer fixed-point, scale 10^45",
+  "secondary_terms": 96,
+  "status": "PASS"
+}

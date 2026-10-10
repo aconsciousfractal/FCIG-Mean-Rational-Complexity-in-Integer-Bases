@@ -1,0 +1,58 @@
+{
+  "expected_failures_are_not_counterexamples_to_Cstar": true,
+  "outputs": [
+    {
+      "output": "FAIL truncated witness records",
+      "returncode": 2,
+      "test": "truncated"
+    },
+    {
+      "output": "FAIL extra witness records",
+      "returncode": 2,
+      "test": "extra"
+    },
+    {
+      "output": "FAIL cell 0: nonunit full mark",
+      "returncode": 2,
+      "test": "zero"
+    },
+    {
+      "output": "FAIL prime input",
+      "returncode": 2,
+      "test": "composite"
+    },
+    {
+      "output": "FAIL: the one-step upper certificate does not establish the radical gate; not a counterexample",
+      "test": "first_step_q70"
+    },
+    {
+      "new_bit_budget": 124,
+      "old_bit_budget": 127,
+      "output": "old conservative arithmetic guard fails; outward ceiling scale changed from 10^15 to 10^14",
+      "test": "old_scale_guard"
+    },
+    {
+      "correct": "1",
+      "test": "wrong_transfer_denominator",
+      "wrong": "70"
+    },
+    {
+      "H": [
+        70,
+        0,
+        0,
+        70
+      ],
+      "admissible_parent_marks": 0,
+      "test": "zero_rank_HNF"
+    },
+    {
+      "operator_lower_bound": "20 log 2",
+      "output": "the finite grid maximum alone is not a global pointwise bound",
+      "rho": "1/(70*2^40)",
+      "test": "dropping_cusp"
+    }
+  ],
+  "status": "PASS",
+  "tests": 9
+}

@@ -1,0 +1,92 @@
+{
+  "source_manifests": {
+    "profiles/imports/SOURCE_MANIFEST_6090.json": "4c6313f3d6c29b90cca7dd739f9df03a5e4da08c08b81086ad106b35bb1b026a",
+    "imports/SOURCE_MANIFEST_6006.json": "d470b6036940e3fc8af8e16ebdd95e3cfdd503c0075ba491abddee41d3f91ce5"
+  },
+  "sources": [
+    {
+      "manifest": "profiles/imports/SOURCE_MANIFEST_6090.json",
+      "source": "family165p/code/exact.py",
+      "copy": "imports/family_originals/exact.py",
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59"
+    },
+    {
+      "manifest": "profiles/imports/SOURCE_MANIFEST_6090.json",
+      "source": "family165p/code/candidate210.py",
+      "copy": "imports/family_originals/candidate210.py",
+      "sha256": "e7156442bece3120f77bcfce08e269fb79705343f7110cd5eb9de24059b201f0"
+    },
+    {
+      "manifest": "profiles/imports/SOURCE_MANIFEST_6090.json",
+      "source": "family165p/code/log_inputs.py",
+      "copy": "imports/family_originals/log_inputs.py",
+      "sha256": "f8b8b150d388317bda204c8d41c96de0471f30ffcef2f1e5b851e6884bf9e14c"
+    },
+    {
+      "manifest": "profiles/imports/SOURCE_MANIFEST_6090.json",
+      "source": "family165p/code/inventory165.py",
+      "copy": "imports/family_originals/inventory165.py",
+      "sha256": "fb737ab549cd552df2a9d9c32e068f580504bc358f7ecaacab0b0b240be1c759"
+    },
+    {
+      "manifest": "profiles/imports/SOURCE_MANIFEST_6090.json",
+      "source": "family165p/code/assemble_closure.py",
+      "copy": "imports/family_originals/assemble_closure.py",
+      "sha256": "9f1aa54b349fb2d9a95e2d334e2ae52482f5b2a0356a277cb5b8841bfbfed577"
+    },
+    {
+      "manifest": "profiles/imports/SOURCE_MANIFEST_6090.json",
+      "source": "family165p/code/source_provenance.py",
+      "copy": "imports/family_originals/source_provenance.py",
+      "sha256": "57c33e0b29396b93260a7b2f0d99f64557622374a3ed14f1767746c6651bbe2d"
+    },
+    {
+      "manifest": "imports/SOURCE_MANIFEST_6006.json",
+      "source": "family154p/code/finite.cpp",
+      "copy": "imports/physical_originals/finite.cpp",
+      "sha256": "2baa41f10f403b0ce40476e80abcdc8c79c7b793f817840b534e82765c90a484"
+    },
+    {
+      "manifest": "imports/SOURCE_MANIFEST_6006.json",
+      "source": "family154p/code/run_finite154.py",
+      "copy": "imports/physical_originals/run_finite154.py",
+      "sha256": "747b5e132ac8503ae1ca0d62176ba9828ebc31795c50e560813d188fe5cdb582"
+    },
+    {
+      "manifest": "imports/SOURCE_MANIFEST_6006.json",
+      "source": "family154p/code/independent_physical.py",
+      "copy": "imports/physical_originals/independent_physical.py",
+      "sha256": "bcecb50b044ed5ecfb2747e97fe69bc969c3b0767e020ed0766d021c74c38b63"
+    },
+    {
+      "manifest": "imports/SOURCE_MANIFEST_6006.json",
+      "source": "family154p/insertion/code/insertion154.py",
+      "copy": "insertion/imports/code/insertion154.py",
+      "sha256": "7d19d62f9341aa69137ed30424b893630b214496fc736cb4313cda1a961250d5"
+    },
+    {
+      "manifest": "imports/SOURCE_MANIFEST_6006.json",
+      "source": "family154p/insertion/code/verify_insertion154.py",
+      "copy": "insertion/imports/code/verify_insertion154.py",
+      "sha256": "dcba901e4ded1e12ba07c460d9aae0837e6461772130bf1516a79585d53a43b0"
+    },
+    {
+      "manifest": "imports/SOURCE_MANIFEST_6006.json",
+      "source": "family154p/insertion/REPAIR154_PROOF.md",
+      "copy": "insertion/imports/REPAIR154_PROOF.md",
+      "sha256": "2dc1267793a7a6e5e6b697d9a779312c958b28fe602a8d546ad79d80e0c57dd8"
+    },
+    {
+      "manifest": "imports/SOURCE_MANIFEST_6006.json",
+      "source": "family154p/insertion/INTEGRAL_CONSTANTS.md",
+      "copy": "insertion/imports/INTEGRAL_CONSTANTS.md",
+      "sha256": "8bb96f33bab8a6804361083ee345dfa9f62662aeae2bcbb347b570e9e63be09e"
+    },
+    {
+      "manifest": "profiles/imports/SOURCE_MANIFEST_6090.json",
+      "source": "family165p/verify_family.py",
+      "copy": "imports/family_originals/verify_family165.py",
+      "sha256": "f7c926f560b6119361c1b5cffe8e70a50541c463c06023df791b30b74b66f380"
+    }
+  ]
+}

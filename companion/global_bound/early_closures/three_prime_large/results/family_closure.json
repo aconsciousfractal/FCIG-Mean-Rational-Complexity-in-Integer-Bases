@@ -1,0 +1,19 @@
+{
+  "F6p_import_replayed": false,
+  "all_cases_complete": true,
+  "all_lengths_and_positive_valuations": true,
+  "candidate_lower": "2/85",
+  "common_delta_upper": "292890041435314920967836791485607/12448020333303336277947000000000000",
+  "common_delta_upper_decimal": "0.023529045871794",
+  "entire_three_prime_sector_closed": false,
+  "global_Cstar_identified": false,
+  "largest_prime_threshold": 53,
+  "remaining_support_finite_complements_checked": false,
+  "remaining_supports_analytic_tails": 340,
+  "remaining_supports_without_tail_certificate": 102,
+  "remaining_three_prime_supports_with_internal_F6p_import": 442,
+  "status": "PASS",
+  "strict_margin_to_2_over_85": "77428920980854725574544744681/211616345666156716725099000000000000",
+  "theorem": "all rad(M)=r*s*p, r<s<p, (r,s)!=(2,3), p>=53: mu(M)<(2/85)*log(r*s*p)",
+  "worst_majorant_route": "pair 2,7, p>=1062"
+}

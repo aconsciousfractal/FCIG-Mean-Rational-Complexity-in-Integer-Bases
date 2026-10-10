@@ -1,0 +1,2919 @@
+{
+  "status": "PASS",
+  "checks": 396531,
+  "mark": 114,
+  "new_prime_domain": "p >= 23 prime, p | M",
+  "q_divides_M_required_for_insertion": false,
+  "p_squared_in_M_allowed": true,
+  "repair": {
+    "mark": 114,
+    "radius": 4,
+    "positive_half_intervals": 114,
+    "closed_intervals_both_halves": 228,
+    "grouped_table": [
+      {
+        "i": 1,
+        "j": -1,
+        "z_values": [
+          0,
+          2,
+          6,
+          8,
+          12,
+          14,
+          18,
+          24,
+          26,
+          30,
+          32,
+          36,
+          38,
+          42,
+          44,
+          48,
+          50,
+          54,
+          56,
+          60,
+          62,
+          66,
+          68,
+          72,
+          74,
+          78,
+          80,
+          84,
+          86,
+          90,
+          92,
+          98,
+          102,
+          104,
+          108,
+          110
+        ]
+      },
+      {
+        "i": 1,
+        "j": 0,
+        "z_values": [
+          1,
+          5,
+          7,
+          11,
+          13,
+          17,
+          23,
+          25,
+          29,
+          31,
+          35,
+          37,
+          41,
+          43,
+          47,
+          49,
+          53,
+          55,
+          59,
+          61,
+          65,
+          67,
+          71,
+          73,
+          77,
+          79,
+          83,
+          85,
+          89,
+          91,
+          97,
+          101,
+          103,
+          107,
+          109,
+          113
+        ]
+      },
+      {
+        "i": 2,
+        "j": -1,
+        "z_values": [
+          3,
+          4,
+          9,
+          15,
+          16,
+          19,
+          21,
+          22,
+          27,
+          28,
+          33,
+          34,
+          39,
+          40,
+          45,
+          46,
+          51,
+          52,
+          57,
+          58,
+          63,
+          64,
+          69,
+          70,
+          75,
+          76,
+          81,
+          82,
+          87,
+          88,
+          93,
+          94,
+          96,
+          99,
+          100,
+          106,
+          111,
+          112
+        ]
+      },
+      {
+        "i": 3,
+        "j": -1,
+        "z_values": [
+          10,
+          20
+        ]
+      },
+      {
+        "i": 4,
+        "j": -1,
+        "z_values": [
+          95,
+          105
+        ]
+      }
+    ],
+    "restricted_radius_three_obstructions": [
+      {
+        "z": 95,
+        "tau": {
+          "numerator": 1,
+          "denominator": 4
+        },
+        "pairs": [
+          {
+            "i": 1,
+            "j": -1,
+            "gcd": 2
+          },
+          {
+            "i": 1,
+            "j": 0,
+            "gcd": 19
+          },
+          {
+            "i": 2,
+            "j": -1,
+            "gcd": 3
+          },
+          {
+            "i": 2,
+            "j": 0,
+            "gcd": 38
+          },
+          {
+            "i": 3,
+            "j": -1,
+            "gcd": 2
+          },
+          {
+            "i": 3,
+            "j": 0,
+            "gcd": 57
+          }
+        ]
+      },
+      {
+        "z": 105,
+        "tau": {
+          "numerator": 1,
+          "denominator": 4
+        },
+        "pairs": [
+          {
+            "i": 1,
+            "j": -1,
+            "gcd": 2
+          },
+          {
+            "i": 1,
+            "j": 0,
+            "gcd": 3
+          },
+          {
+            "i": 2,
+            "j": -1,
+            "gcd": 19
+          },
+          {
+            "i": 2,
+            "j": 0,
+            "gcd": 6
+          },
+          {
+            "i": 3,
+            "j": -1,
+            "gcd": 2
+          },
+          {
+            "i": 3,
+            "j": 0,
+            "gcd": 3
+          }
+        ]
+      }
+    ],
+    "radius_minimality_scope": "only the ansatz 1<=i<=R and abs(j+i*tau)<=1"
+  },
+  "periodic": {
+    "rho": {
+      "numerator": 6,
+      "denominator": 19
+    },
+    "A": {
+      "numerator": 15,
+      "denominator": 19
+    },
+    "C": {
+      "numerator": 72,
+      "denominator": 19
+    },
+    "maximizer_j": [
+      91
+    ],
+    "period_rows": [
+      {
+        "j": 0,
+        "U": 0,
+        "S": 0,
+        "epsilon": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "D": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "slope": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "endpoint": {
+          "numerator": 0,
+          "denominator": 1
+        }
+      },
+      {
+        "j": 1,
+        "U": 1,
+        "S": 1,
+        "epsilon": {
+          "numerator": 13,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 42,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 39,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 42,
+          "denominator": 19
+        }
+      },
+      {
+        "j": 2,
+        "U": 1,
+        "S": 1,
+        "epsilon": {
+          "numerator": 7,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 35,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 21,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 35,
+          "denominator": 38
+        }
+      },
+      {
+        "j": 3,
+        "U": 1,
+        "S": 1,
+        "epsilon": {
+          "numerator": 1,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -2,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 3,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -2,
+          "denominator": 57
+        }
+      },
+      {
+        "j": 4,
+        "U": 1,
+        "S": 1,
+        "epsilon": {
+          "numerator": -5,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -69,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -15,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -69,
+          "denominator": 76
+        }
+      },
+      {
+        "j": 5,
+        "U": 2,
+        "S": 6,
+        "epsilon": {
+          "numerator": 8,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 119,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 24,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 119,
+          "denominator": 95
+        }
+      },
+      {
+        "j": 6,
+        "U": 2,
+        "S": 6,
+        "epsilon": {
+          "numerator": 2,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 30,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 6,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 5,
+          "denominator": 19
+        }
+      },
+      {
+        "j": 7,
+        "U": 3,
+        "S": 13,
+        "epsilon": {
+          "numerator": 15,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 310,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 45,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 310,
+          "denominator": 133
+        }
+      },
+      {
+        "j": 8,
+        "U": 3,
+        "S": 13,
+        "epsilon": {
+          "numerator": 9,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 199,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 27,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 199,
+          "denominator": 152
+        }
+      },
+      {
+        "j": 9,
+        "U": 3,
+        "S": 13,
+        "epsilon": {
+          "numerator": 3,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 58,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 9,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 58,
+          "denominator": 171
+        }
+      },
+      {
+        "j": 10,
+        "U": 3,
+        "S": 13,
+        "epsilon": {
+          "numerator": -3,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -113,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -9,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -113,
+          "denominator": 190
+        }
+      },
+      {
+        "j": 11,
+        "U": 4,
+        "S": 24,
+        "epsilon": {
+          "numerator": 10,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 313,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 30,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 313,
+          "denominator": 209
+        }
+      },
+      {
+        "j": 12,
+        "U": 4,
+        "S": 24,
+        "epsilon": {
+          "numerator": 4,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 120,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 12,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 10,
+          "denominator": 19
+        }
+      },
+      {
+        "j": 13,
+        "U": 5,
+        "S": 37,
+        "epsilon": {
+          "numerator": 17,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 638,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 51,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 638,
+          "denominator": 247
+        }
+      },
+      {
+        "j": 14,
+        "U": 5,
+        "S": 37,
+        "epsilon": {
+          "numerator": 11,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 423,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 33,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 423,
+          "denominator": 266
+        }
+      },
+      {
+        "j": 15,
+        "U": 5,
+        "S": 37,
+        "epsilon": {
+          "numerator": 5,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 178,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 15,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 178,
+          "denominator": 285
+        }
+      },
+      {
+        "j": 16,
+        "U": 5,
+        "S": 37,
+        "epsilon": {
+          "numerator": -1,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -97,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -3,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -97,
+          "denominator": 304
+        }
+      },
+      {
+        "j": 17,
+        "U": 6,
+        "S": 54,
+        "epsilon": {
+          "numerator": 12,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 567,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 36,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 567,
+          "denominator": 323
+        }
+      },
+      {
+        "j": 18,
+        "U": 6,
+        "S": 54,
+        "epsilon": {
+          "numerator": 6,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 270,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 18,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 15,
+          "denominator": 19
+        }
+      },
+      {
+        "j": 19,
+        "U": 6,
+        "S": 54,
+        "epsilon": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "D": {
+          "numerator": -3,
+          "denominator": 1
+        },
+        "slope": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "endpoint": {
+          "numerator": -3,
+          "denominator": 19
+        }
+      },
+      {
+        "j": 20,
+        "U": 6,
+        "S": 54,
+        "epsilon": {
+          "numerator": -6,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -414,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -18,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -207,
+          "denominator": 190
+        }
+      },
+      {
+        "j": 21,
+        "U": 6,
+        "S": 54,
+        "epsilon": {
+          "numerator": -12,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -801,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -36,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -267,
+          "denominator": 133
+        }
+      },
+      {
+        "j": 22,
+        "U": 6,
+        "S": 54,
+        "epsilon": {
+          "numerator": -18,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -1218,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -54,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -609,
+          "denominator": 209
+        }
+      },
+      {
+        "j": 23,
+        "U": 7,
+        "S": 77,
+        "epsilon": {
+          "numerator": -5,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -354,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -15,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -354,
+          "denominator": 437
+        }
+      },
+      {
+        "j": 24,
+        "U": 7,
+        "S": 77,
+        "epsilon": {
+          "numerator": -11,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -793,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -33,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -793,
+          "denominator": 456
+        }
+      },
+      {
+        "j": 25,
+        "U": 8,
+        "S": 102,
+        "epsilon": {
+          "numerator": 2,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 163,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 6,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 163,
+          "denominator": 475
+        }
+      },
+      {
+        "j": 26,
+        "U": 8,
+        "S": 102,
+        "epsilon": {
+          "numerator": -4,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -298,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -12,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -149,
+          "denominator": 247
+        }
+      },
+      {
+        "j": 27,
+        "U": 8,
+        "S": 102,
+        "epsilon": {
+          "numerator": -10,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -789,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -30,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -263,
+          "denominator": 171
+        }
+      },
+      {
+        "j": 28,
+        "U": 8,
+        "S": 102,
+        "epsilon": {
+          "numerator": -16,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -1310,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -48,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -655,
+          "denominator": 266
+        }
+      },
+      {
+        "j": 29,
+        "U": 9,
+        "S": 131,
+        "epsilon": {
+          "numerator": -3,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -208,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -9,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -208,
+          "denominator": 551
+        }
+      },
+      {
+        "j": 30,
+        "U": 9,
+        "S": 131,
+        "epsilon": {
+          "numerator": -9,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -751,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -27,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -751,
+          "denominator": 570
+        }
+      },
+      {
+        "j": 31,
+        "U": 10,
+        "S": 162,
+        "epsilon": {
+          "numerator": 4,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 443,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 12,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 443,
+          "denominator": 589
+        }
+      },
+      {
+        "j": 32,
+        "U": 10,
+        "S": 162,
+        "epsilon": {
+          "numerator": -2,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -122,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -6,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -61,
+          "denominator": 304
+        }
+      },
+      {
+        "j": 33,
+        "U": 10,
+        "S": 162,
+        "epsilon": {
+          "numerator": -8,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -717,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -24,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -239,
+          "denominator": 209
+        }
+      },
+      {
+        "j": 34,
+        "U": 10,
+        "S": 162,
+        "epsilon": {
+          "numerator": -14,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -1342,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -42,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -671,
+          "denominator": 323
+        }
+      },
+      {
+        "j": 35,
+        "U": 11,
+        "S": 197,
+        "epsilon": {
+          "numerator": -1,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -2,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -3,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -2,
+          "denominator": 665
+        }
+      },
+      {
+        "j": 36,
+        "U": 11,
+        "S": 197,
+        "epsilon": {
+          "numerator": -7,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -649,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -21,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -649,
+          "denominator": 684
+        }
+      },
+      {
+        "j": 37,
+        "U": 12,
+        "S": 234,
+        "epsilon": {
+          "numerator": 6,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 783,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 18,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 783,
+          "denominator": 703
+        }
+      },
+      {
+        "j": 38,
+        "U": 12,
+        "S": 234,
+        "epsilon": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "D": {
+          "numerator": 6,
+          "denominator": 1
+        },
+        "slope": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "endpoint": {
+          "numerator": 3,
+          "denominator": 19
+        }
+      },
+      {
+        "j": 39,
+        "U": 12,
+        "S": 234,
+        "epsilon": {
+          "numerator": -6,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -585,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -18,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -15,
+          "denominator": 19
+        }
+      },
+      {
+        "j": 40,
+        "U": 12,
+        "S": 234,
+        "epsilon": {
+          "numerator": -12,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -1314,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -36,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -657,
+          "denominator": 380
+        }
+      },
+      {
+        "j": 41,
+        "U": 13,
+        "S": 275,
+        "epsilon": {
+          "numerator": 1,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 264,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 3,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 264,
+          "denominator": 779
+        }
+      },
+      {
+        "j": 42,
+        "U": 13,
+        "S": 275,
+        "epsilon": {
+          "numerator": -5,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -487,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -15,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -487,
+          "denominator": 798
+        }
+      },
+      {
+        "j": 43,
+        "U": 14,
+        "S": 318,
+        "epsilon": {
+          "numerator": 8,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 1183,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 24,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 1183,
+          "denominator": 817
+        }
+      },
+      {
+        "j": 44,
+        "U": 14,
+        "S": 318,
+        "epsilon": {
+          "numerator": 2,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 410,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 6,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 205,
+          "denominator": 418
+        }
+      },
+      {
+        "j": 45,
+        "U": 14,
+        "S": 318,
+        "epsilon": {
+          "numerator": -4,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -393,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -12,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -131,
+          "denominator": 285
+        }
+      },
+      {
+        "j": 46,
+        "U": 14,
+        "S": 318,
+        "epsilon": {
+          "numerator": -10,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -1226,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -30,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -613,
+          "denominator": 437
+        }
+      },
+      {
+        "j": 47,
+        "U": 15,
+        "S": 365,
+        "epsilon": {
+          "numerator": 3,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 590,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 9,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 590,
+          "denominator": 893
+        }
+      },
+      {
+        "j": 48,
+        "U": 15,
+        "S": 365,
+        "epsilon": {
+          "numerator": -3,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -265,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -9,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -265,
+          "denominator": 912
+        }
+      },
+      {
+        "j": 49,
+        "U": 16,
+        "S": 414,
+        "epsilon": {
+          "numerator": 10,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 1643,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 30,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 1643,
+          "denominator": 931
+        }
+      },
+      {
+        "j": 50,
+        "U": 16,
+        "S": 414,
+        "epsilon": {
+          "numerator": 4,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 766,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 12,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 383,
+          "denominator": 475
+        }
+      },
+      {
+        "j": 51,
+        "U": 16,
+        "S": 414,
+        "epsilon": {
+          "numerator": -2,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -141,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -6,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -47,
+          "denominator": 323
+        }
+      },
+      {
+        "j": 52,
+        "U": 16,
+        "S": 414,
+        "epsilon": {
+          "numerator": -8,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -1078,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -24,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -539,
+          "denominator": 494
+        }
+      },
+      {
+        "j": 53,
+        "U": 17,
+        "S": 467,
+        "epsilon": {
+          "numerator": 5,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 976,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 15,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 976,
+          "denominator": 1007
+        }
+      },
+      {
+        "j": 54,
+        "U": 17,
+        "S": 467,
+        "epsilon": {
+          "numerator": -1,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 17,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -3,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 17,
+          "denominator": 1026
+        }
+      },
+      {
+        "j": 55,
+        "U": 18,
+        "S": 522,
+        "epsilon": {
+          "numerator": 12,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 2163,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 36,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 2163,
+          "denominator": 1045
+        }
+      },
+      {
+        "j": 56,
+        "U": 18,
+        "S": 522,
+        "epsilon": {
+          "numerator": 6,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 1182,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 18,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 591,
+          "denominator": 532
+        }
+      },
+      {
+        "j": 57,
+        "U": 18,
+        "S": 522,
+        "epsilon": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "D": {
+          "numerator": 9,
+          "denominator": 1
+        },
+        "slope": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "endpoint": {
+          "numerator": 3,
+          "denominator": 19
+        }
+      },
+      {
+        "j": 58,
+        "U": 18,
+        "S": 522,
+        "epsilon": {
+          "numerator": -6,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -870,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -18,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -15,
+          "denominator": 19
+        }
+      },
+      {
+        "j": 59,
+        "U": 19,
+        "S": 581,
+        "epsilon": {
+          "numerator": 7,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 1422,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 21,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 1422,
+          "denominator": 1121
+        }
+      },
+      {
+        "j": 60,
+        "U": 19,
+        "S": 581,
+        "epsilon": {
+          "numerator": 1,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 359,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 3,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 359,
+          "denominator": 1140
+        }
+      },
+      {
+        "j": 61,
+        "U": 20,
+        "S": 642,
+        "epsilon": {
+          "numerator": 14,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 2743,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 42,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 2743,
+          "denominator": 1159
+        }
+      },
+      {
+        "j": 62,
+        "U": 20,
+        "S": 642,
+        "epsilon": {
+          "numerator": 8,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 1658,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 24,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 829,
+          "denominator": 589
+        }
+      },
+      {
+        "j": 63,
+        "U": 20,
+        "S": 642,
+        "epsilon": {
+          "numerator": 2,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 543,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 6,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 181,
+          "denominator": 399
+        }
+      },
+      {
+        "j": 64,
+        "U": 20,
+        "S": 642,
+        "epsilon": {
+          "numerator": -4,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -602,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -12,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -301,
+          "denominator": 608
+        }
+      },
+      {
+        "j": 65,
+        "U": 21,
+        "S": 707,
+        "epsilon": {
+          "numerator": 9,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 1928,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 27,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 1928,
+          "denominator": 1235
+        }
+      },
+      {
+        "j": 66,
+        "U": 21,
+        "S": 707,
+        "epsilon": {
+          "numerator": 3,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 761,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 9,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 761,
+          "denominator": 1254
+        }
+      },
+      {
+        "j": 67,
+        "U": 22,
+        "S": 774,
+        "epsilon": {
+          "numerator": 16,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 3383,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 48,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 3383,
+          "denominator": 1273
+        }
+      },
+      {
+        "j": 68,
+        "U": 22,
+        "S": 774,
+        "epsilon": {
+          "numerator": 10,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 2194,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 30,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 1097,
+          "denominator": 646
+        }
+      },
+      {
+        "j": 69,
+        "U": 22,
+        "S": 774,
+        "epsilon": {
+          "numerator": 4,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 975,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 12,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 325,
+          "denominator": 437
+        }
+      },
+      {
+        "j": 70,
+        "U": 22,
+        "S": 774,
+        "epsilon": {
+          "numerator": -2,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -274,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -6,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -137,
+          "denominator": 665
+        }
+      },
+      {
+        "j": 71,
+        "U": 23,
+        "S": 845,
+        "epsilon": {
+          "numerator": 11,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 2494,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 33,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 2494,
+          "denominator": 1349
+        }
+      },
+      {
+        "j": 72,
+        "U": 23,
+        "S": 845,
+        "epsilon": {
+          "numerator": 5,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 1223,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 15,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 1223,
+          "denominator": 1368
+        }
+      },
+      {
+        "j": 73,
+        "U": 24,
+        "S": 918,
+        "epsilon": {
+          "numerator": 18,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 4083,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 54,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 4083,
+          "denominator": 1387
+        }
+      },
+      {
+        "j": 74,
+        "U": 24,
+        "S": 918,
+        "epsilon": {
+          "numerator": 12,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 2790,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 36,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 1395,
+          "denominator": 703
+        }
+      },
+      {
+        "j": 75,
+        "U": 24,
+        "S": 918,
+        "epsilon": {
+          "numerator": 6,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 1467,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 18,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 489,
+          "denominator": 475
+        }
+      },
+      {
+        "j": 76,
+        "U": 24,
+        "S": 918,
+        "epsilon": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "D": {
+          "numerator": 6,
+          "denominator": 1
+        },
+        "slope": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "endpoint": {
+          "numerator": 3,
+          "denominator": 38
+        }
+      },
+      {
+        "j": 77,
+        "U": 25,
+        "S": 995,
+        "epsilon": {
+          "numerator": 13,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 3120,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 39,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 3120,
+          "denominator": 1463
+        }
+      },
+      {
+        "j": 78,
+        "U": 25,
+        "S": 995,
+        "epsilon": {
+          "numerator": 7,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 1745,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 21,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 1745,
+          "denominator": 1482
+        }
+      },
+      {
+        "j": 79,
+        "U": 26,
+        "S": 1074,
+        "epsilon": {
+          "numerator": 20,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 4843,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 60,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 4843,
+          "denominator": 1501
+        }
+      },
+      {
+        "j": 80,
+        "U": 26,
+        "S": 1074,
+        "epsilon": {
+          "numerator": 14,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 3446,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 42,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 1723,
+          "denominator": 760
+        }
+      },
+      {
+        "j": 81,
+        "U": 26,
+        "S": 1074,
+        "epsilon": {
+          "numerator": 8,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 2019,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 24,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 673,
+          "denominator": 513
+        }
+      },
+      {
+        "j": 82,
+        "U": 26,
+        "S": 1074,
+        "epsilon": {
+          "numerator": 2,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 562,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 6,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 281,
+          "denominator": 779
+        }
+      },
+      {
+        "j": 83,
+        "U": 27,
+        "S": 1157,
+        "epsilon": {
+          "numerator": 15,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 3806,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 45,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 3806,
+          "denominator": 1577
+        }
+      },
+      {
+        "j": 84,
+        "U": 27,
+        "S": 1157,
+        "epsilon": {
+          "numerator": 9,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 2327,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 27,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 2327,
+          "denominator": 1596
+        }
+      },
+      {
+        "j": 85,
+        "U": 28,
+        "S": 1242,
+        "epsilon": {
+          "numerator": 22,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 5663,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 66,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 5663,
+          "denominator": 1615
+        }
+      },
+      {
+        "j": 86,
+        "U": 28,
+        "S": 1242,
+        "epsilon": {
+          "numerator": 16,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 4162,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 48,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 2081,
+          "denominator": 817
+        }
+      },
+      {
+        "j": 87,
+        "U": 28,
+        "S": 1242,
+        "epsilon": {
+          "numerator": 10,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 2631,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 30,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 877,
+          "denominator": 551
+        }
+      },
+      {
+        "j": 88,
+        "U": 28,
+        "S": 1242,
+        "epsilon": {
+          "numerator": 4,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 1070,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 12,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 535,
+          "denominator": 836
+        }
+      },
+      {
+        "j": 89,
+        "U": 29,
+        "S": 1331,
+        "epsilon": {
+          "numerator": 17,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 4552,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 51,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 4552,
+          "denominator": 1691
+        }
+      },
+      {
+        "j": 90,
+        "U": 29,
+        "S": 1331,
+        "epsilon": {
+          "numerator": 11,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 2969,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 33,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 2969,
+          "denominator": 1710
+        }
+      },
+      {
+        "j": 91,
+        "U": 30,
+        "S": 1422,
+        "epsilon": {
+          "numerator": 24,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 6543,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 72,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 6543,
+          "denominator": 1729
+        }
+      },
+      {
+        "j": 92,
+        "U": 30,
+        "S": 1422,
+        "epsilon": {
+          "numerator": 18,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 4938,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 54,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 2469,
+          "denominator": 874
+        }
+      },
+      {
+        "j": 93,
+        "U": 30,
+        "S": 1422,
+        "epsilon": {
+          "numerator": 12,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 3303,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 36,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 1101,
+          "denominator": 589
+        }
+      },
+      {
+        "j": 94,
+        "U": 30,
+        "S": 1422,
+        "epsilon": {
+          "numerator": 6,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 1638,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 18,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 819,
+          "denominator": 893
+        }
+      },
+      {
+        "j": 95,
+        "U": 30,
+        "S": 1422,
+        "epsilon": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "D": {
+          "numerator": -3,
+          "denominator": 1
+        },
+        "slope": {
+          "numerator": 0,
+          "denominator": 1
+        },
+        "endpoint": {
+          "numerator": -3,
+          "denominator": 95
+        }
+      },
+      {
+        "j": 96,
+        "U": 30,
+        "S": 1422,
+        "epsilon": {
+          "numerator": -6,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -1782,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -18,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -297,
+          "denominator": 304
+        }
+      },
+      {
+        "j": 97,
+        "U": 31,
+        "S": 1519,
+        "epsilon": {
+          "numerator": 7,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 1992,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 21,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 1992,
+          "denominator": 1843
+        }
+      },
+      {
+        "j": 98,
+        "U": 31,
+        "S": 1519,
+        "epsilon": {
+          "numerator": 1,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 245,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 3,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 5,
+          "denominator": 38
+        }
+      },
+      {
+        "j": 99,
+        "U": 31,
+        "S": 1519,
+        "epsilon": {
+          "numerator": -5,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -1532,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -15,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -1532,
+          "denominator": 1881
+        }
+      },
+      {
+        "j": 100,
+        "U": 31,
+        "S": 1519,
+        "epsilon": {
+          "numerator": -11,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -3339,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -33,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -3339,
+          "denominator": 1900
+        }
+      },
+      {
+        "j": 101,
+        "U": 32,
+        "S": 1620,
+        "epsilon": {
+          "numerator": 2,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 581,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 6,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 581,
+          "denominator": 1919
+        }
+      },
+      {
+        "j": 102,
+        "U": 32,
+        "S": 1620,
+        "epsilon": {
+          "numerator": -4,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -1248,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -12,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -208,
+          "denominator": 323
+        }
+      },
+      {
+        "j": 103,
+        "U": 33,
+        "S": 1723,
+        "epsilon": {
+          "numerator": 9,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 2764,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 27,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 2764,
+          "denominator": 1957
+        }
+      },
+      {
+        "j": 104,
+        "U": 33,
+        "S": 1723,
+        "epsilon": {
+          "numerator": 3,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 913,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 9,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 913,
+          "denominator": 1976
+        }
+      },
+      {
+        "j": 105,
+        "U": 33,
+        "S": 1723,
+        "epsilon": {
+          "numerator": -3,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -968,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -9,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -968,
+          "denominator": 1995
+        }
+      },
+      {
+        "j": 106,
+        "U": 33,
+        "S": 1723,
+        "epsilon": {
+          "numerator": -9,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -2879,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -27,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -2879,
+          "denominator": 2014
+        }
+      },
+      {
+        "j": 107,
+        "U": 34,
+        "S": 1830,
+        "epsilon": {
+          "numerator": 4,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 1279,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 12,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 1279,
+          "denominator": 2033
+        }
+      },
+      {
+        "j": 108,
+        "U": 34,
+        "S": 1830,
+        "epsilon": {
+          "numerator": -2,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -654,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -6,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -109,
+          "denominator": 342
+        }
+      },
+      {
+        "j": 109,
+        "U": 35,
+        "S": 1939,
+        "epsilon": {
+          "numerator": 11,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 3596,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 33,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 3596,
+          "denominator": 2071
+        }
+      },
+      {
+        "j": 110,
+        "U": 35,
+        "S": 1939,
+        "epsilon": {
+          "numerator": 5,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 1641,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 15,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 1641,
+          "denominator": 2090
+        }
+      },
+      {
+        "j": 111,
+        "U": 35,
+        "S": 1939,
+        "epsilon": {
+          "numerator": -1,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -344,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -3,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -344,
+          "denominator": 2109
+        }
+      },
+      {
+        "j": 112,
+        "U": 35,
+        "S": 1939,
+        "epsilon": {
+          "numerator": -7,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": -2359,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": -21,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": -337,
+          "denominator": 304
+        }
+      },
+      {
+        "j": 113,
+        "U": 36,
+        "S": 2052,
+        "epsilon": {
+          "numerator": 6,
+          "denominator": 19
+        },
+        "D": {
+          "numerator": 2037,
+          "denominator": 19
+        },
+        "slope": {
+          "numerator": 18,
+          "denominator": 19
+        },
+        "endpoint": {
+          "numerator": 2037,
+          "denominator": 2147
+        }
+      }
+    ],
+    "regression_T_range": [
+      0,
+      1140
+    ],
+    "independent_count": "Mobius inclusion-exclusion over the eight squarefree divisors of 114",
+    "inclusion_exclusion_checks": 1141,
+    "free_floor_L_range": [
+      0,
+      4096
+    ],
+    "C_optimal_for_fixed_A_polynomial_count": true,
+    "C_optimality_asymptotic_residue": 91,
+    "actual_bad_minimum_CDF_claimed_optimal": false
+  },
+  "integral_constants": {
+    "J4": {
+      "lower": {
+        "numerator": 5944697450643459849358276436700992378276862616052308841092970478350425515230990885025560089530247713104453832938085202795489701627898440282958553579291248132338827117920888252058875988679186427285647227921435819966663382511804868727565679056887060139409716655856003374604537723501968479655639774038653427202192974274596049164374781862542977838216305034833721683532931166362484159371978520411954172094538709437071042582735997,
+        "denominator": 1165741477832545652837264325219331854214288003320055495939393904350099058146987212800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      },
+      "upper": {
+        "numerator": 332338161439936061695821496331670849440767110551669210709689984742416414028825422183060674487111725418074061002569412080159804365615519662104452139061099424792439940353884652152728490498381727833842184982714170859638191338558891868896353905306556271844333440612348228406041793269507523858111134508659768829813843669435527738728745986294902927246212443974807521954113516599817160133756214239940362829725927931919087334704596990493344779575357817239970226591439619778436653584580417498162602697531632398371499429168255804844758557,
+        "denominator": 65170696974225538162808264487268811538432000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+      },
+      "simple_upper": {
+        "numerator": 51,
+        "denominator": 10
+      },
+      "upper_decimal": "5.099502949483156",
+      "a_interval": [
+        {
+          "numerator": 34641,
+          "denominator": 40000
+        },
+        {
+          "numerator": 433013,
+          "denominator": 500000
+        }
+      ],
+      "b_interval": [
+        {
+          "numerator": 11547,
+          "denominator": 10000
+        },
+        {
+          "numerator": 1154701,
+          "denominator": 1000000
+        }
+      ],
+      "first_series_last_indices": {
+        "lower": 21,
+        "upper": 20
+      },
+      "second_series_last_indices": {
+        "lower": 41,
+        "upper": 40
+      },
+      "identity": "4*int_0^(sqrt(3)/2)dt/(1+t^4)+4*int_0^(2/sqrt(3))dt/(t^2+2)"
+    },
+    "K": {
+      "lower": {
+        "numerator": 31307152173560152653219266914894960445533744523231445161325226771024648275766110331656416722199900247909888770376489207756449420424351040727478208611151910567069573549632384140331581355952620190013685949039325334687583538519097771934579516309687750080342678632397421,
+        "denominator": 168903060089581542026207274274651795969530908783343728445981099666492379236047812173882935741436568253143794244951155660474811854170789056576143734511150382769777347775305675275467663066770957671313364354826914096534666283097366982643655551821715365625285876645888000
+      },
+      "upper": {
+        "numerator": 1956697010852936097017357576546655175629500387110613768060020900341884008043510983781740261396383272967574154179577962916850503483597008970537638527777396928537541490293677202161315468026681410776863850489936843752352173808606206092849912327485881412101328237006481,
+        "denominator": 10556441255598846376637954642165737248095681798958983027873818729155773702252988260867683483839785515821487140309447228779675740885674316036008983406946898923111084235956604704716728941673184854457085272176682131033416642693585436415228471988857210351580367290368000
+      },
+      "simple_upper": {
+        "numerator": 46339,
+        "denominator": 250000
+      },
+      "upper_decimal": "0.185355742856539",
+      "arctan_upper_last_index": 40,
+      "log_terms": 80,
+      "identity": "atan(3/4)-ln(5/2)/2"
+    }
+  },
+  "penalties": {
+    "periodic_Phi_numerator": {
+      "numerator": 30,
+      "denominator": 19
+    },
+    "periodic_linear_numerator": {
+      "numerator": 139017,
+      "denominator": 237500
+    },
+    "periodic_sqrtM_coefficient": {
+      "numerator": 1836,
+      "denominator": 95
+    },
+    "free_Phi_numerator": {
+      "numerator": 6,
+      "denominator": 1
+    },
+    "free_linear_numerator": {
+      "numerator": 139017,
+      "denominator": 62500
+    }
+  },
+  "model_regressions": {
+    "total_states": 87735,
+    "repaired_bad_minima": 3730,
+    "bad_zero_numerators": 200,
+    "density_breakpoints": 98,
+    "models": [
+      {
+        "M": 23,
+        "p": 23,
+        "states": 23,
+        "bad_minima": 0,
+        "zero_numerators": 0,
+        "density_breakpoints": 0
+      },
+      {
+        "M": 46,
+        "p": 23,
+        "states": 46,
+        "bad_minima": 0,
+        "zero_numerators": 0,
+        "density_breakpoints": 0
+      },
+      {
+        "M": 69,
+        "p": 23,
+        "states": 69,
+        "bad_minima": 2,
+        "zero_numerators": 0,
+        "density_breakpoints": 1
+      },
+      {
+        "M": 437,
+        "p": 23,
+        "states": 437,
+        "bad_minima": 38,
+        "zero_numerators": 10,
+        "density_breakpoints": 1
+      },
+      {
+        "M": 115,
+        "p": 23,
+        "states": 115,
+        "bad_minima": 6,
+        "zero_numerators": 0,
+        "density_breakpoints": 1
+      },
+      {
+        "M": 529,
+        "p": 23,
+        "states": 529,
+        "bad_minima": 44,
+        "zero_numerators": 10,
+        "density_breakpoints": 2
+      },
+      {
+        "M": 1058,
+        "p": 23,
+        "states": 1058,
+        "bad_minima": 76,
+        "zero_numerators": 22,
+        "density_breakpoints": 2
+      },
+      {
+        "M": 2622,
+        "p": 23,
+        "states": 2622,
+        "bad_minima": 118,
+        "zero_numerators": 22,
+        "density_breakpoints": 4
+      },
+      {
+        "M": 5244,
+        "p": 23,
+        "states": 5244,
+        "bad_minima": 194,
+        "zero_numerators": 22,
+        "density_breakpoints": 9
+      },
+      {
+        "M": 13110,
+        "p": 23,
+        "states": 13110,
+        "bad_minima": 526,
+        "zero_numerators": 52,
+        "density_breakpoints": 18
+      },
+      {
+        "M": 60306,
+        "p": 23,
+        "states": 60306,
+        "bad_minima": 2544,
+        "zero_numerators": 22,
+        "density_breakpoints": 55
+      },
+      {
+        "M": 29,
+        "p": 29,
+        "states": 29,
+        "bad_minima": 0,
+        "zero_numerators": 0,
+        "density_breakpoints": 0
+      },
+      {
+        "M": 841,
+        "p": 29,
+        "states": 841,
+        "bad_minima": 52,
+        "zero_numerators": 12,
+        "density_breakpoints": 1
+      },
+      {
+        "M": 3306,
+        "p": 29,
+        "states": 3306,
+        "bad_minima": 130,
+        "zero_numerators": 28,
+        "density_breakpoints": 4
+      }
+    ],
+    "marked_physical_gap": {
+      "M": 2622,
+      "s": 114,
+      "old_minimum": [
+        23,
+        0,
+        23
+      ],
+      "new_minimum": [
+        114,
+        114,
+        1
+      ],
+      "invalid_ambient_division": [
+        0,
+        1
+      ]
+    },
+    "claim_scope": "finite regressions; universal validity comes from the written proof"
+  },
+  "continuous_geometry_regressions": {
+    "exact_pairs": 8515,
+    "eta_grid_denominator": 64,
+    "scope": "regression only; continuous proof is in REPAIR114_PROOF.md"
+  },
+  "consumer_checks": {
+    "positive_fixtures": 4,
+    "negative_fixtures": 10,
+    "rejected": [
+      "nonprime theorem input",
+      "new prime below domain",
+      "new prime does not divide M",
+      "extra prime in physical identification",
+      "missing target primes",
+      "zero modulus",
+      "boolean scalar prime",
+      "negative logarithm",
+      "unit base",
+      "M below B"
+    ],
+    "signed_anchor_and_lnB_checks": 2,
+    "scalar_monotonicity_checks": 12
+  },
+  "normalization": "max(0, anchor + insertion_upper) / log_lower(B)",
+  "profile_caps_proved_here": false,
+  "family114p_closed_here": false,
+  "universal_proof": "REPAIR114_PROOF.md and INTEGRAL_CONSTANTS.md"
+}

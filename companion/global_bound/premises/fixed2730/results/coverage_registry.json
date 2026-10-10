@@ -1,0 +1,328 @@
+{
+  "status": "PASS",
+  "normalization": "Delta(B,N)=mu(B^N)/ln(B)",
+  "first_open_four_prime_radical": 1326,
+  "first_open_four_prime_support": [
+    2,
+    3,
+    13,
+    17
+  ],
+  "next_four_prime_family": "78p, p>=17 prime; remains a proposed family, not a theorem",
+  "first_five_prime_radical_not_closed_vs_c0": 3570,
+  "first_open_five_prime_support": [
+    2,
+    3,
+    5,
+    7,
+    17
+  ],
+  "five_prime_radicals_closed_below_2_over_85": [
+    2310,
+    2730
+  ],
+  "five_prime_radicals_newly_isolated_for_global_bound": [
+    2730,
+    3570,
+    3990
+  ],
+  "five_prime_frontier_for_global_universal_estimate": 4290,
+  "next_five_prime_targets": [
+    {
+      "q": 3570,
+      "proposed_first_index": 7140,
+      "N1_cutoff": 10000,
+      "N1_bases": [
+        3570,
+        7140
+      ]
+    },
+    {
+      "q": 3990,
+      "proposed_first_index": 7980,
+      "N1_cutoff": 6000,
+      "N1_bases": [
+        3990
+      ]
+    }
+  ],
+  "proposed_future_K2_profiles_are_not_proved": true,
+  "global_upper_expression": "(log(7)+99503/200655)/log(4290)",
+  "global_upper_decimal": "0.291940320563937",
+  "baseline_global_upper_decimal": "0.295406323917670",
+  "all_omega_ge_6_upper_decimal": "0.282941351389492",
+  "inherited_far_tail": {
+    "prime_counts_from": 2000,
+    "prime_count_upper": "29854729/1308000000",
+    "base_from": "2^20480",
+    "large_base_upper": "29854729/1271808000",
+    "all_positive_valuations": true,
+    "all_N_ge_1": true
+  },
+  "remaining_domain_for_a_value_greater_than_c0": {
+    "prime_counts": "4<=omega(B)<=1999",
+    "base": "2<=B<2^20480",
+    "length": "N>=1 remains unbounded",
+    "exclusions": [
+      "declared complete four-prime families",
+      "radical2310",
+      "radical2730",
+      "imported1155ell tail for prime ell>=151"
+    ],
+    "practical_finite_enumeration_claimed": false
+  },
+  "covered_four_prime_radicals_below_first_open": [
+    {
+      "radical": 210,
+      "primes": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 330,
+      "primes": [
+        2,
+        3,
+        5,
+        11
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 390,
+      "primes": [
+        2,
+        3,
+        5,
+        13
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 462,
+      "primes": [
+        2,
+        3,
+        7,
+        11
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 510,
+      "primes": [
+        2,
+        3,
+        5,
+        17
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 546,
+      "primes": [
+        2,
+        3,
+        7,
+        13
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 570,
+      "primes": [
+        2,
+        3,
+        5,
+        19
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 690,
+      "primes": [
+        2,
+        3,
+        5,
+        23
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 714,
+      "primes": [
+        2,
+        3,
+        7,
+        17
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 770,
+      "primes": [
+        2,
+        5,
+        7,
+        11
+      ],
+      "family": "70p"
+    },
+    {
+      "radical": 798,
+      "primes": [
+        2,
+        3,
+        7,
+        19
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 858,
+      "primes": [
+        2,
+        3,
+        11,
+        13
+      ],
+      "family": "66p"
+    },
+    {
+      "radical": 870,
+      "primes": [
+        2,
+        3,
+        5,
+        29
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 910,
+      "primes": [
+        2,
+        5,
+        7,
+        13
+      ],
+      "family": "70p"
+    },
+    {
+      "radical": 930,
+      "primes": [
+        2,
+        3,
+        5,
+        31
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 966,
+      "primes": [
+        2,
+        3,
+        7,
+        23
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 1110,
+      "primes": [
+        2,
+        3,
+        5,
+        37
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1122,
+      "primes": [
+        2,
+        3,
+        11,
+        17
+      ],
+      "family": "66p"
+    },
+    {
+      "radical": 1155,
+      "primes": [
+        3,
+        5,
+        7,
+        11
+      ],
+      "family": "105p"
+    },
+    {
+      "radical": 1190,
+      "primes": [
+        2,
+        5,
+        7,
+        17
+      ],
+      "family": "70p"
+    },
+    {
+      "radical": 1218,
+      "primes": [
+        2,
+        3,
+        7,
+        29
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 1230,
+      "primes": [
+        2,
+        3,
+        5,
+        41
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1254,
+      "primes": [
+        2,
+        3,
+        11,
+        19
+      ],
+      "family": "66p"
+    },
+    {
+      "radical": 1290,
+      "primes": [
+        2,
+        3,
+        5,
+        43
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1302,
+      "primes": [
+        2,
+        3,
+        7,
+        31
+      ],
+      "family": "42p"
+    }
+  ],
+  "offset_sign_classification_claimed": false,
+  "exact_Cstar_equals_c0_proved": false
+}

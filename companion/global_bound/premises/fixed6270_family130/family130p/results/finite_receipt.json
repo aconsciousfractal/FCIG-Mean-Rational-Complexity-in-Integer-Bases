@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "returncode": 0,
+  "elapsed_seconds": 0.3356785440009844,
+  "binary_sha256": "a3b973ca110104433357a30b60bdc1ec07d98fb1b478694670f1dc6feafb10a9",
+  "contract_sha256": "8907358d273de75109f35f7aa253efe739c5215025b99d99b68712900e71d6f4",
+  "moduli": 59,
+  "states": 1573650,
+  "representatives": 786884,
+  "stream_bytes": 6295072,
+  "all_upper_means_negative": true,
+  "refined_moduli": 0,
+  "output_sha256": "eb440b68f608b46ec9af4a7bd8f226b35e33c124ab148e06a2500b19c8457421",
+  "inputs_unchanged": true
+}

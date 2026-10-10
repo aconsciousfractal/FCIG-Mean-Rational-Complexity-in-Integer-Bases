@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "truncated",
+      "status": "REJECTED",
+      "diagnostic": "truncated witness file"
+    },
+    {
+      "name": "extra",
+      "status": "REJECTED",
+      "diagnostic": "extra witness data"
+    },
+    {
+      "name": "nonunit",
+      "status": "REJECTED",
+      "diagnostic": "full mark unit"
+    },
+    {
+      "name": "wrong_gauss_scale",
+      "status": "REJECTED",
+      "diagnostic": "exact Gauss ceiling"
+    },
+    {
+      "name": "subrectangle_gap",
+      "status": "REJECTED",
+      "diagnostic": "subcell output exact geometry"
+    }
+  ],
+  "synthetic_files_isolated": true
+}

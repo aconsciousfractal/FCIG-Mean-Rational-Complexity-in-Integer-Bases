@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "p": 13,
+  "q": 1365,
+  "algebra": {
+    "branches": 2688,
+    "local_projective_checks": 86016,
+    "tensor_constant_outputs": 2688,
+    "signed_direct_outputs": 14
+  },
+  "stratified_geometry": {
+    "witnesses": 96,
+    "independent_corner_logarithms": 3456,
+    "rational_interior_checks": 2592
+  },
+  "physical": {
+    "state_modulus_incidences": 24570,
+    "denominator_tests": 954076,
+    "conditional_parent_means": 18,
+    "fibre_states": 24570,
+    "rows": [
+      {
+        "L": 1,
+        "M": 1365,
+        "mean_upper": "-1663567559855779/24375000000000000",
+        "denominator_tests": 24014
+      },
+      {
+        "L": 2,
+        "M": 2730,
+        "mean_upper": "-43266983494309919/546000000000000000",
+        "denominator_tests": 69394
+      },
+      {
+        "L": 3,
+        "M": 4095,
+        "mean_upper": "-2237304164110529/26000000000000000",
+        "denominator_tests": 127702
+      },
+      {
+        "L": 5,
+        "M": 6825,
+        "mean_upper": "-323630626557947539/3412500000000000000",
+        "denominator_tests": 275666
+      },
+      {
+        "L": 7,
+        "M": 9555,
+        "mean_upper": "-1911019388753729003/19110000000000000000",
+        "denominator_tests": 457300
+      }
+    ]
+  },
+  "geometric_second_audit_exhaustive": false
+}

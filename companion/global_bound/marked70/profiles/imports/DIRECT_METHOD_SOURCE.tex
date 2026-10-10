@@ -1,0 +1,149 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs,longtable,array}
+\usepackage[margin=24mm,headheight=15pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small Marked transfer and continuous coverage}\fancyhead[R]{\small Marked transfer profiles}\fancyfoot[C]{\thepage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\newcommand{\CL}[1]{\textbf{#1 --- }}
+\newcommand{\rad}{\operatorname{rad}}
+\newcommand{\Prb}{\mathbb P}
+\newcommand{\E}{\mathbb E}
+\newcommand{\F}{\mathbb F}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\ceil}[1]{\lceil#1\rceil}
+\newcommand{\pos}[1]{(#1)_+}
+\newcommand{\deltao}{\delta}
+\title{Trasferimento marcato e copertura continua}\date{}
+\begin{document}\maketitle
+Sia $q>1$ squarefree e $K=q^k$, $k\ge1$. Nel reticolo fisico di modulo $M$ si pone
+\[
+R_{M,q}(s)=\min_{d>0,(d,q)=1,\ a\equiv sd\pmod M}\max(|a|,d),\qquad
+\nu_q(M)=M^{-1}\sum_{s=0}^{M-1}\log R_{M,q}(s)-\tfrac12\log M.
+\]
+Si includono tutti i residui, compreso zero; il marchio e' rilassato se $q\ne\rad(M)$.
+\section{Trasferimento marcato senza perdita di stati}
+\CL{CLM} Per una base per righe $C\in\mathrm{GL}_2^+(\mathbb R)$ e una colonna $m\bmod q$ non nulla modulo ogni primo di $q$, definiamo
+\[
+F_q(C,m)=\log\min_{\substack{n\in\mathbb Z^2\\(nm,q)=1}}
+\frac{\norm{nC}_\infty}{\sqrt{\det C}}.
+\]
+L'osservabile è invariante per scala positiva e cambi simultanei di base e marchio; non per rotazioni ambientali arbitrarie. In questa nota le rotazioni non sono eliminate.
+
+\CL{CL5 --- Lemma H} Sia $K=q^k$. I sottoreticoli di indice $K$ di $\mathbb Z^2$ hanno rappresentanti unici
+\[
+H_{a,b}=\begin{pmatrix}a&0\\b&d\end{pmatrix},\qquad ad=K,\quad0\le b<a.
+\]
+Infatti $a$ è il generatore positivo dell'intersezione con l'asse orizzontale e $d$ quello della proiezione verticale. La prima coordinata della seconda riga si riduce modulo $a$.
+Un ramo è ammesso se $Hm$ è primitivo modulo $q$. Le matrici nulle modulo un primo di $q$ non sono ammesse; le altre hanno rango uno a ogni primo e una retta kernel
+\[
+\kappa(H)\in\prod_{\ell\mid q}\mathbb P^1(\F_\ell).
+\]
+Ogni etichetta kernel compare esattamente $K/q$ volte. Localmente, un sottoreticolo primitivo di indice $\ell^k$ è il kernel di una forma lineare primitiva modulo $\ell^k$, a meno di unità: normalizzando un coefficiente unitario, ogni retta modulo $\ell$ ha $\ell^{k-1}$ sollevamenti. Il prodotto CRT dà $K/q$.
+
+\CL{CL5} Un marchio genitore ammette tutte e sole le etichette diverse dalla propria retta a ogni primo. Restano esattamente $K$ rami. Per un ramo ammesso tutte le immagini $Hm$ sono proporzionali per un'unità modulo $q$: sono sulla stessa retta immagine a ogni primo. Basta quindi scegliere un marchio immagine $m_H$ dipendente da $H$. Ogni coefficiente intero $w$ con $(wm_H,q)=1$ funziona per tutti i genitori che ammettono quel ramo. La somma sulle etichette è esattamente
+\[
+\bigotimes_{\ell\mid q}(J_{\ell+1}-I_{\ell+1}),
+\]
+anche su valori negativi. Non si presume indipendenza statistica fra marchi e geometria.
+
+\CL{CL5 --- Lemma T} Poniamo
+\[
+T_{q,K}f(C,m)=\frac1K\sum_{H\text{ ammesso}}f(HC,Hm).
+\]
+Il cambio di base permuta i sottoreticoli e ne cambia unimodularmente basi e marchi: l'operatore è ben definito. Sul rappresentante fisico
+\[
+C_{L,s}=\begin{pmatrix}L&0\\s&1\end{pmatrix},\qquad m_0=(0,1)^t,
+\]
+si ha $Hm_0=(0,d)^t$. Poiché $d\mid K$ e i primi di $K$ sono quelli di $q$, l'ammissione forza $d=1$. I figli sono precisamente $s+bL\bmod KL$, $0\le b<K$. Ogni stato finale compare una volta e
+\begin{equation}
+\nu_q(KL)=\frac1L\sum_{s=0}^{L-1}(T_{q,K}F_q)(C_{L,s},m_0).
+\tag{T}
+\end{equation}
+Non occorre $(L,q)=1$. Il marchio resta $q$ anche nel modulo iniziale; si identifica $\nu_q$ con $\mu$ soltanto quando $q=\rad(KL)$.
+
+\section{Certificare una cella intera, conservando l'angolo}
+\CL{CL5 --- Coordinate} Una base ridotta di Gauss $u,v$ di determinante $D$ soddisfa $\norm u_2\le\norm v_2$ e $|u\cdot v|\le\norm u_2^2/2$. Posti $\rho=\norm u_2^2/D$ e $t=(u\cdot v)/\norm u_2^2$, a meno di scala positiva e rotazione si scrive
+\[
+Y(\rho,t)=\begin{pmatrix}\rho&0\\t\rho&1\end{pmatrix},\quad
+|t|\le\tfrac12,\quad0<\rho\le2/\sqrt3.
+\]
+L'ultima disuguaglianza segue da $t^2+\rho^{-2}\ge1$. Il marchio trasformato rimane nello stato. La riduzione esiste scegliendo un vettore nonzero più corto, primitivo nel reticolo, completandolo a base e riducendo la proiezione del secondo vettore.
+
+\CL{CL5 --- Lemma C} Per ogni cella rettangolare in $(\rho,t)$ e ogni ramo scegliamo un coefficiente intero ammissibile. Siano $(u,v)$ i suoi coefficienti rispetto alla base genitrice. La sua norma normalizzata è
+\[
+Z(\rho,t,\theta)=\frac{\norm{(\rho(u+tv),v)R_\theta}_\infty}{\sqrt{K\rho}}.
+\]
+A $\theta$ fissato, il massimo sulla cella si trova fra i quattro vertici. Per dimostrarlo poniamo $z=\frac12\log\rho$: le componenti normalizzate hanno forma $A(t)e^z+Be^{-z}$. Il loro valore assoluto è convesso in $z$: sui tratti non nulli la derivata seconda coincide con il valore assoluto, e ai cambi di segno la derivata salta verso l'alto. A $z$ fissato sono valori assoluti di affini in $t$, anch'essi convessi. Il massimo delle componenti è separatamente convesso, quindi basta applicare due volte il massimo agli estremi. Si applica poi il logaritmo crescente.
+
+\CL{CL5} Non occorre che il testimone scelto nel centro sia minimo altrove. L'ammissibilità dipende dal coefficiente e dal marchio, non dalla geometria. Il vero minimo è sempre al più la norma del testimone scelto. Si usa lo stesso testimone per tutti gli angoli della cella.
+
+\CL{CL5 --- Lemma A, copertura angolare} Per un vettore nonzero $v$, su un tratto in cui una coordinata realizza la norma del massimo,
+\[
+\frac{d^2}{d\theta^2}\log\norm{vR_\theta}_\infty\ge-2.
+\]
+Infatti si deriva $\log|\cos\varphi|$ nella regione $|\cos\varphi|\ge|\sin\varphi|$. Ai cambi di coordinata attiva la derivata salta verso l'alto. La somma con $\theta^2$ è dunque convessa. Questa proprietà passa al massimo sui quattro vertici, alla media di $K$ rami con pesi $1/K$, e al massimo sui marchi.
+
+Scegliamo $\theta_i=\arctan(i/A)$, $-A\le i\le A$. La norma ha periodo $\pi/2$; questi nodi coprono $[-\pi/4,\pi/4]$ e la distanza fra nodi adiacenti è al più $1/A$. Per una funzione $f$ con la proprietà precedente, la corda dà
+\[
+f(\theta)\le\max\{f(\theta_i),f(\theta_{i+1})\}+\frac1{4A^2}.
+\tag{A}
+\]
+Il costo viene aggiunto, non omesso. Nel presente componente si usa $A=4$ per i sedici marchi completi e $A=16$ per i due profili marcati 70.
+
+\CL{CL3 --- Contratto aritmetico} La griglia ha scala $D_0=2^{52}$, $\rho=x/D_0$ e $t=j/40$. Al nodo $\tan\theta=n/A$, poniamo
+\[
+\begin{split}
+U&=Ax(40u+jv)+40D_0nv,\\
+V&=-nx(40u+jv)+40D_0Av,\qquad R=\max(|U|,|V|).
+\end{split}
+\]
+Il valore esatto è
+\[
+\log R-\tfrac12\{\log1600+\log D_0+\log(A^2+n^2)+\log K+\log x\}.
+\tag{N}
+\]
+Il consumatore verifica il coefficiente intero, la sua ammissibilità e tutti i quattro vertici. Usa un logaritmo superiore per $R$ e logaritmi inferiori per i cinque fattori sottratti. Somme, divisioni superiori e trasformazioni tensoriali conservano il verso anche su valori negativi. Non si accettano logaritmi in virgola mobile.
+
+\section{Dalle celle a ogni modulo iniziale}
+\CL{CL5 --- Lemma SV} Se $\lambda_s$ è la lunghezza del vettore euclideo nonzero più corto nel reticolo fisico di determinante $L$, allora, per ogni $L\ge1$ e $x\ge0$,
+\begin{equation}
+\Prb\{\lambda_s^2/L\le x\}\le\min\{1,\alpha x\},\qquad \alpha=29/14.
+\tag{SV}
+\end{equation}
+Con $Y=\sqrt{Lx}<1$ non ci sono vettori interi nonzero; per $Y\ge L$ il maggiorante uno basta. Altrimenti il vettore orizzontale non può comparire, e scegliamo denominatore positivo $d\le n=\floor Y$. Per ogni $d$ la congruenza ha $(d,L)$ soluzioni quando il numeratore è divisibile da quel gcd. Il numero di incidenze nel disco è al più
+\[
+2\sum_{d=1}^n\sqrt{Y^2-d^2}+\frac{n(n+1)}2.
+\]
+Concavità e trapezi maggiorano la prima somma con
+$\pi Y^2/2-Y+\sqrt{Y^2-n^2}$. Posto $z=Y^2-n^2$, la disuguaglianza
+$2\sqrt z\le z+1\le z+2Y-n$ dà un totale al più $(\pi+1)Y^2/2<29Y^2/14$. Le incidenze possono ripetersi; basta il limite dell'unione. Dividiamo per $L$.
+
+\CL{CL5 --- Cuspide} Per ogni ramo ammesso, il CRT fornisce coefficienti del testimone in $\{0,\ldots,q-1\}$. Rispetto alla base iniziale, la prima coordinata è al più $2(q-1)K$ e la seconda al più $(q-1)K$. Nella forma ridotta e per ogni angolo, la norma del massimo è al più quella euclidea, a sua volta maggiorata dalla somma delle componenti. Quindi
+\begin{equation}
+T_{q,K}F_q\le\log(q-1)+\tfrac12\log K-\tfrac12\log\rho+\tfrac52\rho.
+\tag{Cusp}
+\end{equation}
+Si usa $\log(1+y)\le y$. Non viene assegnato un tetto globale finito a $F_q$: la divergenza logaritmica è integrata.
+
+\CL{CL5 --- Integrazione} I 128 intervalli radiali e i 21 tagli coprono 2.688 celle contigue. Massimizzando su tagli, marchi e angoli e prendendo il massimo a destra otteniamo $b_0\ge\cdots\ge b_{127}$. Siano $r_j$ gli estremi superiori e $\rho_0$ il primo inferiore. Per il gradino prolungato con $b_0$ sotto $\rho_0$, SV dà
+\[
+\mathcal B=b_{127}+\sum_{j=0}^{126}(b_j-b_{j+1})\min(1,\alpha r_j).
+\]
+Posto $c=\log(q-1)+\frac12\log K-\frac12\log\rho_0+\frac52\rho_0$, il supplemento sotto griglia è al più
+\[
+\mathcal E=\alpha\rho_0\left(\max(c-b_0,0)+\tfrac12\right).
+\]
+Infatti $\E[\log(\rho_0/\rho)_+]\le\alpha\rho_0$ per integrazione di SV. La formula resta valida se i $b_j$ sono negativi. Con (T) si conclude
+\begin{equation}
+K\mid M\quad\Longrightarrow\quad\nu_q(M)\le\mathcal B+\mathcal E.
+\tag{U}
+\end{equation}
+Questo è il passaggio finito--generale: copre tutte le geometrie e ogni modulo $L=M/K$, non soltanto quelli di un banco numerico.
+
+\end{document}

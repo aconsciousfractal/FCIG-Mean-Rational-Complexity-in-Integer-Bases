@@ -1,0 +1,88 @@
+{
+  "status": "PASS",
+  "q": 3990,
+  "transfer_index": 7980,
+  "cases": [
+    {
+      "name": "truncated",
+      "status": "REJECTED",
+      "diagnostic": "truncated witness file"
+    },
+    {
+      "name": "extra",
+      "status": "REJECTED",
+      "diagnostic": "extra witness data"
+    },
+    {
+      "name": "nonunit",
+      "status": "REJECTED",
+      "diagnostic": "full mark unit"
+    },
+    {
+      "name": "unsupported_prime_parameter",
+      "status": "REJECTED",
+      "diagnostic": "declared new-prime domain"
+    },
+    {
+      "name": "grid_index_mismatch",
+      "status": "REJECTED",
+      "diagnostic": "style and index contract"
+    },
+    {
+      "name": "wrong_gauss_scale",
+      "status": "REJECTED",
+      "diagnostic": "exact Gauss ceiling"
+    },
+    {
+      "name": "radial_gap",
+      "status": "REJECTED",
+      "diagnostic": "exact profile geometry"
+    },
+    {
+      "name": "unsupported_index_grid_2_hybrid",
+      "status": "REJECTED",
+      "diagnostic": "declared index and grid"
+    },
+    {
+      "name": "unsupported_index_grid_3_coarse",
+      "status": "REJECTED",
+      "diagnostic": "declared index and grid"
+    },
+    {
+      "name": "unsupported_index_grid_3_hybrid",
+      "status": "REJECTED",
+      "diagnostic": "declared index and grid"
+    },
+    {
+      "name": "unsupported_index_grid_6_coarse",
+      "status": "REJECTED",
+      "diagnostic": "declared index and grid"
+    },
+    {
+      "name": "unsupported_index_grid_1_angular_tail",
+      "status": "REJECTED",
+      "diagnostic": "declared index and grid"
+    },
+    {
+      "name": "unsupported_index_grid_3_angular_tail",
+      "status": "REJECTED",
+      "diagnostic": "declared index and grid"
+    },
+    {
+      "name": "unsupported_index_grid_6_angular_tail",
+      "status": "REJECTED",
+      "diagnostic": "declared index and grid"
+    },
+    {
+      "name": "angular_interpolation_necessity",
+      "status": "PASS",
+      "vector": [
+        1,
+        3
+      ],
+      "sampled_squared_max": "169/17",
+      "continuous_squared_max": "10"
+    }
+  ],
+  "synthetic_files_isolated": true
+}

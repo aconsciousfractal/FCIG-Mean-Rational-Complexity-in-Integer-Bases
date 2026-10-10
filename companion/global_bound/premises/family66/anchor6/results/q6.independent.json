@@ -1,0 +1,151 @@
+{
+  "status": "PASS",
+  "p": 1,
+  "q": 6,
+  "algebra": {
+    "branches": 12,
+    "local_projective_checks": 84,
+    "tensor_constant_outputs": 12,
+    "signed_direct_outputs": 24
+  },
+  "stratified_geometry": {
+    "witnesses": 96,
+    "independent_corner_logarithms": 12672,
+    "rational_interior_checks": 9504
+  },
+  "physical": {
+    "state_modulus_incidences": 1662,
+    "denominator_tests": 6573,
+    "conditional_parent_means": 277,
+    "fibre_states": 1662,
+    "rows": [
+      {
+        "L": 1,
+        "M": 6,
+        "mean_upper": "-2890371757896163/6000000000000000",
+        "denominator_tests": 3
+      },
+      {
+        "L": 2,
+        "M": 12,
+        "mean_upper": "-442837117991981/1500000000000000",
+        "denominator_tests": 10
+      },
+      {
+        "L": 3,
+        "M": 18,
+        "mean_upper": "-1054966792493161/4500000000000000",
+        "denominator_tests": 23
+      },
+      {
+        "L": 4,
+        "M": 24,
+        "mean_upper": "-4112961561049799/24000000000000000",
+        "denominator_tests": 38
+      },
+      {
+        "L": 5,
+        "M": 30,
+        "mean_upper": "-507737837362999/2500000000000000",
+        "denominator_tests": 57
+      },
+      {
+        "L": 6,
+        "M": 36,
+        "mean_upper": "-5851629218533103/36000000000000000",
+        "denominator_tests": 76
+      },
+      {
+        "L": 7,
+        "M": 42,
+        "mean_upper": "-1548535190173133/8400000000000000",
+        "denominator_tests": 97
+      },
+      {
+        "L": 8,
+        "M": 48,
+        "mean_upper": "-58791348752863/400000000000000",
+        "denominator_tests": 116
+      },
+      {
+        "L": 9,
+        "M": 54,
+        "mean_upper": "-1004720394898519/6750000000000000",
+        "denominator_tests": 141
+      },
+      {
+        "L": 10,
+        "M": 60,
+        "mean_upper": "-196711376741039/1250000000000000",
+        "denominator_tests": 168
+      },
+      {
+        "L": 11,
+        "M": 66,
+        "mean_upper": "-1735790709820657/11000000000000000",
+        "denominator_tests": 197
+      },
+      {
+        "L": 12,
+        "M": 72,
+        "mean_upper": "-1082551991234081/8000000000000000",
+        "denominator_tests": 224
+      },
+      {
+        "L": 13,
+        "M": 78,
+        "mean_upper": "-5693095831344599/39000000000000000",
+        "denominator_tests": 253
+      },
+      {
+        "L": 14,
+        "M": 84,
+        "mean_upper": "-12144271402918961/84000000000000000",
+        "denominator_tests": 284
+      },
+      {
+        "L": 15,
+        "M": 90,
+        "mean_upper": "-4309608852453637/30000000000000000",
+        "denominator_tests": 311
+      },
+      {
+        "L": 16,
+        "M": 96,
+        "mean_upper": "-12102077241987607/96000000000000000",
+        "denominator_tests": 348
+      },
+      {
+        "L": 17,
+        "M": 102,
+        "mean_upper": "-14351542378934723/102000000000000000",
+        "denominator_tests": 377
+      },
+      {
+        "L": 25,
+        "M": 150,
+        "mean_upper": "-807874099487107/6250000000000000",
+        "denominator_tests": 685
+      },
+      {
+        "L": 31,
+        "M": 186,
+        "mean_upper": "-4565031583707331/37200000000000000",
+        "denominator_tests": 949
+      },
+      {
+        "L": 32,
+        "M": 192,
+        "mean_upper": "-22008505473147827/192000000000000000",
+        "denominator_tests": 1006
+      },
+      {
+        "L": 36,
+        "M": 216,
+        "mean_upper": "-2343272019019753/21600000000000000",
+        "denominator_tests": 1210
+      }
+    ]
+  },
+  "geometric_second_audit_exhaustive": false
+}

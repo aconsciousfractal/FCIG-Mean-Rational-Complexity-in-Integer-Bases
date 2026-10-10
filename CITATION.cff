@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "Please cite the accompanying manuscript when using these results or companion."
 type: software
 title: "Mean rational complexity in integer bases: a uniform bound and a two-prime theorem"
-version: 0.1.2
+version: 0.2.0
 authors:
   - family-names: Babanskyy
     given-names: Oleksiy
@@ -16,4 +16,4 @@ preferred-citation:
       given-names: Oleksiy
       orcid: "https://orcid.org/0009-0001-6176-6208"
   year: 2026
-  notes: "Original manuscript CC BY 4.0; companion version 0.1.2."
+  notes: "Original manuscript CC BY 4.0; companion version 0.2.0."

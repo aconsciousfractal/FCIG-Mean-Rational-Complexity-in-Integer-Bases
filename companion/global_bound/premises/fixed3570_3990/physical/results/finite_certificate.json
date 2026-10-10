@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "radicals": [
+    3570,
+    3990
+  ],
+  "domains": [
+    {
+      "radical": 3570,
+      "base_upper_exclusive": 10000,
+      "moduli": 2,
+      "normalized_upper": "1964924919/139065454756",
+      "normalized_upper_decimal": "0.014129496951257",
+      "largest_bound_base": 3570
+    },
+    {
+      "radical": 3990,
+      "base_upper_exclusive": 6000,
+      "moduli": 1,
+      "normalized_upper": "73546284779/5513878423830",
+      "normalized_upper_decimal": "0.013338394343471",
+      "largest_bound_base": 3990
+    }
+  ],
+  "rows": [
+    {
+      "M": 3570,
+      "B": 3570,
+      "radical": 3570,
+      "normalized_upper": "1964924919/139065454756",
+      "normalized_upper_decimal": "0.014129496951257",
+      "mean_upper": "1964924919/17000000000",
+      "stencil": 0
+    },
+    {
+      "M": 7140,
+      "B": 7140,
+      "radical": 3570,
+      "normalized_upper": "188717232161/15839140465680",
+      "normalized_upper_decimal": "0.011914613205806",
+      "mean_upper": "188717232161/1785000000000",
+      "stencil": 0
+    },
+    {
+      "M": 3990,
+      "B": 3990,
+      "radical": 3990,
+      "normalized_upper": "73546284779/5513878423830",
+      "normalized_upper_decimal": "0.013338394343471",
+      "mean_upper": "73546284779/665000000000",
+      "stencil": 0
+    }
+  ],
+  "moduli": 3,
+  "states": 14700,
+  "representatives": 7353,
+  "refined_moduli": 0,
+  "all_N_theorem_claimed": false,
+  "normalization": "mu(B^N)/log(B)",
+  "binary_stream_manifest": [
+    {
+      "M": 3570,
+      "B": 3570,
+      "radical": 3570,
+      "records": 1786,
+      "bytes": 14288,
+      "sha256": "43cc894b101d5d5ab5a55e78f112b910b03d97c953bf287037acbfbfb57a8f8f"
+    },
+    {
+      "M": 7140,
+      "B": 7140,
+      "radical": 3570,
+      "records": 3571,
+      "bytes": 28568,
+      "sha256": "d4b361d07ab7c12470e38231a6d3ffd7c30237c748ae98766dc3949c2d486814"
+    },
+    {
+      "M": 3990,
+      "B": 3990,
+      "radical": 3990,
+      "records": 1996,
+      "bytes": 15968,
+      "sha256": "071fbb8fadcb6cae3ead5721d9f6eec30b626aa60a5c1f562df6f62ad0d80f0a"
+    }
+  ],
+  "output_sha256": "8ea37b7b1f759de155f1319367f986ed7684fa309a957b53dfc339050e437956"
+}

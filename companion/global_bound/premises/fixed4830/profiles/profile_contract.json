@@ -1,0 +1,17 @@
+{
+  "core": 4830,
+  "core_primes": [
+    2,
+    3,
+    5,
+    7,
+    23
+  ],
+  "cdf_alpha": "3/2",
+  "allowed_multipliers": [
+    1,
+    2
+  ],
+  "comparison_threshold": "2/85",
+  "scope": "all positive M divisible by the declared K; full mean under sufficient hypothesis rad(M)=4830; every positive valuation included; normalization lnB"
+}

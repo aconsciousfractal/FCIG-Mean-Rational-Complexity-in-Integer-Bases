@@ -1,0 +1,26 @@
+{
+  "manifest_copy": "imports/SOURCE_MANIFEST_6006.json",
+  "manifest_sha256": "d470b6036940e3fc8af8e16ebdd95e3cfdd503c0075ba491abddee41d3f91ce5",
+  "sources": [
+    {
+      "source": "family154p/insertion/code/insertion154.py",
+      "copy": "insertion/imports/code/insertion154.py",
+      "sha256": "7d19d62f9341aa69137ed30424b893630b214496fc736cb4313cda1a961250d5"
+    },
+    {
+      "source": "family154p/insertion/code/verify_insertion154.py",
+      "copy": "insertion/imports/code/verify_insertion154.py",
+      "sha256": "dcba901e4ded1e12ba07c460d9aae0837e6461772130bf1516a79585d53a43b0"
+    },
+    {
+      "source": "family154p/insertion/REPAIR154_PROOF.md",
+      "copy": "insertion/imports/REPAIR154_PROOF.md",
+      "sha256": "2dc1267793a7a6e5e6b697d9a779312c958b28fe602a8d546ad79d80e0c57dd8"
+    },
+    {
+      "source": "family154p/insertion/INTEGRAL_CONSTANTS.md",
+      "copy": "insertion/imports/INTEGRAL_CONSTANTS.md",
+      "sha256": "8bb96f33bab8a6804361083ee345dfa9f62662aeae2bcbb347b570e9e63be09e"
+    }
+  ]
+}

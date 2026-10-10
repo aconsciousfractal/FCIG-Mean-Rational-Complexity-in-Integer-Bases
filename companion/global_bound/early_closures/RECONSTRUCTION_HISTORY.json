@@ -1,0 +1,17 @@
+{
+  "full_reconstructions_observed_on": "2026-10-08",
+  "scope": "all eight immutable comparison drivers completed with Python optimization and GNU undefined-behaviour sanitizer",
+  "repeat_in_current_revision": false,
+  "not_claimed": "another full normal/O geometric replay or an independent exhaustive second geometric algorithm",
+  "required_mathematical_inputs": "the retained numerical certificates, exact finite-domain partitions and proof lemmas in the manuscript",
+  "cases": [
+    "thirty_p_large",
+    "thirty_p_small",
+    "radical210",
+    "three_prime_28",
+    "three_prime_family",
+    "three_prime_large",
+    "three_prime_353",
+    "three_prime_89"
+  ]
+}

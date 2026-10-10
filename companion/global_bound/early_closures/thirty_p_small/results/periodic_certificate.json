@@ -1,0 +1,251 @@
+{
+  "coefficient_tests": 60,
+  "density": "4/15",
+  "integer_bank_max": 3000,
+  "integer_bank_tests": 3000,
+  "linear_coefficient": "166/57",
+  "quadratic_coefficient": "2/3",
+  "rows": [
+    {
+      "S": 0,
+      "U": 0,
+      "constant_coefficient": "0",
+      "eps": "0",
+      "j": 0,
+      "linear_coefficient": "0"
+    },
+    {
+      "S": 1,
+      "U": 1,
+      "constant_coefficient": "7/3",
+      "eps": "11/15",
+      "j": 1,
+      "linear_coefficient": "11/5"
+    },
+    {
+      "S": 1,
+      "U": 1,
+      "constant_coefficient": "7/6",
+      "eps": "7/15",
+      "j": 2,
+      "linear_coefficient": "7/5"
+    },
+    {
+      "S": 1,
+      "U": 1,
+      "constant_coefficient": "1/3",
+      "eps": "1/5",
+      "j": 3,
+      "linear_coefficient": "3/5"
+    },
+    {
+      "S": 1,
+      "U": 1,
+      "constant_coefficient": "-5/12",
+      "eps": "-1/15",
+      "j": 4,
+      "linear_coefficient": "-1/5"
+    },
+    {
+      "S": 1,
+      "U": 1,
+      "constant_coefficient": "-17/15",
+      "eps": "-1/3",
+      "j": 5,
+      "linear_coefficient": "-1"
+    },
+    {
+      "S": 1,
+      "U": 1,
+      "constant_coefficient": "-11/6",
+      "eps": "-3/5",
+      "j": 6,
+      "linear_coefficient": "-9/5"
+    },
+    {
+      "S": 8,
+      "U": 2,
+      "constant_coefficient": "10/21",
+      "eps": "2/15",
+      "j": 7,
+      "linear_coefficient": "2/5"
+    },
+    {
+      "S": 8,
+      "U": 2,
+      "constant_coefficient": "-1/3",
+      "eps": "-2/15",
+      "j": 8,
+      "linear_coefficient": "-2/5"
+    },
+    {
+      "S": 8,
+      "U": 2,
+      "constant_coefficient": "-10/9",
+      "eps": "-2/5",
+      "j": 9,
+      "linear_coefficient": "-6/5"
+    },
+    {
+      "S": 8,
+      "U": 2,
+      "constant_coefficient": "-28/15",
+      "eps": "-2/3",
+      "j": 10,
+      "linear_coefficient": "-2"
+    },
+    {
+      "S": 19,
+      "U": 3,
+      "constant_coefficient": "13/33",
+      "eps": "1/15",
+      "j": 11,
+      "linear_coefficient": "1/5"
+    },
+    {
+      "S": 19,
+      "U": 3,
+      "constant_coefficient": "-5/12",
+      "eps": "-1/5",
+      "j": 12,
+      "linear_coefficient": "-3/5"
+    },
+    {
+      "S": 32,
+      "U": 4,
+      "constant_coefficient": "70/39",
+      "eps": "8/15",
+      "j": 13,
+      "linear_coefficient": "8/5"
+    },
+    {
+      "S": 32,
+      "U": 4,
+      "constant_coefficient": "20/21",
+      "eps": "4/15",
+      "j": 14,
+      "linear_coefficient": "4/5"
+    },
+    {
+      "S": 32,
+      "U": 4,
+      "constant_coefficient": "2/15",
+      "eps": "0",
+      "j": 15,
+      "linear_coefficient": "0"
+    },
+    {
+      "S": 32,
+      "U": 4,
+      "constant_coefficient": "-2/3",
+      "eps": "-4/15",
+      "j": 16,
+      "linear_coefficient": "-4/5"
+    },
+    {
+      "S": 49,
+      "U": 5,
+      "constant_coefficient": "79/51",
+      "eps": "7/15",
+      "j": 17,
+      "linear_coefficient": "7/5"
+    },
+    {
+      "S": 49,
+      "U": 5,
+      "constant_coefficient": "13/18",
+      "eps": "1/5",
+      "j": 18,
+      "linear_coefficient": "3/5"
+    },
+    {
+      "S": 68,
+      "U": 6,
+      "constant_coefficient": "166/57",
+      "eps": "14/15",
+      "j": 19,
+      "linear_coefficient": "14/5"
+    },
+    {
+      "S": 68,
+      "U": 6,
+      "constant_coefficient": "31/15",
+      "eps": "2/3",
+      "j": 20,
+      "linear_coefficient": "2"
+    },
+    {
+      "S": 68,
+      "U": 6,
+      "constant_coefficient": "26/21",
+      "eps": "2/5",
+      "j": 21,
+      "linear_coefficient": "6/5"
+    },
+    {
+      "S": 68,
+      "U": 6,
+      "constant_coefficient": "14/33",
+      "eps": "2/15",
+      "j": 22,
+      "linear_coefficient": "2/5"
+    },
+    {
+      "S": 91,
+      "U": 7,
+      "constant_coefficient": "181/69",
+      "eps": "13/15",
+      "j": 23,
+      "linear_coefficient": "13/5"
+    },
+    {
+      "S": 91,
+      "U": 7,
+      "constant_coefficient": "43/24",
+      "eps": "3/5",
+      "j": 24,
+      "linear_coefficient": "9/5"
+    },
+    {
+      "S": 91,
+      "U": 7,
+      "constant_coefficient": "73/75",
+      "eps": "1/3",
+      "j": 25,
+      "linear_coefficient": "1"
+    },
+    {
+      "S": 91,
+      "U": 7,
+      "constant_coefficient": "1/6",
+      "eps": "1/15",
+      "j": 26,
+      "linear_coefficient": "1/5"
+    },
+    {
+      "S": 91,
+      "U": 7,
+      "constant_coefficient": "-17/27",
+      "eps": "-1/5",
+      "j": 27,
+      "linear_coefficient": "-3/5"
+    },
+    {
+      "S": 91,
+      "U": 7,
+      "constant_coefficient": "-17/12",
+      "eps": "-7/15",
+      "j": 28,
+      "linear_coefficient": "-7/5"
+    },
+    {
+      "S": 120,
+      "U": 8,
+      "constant_coefficient": "70/87",
+      "eps": "4/15",
+      "j": 29,
+      "linear_coefficient": "4/5"
+    }
+  ],
+  "status": "PASS"
+}

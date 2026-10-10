@@ -1147,5 +1147,5 @@
     "companion/programs/verify_pointwise_central.py": "5060ab037a11984cc5028fd31f89d2349c87224fbb61202b0e0fbb9a00ad1cda",
     "companion/programs/verify_retained.py": "ab6b105d27159b38c71aa88fcdc465584f7e8f5e7255f57cf5b7d705ffd5e6c7"
   },
-  "version": "0.1.2"
+  "version": "0.2.0"
 }

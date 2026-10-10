@@ -1,0 +1,157 @@
+{
+  "status": "PASS_WITH_DECLARED_BASELINE_DEPENDENCIES",
+  "theorem": "c0<=Cstar<=Ushape=(log7+99503/200655)/log4290<73/250",
+  "exact_global_upper_expression": "(log(7)+99503/200655)/log(4290)",
+  "global_lower_enclosure": "9799192019173877824696810/33565736998044429642907443",
+  "global_upper": "9799192019173877824736941/33565736998044429642867312",
+  "global_upper_decimal": "0.291940320563937",
+  "simple_strict_upper": "73/250",
+  "nonlinear_CDF": {
+    "theorem": "For every M>=1,x>=0: Pr(lambda_s^2/M<=x)<=min(1,3*x/2,29*x/21+11*sqrt(x/M)/12)",
+    "all_integer_moduli_M_ge_1": true,
+    "all_real_thresholds_x_ge_0": true,
+    "middle_domain": "1<=Y=sqrt(Mx)<M: formula6of frozenPCDFproof dividedbyM",
+    "small_domain": "Y<1: eventempty",
+    "large_domain": "Y>=M: x>=M>=1 and29x/21>1",
+    "source_formula_number": "(6)",
+    "linear_CDF_sharpness_not_contradicted": true
+  },
+  "improved_sector": {
+    "omega": 5,
+    "base_min": 4290,
+    "all_N_ge_1": true,
+    "modulus_relation": "M=B^N>=B>=4290",
+    "H": 10,
+    "kappa_squared": "103/3",
+    "tail_A": "2987/63",
+    "strict_tail_C_upper": "11/130",
+    "cut_z": 7,
+    "rational_mean_correction": "99503/200655",
+    "strict_mean_bound_expression": "log(7)+99503/200655",
+    "mean_upper_decimal": "2.441801106170761"
+  },
+  "normalization": "mu(B^N)/log(B)",
+  "all_states_including_zero": true,
+  "all_positive_valuations": true,
+  "all_N_ge_1": true,
+  "other_sectors_preserved": [
+    {
+      "omega": 4,
+      "upper": "198520723278485055902/718992217074580781711",
+      "upper_decimal": "0.276109697106628"
+    },
+    {
+      "omega": 6,
+      "upper": "280007882208227354300/1030995216097737596063",
+      "upper_decimal": "0.271589894731076"
+    },
+    {
+      "omega": 7,
+      "upper": "162377923563066112033/657158275251679602044",
+      "upper_decimal": "0.247091042870728"
+    },
+    {
+      "omega": 8,
+      "upper": "8642372084808545339/40728112618227930382",
+      "upper_decimal": "0.212196724307344"
+    },
+    {
+      "omega": 9,
+      "upper": "424818746509407396149/1922309870012918219169",
+      "upper_decimal": "0.220993895488116"
+    },
+    {
+      "omega": 10,
+      "upper": "1278351351354538401617/4518078906023131243776",
+      "upper_decimal": "0.282941351389492"
+    }
+  ],
+  "anchor_bounds_preserved": [
+    {
+      "q": 2730,
+      "upper": "822673844344913354032392840833615820524365625/26782251603462254304277881593828998558248861696",
+      "source": {
+        "path": "../profiles/results/q2730_K2730_coarse.json",
+        "sha256": "87a5fd897d73e09b74d5e19af333666cbfa2e51931ad679cbc15300ac717441b"
+      }
+    },
+    {
+      "q": 3570,
+      "upper": "742562966222580205084455275418508254546765625/27690323131090024040001675786250166461192470528",
+      "source": {
+        "path": "../profiles/results/q3570_K3570_coarse.json",
+        "sha256": "96a689cd1e00f88d4c048131e094015508bb6865f5be0e857f10bcdec99e0a9b"
+      }
+    },
+    {
+      "q": 3990,
+      "upper": "706426990358364305318061627668962506476365625/28066821048935823954891134805923383464748384256",
+      "source": {
+        "path": "../profiles/results/q3990_K3990_coarse.json",
+        "sha256": "2fb55851c83e1bea6e2c6e94e4dbf0e274761f76dffd6f06df249b6ef269bac1"
+      }
+    }
+  ],
+  "candidate_upper_import": "c0<1/40",
+  "infinite_tail_preserved": {
+    "from_omega": 10,
+    "v": "omega(B)-10",
+    "P10": 6469693230,
+    "K10": "262147/2",
+    "base_growth_lower": "31^v",
+    "K_growth_upper": "4^v",
+    "derivative_upper": "-31453713203262119253516489053698450040449/2500000000000000000000000000000000000000",
+    "monotone_for_every_real_v_ge_0": true
+  },
+  "integer_gate": {
+    "left": "2449798004793469456184235250",
+    "right": "2450298800857243363929313776",
+    "positive_difference": "500796063773907745078526"
+  },
+  "theory_inputs": [
+    {
+      "path": "../theory/MANIFEST.json",
+      "sha256": "27d281e19a309abae1e09fa17960094df533b8f270d88bc1a8050543b9417bf8"
+    },
+    {
+      "path": "../theory/PRIMITIVE_CDF.md",
+      "sha256": "2dd80d3616090d8d2501178ea18690215bd78f7d94496a846adeb0a508bc7077"
+    },
+    {
+      "path": "../theory/GLOBAL_WITH_COVERING.md",
+      "sha256": "eb34c8e29f65163acd5040186dbec8dbec48830ee2d78a962a6e29199111a7fd"
+    },
+    {
+      "path": "../theory/GLOBAL_REASSEMBLY.md",
+      "sha256": "6249279891882515a77b2188f3df175cea8fa3a05a28ff19f072e8a2859a93d6"
+    },
+    {
+      "path": "../theory/global_covered_certificate.json",
+      "sha256": "ea123956b2639f8bcbdd1425db562f347d5e154a4905a901d3517eb2107b972c"
+    },
+    {
+      "path": "../theory/theory_certificate.json",
+      "sha256": "5b346986c7166ffb2a26ee9246da370688117d2e7455c863057e3b3a86f5ad7d"
+    },
+    {
+      "path": "../theory/verify_theory.py",
+      "sha256": "7ea856ccac95443ef708f15cdc1da81067f1888abbf63176f1b0991be5afdea0"
+    },
+    {
+      "path": "../theory/imports/GLOBAL_CAP_SOURCE.md",
+      "sha256": "6959d1ee4d65655735962b3246ea2d4fdd932146e958b0dcdf10f6cb8bd8842d"
+    }
+  ],
+  "exact_assertions": 61,
+  "prior_global_upper": "61769772595871130767/209101050298051566388",
+  "new_geometric_flows": 0,
+  "required_baseline_dependencies": [
+    "theory/verify_theory.py",
+    "theory/verify_transfer.py",
+    "covering/verify.py complete replay",
+    "profiles/verify_profiles.py complete geometric replay"
+  ],
+  "this_supplement_performs_geometry_or_covering_replays": false,
+  "exact_Cstar_equals_c0_proved": false,
+  "formalized": false
+}

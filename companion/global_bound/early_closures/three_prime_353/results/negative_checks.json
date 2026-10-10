@@ -1,0 +1,115 @@
+{
+  "all_errors_actually_executed": true,
+  "controls": [
+    {
+      "exit_code": 1,
+      "name": "nonunit_denominator",
+      "stderr": "FAIL full-modulus denominator unit"
+    },
+    {
+      "exit_code": 1,
+      "name": "zero_denominator",
+      "stderr": "FAIL full-modulus denominator unit"
+    },
+    {
+      "exit_code": 1,
+      "name": "negative_denominator",
+      "stderr": "FAIL full-modulus denominator unit"
+    },
+    {
+      "exit_code": 1,
+      "name": "false_congruence",
+      "stderr": "FAIL state congruence"
+    },
+    {
+      "exit_code": 1,
+      "name": "truncated_record",
+      "stderr": "FAIL truncated witness"
+    },
+    {
+      "exit_code": 1,
+      "name": "extra_byte",
+      "stderr": "FAIL extra witness records"
+    },
+    {
+      "exit_code": 1,
+      "name": "extra_record",
+      "stderr": "FAIL extra witness records"
+    },
+    {
+      "exit_code": 1,
+      "name": "duplicate_modulus",
+      "stderr": "FAIL duplicate modulus"
+    },
+    {
+      "exit_code": 1,
+      "name": "wrong_radical",
+      "stderr": "FAIL exact radical support"
+    },
+    {
+      "exit_code": 1,
+      "name": "empty_domain",
+      "stderr": "FAIL empty domain"
+    },
+    {
+      "exit_code": 1,
+      "name": "missing_field",
+      "stderr": "FAIL domain parse"
+    },
+    {
+      "exit_code": 1,
+      "name": "extra_field",
+      "stderr": "FAIL extra domain fields"
+    },
+    {
+      "exit_code": 1,
+      "name": "modulus_over_limit",
+      "stderr": "FAIL modulus domain"
+    },
+    {
+      "name": "fourth_prime_in_modulus",
+      "stderr": "radical must be exactly the three displayed primes"
+    },
+    {
+      "name": "composite_prime_parameter",
+      "stderr": "three primes"
+    },
+    {
+      "name": "missing_support_prime",
+      "stderr": "all support primes present"
+    },
+    {
+      "name": "off_support_cutoff_used_as_physical_modulus",
+      "stderr": "radical must be exactly the three displayed primes"
+    },
+    {
+      "actual_mean_counterexample": false,
+      "correct_ratio": "3/100",
+      "formal_model": "M=70^2; U=(3/100)*log(70)",
+      "name": "log_M_is_not_log_B",
+      "threshold": "2/85",
+      "wrong_ratio": "3/200"
+    },
+    {
+      "inequality": "left > right; clip negative upper bounds at zero for a common upper ratio",
+      "left": "-1/2",
+      "name": "negative_ratio_direction",
+      "right": "-1"
+    },
+    {
+      "PQ": 618,
+      "Pq": 660,
+      "Q": 430,
+      "T": 43,
+      "difference": 42,
+      "name": "marked_pairs_are_not_full_pairs",
+      "q": 10
+    },
+    {
+      "name": "radical70_leading_gate",
+      "stderr": "leading majorant at radical 70 is insufficient; not a counterexample"
+    }
+  ],
+  "status": "PASS",
+  "tests": 21
+}

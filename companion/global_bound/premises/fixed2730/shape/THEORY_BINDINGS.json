@@ -1,0 +1,37 @@
+{
+  "peer_component": "../theory",
+  "files": [
+    {
+      "theory_relative_path": "MANIFEST.json",
+      "sha256": "27d281e19a309abae1e09fa17960094df533b8f270d88bc1a8050543b9417bf8"
+    },
+    {
+      "theory_relative_path": "PRIMITIVE_CDF.md",
+      "sha256": "2dd80d3616090d8d2501178ea18690215bd78f7d94496a846adeb0a508bc7077"
+    },
+    {
+      "theory_relative_path": "GLOBAL_WITH_COVERING.md",
+      "sha256": "eb34c8e29f65163acd5040186dbec8dbec48830ee2d78a962a6e29199111a7fd"
+    },
+    {
+      "theory_relative_path": "GLOBAL_REASSEMBLY.md",
+      "sha256": "6249279891882515a77b2188f3df175cea8fa3a05a28ff19f072e8a2859a93d6"
+    },
+    {
+      "theory_relative_path": "global_covered_certificate.json",
+      "sha256": "ea123956b2639f8bcbdd1425db562f347d5e154a4905a901d3517eb2107b972c"
+    },
+    {
+      "theory_relative_path": "theory_certificate.json",
+      "sha256": "5b346986c7166ffb2a26ee9246da370688117d2e7455c863057e3b3a86f5ad7d"
+    },
+    {
+      "theory_relative_path": "verify_theory.py",
+      "sha256": "7ea856ccac95443ef708f15cdc1da81067f1888abbf63176f1b0991be5afdea0"
+    },
+    {
+      "theory_relative_path": "imports/GLOBAL_CAP_SOURCE.md",
+      "sha256": "6959d1ee4d65655735962b3246ea2d4fdd932146e958b0dcdf10f6cb8bd8842d"
+    }
+  ]
+}

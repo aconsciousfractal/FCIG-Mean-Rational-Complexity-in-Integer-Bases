@@ -1,0 +1,187 @@
+{
+  "source_checkpoint": "P72_6270_130P_20261009",
+  "source_manifest": "profiles/imports/SOURCE_MANIFEST_6270.json",
+  "source_manifest_sha256": "8c479b0d517284ca56906de80732d739feedf4c64746d07f270dc32ad5e42acb",
+  "sources": [
+    {
+      "source": "family130p/profiles/run_negative.py",
+      "copy": "profiles/imports/originals/run_negative.py",
+      "sha256": "15631c6bf5d9c18f03debac0b35d8d5c77cfe1264b0ad324ad60131669d4dce2"
+    },
+    {
+      "source": "family130p/profiles/code/exact.py",
+      "copy": "profiles/imports/originals/exact.py",
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59"
+    },
+    {
+      "source": "family130p/profiles/code/stored_profile.py",
+      "copy": "profiles/imports/originals/stored_profile.py",
+      "sha256": "4ca78070fd13f70f713774809c0f973e17bb388cbbe3e0e675e8e52e2207ecad"
+    },
+    {
+      "source": "family130p/profiles/generate.py",
+      "copy": "profiles/imports/originals/generate.py",
+      "sha256": "611575f4b5718c79ed51831428dd87ea2f1f8ba9f079e66f330a3a8504fe18a1"
+    },
+    {
+      "source": "family130p/profiles/code/negative_profiles.py",
+      "copy": "profiles/imports/originals/negative_profiles.py",
+      "sha256": "9b21877edc31346bda78b12b9c6b73ecd5bf392291aadb6401123ccfef8eb6a3"
+    },
+    {
+      "source": "family130p/profiles/code/assemble.py",
+      "copy": "profiles/imports/originals/assemble.py",
+      "sha256": "547664ffbaf63dee9452fd5faf7be0e7ceb6d5a82553e64d3ca3a99cb1931fe1"
+    },
+    {
+      "source": "family130p/profiles/code/emit_profile.py",
+      "copy": "profiles/imports/originals/emit_profile.py",
+      "sha256": "f92cec02fa2a9a9fb7fc3c7e255fe8890907c7cb7bbf8c5899c8dbd138c0a16a"
+    },
+    {
+      "source": "family130p/profiles/code/algebra.cpp",
+      "copy": "profiles/imports/originals/algebra.cpp",
+      "sha256": "72623bddbaea1a7aa5e4fb3d6f1e1eda411a78059cfdc9684ee6e691a24417be"
+    },
+    {
+      "source": "family130p/profiles/code/angle.cpp",
+      "copy": "profiles/imports/originals/angle.cpp",
+      "sha256": "0726430ce7e28991c51b30fc1f12493b42e4b16d9fe62091a26c4ff8a5aa6ed3"
+    },
+    {
+      "source": "family130p/profiles/code/search.hpp",
+      "copy": "profiles/imports/originals/search.hpp",
+      "sha256": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281"
+    },
+    {
+      "source": "family130p/profiles/code/kernel.hpp",
+      "copy": "profiles/imports/originals/kernel.hpp",
+      "sha256": "8d9a8fdd84379bd367700716c14e6b0605fedd8604796acd4206ae0c9a94a81b"
+    },
+    {
+      "source": "family130p/profiles/code/pcdf_check.py",
+      "copy": "profiles/imports/originals/pcdf_check.py",
+      "sha256": "36145072bcb33611f52086083a58a8ce46c08a849681a6d988b1edb331112e3e"
+    },
+    {
+      "source": "family130p/profiles/code/core.py",
+      "copy": "profiles/imports/originals/core.py",
+      "sha256": "3e5d2d677ec682340a66847858efb88f23ab9169bb5234bd913222eaafb74f0b"
+    },
+    {
+      "source": "family130p/profiles/code/custody.py",
+      "copy": "profiles/imports/originals/custody.py",
+      "sha256": "45cab10c138361e7ded896781e486f0fdbf0ce532cd2fe5a6b92e4db04b3dabb"
+    },
+    {
+      "source": "family130p/profiles/code/assemble_profiles.py",
+      "copy": "profiles/imports/originals/assemble_profiles.py",
+      "sha256": "23f2a5a77cd253c348347341089fef5f009cf6ccf0fefb88cda974cb41a4276b"
+    },
+    {
+      "source": "family130p/profiles/code/audit_one.py",
+      "copy": "profiles/imports/originals/audit_one.py",
+      "sha256": "bc513473cde458ff5f9717b5e0987416299ae1ea55be5cb106ec27db0bb86d12"
+    },
+    {
+      "source": "family130p/profiles/code/checks.py",
+      "copy": "profiles/imports/originals/checks.py",
+      "sha256": "b7ce792823e3bb6fc5279cc5a6953bfcf51e30d31d66098fb62ad6c6a650326e"
+    },
+    {
+      "source": "family130p/profiles/code/mixed_indices.py",
+      "copy": "profiles/imports/originals/mixed_indices.py",
+      "sha256": "e7161fcec245edc3f7581cb6ba79bf8ecfacf2cb71ee0342a801009f3cb5c1ec"
+    },
+    {
+      "source": "family130p/profiles/build.py",
+      "copy": "profiles/imports/originals/build.py",
+      "sha256": "4291cedf5a97f564d8724068950ba02fc83d88228abf4be25ea5526932e5ac25"
+    },
+    {
+      "source": "family130p/profiles/verify_profiles.py",
+      "copy": "profiles/imports/originals/verify_profiles.py",
+      "sha256": "17d491a32e6e0e245f9e19706c670627768c4514493c52950bdabcfa3bb85da9"
+    },
+    {
+      "source": "family130p/code/assemble_closure.py",
+      "copy": "imports/family_originals/assemble_closure.py",
+      "sha256": "d5174924f8fead928560cb9bbbf360cdf28aa11a923a28d997f885dfacbee69d"
+    },
+    {
+      "source": "family130p/code/run_finite130.py",
+      "copy": "imports/family_originals/run_finite130.py",
+      "sha256": "c06e8cc1350f68f0eb02edcbed38c34f5ddbbfd69f3d0aad9c5f5d98f29a1d0b"
+    },
+    {
+      "source": "family130p/code/independent_physical.py",
+      "copy": "imports/family_originals/independent_physical.py",
+      "sha256": "bfdbbc76cddcd4ff623b259e3bfa7c89484069909cd67865ea299adac89a2224"
+    },
+    {
+      "source": "family130p/code/finite.cpp",
+      "copy": "imports/family_originals/finite.cpp",
+      "sha256": "ef1ca2b45efc302fd5dd8c0759dee4e6e02ccf52cead09fe4fd28e3bb9d4a0df"
+    },
+    {
+      "source": "family130p/code/source_provenance.py",
+      "copy": "imports/family_originals/source_provenance.py",
+      "sha256": "8974df47215929df4979e8c199fb316baf6a62ff59cb3df695dfcf0c2a66a96e"
+    },
+    {
+      "source": "family130p/code/inventory130.py",
+      "copy": "imports/family_originals/inventory130.py",
+      "sha256": "e93a35df418a02a4ee01ef27f9483fb3979822adb9e733ea042aec81727d1e5e"
+    },
+    {
+      "source": "family130p/insertion/code/verify_insertion130.py",
+      "copy": "insertion/imports/code/verify_insertion130.py",
+      "sha256": "919bb38a868152f5f2533e0807a89d865351ffa919258d73959cb5d3d24b0ecb"
+    },
+    {
+      "source": "family130p/insertion/code/insertion130.py",
+      "copy": "insertion/imports/code/insertion130.py",
+      "sha256": "482994f01e609195770d0646c0a38fa24f061ff1bb58b2f16d66f94076b55f73"
+    },
+    {
+      "source": "family130p/insertion/INTEGRAL_CONSTANTS.md",
+      "copy": "insertion/imports/INTEGRAL_CONSTANTS.md",
+      "sha256": "8bb96f33bab8a6804361083ee345dfa9f62662aeae2bcbb347b570e9e63be09e"
+    },
+    {
+      "source": "family130p/insertion/REPAIR130_PROOF.md",
+      "copy": "insertion/imports/REPAIR130_PROOF.md",
+      "sha256": "0259008fe08496c9ae2669da91274dcdb99e22d1ff95d34d7f8e699ec48594c1"
+    },
+    {
+      "source": "family130p/code/exact.py",
+      "copy": "code/exact.py",
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59"
+    },
+    {
+      "source": "family130p/code/candidate210.py",
+      "copy": "code/candidate210.py",
+      "sha256": "e7156442bece3120f77bcfce08e269fb79705343f7110cd5eb9de24059b201f0"
+    },
+    {
+      "source": "family130p/code/log_inputs.py",
+      "copy": "code/log_inputs.py",
+      "sha256": "f8b8b150d388317bda204c8d41c96de0471f30ffcef2f1e5b851e6884bf9e14c"
+    },
+    {
+      "source": "family130p/data/log_table.txt",
+      "copy": "data/log_table.txt",
+      "sha256": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b"
+    },
+    {
+      "source": "family130p/data/log_seeds.tsv",
+      "copy": "data/log_seeds.tsv",
+      "sha256": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a"
+    },
+    {
+      "source": "family130p/verify_family.py",
+      "copy": "imports/family_originals/verify_family130.py",
+      "sha256": "fd80cc709a8bc59ed04e904f3d2d1d0b45dd0816a971c200ecae5437c53bb85f"
+    }
+  ]
+}

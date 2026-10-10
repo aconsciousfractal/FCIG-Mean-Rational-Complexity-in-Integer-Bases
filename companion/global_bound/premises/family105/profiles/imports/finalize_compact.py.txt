@@ -1,0 +1,132 @@
+#!/usr/bin/env python3
+"""Freeze only accepted compact certificates; raw witnesses remain in work lanes."""
+from pathlib import Path
+from fractions import Fraction as F
+from hashlib import sha256
+import csv, difflib, io, json, shutil, subprocess, sys
+ROOT=Path(__file__).resolve().parent
+sys.path.insert(0,str(ROOT/'code'))
+from exact import need
+
+def put(name,obj):
+ (ROOT/name).write_text(json.dumps(obj,indent=2)+'\n')
+
+for name in ('initial_generation_report.json','tail_generation_report.json'):
+ need(json.loads((ROOT/'logs'/name).read_text())['status']=='PASS','completed generation '+name)
+contract={'core':105,'core_primes':[3,5,7],'first_new_prime':11,
+ 'last_small_prime':29,'tail_first_prime':31,
+ 'marked_simple_caps':{'1':'6/125','2':'-2/25'},
+ 'comparison_threshold':'2/85','external_tail_gates_are_not_certified_by_this_component':True}
+plan=[dict(p=p,k=1,ag=4,stem=f'q{105*p}') for p in (11,13,17,19,23,29)]
+plan += [dict(p=1,k=k,ag=16,stem=f'q105_k{k}',simple_cap=cap)
+         for k,cap in ((1,'6/125'),(2,'-2/25'))]
+for z in plan:
+ row=json.loads((ROOT/'results'/(z['stem']+'.json')).read_text())
+ need(row['q']==(105 if z['p']==1 else 105*z['p']) and row['k']==z['k'], 'accepted profile identity')
+ if z['p']==1:need(F(row['total_upper'])<F(z['simple_cap']),'fresh marked cap before freeze')
+ need(json.loads((ROOT/'results'/(z['stem']+'.independent.json')).read_text())['status']=='PASS', 'independent audit')
+put('profile_contract.json',contract);put('profiles_plan.json',plan)
+subprocess.run([sys.executable,'-B',str(ROOT/'code/assemble_small.py')],check=True)
+closure=json.loads((ROOT/'results/small_prime_closure.json').read_text())
+states=sum(json.loads((ROOT/'results'/(z['stem']+'.independent.json')).read_text())['physical']['state_modulus_incidences'] for z in plan)
+out=io.StringIO(newline='');writer=csv.writer(out)
+writer.writerow(['stem','q','k','angular_nodes','labels','witnesses','mean_upper','upper_decimal','normalized_upper'])
+for z in plan:
+ r=json.loads((ROOT/'results'/(z['stem']+'.json')).read_text())
+ writer.writerow([z['stem'],*[r[k] for k in ('q','k','angular_nodes','labels','witnesses','total_upper','upper_decimal','normalized_upper')]])
+(ROOT/'SUMMARY.csv').write_text(out.getvalue())
+
+old=ROOT.parent/'agent_profiles66/export_ready'
+diff=[]
+for rel in sorted([str(p.relative_to(old)) for p in (old/'code').glob('*') if p.is_file()]+['verify_profiles.py','verify_stored.py']):
+ before=(old/rel).read_text();after=(ROOT/rel).read_text()
+ diff.extend(difflib.unified_diff(before.splitlines(True),after.splitlines(True),fromfile='frozen66/'+rel,tofile='new105/'+rel))
+(ROOT/'imports/final_66_to_105.diff').write_text(''.join(diff))
+for name in ('generate_batch.py','finalize_compact.py'):
+ shutil.copyfile(ROOT/name,ROOT/'imports'/(name+'.txt'))
+
+readme=f'''# P72 — Profili nuovi 105 e piccoli radicali 105p
+
+Questo componente certifica i sei primi 11,13,17,19,23,29, per tutte
+le valutazioni positive dei quattro primi e ogni N>=1. Il loro limite
+uniforme di Δ è minore di {closure['common_upper_decimal']}, quindi minore
+di 2/85. Il primo primo esterno a questo componente è 31; i gate e il
+complemento finito della famiglia completa sono nel pacchetto principale.
+
+I due ancoraggi marcati freschi sono ν105(M)<6/125 per 105|M e
+ν105(M)<−2/25 per 11025|M. Valgono per ogni multiplo dichiarato,
+anche con ulteriori primi. Il secondo cap è negativo e `total_upper`
+ne conserva il valore; il campo uniforme `normalized_upper` è zero.
+Per i marchi completi p19,23,29 anche il cap sulla media è negativo.
+Non si deduce una classificazione del segno per tutti gli altri casi.
+
+Gli otto profili comprendono {closure['geometric_witnesses_in_direct_profiles']:,} testimoni
+e {closure['corner_evaluations_in_direct_profiles']:,} valutazioni a nodi/vertici per ogni
+passaggio completo del consumer. L'audit geometrico Python alternativo
+è stratificato; le banche definitorie hanno {states:,} stati in totale.
+La prova continua, il trasferimento e i limiti sono in `PROOF.md`.
+Nessun cap numerico storico viene assunto.
+
+## Verifica
+
+Occorrono Python>=3.10, GNU C++ con OpenMP, sistema little-endian,
+e soltanto la libreria standard Python. Da questa directory:
+
+```bash
+python -B verify_profiles.py --quick
+python -B verify_profiles.py --rebuild --threads 4 --sanitize --report /tmp/profiles105_receipt.json
+```
+
+Il controllo rapido verifica il manifest, ricontrolla le tabelle dei
+logaritmi e reintegra tutte le celle memorizzate. Non ricostruisce i
+testimoni e non riesegue i test negativi.
+
+Il replay completo compila producer e consumer separati, rigenera
+e consuma tutti i record, confronta output e SHA256 byte per byte,
+poi ripete algebra, audit e controlli negativi. `--sanitize` abilita
+UBSan; il report dichiara il flag effettivo. I file di lavoro sono
+temporanei e rimossi automaticamente, salvo `--keep-work`.
+Il massimo flusso individuale è quello k2 da 433.520.640 byte.
+Per il replay si prevedono alcuni minuti e circa 1 GB di spazio libero.
+
+## Contenuto e provenienza
+
+`profile_contract.json` dichiara fattori, primi e cap rilassati;
+`profiles_plan.json` fissa tutte le griglie angolari. `SUMMARY.csv`
+riporta le frazioni e `results/small_prime_closure.json` l'assemblaggio
+con la normalizzazione log B. Le celle e i metadati sono completi.
+I flussi binari grandi non sono inclusi: i loro hash sono nei JSON e
+il replay li ricostruisce integralmente.
+
+`imports/provenance.json` registra le fonti di codice e dati;
+`imports/final_66_to_105.diff` rende esplicite tutte le modifiche al
+nucleo precedente. Le prove interne e gli script di generazione sono
+conservati. I log iniziali registrano UBSan fin dalla produzione.
+Il receipt del replay finale congelato viene conservato dal pacchetto
+principale senza modificare questo export.
+
+Producer e consumer condividono parti del kernel. Non si rivendicano
+una seconda implementazione geometrica esaustiva, formalizzazione,
+review specialistica umana o identificazione di C*. I numeri decimali
+sono visualizzazioni di limiti razionali certificati.
+'''
+(ROOT/'README.md').write_text(readme)
+
+export=ROOT/'export_ready'
+need(not export.exists(),'freeze exactly once in a new export directory')
+export.mkdir()
+names=['PROOF.md','README.md','SUMMARY.csv','profile_contract.json','profiles_plan.json',
+       'verify_profiles.py','verify_stored.py','initial_plan.json','tail_plan.json']
+for directory in ('code','data','imports','results','logs'):
+ names.extend(str(p.relative_to(ROOT)) for p in sorted((ROOT/directory).rglob('*')) if p.is_file())
+for name in names:
+ need('.witness' not in name and not name.endswith(('.pyc','.tmp')) and '/__pycache__/' not in name,
+      'no raw or temporary export '+name)
+ target=export/name;target.parent.mkdir(parents=True,exist_ok=True)
+ shutil.copyfile(ROOT/name,target)
+manifest={str(p.relative_to(export)):sha256(p.read_bytes()).hexdigest()
+          for p in sorted(export.rglob('*')) if p.is_file()}
+(export/'MANIFEST_SHA256.json').write_text(json.dumps(manifest,indent=2)+'\n')
+print(json.dumps(dict(status='FROZEN',files=len(manifest)+1,
+  bytes=sum(p.stat().st_size for p in export.rglob('*') if p.is_file()),
+  manifest_sha256=sha256((export/'MANIFEST_SHA256.json').read_bytes()).hexdigest()),indent=2))

@@ -1,6 +1,11 @@
 # Scientific companion
 
-Python 3.10 or later and its standard library are sufficient. The programs
+Python 3.10 or later and its standard library are sufficient for the original
+two-prime companion and the retained verification commands. Full geometric
+reconstruction of the sharper global bound additionally requires GNU C++17,
+OpenMP and a little-endian Linux environment; see
+[the global-bound companion](global_bound/README.md) for the complete routes.
+The programs
 use every residue modulo M, including zero, and require denominators coprime
 to M. Mathematical proofs and the meaning of the certificates are in the
 manuscript. See [the reproduction guide](../REPRODUCE.md) for commands and
@@ -22,8 +27,8 @@ dependency graph. The original and derived hashes are distinct and explicit.
 [portable_source_map.json](portable_source_map.json) additionally identifies
 the actual import adapters used by replay.
 
-The original retained verifier keeps its narrower scope. The complete
-reconstruction now regenerates every consumed computational premise,
+The original retained verifier keeps its narrower scope. The original complete
+two-prime reconstruction regenerates every consumed computational premise,
 including analytical bounds, inventories, all 4,596 semiprime histograms
 and ledgers, and physical controls. All outputs agree with their archived
 mathematical values and bytes in normal and optimized modes.

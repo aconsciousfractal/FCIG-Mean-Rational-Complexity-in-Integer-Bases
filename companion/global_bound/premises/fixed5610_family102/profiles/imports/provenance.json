@@ -1,0 +1,142 @@
+{
+  "sources": [
+    {
+      "path": "P72_4830_20261009/profiles/code/algebra.cpp",
+      "destination": "code/algebra.cpp",
+      "sha256": "72623bddbaea1a7aa5e4fb3d6f1e1eda411a78059cfdc9684ee6e691a24417be"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/code/angle.cpp",
+      "destination": "code/angle.cpp",
+      "sha256": "0726430ce7e28991c51b30fc1f12493b42e4b16d9fe62091a26c4ff8a5aa6ed3"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/code/assemble.py",
+      "destination": "code/assemble.py",
+      "sha256": "547664ffbaf63dee9452fd5faf7be0e7ceb6d5a82553e64d3ca3a99cb1931fe1"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/code/assemble_profiles.py",
+      "destination": "code/assemble_profiles.py",
+      "sha256": "efe039b6b855426fda93e5c312377be9281361ad05e3b9754181faec807f0685"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/code/audit_one.py",
+      "destination": "code/audit_one.py",
+      "sha256": "35081b0dee895a27402239639ca0689f2e9acad9d1f12ff2aaf13db891b63153"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/code/checks.py",
+      "destination": "code/checks.py",
+      "sha256": "b7ce792823e3bb6fc5279cc5a6953bfcf51e30d31d66098fb62ad6c6a650326e"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/code/core.py",
+      "destination": "code/core.py",
+      "sha256": "4e686ea47999505ca5eb44233bb6a3be0bbdba186e7c816fa8de50becac3bab1"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/code/custody.py",
+      "destination": "code/custody.py",
+      "sha256": "3442ddb3fedaab6032768314fa9c019498cc2a9d61cae78420f46d3ac447763b"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/code/emit_profile.py",
+      "destination": "code/emit_profile.py",
+      "sha256": "f92cec02fa2a9a9fb7fc3c7e255fe8890907c7cb7bbf8c5899c8dbd138c0a16a"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/code/exact.py",
+      "destination": "code/exact.py",
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/code/kernel.hpp",
+      "destination": "code/kernel.hpp",
+      "sha256": "c442e4a03f075e33ca42830cfc3c9fa3e4b8416a957b5f04deffbfe3fb3e09b2"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/code/negative_profiles.py",
+      "destination": "code/negative_profiles.py",
+      "sha256": "cba6e95a7ffc6070828e0f3be5feeea3c731192545c3fa29c11a3c372237eddf"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/code/pcdf_check.py",
+      "destination": "code/pcdf_check.py",
+      "sha256": "36145072bcb33611f52086083a58a8ce46c08a849681a6d988b1edb331112e3e"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/code/search.hpp",
+      "destination": "code/search.hpp",
+      "sha256": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/code/stored_profile.py",
+      "destination": "code/stored_profile.py",
+      "sha256": "4ca78070fd13f70f713774809c0f973e17bb388cbbe3e0e675e8e52e2207ecad"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/data/grid.tsv",
+      "destination": "data/grid.tsv",
+      "sha256": "536d5990d2f19003fc5b6534d3c209e87f46b68671f5d3577159d94b4d24df13"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/data/log_seeds.tsv",
+      "destination": "data/log_seeds.tsv",
+      "sha256": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/data/log_table.txt",
+      "destination": "data/log_table.txt",
+      "sha256": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/generate.py",
+      "destination": "generate.py",
+      "sha256": "3c552da92fb2b5d56cc90abfb71530d42e7590eddce4fb6a60ed2c131861e31d"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/build.py",
+      "destination": "build.py",
+      "sha256": "38db3726a7770b08020716ac673ad35509d4968b78491f6b8f39ce107f980c72"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/run_negative.py",
+      "destination": "run_negative.py",
+      "sha256": "64dead5b77ac48d37d8d3240e38921e33f6bff2fe5970cae59131ff620de22f8"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/verify_profiles.py",
+      "destination": "verify_profiles.py",
+      "sha256": "1b379ea5c2685d99fe1394e99ea997cd92e3eba4875559af30ccc5932e9e3dc3"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/profile_contract.json",
+      "destination": "profile_contract.json",
+      "sha256": "b7df79cfec7c348df84300abb6ae1c2975f433db8c83ded4158267a660b5fa39"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/profiles_plan.json",
+      "destination": "profiles_plan.json",
+      "sha256": "2d3c179955a6f2faf78786f3782fdaff9fbd46ff53a4df4edcf96651a9dde61f"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/imports/PRIMITIVE_CDF.md",
+      "destination": "imports/PRIMITIVE_CDF.md",
+      "sha256": "2dd80d3616090d8d2501178ea18690215bd78f7d94496a846adeb0a508bc7077"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "destination": "imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "sha256": "229aac5019834e7ff6d4e4d77890773054ac7b7b0d5caaed185b3ad3e7ed3714"
+    },
+    {
+      "path": "P72_4830_20261009/profiles/imports/DIRECT_METHOD_SOURCE.tex",
+      "destination": "imports/DIRECT_METHOD_SOURCE.tex",
+      "sha256": "2706488d6447ca2c21101aa8ee3d8e29fafc0e594be38fd0939a3107673df7e9"
+    }
+  ],
+  "source_manifest_copy": "imports/SOURCE_MANIFEST_4830.json",
+  "source_manifest_sha256": "3b0536c7dfd05d821461a86e4bc47c1034fee0b869e0f5986eb820a495f29afe",
+  "adaptation": "New fixed mark5610=(2,3,5,11,17), all15552projective labels; initial plan only K5610 with AG8. No numeric cap from previous profiles is imported."
+}

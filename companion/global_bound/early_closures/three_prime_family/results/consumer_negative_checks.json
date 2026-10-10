@@ -1,0 +1,78 @@
+{
+  "a_rejection_is_not_a_negative_mathematical_result": true,
+  "controls": [
+    {
+      "exit_code": 1,
+      "name": "nonunit_denominator",
+      "stderr": "FAIL full-modulus denominator unit"
+    },
+    {
+      "exit_code": 1,
+      "name": "zero_denominator",
+      "stderr": "FAIL full-modulus denominator unit"
+    },
+    {
+      "exit_code": 1,
+      "name": "negative_denominator",
+      "stderr": "FAIL full-modulus denominator unit"
+    },
+    {
+      "exit_code": 1,
+      "name": "wrong_congruence",
+      "stderr": "FAIL state congruence"
+    },
+    {
+      "exit_code": 1,
+      "name": "truncated_byte",
+      "stderr": "FAIL truncated witness"
+    },
+    {
+      "exit_code": 1,
+      "name": "extra_byte",
+      "stderr": "FAIL extra witness records"
+    },
+    {
+      "exit_code": 1,
+      "name": "extra_record",
+      "stderr": "FAIL extra witness records"
+    },
+    {
+      "exit_code": 1,
+      "name": "signed_min_numerator",
+      "stderr": "FAIL state congruence"
+    },
+    {
+      "exit_code": 1,
+      "name": "missing_witness",
+      "stderr": "FAIL missing witness"
+    },
+    {
+      "exit_code": 1,
+      "name": "duplicate_modulus",
+      "stderr": "FAIL duplicate modulus"
+    },
+    {
+      "exit_code": 1,
+      "name": "missing_domain_field",
+      "stderr": "FAIL domain parse"
+    },
+    {
+      "exit_code": 1,
+      "name": "extra_domain_field",
+      "stderr": "FAIL extra domain fields"
+    },
+    {
+      "exit_code": 1,
+      "name": "wrong_radical",
+      "stderr": "FAIL exact radical support"
+    },
+    {
+      "exit_code": 1,
+      "name": "empty_domain",
+      "stderr": "FAIL empty domain"
+    }
+  ],
+  "domain": "one complete valid modulus M=762, mutated independently",
+  "status": "PASS",
+  "tests": 14
+}

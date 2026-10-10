@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "cdf_alpha": "3/2",
+  "marked_caps": [
+    {
+      "q": 130,
+      "required_divisor": 130,
+      "exact_upper": "2057476778202748329364221395325485973419/154742504910672534362390528000000000000000",
+      "upper_decimal": "0.013296132044589",
+      "simple_cap": "7/500",
+      "scope": "all positive M divisible by required_divisor, with extra primes allowed; marked mean nu130 only"
+    },
+    {
+      "q": 130,
+      "required_divisor": 260,
+      "exact_upper": "395550552845697667767488361543660601259/154742504910672534362390528000000000000000",
+      "upper_decimal": "0.002556185535927",
+      "simple_cap": "3/1000",
+      "scope": "all positive M divisible by required_divisor, with extra primes allowed; marked mean nu130 only"
+    },
+    {
+      "q": 130,
+      "required_divisor": 650,
+      "exact_upper": "-2736337324890045486765659635147852087381/154742504910672534362390528000000000000000",
+      "upper_decimal": "-0.017683165504330",
+      "simple_cap": "-7/400",
+      "scope": "all positive M divisible by required_divisor, with extra primes allowed; marked mean nu130 only"
+    },
+    {
+      "q": 130,
+      "required_divisor": 1690,
+      "exact_upper": "-6604084200812390219813279448428909822037/154742504910672534362390528000000000000000",
+      "upper_decimal": "-0.042677893863904",
+      "simple_cap": "-21/500",
+      "scope": "all positive M divisible by required_divisor, with extra primes allowed; marked mean nu130 only"
+    }
+  ],
+  "small_prime_routes": [
+    {
+      "p": 17,
+      "q": 2210,
+      "mean_upper": "3435481301716450483981471253864629272491/154742504910672534362390528000000000000000",
+      "normalized_upper": "3435481301716450483981471253864629272491/1191633003408092590575840436804097979449344",
+      "normalized_upper_decimal": "0.002883002813695",
+      "scope": "B=2^a*5^b*13^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    },
+    {
+      "p": 19,
+      "q": 2470,
+      "mean_upper": "2524426052714035600265127763724060721067/154742504910672534362390528000000000000000",
+      "normalized_upper": "2524426052714035600265127763724060721067/1208844336795329099348630612826443393007616",
+      "normalized_upper_decimal": "0.002088297041956",
+      "scope": "B=2^a*5^b*13^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    },
+    {
+      "p": 23,
+      "q": 2990,
+      "mean_upper": "921676232672976745927059120827896561579/154742504910672534362390528000000000000000",
+      "normalized_upper": "921676232672976745927059120827896561579/1238408702708292455240374293361186880618496",
+      "normalized_upper_decimal": "0.000744242373829",
+      "scope": "B=2^a*5^b*13^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    },
+    {
+      "p": 29,
+      "q": 3770,
+      "mean_upper": "-866828532555493597450192172673806237781/154742504910672534362390528000000000000000",
+      "normalized_upper": "0",
+      "normalized_upper_decimal": "0.000000000000000",
+      "scope": "B=2^a*5^b*13^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    },
+    {
+      "p": 31,
+      "q": 4030,
+      "mean_upper": "-1300464012668297472206368779599174303829/154742504910672534362390528000000000000000",
+      "normalized_upper": "0",
+      "normalized_upper_decimal": "0.000000000000000",
+      "scope": "B=2^a*5^b*13^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    }
+  ],
+  "closed_primes": [
+    17,
+    19,
+    23,
+    29,
+    31
+  ],
+  "profiles": 9,
+  "geometric_witnesses": 98219520,
+  "geometric_corner_evaluations": 4901492736,
+  "arbitrary_prime_valuations": true,
+  "all_N_positive": true,
+  "geometric_witnesses_replayed_here": false,
+  "entire_130p_family_closed_here": false,
+  "global_Cstar_identified": false,
+  "small_prime_common_upper": "3435481301716450483981471253864629272491/1191633003408092590575840436804097979449344",
+  "small_prime_common_upper_decimal": "0.002883002813695",
+  "small_prime_strict_margin": "2091250096170286890013255817029702470736953/101288805289687870198946437128348328253194240"
+}

@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "radical": 2310,
+  "prime_support": [
+    2,
+    3,
+    5,
+    7,
+    11
+  ],
+  "theorem": "For every B with rad(B)=2310 and every N>=1, Delta(B,N)<=Gamma2310<c0",
+  "normalization": "Delta(B,N)=mu(B^N)/ln(B)",
+  "norm": "infinity",
+  "logarithms": "natural",
+  "all_residues_including_zero": true,
+  "all_positive_valuations": true,
+  "all_N_ge_1": true,
+  "uniform_upper": "28285967176336556761927325454825760982435/1198481134356222262242444866593611151572992",
+  "uniform_upper_decimal": "0.023601512252032",
+  "full_exclusion_below_c0": true,
+  "full_fine_exclusion_below_2_over_85": false,
+  "c0_lower": "632899864073014/26735537653587345",
+  "strict_margin_to_c0_lower": "2278006517042973570835741871550822319362096784755152813/32042037494694854108878180310206841572289842335688414986240",
+  "strict_margin_to_2_over_85": "-7344941276162800278932930472967380360991/101870896420278892290607813660456947883704320",
+  "regions": [
+    {
+      "region": "N=1, B<100000",
+      "upper": "152125256053/8945478229380",
+      "finite_moduli": 30,
+      "all_finite_states": 1284360,
+      "all_finite_representatives": 642210
+    },
+    {
+      "region": "B>=100000, all N>=1",
+      "upper": "285935242033613286641266444327683754338165/12470772477095536640964570337750709004402688"
+    },
+    {
+      "region": "N>=2, every B with rad(B)=2310",
+      "upper": "28285967176336556761927325454825760982435/1198481134356222262242444866593611151572992",
+      "mean_upper": "5657193435267311352385465090965152196487/30948500982134506872478105600000000000000",
+      "required_divisor": 13860,
+      "minimum_base": 2310
+    }
+  ],
+  "strongest_accepted_route": "refined N>=2",
+  "observed_maximizer_or_exact_value_claimed": false,
+  "geometric_component": {
+    "path": "profiles_refined/results/profile.json",
+    "sha256": "16928ee384d10365c28b46082d0819b4b3caa7391ad8042e6ac749d5474300f4",
+    "manifest_sha256": "1215876cfcf72b87c48b8d5aeff4b4f3765618d20a2c03401d7ff8aa6e3ead19",
+    "coarse_component_manifest_sha256": "5b3f03ca7ae83088c28f570ea0fac8519e77f59f71b48184f9a0fac66e14ca4a",
+    "transfer_index": 13860,
+    "prime_valuations": [
+      2,
+      2,
+      1,
+      1,
+      1
+    ]
+  },
+  "coarse_checkpoint": {
+    "path": "results/2310_certificate.json",
+    "sha256": "6939ca7ec7ed63d70610fc8700d1d3daf4e381333e4c5eeb6d8132e28527e2e2",
+    "superseded_only_for_final_N_ge_2_bound": true
+  },
+  "counting": {
+    "baseline_geometric_records": 167215104,
+    "refined_records_reconsumed": 32223744,
+    "refined_records_are_reused_baseline_subset": true,
+    "refined_subrectangle_applications": 128894976,
+    "baseline_corner_evaluations_per_pass": 6019743744,
+    "refined_corner_evaluations_per_pass": 17014136832,
+    "total_corner_evaluations_per_complete_pass": 23033880576,
+    "physical_and_geometric_counts_not_conflated": true
+  },
+  "exact_global_Cstar_proved": false,
+  "all_five_prime_supports_excluded": false,
+  "all_offsets_sign_classified": false,
+  "physical_minimality_claimed": false,
+  "continuous_proof_formalized": false,
+  "alternative_geometric_audit_exhaustive": false
+}

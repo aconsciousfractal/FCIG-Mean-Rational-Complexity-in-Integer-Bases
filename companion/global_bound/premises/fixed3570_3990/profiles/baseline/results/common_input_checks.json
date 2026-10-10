@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "mantissa_entries": 1024,
+  "dense_log_seed_entries": 1024,
+  "secondary_series_rational_checks": 151
+}

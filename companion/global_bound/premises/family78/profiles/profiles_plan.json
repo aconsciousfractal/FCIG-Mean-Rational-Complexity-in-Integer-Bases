@@ -1,0 +1,56 @@
+[
+  {
+    "p": 1,
+    "multiplier": 1,
+    "ag": 16,
+    "stem": "q78_K78"
+  },
+  {
+    "p": 1,
+    "multiplier": 2,
+    "ag": 16,
+    "stem": "q78_K156"
+  },
+  {
+    "p": 1,
+    "multiplier": 78,
+    "ag": 8,
+    "stem": "q78_K6084"
+  },
+  {
+    "p": 17,
+    "multiplier": 1,
+    "ag": 4,
+    "stem": "q1326"
+  },
+  {
+    "p": 19,
+    "multiplier": 1,
+    "ag": 4,
+    "stem": "q1482"
+  },
+  {
+    "p": 23,
+    "multiplier": 1,
+    "ag": 4,
+    "stem": "q1794"
+  },
+  {
+    "p": 29,
+    "multiplier": 1,
+    "ag": 4,
+    "stem": "q2262"
+  },
+  {
+    "p": 31,
+    "multiplier": 1,
+    "ag": 4,
+    "stem": "q2418"
+  },
+  {
+    "p": 37,
+    "multiplier": 1,
+    "ag": 4,
+    "stem": "q2886"
+  }
+]

@@ -1,0 +1,458 @@
+{
+  "cap_decimal": "0.241933621228105",
+  "date": "2026-10-10",
+  "documentation_only_catalog_transition": {
+    "all_mathematical_source_and_input_pins_unchanged": true,
+    "changed_member": "README.md",
+    "earlier_receipts_preserved_under_their_original_identity": true,
+    "final_receipts_freshly_executed": true,
+    "new_catalog_sha256": "875b51e285642ce1309f95ef235e05af153b3cb729826962e161c44a226d32d6",
+    "old_catalog_sha256": "e522370cca180483e9472a1281f59fd8e67e619f9393c410e409839e251297e7"
+  },
+  "early_closures": {
+    "cases": [
+      "three_prime_family",
+      "three_prime_28",
+      "three_prime_89",
+      "three_prime_353",
+      "three_prime_large",
+      "radical210",
+      "thirty_p_small",
+      "thirty_p_large"
+    ],
+    "fresh_full_repeat_in_this_revision": false,
+    "full_execution_evidence": "Previously observed complete reconstruction with unchanged mathematical kernels, numerical inputs and expected outputs; retained arithmetic replay is fresh."
+  },
+  "failed_attempts_retained": true,
+  "first_attempt_full_passes": 13,
+  "initial_cli_only_failures": 2,
+  "input_catalog_sha256": "875b51e285642ce1309f95ef235e05af153b3cb729826962e161c44a226d32d6",
+  "marked70": {
+    "execution_record_sha256": "73572dcdf86b8a7b661fc98971caf1d03b4d9accc4a27f6b5c7bba253adf2a19",
+    "full_profiles": 18,
+    "geometric_bytes": 2195472384,
+    "geometric_records": 274434048,
+    "missing_legacy_members": 21,
+    "original_files_claimed_recovered": false,
+    "status": "new equivalent reconstruction"
+  },
+  "public_full_master_route": {
+    "evidence_scope": "Assembled from complete fifteen source-snapshot cases and marked70 reconstruction, with byte-preserved retained C++ kernels and numerical tables. Public wrapper qualifications cover marked6, marked70 q770 and finite663. The eight early full routes are supplied separately.",
+    "expected_components": 66,
+    "fresh_single_invocation_claimed": false
+  },
+  "public_marked6_full_qualification": {
+    "geometric_records": 32256,
+    "negative_consumer_checks": [
+      "truncated",
+      "extra",
+      "zero_nonunit",
+      "wrong_mark"
+    ],
+    "report_sha256": "32beb065b34a87b91b0f6043201e04aa5b1db4e831726696d7ee1cc6827324dc",
+    "status": "PASS"
+  },
+  "relocated_retained_replay": {
+    "components": 48,
+    "report_sha256": "ad227fcd45434ffb27a55d42cee8127a6aba497ca2915c2bcca1807753a285fa",
+    "status": "PASS"
+  },
+  "retained_arithmetic": {
+    "normal": {
+      "components": 48,
+      "optimized": false,
+      "report_sha256": "755e615ff57cc21a2518ad5a3b1110f21db6004f230fd35f5321524d0d98a403",
+      "seconds": 435.949
+    },
+    "optimized": {
+      "components": 48,
+      "optimized": true,
+      "report_sha256": "f1671d87fed70a776feddc71686f8a5479e85ade8c0ab676681e47191e6fd36a",
+      "seconds": 436.263
+    }
+  },
+  "sampling_scope": "Retained profile audits recompute exact integrals and full HNF algebra, with stratified geometric-cost sampling. Full geometric evidence comes from primary producer/consumer reconstruction.",
+  "scalar_reconstruction": {
+    "certificate_sha256": "9086720599dc8dadd771b76581e2560cdff3469e8f24453353d5e9e573170877",
+    "finite_radii": 1347871,
+    "normal_optimized_certificate_identical": true,
+    "normal_optimized_numerical_sha256": "22a4e62794ec63d1d63de49541b8414e54f8b6a0bc95467379dcbeec51435a02",
+    "profiles": 1079,
+    "support_rows": 621
+  },
+  "schema": "global-bound-reconstruction-history-v1",
+  "source_snapshot_full_cases": [
+    {
+      "case": "family105",
+      "execution_log_sha256": "7cacaf1ed21d7b9f0cc5fb405ef45355bdbf6a1417b72eb6fd8f3add29f35d93",
+      "execution_report_sha256": "121029dddfaa3ab61f925bacdb7c1c34752fbd31f2ff5b94560f2470ca7fc07f",
+      "exit_code": 0,
+      "reported_full_metrics": {
+        "completed_component_replay_custody_verified": true,
+        "finite_negative_consumer_tests_reexecuted": 17,
+        "finite_raw_replayed": true,
+        "finite_witness_rows": 117,
+        "geometric_raw_replayed": true,
+        "historical_T3_raw_replayed": false
+      },
+      "retry": {
+        "initial_cli_failure_kernel_started": null,
+        "prior_failed_attempts": 0,
+        "successful_attempt": 1
+      },
+      "seconds": 418.309,
+      "source_snapshot_manifest_sha256": "e8012999263f8784d7d701f711f4214ef182331ff85be02af09a268c8b49ce0e"
+    },
+    {
+      "case": "family110",
+      "execution_log_sha256": "feb6ebe5465b125eddd3ab5ed73b14cc18f434497167c72b18735b2b570e18c5",
+      "execution_report_sha256": "f2fc091528230b817c4ad656581285cb3309b9b26f95589cdc638c0462a7cbd1",
+      "exit_code": 0,
+      "reported_full_metrics": {
+        "all_107_recorded_physical_upper_means_negative": true,
+        "complete_current_geometry_comparisons": 82,
+        "current_geometric_streams_regenerated_and_consumed": true,
+        "current_physical_streams_regenerated_and_independently_consumed": true,
+        "geometric_records": 145732608,
+        "old_large_geometry_or_covering_replayed": false,
+        "physical_moduli": 107,
+        "physical_records": 2427862,
+        "physical_states": 4855510,
+        "prior_complete_geometric_replay_custody_verified": true,
+        "profiles": 9
+      },
+      "retry": {
+        "initial_cli_failure_kernel_started": null,
+        "prior_failed_attempts": 0,
+        "successful_attempt": 1
+      },
+      "seconds": 376.74,
+      "source_snapshot_manifest_sha256": "e84852608c3ca59fa45d745696661fc1a2cb1501a6723956f6a42b4d80baca4e"
+    },
+    {
+      "case": "family42",
+      "execution_log_sha256": "891707aa6dbcef12b5769ce432bb95b6778c77feb3d21b375ea4c48dbbc7a05b",
+      "execution_report_sha256": "c550fb1d70fc6b97eb2253f98f144c057e88d18ab480fcb70e0c492ca79473f1",
+      "exit_code": 0,
+      "reported_full_metrics": {
+        "bounded_consumer_mutations_replayed": true,
+        "finite_moduli": 2269,
+        "finite_state_mass": 514804458,
+        "historical_T3_30p_replayed": false,
+        "independent_small_profile_checks": 458,
+        "new_finite_witnesses_replayed": true,
+        "new_geometric_witnesses_replayed": true,
+        "small_profile_source_bridges": 92
+      },
+      "retry": {
+        "initial_cli_failure_kernel_started": null,
+        "prior_failed_attempts": 0,
+        "successful_attempt": 1
+      },
+      "seconds": 1082.786,
+      "source_snapshot_manifest_sha256": "1340e72a05355e39a767212c2bae9e464be16c8f9a0bcea466e393f0baf21409"
+    },
+    {
+      "case": "family66",
+      "execution_log_sha256": "fc515a3f08d0e4c8615bf20053f89bf1dab729935225107473e3efe027195b24",
+      "execution_report_sha256": "868dcffc24af0f32e95a0e680b8d047248985ff30b0ad9fa3353ab1c3e1e635f",
+      "exit_code": 0,
+      "reported_full_metrics": {
+        "completed_component_replay_custody_verified": true,
+        "finite_negative_consumer_tests_reexecuted": 17,
+        "finite_raw_replayed": true,
+        "finite_witness_rows": 357,
+        "geometric_raw_replayed": true,
+        "historical_T3_raw_replayed": false
+      },
+      "retry": {
+        "initial_cli_failure_kernel_started": null,
+        "prior_failed_attempts": 0,
+        "successful_attempt": 1
+      },
+      "seconds": 400.833,
+      "source_snapshot_manifest_sha256": "54ab8cefc38b5018f32d66626fe1790e9b7270756ee141711c0069bcf5465fdb"
+    },
+    {
+      "case": "family78",
+      "execution_log_sha256": "14d442d059a89dc0e2e093034033d23c60f2bc89abf64030897557cacc671523",
+      "execution_report_sha256": "d853dbb67b95fed6c49660acc08f21ed75f8e9a1ae0bc331badd67a71ca04383",
+      "exit_code": 0,
+      "reported_full_metrics": {
+        "all_182_recorded_physical_upper_means_negative": true,
+        "complete_current_geometry_comparisons": 82,
+        "current_geometric_streams_regenerated_and_consumed": true,
+        "current_physical_streams_regenerated_and_independently_consumed": true,
+        "geometric_records": 109734912,
+        "old_large_geometry_or_covering_replayed": false,
+        "physical_moduli": 182,
+        "physical_records": 3682055,
+        "physical_states": 7363746,
+        "prior_complete_geometric_replay_custody_verified": true,
+        "profiles": 9
+      },
+      "retry": {
+        "initial_cli_failure_kernel_started": null,
+        "prior_failed_attempts": 0,
+        "successful_attempt": 1
+      },
+      "seconds": 293.413,
+      "source_snapshot_manifest_sha256": "9ede4fdc85efccce9fd7d173d864dc34aa352d8ee973c5cc299ec93b8a5042d9"
+    },
+    {
+      "case": "fixed2310",
+      "execution_log_sha256": "e623914e361805df62f0eb00a82cb8f8041d046f4183c4d92a0c430286b27cc0",
+      "execution_report_sha256": "0d14b8ebaecc83bfd2c78fb255b50b38fbf18232d1dd05ac253939f1a7b4bf6d",
+      "exit_code": 0,
+      "reported_full_metrics": {
+        "consumer_negative_fixtures_reexecuted": 15,
+        "consumer_positive_fixtures_reexecuted": 2,
+        "historical_T3_and_other_theorem_raw_replayed": false,
+        "new_geometric_raw_replayed": true,
+        "new_physical_raw_replayed": true
+      },
+      "retry": {
+        "initial_cli_failure_kernel_started": null,
+        "prior_failed_attempts": 0,
+        "successful_attempt": 1
+      },
+      "seconds": 825.307,
+      "source_snapshot_manifest_sha256": "2cc17d6eb165aa8bf79118da35ceb6bba5a9e2ee49cb79e5fc76b2653a8633a3"
+    },
+    {
+      "case": "fixed2730",
+      "execution_log_sha256": "7fe8276cf9e8c48817d22a8555114794fe59dede0915de770917d57a9572ba6c",
+      "execution_report_sha256": "5ab8b9a4ce0b12d74ab72a8a1dc00b86d65759a29fb0270cb38725be4fae31c3",
+      "exit_code": 0,
+      "reported_full_metrics": {
+        "complete_covering_assignments_replayed": 289662096,
+        "completed_geometric_records": 208922112,
+        "completed_geometric_replay_custody_verified": true,
+        "historical_T3_and_other_large_raw_replayed": false,
+        "independent_stored_physical_records_consumed_in_this_invocation": true,
+        "new_geometric_raw_replayed_in_this_invocation": true,
+        "new_physical_producer_replayed_in_this_invocation": true
+      },
+      "retry": {
+        "initial_cli_failure_kernel_started": false,
+        "prior_cli_failure_log_sha256": [
+          "1a7815c9a72d83f556612871a3a84ffa9b50aea47a9b6e6fd751a8280cdc446a"
+        ],
+        "prior_failed_attempts": 1,
+        "successful_attempt": 2
+      },
+      "seconds": 499.854,
+      "source_snapshot_manifest_sha256": "a1594ecfe9d0d9dd804e2a12e9bf5dab4d72f031fd889771b55232515a60b7fb"
+    },
+    {
+      "case": "fixed3570_3990",
+      "execution_log_sha256": "f629b01248c3f7c4e07b428528bbcf14304c80fcfa2d74bb888286b0d2973e6f",
+      "execution_report_sha256": "f06b4f8ec541ea14e8903c3d695d6acf712b0f669bf5386d37d38676c4e307e0",
+      "exit_code": 0,
+      "reported_full_metrics": {
+        "complete_covering_assignments_replayed": 289662096,
+        "completed_new_geometric_records": 116750592,
+        "completed_new_geometric_replay_custody_verified": true,
+        "every_stored_physical_record_independently_consumed": true,
+        "new_geometric_raw_replayed_in_this_invocation": true,
+        "new_physical_producer_replayed_in_this_invocation": true,
+        "previous_large_geometric_and_physical_streams_replayed": false
+      },
+      "retry": {
+        "initial_cli_failure_kernel_started": false,
+        "prior_cli_failure_log_sha256": [
+          "1a7815c9a72d83f556612871a3a84ffa9b50aea47a9b6e6fd751a8280cdc446a"
+        ],
+        "prior_failed_attempts": 1,
+        "successful_attempt": 2
+      },
+      "seconds": 284.537,
+      "source_snapshot_manifest_sha256": "a8e00279260417f9f26dda16ee2f7ba79d471bb663528fabebd79531551412f3"
+    },
+    {
+      "case": "fixed4290",
+      "execution_log_sha256": "6a788f5e75b834ea557ccae645b437dde118b0023f75498015766801dff62e74",
+      "execution_report_sha256": "55f7bc45b105137522fc88d960140cf9239765de39887e4b1844b002813c0577",
+      "exit_code": 0,
+      "reported_full_metrics": {
+        "complete_current_geometry_comparisons": 10,
+        "current_geometric_streams_regenerated_and_consumed": true,
+        "geometric_records": 32514048,
+        "old_large_geometry_or_covering_replayed": false,
+        "prior_complete_geometric_replay_custody_verified": true,
+        "profiles": 1,
+        "second_profile_required": false
+      },
+      "retry": {
+        "initial_cli_failure_kernel_started": null,
+        "prior_failed_attempts": 0,
+        "successful_attempt": 1
+      },
+      "seconds": 134.209,
+      "source_snapshot_manifest_sha256": "517095e8048f1f9923f2808b27c0db5e43871d8f0f72513aade7c7fffc00b644"
+    },
+    {
+      "case": "fixed4830",
+      "execution_log_sha256": "010e4049ff483d4c12d6448e5a72f8f9cc2062d056d309fbc515af5270477274",
+      "execution_report_sha256": "8c2c657b7dec45f025b80e3b8d47dfcb6bba9c16f6fc9ed7c28c16ddf4dc4599",
+      "exit_code": 0,
+      "reported_full_metrics": {
+        "complete_current_geometry_comparisons": 10,
+        "current_geometric_streams_regenerated_and_consumed": true,
+        "geometric_records": 37158912,
+        "old_large_geometry_or_covering_replayed": false,
+        "prior_complete_geometric_replay_custody_verified": true,
+        "profiles": 1,
+        "second_profile_required": false
+      },
+      "retry": {
+        "initial_cli_failure_kernel_started": null,
+        "prior_failed_attempts": 0,
+        "successful_attempt": 1
+      },
+      "seconds": 193.235,
+      "source_snapshot_manifest_sha256": "825acc633ce759c1b2ec98fcd854356ead08d81e61f6d9c30b2158195b045a79"
+    },
+    {
+      "case": "fixed5610_family102",
+      "execution_log_sha256": "d3aa0b3b71338db44cf7511d19efe9b365a267b6263e80de95408f56599243ec",
+      "execution_report_sha256": "d05967ed0653cea84a46bc9123176c8bee2cf8a39fafa2d09f8d0f4e47dfe07d",
+      "exit_code": 0,
+      "reported_full_metrics": {
+        "complete_current_geometry_comparisons": 74,
+        "current_geometric_streams_regenerated_and_consumed": true,
+        "current_independent_physical_full_raw_consumption": true,
+        "current_physical_streams_regenerated_and_consumed": true,
+        "geometric_records": 164312064,
+        "old_large_geometry_or_covering_replayed": false,
+        "physical_moduli": 117,
+        "physical_records": 2027775,
+        "physical_states": 4055316,
+        "prior_complete_geometric_and_physical_replay_custody_verified": true,
+        "profiles": 8,
+        "stored_independent_physical_full_consumption_checks": 2049364
+      },
+      "retry": {
+        "initial_cli_failure_kernel_started": null,
+        "prior_failed_attempts": 0,
+        "successful_attempt": 1
+      },
+      "seconds": 672.55,
+      "source_snapshot_manifest_sha256": "a0c939b13f16ada60e35d3e881c47da90689658ccb5756e1e2efcc1d76c3a48e"
+    },
+    {
+      "case": "fixed6006_family154",
+      "execution_log_sha256": "c0947da7a1a8fd00c1aaf69673262d89bab659d28d7771869df250b7c4b17f9b",
+      "execution_report_sha256": "86e27c29e00e251922b1c93eeede3d919ce0002af691a3592903d38b8a169bd6",
+      "exit_code": 0,
+      "reported_full_metrics": {
+        "complete_current_geometry_comparisons": 102,
+        "current_geometric_streams_regenerated_and_consumed": true,
+        "current_independent_physical_full_raw_consumption": true,
+        "current_physical_streams_regenerated_and_consumed": true,
+        "geometric_records": 166440960,
+        "old_large_geometry_or_covering_replayed": false,
+        "physical_moduli": 46,
+        "physical_records": 539662,
+        "physical_states": 1079232,
+        "prior_complete_geometric_and_physical_replay_custody_verified": true,
+        "profiles": 11,
+        "stored_independent_physical_full_consumption_checks": 550711
+      },
+      "retry": {
+        "initial_cli_failure_kernel_started": null,
+        "prior_failed_attempts": 0,
+        "successful_attempt": 1
+      },
+      "seconds": 591.882,
+      "source_snapshot_manifest_sha256": "d470b6036940e3fc8af8e16ebdd95e3cfdd503c0075ba491abddee41d3f91ce5"
+    },
+    {
+      "case": "fixed6090_family165",
+      "execution_log_sha256": "90a3353f96b5283a52a5f17df48e417b44c412ad3d3611d6a65555ae2fa49a2b",
+      "execution_report_sha256": "0eb1d59617c5efe575f09eefb99e74320a9df340917fb3dbb047df0e196436b4",
+      "exit_code": 0,
+      "reported_full_metrics": {
+        "current_full_geometry_comparisons": 84,
+        "current_large_geometric_streams_regenerated_and_consumed": true,
+        "current_physical_streams_regenerated_and_independently_consumed": true,
+        "geometric_records": 120766464,
+        "historical_large_raw_replayed_this_task": false,
+        "physical_moduli": 25,
+        "physical_records": 275810,
+        "physical_states": 551595,
+        "profiles": 9,
+        "recorded_complete_root_geometry_replays_verified": true,
+        "recorded_complete_root_independent_physical_consumption_verified": true
+      },
+      "retry": {
+        "initial_cli_failure_kernel_started": null,
+        "prior_failed_attempts": 0,
+        "successful_attempt": 1
+      },
+      "seconds": 522.547,
+      "source_snapshot_manifest_sha256": "4c6313f3d6c29b90cca7dd739f9df03a5e4da08c08b81086ad106b35bb1b026a"
+    },
+    {
+      "case": "fixed6270_family130",
+      "execution_log_sha256": "540f81fbc0cfef462047ba81ac37d4882118551730e0dbe9eb1f0bb28a5c2960",
+      "execution_report_sha256": "b11c52616eac5d4e65b6a0efc22e38c6a0c2b7d546869e54bb2f5010fcdbd9ff",
+      "exit_code": 0,
+      "reported_full_metrics": {
+        "current_full_geometry_comparisons": 93,
+        "current_geometry_physical_states": 16581,
+        "current_independent_geometry_covering_replayed": true,
+        "current_large_geometric_streams_regenerated_and_consumed": true,
+        "current_physical_streams_regenerated_and_independently_consumed": true,
+        "geometric_records": 144668160,
+        "historical_large_raw_replayed_this_task": false,
+        "physical_moduli": 59,
+        "physical_records": 786884,
+        "physical_states": 1573650,
+        "profiles": 10,
+        "recorded_complete_root_geometry_replays_verified": true,
+        "recorded_complete_root_independent_physical_consumption_verified": true,
+        "recorded_full_geometry_comparisons": 93
+      },
+      "retry": {
+        "initial_cli_failure_kernel_started": null,
+        "prior_failed_attempts": 0,
+        "successful_attempt": 1
+      },
+      "seconds": 625.689,
+      "source_snapshot_manifest_sha256": "8c479b0d517284ca56906de80732d739feedf4c64746d07f270dc32ad5e42acb"
+    },
+    {
+      "case": "fixed6510_family114",
+      "execution_log_sha256": "50c1cba1d9b427a69018c287d9399cb676d9e8661f39ef61e745bd0a9b53b4ad",
+      "execution_report_sha256": "1e14502cf6f0199d06e06e4e790de2fb76dd73e6b42924448a8b3d9c57a301cb",
+      "exit_code": 0,
+      "reported_full_metrics": {
+        "current_cross_all_declared_integrals_replayed": true,
+        "current_full_geometry_comparisons": 75,
+        "current_geometry_physical_states": 16581,
+        "current_independent_geometry_covering_replayed": true,
+        "current_large_geometric_streams_regenerated_and_consumed": true,
+        "current_physical_streams_regenerated_and_independently_consumed": true,
+        "geometric_records": 121153536,
+        "historical_large_raw_replayed_this_task": false,
+        "physical_moduli": 90,
+        "physical_records": 1307670,
+        "physical_states": 2615160,
+        "profiles": 8,
+        "recorded_complete_root_geometry_replays_verified": true,
+        "recorded_complete_root_independent_physical_consumption_verified": true,
+        "recorded_full_geometry_comparisons": 75
+      },
+      "retry": {
+        "initial_cli_failure_kernel_started": null,
+        "prior_failed_attempts": 0,
+        "successful_attempt": 1
+      },
+      "seconds": 642.217,
+      "source_snapshot_manifest_sha256": "ae2110f0e048f6a1739b62955bba001baf9e7426d97c6743a69a74a9157467ba"
+    }
+  ],
+  "status": "PASS",
+  "successful_corrected_cli_retries": 2
+}

@@ -1,0 +1,19 @@
+{
+  "kind": "editorial_sufficient_condition_correction",
+  "previous_export": "export_ready",
+  "previous_manifest_sha256": "8c24ed406683a5cebd6b4183589c202d3e0fa020032c54f1a302a9239ce2188c",
+  "changed_existing_files": [
+    "PROOF.md"
+  ],
+  "added_payload_files": [
+    "EDITORIAL_REVISION.json"
+  ],
+  "previous_proof_sha256": "f7ded1cb6d1422cdd208a4e76181c60ffef845495395a76f900afcaaf9b488a5",
+  "revised_proof_sha256": "417672a4c7abd3817b4913988e4ba1bd597d74677fabb65d953b9aadf6986ee5",
+  "previous_text": "Quando q=rad(M), e soltanto in quel caso,\nquesta media marcata coincide con la media piena mu(M) del progetto.",
+  "revised_text": "Quando q=rad(M), le restrizioni sui denominatori sono equivalenti\ne la media marcata coincide con la media piena mu(M) del progetto.\nNel raccordo questa identificazione è usata sotto tale ipotesi.",
+  "reason": "Equality q=rad(M) is a sufficient hypothesis identifying the denominator conditions and the means; this does not assert that accidental equality of mean values characterizes rad(M).",
+  "unchanged_existing_payload_files": 132,
+  "all_executed_code_inputs_and_scientific_certificates_byte_identical": true,
+  "new_geometric_computation_required": false
+}

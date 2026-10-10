@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "radical": 2730,
+  "domain": "all rad2730 bases B<20000, N=1",
+  "normalized_upper": "4859237527/308570218398",
+  "normalized_upper_decimal": "0.015747590782506",
+  "largest_bound_base": 2730,
+  "worst_mean_upper": "4859237527/39000000000",
+  "states": 76440,
+  "representatives": 38227,
+  "moduli": 7,
+  "refined_moduli": 0,
+  "all_N_theorem_claimed": false,
+  "binary_stream_manifest": [
+    {
+      "M": 2730,
+      "B": 2730,
+      "records": 1366,
+      "bytes": 10928,
+      "sha256": "e2e5811a4f9d2f87421c98194a73eff043ef333361cb0a13f94be48004054348"
+    },
+    {
+      "M": 5460,
+      "B": 5460,
+      "records": 2731,
+      "bytes": 21848,
+      "sha256": "e4911e9773f9d9bf8c566b7c7c8ecc85eb8cc0217bdf9bf257b7cb598ba47448"
+    },
+    {
+      "M": 8190,
+      "B": 8190,
+      "records": 4096,
+      "bytes": 32768,
+      "sha256": "fbcfce29eb14c00e5d92f0546352cae2a8a7324973b0b7a9f73f7a4e2cb5cf84"
+    },
+    {
+      "M": 10920,
+      "B": 10920,
+      "records": 5461,
+      "bytes": 43688,
+      "sha256": "599862a2c23e077de850a3ba8bd816a7ab3e83aac2d9ae73d6c589bb144f6e25"
+    },
+    {
+      "M": 13650,
+      "B": 13650,
+      "records": 6826,
+      "bytes": 54608,
+      "sha256": "8b26fec52b8b5ce1cdafa44e315fab8afef721aaab6f4924f8f6869ffbc6e24a"
+    },
+    {
+      "M": 16380,
+      "B": 16380,
+      "records": 8191,
+      "bytes": 65528,
+      "sha256": "6b464988ca4c2e192fca279dfcdea9660ca3df9662c0f5aec3ca3593ec44fd82"
+    },
+    {
+      "M": 19110,
+      "B": 19110,
+      "records": 9556,
+      "bytes": 76448,
+      "sha256": "7539a85a9e7b3dea43e865407fa38542c45346a9475c4dae44a1099439b8b503"
+    }
+  ],
+  "output_sha256": "762c7cfb5365c3fccafb5bb44a63b7743017e962682a67a3fa2103082351d676"
+}

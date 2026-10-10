@@ -1,0 +1,285 @@
+{
+  "status": "PASS",
+  "covered_four_prime_radicals_below_first_open": [
+    {
+      "radical": 210,
+      "primes": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 330,
+      "primes": [
+        2,
+        3,
+        5,
+        11
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 390,
+      "primes": [
+        2,
+        3,
+        5,
+        13
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 462,
+      "primes": [
+        2,
+        3,
+        7,
+        11
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 510,
+      "primes": [
+        2,
+        3,
+        5,
+        17
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 546,
+      "primes": [
+        2,
+        3,
+        7,
+        13
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 570,
+      "primes": [
+        2,
+        3,
+        5,
+        19
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 690,
+      "primes": [
+        2,
+        3,
+        5,
+        23
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 714,
+      "primes": [
+        2,
+        3,
+        7,
+        17
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 770,
+      "primes": [
+        2,
+        5,
+        7,
+        11
+      ],
+      "family": "70p"
+    },
+    {
+      "radical": 798,
+      "primes": [
+        2,
+        3,
+        7,
+        19
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 858,
+      "primes": [
+        2,
+        3,
+        11,
+        13
+      ],
+      "family": "66p"
+    },
+    {
+      "radical": 870,
+      "primes": [
+        2,
+        3,
+        5,
+        29
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 910,
+      "primes": [
+        2,
+        5,
+        7,
+        13
+      ],
+      "family": "70p"
+    },
+    {
+      "radical": 930,
+      "primes": [
+        2,
+        3,
+        5,
+        31
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 966,
+      "primes": [
+        2,
+        3,
+        7,
+        23
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 1110,
+      "primes": [
+        2,
+        3,
+        5,
+        37
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1122,
+      "primes": [
+        2,
+        3,
+        11,
+        17
+      ],
+      "family": "66p"
+    },
+    {
+      "radical": 1155,
+      "primes": [
+        3,
+        5,
+        7,
+        11
+      ],
+      "family": "105p"
+    },
+    {
+      "radical": 1190,
+      "primes": [
+        2,
+        5,
+        7,
+        17
+      ],
+      "family": "70p"
+    },
+    {
+      "radical": 1218,
+      "primes": [
+        2,
+        3,
+        7,
+        29
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 1230,
+      "primes": [
+        2,
+        3,
+        5,
+        41
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1254,
+      "primes": [
+        2,
+        3,
+        11,
+        19
+      ],
+      "family": "66p"
+    },
+    {
+      "radical": 1290,
+      "primes": [
+        2,
+        3,
+        5,
+        43
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1302,
+      "primes": [
+        2,
+        3,
+        7,
+        31
+      ],
+      "family": "42p"
+    }
+  ],
+  "first_open_four_prime_radical": 1326,
+  "first_open_primes": [
+    2,
+    3,
+    13,
+    17
+  ],
+  "first_open_even_four_prime_radical": 1326,
+  "next_four_prime_family": "78p, p>=17 prime",
+  "first_five_prime_radical_not_closed_by_the_imported_families": 2310,
+  "five_prime_bottleneck_is_still_open": true,
+  "new_five_prime_tail": "1155ell, ell>=151 prime",
+  "new_uniform_repair": "radius5 for every four-odd-prime core; radius4 if3 is absent",
+  "remaining_four_prime_upper_expression": "(1+log(377/14))/(2*log(1326))",
+  "remaining_four_prime_upper": "4293187857832753/14379844341491614",
+  "remaining_four_prime_upper_decimal": "0.298555933978033",
+  "previous_remaining_four_prime_upper_decimal": "0.304401287219860",
+  "global_upper_expression": "(1+log(2987/42))/(2*log(2310))",
+  "global_upper_decimal": "0.339854957673030",
+  "global_rational_cap": "17/50",
+  "global_cap_improved_in_this_task": false,
+  "global_Cstar_equals_c0_proved": false,
+  "imports": [
+    "complete30p theorem including its candidate210 case",
+    "complete42p theorem",
+    "complete70p theorem",
+    "complete66p theorem",
+    "prior uniform four-prime and global estimates"
+  ],
+  "scope": "Fresh support boundary and rational comparisons; historical theorem proofs remain explicit imports."
+}

@@ -1,0 +1,16 @@
+{
+  "all_upper_means_negative": true,
+  "dense_logarithms_verified": 4000000,
+  "logarithm_secondary_recurrence_steps": 3998976,
+  "logarithm_secondary_seeds": 1024,
+  "maximum_mean_upper": "-54621776701/158250000000000",
+  "maximum_mean_upper_decimal": "-0.000345161306167",
+  "moduli": 8811,
+  "refined_stencils": 0,
+  "representatives": 1870068336,
+  "states": 3740119050,
+  "status": "PASS",
+  "witness_bytes_consumed": 14960546688,
+  "worst_majorant_modulus": 158250,
+  "worst_majorant_prime": 211
+}

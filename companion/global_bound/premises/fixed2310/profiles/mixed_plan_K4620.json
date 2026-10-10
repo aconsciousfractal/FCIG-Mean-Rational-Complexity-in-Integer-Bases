@@ -1,0 +1,30 @@
+{
+  "mark": 2310,
+  "mark_primes": [
+    2,
+    3,
+    5,
+    7,
+    11
+  ],
+  "transfer_index": 4620,
+  "index_multiplier": 2,
+  "p_parameter": 11,
+  "degree_exp_legacy_build": 1,
+  "angular_parameter": 4,
+  "angular_nodes": 9,
+  "cells": 2688,
+  "labels": 6912,
+  "primitive_branches": 13824,
+  "admissible_branches_per_parent": 4620,
+  "witnesses": 37158912,
+  "witness_bytes": 297271296,
+  "threads": 2,
+  "sanitize": true,
+  "memory_limit_bytes": 2147483648,
+  "do_not_launch_q_squared": true,
+  "cap_targets": [
+    "(2/85)*ln(2310)",
+    "external exact candidate c0 lower times ln(2310) if necessary"
+  ]
+}

@@ -1,0 +1,285 @@
+{
+  "per_prime": [
+    {
+      "conditional_U_banks": 30,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 900,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 5,
+      "pointwise_F_banks": 30,
+      "q": 30,
+      "total_root_states": 931
+    },
+    {
+      "conditional_U_banks": 42,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 1764,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 7,
+      "pointwise_F_banks": 42,
+      "q": 42,
+      "total_root_states": 1807
+    },
+    {
+      "conditional_U_banks": 66,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 4356,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 11,
+      "pointwise_F_banks": 66,
+      "q": 66,
+      "total_root_states": 4423
+    },
+    {
+      "conditional_U_banks": 78,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 6084,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 13,
+      "pointwise_F_banks": 78,
+      "q": 78,
+      "total_root_states": 6163
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 102,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 17,
+      "pointwise_F_banks": 102,
+      "q": 102,
+      "total_root_states": 103
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 114,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 19,
+      "pointwise_F_banks": 114,
+      "q": 114,
+      "total_root_states": 115
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 138,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 23,
+      "pointwise_F_banks": 138,
+      "q": 138,
+      "total_root_states": 139
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 174,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 29,
+      "pointwise_F_banks": 174,
+      "q": 174,
+      "total_root_states": 175
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 186,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 31,
+      "pointwise_F_banks": 186,
+      "q": 186,
+      "total_root_states": 187
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 222,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 37,
+      "pointwise_F_banks": 222,
+      "q": 222,
+      "total_root_states": 223
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 246,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 41,
+      "pointwise_F_banks": 246,
+      "q": 246,
+      "total_root_states": 247
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 258,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 43,
+      "pointwise_F_banks": 258,
+      "q": 258,
+      "total_root_states": 259
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 282,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 47,
+      "pointwise_F_banks": 282,
+      "q": 282,
+      "total_root_states": 283
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 318,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 53,
+      "pointwise_F_banks": 318,
+      "q": 318,
+      "total_root_states": 319
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 354,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 59,
+      "pointwise_F_banks": 354,
+      "q": 354,
+      "total_root_states": 355
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 366,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 61,
+      "pointwise_F_banks": 366,
+      "q": 366,
+      "total_root_states": 367
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 402,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 67,
+      "pointwise_F_banks": 402,
+      "q": 402,
+      "total_root_states": 403
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 426,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 71,
+      "pointwise_F_banks": 426,
+      "q": 426,
+      "total_root_states": 427
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 438,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 73,
+      "pointwise_F_banks": 438,
+      "q": 438,
+      "total_root_states": 439
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 474,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 79,
+      "pointwise_F_banks": 474,
+      "q": 474,
+      "total_root_states": 475
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 498,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 83,
+      "pointwise_F_banks": 498,
+      "q": 498,
+      "total_root_states": 499
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 534,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 89,
+      "pointwise_F_banks": 534,
+      "q": 534,
+      "total_root_states": 535
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 582,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 97,
+      "pointwise_F_banks": 582,
+      "q": 582,
+      "total_root_states": 583
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 606,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 101,
+      "pointwise_F_banks": 606,
+      "q": 606,
+      "total_root_states": 607
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 618,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 103,
+      "pointwise_F_banks": 618,
+      "q": 618,
+      "total_root_states": 619
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 642,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 107,
+      "pointwise_F_banks": 642,
+      "q": 642,
+      "total_root_states": 643
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 654,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 109,
+      "pointwise_F_banks": 654,
+      "q": 654,
+      "total_root_states": 655
+    },
+    {
+      "conditional_U_banks": 0,
+      "cubic_moduli_not_enumerated": true,
+      "maximum_direct_modulus": 678,
+      "minima_method": "every admissible denominator up to half the modulus",
+      "p": 113,
+      "pointwise_F_banks": 678,
+      "q": 678,
+      "total_root_states": 679
+    }
+  ],
+  "status": "PASS"
+}

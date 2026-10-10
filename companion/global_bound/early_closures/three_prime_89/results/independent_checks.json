@@ -1,0 +1,17 @@
+{
+  "algebraic_branches": 204564,
+  "audit_witnesses": 5580,
+  "euclidean_equals_original_refuted": true,
+  "extra_prime_identification_refuted": true,
+  "independent_checks_not_a_second_full_replay_of_every_geometric_cost": true,
+  "independent_corner_logs": 22320,
+  "interior_rational_tests": 16740,
+  "local_projective_checks": 6882794,
+  "log_table_entries": 1024,
+  "physical_lift_states": 2493700,
+  "secondary_rational_series_cases": 151,
+  "shortest_vector_CDF_jumps": 21478,
+  "shortest_vector_bank_states": 80200,
+  "signed_tensor_direct_outputs": 2765,
+  "status": "PASS"
+}

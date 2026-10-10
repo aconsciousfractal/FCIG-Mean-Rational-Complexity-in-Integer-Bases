@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+"""Build the compact export only after every accepted profile is present."""
+from pathlib import Path
+import sys,json,subprocess,hashlib,csv,shutil
+ROOT=Path(__file__).resolve().parent
+sys.path.insert(0,str(ROOT/'code'))
+from exact import need,out_decimal
+from checks import input_checks
+from assemble_small import assemble
+def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
+def main():
+ plan=json.loads((ROOT/'profiles_plan.json').read_text())
+ for z in plan:
+  for ext in ('.cells','.branches','.audit','.tensor','.json','.independent.json'):
+   need((ROOT/'results'/(z['stem']+ext)).is_file(),'all accepted profile files '+z['stem']+ext)
+ subprocess.run([sys.executable,'-B',str(ROOT/'code/negative_profiles.py'),'--consumer',str(ROOT/'bin/consume_1_4')],check=True)
+ inp=input_checks(ROOT);(ROOT/'results/common_input_checks.json').write_text(json.dumps(inp,indent=2)+'\n')
+ closure=assemble(ROOT);(ROOT/'results/small_prime_closure.json').write_text(json.dumps(closure,indent=2)+'\n')
+ with (ROOT/'SUMMARY.csv').open('w',newline='') as f:
+  w=csv.writer(f);w.writerow(['p','q','k','angular_nodes','mu_upper','all_exponents_normalized_upper','simple_marked_cap','witnesses','witness_sha256'])
+  for z in plan:
+   j=json.loads((ROOT/'results'/(z['stem']+'.json')).read_text())
+   w.writerow([z['p'],j['q'],z['k'],j['angular_nodes'],j['upper_decimal'],out_decimal(j['normalized_upper']) if z['p']>1 else '',z.get('simple_cap',''),j['witnesses'],j['witness_sha256']])
+ stats={'status':'PASS','mode':'initial_generation_and_exhaustive_consumption','profiles':len(plan),'full_mark_primes':len(closure['closed_primes']),'geometric_witnesses':closure['geometric_witnesses_in_direct_profiles'],'geometric_corner_evaluations':closure['corner_evaluations_in_direct_profiles'],'all_positive_prime_exponents':True,'all_lengths_N_ge_1':True,'second_geometric_audit_exhaustive':False,'sanitize':False,'threads':4,'common_upper':closure['common_upper'],'common_upper_decimal':closure['common_upper_decimal']}
+ (ROOT/'logs/initial_generation_report.json').write_text(json.dumps(stats,indent=2)+'\n')
+ export=ROOT/'export_ready';need(not export.exists(),'export must be created once, without overwriting a frozen tree');export.mkdir()
+ for name in ['README.md','PROOF.md','SUMMARY.csv','profiles_plan.json','profile_contract.json','verify_profiles.py','verify_stored.py']:
+  shutil.copy2(ROOT/name,export/name)
+ for dirname in ['code','data','results']:
+  for src in sorted((ROOT/dirname).rglob('*')):
+   if not src.is_file() or '__pycache__' in src.parts:continue
+   need('.witness' not in src.name,'no raw witness in compact selection')
+   dst=export/src.relative_to(ROOT);dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dst)
+ for dirname,names in {'imports':['DIRECT_METHOD_SOURCE.tex','initial_70_to_66.diff','provenance.json'],'logs':['initial_generation.log','tail_generation.log','negative_checks.log','initial_generation_report.json']}.items():
+  (export/dirname).mkdir()
+  for name in names:shutil.copy2(ROOT/dirname/name,export/dirname/name)
+ for name in ['generate_initial.py','generate_tail.py','finalize_compact.py']:
+  shutil.copy2(ROOT/name,export/'imports'/(name+'.txt'))
+ manifest={str(p.relative_to(export)):sha(p) for p in sorted(export.rglob('*')) if p.is_file()}
+ (export/'MANIFEST_SHA256.json').write_text(json.dumps(manifest,indent=2)+'\n')
+ print(json.dumps({'status':'PASS','export':str(export),'files':len(manifest)+1,'bytes':sum(p.stat().st_size for p in export.rglob('*') if p.is_file()),'manifest_sha256':sha(export/'MANIFEST_SHA256.json'),'closure':stats},indent=2))
+if __name__=='__main__':main()

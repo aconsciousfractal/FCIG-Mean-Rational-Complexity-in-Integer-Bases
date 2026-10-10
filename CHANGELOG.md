@@ -1,5 +1,23 @@
 # Changes
 
+## 0.2.0
+
+2026-10-10.
+
+- Strengthen the same global correction to C*<0.241933621228105, with a
+  positive candidate lower bound from B=210, N=1.
+- Add the complete written transfer, incidence, covering, negative-profile,
+  support exclusion and infinite-cardinality arguments.
+- Add a portable companion for the global bound, its finite geometric
+  premises, exact independent scalar checker and full reconstruction routes.
+- Replace missing marked-70 members with explicitly newly reconstructed
+  equivalents; never label replacement provenance as an original recovery.
+- Clarify the nonzero sign convention at zero shear and the branchwise
+  vertex maximum before logarithmic averaging; certificates are unchanged.
+- Preserve the earlier mean/two-prime theorem and its reconstruction objects.
+- Exact C*, maximizing lengths and mixed-base distribution research remain open.
+
+
 ## 0.1.2
 
 2026-10-06.

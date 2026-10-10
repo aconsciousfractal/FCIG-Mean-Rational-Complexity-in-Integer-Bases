@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+"""Generate and fully consume the remaining declared small full marks."""
+from pathlib import Path
+import subprocess,os,sys,json,time
+ROOT=Path(__file__).resolve().parent
+sys.path.insert(0,str(ROOT/'code'))
+from exact import need
+env={**os.environ,'CSTAR_THREADS':'4','PYTHONDONTWRITEBYTECODE':'1'}
+work=ROOT/'work_tail';work.mkdir(exist_ok=True)
+def run(cmd):
+ print('RUN',' '.join(map(str,cmd)),flush=True);subprocess.run(list(map(str,cmd)),check=True,env=env)
+start=time.monotonic()
+for z in json.loads((ROOT/'profiles_plan.json').read_text()):
+ p=z['p']
+ if p in (1,13,17):continue
+ k,ag,stem=z['k'],z['ag'],z['stem'];pre=work/stem
+ need(not (ROOT/'results'/(stem+'.json')).exists(),'do not overwrite accepted profile')
+ for mode in ('produce','consume'):run([ROOT/'bin'/f'{mode}_{k}_{ag}',mode,p,ROOT/'data',pre])
+ for ext in ('.cells','.branches','.audit'):
+  need(Path(str(pre)+ext).read_bytes()==Path(str(pre)+'.checked'+ext).read_bytes(),'producer consumer identical '+stem+ext)
+ run([ROOT/'bin/algebra',p,k,ROOT/'data',str(pre)+'.tensor'])
+ run([sys.executable,'-B',ROOT/'code/emit_profile.py',p,ag,k,pre,str(pre)+'.json'])
+ row=json.loads(Path(str(pre)+'.json').read_text());need(row['direct_radical_gate'],'strict full-mark gate '+stem)
+ run([sys.executable,'-B',ROOT/'code/audit_one.py',p,ag,'--k',k,'--prefix',pre,'--output',str(pre)+'.independent.json'])
+ for ext in ('.cells','.branches','.audit','.tensor','.json','.independent.json'):
+  (ROOT/'results'/(stem+ext)).write_bytes(Path(str(pre)+ext).read_bytes())
+ print('COMPLETE',stem,'upper',row['upper_decimal'],'strict direct',row['direct_radical_gate'],'seconds',round(time.monotonic()-start,3),flush=True)

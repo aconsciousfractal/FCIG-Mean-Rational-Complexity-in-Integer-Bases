@@ -1,0 +1,79 @@
+{
+  "M_free_chosen": 18,
+  "all_five_prime_supports_closed": false,
+  "all_moduli": 164,
+  "all_positive_prime_valuations": true,
+  "analytic_moduli": 105,
+  "anchor_usage_at_N1": {
+    "130": 20,
+    "1690": 21,
+    "260": 72,
+    "650": 51
+  },
+  "base_upper_exclusive": 180000,
+  "cofactor_count": 12,
+  "computational_scope": "exact gates and complete residual inventory; anchors are separate obligations",
+  "core": 130,
+  "finite_moduli_are_bases_at_N1": true,
+  "infinite_regions": [
+    {
+      "M_min": 16250,
+      "anchor_divisor": 130,
+      "base_min": 16250,
+      "margin_to_delta": "3091504247579881/20603677398985501375",
+      "mean_upper": "28335347361194957/125000000000000000",
+      "name": "large_p",
+      "normalized_upper": "28335347361194957/1211981023469735375",
+      "normalized_upper_decimal": "0.023379365528410",
+      "p_scalar_min": 125,
+      "penalty_method": "M_free",
+      "relaxed_cap": "7/500"
+    },
+    {
+      "M_min": 23136100,
+      "anchor_divisor": 1690,
+      "base_min": 4810,
+      "margin_to_delta": "21330129434580355619/10108816360262083194770",
+      "mean_upper": "2547345566586136493/14027000000000000000",
+      "name": "N_ge_2",
+      "normalized_upper": "2547345566586136493/118927251297200978762",
+      "normalized_upper_decimal": "0.021419359640461",
+      "p_scalar_min": 37,
+      "penalty_method": "periodic",
+      "relaxed_cap": "-21/500"
+    },
+    {
+      "M_min": 180000,
+      "anchor_divisor": 130,
+      "base_min": 180000,
+      "margin_to_delta": "92316112843624873167/725450256758608720103635",
+      "mean_upper": "599191824467339512521/2115919000000000000000",
+      "name": "large_base",
+      "normalized_upper": "199730608155779837507/8534708903042455530631",
+      "normalized_upper_decimal": "0.023402158225289",
+      "p_scalar_min": 37,
+      "penalty_method": "periodic",
+      "relaxed_cap": "7/500"
+    }
+  ],
+  "maximum_witness_modulus": 96200,
+  "minimum_penalty_monotonic": true,
+  "normalization": "mu(B^N)/ln(B)",
+  "other_four_prime_supports_closed": false,
+  "prime_count": 19,
+  "prime_range": [
+    37,
+    125
+  ],
+  "small_primes": [
+    17,
+    19,
+    23,
+    29,
+    31
+  ],
+  "status": "PASS",
+  "witness_moduli": 59,
+  "witness_representatives": 786884,
+  "witness_states": 1573650
+}

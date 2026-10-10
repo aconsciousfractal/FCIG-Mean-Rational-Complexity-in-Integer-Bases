@@ -1,0 +1,55 @@
+{
+  "all_five_prime_supports_closed": false,
+  "all_moduli": 12297,
+  "analytic_moduli": 10028,
+  "base_upper_exclusive": 4000000,
+  "cofactor_count": 72,
+  "finite_moduli_are_bases_at_N1": true,
+  "infinite_regions": [
+    {
+      "M_min": 142800,
+      "base_min": 142800,
+      "margin_to_delta": "20365556713755380641/385166272516700396600970",
+      "mean_upper": "27127110801625820676969/97352710000000000000000",
+      "name": "large_p",
+      "normalized_upper": "9042370267208606892323/385166272516700396600970",
+      "normalized_upper_decimal": "0.023476537050156",
+      "p_min": 3400,
+      "relaxed_cap": "107/500"
+    },
+    {
+      "M_min": 20196036,
+      "base_min": 4494,
+      "margin_to_delta": "2026706151626058059/7601450554083442367570",
+      "mean_upper": "416072832810482209/2126600000000000000",
+      "name": "N_ge_2",
+      "normalized_upper": "2080364164052411045/89428830048040498442",
+      "normalized_upper_decimal": "0.023262790790564",
+      "p_min": 107,
+      "relaxed_cap": "67/1000"
+    },
+    {
+      "M_min": 4000000,
+      "base_min": 4000000,
+      "margin_to_delta": "124137731104630218499/210017571507648046330020",
+      "mean_upper": "11335181615817370909/32506600000000000000",
+      "name": "large_base",
+      "normalized_upper": "56675908079086854545/2470794958913506427412",
+      "normalized_upper_decimal": "0.022938329169981",
+      "p_min": 107,
+      "relaxed_cap": "107/500"
+    }
+  ],
+  "maximum_witness_modulus": 2912112,
+  "other_four_prime_supports_closed": false,
+  "prime_count": 451,
+  "prime_range": [
+    107,
+    3400
+  ],
+  "second_profile_used_at_N1": 836,
+  "status": "PASS",
+  "witness_moduli": 2269,
+  "witness_representatives": 257404498,
+  "witness_states": 514804458
+}

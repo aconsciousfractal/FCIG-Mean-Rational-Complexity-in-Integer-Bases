@@ -1,0 +1,117 @@
+{
+  "status": "PASS",
+  "domains": [
+    {
+      "radical": 3570,
+      "prime_support": [
+        2,
+        3,
+        5,
+        7,
+        17
+      ],
+      "base_upper_exclusive": 10000,
+      "all_positive_valuations": true,
+      "rows": [
+        {
+          "M": 3570,
+          "B": 3570,
+          "N": 1,
+          "radical": 3570,
+          "exponents": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "M": 7140,
+          "B": 7140,
+          "N": 1,
+          "radical": 3570,
+          "exponents": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "radical": 3990,
+      "prime_support": [
+        2,
+        3,
+        5,
+        7,
+        19
+      ],
+      "base_upper_exclusive": 6000,
+      "all_positive_valuations": true,
+      "rows": [
+        {
+          "M": 3990,
+          "B": 3990,
+          "N": 1,
+          "radical": 3990,
+          "exponents": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ]
+    }
+  ],
+  "rows": [
+    {
+      "M": 3570,
+      "B": 3570,
+      "N": 1,
+      "radical": 3570,
+      "exponents": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "M": 7140,
+      "B": 7140,
+      "N": 1,
+      "radical": 3570,
+      "exponents": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "M": 3990,
+      "B": 3990,
+      "N": 1,
+      "radical": 3990,
+      "exponents": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "states": 14700,
+  "representatives": 7353,
+  "all_N_theorem_claimed": false,
+  "large_base_profile_gates_required": true
+}

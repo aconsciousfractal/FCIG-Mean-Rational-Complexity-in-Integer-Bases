@@ -1,0 +1,418 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "truncated_stream",
+      "status": "REJECTED",
+      "expected_diagnostic": "truncated witness file",
+      "nonzero_exit": true
+    },
+    {
+      "name": "extra_record",
+      "status": "REJECTED",
+      "expected_diagnostic": "extra witness data",
+      "nonzero_exit": true
+    },
+    {
+      "name": "nonunit_zero_coefficients",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true
+    },
+    {
+      "name": "composite_parameter",
+      "status": "REJECTED",
+      "expected_diagnostic": "prime input",
+      "nonzero_exit": true
+    },
+    {
+      "name": "forbidden_core_prime_2",
+      "status": "REJECTED",
+      "expected_diagnostic": "prime parameter range",
+      "nonzero_exit": true
+    },
+    {
+      "name": "forbidden_core_prime_5",
+      "status": "REJECTED",
+      "expected_diagnostic": "prime parameter range",
+      "nonzero_exit": true
+    },
+    {
+      "name": "forbidden_core_prime_13",
+      "status": "REJECTED",
+      "expected_diagnostic": "prime parameter range",
+      "nonzero_exit": true
+    },
+    {
+      "name": "unsupported_core_index",
+      "status": "REJECTED",
+      "expected_diagnostic": "marked-130 divisor index multiplier",
+      "nonzero_exit": true
+    },
+    {
+      "name": "only_prime_2_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        2,
+        5,
+        13,
+        17
+      ],
+      "unique_nonunit_prime": 2,
+      "coefficient_pairs_checked": 4536,
+      "block_sha256": "a7d018f5d014d18f8c1a3371d248b7fa5a3228d0ffca66867a5d8caad4119c56",
+      "stream_records": 12192768
+    },
+    {
+      "name": "only_prime_5_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        2,
+        5,
+        13,
+        17
+      ],
+      "unique_nonunit_prime": 5,
+      "coefficient_pairs_checked": 4536,
+      "block_sha256": "0b3f07768f5e144dfa25218a8d7597beb799f796a68c34cca69973e8c1b40e0c",
+      "stream_records": 12192768
+    },
+    {
+      "name": "only_prime_13_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        2,
+        5,
+        13,
+        17
+      ],
+      "unique_nonunit_prime": 13,
+      "coefficient_pairs_checked": 4536,
+      "block_sha256": "09154a9b5929b55621f7bc8cc79c8e1c6b00ec2b192fc80908cfd4149ea59f7d",
+      "stream_records": 12192768
+    },
+    {
+      "name": "only_prime_17_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        2,
+        5,
+        13,
+        17
+      ],
+      "unique_nonunit_prime": 17,
+      "coefficient_pairs_checked": 4536,
+      "block_sha256": "dd3988b283fb5d6a7b886a23b6e99bcc5c12dd7ff052735e8a02e152e522ed34",
+      "stream_records": 12192768
+    },
+    {
+      "name": "radial_gap",
+      "status": "REJECTED",
+      "expected_diagnostic": "radial continuity"
+    },
+    {
+      "name": "angular_penalty_necessity",
+      "status": "PASS",
+      "vector": [
+        1,
+        3
+      ],
+      "sampled_squared_max": "169/17",
+      "continuous_squared_max": "10",
+      "node_tangents": "n/4 for -4<=n<=4"
+    },
+    {
+      "name": "cdf_below_three_halves_fails",
+      "status": "REJECTED",
+      "example_M": 3,
+      "x": "2/3",
+      "probability": "1",
+      "constant_rejected": "1499/1000"
+    },
+    {
+      "name": "allowed_prime3_actual_records",
+      "status": "PASS",
+      "prime_allowed": 3,
+      "q": 2210,
+      "records": [
+        {
+          "cell": 749,
+          "branch": 360,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 579
+        },
+        {
+          "cell": 2137,
+          "branch": 980,
+          "ci": -2,
+          "cj": 3,
+          "denominator_mark": 1251
+        },
+        {
+          "cell": 2082,
+          "branch": 930,
+          "ci": 2,
+          "cj": -3,
+          "denominator_mark": -831
+        },
+        {
+          "cell": 2082,
+          "branch": 3986,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 69
+        },
+        {
+          "cell": 2675,
+          "branch": 3444,
+          "ci": -1,
+          "cj": 16,
+          "denominator_mark": 63
+        },
+        {
+          "cell": 153,
+          "branch": 2114,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 723
+        },
+        {
+          "cell": 751,
+          "branch": 456,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 249
+        },
+        {
+          "cell": 1785,
+          "branch": 1890,
+          "ci": 1,
+          "cj": -3,
+          "denominator_mark": -1227
+        },
+        {
+          "cell": 2447,
+          "branch": 2586,
+          "ci": 1,
+          "cj": -1,
+          "denominator_mark": -2181
+        },
+        {
+          "cell": 196,
+          "branch": 1142,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 2151
+        },
+        {
+          "cell": 2084,
+          "branch": 4152,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 27
+        },
+        {
+          "cell": 2154,
+          "branch": 854,
+          "ci": -2,
+          "cj": 9,
+          "denominator_mark": 14463
+        },
+        {
+          "cell": 2655,
+          "branch": 1764,
+          "ci": -8,
+          "cj": 9,
+          "denominator_mark": 15921
+        },
+        {
+          "cell": 1094,
+          "branch": 336,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 1569
+        },
+        {
+          "cell": 175,
+          "branch": 4068,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 87
+        },
+        {
+          "cell": 1293,
+          "branch": 336,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 1569
+        },
+        {
+          "cell": 2129,
+          "branch": 3486,
+          "ci": 5,
+          "cj": -7,
+          "denominator_mark": 219
+        },
+        {
+          "cell": 2038,
+          "branch": 402,
+          "ci": 6,
+          "cj": -7,
+          "denominator_mark": -5313
+        },
+        {
+          "cell": 834,
+          "branch": 3060,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 87
+        },
+        {
+          "cell": 2411,
+          "branch": 2856,
+          "ci": 1,
+          "cj": -1,
+          "denominator_mark": 111
+        },
+        {
+          "cell": 2503,
+          "branch": 4530,
+          "ci": 1,
+          "cj": 1,
+          "denominator_mark": 21
+        },
+        {
+          "cell": 180,
+          "branch": 3270,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 1371
+        },
+        {
+          "cell": 1376,
+          "branch": 3150,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 597
+        },
+        {
+          "cell": 2208,
+          "branch": 2880,
+          "ci": 1,
+          "cj": -1,
+          "denominator_mark": -243
+        },
+        {
+          "cell": 2664,
+          "branch": 1578,
+          "ci": 12,
+          "cj": -31,
+          "denominator_mark": -67611
+        },
+        {
+          "cell": 1240,
+          "branch": 980,
+          "ci": 1,
+          "cj": -1,
+          "denominator_mark": -417
+        },
+        {
+          "cell": 59,
+          "branch": 4074,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": -1083
+        },
+        {
+          "cell": 2358,
+          "branch": 3570,
+          "ci": -9,
+          "cj": 11,
+          "denominator_mark": 21
+        },
+        {
+          "cell": 1798,
+          "branch": 2316,
+          "ci": 2,
+          "cj": -3,
+          "denominator_mark": -4401
+        },
+        {
+          "cell": 2,
+          "branch": 980,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 417
+        },
+        {
+          "cell": 2345,
+          "branch": 4098,
+          "ci": -18,
+          "cj": 19,
+          "denominator_mark": 3
+        },
+        {
+          "cell": 765,
+          "branch": 2598,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 1881
+        },
+        {
+          "cell": 1960,
+          "branch": 3888,
+          "ci": 1,
+          "cj": -1,
+          "denominator_mark": 831
+        },
+        {
+          "cell": 2048,
+          "branch": 2142,
+          "ci": 16,
+          "cj": -21,
+          "denominator_mark": -27153
+        },
+        {
+          "cell": 809,
+          "branch": 3552,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 141
+        },
+        {
+          "cell": 1260,
+          "branch": 3366,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 393
+        },
+        {
+          "cell": 2075,
+          "branch": 204,
+          "ci": 2,
+          "cj": -9,
+          "denominator_mark": -6219
+        },
+        {
+          "cell": 770,
+          "branch": 2010,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": -3
+        }
+      ],
+      "scope": "actual sampled coefficient records from the complete producer/consumer stream; 3 is not forbidden by the130 mark"
+    }
+  ],
+  "isolated_synthetic_files": true,
+  "positive_geometry_gate": "all selected profiles are separately produced and consumed in full"
+}

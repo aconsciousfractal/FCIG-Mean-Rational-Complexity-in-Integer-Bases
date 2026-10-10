@@ -36,7 +36,7 @@ a uniform bound and a two-prime theorem}
 For a uniformly chosen residue modulo \(B^N\), let its rational height be
 the smallest \(\max(|a|,d)\) among congruent rational representations
 \(a\equiv sd\pmod {B^N}\), with \(d>0\) coprime to the entire modulus.
-We prove a uniform upper bound strictly below \(N/2+49/50\) for the mean
+We prove a uniform upper bound strictly below \(N/2+0.241933621228105\) for the mean
 base-\(B\) logarithm of this height. The additive correction can be removed
 for prime-power bases, and is strictly negative for bases with exactly two
 distinct prime factors. The latter result combines explicit estimates with
@@ -45,8 +45,10 @@ The correction cannot be removed for all bases: \(B=30,N=2\) is a certified
 counterexample. An explicit lower estimate also gives an eventually
 positive family with radical \(510510\).
 The self-contained argument places the optimal global additive correction
-strictly between zero and \(49/50\); a classical Jacobsthal bound further
-gives a correction strictly below \(4/5\).
+between \(0.023672606561106\) and \(0.241933621228105\).
+The sharper estimate combines supportwise positive and negative logarithmic
+contributions, with explicit finite premises and infinite tails.
+Two simpler proofs give independent bounds \(49/50\) and \(4/5\).
 Its supremum reduces to finitely many bases, though neither its value
 nor finite-length attainment is determined here.
 Classical rational-reconstruction and lattice tools are distinguished
@@ -82,7 +84,7 @@ essential.
 \begin{theorem}\label{thm:main}
 For every \(N\ge1\):
 \begin{enumerate}
-\item For every integer \(B\ge2\), \(E_{B,N}<N/2+49/50\).
+\item For every integer \(B\ge2\), \(E_{B,N}<N/2+0.241933621228105\).
 \item If \(B\) is a power of a prime, \(E_{B,N}\le N/2\).
 \item If \(B\) has exactly two distinct prime factors, \(E_{B,N}<N/2\).
 \end{enumerate}
@@ -108,7 +110,8 @@ Set
  c(B)=\sup_{N\ge1}(E_{B,N}-N/2),\quad c_+(B)=\max(0,c(B)),\quad
  C^*=\sup_{B\ge2}c(B).
 \]
-Then \(c_+(B)\to0\) as \(B\to\infty\), and \(0<C^*<49/50\).
+Then \(c_+(B)\to0\) as \(B\to\infty\), and
+\(0.023672606561106<C^*<0.241933621228105\).
 There exists a finite \(B_0\) such that
 \(C^*=\max_{2\le B\le B_0}c(B)\).
 This does not assert that the supremum over \(N\) is attained.
@@ -253,7 +256,9 @@ For all integer bases \(B\ge2\),
  c(B)\le\max(0,w,39/40)<49/50,\qquad
  w=1+\frac{\log(209/300)}{24\log2}.
 \]
-In particular \(C^*<49/50\) and Theorem~\ref{thm:main}(1) holds.
+In particular \(C^*<49/50\). This is the elementary predecessor of
+Theorem~\ref{thm:main}(1); its stronger bound is proved in
+Section~\ref{sec:sharp-global}.
 \end{proposition}
 \begin{proof}
 The prime-power and two-prime arguments of Sections~\ref{sec:prime}
@@ -775,7 +780,9 @@ The witness \(c(30)\ge E_{30,2}-1>0\) now excludes all sufficiently large
 bases from the global supremum. Hence only finitely many bases remain.
 Proposition~\ref{prop:uniform-correction} supplies the common cap
 \(C^*\le\max(0,w,39/40)<49/50\). Together with the positive witness,
-this gives \(0<C^*<49/50\).
+this gives \(0<C^*<49/50\). The sharper upper endpoint and the candidate
+lower endpoint in Theorem~\ref{thm:optimal} follow from
+Section~\ref{sec:sharp-global}.
 A finite maximum of the quantities \(c(B)\) is still a maximum of
 suprema over infinitely many lengths; finite-length attainment is not
 part of the conclusion.
@@ -855,6 +862,331 @@ This sharpening imports the cited classical gap bound; the self-contained
 \(49/50\) argument above remains valid independently.
 The argument does not determine the optimal correction or its extremizers.
 
+\section{A sharper uniform additive correction}\label{sec:sharp-global}
+Write \(\Delta(B,N)=\mu(B^N)/\log B\), in the model of
+Section~1. The following strengthens the bound on the same constant \(C^*\).
+The elementary \(49/50\) bound and the classical \(4/5\) consequence remain
+separate proofs and do not require the certificates used here.
+
+\begin{theorem}\label{thm:sharp-global}
+For every pair of integers \(B\ge2\) and \(N\ge1\),
+\[
+ \Delta(B,N)\le U_*<0.241933621228105,
+ \qquad U_*=N_*/D_* .
+\]
+The exact numerator and denominator are
+\[
+\begin{aligned}
+N_*={}&40623994785018517492427\cdot10^{75}\\
+ &+2326116987501439828085652\cdot10^{50}\\
+ &+3601010843851923947795280\cdot10^{25}\\
+ &+6889837346248569296539451,\\
+D_*={}&167913804533668374297695\cdot10^{75}\\
+ &+2015203587265216946192575\cdot10^{50}\\
+ &+1002645296010000000000000\cdot10^{25} .
+\end{aligned}
+\]
+Consequently \(0<C^*<0.241933621228105\).
+\end{theorem}
+
+The upper bound combines inequalities valid for infinitely many moduli with
+finite integer and rational certificates. We give the inequalities, their
+quantifiers and the finite predicates below. A certificate of an admissible
+upper witness need not certify the minimum. A recorded successful execution,
+or agreement of two reported constants, does not replace the finite predicates.
+
+\subsection{Shortest vectors and a coupled shear bound}
+Let \(\lambda_s\) be the Euclidean minimum of \(\Lambda_s\).
+Two distribution bounds needed here are, for every integer \(M\ge1\)
+and real \(x\ge0\),
+\[
+ \Prb(\lambda_s^2/M\le x)
+ \le\min\left(1,\frac32x,\ a x+b\sqrt{x/M}+\frac dM\right),             \tag{S1}\label{eq:sharp-pcdf}
+\]
+where
+\[
+ a=\frac{6414336}{5010005},\qquad
+ b=\frac{45173053}{51531480},\qquad d=\frac{221184}{715715}.
+\]
+The \(M=1\) case is included because a transferred profile can have that
+seed. These are bounds on an unmarked Euclidean minimum, not the
+distribution of the marked height \(R_M\).
+Appendix~\ref{app:sharp-pcdf} proves them.
+
+Let \(H_k\) be a length for which every interval of \(H_k\) consecutive
+integers contains a point avoiding one arbitrary residue class modulo each
+of at most \(k\) distinct primes. The following values suffice:
+\[
+\begin{array}{c|rrrrrrrrrrrrrr}
+ k&1&2&3&4&5&6&7&8&9&10&11&12&13&14\\ \hline
+ H_k&2&4&6&10&14&22&26&44&58&66&98&148&204&360 .
+\end{array}                                                        \tag{S2}\label{eq:sharp-cover}
+\]
+They are upper bounds for all such supports; no assertion that primorials
+give the worst support is used. The finite covering predicates and their
+infinite-support implication are proved in Appendix~\ref{app:sharp-cover}.
+
+\begin{lemma}\label{lem:sharp-shear}
+Suppose the above avoidance property holds with an even length \(H=2h\)
+for at most \(\omega(M)-1\) primes. Then, for every state,
+\[
+ R_M(s)\le\kappa(H)\frac M{\lambda_s},\qquad
+ \kappa(H)^2=1+\max\left(\frac{H^2}{4},\frac{(H-1)^2}{3}\right).
+                                                                    \tag{S3}\label{eq:sharp-shear}
+\]
+\end{lemma}
+\begin{proof}
+Complete a shortest lattice vector \(u\) to a basis \(u,v\), reducing
+\(v=\theta u+v_\perp\) with \(|\theta|\le1/2\).
+Put \(\lambda=\|u\|_2\). Minimality gives
+\[
+ \lambda^4(1-\theta^2)\le M^2,\qquad \|v_\perp\|_2=M/\lambda.
+\]
+The vertical projection of the lattice is \(\Z\), hence
+\(\gcd(u_d,v_d)=1\). If \(u_d\) is a full unit, the vector \(u\)
+suffices, since \(\lambda^2/M\le2/\sqrt3<\kappa(H)\).
+Otherwise some prime divisor of \(M\) divides \(u_d\); it does not divide
+\(v_d+ju_d\) for any \(j\). Each remaining prime forbids one class of \(j\).
+The allowed integers thus have consecutive gaps at most \(2h\).
+
+Put \(t=|\theta|\). The integer structure gives an allowed \(j\) with
+\(|j+\theta|\le h-t\). Indeed, after reflection assume \(\theta=t\).
+If zero is allowed use it. Otherwise let \(-l,r\) be the allowed
+neighbors of zero, where \(l,r\ge1\), \(l+r\le2h\).
+If \(l\le h\), use \(-l\); if \(l\ge h+1\), use \(r\le h-1\).
+Therefore
+\[
+ \frac{\|v+ju\|_2^2}{(M/\lambda)^2}
+ \le 1+\frac{(h-t)^2}{1-t^2}
+ \le1+\max\left(h^2,\frac{(2h-1)^2}{3}\right).
+\]
+For \(h=1,2,3\) the last inequality follows from
+\(h^2(1-t^2)-(h-t)^2=t[2h-(h^2+1)t]\ge0\).
+For \(h\ge4\) it follows from
+\[
+ (2h-1)^2(1-t^2)-3(h-t)^2
+ =(1-2t)[2(h^2-h+1)t+h^2-4h+1]\ge0.
+\]
+The full-unit denominator is nonzero; choose its sign positive.
+Finally \(\|\cdot\|_\infty\le\|\cdot\|_2\).
+\end{proof}
+
+\subsection{Positive and negative logarithmic contributions}
+Set
+\[
+ Z_M=R_M/\sqrt M,\quad P(M)=\E(\log Z_M)_+,\quad
+ L(M)=\E(-\log Z_M)_+,\quad \mu(M)=P(M)-L(M).
+\]
+For \(\kappa\) as in \eqref{eq:sharp-shear}, any rational \(z>1\)
+with \(z<\kappa\sqrt M\) gives
+\[
+ P(M)\le C(M,\kappa,z)
+ :=\log z+\frac{a\kappa^2}{2z^2}
+ +\frac{b\kappa}{z\sqrt M}
+ +\frac d{2M}\log\frac{\kappa^2M}{z^2}
+ -\frac{a/2+b}{M}.                                                   \tag{S4}\label{eq:sharp-positive}
+\]
+To see this, use \eqref{eq:sharp-pcdf} and
+\eqref{eq:sharp-shear} above \(z\), with the trivial probability bound
+below \(z\). The witness tail is empty beyond \(\kappa\sqrt M\), since
+\(\lambda_s\ge1\). Integrating the three terms to that finite endpoint
+gives \eqref{eq:sharp-positive}, including both endpoint subtractions.
+In particular the constant \(d/M\) is not integrated to infinity.
+
+For a scalar threshold \(Q\), let \(E_0=a/2+b\). The finite conditions
+\[
+ \log(\kappa^2Q/z^2)>1,\qquad
+ b^2\kappa^2Q>4z^2E_0^2                                              \tag{S5}\label{eq:sharp-derivative}
+\]
+prove \(C(M,\kappa,z)\le C(Q,\kappa,z)\) for every real \(M\ge Q\).
+Indeed
+\[
+ M^2\partial_M C=E_0-\frac{b\kappa\sqrt M}{2z}
+ +\frac d2\left(1-\log\frac{\kappa^2M}{z^2}\right)<0 .
+\]
+The cuts in the certificate are rationals on the grid \(10^{-6}\);
+their choice can be reproduced by rounding upward the positive root of
+\[
+ (1-d/Q)z^2-b\kappa z/\sqrt Q-a\kappa^2=0 .
+\]
+Only \eqref{eq:sharp-derivative} at the actual rational cut is a proof
+obligation; exact stationarity is unnecessary.
+
+For the negative part, fix once and for all
+\[
+ {\cal P}=\{2,3,5,7,11,13,17,19\},\quad
+ S={\cal P}\cap\operatorname{supp}(M),\quad P_S=\prod_{p\in S}p.
+\]
+Appendix~\ref{app:sharp-negative} constructs two nondecreasing rational
+profiles \(h^{1/2}_{w,S}\), \(h^{4/5}_{w,S}\), for \(w=\omega(M)\).
+The first counts primitive full-unit vectors in a square. The second,
+used for \(w=5,6\), counts them in the cross
+\[
+ \{|a|\le R,\ 0<d\le\lfloor R/2\rfloor\}
+ \ \cup\
+ \{|a|\le\lfloor R/2\rfloor,\ 0<d\le R\}.
+\]
+Their injectivity conditions are respectively \(2R^2<M\) and
+\(5R^2<4M\), both strict. Define
+\[
+ r_\alpha(Q)=\max\{r\in\Z_{\ge0}:r^2<\alpha Q\},\qquad
+ G^\alpha_{w,S}(u;Q)=
+ \begin{cases}
+ u\,h^\alpha_{w,S}(\floor{\sqrt{uQ}}),&0<u<\alpha,\\
+ \alpha h^\alpha_{w,S}(r_\alpha(Q)),&\alpha\le u\le1.
+ \end{cases}                                                        \tag{S6}\label{eq:sharp-negative-cdf}
+\]
+For every modulus \(M\ge Q\) in that class,
+\(\Prb(Z_M\le\sqrt u)\ge G^\alpha_{w,S}(u;Q)\).
+Consequently put
+\[
+ I_{4,S}(Q)=\frac12\int_0^1G^{1/2}_{4,S}(u;Q)\frac{du}{u},\qquad
+ I_{w,S}(Q)=\frac12\int_0^1
+ \max(G^{1/2}_{w,S},G^{4/5}_{w,S})(u;Q)\frac{du}{u}\quad(w=5,6).
+                                                                    \tag{S7}\label{eq:sharp-negative-integral}
+\]
+Then \(L(M)\ge I_{w,S}(Q)\).
+The two regions overlap: their counts are not added. The maximum is
+taken between lower bounds on the same physical CDF. The support \(S\)
+is fixed through the entire integral.
+
+\subsection{Exhaustive partition of supports}
+The auxiliary certified estimates in Appendix~\ref{app:sharp-exclusions}
+give \(\Delta(B,N)\le2/85\) for \(\omega(B)=3\), and for the following
+four-prime families other than the first, with every positive valuation
+and every \(N\ge1\):
+\[
+\begin{array}{c|rrrrrrrrrrrr}
+ q&30&42&70&66&105&78&110&102&154&165&130&114\\
+ p_{\min}&7&11&11&13&11&17&13&19&13&13&17&23 .
+\end{array}                                                        \tag{S8}\label{eq:sharp-families}
+\]
+A column denotes \(\rad(B)=qp\), \(p\ge p_{\min}\) prime.
+The \(30p\) column has the bound
+\[
+ \Delta(B,N)\le c_0:=\Delta(210,1),\qquad
+ 0.023672606561106<c_0<0.023672606561107.                               \tag{S9}\label{eq:sharp-candidate}
+\]
+No characterization of equality is needed.
+The one- and two-prime results already proved give \(\Delta\le0\).
+The five-prime supports separately bounded by \(2/85\) are
+\[
+ {\cal E}=\{2310,2730,3570,3990,4290,4830,5610,6006,6090,6270,6510\}.
+                                                                    \tag{S10}\label{eq:sharp-excluded}
+\]
+The negative profiles for \(w=5\) are conditional on
+\(\rad(M)\notin{\cal E}\); they do not prove the exclusions themselves.
+
+The smallest remaining four- and five-prime radicals are respectively
+\(Q_4=3003\) and \(Q_5=6630\).
+There are exactly 84 squarefree four-prime integers at most 3003,
+of which 83 lie in \eqref{eq:sharp-families}, and exactly 12 squarefree
+five-prime integers at most 6630, of which eleven lie in \({\cal E}\).
+These finite inventories can be checked either by factorization or by
+ordered prime tuples. The prime limits 100 and 31 suffice: the product
+of the other \(w-1\) distinct primes is at least their primorial.
+This elementary use of primorials is a size bound, not an extremal
+assumption for rational complexity. For six primes use \(Q_6=30030\).
+
+In a residual class with \(w=4,5,6\), put \(t=w-|S|\).
+The ordered external primes exceed 19. Lower-bound them coordinatewise
+by \(\ell_{S,j}\), the first \(t\) primes above 19, except that when
+\(w=5,t=1\) the first lower bound is the least prime \(r>19\) with
+\(P_Sr\notin{\cal E}\). Omit a class with \(t=0\) precisely when
+\(w=5\) and \(P_S\in{\cal E}\). Define
+\[
+ Q_{w,S}=\max\left(Q_w,P_S\prod_{j=1}^t\ell_{S,j}\right).               \tag{S11}\label{eq:sharp-Q}
+\]
+Every actual base in the residual class satisfies
+\(B\ge Q_{w,S}\), hence \(M=B^N\ge Q_{w,S}\).
+For example \(w=5,S=\{2,3,5,7\}\) has \(\ell_{S,1}=37\) and
+\(Q_{5,S}=7770\). The skipped primes \(23,29,31\) give exactly three
+excluded radicals. For \(t\ge2\), ignoring extra exclusions only weakens
+the lower bound. There are respectively 163, 211 and 247 admitted classes.
+
+For each class use \(H=H_{w-1}\), the corresponding \(\kappa\), the cut
+\(z_{w,S}\) and its own \(Q_{w,S}\). Equations
+\eqref{eq:sharp-positive}--\eqref{eq:sharp-Q} yield
+\[
+ \Delta(B,N)\le
+ \frac{\max\{0,C(Q_{w,S},\kappa,z_{w,S})-I_{w,S}(Q_{w,S})\}}
+ {\log Q_{w,S}}.                                                     \tag{S12}\label{eq:sharp-row}
+\]
+The sign check precedes replacing \(\log B\) by its lower bound.
+All three ingredients retain the same \(S\); only after computing
+complete normalized rows is their maximum taken.
+The 621 rational interval comparisons give the outward sector bounds
+\[
+\begin{array}{c|c}
+ w&\hbox{upper bound}\\ \hline
+ 4&0.202966987434704\\
+ 5&0.241933621228105\\
+ 6&0.241858537967210 .
+\end{array}
+\]
+Each displayed decimal rounds up a rational upper bound; the exact
+largest rational is \(U_*\) in Theorem~\ref{thm:sharp-global}.
+The rows producing the largest upper bounds are analytical bounds,
+not identified optimizing physical bases.
+
+\subsection{Seven or more prime factors}
+For \(7\le w\le15\), use \(Q\) equal to the \(w\)-th primorial,
+\(\kappa(H_{w-1})\), a cut satisfying \eqref{eq:sharp-derivative},
+and \(L(M)\ge0\). The certified outward bounds are
+\[
+\begin{array}{c|r@{\qquad}c|r@{\qquad}c|r}
+ w&\Delta\le&w&\Delta\le&w&\Delta\le\\ \hline
+ 7&.237632277858435&10&.182279486252701&13&.151871560366695\\
+ 8&.204863443985275&11&.163269471241710&14&.145175831262366\\
+ 9&.199567498654016&12&.156877570209516&15&.145447882175961
+\end{array}                                                         \tag{S13}\label{eq:sharp-finite-tail}
+\]
+The companion stores the exact fractions and cuts.
+
+For the unbounded range, use the classical inequality
+\(J(q)\le2^{\omega(q)}\) of Kanold, in the formulation reported by
+Costello--Watts~\cite[Introduction]{CostelloWatts}.
+It is an imported classical theorem, not a consequence of the finite
+covering table. Let \(P_{16}\) be the sixteenth primorial, whose largest
+prime is 53, and write \(v=w-16\ge0\).
+Set \(H_0=2^{15}\),
+\(\kappa_0^2=(H_0^2+3)/3\),
+\(\kappa_v=2^v\kappa_0\), \(z_v=2^v z_0\),
+\(Q_v=P_{16}59^v\).
+The classical geometry gives a witness factor at most \(\kappa_v\),
+because
+\[
+ (H_0^2\,4^v+3)/3\le4^v(H_0^2+3)/3 .
+\]
+Here the weaker classical factor is retained deliberately: the
+improvement \(H-1\) in \eqref{eq:sharp-shear} has not been assumed
+to obey this scaling inequality.
+Since \(B\ge Q_v\),
+\[
+ \Delta(B,N)\le
+ \frac{C(P_{16},\kappa_0,z_0)+v\log2}
+ {\log P_{16}+v\log59}.                                              \tag{S14}\label{eq:sharp-infinite-tail}
+\]
+This uses the identity
+\(C(Q_v,\kappa_v,z_v)=v\log2+C(Q_v,\kappa_0,z_0)\)
+and the real-\(M\) derivative check at \(P_{16}\).
+The derivative of the last ratio has the sign of
+\[
+ (\log2)(\log P_{16})-C(P_{16},\kappa_0,z_0)\log59 ,
+\]
+whose certified upper endpoint is negative.
+Thus its value at \(v=0\) bounds all real \(v\ge0\), and in particular
+all unbounded integer cardinalities. It is less than
+\(0.233058795421166<U_*\).
+This completes the proof of Theorem~\ref{thm:sharp-global}:
+the classes of \eqref{eq:sharp-row}, \eqref{eq:sharp-finite-tail},
+\eqref{eq:sharp-infinite-tail} and all excluded sectors form an
+exhaustive partition, and each upper bound is at most \(U_*\).
+The positivity of \(C^*\) follows from the earlier counterexample,
+or from \eqref{eq:sharp-candidate}.
+\medskip
+
+
 \section{Reproducibility and limitations}\label{sec:repro}
 The repository companion contains the original finite mathematical premises,
 portable reconstruction programs, exact logarithmic sums, complete domain
@@ -901,6 +1233,23 @@ not complete true minimum vectors in the far range. Far-envelope domination,
 the infinite estimates and the reduction arguments still use the proved
 mathematics and the source producer. The attributed binary mean theorem
 remains an import; this reconstruction does not repeat its earlier paper.
+
+
+The sharper correction adds the companion in \texttt{companion/global\_bound}.
+Its scalar producer and distinct checker recompute all 621 supportwise rows
+and the remaining cardinality tail. Its premise checker recomputes the
+incidence period, residue-class covering predicates, shear comparisons
+and exact candidate minimum histogram. Retained closure checks validate
+the compact numerical premises and their exact domain joins. Full C++
+producer/consumer routes reconstruct the geometric and finite witnesses.
+The early closure reconstructions were observed on 8 October 2026, with
+their numerical kernels and inputs preserved; later closure components
+were reconstructed for this revision. These scopes are separate from the
+unchanged 37-stage two-prime chain. A retained-only check does not mean
+that a geometric producer was rerun. Full routes require GNU C++17,
+\texttt{\_\_int128}, OpenMP and little-endian Linux.
+Missing carrier members have been reconstructed with new provenance;
+historical hash agreement is recorded only where actually verified.
 
 The paper proves mean bounds for its full-unit rational-height model.
 It does not determine the optimal correction, maximizing lengths or a
@@ -2430,6 +2779,1078 @@ therefore gives
 This conclusion is restricted to exactly two prime divisors.
 It neither transfers to bases with three prime factors nor asserts
 monotonicity, optimal margins, exact true means or novelty.
+
+
+
+
+\section{Primitive incidence distribution bounds}\label{app:sharp-pcdf}
+We supply the infinite argument and its finite complement for
+\eqref{eq:sharp-pcdf}. For \(1\le Y<M\) a shortest lattice vector is
+primitive in lattice coordinates. Writing \((a,d)=(Mm+sd,d)\),
+this means \(\gcd(m,d)=1\), and does not mean \(\gcd(a,d)=1\).
+There is no horizontal nonzero vector in that disk; choose the sign \(d>0\).
+For a fixed \(d\le Y\), put \(h=\gcd(d,M)\), \(r=d/h\),
+\(A=\sqrt{Y^2-d^2}\), and
+\(U_r(X)=\#\{b\in\Z:|b|\le X,\ \gcd(b,r)=1\}\).
+The exact number of primitive incidences with that denominator is
+\[
+ c_d(M,Y)=\frac{\varphi(d)}{\varphi(r)}\,U_r(A/h).                     \tag{A1}\label{eq:sharp-incidence}
+\]
+Indeed \(a=hb\) is necessary. In
+\(b=rs+(M/h)m\), \(\gcd(r,M/h)=1\).
+The \(h\) possible states give all lifts of a residue of \(m\bmod r\)
+to \(m\bmod d\). A lift is a unit exactly when that residue is a unit,
+and each unit residue has \(\varphi(d)/\varphi(r)\) unit lifts.
+This also counts numerator zero, precisely for \(r=1\).
+
+Complete periods and pairing residues \(u,r-u\) give
+\(U_r(X)\le\varphi(r)(2X/r+1)\).
+Thus, with \(f_Y(t)=2\sqrt{Y^2-t^2}+t\),
+\[
+ I_{\rm prim}(M,Y)\le
+ \sum_{d=1}^{\floor Y}\frac{\varphi(d)}d f_Y(d).
+                                                                    \tag{A2}\label{eq:sharp-totient-count}
+\]
+The union bound divides this count by \(M\).
+
+For the \(3/2\) bound, majorize \(\varphi(d)/d\) by the period-six
+weights \((1,1/2,2/3,1/2,1,1/3)\). Their mean is \(2/3\), and
+their cumulative discrepancy from that mean lies in \([0,1/3]\)
+for all integer indices by periodicity.
+The function \(f_Y\) increases to \(\sqrt5Y\) and then decreases.
+Abel summation bounds the discrepancy contribution by \(\sqrt5Y/3\).
+A right Riemann sum, with its positive variation paid, gives
+\[
+ \sum_{d=1}^{\floor Y}f_Y(d)
+ \le \frac{\pi+1}{2}Y^2+(\sqrt5-2)Y .
+\]
+Using \(\pi<22/7\) and \(\sqrt5<9/4\),
+\[
+ I_{\rm prim}(M,Y)
+ <\frac{29}{21}Y^2+\frac{11}{12}Y
+ \le\left(\frac32-\frac1{224}\right)Y^2\quad(Y\ge8).                  \tag{A3}
+\]
+The inequality \(\pi<22/7\) follows, for example, from the positive
+integral \(\int_0^1t^4(1-t)^4/(1+t^2)\,dt=22/7-\pi\).
+
+For \(1\le Y<8\), squared norms are integers. Put \(T=\floor{Y^2}\).
+An exact bound independent of \(M\) is
+\[
+ E(T)=\sum_{d=1}^{\floor{\sqrt T}}
+ \max_{h\mid d}\frac{\varphi(d)}{\varphi(d/h)}
+ U_{d/h}\left(\frac{\floor{\sqrt{T-d^2}}}{h}\right).
+\]
+The complete finite table, for successive \(T\), is
+\[
+\begin{array}{c|l}
+1\text{--}9&1,3,3,4,7,7,7,8,10\\
+10\text{--}18&12,12,12,15,15,15,17,19,21\\
+19\text{--}27&21,24,24,24,24,24,28,30,30\\
+28\text{--}36&30,31,31,31,33,33,37,37,39\\
+37\text{--}45&41,41,41,42,44,44,44,44,48\\
+46\text{--}54&48,48,48,54,60,60,62,63,63\\
+55\text{--}63&63,63,63,63,63,63,63,63,63 .
+\end{array}
+\]
+Every entry satisfies \(2E(T)\le3T\); each is reproducible from divisors,
+integer square roots and gcd tests. Maximizing separately for each \(d\)
+only enlarges the count; no common maximizing modulus is postulated.
+This proves the \(3/2\) bound. The remaining ranges \(Y<1\) and \(Y\ge M\)
+are respectively empty and bounded trivially by one, including \(M=1\).
+
+For the second bound let \(P=30030\) and
+\[
+ w_d=\prod_{p\mid P}\left(1-\frac1p\unit_{p\mid d}\right),\qquad
+ \eta=\prod_{p\mid P}(1-p^{-2})=\frac{442368}{715715}.
+\]
+These weights majorize \(\varphi(d)/d\); their primes are an arithmetic
+device, not additional marks on denominators.
+Over the full period the discrepancy
+\(D(n)=\sum_{d\le n}(w_d-\eta)\) has extrema
+\[
+ \ell=-134597/1431430,\quad h=744773/1431430
+\]
+(first occurring at 11376 and 18653).
+The finite predicate consists of all 30030 weights and all cumulative
+sums. Periodicity proves these bounds for every integer \(n\ge0\).
+
+Concavity of \(2\sqrt{Y^2-t^2}\) and the trapezoid rule imply
+\[
+ \sum_{d=1}^{\floor Y}f_Y(d)
+ \le\frac{\pi+1}{2}Y^2-\frac Y2+\frac12 .
+\]
+For clarity, writing \(n=\floor Y\), the semicircle sum is at most
+\(\pi Y^2/2-Y+\sqrt{Y^2-n^2}\); use
+\(\sqrt u\le(u+1)/2\) and add \(n(n+1)/2\).
+Abel summation, using \(D\ge\ell\) on the increasing part and \(D\le h\)
+on the decreasing part, gives the discrepancy bound
+\([h\sqrt5-\ell(\sqrt5-2)]Y\).
+The terminal term is included. Hence
+\[
+ I_{\rm prim}\le
+ \frac{\eta(\pi+1)}2Y^2+
+ [-\eta/2+(h-\ell)\sqrt5+2\ell]Y+\eta/2 .
+\]
+Substitute \(\pi<22/7\), \(\sqrt5<161/72\), and divide by \(M\):
+the coefficients are exactly \(a,b,d\) in \eqref{eq:sharp-pcdf}.
+They are nonnegative and \(a>1\), so the empty and trivial outer
+ranges are again covered. This proves \eqref{eq:sharp-pcdf} for all \(M,x\).
+
+\section{Uniform avoidance of residue classes}\label{app:sharp-cover}
+Here is the finite predicate behind \eqref{eq:sharp-cover}.
+Use the core \(C=\{3,5,7,11\}\).
+For each \(k=1,\ldots,14\), distinguish whether 2 is present,
+and enumerate \(S=C\cap\operatorname{supp}(q)\), with
+\(|S|+\epsilon\le k\), \(\epsilon=\unit_{2\mid q}\).
+Put \(L=H_k\) if \(\epsilon=0\), and \(L=H_k/2\) otherwise.
+When 2 is present, the nonforbidden parity is a progression with
+difference 2; in its indices each odd prime still forbids one class.
+Let \(q_S=\prod_{p\in S}p\) and
+\[
+ V_S(L)=\min_{0\le a<q_S}
+ \#\{a<n\le a+L:\gcd(n,q_S)=1\}.
+\]
+CRT translates arbitrary core forbidden classes into zero classes;
+the minimum covers every translation and starting point.
+Compute it over its complete period, retaining complete periods when
+\(L>q_S\). The independent formula for every count is
+\[
+ \sum_{d\mid q_S}\mu_{\rm ar}(d)
+ \left(\floor{(a+L)/d}-\floor{a/d}\right).
+\]
+The largest core period is 1155.
+
+Let \(p_1<p_2<\cdots\) be the primes above 11 and
+\(t=k-\epsilon-|S|\). External primes \(r_j\) obey \(r_j\ge p_j\);
+each forbidden class removes at most \(\ceil{L/p_j}\) positions.
+The complete finite predicate is
+\[
+ V_S(L)-\sum_{j=1}^t\ceil{L/p_j}\ge1
+ \quad\hbox{for every one of the 399 admissible }(k,\epsilon,S).       \tag{A4}\label{eq:sharp-cover-predicate}
+\]
+It holds for the lengths in \eqref{eq:sharp-cover}.
+If the support has fewer than \(k\) primes, add distinct primes above 11;
+avoiding the extended support implies avoidance for the original.
+The proof therefore covers arbitrarily large external primes and all
+choices of forbidden classes. Prime powers do not change these classes.
+The finite enumeration concerns the core period and the case inventory,
+not an alleged finite enumeration of all prime supports.
+
+\section{Uniform lower profiles for the physical CDF}\label{app:sharp-negative}
+This appendix proves the infinite extension of the square and cross
+certificates. It applies to \(w=4,5,6\), with the condition
+\(\rad(M)\notin{\cal E}\) for \(w=5\).
+The admissible \(S\), external lower bounds \(\ell_j\), and omitted
+complete supports are exactly those of \eqref{eq:sharp-Q}.
+Let \(P=\prod_{p\in{\cal P}}p=9699690\), and define
+\[
+ U_S(n)=\sum_{h\mid P_S}\mu_{\rm ar}(h)\floor{n/h},\qquad
+ \rho_S=\prod_{p\in S}(1-1/p),\qquad
+ E_S=\begin{cases}0&S=\varnothing,\\2^{|S|-1}&S\ne\varnothing.\end{cases}
+\]
+For integer \(n\ge0\), \(|U_S(n)-\rho_S n|\le E_S\).
+Only the integer version is used without an extra floor.
+
+\subsection{Square counts and analytic tails}
+For \(R\ge1\) set
+\[
+ T_S(R)=
+ \sum_{k\mid P/P_S}\mu_{\rm ar}(k)\floor{R/k}
+ \sum_{h\mid P_S}\mu_{\rm ar}(h)\floor{R/(kh)} .
+\]
+It counts positive pairs \((a,d)\in[1,R]^2\) with \(d\) a core unit
+and with no common prime from \({\cal P}\).
+With sums over primes, define
+\[
+\begin{split}
+ D_{w,S}(R)={}&T_S(R)-R\sum_{j=1}^{w-|S|}
+ U_S(\floor{R/\ell_j})\\
+ &-\sum_{19<p\le199}\floor{R/p}U_S(\floor{R/p})
+ -\sum_{199<p\le R}\floor{R/p}^2 .
+\end{split}                                                        \tag{A5}\label{eq:sharp-square-count}
+\]
+An external marked prime eliminates denominators \(d=pe\), retaining
+\((e,P_S)=1\), so its loss is at most \(R U_S(\floor{R/\ell_j})\).
+A remaining nonprimitive pair has a common prime above 19; the last
+two sums cover it. The union bound can overcount losses, which is safe.
+The \(R\) pairs with \(d=1\) are always available. Thus the number
+\(V_M(R)\) of primitive full-unit positive pairs is at least
+\(v_{w,S}(R)=\max(R,D_{w,S}(R))\).
+Adding \((0,1)\) and both signs gives \(A_M(R)=1+2V_M(R)\).
+
+For two distinct primitive positive-denominator vectors defining the same
+state, the determinant is a multiple of \(M\).
+In the square its absolute value is at most \(2R^2\).
+Under \(2R^2<M\), it vanishes, and primitiveness plus positive
+denominators forces equality. Conversely every height-\(R\) witness can
+be divided by its ambient gcd, which is a unit modulo \(M\).
+Therefore \(\Prb(R_M\le R)=A_M(R)/M\) in this strict range.
+
+The infinite tail of \eqref{eq:sharp-square-count} has rational coefficients.
+Put
+\[
+ \alpha_S=\rho_S\prod_{p\in{\cal P}\setminus S}(1-p^{-2}),\quad
+ C_S=\sum_{\substack{k\mid P/P_S,\ h\mid P_S\\
+ \mu_{\rm ar}(k)\mu_{\rm ar}(h)=1}}
+ (1/k+1/(kh)).
+\]
+The positive terms use
+\(\floor x\floor y\ge xy-x-y\); the negative terms use the product
+of arguments as an upper bound. Hence \(T_S(R)\ge\alpha_S R^2-C_SR\).
+The numerical premise \(\sum_p p^{-2}<4523/10000\) is itself proved:
+sum all primes through 20000, rounding each reciprocal square up to
+\(10^{-12}\), and add the integer tail bound
+\(\sum_{n>20000}n^{-2}\le1/20000\).
+The resulting rational sum is below \(4523/10000\).
+Let
+\[
+ b_0=\sum_{19<p\le199}p^{-2},\quad e_0=\sum_{19<p\le199}p^{-1},
+ \quad\beta=4523/10000-\sum_{p\le199}p^{-2},\quad o=\sum_j\ell_j^{-1}.
+\]
+Then, for every integer radius,
+\[
+ D_{w,S}(R)\ge\gamma R^2-FR,\quad
+ \gamma=\alpha_S-\rho_S(o+b_0)-\beta,\quad
+ F=C_S+E_S(w-|S|+e_0).                                               \tag{A6}
+\]
+Choose \(c_w=11/50,21/100,37/200\) respectively for \(w=4,5,6\).
+The finite predicate checks \(\gamma>c_w\) in every class, then sets
+\(c=(\gamma+c_w)/2\) and
+\(K=\max(4,\ceil{F/(\gamma-c)})\).
+Equation (A6) proves \(V_M(R)\ge cR^2\) for every \(R\ge K\).
+This is a proof of the entire infinite tail, not an extrapolation of counts.
+
+Use \(a(R)=1+2v_{w,S}(R)\) at all integers \(1\le R<K\),
+and \(a(R)=1+2cR^2\) thereafter.
+The ratio in the latter tail is increasing when \(2cR\ge1\), which is checked
+at \(K\). Its value at \(K\) therefore bounds all later ratios.
+Define
+\[
+ \widetilde h(r)=
+ \begin{cases}
+ 0&r=0,\\
+ \min\left(\frac{1+2cK^2}{(K+1)^2},
+           \min_{r\le R<K}\frac{a(R)}{(R+1)^2}\right)&1\le r<K,\\
+ \frac{1+2cK^2}{(K+1)^2}&r\ge K,
+ \end{cases}
+ \qquad h^{1/2}_{w,S}(r)=10^{-36}\floor{10^{36}\widetilde h(r)}.        \tag{A7}
+\]
+This is a minimum over all future radii, including the analytic tail.
+It is nondecreasing and gives \(A_M(R)/(R+1)^2\ge h(r)\) whenever
+\(R\ge r\). The finite certificate must reconstruct every radius
+before \(K\), not merely selected breakpoints.
+
+\subsection{Cross counts and analytic tails}
+For \(A\in\Z_{\ge0}\), put \(b_A=\floor{A/2}\) and
+\[
+ f_S(A)=(A-b_A)U_S(b_A)+b_AU_S(A),\quad
+ T^\times_S(R)=\sum_{n\mid P/P_S}\mu_{\rm ar}(n)f_S(\floor{R/n}).
+\]
+This is the cross count with core unit denominators and no common core
+prime. The two arms are counted with their intersection removed.
+Dividing by \(n\) preserves the shape because
+\(\floor{\floor{R/2}/n}=\floor{\floor{R/n}/2}\).
+For \(r=\floor{R/2}\) define
+\[
+\begin{split}
+ D^\times_{w,S}(R)={}&T^\times_S(R)
+ -\sum_j[(R-r)U_S(\floor{r/\ell_j})+rU_S(\floor{R/\ell_j})]\\
+ &-\sum_{19<p\le199}f_S(\floor{R/p})
+ -\sum_{199<p\le R}f_\varnothing(\floor{R/p}).
+\end{split}                                                        \tag{A8}
+\]
+Thus \(V^\times_M(R)\ge
+\max(R\unit_{R\ge2},D^\times_{w,S}(R))\).
+At \(R=1\), the positive quadrant is empty, but \((0,1)\) is included
+in \(A^\times_M(R)=1+2V^\times_M(R)\).
+Two cross vectors have determinant of absolute value at most
+\(R^2+r^2\le5R^2/4\). Consequently
+\(\Prb(R_M\le R)\ge A^\times_M(R)/M\) if \(5R^2<4M\).
+This is a lower bound, since the cross is only part of the physical ball.
+For example \(M=5,R=2\) has a collision at the closed boundary, so
+the strict inequality is essential.
+
+For every real \(x\ge0\), direct use of the integer unit count gives
+\[
+ \tfrac34\rho_Sx^2-(\tfrac94\rho_S+E_S)x
+ \le f_S(\floor x)\le\tfrac34\rho_Sx^2+E_Sx .
+\]
+Indeed \(3A^2/4-3A/4\le2Ab_A-b_A^2\le3A^2/4\), and
+\(A^2\ge x^2-2x\) for \(A=\floor x\).
+It follows that
+\[
+ D^\times_{w,S}(R)\ge\gamma^\times R^2-F^\times R,\quad
+ \gamma^\times=\tfrac34\gamma,
+\]
+\[
+ F^\times=
+ (\tfrac94\rho_S+E_S)\sum_{\substack{n\mid P/P_S\\\mu_{\rm ar}(n)=1}}n^{-1}
+ +E_S\sum_{\substack{n\mid P/P_S\\\mu_{\rm ar}(n)=-1}}n^{-1}
+ +E_S(w-|S|+e_0).                                                   \tag{A9}
+\]
+Use baseline \(63/400\) for \(w=5\), \(111/800\) for \(w=6\), average it
+with \(\gamma^\times\), and choose \(K\) exactly as in (A6)--(A7).
+Checking \(\gamma^\times\) exceeds the baseline proves the infinite tail.
+All finite counts before \(K\), the suffix minima and their downward
+rounding then give \(h^{4/5}_{w,S}\) by the same construction.
+
+\subsection{Uniform modulus comparison and integration}
+For \(0<u<\alpha\) let \(R=\floor{\sqrt{uM}}\).
+The strict injectivity condition holds, and
+\((R+1)^2/M>u\). If \(R\ge1\), monotonicity of \(h\) gives the first
+branch of \eqref{eq:sharp-negative-cdf}; if \(R=0\), its right side is zero.
+For \(\alpha\le u\le1\), use \(R=r_\alpha(M)\), for which
+\(R^2<\alpha M\le(R+1)^2\).
+Since \(r_\alpha(M)\ge r_\alpha(Q)\), the second branch follows.
+This pays perfect-square endpoints without extending injectivity there.
+
+The identity \(L(M)=\frac12\int_0^1\Prb(Z_M\le\sqrt u)\,du/u\)
+proves \eqref{eq:sharp-negative-integral}. Changes between \(<\) and
+\(\le\) at isolated jump points do not affect the integral.
+For the square alone, writing \(r=r_{1/2}(Q)\),
+\[
+ I_{4,S}(Q)=\frac1{2Q}\sum_{j=0}^{r-1}(2j+1)h^{1/2}_{4,S}(j)
+ +h^{1/2}_{4,S}(r)\left(\frac14-\frac{r^2}{2Q}+\frac{\log2}{4}\right).
+                                                                    \tag{A10}
+\]
+For the joint profile all breakpoints \(j^2/Q,1/2,4/5\), and any
+line/plateau intersections are rational. On a segment \([l,r]\)
+the maximum has form \(mu+b\), \(m,b\ge0\), and its contribution is
+\[
+ \frac{m(r-l)+b\log(r/l)}2 .                                         \tag{A11}
+\]
+When \(l=0\), \(b=0\) and the logarithm is omitted.
+This provides an exact finite integration rule for each fixed support.
+
+\section{Uniform marked profiles and the excluded supports}
+\label{app:sharp-exclusions}
+
+This appendix gives the analytical contract of the finite profiles and
+the partitions used in the exclusions. Hermite normal form, Gauss
+reduction, the Chinese remainder theorem, M\"obius inversion, Farey
+neighbours, and the classical Jacobsthal inequality are used in their
+usual senses. A finite profile is a collection of witnesses and outward
+bounds satisfying the inequalities below. A recorded successful run,
+without those inequalities and the stated coverage, is not a premise.
+
+\subsection{Signed transfer, including unequal valuations}
+For a squarefree mark \(q\mid M\) define
+\[
+ R_{M,q}(s)=\min_{d>0,(d,q)=1,\ a\equiv sd\ ({\rm mod}\ M)}
+             \max(|a|,d),\qquad
+ \nu_q(M)=\frac1M\sum_s\log R_{M,q}(s)-\frac12\log M .
+\]
+Thus \(\mu(M)=\nu_{\rad M}(M)\). Intermediate marks are relaxations;
+they are not physical means until the full mark is restored.
+For \(C\in\mathrm{GL}_2^+(\mathbb R)\) and a column \(m\bmod q\)
+nonzero modulo every prime of \(q\), put
+\[
+ F_q(C,m)=\min_{n\in\mathbb Z^2,(nm,q)=1}
+                   \log\frac{\|nC\|_\infty}{\sqrt{\det C}}.
+                                                                    \tag{E1}
+\]
+An index-\(K\) sublattice has a unique representative
+\(H=\left(\begin{smallmatrix}a&0\\b&d\end{smallmatrix}\right)\),
+\(ad=K,0\le b<a\). When \(\rad K=q\), retain those matrices whose
+reduction has rank one at each prime of \(q\). Their local kernels
+are the lines in \(\mathbb P^1(\mathbb F_p)\). Each product of local
+kernel lines occurs \(K/q\) times: a line modulo \(p\) has
+\(p^{e-1}\) cyclic lifts at index \(p^e\). For each parent mark
+exactly \(K\) branches satisfy \(Hm\ne0\) at every prime.
+Define \(T_Kf=K^{-1}\sum_{H\ {\rm admitted}}f(HC,Hm)\).
+The finite local transform is
+\(\bigotimes_{p\mid q}(J_{p+1}-I_{p+1})\), with the multiplicity just
+stated. It acts on signed values. Replacing negative entries by zero
+inside this transform would change the proof.
+
+On the physical matrix
+\(C_{L,s}=\left(\begin{smallmatrix}L&0\\s&1\end{smallmatrix}\right)\)
+with \(m=(0,1)^t\), admission forces \(d=1\). Its children are
+exactly \(C_{KL,s+bL}\), \(0\le b<K\). Consequently
+\[
+ \nu_q(KL)=\frac1L\sum_{s=0}^{L-1}(T_KF_q)(C_{L,s},m).
+                                                                    \tag{E2}
+\]
+Iterating the squarefree transfer gives the same identity for \(K=q^k\).
+No coprimality of \(L\) with \(q\) is required. This proves applicability
+to unequal positive valuations and to additional primes in \(L\).
+
+\subsection{Complete geometric profile certificates}
+A shortest Euclidean vector is primitive in its lattice and completes
+to a basis. Gauss reduction, scaling and rotation give
+\[
+ Y(\rho,t)=\begin{pmatrix}\rho&0\\t\rho&1\end{pmatrix},\qquad
+ 0<\rho\le2/\sqrt3,\quad |t|\le1/2 .                                \tag{E3}
+\]
+The rotation and the transformed mark remain in the state; the infinity
+norm does not permit discarding the rotation. On a cell in \((\rho,t)\),
+an admitted integer witness \(n\) in each child has transport
+\((u,v)=nH\), and normalized vector
+\[
+  \frac{(\rho(u+tv),v)\,\mathrm{Rot}(\theta)}{\sqrt{K\rho}}.
+                                                                    \tag{E4}
+\]
+For fixed \(\theta\), each component is affine in \(t\), and in
+\(z=\tfrac12\log\rho\) is \(Ae^z+Be^{-z}\). Its absolute value is
+convex: on each smooth piece its second derivative equals its absolute
+value, and zeros have upward derivative jumps. Therefore the norm is
+bounded by its maximum at the four cell vertices.
+For each branch take the maximum over the four vertices before averaging
+the logarithmic costs over admitted branches; the order cannot in general
+be reversed. For a fixed vector, an active angular log-norm has second derivative
+at least \(-2\), with upward derivative jumps. Nodes
+\(\theta_i=\arctan(i/A)\), \(-A\le i\le A\), cover a period;
+successive gaps are at most \(1/A\). The value between nodes is at
+most the larger endpoint value plus \(1/(4A^2)\).
+This angular bound survives maxima and averages with nonnegative
+weights summing to one, including the branchwise vertex maxima.
+
+These bounds have an exact finite checker. At a vertex
+\(\rho=x/D,t=j/40,\theta=\arctan(n/A)\), the logarithm in (E4) is
+\[
+\begin{split}
+ &\log\max(|U|,|V|)\\
+ &\quad-\tfrac12\{\log1600+\log D+\log(A^2+n^2)+\log K+\log x\},\\
+ U&=Ax(40u+jv)+40Dnv,\qquad
+ V=-nx(40u+jv)+40DAv .
+\end{split}                                                        \tag{E5}
+\]
+Thus every branch witness, full-mark coprimality, vertex and angular
+node can be checked with integers and outward logarithms.
+At every angular node the cell cap must dominate the admitted-branch
+average of the individual vertex maxima, plus the interpolation cost. An aggregate cell
+maximum or a sampled audit alone does not establish this predicate.
+
+Below the first radial endpoint \(\rho_0\), CRT gives child coefficients
+in \([0,q-1]^2\). After transport their coefficients have absolute
+values at most \(2(q-1)K\) and \((q-1)K\). Substitution in (E4) gives
+\[
+ T_KF_q\le\log(q-1)+\tfrac12\log K-\tfrac12\log\rho+\tfrac52\rho.
+                                                                    \tag{E6}
+\]
+Take the maximum over marks, shears and angles, and the running maximum
+to the right of the cell caps. The resulting radial step heights
+\(b_0\ge\cdots\ge b_{J-1}\), upper endpoints \(r_j\), and (E6) give
+a uniform mean bound
+\[
+\begin{split}
+ A(q,K)={}&b_{J-1}+\sum_{j=0}^{J-2}(b_j-b_{j+1})\min(1,\alpha r_j)\\
+ &+\alpha\rho_0\left(\max(c-b_0,0)+\tfrac12\right),\\
+ c={}&\log(q-1)+\tfrac12\log K-\tfrac12\log\rho_0+\tfrac52\rho_0 .
+\end{split}                                                        \tag{E7}
+\]
+Here \(\alpha=3/2\) by the primitive shortest-vector bound above;
+\(\mathbb E\log(\rho_0/\rho)_+\le\alpha\rho_0\) proves the cusp cost.
+Earlier profiles can use the weaker \(\alpha=29/14\): counting all
+integer incidences in the disk gives at most
+\(\sum_{d=1}^{\floor Y}2\sqrt{Y^2-d^2}
+ +\floor Y(\floor Y+1)/2\le(\pi+1)Y^2/2<29Y^2/14\).
+The trapezoid estimate and \(2\sqrt z\le z+1\),
+\(z=Y^2-\floor Y^2\), prove the middle inequality.
+The larger cusp coefficient \(4\rho\) is also permissible.
+Equations (E2)--(E7), rather than observations at finitely many moduli,
+prove \(\nu_q(M)\le A(q,K)\) for every \(K\mid M\).
+
+Some iterated profiles use directional interpolation instead of
+retaining every descendant vector. The maintained inequality is
+\[
+ f(CA,m)\le b+\sum_j w_j\log\frac{\|u_jA\|_\infty}{\sqrt{\det A}}
+                  +e\,\mathrm{cond}(A)^2,
+ \quad w_j\ge0,\quad\sum_jw_j=1 .                                  \tag{E8}
+\]
+Directions are consecutive points on a square perimeter with mesh
+\(1/T\). Linear interpolation costs at most
+\(t(1-t)\mathrm{cond}(A)^2/T^2\). Rounding directional mass by total
+variation \(\eta\) costs at most \(\eta\mathrm{cond}(A)^2\), since
+the oscillation is at most \(\log(2\mathrm{cond}(A))\le
+\mathrm{cond}(A)^2\). Transfer each admitted branch of (E8), retain
+all positive masses, and add every propagated error. The condition
+bound on a cell is checked at its vertices: the trace divided by the
+determinant has form \(a(t)\rho+b/\rho\) with \(a\) convex and \(b>0\).
+If \(k/10^9\) bounds the squared condition number, the exact test is
+\[
+ (k^2+10^{18})d^2\ge k10^9(\operatorname{tr}^2-2d^2),\quad k\ge10^9.
+                                                                    \tag{E9}
+\]
+Outside a directional grid, choose a shortest vector \(u\) in a child
+of determinant \(D\), set \(\nu=\|u\|_2^2\), and let \(K_0\) be a
+coefficient-height bound. A valid fallback is
+\[
+\begin{split}
+ &\log(q-1)+\tfrac k2\log q+\tfrac12\log D+\log K_0-\log\nu\\
+ &\quad+\log\frac{\|(u^\perp/K_0)A\|_\infty}{\sqrt{\det A}}
+       +\frac{4\nu}{D}\mathrm{cond}(A)^2 .
+\end{split}                                                        \tag{E10}
+\]
+Its coefficients follow from the same CRT completion as the cusp
+bound. Substitution checks the inequality before the logarithm.
+Equations (E8)--(E10) are part of the finite certificate, with every
+route and its rounding error retained. Finally (E7) integrates the
+profile, using its declared \(\alpha\) and cusp coefficient.
+
+The residual three-prime profiles also admit a Euclidean variant.
+Replace the infinity norm in (E1) by the Euclidean norm, which gives
+an upper bound for (E1). The squared transported norm is
+\(\rho(u+tv)^2/K+v^2/(K\rho)\), separately convex in \(\rho,t\).
+The four vertices suffice and rotation disappears. The signed transfer,
+mark tests, cusp and radial integration remain mandatory.
+
+\subsection{Restoring a prime: a uniform analytical lemma}
+Let \(p\nmid q\), \(p\mid M\), and choose a deterministic minimum
+\(u=(a,d)\) marked \(q\), of height \(H\). If \(p\mid d\), then
+\(p\mid a\). The minimum is primitive in its lattice coordinates;
+dividing a lattice multiple would preserve the mark and lower its
+height. Complete it to a basis \(u,v=(b,e)\) of determinant \(M\), with
+\(\gcd(d,e)=1\), and write
+\(v=\tau u+Mu^\perp/(a^2+d^2)\), \(|\tau|\le1/2\).
+With \(\eta=ed^{-1}\bmod q\), find \(1\le i\le r<p\) and \(j\)
+such that \(\gcd(j+i\eta,q)=1\), \(|j+i\tau|\le1\).
+Then \(ju+iv\) has a full-unit denominator modulo \(qp\).
+For two primes in \(q\), \(r=2\) works: try \((1,0)\),
+\((1,-\varepsilon)\), then \((2,-\varepsilon)\),
+where \(\varepsilon=1\) for \(\tau\ge0\) and \(-1\) otherwise;
+in the last case the two
+obstructions are at different primes. For three odd primes, \(r=3\)
+works: if \(\eta\) is not a unit, a prime dividing it never obstructs
+\(i\eta-\varepsilon\), and each of the other two primes obstructs at
+most one of \(i=1,2,3\). For \(q=2uv\), \(u,v\) odd primes, \(r=4\)
+works. If \(\eta\) is even, the three odd numbers
+\(\eta-1,2\eta-1,3\eta-1\) are pairwise coprime. If \(\eta\) is an
+odd nonunit, one odd prime dividing it never obstructs
+\(2\eta-1,4\eta-1\), while the other cannot obstruct both.
+Reflect \(\eta,\tau\) for a negative shear. A unit uses \((1,0)\).
+These arguments supply the entire interval of shears, including zero.
+
+The coarse bound is \(R_{M,qp}\le H+rM/H\).
+A sharper bound, used for the later four-prime families, is
+\[
+ \log\frac{R_{M,qp}}{H}\le h_r(X),\quad X=H^2/M,\qquad
+ h_r(X)=\begin{cases}
+ \tfrac12\log(1+r^2/X^2),&X\le3r/4,\\
+ \log(1+r/(2X)),&X\ge3r/4.
+ \end{cases}                                                       \tag{E11}
+\]
+Indeed, after expressing a repaired component in the basis \(u,u^\perp\),
+its ratio to \(H\) is at most
+\(\max(1+v\xi/(1+\xi^2),\xi+v/(1+\xi^2))\),
+\(0\le\xi\le1\), \(v=r/X\). These expressions are bounded by \(1+v/2\) for
+\(v\le4/3\), and by \(\sqrt{1+v^2}\) otherwise.
+
+Write \(u_q=\varphi(q)/q\),
+\(U_q(A)=\#\{1\le e\le A:(e,q)=1\}\),
+\(S_q(A)=\sum_{e\le A,(e,q)=1}e\).
+For \(A=qn+j\), periodicity reduces
+\[
+ 2AU_q(A)+S_q(A)\le a_qA^2+c_qA,\qquad a_q=5u_q/2                 \tag{E12}
+\]
+to the two coefficient inequalities
+\(3\epsilon_j\le c_q\) and
+\(2jU_q(j)+S_q(j)-a_qj^2\le c_qj\),
+\(\epsilon_j=U_q(j)-u_qj\), for every residue \(j\).
+For a bad minimum, \(a=pb,d=pe\). With
+\(A=\floor{\sqrt{MX}/p}\), \(g=\gcd(e,M/p)\), the congruence has
+\(pg\) solutions if \(g\mid b\), and zero otherwise. Hence the union
+of all bad incidences is at most
+\(p\{2AU_q(A)+S_q(A)\}\). The numerator zero is retained. It follows
+for all real \(x>0\) that
+\[
+ \Prb(p\mid d_s,H_s^2/M\le x)
+ \le\min(1,a_qx/p+c_q\sqrt{x/M}).                                  \tag{E13}
+\]
+Discarding the mark gives the weaker \(\min(1,3x/p)\).
+No distributional independence of the minima is assumed.
+
+For \(\Phi(y)=\log(1+y)+y\log(1+1/y)\), the coarse repair integrates
+to
+\[
+ 0\le\nu_{qp}(M)-\nu_q(M)
+ \le\Phi(ra_q/p)+c_q\pi\sqrt r/\sqrt M .                            \tag{E14}
+\]
+For (E11), when \(ra_q/p\le4/3\), the stronger alternatives are
+\[
+\begin{split}
+ E_{\rm per}(q,p,M)&=
+ \Phi(ra_q/(2p))+\frac{ra_qK_*}{p}+\frac{c_qJ_r}{\sqrt M},\\
+ E_{\rm free}(p)&=
+ \Phi(3r/(2p))+\frac{3rK_*}{p},\\
+ K_*&=\arctan(3/4)-\tfrac12\log(5/2)<46339/250000,\quad
+ J_r=\sqrt{r/4}\,J_4,\quad J_4<51/10.
+\end{split}                                                        \tag{E15}
+\]
+These follow by integrating the nonnegative density against \(-h_r'\):
+\(\int_0^\infty\min(1,ax)(-h_r'(x))dx=
+\Phi(ra/2)+raK_*\).
+For the square-root error,
+\[
+ J_4=4\int_0^{\sqrt3/2}\frac{dt}{1+t^4}
+       +4\int_0^{2/\sqrt3}\frac{dt}{t^2+2}.
+\]
+The alternating expansions through degrees \(80\) and \(80\),
+with the next-term bounds and rational upper endpoints
+\(866026/10^6,1154701/10^6\), prove the quoted rational bound.
+The arctangent alternating series and the logarithm series given below
+certify \(K_*\). These are finite scalar inequalities extending the
+analytical integrals; they are not sampled repairs.
+
+\subsection{Four-prime families and eleven five-prime exceptions}
+For every row in the following table the prime parameter satisfies
+\(p\nmid q\); all positive valuations and all lengths are allowed.
+The first gate covers \(p\ge P\) at every length, the second covers
+\(p\ge p_1,N\ge2\), and the third covers
+\(p\ge p_1,B\ge L\) at every length. Smaller primes are covered by
+full marked profiles at the declared indices and their finite physical
+complements. The last column counts the complete complement at
+\(N=1,p_1\le p<P,B<L\); the two summands are the analytical rows and
+the physical witness rows.
+\[
+\begin{array}{c|r|r|r|r|r}
+ q&p_{\min}&P&p_1&L&\text{finite complement}\\\hline
+ 30&11&20000&211&4000000&24089+8811\\
+ 42&11&3400&107&4000000&10028+2269\\
+ 70&11&1000&73&3000000&2855+663\\
+ 66&13&350&47&1000000&1118+357\\
+ 105&11&125&31&1000000&270+117\\
+ 78&17&200&41&250000&304+182\\
+ 110&13&160&37&200000&185+107\\
+ 102&19&160&37&200000&188+117\\
+ 154&13&120&37&200000&102+46\\
+ 165&13&72&29&150000&43+25\\
+ 130&17&125&37&180000&105+59\\
+ 114&23&150&37&200000&177+90
+\end{array}                                                        \tag{E16}
+\]
+Here are the core profiles needed for those gates; \(K:a\) means
+\(K\mid M\Rightarrow\nu_q(M)<a\), proved by (E1)--(E10).
+\[
+\begin{array}{c|l}
+ q& K:a\\\hline
+30&30:7/25,\quad900:61/500\\
+42&42:107/500,\quad1764:67/1000\\
+70&70:7/50,\quad4900:0\\
+66&66:127/1000,\quad4356:16/1000\\
+105&105:6/125,\quad11025:-2/25\\
+78&78:3/40,\quad156:7/100,\quad6084:1/250\\
+110&110:17/500,\quad220:23/1000,\quad12100:-6/125\\
+102&102:6/125,\quad204:9/200,\quad10404:-1/100\\
+154&154:1/500,\quad308:-7/500,\quad1078:-49/1000,\quad1694:-61/1000\\
+165&165:-21/500,\quad495:-31/500,\quad825:-19/250,\quad1815:-2/25\\
+130&130:7/500,\quad260:3/1000,\quad650:-7/400,\quad1690:-21/500\\
+114&114:1/25,\quad228:31/1000,\quad342:3/100,\quad2166:-1/200
+\end{array}                                                        \tag{E17}
+\]
+For \(N\ge2\), divisibility by an index such as \(825\) or \(1690\)
+follows from the two positive valuations at its squared prime; it does
+not require equal valuations. At \(N=1\) additional mixed indices are
+used only when they actually divide \(M=B\).
+Every gate substitutes its smallest permitted \(p,M,B\) into
+\((a+E(q,p,M))/\log B\). The numerator bounds decrease in \(p,M\)
+and \(\log B\) increases. For the early \(30\) and \(42\) gates use
+(E14); for the other gates use (E15), with (E12) checked for the actual
+core. The particularly useful explicit early cost is
+\[
+ E(30,p,M)=\Phi(8/(3p))+7304/(399\sqrt M),
+ \quad a_{30}=2/3,\quad c_{30}=166/57 .                             \tag{E18}
+\]
+The periodic coefficients in (E12), the gate comparisons, and all
+small-prime marked profiles form finite parts of the certificate.
+Their full marks are indispensable.
+
+For clarity the small-prime intervals in (E16) are respectively
+\(11\le p\le31\) and \(37\le p<211\) for core \(30\),
+\(11\le p\le103\) for \(42\), \(11\le p\le71\) for \(70\),
+\(13\le p\le43\) for \(66\), \(11\le p\le29\) for \(105\),
+\(17\le p\le37\) for \(78\), \(13\le p\le31\) for \(110\),
+\(19\le p\le31\) for \(102\), \(13\le p\le31\) for \(154\),
+\(13\le p\le23\) for \(165\), \(17\le p\le31\) for \(130\), and
+\(23\le p\le31\) for \(114\). These are intervals of primes, not of
+all integers. Profile bounds at \(K=q p\), or at its declared repeated
+or mixed index, cover the tails in \(B,N\); every smaller positive
+power product is in the finite witness complement. In the \(30\)
+row the seven early primes have complete correction bound
+\(233/10000\), and each of the 35 primes \(37\le p<211\) has
+\(\mu(M)<11/100\) for every valuation. The special prime \(p=7\)
+is the support \(210\), treated separately below.
+
+The eleven five-prime radicals in the main text are handled as follows.
+For \(2310\), reintegrating its complete radial profile with
+\(\alpha=3/2\) gives a correction bound below
+\(0.022928430661275\). The \(K=q\) profile covers \(N=1,B\ge100000\);
+the remaining 30 bases are physically certified, and \(K=6q\)
+covers every \(N\ge2\). For \(2730\), the \(K=q\) profile covers
+\(N=1,B\ge20000\), the seven bases \(q,2q,\ldots,7q\) are physically
+certified, and \(K=6q\) covers every \(N\ge2\), giving a correction
+bound below \(0.023441723318271\).
+For \(3570,3990\), use the \(K=2q\) profile whenever
+\(Nv_2(B)\ge2\). Otherwise \(N=1,v_2(B)=1\): the base \(q\) is
+physically certified, and every larger such base is at least \(3q\),
+where the \(K=q\) profile applies. The correction bounds are below
+\(0.022646842649968,0.022785731780385\), respectively.
+For each of \(4290,4830,5610,6006,6090,6270,6510\), a single
+\(K=q\) profile satisfies \(\max(0,A(q,q))/\log q<2/85\), so covers
+all positive valuations and lengths directly. This includes the
+mark \(114\) insertion family and its full five-prime exception
+\(6510\), without identifying their two different observables.
+
+\subsection{Finite physical witnesses and the support 210}
+For each finite modulus list use all representatives
+\(0\le s\le\floor{M/2}\). Verify
+\[
+ d_s>0,\quad\gcd(d_s,M)=1,\quad a_s\equiv sd_s\pmod M .             \tag{E19}
+\]
+Assign weight one to zero and to \(M/2\) when \(M\) is even, and two
+otherwise. These weights sum exactly to \(M\), by the admissible
+symmetry \((a,d)\mapsto(-a,d)\). For \(H_s=\max(|a_s|,d_s)\),
+\[
+ \mu(M)\le\frac1M\sum_s w_s\log H_s-\tfrac12\log M .               \tag{E20}
+\]
+The domain is enumerated both by positive prime powers and independently
+by factorization of the bounded integers. All records, order, counts,
+weights and the exact end of the witness stream are checked.
+Minimality is unnecessary for an upper bound. A histogram without
+verified admissible witnesses is insufficient.
+
+For radical \(210\), the profile bounds are
+\(\mu(M)<7/25\) if \(210\mid M\),
+\(\mu(M)<27/200\) if \(210^2\mid M\), and
+\(\mu(M)<61/500\) if \(210^3\mid M\).
+The first covers \(B\ge150000\) at every length. Below that threshold,
+\(N=1\) has 121 positive-power bases, including \(210\).
+For \(B\ne210,N\ge2\), \(B\ge420\) and the second profile suffices.
+For \(B=210,N\ge3\), the third suffices. The remaining square
+\(B=210,N=2\) has physical upper bound
+\(1413552758799750727/22050000000000000000\).
+Only the candidate \((210,1)\) needs exact minima: its product is
+\[
+ P=2^{76}3^{57}5^{25}7^{21}11^{24}13^{26}17^{20}19^{26}
+       23^{20}29^4 31^4 37^8 41^2 53^2,
+ \quad c_0=\frac{\log P}{210\log210}-\frac12 .                       \tag{E21}
+\]
+The denominator-one bound \(R\le105\) reduces exact minimality to
+the finite full-unit denominators up to \(105\); all 210 states are
+checked. The integer inequality \(P^{170}>210^{18690}\) proves
+\(c_0>2/85\). Its outward enclosure is the one in the main text.
+Together the profiles and physical complement show that the entire
+radical-\(210\) sector has correction at most \(c_0\). This sector
+statement does not assert attainment of the global supremum.
+
+\subsection{The complete three-prime exclusion}
+The prime-power and two-prime theorems already proved in this paper
+give nonpositive correction in those sectors. For three primes, the
+following analytical formulas and finite complements give correction
+at most \(2/85\). We spell out the formulas to distinguish complete
+means from partial tail estimates.
+
+First consider \(\rad M=6p\). For the primes \(5\le p\le113\),
+33 complete marked profiles give the following mean bounds, with
+index \((6p)^k\) in the column labelled \(k\):
+\[
+\begin{array}{c|ccc|ll}
+ p&k=1&k=2&k=3&\text{length-one cutoff}&\text{other finite cases}\\\hline
+5&285/1000&1/8&31/500&B\ge200000&N=2,B<210\\
+7&107/500&67/1000&&B\ge10000&\\
+11&129/1000&19/1000&&B\ge250&\\
+13&21/200&7/1000&&B\ge90&\\
+17\le p\le113&7/100&&&B\ge6p&
+\end{array}                                                        \tag{E22}
+\]
+Each prime in the last line is checked separately. The finite
+complement consists of 157,43,3,1 length-one bases in the first four
+lines, and the six length-two bases \(30,60,90,120,150,180\).
+These are 210 base--length pairs and 204 different moduli. Applying
+(E19)--(E20) with the actual \(\log B\) gives a common correction
+bound below \(117/5000<2/85\). Every length and positive valuation is
+covered by either a row of (E22) or that complement.
+
+For \(p\ge127\), a direct complete-mean formula is
+\[
+\begin{split}
+ \mu(M)<{}&\Phi(5/(3p))-1/200+17/(30p)\\
+ &+\frac{20+(31/20)\log A}{A}
+   +\frac{13/4+(4/9)\log A}{A^2},\qquad A=\sqrt M .
+\end{split}                                                        \tag{E23}
+\]
+Here is an explicit derivation contract. Let \(P_m(T)\) count positive
+primitive \(a,d\le T\) with \((d,m)=1\), and put
+\(\alpha_0=1/\zeta(2),\ell=\log2,\beta=3-2\sqrt2\).
+M\"obius inversion and the period-six unit count give
+\[
+ |P_6(T)-\alpha_0T^2/2|\le4T/3+(T/3)\log T,
+ \quad P_{6p}(T)\ge P_6(T)-T^2/(3p)-2T/3 .                         \tag{E24}
+\]
+For \(T^2\le M\), signed primitive witnesses give
+\(C_6(T)\ge1+2P_{6p}(T)-J(T)\), where \(J=0\) if \(2T^2\le M\)
+and otherwise
+\(J\le L^2/18+8L/9+16/9\), \(L=2T-M/T\).
+This follows from the determinant argument and the interval bound
+\(h/3+4/3\) for unit denominators in the triangular deficit region.
+For \(T^2>2M\), the Farey bound (E27) below applies with \(q=6\).
+Its cancelled-denominator sum satisfies
+\[
+ \left|\sum_{d\le y,(d,6)>1}\varphi(d)/d-\alpha_0 y/2\right|
+ \le1+(2/9)\log y\quad(y\ge1).
+\]
+Indeed, its exact M\"obius expansion has bracket
+\(\tfrac12\floor{y/(2g)}+\tfrac23\floor{y/(3g)}
+-\tfrac56\floor{y/(6g)}\), whose discrepancy from \(y/(3g)\)
+lies in \([-2/3,1/3]\) over every real period. The period-six
+harmonic and reciprocal-square tails give the stated error.
+Integrate the CDF below \(A\), its plateau from \(A\) to \(\sqrt2A\),
+and the survival above \(\sqrt2A\), retaining the initial discrete
+interval. Add (E14) with \(r=2,a_6=5/6,c_6=13/6\).
+The negative constant before the costs of the third prime is
+\(\alpha_0(11/16+\ell/2)-1/3-5\ell/12>1/200\).
+The coefficients of \(A^{-1},A^{-1}\log A,A^{-2}\) are respectively
+less than \(20,31/20,13/4\); the last logarithmic coefficient is
+\(4/9\), and the extra central loss is
+\((1+\ell)/(3p)<17/(30p)\). This proves (E23), with none of the
+third-prime central loss discarded.
+For \(M\ge150000\), evaluate the decreasing bound at \(p=127,A=387\)
+to obtain \(2085787481/14265497250<3/20\).
+Below \(150000\), all 8816 positive-power moduli are enumerated;
+6397 pass (E23) and 2419 pass (E20) with bound \(3/20\).
+Thus every \(p\ge127\) has \(\mu(M)<3/20\), giving correction
+\(<3/(20\log762)<2/85\). There is no prime between 113 and 127.
+
+For the other triples write \(r<s<p\), \(q=rs\ne6\), \(Q=qp\).
+For each mark \(m\in\{q,Q\}\) define
+\[
+\begin{gathered}
+ u_m=\varphi(m)/m,\quad \rho_m=\prod_{l\mid m}l/(l+1),\quad
+ \epsilon_j=U_m(j)-u_mj,\quad0\le j<m,\\
+ D_m^+=\max_j\epsilon_j,\quad D_m^-=u_m-\min_j\epsilon_j,\quad
+ I_m=D_m^++D_m^-,\\
+ K_m=\max(D_m^+,2u_m-\min_j\epsilon_j,u_m).
+\end{gathered}
+\]
+Choose \(h_m\) to dominate both
+\(\max_{1\le n\le16}(\sum_{j\le n,(j,m)=1}1/j-u_m\log n)\) and
+\(\sum_{j\le16,(j,m)=1}1/j-u_m\log16
+ +(16u_m-U_m(16)+D_m^+)/16\).
+Partial summation proves
+\(\sum_{j\le T,(j,m)=1}1/j\le h_m+u_m\log T\) for every real \(T\ge1\).
+Periodic endpoint bounds give
+\(|\floor x U_m(\floor x)-u_mx^2|\le K_mx\).
+M\"obius inversion and the absolutely convergent Euler product then give
+\[
+ |P_m(T)-\alpha_0\rho_mT^2|
+ \le(K_mh_m+u_m)T+K_mu_mT\log T .                                  \tag{E25}
+\]
+Indeed the exact sum is
+\(\sum_{g\le T,(g,m)=1}\mu_{\rm ar}(g)
+ \floor{T/g}U_m(\floor{T/g})\);
+the harmonic bound pays the floor errors and the reciprocal-square
+tail costs \(u_mT\). The leading coefficient is
+\(u_m\sum_{(g,m)=1}\mu_{\rm ar}(g)/g^2=\alpha_0\rho_m\).
+
+For \(T^2\le M\), complete witnesses give
+\[
+ C_q(T)\ge C_Q(T)\ge1+2P_Q(T)-J_M(T),\quad
+ J_M(T)\le u_Q^2L^2/2+2u_QI_QL+I_Q^2                             \tag{E26}
+\]
+when \(2T^2>M\), and \(J=0\) otherwise. Same-sign determinants are
+strictly smaller than \(M\). Opposite signs collide only when
+\(af+ed=M\); for fixed unit denominators \(d,f\), the numerator
+window has length strictly less than one progression step because
+\(T(d+f)-M-df=T^2-M-(T-d)(T-f)<0\).
+At \(T^2=M\), unit denominators are smaller than \(T\), so the strict
+inequality still holds. The deficits lie in \(x+y\le L\). Applying
+the interval bound \(u_Qh+I_Q\) twice gives (E26).
+One may alternatively use
+\(P_Q(T)\ge P_q(T)-u_qT^2/p-D_q^+T\) and the weaker collision
+bound with \(u_q,I_q\); this will be used for large \(p\).
+
+For the relaxed two-prime mark and \(T^2>2M\),
+\[
+ M-C_q(T)\le\sum_{d<M/T,(d,q)>1}\varphi(d)
+       \left(1+\frac{2(M-Td)}{d(T-2d)}\right).                     \tag{E27}
+\]
+To prove this, consecutive Farey fractions have determinant one and
+denominator sum greater than \(T\). These properties follow by
+mediant insertion; a fraction between a determinant-one pair has
+denominator at least their sum. A unit centre \(a/d\) covers
+\(|x-a/d|\le T/(Md)\). If both adjacent denominators are nonunit,
+their coprimality makes their two prime obstructions complementary;
+their difference is a unit. Thus every uncovered state is next to a
+cancelled centre with \(d<M/T<T/2\). The neighbour, or its difference
+with that centre, has unit denominator greater than \(T-2d\).
+The resulting open hole has total length at most
+\(2(M-Td)/(d(T-2d))\) in state coordinates. Each hole contains at
+most its length plus one integers, and there are \(\varphi(d)\)
+centres of denominator \(d\). This proves (E27), including the
+indispensable integer atom. This Farey argument is restricted to the
+two-prime mark, not extended to an arbitrary mark by analogy.
+
+Set \(a_r=1-1/r,a_s=1-1/s,a_q=1-1/q\),
+\(c_q'=a_r/r+a_s/s-a_q/q\), and
+\[
+\begin{gathered}
+ W(y)=a_r\floor{y/r}+a_s\floor{y/s}-a_q\floor{y/q}-c_q'y,\\
+ D_W=\max_{0\le j<q}(|W(j)|,|W(j)-c_q'|),\quad
+ e_0=D_Wh_q+2c_q',\quad e_1=D_Wu_q,\quad
+ \theta=\alpha_0(1-\rho_q).
+\end{gathered}
+\]
+Expanding \(\varphi(d)/d\) by M\"obius gives the exact bracket
+\(a_r\floor{y/(rg)}+a_s\floor{y/(sg)}-a_q\floor{y/(qg)}\)
+in \(\sum_{(g,q)=1}\mu_{\rm ar}(g)/g\).
+The periodic bound, harmonic estimate and
+\(y\sum_{g>y}g^{-2}<2\) prove cancelled density error
+\(E(y)=e_0+e_1\log y\) for \(y\ge1\), and \(E=e_0\) below one.
+Partial summation in (E27) gives, \(t=T/\sqrt M>\sqrt2\),
+\[
+ \frac{M-C_q(T)}M\le V(t)+4E(M/T)/T,\quad
+ V(t)=\theta\sum_{j\ge1}\frac{(2/t^2)^j}{j(j+1)}+\frac{\theta}{2t^2}.
+\]
+The positive series has \(V(\sqrt2)=5\theta/4\) and
+\(\int_{\sqrt2}^\infty V(t)dt/t=(1-\rho_q)/2-3\theta/8\), by
+\(\sum_{j\ge1}1/[j^2(j+1)]=\zeta(2)-1\).
+
+Let \(b_q\) be the least nonnegative coefficient certified by (E12).
+Define, with \(u=u_Q,I=I_Q,c=2\alpha_0\rho_Q\),
+\(E_0=2(K_Qh_Q+u),E_1=2K_Qu\),
+\[
+\begin{split}
+ \Lambda_{\rm full}&=\ell/2+(1-\rho_q)/2-3\theta/8
+       -\alpha_0\rho_Q(1+\ell)+3(1-\ell)u_Q^2/4+\Phi(5u_q/p),\\
+ A_0&=c(1+\ell)+E_0(1+\ell/2)+2uI\beta+\ell uI
+          +(1+5\theta/4+4e_0)/\sqrt2+b_q\pi\sqrt2,\\
+ A_1&=E_1(1+\ell/2)+4e_1/\sqrt2,\quad
+ A_2=I^2\ell+2e_0,\quad A_3=2e_1 .
+\end{split}
+\]
+The complete-mean bound is
+\[
+ \mu(M)\le\Lambda_{\rm full}
+    +(A_0+A_1\log A)/A+(A_2+A_3\log A)/A^2 .                        \tag{E28}
+\]
+For verification of the integration, write \(\nu_q=-D+P_{\rm mid}+P_{\rm far}\).
+Equations (E25)--(E26) give
+\[
+\begin{split}
+ D&\ge c/2-u^2(3/4-\ell)
+ -(c+E_0+E_1\log A+2uI\beta)/A-I^2\ell/(2A^2),\\
+ P_{\rm mid}&\le(1-c+u^2/2)\ell/2
+ +\ell(2c+E_0+E_1\log A+2uI)/(2A)+I^2\ell/(2A^2),\\
+ P_{\rm far}&\le(1-\rho_q)/2-3\theta/8
+ +(1+5\theta/4+4E(A))/(\sqrt2A)+2E(A)/A^2.
+\end{split}
+\]
+Use \(\int_1^A\floor x^2dx/x\ge A^2/2-A\), proved by summing
+\(n^2\log(1+1/n)\ge n-1/2\); the last partial interval has remaining
+margin \(1/2+t-3t^2/2\ge0\), \(0\le t\le1\).
+Collision integrals are \(A^2(3/2-2\ell)\) and \(A\beta\).
+The far sum starts at \(\floor{\sqrt{2M}}+1\); the first interval
+costs \(1/(\sqrt2A)\), and \(\sum_{T\ge L}T^{-2}\le L^{-1}+L^{-2}\).
+Adding these three bounds and (E14) with \(r=2\) proves (E28).
+
+Using the alternative centre after (E26) gives another bound of the
+same form, with
+\[
+\begin{split}
+ \Lambda_{r,s}(p)&=T_0(r,s)+\Phi(5u_q/p)+u_q(1+\ell)/p,\\
+ T_0&=\ell/2+1/2-3\alpha_0/8
+ -\rho_q\{\alpha_0(5/8+\ell)+1/2\}+3(1-\ell)u_q^2/4 .
+\end{split}
+\]
+Its error coefficients are the preceding \(A_i\) with
+\(u,I,c\) replaced by \(u_q,I_q,2\alpha_0\rho_q\), and
+\(E_0=2(K_qh_q+u_q+D_q^+)\), \(E_1=2K_qu_q\).
+For \(p\ge53\), \(\Lambda_{r,s}(p)\le\Lambda_{2,5}(p)\).
+To check this analytical domination set \(x=1/r,y=1/s\), so
+\(0\le x\le1/2,0\le y\le1/5,u_q\ge2/5\).
+With \(K_0=\alpha_0(5/8+\ell)+1/2\),
+\(C_0=3(1-\ell)/4\), the normalized derivative of \(T_0\) is at
+least \(K_0/(1+x)^2-2C_0(1-x)\ge4K_0/9-C_0\).
+The other terms cost at most
+\((5/53)\log(55/2)+(1+\ell)/53\), strictly smaller than that lower
+bound. The same argument applies to \(y\).
+The universal periodic bounds
+\(D^\pm\le2,I\le4,K\le3,b_q\le8,D_W\le2,c_q'<1/2\)
+therefore imply
+\[
+ \mu(M)<\Lambda_{2,5}(p)
+       +(70+14\log A)/A+(18+4\log A)/A^2 .                         \tag{E29}
+\]
+For example \(\epsilon_j=\{j/r\}+\{j/s\}-\{j/q\}\in(-1,2)\)
+gives the discrepancy bounds, and partial summation gives \(b_q\le8\).
+All error functions decrease for \(A\ge1\).
+At \(p=53,A=1000\), (E29) is below \(0.275\), whereas
+\((2/85)\log10^6>0.325\). Thus radical at least \(10^6\) is covered.
+Below that radical threshold, 855 pairs \((r,s)\) have possible
+third primes. Each pair has a finite scalar \(p_{\rm cut}\) where
+the pair-specific bound is less than \((2/85)\log(rsp)\).
+Decreasing numerators and increasing logarithms cover every larger
+prime. The remaining 4193 supports have modulus cutoffs at most
+1085440; below them, 785 moduli pass the analytical bound and 7590
+pass (E20) with negative mean. This covers all \(p\ge53\), all
+valuations and all lengths, without dividing by \(\log M\).
+
+The remaining 442 triples have primes at most 47 and omit the pair
+\(2,3\). Of these, 353 satisfy the finite rational test
+\(\Lambda_{\rm full}^{+}<(2/85)(\log Q)^{-}\).
+For each, start at \(Q\) and double a scalar modulus cutoff until
+(E28) passes the same inequality. Verify the outward coefficients
+\(A_0\ge A_1,2A_2\ge A_3\), which prove decreasing errors.
+The largest cutoff is \(74490839040\). All positive-power products
+below cutoff are enumerated by both nested powers and a priority
+queue. There are 4117 moduli: 2454 pass (E28) and 1663 pass (E20)
+with negative mean. For a modulus \(M=\prod p_i^{e_i}\), write
+\(g=\gcd_i e_i\), \(b_*(M)=\prod p_i^{e_i/g}\).
+Every representation \(M=B^N\) has \(N\mid g\) and
+\(B=b_*^{g/N}\), so \(\log B\ge\log b_*\). The analytical rows
+are tested against \((2/85)\log b_*\), covering all their
+base--length representations. There are 4227 such representations.
+
+For the remaining 89 supports, the Euclidean variant of (E1)--(E7)
+gives a first-index profile below \((2/85)\log q\) for 85 supports.
+The other four have the following two mean caps:
+\[
+\begin{array}{c|cc|r|r}
+ q&A(q,q)^+&A(q,q^2)^+&N=1\ \text{cutoff}&\text{finite bases}\\\hline
+70&0.218699709338489&0.088846297509591&12000&28\\
+110&0.152189312537973&0.052036789658452&700&4\\
+130&0.130742618687066&0.041769725542389&300&2\\
+105&0.130906519634302&0.016180460800994&300&1
+\end{array}                                                        \tag{E30}
+\]
+The second profile covers every \(N\ge2\); the first covers the
+length-one tail. All 35 remaining bases have negative physical
+witness mean. The analytic and finite partitions just described,
+together with (E22)--(E23), exclude the entire three-prime sector.
+
+\subsection{Outward arithmetic and the final logical implication}
+All critical constants and comparisons can be reduced to rational
+inequalities. For a positive rational, binary reduction gives
+\(1\le y<2\), and \(z=(y-1)/(y+1)\) satisfies \(0\le z<1/3\).
+Use
+\[
+ \log y=2\sum_{j=0}^{n-1}\frac{z^{2j+1}}{2j+1}+E_n,\qquad
+ 0\le E_n\le\frac{2z^{2n+1}}{(2n+1)(1-z^2)} .                     \tag{E31}
+\]
+Integer floors and ceilings preserve the outward direction. Square
+roots are enclosed by integer-square tests. For \(\zeta(2)\), finite
+reciprocal-square sums with integral/trapezoid tails give rational
+intervals, which are inverted positively. The inequality \(\pi<22/7\)
+follows by integrating \(x^4(1-x)^4/(1+x^2)>0\); polynomial division
+gives the integral \(22/7-\pi\).
+Uniform profile comparisons, full residue-period predicates, support
+and modulus inventories, finite witnesses, and the final 621 sector
+integrals are distinct finite obligations. Their retained certificate
+index identifies each mathematical input and its complete checking
+rule. A fast check of retained arithmetic does not by itself replay
+every historical witness producer or independently recheck every
+geometric cost; that distinction is part of the reproducibility scope.
+
+After these finite predicates are satisfied, the preceding analytical
+lemmas imply all the infinite sector bounds. Each residual support
+uses its own square or joint square--cross lower CDF; profiles from
+different supports are never combined inside a maximum.
+The sector table in the main text and the classical tail then give
+\(\Delta(B,N)\le U_*\) for every \(B\ge2,N\ge1\).
+Taking the supremum preserves this common non-strict rational bound,
+and the strict rational inequality \(U_*<0.241933621228105\) proves
+the advertised strict decimal bound for the same \(C^*\).
+
 
 \begin{thebibliography}{99}
 \bibitem{binary}

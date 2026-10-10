@@ -1,0 +1,265 @@
+{
+  "Gamma130": "1588534950633647388499/67731031442433562595691",
+  "Gamma130_upper_decimal": "0.023453576843634",
+  "all_N_ge_1": true,
+  "all_four_prime_supports_closed": false,
+  "all_positive_valuations": true,
+  "bound_is_not_observed_maximum": true,
+  "completed_full_replay_verified": true,
+  "completed_independent_physical_consumption_verified": true,
+  "completed_replay": {
+    "completed_full_replay_verified": true,
+    "completed_independent_physical_consumption_verified": true,
+    "component": "family130p",
+    "component_manifest_sha256": "a07d3b6c607e08e1db5aef2d340000431cf58ba71b7a2abe0e0c22d1306c7c42",
+    "driver_completed_all_postconditions": true,
+    "expectation": {
+      "complete_profile_comparisons": 83,
+      "core": 130,
+      "corner_evaluations": 4901492736,
+      "geometric_records": 98219520,
+      "physical": {
+        "all_upper_means_negative": true,
+        "even_reflection_weights": "zero and midpoint1; all other representatives2",
+        "final_root_reconstruction_is_separate": true,
+        "generation_and_primary_consumption_complete": true,
+        "independent_raw_consumer_executed_by_full_cli": true,
+        "initial_independent_full_raw_checks": 800468,
+        "maximum_mean_upper": "-106491201111/1202500000000",
+        "maximum_mean_upper_modulus": 4810,
+        "maximum_mean_upper_prime": 37,
+        "moduli": 59,
+        "normalization_upper_used": "0",
+        "raw_bytes": 6295072,
+        "representatives": 786884,
+        "states": 1573650
+      },
+      "profile_count": 9,
+      "source_plan_sha256": "b036dac1217da83e5a476fb79aa9b9861fb3f05073cc8453201ff200743a3dc5"
+    },
+    "payload_files": 196,
+    "receipt_sha256": "e367f8d3e61ec99fe8ec08eb9b70dfb5b2a275d3ff0c40d39b117eb229f42ce4",
+    "report_sha256": "3f00b65ee619a92b3909dbb1403663335b0a573bc1a4ad82f8dff9ab0bc24892",
+    "runtime_seconds": 365.669,
+    "scientific_process_returncode": 0,
+    "status": "PASS"
+  },
+  "core": 130,
+  "core_primes": [
+    2,
+    5,
+    13
+  ],
+  "dominant_bound_route": {
+    "B": 177970,
+    "N": 1,
+    "anchor_divisor": 130,
+    "kind": "finite_analytic",
+    "p": 37,
+    "penalty_method": "periodic"
+  },
+  "exact_Cstar_equals_c0_proved": false,
+  "final_and_initial_independent_physical_reports_identical": true,
+  "finite_inventory": {
+    "M_free_chosen": 18,
+    "all_positive_exponents_included": true,
+    "analytic": 105,
+    "anchor_usage_at_N1": {
+      "130": 20,
+      "1690": 21,
+      "260": 72,
+      "650": 51
+    },
+    "independent_enumerations_agree": true,
+    "new_prime_square_rows": 1,
+    "physical": 59,
+    "total": 164
+  },
+  "geometry": {
+    "diagnostics_and_replays_not_added_to_distinct_record_count": true,
+    "distinct_final_profile_records": 98219520,
+    "final_corner_evaluations": 4901492736,
+    "mixed_index_all_rows_exact_checks": 54259,
+    "primary_generation_complete": true,
+    "profiles": 9,
+    "secondary_geometry_exhaustive": false
+  },
+  "independent_bridge_checks": 2003,
+  "independent_infinite_corners_checked": 3,
+  "independent_logarithm_series_terms": 160,
+  "independent_residual_expressions_checked": 164,
+  "infinite_regions": [
+    {
+      "M_min": 16250,
+      "anchor_divisor": 130,
+      "anchor_upper": "7/500",
+      "base_min": 16250,
+      "name": "large_p",
+      "p_scalar_min": 125,
+      "penalty_method": "M_free",
+      "upper": "28335347361194957/1211981023469735375",
+      "upper_decimal": "0.023379365528410"
+    },
+    {
+      "M_min": 23136100,
+      "anchor_divisor": 1690,
+      "anchor_upper": "-21/500",
+      "base_min": 4810,
+      "name": "N_ge_2",
+      "p_scalar_min": 37,
+      "penalty_method": "periodic",
+      "upper": "2547345566586136493/118927251297200978762",
+      "upper_decimal": "0.021419359640461"
+    },
+    {
+      "M_min": 180000,
+      "anchor_divisor": 130,
+      "anchor_upper": "7/500",
+      "base_min": 180000,
+      "name": "large_base",
+      "p_scalar_min": 37,
+      "penalty_method": "periodic",
+      "upper": "199730608155779837507/8534708903042455530631",
+      "upper_decimal": "0.023402158225289"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "code/assemble_family.py",
+      "sha256": "97ee1b3201d03c62f27b466d0ebb8f4d79d17abb1bf1d57d26c42d4e4a5b7604"
+    },
+    {
+      "path": "code/independent_family130.py",
+      "sha256": "b05f68223be6fdd4e9144d6a7f37ff7ea27e798a3118c25e68007b03fd1f2803"
+    },
+    {
+      "path": "code/custody.py",
+      "sha256": "8126105b53afd7ded7b0637f838f32a2f5a2c9434bd7137c3ccee12f05c81b9e"
+    },
+    {
+      "path": "family130p/PROOF_130P.md",
+      "sha256": "899b6d3008726bad4da4f2d11a0022e59fd1d5662ea9bf12ee419b955df3950b"
+    },
+    {
+      "path": "family130p/results/closure_certificate.json",
+      "sha256": "5d20d36929f6185c560e15c36144f94d5ecd7a8390ac0f60751ef6845a2799ca"
+    },
+    {
+      "path": "family130p/insertion/REPAIR130_PROOF.md",
+      "sha256": "0259008fe08496c9ae2669da91274dcdb99e22d1ff95d34d7f8e699ec48594c1"
+    },
+    {
+      "path": "results/independent_family130.json",
+      "sha256": "ec0fd48eadea4bda9309546245a8317b455124536d2bad72f6236dff66370fe2"
+    },
+    {
+      "path": "logs/family_full/scientific_independent_physical.json",
+      "sha256": "9690f2d6e6a8aea5b63c97d2efe32063e48863cb91ca0f955d28fb794f686682"
+    }
+  ],
+  "margin_to_2_over_85": "25681887118064539351/338655157212167812978455",
+  "new_prime_squared_in_residual": true,
+  "normalization": "Delta(B,N)=mu(B^N)/ln(B)",
+  "physical": {
+    "all_upper_means_negative": true,
+    "even_reflection_weights": "zero and midpoint1; all other representatives2",
+    "final_root_reconstruction_is_separate": true,
+    "generation_and_primary_consumption_complete": true,
+    "independent_raw_consumer_executed_by_full_cli": true,
+    "initial_independent_full_raw_checks": 800468,
+    "maximum_mean_upper": "-106491201111/1202500000000",
+    "maximum_mean_upper_modulus": 4810,
+    "maximum_mean_upper_prime": 37,
+    "moduli": 59,
+    "normalization_upper_used": "0",
+    "raw_bytes": 6295072,
+    "representatives": 786884,
+    "states": 1573650
+  },
+  "prime_minimum": 17,
+  "residual_domain": {
+    "N": 1,
+    "base_upper_exclusive": 180000,
+    "prime_lower_inclusive": 37,
+    "prime_upper_exclusive": 125
+  },
+  "signed_anchors": [
+    {
+      "all_positive_multiples_including_extra_primes": true,
+      "exact_upper": "2057476778202748329364221395325485973419/154742504910672534362390528000000000000000",
+      "mark": 130,
+      "required_divisor_of_M": 130,
+      "simple_upper": "7/500",
+      "upper_decimal": "0.013296132044589"
+    },
+    {
+      "all_positive_multiples_including_extra_primes": true,
+      "exact_upper": "395550552845697667767488361543660601259/154742504910672534362390528000000000000000",
+      "mark": 130,
+      "required_divisor_of_M": 260,
+      "simple_upper": "3/1000",
+      "upper_decimal": "0.002556185535927"
+    },
+    {
+      "all_positive_multiples_including_extra_primes": true,
+      "exact_upper": "-2736337324890045486765659635147852087381/154742504910672534362390528000000000000000",
+      "mark": 130,
+      "required_divisor_of_M": 650,
+      "simple_upper": "-7/400",
+      "upper_decimal": "-0.017683165504330"
+    },
+    {
+      "all_positive_multiples_including_extra_primes": true,
+      "exact_upper": "-6604084200812390219813279448428909822037/154742504910672534362390528000000000000000",
+      "mark": 130,
+      "required_divisor_of_M": 1690,
+      "simple_upper": "-21/500",
+      "upper_decimal": "-0.042677893863904"
+    }
+  ],
+  "small_prime_routes": [
+    {
+      "mean_upper": "3435481301716450483981471253864629272491/154742504910672534362390528000000000000000",
+      "normalized_upper": "3435481301716450483981471253864629272491/1191633003408092590575840436804097979449344",
+      "p": 17,
+      "physical_mean_uniformly_negative": false,
+      "radical": 2210,
+      "upper_decimal": "0.002883002813695"
+    },
+    {
+      "mean_upper": "2524426052714035600265127763724060721067/154742504910672534362390528000000000000000",
+      "normalized_upper": "2524426052714035600265127763724060721067/1208844336795329099348630612826443393007616",
+      "p": 19,
+      "physical_mean_uniformly_negative": false,
+      "radical": 2470,
+      "upper_decimal": "0.002088297041956"
+    },
+    {
+      "mean_upper": "921676232672976745927059120827896561579/154742504910672534362390528000000000000000",
+      "normalized_upper": "921676232672976745927059120827896561579/1238408702708292455240374293361186880618496",
+      "p": 23,
+      "physical_mean_uniformly_negative": false,
+      "radical": 2990,
+      "upper_decimal": "0.000744242373829"
+    },
+    {
+      "mean_upper": "-866828532555493597450192172673806237781/154742504910672534362390528000000000000000",
+      "normalized_upper": "0",
+      "p": 29,
+      "physical_mean_uniformly_negative": true,
+      "radical": 3770,
+      "upper_decimal": "0.000000000000000"
+    },
+    {
+      "mean_upper": "-1300464012668297472206368779599174303829/154742504910672534362390528000000000000000",
+      "normalized_upper": "0",
+      "p": 31,
+      "physical_mean_uniformly_negative": true,
+      "radical": 4030,
+      "upper_decimal": "0.000000000000000"
+    }
+  ],
+  "source_family_certificate_sha256": "5d20d36929f6185c560e15c36144f94d5ecd7a8390ac0f60751ef6845a2799ca",
+  "status": "PASS",
+  "theorem": "rad(B)=130p,p>=17 prime implies Delta(B,N)<=Gamma130<2/85<c0"
+}

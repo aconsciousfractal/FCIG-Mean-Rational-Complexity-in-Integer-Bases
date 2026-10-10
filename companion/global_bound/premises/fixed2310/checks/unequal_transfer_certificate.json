@@ -1,0 +1,240 @@
+{
+  "status": "PASS",
+  "checks": 1680534,
+  "marks": [
+    {
+      "q": 2310,
+      "K": 2310,
+      "transfer_multiplier": 1,
+      "prime_factors": [
+        2,
+        3,
+        5,
+        7,
+        11
+      ],
+      "parent_labels": 6912,
+      "primitive_branches": 6912,
+      "rejected_rank_zero": 0,
+      "multiplicity_per_kernel": 1,
+      "admitted_per_parent": 2310,
+      "HNF_stream_sha256": "719d2e471df1b6c06b4b0a1072fc324b22d93a0504bca19bf62c80156908b247",
+      "local_matrices": 350,
+      "local_image_checks": 3142,
+      "all_kernel_multiplicities_checked": true,
+      "all_tensor_parent_counts_checked": true,
+      "local_reset_exhaustively_checked": true,
+      "global_parent_checks": "eight fixed primitive marks",
+      "physical_seed_regressions": [
+        1,
+        2,
+        3,
+        5,
+        11
+      ],
+      "geometry_replayed": false
+    },
+    {
+      "q": 2310,
+      "K": 4620,
+      "transfer_multiplier": 2,
+      "prime_factors": [
+        2,
+        3,
+        5,
+        7,
+        11
+      ],
+      "parent_labels": 6912,
+      "primitive_branches": 13824,
+      "rejected_rank_zero": 2304,
+      "multiplicity_per_kernel": 2,
+      "admitted_per_parent": 4620,
+      "HNF_stream_sha256": "bf2733b4b97ae883867174a7790ca58600044c24265ff6ee369d6a79d0a9eb6a",
+      "local_matrices": 357,
+      "local_image_checks": 3210,
+      "all_kernel_multiplicities_checked": true,
+      "all_tensor_parent_counts_checked": true,
+      "local_reset_exhaustively_checked": true,
+      "global_parent_checks": "eight fixed primitive marks",
+      "physical_seed_regressions": [
+        1,
+        2,
+        3,
+        5,
+        11
+      ],
+      "geometry_replayed": false
+    },
+    {
+      "q": 2310,
+      "K": 6930,
+      "transfer_multiplier": 3,
+      "prime_factors": [
+        2,
+        3,
+        5,
+        7,
+        11
+      ],
+      "parent_labels": 6912,
+      "primitive_branches": 20736,
+      "rejected_rank_zero": 1728,
+      "multiplicity_per_kernel": 3,
+      "admitted_per_parent": 6930,
+      "HNF_stream_sha256": "a364483da4a2e9e52378a3659130b1f80d7a169d34a2b9242a8e9681fc32782a",
+      "local_matrices": 362,
+      "local_image_checks": 3258,
+      "all_kernel_multiplicities_checked": true,
+      "all_tensor_parent_counts_checked": true,
+      "local_reset_exhaustively_checked": true,
+      "global_parent_checks": "eight fixed primitive marks",
+      "physical_seed_regressions": [
+        1,
+        2,
+        3,
+        5,
+        11
+      ],
+      "geometry_replayed": false
+    },
+    {
+      "q": 2310,
+      "K": 13860,
+      "transfer_multiplier": 6,
+      "prime_factors": [
+        2,
+        3,
+        5,
+        7,
+        11
+      ],
+      "parent_labels": 6912,
+      "primitive_branches": 41472,
+      "rejected_rank_zero": 10944,
+      "multiplicity_per_kernel": 6,
+      "admitted_per_parent": 13860,
+      "HNF_stream_sha256": "55137b8c155239c1e9566d9463f16b61ad12696eb25fe6c043bbe1fb426b3e7a",
+      "local_matrices": 363,
+      "local_image_checks": 3260,
+      "all_kernel_multiplicities_checked": true,
+      "all_tensor_parent_counts_checked": true,
+      "local_reset_exhaustively_checked": true,
+      "global_parent_checks": "eight fixed primitive marks",
+      "physical_seed_regressions": [
+        1,
+        2,
+        3,
+        5,
+        11
+      ],
+      "geometry_replayed": false
+    },
+    {
+      "q": 2310,
+      "K": 9240,
+      "transfer_multiplier": 4,
+      "prime_factors": [
+        2,
+        3,
+        5,
+        7,
+        11
+      ],
+      "parent_labels": 6912,
+      "primitive_branches": 27648,
+      "rejected_rank_zero": 6912,
+      "multiplicity_per_kernel": 4,
+      "admitted_per_parent": 9240,
+      "HNF_stream_sha256": "90e1edb331402802b378c358fa8dcd25af22a1f5a8f41a79e6174dd33052adae",
+      "local_matrices": 361,
+      "local_image_checks": 3254,
+      "all_kernel_multiplicities_checked": true,
+      "all_tensor_parent_counts_checked": true,
+      "local_reset_exhaustively_checked": true,
+      "global_parent_checks": "eight fixed primitive marks",
+      "physical_seed_regressions": [
+        1,
+        2,
+        3,
+        5,
+        11
+      ],
+      "geometry_replayed": false
+    },
+    {
+      "q": 2310,
+      "K": 18480,
+      "transfer_multiplier": 8,
+      "prime_factors": [
+        2,
+        3,
+        5,
+        7,
+        11
+      ],
+      "parent_labels": 6912,
+      "primitive_branches": 55296,
+      "rejected_rank_zero": 16128,
+      "multiplicity_per_kernel": 8,
+      "admitted_per_parent": 18480,
+      "HNF_stream_sha256": "46c7c64ea8b379c718597543e5c578a6ba129acf4878ebab68b38594de442766",
+      "local_matrices": 361,
+      "local_image_checks": 3254,
+      "all_kernel_multiplicities_checked": true,
+      "all_tensor_parent_counts_checked": true,
+      "local_reset_exhaustively_checked": true,
+      "global_parent_checks": "eight fixed primitive marks",
+      "physical_seed_regressions": [
+        1,
+        2,
+        3,
+        5,
+        11
+      ],
+      "geometry_replayed": false
+    }
+  ],
+  "general_theorem": "q squarefree>1, rad(K)=q; arbitrary positive valuations",
+  "multiplier_formula": "(K/q)*product(p+1)",
+  "normalization": "1/K",
+  "uniform_cap_requires_new_geometry": true,
+  "historical210_caps_used": false,
+  "q_squared_branch_count_formula": 15966720,
+  "q_squared_enumerated": false,
+  "negative_regressions": {
+    "rank_zero_rejected": true,
+    "extra_prime_admitted_count": 36,
+    "subset_index_no_reset": {
+      "q": 6,
+      "K": 2,
+      "H": [
+        2,
+        0,
+        0,
+        1
+      ],
+      "parents": [
+        [
+          1,
+          3
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "images": [
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  "infinite_claim_scope": "written proof; finite checks do not replace it"
+}

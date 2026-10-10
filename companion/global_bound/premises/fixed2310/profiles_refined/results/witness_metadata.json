@@ -1,0 +1,10 @@
+{
+  "bytes": 257789952,
+  "records": 32223744,
+  "sha256": "a0a631d0627e5dd96703cb6baaffa70b6d5177b5f132d46bba63ca385b9a5fc3",
+  "complete_byte_identity_with_baseline_span": true,
+  "baseline_cell_span": [
+    1890,
+    2666
+  ]
+}

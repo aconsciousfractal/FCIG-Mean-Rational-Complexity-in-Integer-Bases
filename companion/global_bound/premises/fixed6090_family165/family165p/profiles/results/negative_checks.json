@@ -1,0 +1,523 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "name": "truncated_stream",
+      "status": "REJECTED",
+      "expected_diagnostic": "truncated witness file",
+      "nonzero_exit": true
+    },
+    {
+      "name": "extra_record",
+      "status": "REJECTED",
+      "expected_diagnostic": "extra witness data",
+      "nonzero_exit": true
+    },
+    {
+      "name": "nonunit_zero_coefficients",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true
+    },
+    {
+      "name": "composite_parameter",
+      "status": "REJECTED",
+      "expected_diagnostic": "prime input",
+      "nonzero_exit": true
+    },
+    {
+      "name": "forbidden_core_prime_3",
+      "status": "REJECTED",
+      "expected_diagnostic": "prime parameter range",
+      "nonzero_exit": true
+    },
+    {
+      "name": "forbidden_core_prime_5",
+      "status": "REJECTED",
+      "expected_diagnostic": "prime parameter range",
+      "nonzero_exit": true
+    },
+    {
+      "name": "forbidden_core_prime_11",
+      "status": "REJECTED",
+      "expected_diagnostic": "prime parameter range",
+      "nonzero_exit": true
+    },
+    {
+      "name": "unsupported_core_index",
+      "status": "REJECTED",
+      "expected_diagnostic": "marked-165 divisor index multiplier",
+      "nonzero_exit": true
+    },
+    {
+      "name": "only_prime_3_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        3,
+        5,
+        11,
+        13
+      ],
+      "unique_nonunit_prime": 3,
+      "coefficient_pairs_checked": 4032,
+      "block_sha256": "fd09567eba70edef17669d7301761799956002d212b062f3e48e6599ae0c5385",
+      "stream_records": 10838016
+    },
+    {
+      "name": "only_prime_5_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        3,
+        5,
+        11,
+        13
+      ],
+      "unique_nonunit_prime": 5,
+      "coefficient_pairs_checked": 4032,
+      "block_sha256": "70981bd02e06b426808e250bdbcff2f3205e8d3b873d9c65ea3553d349b0bd4c",
+      "stream_records": 10838016
+    },
+    {
+      "name": "only_prime_11_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        3,
+        5,
+        11,
+        13
+      ],
+      "unique_nonunit_prime": 11,
+      "coefficient_pairs_checked": 4032,
+      "block_sha256": "ead6b5f16cfe43d933d4c5de55ac06d4e662b99f18d8bb0f130ea7bad9c8d31b",
+      "stream_records": 10838016
+    },
+    {
+      "name": "only_prime_13_nonunit",
+      "status": "REJECTED",
+      "expected_diagnostic": "full mark unit",
+      "nonzero_exit": true,
+      "marked_primes": [
+        3,
+        5,
+        11,
+        13
+      ],
+      "unique_nonunit_prime": 13,
+      "coefficient_pairs_checked": 4032,
+      "block_sha256": "0f3364851255aefb3acedf28712303dd2348e9db95dd864a01a463c7ed1039bc",
+      "stream_records": 10838016
+    },
+    {
+      "name": "radial_gap",
+      "status": "REJECTED",
+      "expected_diagnostic": "radial continuity"
+    },
+    {
+      "name": "angular_penalty_necessity",
+      "status": "PASS",
+      "vector": [
+        1,
+        3
+      ],
+      "sampled_squared_max": "169/17",
+      "continuous_squared_max": "10",
+      "node_tangents": "n/4 for -4<=n<=4"
+    },
+    {
+      "name": "cdf_below_three_halves_fails",
+      "status": "REJECTED",
+      "example_M": 3,
+      "x": "2/3",
+      "probability": "1",
+      "constant_rejected": "1499/1000"
+    },
+    {
+      "name": "allowed_prime2_actual_records",
+      "status": "PASS",
+      "prime_allowed": 2,
+      "q": 2145,
+      "records": [
+        {
+          "cell": 1178,
+          "branch": 2880,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 314
+        },
+        {
+          "cell": 1407,
+          "branch": 584,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 952
+        },
+        {
+          "cell": 2679,
+          "branch": 962,
+          "ci": 1,
+          "cj": -25,
+          "denominator_mark": -35696
+        },
+        {
+          "cell": 1614,
+          "branch": 2820,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 46
+        },
+        {
+          "cell": 508,
+          "branch": 2618,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 1522
+        },
+        {
+          "cell": 1708,
+          "branch": 318,
+          "ci": 1,
+          "cj": -2,
+          "denominator_mark": -3698
+        },
+        {
+          "cell": 271,
+          "branch": 1520,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 122
+        },
+        {
+          "cell": 2680,
+          "branch": 2394,
+          "ci": -14,
+          "cj": 17,
+          "denominator_mark": 2006
+        },
+        {
+          "cell": 1967,
+          "branch": 1700,
+          "ci": 1,
+          "cj": -2,
+          "denominator_mark": -1912
+        },
+        {
+          "cell": 871,
+          "branch": 2940,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 278
+        },
+        {
+          "cell": 2081,
+          "branch": 2082,
+          "ci": 1,
+          "cj": -2,
+          "denominator_mark": -1202
+        },
+        {
+          "cell": 407,
+          "branch": 1862,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 226
+        },
+        {
+          "cell": 2527,
+          "branch": 1844,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 46
+        },
+        {
+          "cell": 677,
+          "branch": 330,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 1394
+        },
+        {
+          "cell": 1132,
+          "branch": 750,
+          "ci": 1,
+          "cj": -1,
+          "denominator_mark": -226
+        },
+        {
+          "cell": 1204,
+          "branch": 3104,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 568
+        },
+        {
+          "cell": 894,
+          "branch": 3360,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 1004
+        },
+        {
+          "cell": 202,
+          "branch": 1518,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 1112
+        },
+        {
+          "cell": 1815,
+          "branch": 1610,
+          "ci": 1,
+          "cj": -1,
+          "denominator_mark": -92
+        },
+        {
+          "cell": 1205,
+          "branch": 3564,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 236
+        },
+        {
+          "cell": 1671,
+          "branch": 1394,
+          "ci": -1,
+          "cj": 4,
+          "denominator_mark": 2672
+        },
+        {
+          "cell": 1754,
+          "branch": 1158,
+          "ci": 1,
+          "cj": -1,
+          "denominator_mark": -1706
+        },
+        {
+          "cell": 772,
+          "branch": 2456,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 1918
+        },
+        {
+          "cell": 2395,
+          "branch": 3990,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 1042
+        },
+        {
+          "cell": 948,
+          "branch": 3426,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": -56
+        },
+        {
+          "cell": 1807,
+          "branch": 764,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 1006
+        },
+        {
+          "cell": 2087,
+          "branch": 350,
+          "ci": -3,
+          "cj": 4,
+          "denominator_mark": 2812
+        },
+        {
+          "cell": 1415,
+          "branch": 1392,
+          "ci": 1,
+          "cj": -1,
+          "denominator_mark": -1658
+        },
+        {
+          "cell": 361,
+          "branch": 336,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 1288
+        },
+        {
+          "cell": 1612,
+          "branch": 1214,
+          "ci": -1,
+          "cj": 4,
+          "denominator_mark": 2456
+        },
+        {
+          "cell": 1086,
+          "branch": 2744,
+          "ci": 1,
+          "cj": -1,
+          "denominator_mark": -1756
+        },
+        {
+          "cell": 1035,
+          "branch": 3410,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 574
+        },
+        {
+          "cell": 881,
+          "branch": 1428,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 1028
+        },
+        {
+          "cell": 230,
+          "branch": 1322,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 254
+        },
+        {
+          "cell": 468,
+          "branch": 2880,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 314
+        },
+        {
+          "cell": 1358,
+          "branch": 512,
+          "ci": 1,
+          "cj": -1,
+          "denominator_mark": -1552
+        },
+        {
+          "cell": 1865,
+          "branch": 78,
+          "ci": 1,
+          "cj": -1,
+          "denominator_mark": -226
+        },
+        {
+          "cell": 1731,
+          "branch": 980,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": -424
+        },
+        {
+          "cell": 1090,
+          "branch": 2316,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 904
+        },
+        {
+          "cell": 67,
+          "branch": 1554,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 1262
+        },
+        {
+          "cell": 1349,
+          "branch": 2726,
+          "ci": 1,
+          "cj": -2,
+          "denominator_mark": -2372
+        },
+        {
+          "cell": 2249,
+          "branch": 1800,
+          "ci": 9,
+          "cj": -17,
+          "denominator_mark": -19312
+        },
+        {
+          "cell": 2023,
+          "branch": 1308,
+          "ci": -3,
+          "cj": 4,
+          "denominator_mark": 6476
+        },
+        {
+          "cell": 1010,
+          "branch": 1988,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 148
+        },
+        {
+          "cell": 2303,
+          "branch": 570,
+          "ci": -3,
+          "cj": 4,
+          "denominator_mark": 688
+        },
+        {
+          "cell": 960,
+          "branch": 2142,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 1366
+        },
+        {
+          "cell": 340,
+          "branch": 2330,
+          "ci": -1,
+          "cj": 1,
+          "denominator_mark": 1684
+        },
+        {
+          "cell": 1561,
+          "branch": 2402,
+          "ci": 1,
+          "cj": -1,
+          "denominator_mark": -2098
+        },
+        {
+          "cell": 2099,
+          "branch": 2262,
+          "ci": 1,
+          "cj": -2,
+          "denominator_mark": -2168
+        },
+        {
+          "cell": 2255,
+          "branch": 24,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 406
+        },
+        {
+          "cell": 2027,
+          "branch": 3752,
+          "ci": 1,
+          "cj": -3,
+          "denominator_mark": -4364
+        },
+        {
+          "cell": 2670,
+          "branch": 1716,
+          "ci": 8,
+          "cj": -23,
+          "denominator_mark": -17158
+        },
+        {
+          "cell": 530,
+          "branch": 3018,
+          "ci": 0,
+          "cj": 1,
+          "denominator_mark": 28
+        }
+      ],
+      "scope": "actual sampled coefficient records from the complete producer/consumer stream; 2 is not forbidden by the odd mark"
+    }
+  ],
+  "isolated_synthetic_files": true,
+  "positive_geometry_gate": "all selected profiles are separately produced and consumed in full"
+}

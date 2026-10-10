@@ -1,0 +1,18 @@
+[
+  {
+    "stem": "q3570_K7140_angular_tail_AG8",
+    "p": 17,
+    "multiplier": 2,
+    "style": "angular_tail",
+    "angular": 8,
+    "input_scope": "."
+  },
+  {
+    "stem": "q3990_K7980_coarse",
+    "p": 19,
+    "multiplier": 2,
+    "style": "coarse",
+    "angular": 8,
+    "input_scope": "baseline"
+  }
+]

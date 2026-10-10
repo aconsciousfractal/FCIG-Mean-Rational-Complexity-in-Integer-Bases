@@ -1,0 +1,230 @@
+[
+  {
+    "folder": "refined",
+    "stem": "q462",
+    "p": 11,
+    "q": 462,
+    "k": 1,
+    "ag": 16,
+    "base_min": 924,
+    "role": "N1_large_base"
+  },
+  {
+    "folder": "refined",
+    "stem": "q546",
+    "p": 13,
+    "q": 546,
+    "k": 1,
+    "ag": 8,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q714",
+    "p": 17,
+    "q": 714,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q798",
+    "p": 19,
+    "q": 798,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q966",
+    "p": 23,
+    "q": 966,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q1218",
+    "p": 29,
+    "q": 1218,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q1302",
+    "p": 31,
+    "q": 1302,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q1554",
+    "p": 37,
+    "q": 1554,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q1722",
+    "p": 41,
+    "q": 1722,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q1806",
+    "p": 43,
+    "q": 1806,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q1974",
+    "p": 47,
+    "q": 1974,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q2226",
+    "p": 53,
+    "q": 2226,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q2478",
+    "p": 59,
+    "q": 2478,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q2562",
+    "p": 61,
+    "q": 2562,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q2814",
+    "p": 67,
+    "q": 2814,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q2982",
+    "p": 71,
+    "q": 2982,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q3066",
+    "p": 73,
+    "q": 3066,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q3318",
+    "p": 79,
+    "q": 3318,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q3486",
+    "p": 83,
+    "q": 3486,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q3738",
+    "p": 89,
+    "q": 3738,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q4074",
+    "p": 97,
+    "q": 4074,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q4242",
+    "p": 101,
+    "q": 4242,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q4326",
+    "p": 103,
+    "q": 4326,
+    "k": 1,
+    "ag": 4,
+    "role": "full_mark_all_N"
+  },
+  {
+    "folder": ".",
+    "stem": "q42_k1",
+    "p": 1,
+    "q": 42,
+    "k": 1,
+    "ag": 16,
+    "role": "marked42",
+    "simple_cap": "107/500"
+  },
+  {
+    "folder": ".",
+    "stem": "q42_k2",
+    "p": 1,
+    "q": 42,
+    "k": 2,
+    "ag": 16,
+    "role": "marked42",
+    "simple_cap": "67/1000"
+  }
+]

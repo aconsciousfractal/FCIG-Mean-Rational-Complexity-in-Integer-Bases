@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+"""Fresh generation and exhaustive consumption for the initial marked66 batch."""
+from pathlib import Path
+import subprocess,os,sys,json,time
+ROOT=Path(__file__).resolve().parent
+sys.path.insert(0,str(ROOT/'code'))
+from exact import need
+PLAN=[(13,1,4,'q858'),(1,1,16,'q66_k1'),(1,2,16,'q66_k2'),(17,1,4,'q1122')]
+env={**os.environ,'CSTAR_THREADS':'4','PYTHONDONTWRITEBYTECODE':'1'}
+def run(cmd):
+ print('RUN',' '.join(map(str,cmd)),flush=True);subprocess.run(list(map(str,cmd)),check=True,env=env)
+start=time.monotonic();built=set()
+run(['g++','-O3','-std=c++17','-fopenmp',ROOT/'code/algebra.cpp','-o',ROOT/'bin/algebra'])
+for p,k,ag,stem in PLAN:
+ pre=ROOT/'work_initial'/stem
+ need(not (ROOT/'results'/(stem+'.json')).exists(),'do not overwrite an accepted profile')
+ for mode in ('produce','consume'):
+  target=ROOT/'bin'/f'{mode}_{k}_{ag}'
+  if (mode,k,ag) not in built:
+   run(['g++','-O3','-std=c++17','-fopenmp',f'-DDEGREE_EXP={k}',f'-DANGULAR={ag}',*(['-DBUILD_CONSUMER=1'] if mode=='consume' else []),ROOT/'code/angle.cpp','-o',target]);built.add((mode,k,ag))
+  run([target,mode,p,ROOT/'data',pre])
+ for ext in ('.cells','.branches','.audit'):
+  need(Path(str(pre)+ext).read_bytes()==Path(str(pre)+'.checked'+ext).read_bytes(),'producer consumer identical '+stem+ext)
+ run([ROOT/'bin/algebra',p,k,ROOT/'data',str(pre)+'.tensor'])
+ run([sys.executable,'-B',ROOT/'code/emit_profile.py',p,ag,k,pre,str(pre)+'.json'])
+ row=json.loads(Path(str(pre)+'.json').read_text());print('OBSERVED PROFILE',json.dumps(row),flush=True)
+ run([sys.executable,'-B',ROOT/'code/audit_one.py',p,ag,'--k',k,'--prefix',pre,'--output',str(pre)+'.independent.json'])
+ for ext in ('.cells','.branches','.audit','.tensor','.json','.independent.json'):
+  (ROOT/'results'/(stem+ext)).write_bytes(Path(str(pre)+ext).read_bytes())
+ print('COMPLETE',stem,'upper',row['upper_decimal'],'strict direct',row['direct_radical_gate'],'seconds',round(time.monotonic()-start,3),flush=True)

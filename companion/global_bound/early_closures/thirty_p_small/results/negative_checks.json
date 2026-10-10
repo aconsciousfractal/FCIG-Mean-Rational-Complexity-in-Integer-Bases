@@ -1,0 +1,98 @@
+{
+  "coefficient_obstruction": {
+    "admissible_longitudinal_pairs": [
+      [
+        1,
+        -1,
+        2
+      ],
+      [
+        1,
+        0,
+        3
+      ],
+      [
+        2,
+        -1,
+        5
+      ],
+      [
+        2,
+        0,
+        6
+      ],
+      [
+        3,
+        -1,
+        2
+      ],
+      [
+        3,
+        0,
+        3
+      ]
+    ],
+    "coefficient_range": [
+      1,
+      3
+    ],
+    "conclusion": "no pair with i<=3 and |j+i*tau|<=1; not a lower bound on the true minimum",
+    "eta": 3,
+    "tau": "1/4"
+  },
+  "insufficient_gate": {
+    "level": "CLN",
+    "majorant_ratio": "286739259072112695745847/12114446760894908398154823",
+    "output": "FAIL: the k=3 excision majorant at p=97 does not pass 2/85; not a counterexample"
+  },
+  "rejected_inputs": 10,
+  "status": "PASS",
+  "tests": [
+    {
+      "returncode": 1,
+      "stderr": "FAIL full-modulus denominator unit",
+      "test": "nonunit_denominator"
+    },
+    {
+      "returncode": 1,
+      "stderr": "FAIL state congruence",
+      "test": "false_congruence"
+    },
+    {
+      "returncode": 1,
+      "stderr": "FAIL truncated witness",
+      "test": "truncated_record"
+    },
+    {
+      "returncode": 1,
+      "stderr": "FAIL extra witness records",
+      "test": "extra_record"
+    },
+    {
+      "returncode": 1,
+      "stderr": "FAIL duplicate modulus",
+      "test": "duplicate_modulus"
+    },
+    {
+      "returncode": 1,
+      "stderr": "FAIL radical domain",
+      "test": "wrong_radical"
+    },
+    {
+      "output": "ArithmeticError: false equality after deleting p",
+      "test": "false_relaxed_equality"
+    },
+    {
+      "output": "ArithmeticError: division by ambient gcd leaves lattice",
+      "test": "illegal_ambient_division"
+    },
+    {
+      "output": "ArithmeticError: additional prime domain",
+      "test": "prime_already_in_mark"
+    },
+    {
+      "output": "ArithmeticError: additional prime domain",
+      "test": "composite_prime"
+    }
+  ]
+}

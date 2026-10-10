@@ -1,0 +1,16 @@
+{
+  "status": "EDITORIAL_SCOPE_CLARIFICATIONS_ONLY",
+  "source_component": "export_ready_v1",
+  "source_manifest_sha256": "b48a0a307a365972d45e7334d07f8b6f48f2e9d40559e964c94a4add811088d3",
+  "source_PROOF_sha256": "790f2f865e936d55b858ff85e53639e178b6cdb917edf7216de7baa4ed754fec",
+  "revised_PROOF_sha256": "a1733b73a8348d6b7b57aac39a6f67bd7c276ee3d5162d6cee1fcef8863ceb6c",
+  "changed_original_payloads": [
+    "PROOF.md"
+  ],
+  "unchanged_original_payloads": 104,
+  "numerical_sources_contracts_caps_witness_metadata_unchanged": true,
+  "clarifications": [
+    "1/(4A^2) equals1/64 specifically for A=4; A=8 uses1/256 as already stated and coded",
+    "rational Gauss ceiling covers the reduced domain from outside, so geometric coverage is by excess"
+  ]
+}

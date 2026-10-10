@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "current_refined_upper": "33818937788814082987130089710244364506289/216639506874941548107346739200000000000000",
+  "observed_coarse_upper": "36643296804429356736301022526892966106289/216639506874941548107346739200000000000000",
+  "anchor_cap": "17/100",
+  "current_refined_decimal": "0.156106973638639",
+  "observed_coarse_decimal": "0.169144111030415",
+  "direct_inequality_verified": "current_refined_upper <= observed_coarse_upper < 17/100",
+  "current_uniform_claim": "462 divides M implies nu_462(M) <= current_refined_upper",
+  "current_replay_uses": "refined/results/q462.cells",
+  "coarse_source": "imports/observed_coarse_q462.json",
+  "coarse_replay_required_for_current_cap": false
+}

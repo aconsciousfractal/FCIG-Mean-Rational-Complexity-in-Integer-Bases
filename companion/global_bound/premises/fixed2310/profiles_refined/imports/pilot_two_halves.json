@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "type": "radial subdivision diagnostic with complete selected-block reconsumption",
+  "bands": [
+    {
+      "band": 100,
+      "rho_lo": "351648561907261/4503599627370496",
+      "rho_mid": "370140162955145/4503599627370496",
+      "rho_hi": "388631764003029/4503599627370496",
+      "old_max_ticks": 219585561,
+      "left_max_ticks": 209129426,
+      "right_max_ticks": 207544238,
+      "old_angle0_max_ticks": 203960561,
+      "left_angle0_max_ticks": 192498788,
+      "right_angle0_max_ticks": 190608270,
+      "worst_half_improvement_decimal": "0.010456135000000"
+    },
+    {
+      "band": 110,
+      "rho_lo": "955879895836263/4503599627370496",
+      "rho_mid": "31442039966995/140737488355328",
+      "rho_hi": "1056410662051417/4503599627370496",
+      "old_max_ticks": 195375818,
+      "left_max_ticks": 183604437,
+      "right_max_ticks": 182354943,
+      "old_angle0_max_ticks": 179750818,
+      "left_angle0_max_ticks": 167979437,
+      "right_angle0_max_ticks": 166729943,
+      "worst_half_improvement_decimal": "0.011771381000000"
+    },
+    {
+      "band": 115,
+      "rho_lo": "1575979516499869/4503599627370496",
+      "rho_mid": "829426561404611/2251799813685248",
+      "rho_hi": "108857920569911/281474976710656",
+      "old_max_ticks": 188043600,
+      "left_max_ticks": 176027636,
+      "right_max_ticks": 175246469,
+      "old_angle0_max_ticks": 172418600,
+      "left_angle0_max_ticks": 160402636,
+      "right_angle0_max_ticks": 159621469,
+      "worst_half_improvement_decimal": "0.012015964000000"
+    },
+    {
+      "band": 125,
+      "rho_lo": "4283956481725267/4503599627370496",
+      "rho_mid": "4509230299814851/4503599627370496",
+      "rho_hi": "1183626029476109/1125899906842624",
+      "old_max_ticks": 187043698,
+      "left_max_ticks": 175447789,
+      "right_max_ticks": 175512530,
+      "old_angle0_max_ticks": 171418698,
+      "left_angle0_max_ticks": 159092601,
+      "right_angle0_max_ticks": 159003886,
+      "worst_half_improvement_decimal": "0.011531168000000"
+    }
+  ],
+  "hybrid_four_bands_exact_upper": "6580061368249559119821539463003808196487/30948500982134506872478105600000000000000",
+  "hybrid_four_bands_decimal": "0.212613249735359",
+  "whole_domain_refined": false,
+  "new_witness_search": false,
+  "producer_consumer_independent_for_new_rectangles": false
+}

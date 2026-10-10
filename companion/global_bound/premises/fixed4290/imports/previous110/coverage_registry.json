@@ -1,0 +1,600 @@
+{
+  "status": "PASS",
+  "newly_closed_family": "rad(B)=110p, p>=13 prime",
+  "first_open_four_prime_radical": 1938,
+  "first_open_four_prime_support": [
+    2,
+    3,
+    17,
+    19
+  ],
+  "previous_first_open_four_prime_radical": 1430,
+  "next_four_prime_family": "rad(B)=102p, p>=19 prime; proposed, not proved",
+  "declared_four_prime_families": [
+    {
+      "core": 30,
+      "new_prime_minimum": 7
+    },
+    {
+      "core": 42,
+      "new_prime_minimum": 11
+    },
+    {
+      "core": 70,
+      "new_prime_minimum": 11
+    },
+    {
+      "core": 66,
+      "new_prime_minimum": 13
+    },
+    {
+      "core": 105,
+      "new_prime_minimum": 11
+    },
+    {
+      "core": 78,
+      "new_prime_minimum": 17
+    },
+    {
+      "core": 110,
+      "new_prime_minimum": 13
+    }
+  ],
+  "historical_30p_includes_candidate_and_is_not_claimed_strictly_below_2_over_85": true,
+  "covered_four_prime_radicals_below_first_open": [
+    {
+      "radical": 210,
+      "primes": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 330,
+      "primes": [
+        2,
+        3,
+        5,
+        11
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 390,
+      "primes": [
+        2,
+        3,
+        5,
+        13
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 462,
+      "primes": [
+        2,
+        3,
+        7,
+        11
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 510,
+      "primes": [
+        2,
+        3,
+        5,
+        17
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 546,
+      "primes": [
+        2,
+        3,
+        7,
+        13
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 570,
+      "primes": [
+        2,
+        3,
+        5,
+        19
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 690,
+      "primes": [
+        2,
+        3,
+        5,
+        23
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 714,
+      "primes": [
+        2,
+        3,
+        7,
+        17
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 770,
+      "primes": [
+        2,
+        5,
+        7,
+        11
+      ],
+      "family": "70p"
+    },
+    {
+      "radical": 798,
+      "primes": [
+        2,
+        3,
+        7,
+        19
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 858,
+      "primes": [
+        2,
+        3,
+        11,
+        13
+      ],
+      "family": "66p"
+    },
+    {
+      "radical": 870,
+      "primes": [
+        2,
+        3,
+        5,
+        29
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 910,
+      "primes": [
+        2,
+        5,
+        7,
+        13
+      ],
+      "family": "70p"
+    },
+    {
+      "radical": 930,
+      "primes": [
+        2,
+        3,
+        5,
+        31
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 966,
+      "primes": [
+        2,
+        3,
+        7,
+        23
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 1110,
+      "primes": [
+        2,
+        3,
+        5,
+        37
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1122,
+      "primes": [
+        2,
+        3,
+        11,
+        17
+      ],
+      "family": "66p"
+    },
+    {
+      "radical": 1155,
+      "primes": [
+        3,
+        5,
+        7,
+        11
+      ],
+      "family": "105p"
+    },
+    {
+      "radical": 1190,
+      "primes": [
+        2,
+        5,
+        7,
+        17
+      ],
+      "family": "70p"
+    },
+    {
+      "radical": 1218,
+      "primes": [
+        2,
+        3,
+        7,
+        29
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 1230,
+      "primes": [
+        2,
+        3,
+        5,
+        41
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1254,
+      "primes": [
+        2,
+        3,
+        11,
+        19
+      ],
+      "family": "66p"
+    },
+    {
+      "radical": 1290,
+      "primes": [
+        2,
+        3,
+        5,
+        43
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1302,
+      "primes": [
+        2,
+        3,
+        7,
+        31
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 1326,
+      "primes": [
+        2,
+        3,
+        13,
+        17
+      ],
+      "family": "78p"
+    },
+    {
+      "radical": 1330,
+      "primes": [
+        2,
+        5,
+        7,
+        19
+      ],
+      "family": "70p"
+    },
+    {
+      "radical": 1365,
+      "primes": [
+        3,
+        5,
+        7,
+        13
+      ],
+      "family": "105p"
+    },
+    {
+      "radical": 1410,
+      "primes": [
+        2,
+        3,
+        5,
+        47
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1430,
+      "primes": [
+        2,
+        5,
+        11,
+        13
+      ],
+      "family": "110p"
+    },
+    {
+      "radical": 1482,
+      "primes": [
+        2,
+        3,
+        13,
+        19
+      ],
+      "family": "78p"
+    },
+    {
+      "radical": 1518,
+      "primes": [
+        2,
+        3,
+        11,
+        23
+      ],
+      "family": "66p"
+    },
+    {
+      "radical": 1554,
+      "primes": [
+        2,
+        3,
+        7,
+        37
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 1590,
+      "primes": [
+        2,
+        3,
+        5,
+        53
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1610,
+      "primes": [
+        2,
+        5,
+        7,
+        23
+      ],
+      "family": "70p"
+    },
+    {
+      "radical": 1722,
+      "primes": [
+        2,
+        3,
+        7,
+        41
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 1770,
+      "primes": [
+        2,
+        3,
+        5,
+        59
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1785,
+      "primes": [
+        3,
+        5,
+        7,
+        17
+      ],
+      "family": "105p"
+    },
+    {
+      "radical": 1794,
+      "primes": [
+        2,
+        3,
+        13,
+        23
+      ],
+      "family": "78p"
+    },
+    {
+      "radical": 1806,
+      "primes": [
+        2,
+        3,
+        7,
+        43
+      ],
+      "family": "42p"
+    },
+    {
+      "radical": 1830,
+      "primes": [
+        2,
+        3,
+        5,
+        61
+      ],
+      "family": "30p"
+    },
+    {
+      "radical": 1870,
+      "primes": [
+        2,
+        5,
+        11,
+        17
+      ],
+      "family": "110p"
+    },
+    {
+      "radical": 1914,
+      "primes": [
+        2,
+        3,
+        11,
+        29
+      ],
+      "family": "66p"
+    }
+  ],
+  "first_five_prime_radical_not_closed_vs_c0": 4290,
+  "first_open_five_prime_support": [
+    2,
+    3,
+    5,
+    11,
+    13
+  ],
+  "five_prime_radicals_closed_below_2_over_85": [
+    2310,
+    2730,
+    3570,
+    3990
+  ],
+  "exact_five_prime_frontier": [
+    {
+      "radical": 2310,
+      "prime_support": [
+        2,
+        3,
+        5,
+        7,
+        11
+      ],
+      "closed_vs_c0": true
+    },
+    {
+      "radical": 2730,
+      "prime_support": [
+        2,
+        3,
+        5,
+        7,
+        13
+      ],
+      "closed_vs_c0": true
+    },
+    {
+      "radical": 3570,
+      "prime_support": [
+        2,
+        3,
+        5,
+        7,
+        17
+      ],
+      "closed_vs_c0": true
+    },
+    {
+      "radical": 3990,
+      "prime_support": [
+        2,
+        3,
+        5,
+        7,
+        19
+      ],
+      "closed_vs_c0": true
+    },
+    {
+      "radical": 4290,
+      "prime_support": [
+        2,
+        3,
+        5,
+        11,
+        13
+      ],
+      "closed_vs_c0": false
+    }
+  ],
+  "two_exhaustive_radical_inventories_agree": true,
+  "global_upper_expression": "(log(7)+99503/200655)/log(4290)",
+  "global_upper": "9799192019173877824736941/33565736998044429642867312",
+  "global_upper_decimal": "0.291940320563937",
+  "independently_rounded_global_expression_upper": "48995960095869403067/167828684990222135061",
+  "global_numerical_bound_changed_this_task": false,
+  "all_omega_ge_6_upper_decimal": "0.282941351389492",
+  "inherited_far_tail": {
+    "prime_counts_from": 2000,
+    "prime_count_upper": "29854729/1308000000",
+    "base_from": "2^20480",
+    "large_base_upper": "29854729/1271808000",
+    "all_positive_valuations": true,
+    "all_N_ge_1": true
+  },
+  "previous_global_proofs_are_explicit_imports": true,
+  "previous_large_streams_replayed_in_this_package": false,
+  "normalization": "Delta(B,N)=mu(B^N)/ln(B)",
+  "all_positive_valuations": true,
+  "all_N_ge_1": true,
+  "all_four_prime_supports_closed": false,
+  "all_five_prime_supports_closed": false,
+  "exact_Cstar_equals_c0_proved": false,
+  "offset_sign_classification_claimed": false,
+  "next_five_prime_target": "4290=2*3*5*11*13; no full profile produced in this task",
+  "remaining_domain_for_a_value_greater_than_c0": {
+    "prime_counts": "4<=omega(B)<=1999",
+    "base": "2<=B<2^20480",
+    "length": "N>=1 remains unbounded",
+    "practical_finite_enumeration_claimed": false
+  },
+  "inputs": [
+    {
+      "path": "imports/previous78/coverage_registry.json",
+      "sha256": "89c85d23143dfb35e8e7ca012aa6f0ea645a1204c309985dd795ca71232845d5"
+    },
+    {
+      "path": "imports/previous78/global_certificate.json",
+      "sha256": "f4358a78c799943a741f5652b1ea8088482d09250ae9fa487b80f6cbfeb39dd9"
+    },
+    {
+      "path": "imports/previous78/SOURCE_RECEIPT.json",
+      "sha256": "2d9b02d88415d166ea4bdfd7967c5b95fe53132ff6fe15a25055bf2388ea8114"
+    },
+    {
+      "path": "logs/previous_checkpoint_quick.json",
+      "sha256": "6806365a3fe73b634a73c7396bf51101ab8b1ba40ff941e7f7dde09e769394c3"
+    },
+    {
+      "path": "results/closure_certificate.json",
+      "sha256": "4efaa3700c10cded7bd026feb56707cc18b8813ba654434be24173cdda532efa"
+    }
+  ]
+}

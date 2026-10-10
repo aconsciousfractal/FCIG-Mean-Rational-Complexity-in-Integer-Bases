@@ -1,0 +1,281 @@
+{
+  "analytic_small_mean_checks": 17,
+  "arbitrary_modulus_Farey_checks": 990,
+  "bad_CDF_thresholds": 15994,
+  "bad_minima_repaired": 1618,
+  "complete_moduli": [
+    [
+      70,
+      2,
+      5,
+      7
+    ],
+    [
+      105,
+      3,
+      5,
+      7
+    ],
+    [
+      110,
+      2,
+      5,
+      11
+    ],
+    [
+      140,
+      2,
+      5,
+      7
+    ],
+    [
+      154,
+      2,
+      7,
+      11
+    ],
+    [
+      165,
+      3,
+      5,
+      11
+    ],
+    [
+      220,
+      2,
+      5,
+      11
+    ],
+    [
+      231,
+      3,
+      7,
+      11
+    ],
+    [
+      308,
+      2,
+      7,
+      11
+    ],
+    [
+      315,
+      3,
+      5,
+      7
+    ],
+    [
+      350,
+      2,
+      5,
+      7
+    ],
+    [
+      385,
+      5,
+      7,
+      11
+    ],
+    [
+      495,
+      3,
+      5,
+      11
+    ],
+    [
+      525,
+      3,
+      5,
+      7
+    ],
+    [
+      530,
+      2,
+      5,
+      53
+    ],
+    [
+      550,
+      2,
+      5,
+      11
+    ],
+    [
+      590,
+      2,
+      5,
+      59
+    ],
+    [
+      693,
+      3,
+      7,
+      11
+    ],
+    [
+      795,
+      3,
+      5,
+      53
+    ],
+    [
+      825,
+      3,
+      5,
+      11
+    ],
+    [
+      885,
+      3,
+      5,
+      59
+    ],
+    [
+      1078,
+      2,
+      7,
+      11
+    ],
+    [
+      1130,
+      2,
+      5,
+      113
+    ],
+    [
+      1270,
+      2,
+      5,
+      127
+    ],
+    [
+      1310,
+      2,
+      5,
+      131
+    ],
+    [
+      1370,
+      2,
+      5,
+      137
+    ],
+    [
+      1490,
+      2,
+      5,
+      149
+    ],
+    [
+      1617,
+      3,
+      7,
+      11
+    ],
+    [
+      1695,
+      3,
+      5,
+      113
+    ],
+    [
+      1905,
+      3,
+      5,
+      127
+    ],
+    [
+      1925,
+      5,
+      7,
+      11
+    ],
+    [
+      1965,
+      3,
+      5,
+      131
+    ],
+    [
+      2235,
+      3,
+      5,
+      149
+    ],
+    [
+      2540,
+      2,
+      5,
+      127
+    ],
+    [
+      2570,
+      2,
+      5,
+      257
+    ],
+    [
+      2695,
+      5,
+      7,
+      11
+    ],
+    [
+      4445,
+      5,
+      7,
+      127
+    ],
+    [
+      9779,
+      7,
+      11,
+      127
+    ]
+  ],
+  "deleted_density_real_cutoffs": 2382,
+  "exact_central_counts": 114,
+  "finite_tests_not_general_proof": true,
+  "first_problematic_fixture": {
+    "M": 70,
+    "chosen": [
+      -7,
+      7
+    ],
+    "full": 9,
+    "p": 7,
+    "q": 10,
+    "relaxed": 7,
+    "repaired": [
+      9,
+      1
+    ],
+    "state": 9
+  },
+  "integer_atom_fixture": {
+    "M": 70,
+    "T": 17,
+    "length_only": "350/117",
+    "q": 10,
+    "survival": 3
+  },
+  "negative_controls": {
+    "composite_third_parameter": "third parameter prime",
+    "duplicate_mark_primes": "two distinct ordered primes",
+    "four_prime_support": "radical must be exactly the three displayed primes",
+    "old_mod6_count": "U_10(3)=2 exceeds old U_6 bound 5/3",
+    "previous_family_not_new": "family 6p excluded from the new domain",
+    "strict_Farey_boundary": "strict Farey tail T^2>2M",
+    "three_mark_prime_repair": "q=30, eta=3, tau=1/4 has no admissible coefficient i<=2"
+  },
+  "parameter_checks": {
+    "complete_residue_classes": 1924775,
+    "independent_harmonic_checks": 14535,
+    "pair_rows": 855,
+    "polynomial_coefficient_checks": 3849550
+  },
+  "repair_residue_shear_checks": 2255,
+  "state_modulus_incidents": 49460,
+  "status": "PASS",
+  "three_prime_Farey_checks": 114
+}

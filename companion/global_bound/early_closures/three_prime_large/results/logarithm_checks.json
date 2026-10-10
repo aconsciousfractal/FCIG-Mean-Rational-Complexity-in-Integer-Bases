@@ -1,0 +1,7 @@
+{
+  "all_census_log_inputs": 22057,
+  "independent": "exact negative logarithm series 96 terms",
+  "primary": "exact atanh series 28 terms",
+  "scale": 1000000000000000,
+  "status": "PASS"
+}

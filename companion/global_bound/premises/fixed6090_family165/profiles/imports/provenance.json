@@ -1,0 +1,212 @@
+{
+  "sources": [
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/PROOF.md",
+      "source_relative": "PROOF.md",
+      "destination": "PROOF.md",
+      "original_copy": "imports/originals/PROOF.md",
+      "sha256": "7e2d63276db5a9dbf82a0be666b04da10e5268f148b855b0bc0f4707b46fc807"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/README.md",
+      "source_relative": "README.md",
+      "destination": "README.md",
+      "original_copy": "imports/originals/README.md",
+      "sha256": "02d50dc1bc65b30474f3cbeab417818bd63bbce4ee2f41581385dab4d440c40c"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/build.py",
+      "source_relative": "build.py",
+      "destination": "build.py",
+      "original_copy": "imports/originals/build.py",
+      "sha256": "38db3726a7770b08020716ac673ad35509d4968b78491f6b8f39ce107f980c72"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/code/algebra.cpp",
+      "source_relative": "code/algebra.cpp",
+      "destination": "code/algebra.cpp",
+      "original_copy": "imports/originals/code/algebra.cpp",
+      "sha256": "72623bddbaea1a7aa5e4fb3d6f1e1eda411a78059cfdc9684ee6e691a24417be"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/code/angle.cpp",
+      "source_relative": "code/angle.cpp",
+      "destination": "code/angle.cpp",
+      "original_copy": "imports/originals/code/angle.cpp",
+      "sha256": "0726430ce7e28991c51b30fc1f12493b42e4b16d9fe62091a26c4ff8a5aa6ed3"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/code/assemble.py",
+      "source_relative": "code/assemble.py",
+      "destination": "code/assemble.py",
+      "original_copy": "imports/originals/code/assemble.py",
+      "sha256": "547664ffbaf63dee9452fd5faf7be0e7ceb6d5a82553e64d3ca3a99cb1931fe1"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/code/assemble_profiles.py",
+      "source_relative": "code/assemble_profiles.py",
+      "destination": "code/assemble_profiles.py",
+      "original_copy": "imports/originals/code/assemble_profiles.py",
+      "sha256": "4c527a71ae4ba186444b4a761f824f4b9cd53cfa9ba233d311357009b51ff820"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/code/audit_one.py",
+      "source_relative": "code/audit_one.py",
+      "destination": "code/audit_one.py",
+      "original_copy": "imports/originals/code/audit_one.py",
+      "sha256": "ae265710fd6aca2d51929c79d6c2832864e46f73d0c8c9d303fa45dbda6dcf53"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/code/checks.py",
+      "source_relative": "code/checks.py",
+      "destination": "code/checks.py",
+      "original_copy": "imports/originals/code/checks.py",
+      "sha256": "b7ce792823e3bb6fc5279cc5a6953bfcf51e30d31d66098fb62ad6c6a650326e"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/code/core.py",
+      "source_relative": "code/core.py",
+      "destination": "code/core.py",
+      "original_copy": "imports/originals/code/core.py",
+      "sha256": "1a96e3a2c5500271ec63ffa02880e226090253f1aa749394030a743ba302c9ff"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/code/custody.py",
+      "source_relative": "code/custody.py",
+      "destination": "code/custody.py",
+      "original_copy": "imports/originals/code/custody.py",
+      "sha256": "52b3c863d69f036f443ab0578c364a6bad9496d334809438eaac480ecad9a489"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/code/emit_profile.py",
+      "source_relative": "code/emit_profile.py",
+      "destination": "code/emit_profile.py",
+      "original_copy": "imports/originals/code/emit_profile.py",
+      "sha256": "f92cec02fa2a9a9fb7fc3c7e255fe8890907c7cb7bbf8c5899c8dbd138c0a16a"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/code/exact.py",
+      "source_relative": "code/exact.py",
+      "destination": "code/exact.py",
+      "original_copy": "imports/originals/code/exact.py",
+      "sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/code/kernel.hpp",
+      "source_relative": "code/kernel.hpp",
+      "destination": "code/kernel.hpp",
+      "original_copy": "imports/originals/code/kernel.hpp",
+      "sha256": "84dbf4489d0e12c71ff79e2cdf0c98f2ad2aaa95b189ddd6ec5d6e98532d2239"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/code/negative_profiles.py",
+      "source_relative": "code/negative_profiles.py",
+      "destination": "code/negative_profiles.py",
+      "original_copy": "imports/originals/code/negative_profiles.py",
+      "sha256": "00a53e881382d5aeff2ac7d873428fc419789a56a78fdd3c03ac66a0ab5de85a"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/code/pcdf_check.py",
+      "source_relative": "code/pcdf_check.py",
+      "destination": "code/pcdf_check.py",
+      "original_copy": "imports/originals/code/pcdf_check.py",
+      "sha256": "36145072bcb33611f52086083a58a8ce46c08a849681a6d988b1edb331112e3e"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/code/search.hpp",
+      "source_relative": "code/search.hpp",
+      "destination": "code/search.hpp",
+      "original_copy": "imports/originals/code/search.hpp",
+      "sha256": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/code/stored_profile.py",
+      "source_relative": "code/stored_profile.py",
+      "destination": "code/stored_profile.py",
+      "original_copy": "imports/originals/code/stored_profile.py",
+      "sha256": "4ca78070fd13f70f713774809c0f973e17bb388cbbe3e0e675e8e52e2207ecad"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/data/grid.tsv",
+      "source_relative": "data/grid.tsv",
+      "destination": "data/grid.tsv",
+      "original_copy": "imports/originals/data/grid.tsv",
+      "sha256": "536d5990d2f19003fc5b6534d3c209e87f46b68671f5d3577159d94b4d24df13"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/data/log_seeds.tsv",
+      "source_relative": "data/log_seeds.tsv",
+      "destination": "data/log_seeds.tsv",
+      "original_copy": "imports/originals/data/log_seeds.tsv",
+      "sha256": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/data/log_table.txt",
+      "source_relative": "data/log_table.txt",
+      "destination": "data/log_table.txt",
+      "original_copy": "imports/originals/data/log_table.txt",
+      "sha256": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/generate.py",
+      "source_relative": "generate.py",
+      "destination": "generate.py",
+      "original_copy": "imports/originals/generate.py",
+      "sha256": "175119e670f61c7d6f42074443c76d3b2f36d2d7458165864c7f768d6d0a46a6"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/imports/DIRECT_METHOD_SOURCE.tex",
+      "source_relative": "imports/DIRECT_METHOD_SOURCE.tex",
+      "destination": "imports/DIRECT_METHOD_SOURCE.tex",
+      "original_copy": "imports/originals/imports/DIRECT_METHOD_SOURCE.tex",
+      "sha256": "2706488d6447ca2c21101aa8ee3d8e29fafc0e594be38fd0939a3107673df7e9"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/imports/PRIMITIVE_CDF.md",
+      "source_relative": "imports/PRIMITIVE_CDF.md",
+      "destination": "imports/PRIMITIVE_CDF.md",
+      "original_copy": "imports/originals/imports/PRIMITIVE_CDF.md",
+      "sha256": "2dd80d3616090d8d2501178ea18690215bd78f7d94496a846adeb0a508bc7077"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "source_relative": "imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "destination": "imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "original_copy": "imports/originals/imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "sha256": "229aac5019834e7ff6d4e4d77890773054ac7b7b0d5caaed185b3ad3e7ed3714"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/profile_contract.json",
+      "source_relative": "profile_contract.json",
+      "destination": "profile_contract.json",
+      "original_copy": "imports/originals/profile_contract.json",
+      "sha256": "aa43cdb216c369a51f338096b89f5432c3e201546dd2330b43a0be5e325ed9cf"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/profiles_plan.json",
+      "source_relative": "profiles_plan.json",
+      "destination": "profiles_plan.json",
+      "original_copy": "imports/originals/profiles_plan.json",
+      "sha256": "468edf88c0b6ea347cfb4f8ed96203bd4d858f96cbc77a143f1da3d536f88d48"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/run_negative.py",
+      "source_relative": "run_negative.py",
+      "destination": "run_negative.py",
+      "original_copy": "imports/originals/run_negative.py",
+      "sha256": "fe82929ed8fd7205de814f8ac56236f38da5d6aec276a8362905ec6401c18dfb"
+    },
+    {
+      "path": "P72_6006_LITERATURE_20261009/profiles/verify_profiles.py",
+      "source_relative": "verify_profiles.py",
+      "destination": "verify_profiles.py",
+      "original_copy": "imports/originals/verify_profiles.py",
+      "sha256": "8f375194dae2bf83f22c7e322e330617a936e927188f5abd407c6a49934c6380"
+    }
+  ],
+  "source_manifest_copy": "imports/SOURCE_MANIFEST_6006.json",
+  "source_manifest_sha256": "0ffd087c085cc37c30361594b703d4f4723a7fa181dc8fb241ea6cee31df8e57",
+  "source_root_manifest_copy": "imports/SOURCE_ROOT_MANIFEST_6006.json",
+  "source_root_manifest_sha256": "d470b6036940e3fc8af8e16ebdd95e3cfdd503c0075ba491abddee41d3f91ce5",
+  "adaptation": "Explicit full mark6090=(2,3,5,7,29), all17280projective labels, one actual indexK6090, initialAG8. No numerical profile cap is inherited. Every original imported source is preserved byte-for-byte."
+}

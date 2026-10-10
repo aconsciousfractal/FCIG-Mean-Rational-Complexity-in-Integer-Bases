@@ -1,0 +1,17 @@
+{
+  "core": 105,
+  "core_primes": [
+    3,
+    5,
+    7
+  ],
+  "first_new_prime": 11,
+  "last_small_prime": 29,
+  "tail_first_prime": 31,
+  "marked_simple_caps": {
+    "1": "6/125",
+    "2": "-2/25"
+  },
+  "comparison_threshold": "2/85",
+  "external_tail_gates_are_not_certified_by_this_component": true
+}

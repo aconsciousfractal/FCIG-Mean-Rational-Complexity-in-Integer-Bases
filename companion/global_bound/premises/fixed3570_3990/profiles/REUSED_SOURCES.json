@@ -1,0 +1,153 @@
+{
+  "status": "PASS",
+  "frozen_predecessor": "P72_2730_20261008",
+  "predecessor_manifest_sha256": "a1594ecfe9d0d9dd804e2a12e9bf5dab4d72f031fd889771b55232515a60b7fb",
+  "files": [
+    {
+      "destination": "code/algebra.cpp",
+      "source": "P72_2730_20261008/profiles/code/algebra.cpp",
+      "source_sha256": "c96b756b8b0c2707e825c164047feb86d339795c56671e322c88c14c8c7ca9c8",
+      "destination_sha256": "c96b756b8b0c2707e825c164047feb86d339795c56671e322c88c14c8c7ca9c8",
+      "byte_identical": true
+    },
+    {
+      "destination": "code/assemble.py",
+      "source": "P72_2730_20261008/profiles/code/assemble.py",
+      "source_sha256": "9c39d626c3b0ab4d6bd8293904df79d21f348fb7059d14791114b0fba5db816d",
+      "destination_sha256": "9c39d626c3b0ab4d6bd8293904df79d21f348fb7059d14791114b0fba5db816d",
+      "byte_identical": true
+    },
+    {
+      "destination": "code/audit_profile.py",
+      "source": "P72_2730_20261008/profiles/code/audit_profile.py",
+      "source_sha256": "8730438cae0fac8100ebbbd7a9007e053c43cff0ee0622dea87d130f6a977ddc",
+      "destination_sha256": "8730438cae0fac8100ebbbd7a9007e053c43cff0ee0622dea87d130f6a977ddc",
+      "byte_identical": true
+    },
+    {
+      "destination": "code/checks.py",
+      "source": "P72_2730_20261008/profiles/code/checks.py",
+      "source_sha256": "bc7d150ebc7ccf34a0eb6ebc5c6159074ccfb1d951f8c2c6cbad66153da631aa",
+      "destination_sha256": "bc7d150ebc7ccf34a0eb6ebc5c6159074ccfb1d951f8c2c6cbad66153da631aa",
+      "byte_identical": true
+    },
+    {
+      "destination": "code/core.py",
+      "source": "P72_2730_20261008/profiles/code/core.py",
+      "source_sha256": "7c82ad312d5601cba24e84df873954846e5c94897bb1f0be79783d4adb8da800",
+      "destination_sha256": "7c82ad312d5601cba24e84df873954846e5c94897bb1f0be79783d4adb8da800",
+      "byte_identical": true
+    },
+    {
+      "destination": "code/exact.py",
+      "source": "P72_2730_20261008/profiles/code/exact.py",
+      "source_sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59",
+      "destination_sha256": "774fa39b88ce143f94475d9681d924d1022d8f1a65bc8d262cf47aec5b2dad59",
+      "byte_identical": true
+    },
+    {
+      "destination": "code/integrate.py",
+      "source": "P72_2730_20261008/profiles/code/integrate.py",
+      "source_sha256": "c54c5b9ec89e3c2ff9dc957470abfb93becde420e436583b0b4258bf28e30d83",
+      "destination_sha256": "ae12683e1e0e2f69f5a2a8137c04d6b92af40ed16c54770cc3250b5834116463",
+      "byte_identical": false
+    },
+    {
+      "destination": "code/integrate_alpha.py",
+      "source": "P72_2730_20261008/profiles/code/integrate_alpha.py",
+      "source_sha256": "ef61113a6015f6bd5c78bd6d2f21df97ee9231eea3192368032982d3ad36c197",
+      "destination_sha256": "ef61113a6015f6bd5c78bd6d2f21df97ee9231eea3192368032982d3ad36c197",
+      "byte_identical": true
+    },
+    {
+      "destination": "code/kernel.hpp",
+      "source": "P72_2730_20261008/profiles/code/kernel.hpp",
+      "source_sha256": "2dad959215570aefe51cc43093bb3c3f079ef1c200e7f1d2c6b8c1b38040438f",
+      "destination_sha256": "2dad959215570aefe51cc43093bb3c3f079ef1c200e7f1d2c6b8c1b38040438f",
+      "byte_identical": true
+    },
+    {
+      "destination": "code/negative_profile.py",
+      "source": "P72_2730_20261008/profiles/code/negative_profile.py",
+      "source_sha256": "9482c864a7be1f4af1b6eaf45defaee4f28e08be76f7cd1c10422113be69074d",
+      "destination_sha256": "ccd381498506523d200f052efbea7366b8e7db9d6152137fb670320fe4e85cd9",
+      "byte_identical": false
+    },
+    {
+      "destination": "code/profile.cpp",
+      "source": "P72_2730_20261008/profiles/code/profile.cpp",
+      "source_sha256": "4a2a1e73ee212df5946c6f09ff9bd5891e83976766c9ad77dea72462081097d1",
+      "destination_sha256": "5aacad1aaf09a5710a91ab9a65c99cf9d0739ababb245b91058afef2be773419",
+      "byte_identical": false
+    },
+    {
+      "destination": "code/search.hpp",
+      "source": "P72_2730_20261008/profiles/code/search.hpp",
+      "source_sha256": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281",
+      "destination_sha256": "e767f783c6250f0ea84f17d7b3e63669fe6d3369d4df3a61919cd511bde46281",
+      "byte_identical": true
+    },
+    {
+      "destination": "data/grid.tsv",
+      "source": "P72_2730_20261008/profiles/data/grid.tsv",
+      "source_sha256": "536d5990d2f19003fc5b6534d3c209e87f46b68671f5d3577159d94b4d24df13",
+      "destination_sha256": "536d5990d2f19003fc5b6534d3c209e87f46b68671f5d3577159d94b4d24df13",
+      "byte_identical": true
+    },
+    {
+      "destination": "data/log_seeds.tsv",
+      "source": "P72_2730_20261008/profiles/data/log_seeds.tsv",
+      "source_sha256": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a",
+      "destination_sha256": "6f3372405d401df5b869d0426209d86455a1970341071f2190bddbe76711dd0a",
+      "byte_identical": true
+    },
+    {
+      "destination": "data/log_table.txt",
+      "source": "P72_2730_20261008/profiles/data/log_table.txt",
+      "source_sha256": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b",
+      "destination_sha256": "c901f59aeb8e9cf5d84f6f027a27dec01fcef518c73f35b40a3e047398b0951b",
+      "byte_identical": true
+    },
+    {
+      "destination": "imports/DIRECT_METHOD_SOURCE.tex",
+      "source": "P72_2730_20261008/profiles/imports/DIRECT_METHOD_SOURCE.tex",
+      "source_sha256": "2706488d6447ca2c21101aa8ee3d8e29fafc0e594be38fd0939a3107673df7e9",
+      "destination_sha256": "2706488d6447ca2c21101aa8ee3d8e29fafc0e594be38fd0939a3107673df7e9",
+      "byte_identical": true
+    },
+    {
+      "destination": "imports/PRIMITIVE_CDF.md",
+      "source": "P72_2730_20261008/theory/PRIMITIVE_CDF.md",
+      "source_sha256": "2dd80d3616090d8d2501178ea18690215bd78f7d94496a846adeb0a508bc7077",
+      "destination_sha256": "2dd80d3616090d8d2501178ea18690215bd78f7d94496a846adeb0a508bc7077",
+      "byte_identical": true
+    },
+    {
+      "destination": "imports/REFINEMENT_METHOD_SOURCE.md",
+      "source": "P72_2730_20261008/profiles/imports/REFINEMENT_METHOD_SOURCE.md",
+      "source_sha256": "6a16e77997368faaf4796005d390b056614cebba81ee42806411b3f7c9deaf65",
+      "destination_sha256": "6a16e77997368faaf4796005d390b056614cebba81ee42806411b3f7c9deaf65",
+      "byte_identical": true
+    },
+    {
+      "destination": "imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "source": "P72_2730_20261008/profiles/imports/UNEQUAL_VALUATION_TRANSFER.md",
+      "source_sha256": "229aac5019834e7ff6d4e4d77890773054ac7b7b0d5caaed185b3ad3e7ed3714",
+      "destination_sha256": "229aac5019834e7ff6d4e4d77890773054ac7b7b0d5caaed185b3ad3e7ed3714",
+      "byte_identical": true
+    }
+  ],
+  "historical_numerical_caps_imported": false,
+  "same_task_coarse_3990_reused": true,
+  "same_task_coarse_sources": "baseline/",
+  "geometric_changes": [
+    "explicitly permit (multiplier=2,style=coarse)",
+    "explicitly permit (multiplier=2,style=angular_tail)",
+    "AG8 with AG4 embedded bound in source bands90..126 without radial subdivision",
+    "reject unsupported multiplier-grid pairs"
+  ],
+  "new_profile_indices": [
+    7140,
+    7980
+  ]
+}

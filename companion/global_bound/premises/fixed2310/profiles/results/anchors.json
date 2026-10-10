@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "mark": 2310,
+  "anchors": [
+    {
+      "stem": "q2310",
+      "mark": 2310,
+      "divisor_of_M": 2310,
+      "exact_upper": "57187048406722657328253288865536750867633/216639506874941548107346739200000000000000",
+      "upper_decimal": "0.263973313231990",
+      "simple_cap": "4/15",
+      "valid_for_every_positive_multiple_including_extra_primes": true,
+      "conditional_normalized_upper_for_B_ge_2310": "285935242033613286641266444327683754338165/8389367940493555835697114066155278061010944",
+      "delta_gate_at_base2310_under_divisibility": false
+    },
+    {
+      "stem": "q2310_K4620_AG4",
+      "mark": 2310,
+      "divisor_of_M": 4620,
+      "exact_upper": "7393305652059820057793629121692805097351/30948500982134506872478105600000000000000",
+      "upper_decimal": "0.238890589768071",
+      "simple_cap": "6/25",
+      "valid_for_every_positive_multiple_including_extra_primes": true,
+      "conditional_normalized_upper_for_B_ge_2310": "36966528260299100288968145608464025486755/1198481134356222262242444866593611151572992",
+      "delta_gate_at_base2310_under_divisibility": false
+    },
+    {
+      "stem": "q2310_K13860_AG4",
+      "mark": 2310,
+      "divisor_of_M": 13860,
+      "exact_upper": "6584394733945644212391064200360403396487/30948500982134506872478105600000000000000",
+      "upper_decimal": "0.212753268332660",
+      "simple_cap": "213/1000",
+      "valid_for_every_positive_multiple_including_extra_primes": true,
+      "conditional_normalized_upper_for_B_ge_2310": "32921973669728221061955321001802016982435/1198481134356222262242444866593611151572992",
+      "delta_gate_at_base2310_under_divisibility": false
+    }
+  ],
+  "whole_radical2310_closed_by_this_component": false,
+  "historical_numeric_caps_assumed": false,
+  "normalization": "log B",
+  "all_residues_including_zero": true
+}

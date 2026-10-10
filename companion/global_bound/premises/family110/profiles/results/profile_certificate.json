@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "cdf_alpha": "3/2",
+  "marked_caps": [
+    {
+      "q": 110,
+      "required_divisor": 110,
+      "exact_upper": "5184786024061046845280963902871988207531/154742504910672534362390528000000000000000",
+      "upper_decimal": "0.033505894369838",
+      "simple_cap": "17/500",
+      "scope": "all positive M divisible by required_divisor, with extra primes allowed; marked mean nu110 only"
+    },
+    {
+      "q": 110,
+      "required_divisor": 220,
+      "exact_upper": "3492646736568549843806080772800370835371/154742504910672534362390528000000000000000",
+      "upper_decimal": "0.022570700523329",
+      "simple_cap": "23/1000",
+      "scope": "all positive M divisible by required_divisor, with extra primes allowed; marked mean nu110 only"
+    },
+    {
+      "q": 110,
+      "required_divisor": 12100,
+      "exact_upper": "-7488314186771597426646320512347755118677/154742504910672534362390528000000000000000",
+      "upper_decimal": "-0.048392096218775",
+      "simple_cap": "-6/125",
+      "scope": "all positive M divisible by required_divisor, with extra primes allowed; marked mean nu110 only"
+    }
+  ],
+  "small_prime_routes": [
+    {
+      "p": 13,
+      "q": 1430,
+      "mean_upper": "8104299084064323735644533294109749018539/154742504910672534362390528000000000000000",
+      "normalized_upper": "8104299084064323735644533294109749018539/1124270794628770859683326106911261543366656",
+      "normalized_upper_decimal": "0.007208493827985",
+      "scope": "B=2^a*5^b*11^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    },
+    {
+      "p": 17,
+      "q": 1870,
+      "mean_upper": "5064169645374268225534670412133982142379/154742504910672534362390528000000000000000",
+      "normalized_upper": "5064169645374268225534670412133982142379/1165782635891754720512381701175812550557696",
+      "normalized_upper_decimal": "0.004344008470757",
+      "scope": "B=2^a*5^b*11^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    },
+    {
+      "p": 19,
+      "q": 2090,
+      "mean_upper": "4044636234789901247966127306492643508139/154742504910672534362390528000000000000000",
+      "normalized_upper": "4044636234789901247966127306492643508139/1182993969278991229285171877198157964115968",
+      "normalized_upper_decimal": "0.003418982970180",
+      "scope": "B=2^a*5^b*11^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    },
+    {
+      "p": 23,
+      "q": 2530,
+      "mean_upper": "2356618162527590494995076812513205419947/154742504910672534362390528000000000000000",
+      "normalized_upper": "2356618162527590494995076812513205419947/1212558335191954430434410647060367089336320",
+      "normalized_upper_decimal": "0.001943509103135",
+      "scope": "B=2^a*5^b*11^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    },
+    {
+      "p": 29,
+      "q": 3190,
+      "mean_upper": "96594469544422244848329985101282541551/30948500982134506872478105600000000000000",
+      "normalized_upper": "96594469544422244848329985101282541551/249685579518704372763817507076280663670784",
+      "normalized_upper_decimal": "0.000386864430580",
+      "scope": "B=2^a*5^b*11^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    },
+    {
+      "p": 31,
+      "q": 3410,
+      "mean_upper": "-66495009108470466802686984723714670677/154742504910672534362390528000000000000000",
+      "normalized_upper": "0",
+      "normalized_upper_decimal": "0.000000000000000",
+      "scope": "B=2^a*5^b*11^c*p^d, a,b,c,d,N>=1; normalization ln B"
+    }
+  ],
+  "closed_primes": [
+    13,
+    17,
+    19,
+    23,
+    29,
+    31
+  ],
+  "profiles": 9,
+  "geometric_witnesses": 145732608,
+  "geometric_corner_evaluations": 7457329152,
+  "arbitrary_prime_valuations": true,
+  "all_N_positive": true,
+  "geometric_witnesses_replayed_here": false,
+  "entire_110p_family_closed_here": false,
+  "global_Cstar_identified": false,
+  "small_prime_common_upper": "8104299084064323735644533294109749018539/1124270794628770859683326106911261543366656",
+  "small_prime_common_upper_decimal": "0.007208493827985",
+  "small_prime_strict_margin": "1559676167112074201836866883823194420157497/95563017543445523073082719087457231186165760"
+}
