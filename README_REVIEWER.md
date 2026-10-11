@@ -7,6 +7,10 @@ Read the [definition and theorems](paper/Mean-Rational-Complexity-in-Integer-Bas
 Keep all-residue weight, positive full-unit denominator, max-height and unrounded
 logarithm fixed. A connection denominator constrained to -1 modulo the base is
 a different convention.
+Section 1 proves equality with standard finite rational $B$-adic complexity:
+check the digit/residue bijection, unit denominator, primitive cancellation
+and sign normalization. The binary import is Theorem 1.1 at the immutable
+version 0.2.0 commit linked in [sources](docs/SOURCES.md).
 
 ## Proof checks
 
@@ -17,8 +21,10 @@ that strengthening, so the dependency order is acyclic.
 Corollary 7.2 separately imports Kanold's bound as reported by
 Costello–Watts v2, Introduction pp. 1–2. Check the equality of the cyclic-gap
 and consecutive-interval conventions and the common cap before taking the
-suprema. The resulting $4/5$ bound does not replace the self-contained proof
-or determine the optimum.
+suprema. The resulting $4/5$ bound does not replace the elementary numerical
+$49/50$ argument or determine the optimum. The sharper Section 8 tail also
+uses Kanold; its certificates are separate from those simpler numerical
+arguments. All routes retain the attributed binary-sector theorem import.
 
 For exact central counts, inspect primitive cancellation, state-gcd layers,
 same-sign injection, opposite-sign closed collision phases and the separate

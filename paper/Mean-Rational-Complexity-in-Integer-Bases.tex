@@ -44,11 +44,12 @@ finite integer certificates covering arbitrary positive valuations.
 The correction cannot be removed for all bases: \(B=30,N=2\) is a certified
 counterexample. An explicit lower estimate also gives an eventually
 positive family with radical \(510510\).
-The self-contained argument places the optimal global additive correction
+The argument places the optimal global additive correction
 between \(0.023672606561106\) and \(0.241933621228105\).
 The sharper estimate combines supportwise positive and negative logarithmic
-contributions, with explicit finite premises and infinite tails.
-Two simpler proofs give independent bounds \(49/50\) and \(4/5\).
+contributions, with explicit finite premises, infinite tails and Kanold's
+classical unit-gap bound. Two simpler proofs give bounds \(49/50\) and
+\(4/5\) without the sharper-bound certificates.
 Its supremum reduces to finitely many bases, though neither its value
 nor finite-length attainment is determined here.
 Classical rational-reconstruction and lattice tools are distinguished
@@ -90,7 +91,7 @@ For every \(N\ge1\):
 \end{enumerate}
 \end{theorem}
 The binary case of the second assertion is the theorem of
-\cite{binary}; its proof is imported and attributed here. The odd-prime
+\cite[Theorem 1.1]{binary}; its proof is imported and attributed here. The odd-prime
 argument below is independent of limiting laws. The two-prime theorem
 includes \(B=p^a r^b\) with arbitrary \(a,b\ge1\); it is not restricted to
 squarefree bases or equal valuations.
@@ -118,11 +119,37 @@ This does not assert that the supremum over \(N\) is attained.
 \end{theorem}
 
 Question 3.2 of the survey \cite[p.~20282]{survey} asks for an upper bound
-in general bases. Our answer concerns the explicitly defined rational
-height model. A connection integer in an FCSR realization may have the
-additional condition \(d\equiv-1\pmod B\), and register lengths may be
-rounded. We do not identify such quantities with this minimum for
-composite bases without a further equivalence theorem.
+on the expected finite \(k\)-adic complexity for \(k\)-ary strings.
+The following comparison fixes the rational-complexity convention used
+in our answer.
+
+\paragraph{Equality of the rational observables.}
+Let \(S^N=(s_0,\ldots,s_{N-1})\) be a \(B\)-ary string, and let
+\(\lambda_B(S^N,N)\) be the minimum unrounded \(\log_B\max(|a|,|d|)\)
+over reduced rational numbers \(a/d\) whose \(B\)-adic expansions begin
+with \(S^N\). Set \(s=\sum_{j=0}^{N-1}s_jB^j\pmod{B^N}\).
+Then
+\[
+ \lambda_B(S^N,N)=\log_B R_{B^N}(s).
+\]
+Indeed, a reduced rational has a \(B\)-adic expansion precisely when its
+denominator is coprime to \(B\). Agreement of the first \(N\) digits is equivalent to
+\(a\equiv sd\pmod{B^N}\). Conversely every full-unit congruent pair gives
+such an expansion. Eventual periodicity follows from the digit recursion
+\(a_{j+1}=(a_j-ds_j)/B\): its integer numerators eventually lie in a
+bounded interval, so the deterministic recursion repeats.
+Cancelling common content preserves the congruence
+because the content is a unit modulo \(B^N\), and changing both signs makes
+\(d>0\), without increasing the height. The string-to-residue map is a
+bijection. Thus the uniform expected rational complexity is exactly
+\(E_{B,N}\), and Theorem~\ref{thm:main}(1) answers Question 3.2 in this
+convention. This agrees with the rational minimum in the author draft
+\cite[Section 21.5]{GK}.
+
+A connection integer in an FCSR realization may have the additional
+condition \(d\equiv-1\pmod B\), and register lengths may be rounded.
+The equality above does not assert equivalence with those constrained
+or rounded quantities, which require a separate comparison.
 The cited author draft of the monograph \cite[Sections 19.3,21.3,21.5]{GK}
 treats coprime rational reconstruction and complexity estimates; its
 Section 19.1 uses a different connection-integer convention.
@@ -2014,7 +2041,7 @@ Bridge & Rows & Kind of retained evidence\\\midrule
 Odd prime powers &21&exact heights and integer Jensen sums\\
 Base six, \(N=1,\ldots,8\)&8&upper histograms and integer log sums\\
 Length six, bases \(10,12,14\)&3&upper histograms and integer log sums\\
-Squarefree semiprime prefix&4596&digests/signs; reconstruction code\\
+Squarefree semiprime prefix&4596&upper histograms and log ledger\\
 Offdiagonal radical six&143&upper histograms and log ledger\\
 Radical ten&97&upper histograms and log ledger\\
 Radicals fourteen/fifteen&132&upper histograms and log ledger\\
@@ -3856,8 +3883,8 @@ the advertised strict decimal bound for the same \(C^*\).
 \bibitem{binary}
 O.~Babanskyy,
 \emph{Rational complexity of binary strings: exact mean, finite
-distribution and logarithmic variance}, version 0.2.0, 2026.
-\url{https://github.com/aconsciousfractal/FCIG-Exact-Mean-Bound-for-the-Rational-Complexity-of-Binary-Strings}.
+distribution and logarithmic variance}, version 0.2.0, 2026, Theorem 1.1.
+\href{https://github.com/aconsciousfractal/FCIG-Exact-Mean-Bound-for-the-Rational-Complexity-of-Binary-Strings/tree/1c5d732518de8e8e564656e30a73dac24918b379}{Immutable source commit \texttt{1c5d732518de8e8e564656e30a73dac24918b379}}.
 \bibitem{survey}
 H.~Lin, L.~Xiao and Z.~Chen,
 \emph{A brief view on the linear and 2-adic complexities of pseudorandom

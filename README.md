@@ -19,7 +19,7 @@ for every integer base and every length. It strengthens this to
 $\mathbb E\log_B R_{B,N}\le N/2$ for prime-power bases and to
 $\mathbb E\log_B R_{B,N}<N/2$ for bases with exactly two distinct prime factors,
 including arbitrary positive valuations. The binary theorem is imported from
-the [earlier binary paper](https://github.com/aconsciousfractal/FCIG-Exact-Mean-Bound-for-the-Rational-Complexity-of-Binary-Strings).
+Theorem 1.1 of the [earlier binary paper, version 0.2.0](https://github.com/aconsciousfractal/FCIG-Exact-Mean-Bound-for-the-Rational-Complexity-of-Binary-Strings/tree/1c5d732518de8e8e564656e30a73dac24918b379).
 
 The zero correction is false in general: $B=30,N=2$ is an exact integer-product
 counterexample. If $\operatorname{rad}(B)=510510$ and $B^N\ge510510^2$,
@@ -28,13 +28,13 @@ For the optimal additive correction,
 $$
 0.023672606561106<C^*=\sup_{B,N}\left(\mathbb E\log_B R_{B,N}-N/2\right)<0.241933621228105.
 $$
-Two simpler independent bounds remain available. A corollary using Kanold's classical unit-gap bound as reported by
+Two simpler bounds remain available without the sharper-bound certificates. A corollary using Kanold's classical unit-gap bound as reported by
 [Costello–Watts, arXiv:1208.5342v2, pp. 1–2](https://arxiv.org/pdf/1208.5342v2), gives
 $$
 C^*\le\frac{\log67+1}{2\log30}<\frac{5037}{6400}<\frac45.
 $$
 Thus the mean is also strictly below $N/2+4/5$ in every base and length.
-The original $49/50$ proof remains self-contained. The sharper bound combines supportwise positive and negative log contributions. It is not claimed optimal.
+The elementary numerical argument gives $49/50$. The sharper bound combines supportwise positive and negative log contributions, finite certificates and Kanold's classical unit-gap bound. The binary sector imports the earlier theorem in all three routes. No bound is claimed optimal.
 
 The positive per-base correction tends to zero for large bases; the global
 supremum reduces to finitely many bases. A maximizing base has at least three
@@ -42,8 +42,11 @@ primes and is not a perfect power. Its value and a maximizing finite length
 are not determined.
 
 The general bound addresses [Lin–Xiao–Chen, Question 3.2](https://doi.org/10.3934/math.2026823)
-in this explicitly defined full-unit rational-height model. Additional FCSR
-connection conditions and rounded register lengths require separate comparison.
+for standard unrounded rational $B$-adic complexity. Section 1 identifies a
+string with $s=\sum_j s_jB^j$ modulo $B^N$ and proves that the minimum over
+rational extensions is exactly $\log_B R_{B,N}(s)$; uniform strings therefore
+give the same mean. Additional FCSR connection conditions and rounded register
+lengths require separate comparison.
 
 ## Verify
 
@@ -90,7 +93,7 @@ original, narrower scopes.
 
 ## Sharper global bound
 
-The new self-contained companion is in
+The portable companion is in
 [companion/global_bound](companion/global_bound/README.md). Outputs must be new;
 the following commands deliberately write outside the distributed tree.
 
@@ -120,7 +123,7 @@ the final journal body was not read. Priority is not certified.
 
 [AI_USE.md](AI_USE.md) discloses substantive assistance and shared review exposure.
 
-Version **0.2.0**. [Changes](CHANGELOG.md).
+Version **0.2.1**. [Changes](CHANGELOG.md).
 Code, author-generated certificates and documentation: [MIT](LICENSE).
 Original manuscript source/PDF: [CC BY 4.0](LICENSE_MANUSCRIPT.md).
 [License scopes](LICENSE_SCOPE.md) · [Third-party notices](THIRD_PARTY_NOTICES.md).

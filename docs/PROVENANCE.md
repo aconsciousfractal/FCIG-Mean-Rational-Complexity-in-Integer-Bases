@@ -91,3 +91,13 @@ The original two-prime object graph and its observed reconstruction records
 are preserved. Full raw witness streams and internal review records are not
 distributed; their generators, consumers and compact checking data are.
 Cited third-party papers are not bundled.
+
+## Version 0.2.1: source and observable clarification
+
+The manuscript explains the finite rational B-adic observable comparison,
+states the imported proof dependencies explicitly and fixes the binary
+theorem's source to an immutable commit. The semiprime evidence table now
+reflects the already distributed histograms and ledgers. Scientific code,
+certificates, historical execution records and theorem statements are
+unchanged. This editorial/source revision does not relabel or reexecute the
+earlier computational reconstructions.

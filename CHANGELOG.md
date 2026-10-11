@@ -1,5 +1,17 @@
 # Changes
 
+## 0.2.1
+
+2026-10-11.
+
+- Explain the exact equality between finite unrounded rational B-adic
+  complexity and the full-unit height used in the answer to Question 3.2.
+- Make the classical Kanold and binary-theorem dependencies explicit;
+  pin the binary import to its theorem-bearing version 0.2.0 commit.
+- Correct the retained semiprime evidence description and rebuild the PDF.
+- Preserve all theorem statements, constants, scientific programs,
+  certificates and historical reconstruction records.
+
 ## 0.2.0
 
 2026-10-10.
